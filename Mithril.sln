@@ -5,7 +5,15 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril", "Mithril\Mithril.csproj", "{6EFBC026-91E2-4CD9-8CEA-EA8334801488}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Core", "Mithril.Core\Mithril.Core.csproj", "{A352EDA5-CD4B-4B1D-8BFE-63748ABE7906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Core", "Mithril.Core\Mithril.Core.csproj", "{A352EDA5-CD4B-4B1D-8BFE-63748ABE7906}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Core.Abstractions", "Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj", "{BD6A5DD3-2C76-4700-BC24-D9969FD95AE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{E11DBDB8-9874-4DA1-86A7-7DEE0544A00B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstractions", "Abstractions", "{DFF726A6-A69B-4FB6-9E88-908610C57F2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{5025FB1E-08E0-4D28-8172-4AFBAB469673}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +29,19 @@ Global
 		{A352EDA5-CD4B-4B1D-8BFE-63748ABE7906}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A352EDA5-CD4B-4B1D-8BFE-63748ABE7906}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A352EDA5-CD4B-4B1D-8BFE-63748ABE7906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD6A5DD3-2C76-4700-BC24-D9969FD95AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6A5DD3-2C76-4700-BC24-D9969FD95AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6A5DD3-2C76-4700-BC24-D9969FD95AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6A5DD3-2C76-4700-BC24-D9969FD95AE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A352EDA5-CD4B-4B1D-8BFE-63748ABE7906} = {E11DBDB8-9874-4DA1-86A7-7DEE0544A00B}
+		{BD6A5DD3-2C76-4700-BC24-D9969FD95AE2} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
+		{DFF726A6-A69B-4FB6-9E88-908610C57F2D} = {E11DBDB8-9874-4DA1-86A7-7DEE0544A00B}
+		{5025FB1E-08E0-4D28-8172-4AFBAB469673} = {E11DBDB8-9874-4DA1-86A7-7DEE0544A00B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}
