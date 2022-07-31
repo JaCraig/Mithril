@@ -7,8 +7,8 @@ namespace Mithril
             WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            _ = builder.Services.AddControllersWithViews();
-            _ = builder.Services.SetupMithril();
+            _ = builder.Services.AddControllersWithViews().AddMithrilOptions();
+            _ = builder.Services.RegisterMithril();
 
             WebApplication? app = builder.Build();
 
@@ -31,6 +31,8 @@ namespace Mithril
             _ = app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            _ = app.ConfigureMithril();
 
             app.Run();
         }

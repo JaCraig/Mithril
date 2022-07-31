@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -11,6 +11,13 @@
     <PackageReference Include="BigBook" Version="4.0.18" />
     <PackageReference Include="Canister.IoC" Version="4.0.11" />
     <PackageReference Include="FileCurator" Version="3.1.45" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Valkyrie" Version="3.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\BaseClasses\" />
   </ItemGroup>
 
 </Project>
