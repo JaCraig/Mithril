@@ -1,10 +1,12 @@
 ﻿using BigBook;
-using Canister.Interfaces;
+using Canister.IoC.Default;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Mithril.Core.Extensions;
 using System.Reflection;
 
 namespace Mithril.Core
@@ -21,10 +23,8 @@ namespace Mithril.Core
         /// <param name="env">The host environment</param>
         public Application(IConfiguration configuration, IHostEnvironment env)
         {
-            Name = Assembly.GetEntryAssembly()?.FullName ?? string.Empty;
-            Assemblies = Array.Empty<Assembly>();
-            Modules = Array.Empty<Abstractions.Modules.Interfaces.IModule>();
-            FindModules();
+            Name = Assembly.GetEntryAssembly()?.FullName ?? "";
+            Modules = FindModules();
             Configuration = configuration;
             Environment = env;
             WebRootPath = env?.ContentRootPath ?? ".";
@@ -46,25 +46,13 @@ namespace Mithril.Core
         /// Gets the modules.
         /// </summary>
         /// <value>The modules.</value>
-        public Abstractions.Modules.Interfaces.IModule[] Modules { get; private set; }
+        public Abstractions.Modules.Interfaces.IModule[] Modules { get; }
 
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
         public string Name { get; }
-
-        /// <summary>
-        /// Gets the log.
-        /// </summary>
-        /// <value>The log.</value>
-        private static ILogger Log => Canister.Builder.Bootstrapper?.Resolve<ILogger>() ?? Serilog.Log.Logger;
-
-        /// <summary>
-        /// Gets or sets the assemblies.
-        /// </summary>
-        /// <value>The assemblies.</value>
-        private Assembly[] Assemblies { get; set; }
 
         /// <summary>
         /// Gets or sets the web root path.
@@ -75,116 +63,151 @@ namespace Mithril.Core
         /// <summary>
         /// Allows configuration of MVC related items.
         /// </summary>
-        /// <param name="builder">The application builder.</param>
-        /// <param name="applicationLifetime">The application lifetime.</param>
-        public void Configure(IApplicationBuilder builder, IHostApplicationLifetime applicationLifetime)
+        /// <param name="app">The application.</param>
+        /// <returns>The application object.</returns>
+        public WebApplication? ConfigureApplication(WebApplication? app)
         {
-            if (builder is null || applicationLifetime is null)
-                return;
-            Log.Information("Mithril: Initializing data.");
-            Canister.Builder.Bootstrapper?.Resolve<Session>();
-            InitializeDataAsync().ConfigureAwait(false).GetAwaiter().GetResult();
-
-            Log.Information("Mithril: Running module configuration on the app/environment.");
-
-            _ = builder.UseRouting();
+            if (app is null || app.Lifetime is null)
+                return app;
 
             //Configure modules
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
-                Module.Configure(builder, Environment);
+                Module.ConfigureApplication(app, Configuration, Environment);
             }
 
-            Log.Information("Mithril: Setting up routes");
+            // Turn on routing
+            _ = app.UseRouting();
 
-            _ = builder.UseAuthorization();
-            _ = builder.UseEndpoints(endpoints =>
+            // Add authorization
+            _ = app.UseAuthorization();
+
+            // Set up endpoints
+            _ = app.UseEndpoints(endpoints =>
             {
                 //Module specific routes added
                 for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
                 {
                     var Module = Modules[i];
-                    Module.ConfigureRoutes(endpoints);
+                    Module.ConfigureRoutes(endpoints, Configuration, Environment);
                 }
             });
 
-            _ = applicationLifetime.ApplicationStopping.Register(OnShutdown);
+            // Set up application lifetime events
+            _ = app.Lifetime.ApplicationStarted.Register(OnStarted);
+            _ = app.Lifetime.ApplicationStopped.Register(OnStopped);
+            _ = app.Lifetime.ApplicationStopping.Register(OnStopping);
+
+            return app;
+        }
+
+        /// <summary>
+        /// Configures the host settings.
+        /// </summary>
+        /// <param name="host">The host.</param>
+        public void ConfigureHostSettings(ConfigureHostBuilder host)
+        {
+            if (host is null)
+                return;
+            // By default set the service provider to Canister which is just a wrapper for the
+            // default provider.
+            host.UseServiceProviderFactory(new CanisterServiceProviderFactory());
+
+            for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
+            {
+                var Module = Modules[i];
+                Module.ConfigureHostSettings(host, Configuration, Environment);
+            }
+        }
+
+        /// <summary>
+        /// Configures the logging settings.
+        /// </summary>
+        /// <param name="logging">The logging.</param>
+        public void ConfigureLoggingSettings(ILoggingBuilder logging)
+        {
+            if (logging is null)
+                return;
+            for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
+            {
+                var Module = Modules[i];
+                Module.ConfigureLoggingSettings(logging, Configuration, Environment);
+            }
+        }
+
+        /// <summary>
+        /// Configures the MVC.
+        /// </summary>
+        /// <param name="services">The services.</param>
+        /// <returns>The services</returns>
+        public IServiceCollection? ConfigureMVC(IServiceCollection services)
+        {
+            if (Configuration is null || Environment is null || services is null)
+                return services;
+
+            // MVC Builder setup with debug runtime compilation if needed.
+            var MVCBuilder = services.AddControllersWithViews()
+                                    .When(Environment.IsDevelopment(), x => x.AddRazorRuntimeCompilation(options => SetupFileProviders(options.FileProviders)));
+
+            //Add modules
+            for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
+            {
+                var Module = Modules[i];
+                Module.ConfigureMVC(MVCBuilder, Configuration, Environment);
+                MVCBuilder?.AddApplicationPart(Module.GetType().Assembly);
+            }
+            return services;
         }
 
         /// <summary>
         /// Configures the services for MVC.
         /// </summary>
         /// <param name="services">The services collection.</param>
-        /// <returns></returns>
-        public void ConfigureServices(IServiceCollection services)
+        /// <returns>The service collection</returns>
+        public IServiceCollection? ConfigureServices(IServiceCollection? services)
         {
-            var MVCBuilder = services.AddControllersWithViews().AddNewtonsoftJson();
+            if (Configuration is null || Environment is null || services is null)
+                return services;
 
-            MVCBuilder.AddMvcOptions(options =>
-            {
-                options.InputFormatters
-                        .Where(item => item.GetType() == typeof(NewtonsoftJsonInputFormatter))
-                        .Cast<NewtonsoftJsonInputFormatter>()
-                        .Single()
-                        .SupportedMediaTypes
-                        .Add("application/csp-report");
-            });
-
-            //Set up razor so runtime compilation occurs.
-            MVCBuilder.AddRazorRuntimeCompilation(options => SetupFileProviders(options.FileProviders));
-
-            //Add services
+            //Add modules
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
                 Module.ConfigureServices(services, Configuration, Environment);
-                MVCBuilder.AddApplicationPart(Module.GetType().Assembly);
             }
+            services?.AddCanisterModules();
+            return services;
         }
 
         /// <summary>
-        /// Setups the file providers.
+        /// Configures the web host settings.
         /// </summary>
-        /// <param name="fileProviders">The file providers.</param>
-        public void SetupFileProviders(IList<IFileProvider> fileProviders)
+        /// <param name="webHost">The web host.</param>
+        public void ConfigureWebHostSettings(ConfigureWebHostBuilder webHost)
         {
-            if (fileProviders is null)
+            if (webHost is null)
                 return;
-
-            for (var i = 0; i < Modules.Length; i++)
-            {
-                var libraryPath = Path.GetFullPath(Path.Combine(WebRootPath, "..", Modules[i].GetType().Assembly.GetName().Name ?? string.Empty));
-                if (new DirectoryInfo(libraryPath).Exists)
-                    fileProviders.Add(new PhysicalFileProvider(libraryPath));
-            }
-        }
-
-        /// <summary>
-        /// Starts up the system using the specified assemblies.
-        /// </summary>
-        /// <param name="bootstrapper">The bootstrapper.</param>
-        public void Startup(IBootstrapper bootstrapper)
-        {
-            var Builder = bootstrapper
-                            ?.RegisterInflatable()
-                            ?.RegisterSerialBox()
-                            ?.RegisterFileCurator()
-                            ?.RegisterBigBookOfDataTypes()
-                            ?.RegisterSimpleHtmlToPdf()
-                            ?.AddAssembly(Assemblies);
-
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
-                Module.ConfigureCanister(Builder);
+                Module.ConfigureWebHostSettings(webHost, Configuration, Environment);
             }
+        }
+
+        /// <summary>
+        /// Initializes any data associated with the modules.
+        /// </summary>
+        public void InitializeData()
+        {
+            AsyncHelper.RunSync(InitializeDataAsync);
         }
 
         /// <summary>
         /// Finds the modules.
         /// </summary>
-        private void FindModules()
+        /// <returns>The modules</returns>
+        private static Abstractions.Modules.Interfaces.IModule[] FindModules()
         {
             var AssembliesFound = new List<Assembly>
             {
@@ -199,7 +222,7 @@ namespace Mithril.Core
                 }
                 catch { }
             }
-            Assemblies = AssembliesFound.ToArray();
+            var Assemblies = AssembliesFound.ToArray();
             var TempModules = new List<Abstractions.Modules.Interfaces.IModule>();
             for (int i = 0, AssembliesLength = Assemblies.Length; i < AssembliesLength; i++)
             {
@@ -213,7 +236,7 @@ namespace Mithril.Core
                 }
                 catch { }
             }
-            Modules = TempModules.OrderBy(x => x.Order).ToArray();
+            return TempModules.OrderBy(x => x.Order).ToArray();
         }
 
         /// <summary>
@@ -222,38 +245,6 @@ namespace Mithril.Core
         /// <returns></returns>
         private async Task InitializeDataAsync()
         {
-            var FeaturesFound = Feature.All();
-
-            var ModuleFeatures = Modules.SelectMany(x => x.Features);
-
-            foreach (var ModuleFeature in ModuleFeatures)
-            {
-                if (!FeaturesFound.Any(x => x.Identifier == ModuleFeature.Id))
-                {
-                    var TempFeature = new Feature(ModuleFeature.Name ?? ModuleFeature.Id, ModuleFeature.Id, ModuleFeature.Category)
-                    {
-                        Description = ModuleFeature.Description,
-                    };
-                    await TempFeature.SaveAsync().ConfigureAwait(false);
-                }
-            }
-            foreach (var ModuleFeature in FeaturesFound)
-            {
-                if (!ModuleFeatures.Any(x => x.Id == ModuleFeature.Identifier))
-                {
-                    ModuleFeature.Delete(false);
-                }
-            }
-            FeaturesFound = Feature.All();
-            foreach (var ModuleFeature in ModuleFeatures)
-            {
-                var TempFeature = FeaturesFound.FirstOrDefault(x => x.Identifier == ModuleFeature.Id);
-                if (TempFeature is null)
-                    continue;
-
-                await TempFeature.SaveAsync().ConfigureAwait(false);
-            }
-
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
@@ -262,14 +253,55 @@ namespace Mithril.Core
         }
 
         /// <summary>
-        /// Called when [shutdown].
+        /// Called when [started].
         /// </summary>
-        private void OnShutdown()
+        private void OnStarted()
         {
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
-                Module.Shutdown();
+                Module.OnStarted();
+            }
+        }
+
+        /// <summary>
+        /// Called when [stopped].
+        /// </summary>
+        private void OnStopped()
+        {
+            for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
+            {
+                var Module = Modules[i];
+                Module.OnStopped();
+            }
+        }
+
+        /// <summary>
+        /// Called when [shutdown].
+        /// </summary>
+        private void OnStopping()
+        {
+            for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
+            {
+                var Module = Modules[i];
+                Module.OnStopping();
+            }
+        }
+
+        /// <summary>
+        /// Setups the file providers.
+        /// </summary>
+        /// <param name="fileProviders">The file providers.</param>
+        private void SetupFileProviders(IList<IFileProvider> fileProviders)
+        {
+            if (fileProviders is null)
+                return;
+
+            for (var i = 0; i < Modules.Length; i++)
+            {
+                var libraryPath = Path.GetFullPath(Path.Combine(WebRootPath, "..", Modules[i].GetType().Assembly.GetName().Name ?? ""));
+                if (new DirectoryInfo(libraryPath).Exists)
+                    fileProviders.Add(new PhysicalFileProvider(libraryPath));
             }
         }
     }

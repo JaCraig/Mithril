@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mithril.Core\Mithril.Core.csproj" />
+    <ProjectReference Include="..\Mithril.Logging.Serilog\Mithril.Logging.Serilog.csproj" />
   </ItemGroup>
 
 </Project>

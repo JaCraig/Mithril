@@ -1,6 +1,10 @@
 ﻿using BigBook;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Mithril.Core.Abstractions.Modules.Interfaces;
 
 namespace Mithril.Core.Abstractions.Modules.BaseClasses
@@ -19,34 +23,48 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <summary>
         /// Initializes a new instance of the <see cref="ModuleBaseClass{TModule}"/> class.
         /// </summary>
-        protected ModuleBaseClass()
+        /// <param name="name">The name.</param>
+        /// <param name="category">The category.</param>
+        /// <param name="tags">The tags.</param>
+        protected ModuleBaseClass(string? name, string? category, params string[] tags)
         {
+            Name = name ?? typeof(TModule).GetName().AddSpaces();
+            Category = category ?? typeof(TModule).Namespace?.Split(".", StringSplitOptions.RemoveEmptyEntries).Skip(1).FirstOrDefault() ?? "";
+            Tags = tags ?? Array.Empty<string>();
             ContentPath = $"wwwroot/Content/{ID}/";
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModuleBaseClass{TModule}"/> class.
+        /// </summary>
+        protected ModuleBaseClass()
+            : this(null, null)
+        {
         }
 
         /// <summary>
         /// Gets the type.
         /// </summary>
         /// <value>The type.</value>
-        public abstract string Category { get; }
+        public string Category { get; protected set; }
 
         /// <summary>
         /// The content path
         /// </summary>
         /// <value>The content path.</value>
-        public string ContentPath { get; }
+        public string ContentPath { get; protected set; }
 
         /// <summary>
         /// Gets the features.
         /// </summary>
         /// <value>The features.</value>
-        public abstract IFeature[] Features { get; }
+        public IFeature[] Features { get; protected set; } = Array.Empty<IFeature>();
 
         /// <summary>
         /// Gets the identifier.
         /// </summary>
         /// <value>The identifier.</value>
-        public string ID { get; } = typeof(TModule)
+        public string ID { get; protected set; } = typeof(TModule)
             .GetName()
             .Trim()
             .Replace(" ", "-", StringComparison.OrdinalIgnoreCase)
@@ -62,25 +80,25 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public abstract string Name { get; }
+        public string Name { get; protected set; }
 
         /// <summary>
         /// Gets the order that they are initialized in.
         /// </summary>
         /// <value>The order that they are initialized in.</value>
-        public abstract int Order { get; }
+        public int Order { get; protected set; }
 
         /// <summary>
         /// Gets the tags.
         /// </summary>
         /// <value>The tags.</value>
-        public abstract string[] Tags { get; }
+        public string[] Tags { get; protected set; } = Array.Empty<string>();
 
         /// <summary>
         /// Gets the version.
         /// </summary>
         /// <value>The version.</value>
-        public string Version { get; } = typeof(TModule).Assembly.GetName().Version?.ToString() ?? string.Empty;
+        public string Version { get; } = typeof(TModule).Assembly.GetName().Version?.ToString() ?? "";
 
         /// <summary>
         /// Implements the operator !=.
@@ -105,16 +123,67 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         }
 
         /// <summary>
-        /// Allows configuration of MVC related items.
+        /// Configures the application.
         /// </summary>
-        /// <param name="builder">The application builder.</param>
-        public abstract void Configure(IApplicationBuilder builder);
+        /// <param name="app">The application.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        public virtual void ConfigureApplication(IApplicationBuilder app, IConfiguration configuration, IHostEnvironment environment)
+        { }
 
         /// <summary>
-        /// Configures the services for MVC.
+        /// Configures the host settings.
+        /// </summary>
+        /// <param name="host">The host.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        public virtual void ConfigureHostSettings(ConfigureHostBuilder host, IConfiguration configuration, IHostEnvironment environment)
+        { }
+
+        /// <summary>
+        /// Configures the logging settings.
+        /// </summary>
+        /// <param name="logging">The logging.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        public virtual void ConfigureLoggingSettings(ILoggingBuilder logging, IConfiguration configuration, IHostEnvironment environment)
+        { }
+
+        /// <summary>
+        /// Configures the MVC.
+        /// </summary>
+        /// <param name="mvcBuilder">The MVC builder.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        public virtual void ConfigureMVC(IMvcBuilder? mvcBuilder, IConfiguration configuration, IHostEnvironment environment)
+        { }
+
+        /// <summary>
+        /// Configures the routes.
+        /// </summary>
+        /// <param name="endpoints">The endpoints.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        public virtual void ConfigureRoutes(IEndpointRouteBuilder endpoints, IConfiguration configuration, IHostEnvironment environment)
+        { }
+
+        /// <summary>
+        /// Configures the services for the module.
         /// </summary>
         /// <param name="services">The services collection.</param>
-        public abstract void ConfigureServices(IServiceCollection services);
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        public virtual void ConfigureServices(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
+        { }
+
+        /// <summary>
+        /// Configures the web host settings.
+        /// </summary>
+        /// <param name="webHost">The web host.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        public virtual void ConfigureWebHostSettings(ConfigureWebHostBuilder webHost, IConfiguration configuration, IHostEnvironment environment)
+        { }
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -152,7 +221,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// Initializes the data.
         /// </summary>
         /// <returns>The async task.</returns>
-        public abstract Task InitializeDataAsync();
+        public virtual Task InitializeDataAsync() => Task.CompletedTask;
 
         /// <summary>
         /// Loads the module using the bootstrapper
@@ -162,8 +231,21 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         { }
 
         /// <summary>
-        /// Shutdowns this instance.
+        /// Called when the application is [started].
         /// </summary>
-        public abstract void Shutdown();
+        public virtual void OnStarted()
+        { }
+
+        /// <summary>
+        /// Called when the application is [stopped].
+        /// </summary>
+        public virtual void OnStopped()
+        { }
+
+        /// <summary>
+        /// Called when the application is [stopping].
+        /// </summary>
+        public virtual void OnStopping()
+        { }
     }
 }

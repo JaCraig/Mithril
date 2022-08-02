@@ -1,7 +1,7 @@
 ﻿using Mithril.Core.Abstractions.Security.Interfaces;
 using Valkyrie;
 
-namespace Mithril.Data.Abstractions.Interfaces
+namespace Mithril.Core.Abstractions.Data.Interfaces
 {
     /// <summary>
     /// IModel interface

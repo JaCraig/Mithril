@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace Mithril.Core.Abstractions.Modules.Interfaces
 {
@@ -57,16 +61,60 @@ namespace Mithril.Core.Abstractions.Modules.Interfaces
         string Version { get; }
 
         /// <summary>
-        /// Allows configuration of MVC related items.
+        /// Configures the application.
         /// </summary>
-        /// <param name="builder">The application builder.</param>
-        void Configure(IApplicationBuilder builder);
+        /// <param name="app">The application.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        void ConfigureApplication(IApplicationBuilder app, IConfiguration configuration, IHostEnvironment environment);
 
         /// <summary>
-        /// Configures the services for MVC.
+        /// Configures the host settings.
+        /// </summary>
+        /// <param name="host">The host.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        void ConfigureHostSettings(ConfigureHostBuilder host, IConfiguration configuration, IHostEnvironment environment);
+
+        /// <summary>
+        /// Configures the logging settings.
+        /// </summary>
+        /// <param name="logging">The logging.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        void ConfigureLoggingSettings(ILoggingBuilder logging, IConfiguration configuration, IHostEnvironment environment);
+
+        /// <summary>
+        /// Configures the MVC.
+        /// </summary>
+        /// <param name="mvcBuilder">The MVC builder.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        void ConfigureMVC(IMvcBuilder? mvcBuilder, IConfiguration configuration, IHostEnvironment environment);
+
+        /// <summary>
+        /// Configures the routes.
+        /// </summary>
+        /// <param name="endpoints">The endpoints.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        void ConfigureRoutes(IEndpointRouteBuilder endpoints, IConfiguration configuration, IHostEnvironment environment);
+
+        /// <summary>
+        /// Configures the services for the module.
         /// </summary>
         /// <param name="services">The services collection.</param>
-        void ConfigureServices(IServiceCollection services);
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        void ConfigureServices(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment);
+
+        /// <summary>
+        /// Configures the web host settings.
+        /// </summary>
+        /// <param name="webHost">The web host.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        void ConfigureWebHostSettings(ConfigureWebHostBuilder webHost, IConfiguration configuration, IHostEnvironment environment);
 
         /// <summary>
         /// Initializes the data.
@@ -75,8 +123,18 @@ namespace Mithril.Core.Abstractions.Modules.Interfaces
         Task InitializeDataAsync();
 
         /// <summary>
-        /// Shutdowns this instance.
+        /// Called when the application is [started].
         /// </summary>
-        void Shutdown();
+        void OnStarted();
+
+        /// <summary>
+        /// Called when the application is [stopped].
+        /// </summary>
+        void OnStopped();
+
+        /// <summary>
+        /// Called when the application is [stopping].
+        /// </summary>
+        void OnStopping();
     }
 }
