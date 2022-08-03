@@ -70,15 +70,15 @@ namespace Mithril.Core
             if (app is null || app.Lifetime is null)
                 return app;
 
+            // Turn on routing
+            _ = app.UseRouting();
+
             //Configure modules
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
                 Module.ConfigureApplication(app, Configuration, Environment);
             }
-
-            // Turn on routing
-            _ = app.UseRouting();
 
             // Add authorization
             _ = app.UseAuthorization();
@@ -169,6 +169,9 @@ namespace Mithril.Core
         {
             if (Configuration is null || Environment is null || services is null)
                 return services;
+
+            // Add options
+            services.AddOptions();
 
             //Add modules
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)

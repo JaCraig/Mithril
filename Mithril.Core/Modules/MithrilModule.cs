@@ -7,6 +7,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Net.Http.Headers;
 using Mithril.Core.Abstractions.Configuration;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
+using Mithril.Core.Extensions;
+using Mithril.Core.Middleware;
 
 namespace Mithril.Core.Modules
 {
@@ -34,7 +36,27 @@ namespace Mithril.Core.Modules
         {
             if (app is null || environment is null || configuration is null)
                 return;
+
+            var Settings = GetSystemConfig(configuration);
+
+            // Setup CSP middleware.
+            app.UseMiddleware<CSPMiddleware>();
+
+            // Setup XFrame middleware.
+            app.UseMiddleware<XFrameOptionsMiddleware>();
+
+            // Setup static files.
             SetupStaticFiles(app, configuration, environment);
+
+            if (Settings?.Compression?.DynamicCompression == true)
+            {
+                // Use response compression.
+                app.UseResponseCompression();
+            }
+
+            // Setup exception pages
+            app.When(environment.IsDevelopment(), builder => builder.UseDeveloperExceptionPage())
+               .When(!environment.IsDevelopment(), builder => builder.UseExceptionHandler("/Home/Error"));
         }
 
         /// <summary>
@@ -57,6 +79,28 @@ namespace Mithril.Core.Modules
         public override void ConfigureRoutes(IEndpointRouteBuilder endpoints, IConfiguration configuration, IHostEnvironment environment)
         {
             endpoints?.MapDefaultControllerRoute();
+        }
+
+        /// <summary>
+        /// Configures the services for the module.
+        /// </summary>
+        /// <param name="services">The services collection.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        public override void ConfigureServices(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
+        {
+            // Set up config.
+            services.Configure<MithrilConfig>(configuration.GetSection("Mithril"));
+
+            var Settings = GetSystemConfig(configuration);
+            if (Settings?.Compression?.DynamicCompression == true)
+            {
+                // Add compression.
+                services.AddResponseCompression(options =>
+                {
+                    options.EnableForHttps = Settings.Compression.AllowHttps;
+                });
+            }
         }
 
         /// <summary>
@@ -100,6 +144,28 @@ namespace Mithril.Core.Modules
         }
 
         /// <summary>
+        /// Gets the system configuration from the IConfiguration object.
+        /// </summary>
+        /// <param name="configuration">The configuration.</param>
+        /// <returns>The system configuration.</returns>
+        private static MithrilConfig GetSystemConfig(IConfiguration configuration) => configuration.GetSection("Mithril").Get<MithrilConfig>();
+
+        /// <summary>
+        /// Setups the extension mappings.
+        /// </summary>
+        /// <param name="Config">The configuration.</param>
+        /// <param name="provider">The provider.</param>
+        private static void SetupMimeTypes(MithrilConfig? Config, FileExtensionContentTypeProvider provider)
+        {
+            if (Config?.MimeTypes is null)
+                return;
+            foreach (var Value in Config.MimeTypes.Where(x => !string.IsNullOrWhiteSpace(x.Extension) && !string.IsNullOrWhiteSpace(x.MimeType)))
+            {
+                provider.Mappings[Value.Extension] = Value.MimeType;
+            }
+        }
+
+        /// <summary>
         /// Setups the static files.
         /// </summary>
         /// <param name="app">The application.</param>
@@ -107,8 +173,10 @@ namespace Mithril.Core.Modules
         /// <param name="environment">The environment.</param>
         private static void SetupStaticFiles(IApplicationBuilder app, IConfiguration configuration, IHostEnvironment environment)
         {
+            MithrilConfig? Config = GetSystemConfig(configuration);
+
             var provider = new FileExtensionContentTypeProvider();
-            provider.Mappings[".webmanifest"] = "application/manifest+json";
+            SetupMimeTypes(Config, provider);
             if (environment.IsDevelopment())
             {
                 app.UseStaticFiles(new StaticFileOptions
@@ -117,8 +185,7 @@ namespace Mithril.Core.Modules
                 });
                 return;
             }
-            var Config = configuration.GetSection("Mithril").Get<MithrilConfig>();
-            var MaxAge = Config?.StaticFiles.CacheControlMaxAge <= 0 ? 31557600 : Config?.StaticFiles.CacheControlMaxAge;
+            var MaxAge = Config?.StaticFiles?.CacheControlMaxAge <= 0 ? 31557600 : Config?.StaticFiles?.CacheControlMaxAge;
             app.UseStaticFiles(new StaticFileOptions
             {
                 ContentTypeProvider = provider,
