@@ -58,7 +58,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// Gets the features.
         /// </summary>
         /// <value>The features.</value>
-        public IFeature[] Features { get; protected set; } = Array.Empty<IFeature>();
+        public virtual IFeature[] Features { get; protected set; } = Array.Empty<IFeature>();
 
         /// <summary>
         /// Gets the identifier.
@@ -86,7 +86,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// Gets the order that they are initialized in.
         /// </summary>
         /// <value>The order that they are initialized in.</value>
-        public int Order { get; protected set; }
+        public virtual int Order { get; protected set; }
 
         /// <summary>
         /// Gets the tags.

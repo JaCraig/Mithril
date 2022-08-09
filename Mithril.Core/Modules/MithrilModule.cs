@@ -7,6 +7,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Net.Http.Headers;
 using Mithril.Core.Abstractions.Configuration;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
+using Mithril.Core.Abstractions.Modules.Features;
+using Mithril.Core.Abstractions.Modules.Interfaces;
 using Mithril.Core.Extensions;
 using Mithril.Core.Middleware;
 
@@ -22,9 +24,33 @@ namespace Mithril.Core.Modules
         /// Initializes a new instance of the <see cref="MithrilModule"/> class.
         /// </summary>
         public MithrilModule()
+            : base(
+                name: "Mithril Core Module",
+                category: "Core",
+                tags: new[] { "Email", "Content", "Media", "Navigation", "Search", "Workflow", "Logging" })
         {
-            Order = int.MaxValue;
         }
+
+        /// <summary>
+        /// Gets the features.
+        /// </summary>
+        /// <value>The features.</value>
+        public override IFeature[] Features { get; protected set; } = new IFeature[]
+        {
+            new ContentFeature(),
+            new EmailFeature(),
+            new IndexingFeature(),
+            new LoggingFeature(),
+            new MediaFeature(),
+            new NavigationFeature(),
+            new WorkflowFeature()
+        };
+
+        /// <summary>
+        /// Gets the order that they are initialized in.
+        /// </summary>
+        /// <value>The order that they are initialized in.</value>
+        public override int Order { get; protected set; } = int.MaxValue;
 
         /// <summary>
         /// Configures the application.
@@ -78,6 +104,7 @@ namespace Mithril.Core.Modules
         /// <param name="environment">The environment.</param>
         public override void ConfigureRoutes(IEndpointRouteBuilder endpoints, IConfiguration configuration, IHostEnvironment environment)
         {
+            endpoints?.MapAreaControllerRoute("Admin_Route", "Admin", "Admin/{controller}/{action}/{id?}");
             endpoints?.MapDefaultControllerRoute();
         }
 
@@ -89,6 +116,9 @@ namespace Mithril.Core.Modules
         /// <param name="environment">The environment.</param>
         public override void ConfigureServices(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
         {
+            //Memory cache
+            services.AddMemoryCache();
+
             // Set up config.
             services.Configure<MithrilConfig>(configuration.GetSection("Mithril"));
 
