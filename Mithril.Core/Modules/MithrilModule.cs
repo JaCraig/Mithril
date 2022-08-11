@@ -9,6 +9,7 @@ using Mithril.Core.Abstractions.Configuration;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Core.Abstractions.Modules.Features;
 using Mithril.Core.Abstractions.Modules.Interfaces;
+using Mithril.Core.Abstractions.Services;
 using Mithril.Core.Extensions;
 using Mithril.Core.Middleware;
 
@@ -137,7 +138,7 @@ namespace Mithril.Core.Modules
         /// Initializes the data.
         /// </summary>
         /// <returns>The async task.</returns>
-        public override Task InitializeDataAsync()
+        public override Task InitializeDataAsync(IDataService dataService)
         {
             return Task.CompletedTask;
             /*var FeaturesFound = Feature.All();

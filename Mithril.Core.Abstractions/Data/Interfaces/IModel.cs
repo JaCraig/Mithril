@@ -1,4 +1,6 @@
 ﻿using Mithril.Core.Abstractions.Security.Interfaces;
+using Mithril.Core.Abstractions.Services;
+using System.Security.Claims;
 using Valkyrie;
 
 namespace Mithril.Core.Abstractions.Data.Interfaces
@@ -7,18 +9,23 @@ namespace Mithril.Core.Abstractions.Data.Interfaces
     /// IModel interface
     /// </summary>
     /// <typeparam name="TClass">The type of the class.</typeparam>
+    /// <seealso cref="IModel"/>
+    /// <seealso cref="IEquatable&lt;IModel&lt;TClass&gt;&gt;"/>
     public interface IModel<TClass> : IModel, IEquatable<IModel<TClass>>
         where TClass : IModel<TClass>, new()
     {
         /// <summary>
-        /// Setups the object.
+        /// Setups the object and returns it.
         /// </summary>
-        TClass SetupObjectAndReturn();
+        /// <param name="dataService">The data service.</param>
+        /// <returns>This.</returns>
+        TClass SetupObjectAndReturn(IDataService dataService);
     }
 
     /// <summary>
     /// Model interface
     /// </summary>
+    /// <seealso cref="IEquatable&lt;IModel&gt;"/>
     public interface IModel : IEquatable<IModel>
     {
         /// <summary>
@@ -60,25 +67,41 @@ namespace Mithril.Core.Abstractions.Data.Interfaces
         IUser? Modifier { get; set; }
 
         /// <summary>
-        /// Deletes this instance.
+        /// Determines whether this instance [can be modified by] the specified user.
         /// </summary>
-        /// <param name="softDelete">if set to <c>true</c> [soft delete].</param>
-        void Delete(bool softDelete = true);
+        /// <param name="user">The user.</param>
+        /// <returns>
+        /// <c>true</c> if this instance [can be modified by] the specified user; otherwise, <c>false</c>.
+        /// </returns>
+        bool CanBeModifiedBy(ClaimsPrincipal? user);
 
         /// <summary>
-        /// Saves this instance.
+        /// Determines whether this instance [can be viewed by] the specified user.
         /// </summary>
-        void Save();
+        /// <param name="user">The user.</param>
+        /// <returns>
+        /// <c>true</c> if this instance [can be viewed by] the specified user; otherwise, <c>false</c>.
+        /// </returns>
+        bool CanBeViewedBy(ClaimsPrincipal? user);
+
+        /// <summary>
+        /// Deletes this instance.
+        /// </summary>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="softDelete">if set to <c>true</c> [soft delete].</param>
+        Task DeleteAsync(IDataService dataService, bool softDelete = true);
 
         /// <summary>
         /// Saves this instance asynchronously.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
         /// <returns>The async task.</returns>
-        Task SaveAsync();
+        Task SaveAsync(IDataService dataService);
 
         /// <summary>
-        /// Setups the object.
+        /// Sets up the object.
         /// </summary>
-        void SetupObject();
+        /// <param name="dataService">The data service.</param>
+        void SetupObject(IDataService dataService);
     }
 }

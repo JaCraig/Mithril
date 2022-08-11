@@ -18,8 +18,4 @@
     <PackageReference Include="Valkyrie" Version="3.0.10" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\BaseClasses\" />
-  </ItemGroup>
-
 </Project>

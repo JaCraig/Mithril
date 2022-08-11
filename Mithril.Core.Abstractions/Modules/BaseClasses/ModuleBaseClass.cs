@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Mithril.Core.Abstractions.Modules.Interfaces;
+using Mithril.Core.Abstractions.Services;
 
 namespace Mithril.Core.Abstractions.Modules.BaseClasses
 {
@@ -221,7 +222,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// Initializes the data.
         /// </summary>
         /// <returns>The async task.</returns>
-        public virtual Task InitializeDataAsync() => Task.CompletedTask;
+        public virtual Task InitializeDataAsync(IDataService dataService) => Task.CompletedTask;
 
         /// <summary>
         /// Loads the module using the bootstrapper

@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Mithril.Core.Abstractions.Services;
 
 namespace Mithril.Core.Abstractions.Modules.Interfaces
 {
@@ -119,8 +120,9 @@ namespace Mithril.Core.Abstractions.Modules.Interfaces
         /// <summary>
         /// Initializes the data.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
         /// <returns>The async task.</returns>
-        Task InitializeDataAsync();
+        Task InitializeDataAsync(IDataService dataService);
 
         /// <summary>
         /// Called when the application is [started].

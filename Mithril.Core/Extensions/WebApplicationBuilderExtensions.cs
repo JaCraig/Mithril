@@ -45,7 +45,7 @@ namespace Microsoft.AspNetCore.Builder
             var Application = webApplicationBuilder.Build();
 
             // Initialize any module specific data.
-            MithrilApp.InitializeData();
+            MithrilApp.InitializeData(Application.Services);
 
             // Configure the application.
             return MithrilApp.ConfigureApplication(Application);

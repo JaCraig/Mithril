@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Mithril.Core.Abstractions.Services;
 using Mithril.Core.Extensions;
 using System.Reflection;
 
@@ -201,9 +202,10 @@ namespace Mithril.Core
         /// <summary>
         /// Initializes any data associated with the modules.
         /// </summary>
-        public void InitializeData()
+        /// <param name="services">The services.</param>
+        public void InitializeData(IServiceProvider services)
         {
-            AsyncHelper.RunSync(InitializeDataAsync);
+            AsyncHelper.RunSync(() => InitializeDataAsync(services));
         }
 
         /// <summary>
@@ -245,13 +247,14 @@ namespace Mithril.Core
         /// <summary>
         /// Initializes the data.
         /// </summary>
-        /// <returns></returns>
-        private async Task InitializeDataAsync()
+        /// <param name="services">The services.</param>
+        private async Task InitializeDataAsync(IServiceProvider services)
         {
+            var DataService = services.GetRequiredService<IDataService>();
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
-                await Module.InitializeDataAsync().ConfigureAwait(false);
+                await Module.InitializeDataAsync(DataService).ConfigureAwait(false);
             }
         }
 
