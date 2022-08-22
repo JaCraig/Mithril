@@ -1,4 +1,5 @@
 ﻿using Mithril.Core.Abstractions.Data.BaseClasses;
+using System.ComponentModel.DataAnnotations;
 
 namespace Mithril.Core.Abstractions.Data.Models
 {
@@ -37,6 +38,7 @@ namespace Mithril.Core.Abstractions.Data.Models
         /// Gets or sets the information.
         /// </summary>
         /// <value>The information.</value>
+        [MaxLength(100)]
         public string? Info { get; set; }
 
         /// <summary>

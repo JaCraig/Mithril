@@ -33,9 +33,9 @@ namespace Mithril.Data.Inflatable
         /// <param name="services">The services collection.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public override void ConfigureServices(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
+        public override IServiceCollection ConfigureServices(IServiceCollection services, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            services.AddTransient<IDataService, DataService>();
+            return services.AddTransient<IDataService, DataService>();
         }
     }
 }

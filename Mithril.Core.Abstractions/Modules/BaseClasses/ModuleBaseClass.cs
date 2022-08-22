@@ -1,5 +1,6 @@
 ﻿using BigBook;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -129,8 +130,8 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <param name="app">The application.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public virtual void ConfigureApplication(IApplicationBuilder app, IConfiguration configuration, IHostEnvironment environment)
-        { }
+        /// <returns>Application builder</returns>
+        public virtual IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment) => app;
 
         /// <summary>
         /// Configures the host settings.
@@ -138,8 +139,8 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <param name="host">The host.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public virtual void ConfigureHostSettings(ConfigureHostBuilder host, IConfiguration configuration, IHostEnvironment environment)
-        { }
+        /// <returns>Host builder</returns>
+        public virtual IHostBuilder? ConfigureHostSettings(IHostBuilder? host, IConfiguration? configuration, IHostEnvironment? environment) => host;
 
         /// <summary>
         /// Configures the logging settings.
@@ -147,8 +148,8 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <param name="logging">The logging.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public virtual void ConfigureLoggingSettings(ILoggingBuilder logging, IConfiguration configuration, IHostEnvironment environment)
-        { }
+        /// <returns>Logging builder</returns>
+        public virtual ILoggingBuilder? ConfigureLoggingSettings(ILoggingBuilder? logging, IConfiguration? configuration, IHostEnvironment? environment) => logging;
 
         /// <summary>
         /// Configures the MVC.
@@ -156,8 +157,8 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <param name="mvcBuilder">The MVC builder.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public virtual void ConfigureMVC(IMvcBuilder? mvcBuilder, IConfiguration configuration, IHostEnvironment environment)
-        { }
+        /// <returns>MVC Builder</returns>
+        public virtual IMvcBuilder? ConfigureMVC(IMvcBuilder? mvcBuilder, IConfiguration? configuration, IHostEnvironment? environment) => mvcBuilder;
 
         /// <summary>
         /// Configures the routes.
@@ -165,8 +166,8 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <param name="endpoints">The endpoints.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public virtual void ConfigureRoutes(IEndpointRouteBuilder endpoints, IConfiguration configuration, IHostEnvironment environment)
-        { }
+        /// <returns>Endpoint route builder</returns>
+        public virtual IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment) => endpoints;
 
         /// <summary>
         /// Configures the services for the module.
@@ -174,8 +175,8 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <param name="services">The services collection.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public virtual void ConfigureServices(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
-        { }
+        /// <returns>Services</returns>
+        public virtual IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment) => services;
 
         /// <summary>
         /// Configures the web host settings.
@@ -183,8 +184,8 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <param name="webHost">The web host.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public virtual void ConfigureWebHostSettings(ConfigureWebHostBuilder webHost, IConfiguration configuration, IHostEnvironment environment)
-        { }
+        /// <returns>Web host builder.</returns>
+        public virtual IWebHostBuilder? ConfigureWebHostSettings(IWebHostBuilder? webHost, IConfiguration? configuration, IHostEnvironment? environment) => webHost;
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.

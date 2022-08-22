@@ -12,7 +12,7 @@ namespace Mithril.Logging.Serilog.Middleware
         /// Initializes a new instance of the <see cref="LoggingMiddleware"/> class.
         /// </summary>
         /// <param name="next">The next.</param>
-        public LoggingMiddleware(RequestDelegate next)
+        public LoggingMiddleware(RequestDelegate? next)
         {
             _next = next;
         }
@@ -20,7 +20,7 @@ namespace Mithril.Logging.Serilog.Middleware
         /// <summary>
         /// The next
         /// </summary>
-        private readonly RequestDelegate _next;
+        private readonly RequestDelegate? _next;
 
         /// <summary>
         /// Invokes the specified context.
@@ -29,7 +29,7 @@ namespace Mithril.Logging.Serilog.Middleware
         /// <returns></returns>
         public async Task InvokeAsync(HttpContext context)
         {
-            if (context is null)
+            if (context is null || _next is null)
                 return;
             using (LogContext.PushProperty("UserName", context.User?.Identity?.Name ?? ""))
             {

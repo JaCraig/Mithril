@@ -1,6 +1,7 @@
 ﻿using BigBook;
 using Canister.IoC.Default;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -21,7 +22,7 @@ namespace Mithril.Core
         /// </summary>
         /// <param name="configuration">The configuration.</param>
         /// <param name="env">The host environment</param>
-        public Application(IConfiguration configuration, IHostEnvironment env)
+        public Application(IConfiguration? configuration, IHostEnvironment? env)
         {
             Name = Assembly.GetEntryAssembly()?.FullName ?? "";
             Modules = FindModules();
@@ -34,13 +35,13 @@ namespace Mithril.Core
         /// Gets the configuration.
         /// </summary>
         /// <value>The configuration.</value>
-        public IConfiguration Configuration { get; }
+        public IConfiguration? Configuration { get; }
 
         /// <summary>
         /// Gets the environment.
         /// </summary>
         /// <value>The environment.</value>
-        public IHostEnvironment Environment { get; }
+        public IHostEnvironment? Environment { get; }
 
         /// <summary>
         /// Gets the modules.
@@ -69,28 +70,29 @@ namespace Mithril.Core
         {
             if (app is null || app.Lifetime is null)
                 return app;
+            IApplicationBuilder? ApplicationBuilder = app;
 
             // Turn on routing
-            _ = app.UseRouting();
+            ApplicationBuilder = ApplicationBuilder?.UseRouting();
 
             //Configure modules
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
-                Module.ConfigureApplication(app, Configuration, Environment);
+                ApplicationBuilder = Module.ConfigureApplication(ApplicationBuilder, Configuration, Environment);
             }
 
             // Add authorization
-            _ = app.UseAuthorization();
+            ApplicationBuilder = ApplicationBuilder?.UseAuthorization();
 
             // Set up endpoints
-            _ = app.UseEndpoints(endpoints =>
+            ApplicationBuilder = ApplicationBuilder?.UseEndpoints(endpoints =>
             {
                 //Module specific routes added
                 for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
                 {
                     var Module = Modules[i];
-                    Module.ConfigureRoutes(endpoints, Configuration, Environment);
+                    endpoints = Module.ConfigureRoutes(endpoints, Configuration, Environment);
                 }
             });
 
@@ -106,18 +108,18 @@ namespace Mithril.Core
         /// Configures the host settings.
         /// </summary>
         /// <param name="host">The host.</param>
-        public void ConfigureHostSettings(ConfigureHostBuilder host)
+        public void ConfigureHostSettings(IHostBuilder? host)
         {
             if (host is null)
                 return;
             // By default set the service provider to Canister which is just a wrapper for the
             // default provider.
-            host.UseServiceProviderFactory(new CanisterServiceProviderFactory());
+            host = host.UseServiceProviderFactory(new CanisterServiceProviderFactory());
 
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
-                Module.ConfigureHostSettings(host, Configuration, Environment);
+                host = Module.ConfigureHostSettings(host, Configuration, Environment);
             }
         }
 
@@ -125,14 +127,14 @@ namespace Mithril.Core
         /// Configures the logging settings.
         /// </summary>
         /// <param name="logging">The logging.</param>
-        public void ConfigureLoggingSettings(ILoggingBuilder logging)
+        public void ConfigureLoggingSettings(ILoggingBuilder? logging)
         {
             if (logging is null)
                 return;
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
-                Module.ConfigureLoggingSettings(logging, Configuration, Environment);
+                logging = Module.ConfigureLoggingSettings(logging, Configuration, Environment);
             }
         }
 
@@ -154,7 +156,7 @@ namespace Mithril.Core
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
-                Module.ConfigureMVC(MVCBuilder, Configuration, Environment);
+                MVCBuilder = Module.ConfigureMVC(MVCBuilder, Configuration, Environment);
                 MVCBuilder?.AddApplicationPart(Module.GetType().Assembly);
             }
             return services;
@@ -171,30 +173,29 @@ namespace Mithril.Core
                 return services;
 
             // Add options
-            services.AddOptions();
+            services = services.AddOptions();
 
             //Add modules
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
-                Module.ConfigureServices(services, Configuration, Environment);
+                services = Module.ConfigureServices(services, Configuration, Environment);
             }
-            services?.AddCanisterModules();
-            return services;
+            return services?.AddCanisterModules();
         }
 
         /// <summary>
         /// Configures the web host settings.
         /// </summary>
         /// <param name="webHost">The web host.</param>
-        public void ConfigureWebHostSettings(ConfigureWebHostBuilder webHost)
+        public void ConfigureWebHostSettings(IWebHostBuilder? webHost)
         {
             if (webHost is null)
                 return;
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
-                Module.ConfigureWebHostSettings(webHost, Configuration, Environment);
+                webHost = Module.ConfigureWebHostSettings(webHost, Configuration, Environment);
             }
         }
 

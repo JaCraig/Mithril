@@ -59,31 +59,34 @@ namespace Mithril.Core.Modules
         /// <param name="app">The application.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public override void ConfigureApplication(IApplicationBuilder app, IConfiguration configuration, IHostEnvironment environment)
+        public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
             if (app is null || environment is null || configuration is null)
-                return;
+                return app;
 
             var Settings = GetSystemConfig(configuration);
 
+            // Sets up static HTTP context
+            app.UseStaticHttpContext();
+
             // Setup CSP middleware.
-            app.UseMiddleware<CSPMiddleware>();
+            app = app.UseMiddleware<CSPMiddleware>();
 
             // Setup XFrame middleware.
-            app.UseMiddleware<XFrameOptionsMiddleware>();
+            app = app.UseMiddleware<XFrameOptionsMiddleware>();
 
             // Setup static files.
-            SetupStaticFiles(app, configuration, environment);
+            app = SetupStaticFiles(app, configuration, environment);
 
             if (Settings?.Compression?.DynamicCompression == true)
             {
                 // Use response compression.
-                app.UseResponseCompression();
+                app = app.UseResponseCompression();
             }
 
             // Setup exception pages
-            app.When(environment.IsDevelopment(), builder => builder.UseDeveloperExceptionPage())
-               .When(!environment.IsDevelopment(), builder => builder.UseExceptionHandler("/Home/Error"));
+            return app.When(environment.IsDevelopment(), builder => builder.UseDeveloperExceptionPage())
+                      .When(!environment.IsDevelopment(), builder => builder.UseExceptionHandler("/Home/Error"));
         }
 
         /// <summary>
@@ -92,9 +95,9 @@ namespace Mithril.Core.Modules
         /// <param name="mvcBuilder">The MVC builder.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public override void ConfigureMVC(IMvcBuilder? mvcBuilder, IConfiguration configuration, IHostEnvironment environment)
+        public override IMvcBuilder? ConfigureMVC(IMvcBuilder? mvcBuilder, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            mvcBuilder?.AddCspMediaType();
+            return mvcBuilder?.AddCspMediaType();
         }
 
         /// <summary>
@@ -103,10 +106,11 @@ namespace Mithril.Core.Modules
         /// <param name="endpoints">The endpoints.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public override void ConfigureRoutes(IEndpointRouteBuilder endpoints, IConfiguration configuration, IHostEnvironment environment)
+        public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
         {
             endpoints?.MapAreaControllerRoute("Admin_Route", "Admin", "Admin/{controller}/{action}/{id?}");
             endpoints?.MapDefaultControllerRoute();
+            return endpoints;
         }
 
         /// <summary>
@@ -115,23 +119,27 @@ namespace Mithril.Core.Modules
         /// <param name="services">The services collection.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public override void ConfigureServices(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
+        public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
             //Memory cache
-            services.AddMemoryCache();
+            services = services.AddMemoryCache();
+
+            //Static HTTP context accessor services
+            services = services.AddStaticHttpContextAccessor();
+
+            if (configuration is null)
+                return services;
 
             // Set up config.
-            services.Configure<MithrilConfig>(configuration.GetSection("Mithril"));
+            services = services.Configure<MithrilConfig>(configuration.GetSection("Mithril"));
 
             var Settings = GetSystemConfig(configuration);
             if (Settings?.Compression?.DynamicCompression == true)
             {
                 // Add compression.
-                services.AddResponseCompression(options =>
-                {
-                    options.EnableForHttps = Settings.Compression.AllowHttps;
-                });
+                services = services.AddResponseCompression(options => options.EnableForHttps = Settings.Compression.AllowHttps);
             }
+            return services;
         }
 
         /// <summary>
@@ -175,11 +183,11 @@ namespace Mithril.Core.Modules
         }
 
         /// <summary>
-        /// Gets the system configuration from the IConfiguration object.
+        /// Gets the system configuration from the IConfiguration? object.
         /// </summary>
         /// <param name="configuration">The configuration.</param>
         /// <returns>The system configuration.</returns>
-        private static MithrilConfig GetSystemConfig(IConfiguration configuration) => configuration.GetSection("Mithril").Get<MithrilConfig>();
+        private static MithrilConfig? GetSystemConfig(IConfiguration? configuration) => configuration?.GetSection("Mithril").Get<MithrilConfig>();
 
         /// <summary>
         /// Setups the extension mappings.
@@ -190,8 +198,10 @@ namespace Mithril.Core.Modules
         {
             if (Config?.MimeTypes is null)
                 return;
-            foreach (var Value in Config.MimeTypes.Where(x => !string.IsNullOrWhiteSpace(x.Extension) && !string.IsNullOrWhiteSpace(x.MimeType)))
+            foreach (var Value in Config.MimeTypes)
             {
+                if (string.IsNullOrWhiteSpace(Value?.Extension) || string.IsNullOrWhiteSpace(Value?.MimeType))
+                    continue;
                 provider.Mappings[Value.Extension] = Value.MimeType;
             }
         }
@@ -202,7 +212,7 @@ namespace Mithril.Core.Modules
         /// <param name="app">The application.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        private static void SetupStaticFiles(IApplicationBuilder app, IConfiguration configuration, IHostEnvironment environment)
+        private static IApplicationBuilder SetupStaticFiles(IApplicationBuilder app, IConfiguration? configuration, IHostEnvironment? environment)
         {
             MithrilConfig? Config = GetSystemConfig(configuration);
 
@@ -210,20 +220,16 @@ namespace Mithril.Core.Modules
             SetupMimeTypes(Config, provider);
             if (environment.IsDevelopment())
             {
-                app.UseStaticFiles(new StaticFileOptions
+                return app.UseStaticFiles(new StaticFileOptions
                 {
                     ContentTypeProvider = provider,
                 });
-                return;
             }
             var MaxAge = Config?.StaticFiles?.CacheControlMaxAge <= 0 ? 31557600 : Config?.StaticFiles?.CacheControlMaxAge;
-            app.UseStaticFiles(new StaticFileOptions
+            return app.UseStaticFiles(new StaticFileOptions
             {
                 ContentTypeProvider = provider,
-                OnPrepareResponse = ctx =>
-                {
-                    ctx.Context.Response.Headers[HeaderNames.CacheControl] = "public,max-age=" + MaxAge;
-                }
+                OnPrepareResponse = ctx => ctx.Context.Response.Headers[HeaderNames.CacheControl] = "public,max-age=" + MaxAge
             });
         }
     }

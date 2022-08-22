@@ -1,6 +1,7 @@
 ﻿using Mithril.Core.Abstractions.Data.BaseClasses;
 using Mithril.Core.Abstractions.Data.Enums;
 using Mithril.Core.Abstractions.Services;
+using System.ComponentModel.DataAnnotations;
 
 namespace Mithril.Core.Abstractions.Data.Models
 {
@@ -42,12 +43,14 @@ namespace Mithril.Core.Abstractions.Data.Models
         /// Gets or sets the description.
         /// </summary>
         /// <value>The description.</value>
+        [MaxLength(500)]
         public string? Description { get; set; }
 
         /// <summary>
         /// Gets or sets the display name.
         /// </summary>
         /// <value>The display name.</value>
+        [MaxLength(64)]
         public string? DisplayName { get; set; }
 
         /// <summary>

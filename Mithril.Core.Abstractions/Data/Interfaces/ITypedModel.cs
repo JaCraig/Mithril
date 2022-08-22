@@ -12,6 +12,8 @@ namespace Mithril.Core.Abstractions.Data.Interfaces
         /// </summary>
         /// <value>The type.</value>
         [Required]
+        [MaxLength(64)]
+        [MinLength(1)]
         string? Type { get; set; }
 
         /// <summary>

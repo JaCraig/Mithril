@@ -9,7 +9,6 @@ using Mithril.Core.Abstractions.Modules.Interfaces;
 using Mithril.Logging.Serilog.Middleware;
 using Serilog;
 using Serilog.Enrichers;
-using System.Globalization;
 
 namespace Mithril.Logging.Serilog
 {
@@ -32,27 +31,27 @@ namespace Mithril.Logging.Serilog
         /// </summary>
         /// <param name="app">The application.</param>
         /// <param name="environment">The environment.</param>
-        public override void ConfigureApplication(IApplicationBuilder app, IConfiguration configuration, IHostEnvironment environment)
+        public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            app?.UseMiddleware<LoggingMiddleware>();
+            return app?.UseMiddleware<LoggingMiddleware>();
         }
 
         /// <summary>
         /// Configures the host settings.
         /// </summary>
         /// <param name="host">The host.</param>
-        public override void ConfigureHostSettings(ConfigureHostBuilder host, IConfiguration configuration, IHostEnvironment environment)
+        public override IHostBuilder? ConfigureHostSettings(IHostBuilder? host, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            host?.UseSerilog();
+            return host?.UseSerilog();
         }
 
         /// <summary>
         /// Configures the logging settings.
         /// </summary>
         /// <param name="logging">The logging.</param>
-        public override void ConfigureLoggingSettings(ILoggingBuilder logging, IConfiguration configuration, IHostEnvironment environment)
+        public override ILoggingBuilder? ConfigureLoggingSettings(ILoggingBuilder? logging, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            logging?.AddSerilog();
+            return logging?.AddSerilog();
         }
 
         /// <summary>
@@ -61,13 +60,11 @@ namespace Mithril.Logging.Serilog
         /// <param name="services">The services collection.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public override void ConfigureServices(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
+        public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
             string RootPath = environment?.ContentRootPath ?? ".";
-            var Environment = environment?.EnvironmentName ?? "Development";
             var Assembly = System.Reflection.Assembly.GetEntryAssembly();
             var AssemblyName = Assembly?.GetName().Name ?? "";
-            var IndexName = "errorlog-" + AssemblyName.ToLower(CultureInfo.InvariantCulture) + "-" + Environment.ToLower(CultureInfo.InvariantCulture) + "-{0:yyyy.MM.dd}";
             var SerilogConfig = configuration?.GetSection("Serilog");
             if (SerilogConfig?.Exists() == true)
             {
@@ -81,7 +78,7 @@ namespace Mithril.Logging.Serilog
                                     .Enrich.WithProperty("Application", AssemblyName)
                                     .Enrich.WithProperty("ApplicationVersion", Assembly?.GetName().Version?.ToString() ?? "")
                                     .CreateLogger();
-                    return;
+                    return services;
                 }
                 catch { }
             }
@@ -99,6 +96,7 @@ namespace Mithril.Logging.Serilog
                             .WriteTo
                                 .Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] [{UserName}] {Message}{NewLine}{Exception}")
                             .CreateLogger();
+            return services;
         }
     }
 }

@@ -30,10 +30,10 @@ namespace Mithril.Security.Windows
         /// <param name="app">The application.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        public override void ConfigureApplication(IApplicationBuilder app, IConfiguration configuration, IHostEnvironment environment)
+        public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
             // Activate authentication
-            app.UseAuthentication();
+            return app?.UseAuthentication();
         }
 
         /// <summary>
@@ -42,16 +42,18 @@ namespace Mithril.Security.Windows
         /// <param name="services">The services collection.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="env"></param>
-        public override void ConfigureServices(IServiceCollection services, IConfiguration configuration, IHostEnvironment env)
+        public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? env)
         {
             //Set up authentication so things get activated in IIS.
-            services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
+            services?.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = IISServerDefaults.AuthenticationScheme;
+            });
 
             // Add the security service.
-            services.AddSingleton<ISecurityService, SecurityService>();
-
-            // Add the claims transformer
-            services.AddScoped<IClaimsTransformation, UserClaimsTransformer>();
+            return services?.AddSingleton<ISecurityService, SecurityService>()
+                           // Add the claims transformer
+                           .AddScoped<IClaimsTransformation, UserClaimsTransformer>();
         }
 
         /// <summary>
