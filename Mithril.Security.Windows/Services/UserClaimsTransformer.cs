@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Mithril.Core.Abstractions.ExtensionMethods;
 using Mithril.Core.Abstractions.Security.Enums;
 using Mithril.Core.Abstractions.Services;
 using Mithril.Security.Windows.Models;
@@ -41,7 +42,7 @@ namespace Mithril.Security.Windows.Services
         {
             if (principal?.HasClaim(x => string.Equals(x.Type, "role", System.StringComparison.OrdinalIgnoreCase)) != false)
                 return Task.FromResult(principal)!;
-            var CurrentUser = User.LoadCurrentUser(DataService);
+            var CurrentUser = User.Load(principal.GetName(), DataService);
             if (CurrentUser is null)
                 return Task.FromResult(principal);
             var NewIdentity = new ClaimsIdentity(principal.Identity, principal.Claims);

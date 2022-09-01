@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Server.IIS;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,8 +32,8 @@ namespace Mithril.Security.Windows
         /// <param name="environment">The environment.</param>
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            // Activate authentication
-            return app?.UseAuthentication();
+            // Activate authentication/authorization
+            return app?.UseAuthentication().UseAuthorization();
         }
 
         /// <summary>
@@ -45,10 +45,10 @@ namespace Mithril.Security.Windows
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? env)
         {
             //Set up authentication so things get activated in IIS.
-            services?.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = IISServerDefaults.AuthenticationScheme;
-            });
+            services?.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
+                     .AddNegotiate();
+
+            services?.AddAuthorization(options => options.FallbackPolicy = options.DefaultPolicy);
 
             // Add the security service.
             return services?.AddSingleton<ISecurityService, SecurityService>()

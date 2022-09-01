@@ -82,9 +82,6 @@ namespace Mithril.Core
                 ApplicationBuilder = Module.ConfigureApplication(ApplicationBuilder, Configuration, Environment);
             }
 
-            // Add authorization
-            ApplicationBuilder = ApplicationBuilder?.UseAuthorization();
-
             // Set up endpoints
             ApplicationBuilder = ApplicationBuilder?.UseEndpoints(endpoints =>
             {
