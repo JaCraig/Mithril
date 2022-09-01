@@ -7,12 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Inflatable" Version="3.0.110" />
+    <PackageReference Include="BigBook" Version="4.0.19" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj" />
-    <ProjectReference Include="..\Mithril.Data\Mithril.Data.csproj" />
   </ItemGroup>
 
 </Project>

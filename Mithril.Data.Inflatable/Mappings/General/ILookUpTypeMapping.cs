@@ -1,19 +1,19 @@
 ﻿using Inflatable.BaseClasses;
-using Mithril.Core.Abstractions.Data.Models;
+using Mithril.Core.Abstractions.Data.Interfaces;
 using Mithril.Data.Inflatable.Databases;
 
-namespace Mithril.Core.Models.Mappings
+namespace Mithril.Data.Inflatable.Mappings.General
 {
     /// <summary>
-    /// LookUpType mapping
+    /// ILookUpType mapping
     /// </summary>
-    /// <seealso cref="MappingBaseClass&lt;LookUpType, DefaultDatabase&gt;"/>
-    public class LookUpTypeMapping : MappingBaseClass<LookUpType, DefaultDatabase>
+    /// <seealso cref="MappingBaseClass{ILookUpType, DefaultDatabase}"/>
+    public class ILookUpTypeMapping : MappingBaseClass<ILookUpType, DefaultDatabase>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LookUpTypeMapping"/> class.
+        /// Initializes a new instance of the <see cref="ILookUpTypeMapping"/> class.
         /// </summary>
-        public LookUpTypeMapping()
+        public ILookUpTypeMapping()
             : base(merge: true)
         {
             Reference(x => x.Description).WithDefaultValue(() => "");

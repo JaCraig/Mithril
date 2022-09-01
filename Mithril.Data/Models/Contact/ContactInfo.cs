@@ -1,7 +1,8 @@
 ﻿using Mithril.Core.Abstractions.Data.BaseClasses;
+using Mithril.Core.Abstractions.Data.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
-namespace Mithril.Core.Abstractions.Data.Models
+namespace Mithril.Data.Models.Contact
 {
     /// <summary>
     /// Contact info
@@ -24,7 +25,7 @@ namespace Mithril.Core.Abstractions.Data.Models
         /// <param name="type">The type.</param>
         /// <exception cref="ArgumentNullException">type</exception>
         /// <exception cref="ArgumentException">type</exception>
-        public ContactInfo(string info, LookUp type)
+        public ContactInfo(string info, ILookUp type)
             : base(type)
         {
             if (string.IsNullOrEmpty(info))

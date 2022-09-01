@@ -105,7 +105,7 @@ namespace Mithril.Core.Abstractions.Modules.Interfaces
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
         /// <returns>Endpoint route builder</returns>
-        IEndpointRouteBuilder ConfigureRoutes(IEndpointRouteBuilder endpoints, IConfiguration? configuration, IHostEnvironment? environment);
+        IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment);
 
         /// <summary>
         /// Configures the services for the module.

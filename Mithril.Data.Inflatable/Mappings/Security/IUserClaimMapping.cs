@@ -2,7 +2,7 @@
 using Mithril.Core.Abstractions.Security.Interfaces;
 using Mithril.Data.Inflatable.Databases;
 
-namespace Mithril.Security.Windows.Models.Mappings
+namespace Mithril.Data.Mappings.Security
 {
     /// <summary>
     /// IUserClaim mapping

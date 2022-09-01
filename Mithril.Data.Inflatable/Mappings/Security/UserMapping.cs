@@ -1,7 +1,8 @@
 ﻿using Inflatable.BaseClasses;
 using Mithril.Data.Inflatable.Databases;
+using Mithril.Data.Models.Security;
 
-namespace Mithril.Security.Windows.Models.Mappings
+namespace Mithril.Data.Mappings.Security
 {
     /// <summary>
     /// User mapping

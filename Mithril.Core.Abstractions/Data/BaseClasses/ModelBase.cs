@@ -185,16 +185,6 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         }
 
         /// <summary>
-        /// Totals the active people.
-        /// </summary>
-        /// <param name="context">The context.</param>
-        /// <returns>The total value</returns>
-        public static int TotalActive(IDataService context)
-        {
-            return Query(context).Where(x => x.Active).Count();
-        }
-
-        /// <summary>
         /// Determines whether this instance [can be modified by] the specified user.
         /// </summary>
         /// <param name="user">The user.</param>

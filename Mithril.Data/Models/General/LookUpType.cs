@@ -1,15 +1,16 @@
 ﻿using Mithril.Core.Abstractions.Data.BaseClasses;
-using Mithril.Core.Abstractions.Data.Enums;
+using Mithril.Core.Abstractions.Data.Interfaces;
 using Mithril.Core.Abstractions.Services;
+using Mithril.Data.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace Mithril.Core.Abstractions.Data.Models
+namespace Mithril.Data.Models.General
 {
     /// <summary>
     /// LookUpType object
     /// </summary>
     /// <seealso cref="ModelBase{LookUpType}"/>
-    public class LookUpType : ModelBase<LookUpType>, IEquatable<LookUpType>
+    public class LookUpType : ModelBase<LookUpType>, IEquatable<LookUpType>, ILookUpType
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LookUpType"/> class.
@@ -57,7 +58,7 @@ namespace Mithril.Core.Abstractions.Data.Models
         /// Gets or sets the look ups.
         /// </summary>
         /// <value>The look ups.</value>
-        public virtual IList<LookUp> LookUps { get; set; } = new List<LookUp>();
+        public virtual IList<ILookUp> LookUps { get; set; } = new List<ILookUp>();
 
         /// <summary>
         /// Loads the specified LookUpType based on the display name.
@@ -190,6 +191,19 @@ namespace Mithril.Core.Abstractions.Data.Models
         public override bool Equals(object? obj)
         {
             return base.Equals(obj);
+        }
+
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns>
+        /// <see langword="true"/> if the current object is equal to the <paramref name="other"/>
+        /// parameter; otherwise, <see langword="false"/>.
+        /// </returns>
+        public bool Equals(ILookUpType? other)
+        {
+            return Equals(other as LookUpType);
         }
 
         /// <summary>

@@ -4,7 +4,7 @@ using Mithril.Core.Abstractions.Security.Interfaces;
 using Mithril.Core.Abstractions.Services;
 using System.Security.Claims;
 
-namespace Mithril.Security.Windows.Models
+namespace Mithril.Data.Models.Security
 {
     /// <summary>
     /// User claim

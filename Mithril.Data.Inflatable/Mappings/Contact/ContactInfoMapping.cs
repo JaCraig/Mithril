@@ -1,8 +1,8 @@
 ﻿using Inflatable.BaseClasses;
-using Mithril.Core.Abstractions.Data.Models;
 using Mithril.Data.Inflatable.Databases;
+using Mithril.Data.Models.Contact;
 
-namespace Mithril.Core.Models.Mappings
+namespace Mithril.Data.Inflatable.Mappings.Contact
 {
     /// <summary>
     /// ContactInfo mapping

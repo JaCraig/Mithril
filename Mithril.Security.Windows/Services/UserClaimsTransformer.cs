@@ -2,7 +2,7 @@
 using Mithril.Core.Abstractions.ExtensionMethods;
 using Mithril.Core.Abstractions.Security.Enums;
 using Mithril.Core.Abstractions.Services;
-using Mithril.Security.Windows.Models;
+using Mithril.Data.Models.Security;
 using System.Security.Claims;
 
 namespace Mithril.Security.Windows.Services

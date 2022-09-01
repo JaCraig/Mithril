@@ -1,14 +1,14 @@
 ﻿using BigBook.Patterns.BaseClasses;
-using Mithril.Core.Abstractions.Data.Models;
 using Mithril.Core.Abstractions.Services;
+using Mithril.Data.Models.General;
 using System.Globalization;
 
-namespace Mithril.Core.Abstractions.Data.Enums
+namespace Mithril.Data.Enums
 {
     /// <summary>
     /// ContactInfo types
     /// </summary>
-    /// <seealso cref="BigBook.Patterns.BaseClasses.StringEnumBaseClass{ContactInfoTypes}"/>
+    /// <seealso cref="StringEnumBaseClass{ContactInfoTypes}"/>
     public class ContactInfoType : StringEnumBaseClass<ContactInfoType>
     {
         /// <summary>
@@ -144,7 +144,7 @@ namespace Mithril.Core.Abstractions.Data.Enums
         {
             if (dataService is null)
                 return Task.CompletedTask;
-            List<Task> Tasks = new List<Task>();
+            var Tasks = new List<Task>();
             foreach (var TempType in GetContactInfoTypes())
             {
                 Tasks.Add(LookUp.LoadOrCreateAsync(TempType, LookUpTypeEnum.ContactInfoType, TempType?.Icon ?? "", dataService));

@@ -1,5 +1,4 @@
 ﻿using Mithril.Core.Abstractions.Data.Interfaces;
-using Mithril.Core.Abstractions.Data.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace Mithril.Core.Abstractions.Data.BaseClasses
@@ -23,7 +22,7 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// Initializes a new instance of the <see cref="TypedModelBase{TClass}"/> class.
         /// </summary>
         /// <param name="type">The type.</param>
-        protected TypedModelBase(LookUp type)
+        protected TypedModelBase(ILookUp type)
             : this(type?.DisplayName)
         {
         }
@@ -197,7 +196,7 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// </summary>
         /// <param name="lookUps">The look ups.</param>
         /// <returns>True if it is, false otherwise</returns>
-        public bool OfType(params LookUp?[]? lookUps)
+        public bool OfType(params ILookUp?[]? lookUps)
         {
             return lookUps?.Any(x => x?.Equals(Type) ?? false) ?? false;
         }

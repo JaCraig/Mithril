@@ -1,16 +1,17 @@
 ﻿using BigBook;
 using Mithril.Core.Abstractions.Data.BaseClasses;
-using Mithril.Core.Abstractions.Data.Enums;
-using Mithril.Core.Abstractions.Data.Models;
 using Mithril.Core.Abstractions.ExtensionMethods;
 using Mithril.Core.Abstractions.Mvc.Context;
 using Mithril.Core.Abstractions.Security.Enums;
 using Mithril.Core.Abstractions.Security.Interfaces;
 using Mithril.Core.Abstractions.Services;
+using Mithril.Data.Enums;
+using Mithril.Data.Models.Contact;
+using Mithril.Data.Models.General;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
-namespace Mithril.Security.Windows.Models
+namespace Mithril.Data.Models.Security
 {
     /// <summary>
     /// User model

@@ -1,15 +1,16 @@
 ﻿using Mithril.Core.Abstractions.Data.BaseClasses;
-using Mithril.Core.Abstractions.Data.Enums;
+using Mithril.Core.Abstractions.Data.Interfaces;
 using Mithril.Core.Abstractions.Services;
+using Mithril.Data.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace Mithril.Core.Abstractions.Data.Models
+namespace Mithril.Data.Models.General
 {
     /// <summary>
     /// LookUp Class
     /// </summary>
     /// <seealso cref="ModelBase{LookUp}"/>
-    public class LookUp : ModelBase<LookUp>, IEquatable<LookUp>
+    public class LookUp : ModelBase<LookUp>, IEquatable<LookUp>, ILookUp
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LookUp"/> class.
@@ -26,7 +27,7 @@ namespace Mithril.Core.Abstractions.Data.Models
         /// <param name="type">The type.</param>
         /// <exception cref="ArgumentNullException">displayName or icon or type</exception>
         /// <exception cref="ArgumentException">displayName or icon</exception>
-        public LookUp(string displayName, string icon, LookUpType type)
+        public LookUp(string displayName, string icon, ILookUpType type)
         {
             if (string.IsNullOrEmpty(displayName))
                 throw new ArgumentNullException(nameof(displayName));
@@ -59,7 +60,7 @@ namespace Mithril.Core.Abstractions.Data.Models
         /// Gets or sets the type.
         /// </summary>
         /// <value>The type.</value>
-        public virtual LookUpType? Type { get; set; }
+        public virtual ILookUpType? Type { get; set; }
 
         /// <summary>
         /// Loads the specified LookUp based on the display name.
@@ -68,7 +69,7 @@ namespace Mithril.Core.Abstractions.Data.Models
         /// <param name="type">The type.</param>
         /// <param name="context">The context.</param>
         /// <returns>The lookup specified.</returns>
-        public static LookUp? Load(string displayName, LookUpTypeEnum type, IDataService context)
+        public static ILookUp? Load(string displayName, LookUpTypeEnum type, IDataService context)
         {
             return LookUpType.Load(type, context)?.LookUps.FirstOrDefault(x => x.DisplayName == displayName);
         }
@@ -82,7 +83,7 @@ namespace Mithril.Core.Abstractions.Data.Models
         /// <param name="icon">The icon.</param>
         /// <param name="context">The context.</param>
         /// <returns>LookUp associated with the display name</returns>
-        public static async Task<LookUp> LoadOrCreateAsync(string displayName, LookUpTypeEnum type, string icon, IDataService context)
+        public static async Task<ILookUp> LoadOrCreateAsync(string displayName, LookUpTypeEnum type, string icon, IDataService context)
         {
             var Result = Load(displayName, type, context);
             if (Result is null)
@@ -196,6 +197,19 @@ namespace Mithril.Core.Abstractions.Data.Models
         public override bool Equals(object? obj)
         {
             return base.Equals(obj);
+        }
+
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns>
+        /// <see langword="true"/> if the current object is equal to the <paramref name="other"/>
+        /// parameter; otherwise, <see langword="false"/>.
+        /// </returns>
+        public bool Equals(ILookUp? other)
+        {
+            return Equals(other as LookUp);
         }
 
         /// <summary>

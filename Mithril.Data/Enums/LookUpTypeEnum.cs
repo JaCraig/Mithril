@@ -1,9 +1,9 @@
 ﻿using BigBook.Patterns.BaseClasses;
-using Mithril.Core.Abstractions.Data.Models;
 using Mithril.Core.Abstractions.Services;
+using Mithril.Data.Models.General;
 using System.Globalization;
 
-namespace Mithril.Core.Abstractions.Data.Enums
+namespace Mithril.Data.Enums
 {
     /// <summary>
     /// LookUpType enum
