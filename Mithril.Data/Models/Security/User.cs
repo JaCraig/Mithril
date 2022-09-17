@@ -33,9 +33,10 @@ namespace Mithril.Data.Models.Security
         /// <param name="userName">Name of the user.</param>
         /// <param name="firstName">The first name.</param>
         /// <param name="lastName">The last name.</param>
+        /// <param name="tenant">The tenant.</param>
         /// <exception cref="ArgumentException">userName or firstName or lastName</exception>
         /// <exception cref="ArgumentNullException">firstName or lastName</exception>
-        public User(string userName, string firstName, string lastName)
+        public User(string userName, string firstName, string lastName, ITenant? tenant)
         {
             if (!string.IsNullOrEmpty(userName) && userName.Length > 100)
                 throw new ArgumentException(nameof(userName) + " has a max length of 100 characters.");
@@ -50,6 +51,7 @@ namespace Mithril.Data.Models.Security
             FirstName = firstName;
             LastName = lastName;
             UserName = userName;
+            TenantID = tenant?.ID ?? 0;
         }
 
         /// <summary>
@@ -77,32 +79,20 @@ namespace Mithril.Data.Models.Security
         /// Gets the full name.
         /// </summary>
         /// <value>The full name.</value>
-        public string FullName
-        {
-            get
-            {
-                return (string.IsNullOrEmpty(LastName) ? "" : LastName + ", ")
+        public string FullName => (string.IsNullOrEmpty(LastName) ? "" : LastName + ", ")
                     + (string.IsNullOrEmpty(Prefix) ? "" : Prefix + " ")
                     + FirstName
                     + (string.IsNullOrEmpty(MiddleName) ? "" : " " + MiddleName)
                     + (string.IsNullOrEmpty(NickName) ? "" : " \"" + NickName + "\"")
                     + (string.IsNullOrEmpty(Suffix) ? "" : " " + Suffix);
-            }
-        }
 
         /// <summary>
         /// Gets the initials.
         /// </summary>
         /// <value>The initials.</value>
-        public string Initials
-        {
-            get
-            {
-                return string.IsNullOrEmpty(MiddleName)
+        public string Initials => string.IsNullOrEmpty(MiddleName)
                     ? new string(new char[] { FirstName?[0] ?? ' ', LastName?[0] ?? ' ' })
                     : new string(new char[] { FirstName?[0] ?? ' ', MiddleName[0], LastName?[0] ?? ' ' });
-            }
-        }
 
         /// <summary>
         /// Gets or sets the last name.
@@ -138,17 +128,11 @@ namespace Mithril.Data.Models.Security
         /// Gets the short name.
         /// </summary>
         /// <value>The short name.</value>
-        public string ShortName
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName))
-                    return "";
-                return FirstName +
+        public string ShortName => string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName)
+                    ? ""
+                    : FirstName +
                     (string.IsNullOrEmpty(MiddleName) ? " " : " " + MiddleName + " ") +
                     LastName;
-            }
-        }
 
         /// <summary>
         /// Gets or sets the suffix.
@@ -176,10 +160,7 @@ namespace Mithril.Data.Models.Security
         /// <param name="userName">Name of the user.</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>The user specified.</returns>
-        public static User? Load(string userName, IDataService dataService)
-        {
-            return Query(dataService).Where(x => x.UserName == userName).FirstOrDefault();
-        }
+        public static User? Load(string userName, IDataService dataService) => Query(dataService).Where(x => x.UserName == userName).FirstOrDefault();
 
         /// <summary>
         /// Loads the current user.
@@ -190,32 +171,6 @@ namespace Mithril.Data.Models.Security
         {
             var UserName = HttpContext.Current?.User?.GetName();
             return string.IsNullOrEmpty(UserName) ? null : Load(UserName, dataService);
-        }
-
-        /// <summary>
-        /// Loads or creates the user if necessary.
-        /// </summary>
-        /// <param name="userName">Name of the user.</param>
-        /// <param name="firstName">The first name.</param>
-        /// <param name="lastName">The last name.</param>
-        /// <param name="context">The context.</param>
-        /// <param name="claims">The claims.</param>
-        /// <returns>The user specified.</returns>
-        public static async Task<User> LoadOrCreateAsync(string userName, string firstName, string lastName, IDataService context, params IUserClaim[] claims)
-        {
-            claims ??= Array.Empty<IUserClaim>();
-            var ReturnValue = Load(userName, context);
-            if (ReturnValue is null)
-            {
-                ReturnValue = new User(userName, firstName, lastName);
-                for (int i = 0, claimsLength = claims.Length; i < claimsLength; i++)
-                {
-                    var Role = claims[i];
-                    ReturnValue.AddClaim(Role);
-                }
-                await context.SaveAsync(ReturnValue).ConfigureAwait(false);
-            }
-            return ReturnValue;
         }
 
         /// <summary>
@@ -306,20 +261,14 @@ namespace Mithril.Data.Models.Security
         /// <param name="type">The type.</param>
         /// <param name="name">The value.</param>
         /// <returns><c>true</c> if this instance can access the specified type; otherwise, <c>false</c>.</returns>
-        public bool CanAccess(string type, string? name)
-        {
-            return Claims.Any(x => x.CanAccess(type, name));
-        }
+        public bool CanAccess(string type, string? name) => Claims.Any(x => x.CanAccess(type, name));
 
         /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public override int CompareTo(User? other)
-        {
-            return other is null ? 1 : ID.CompareTo(other.ID);
-        }
+        public override int CompareTo(User? other) => other is null ? 1 : ID.CompareTo(other.ID);
 
         /// <summary>
         /// Creates the contact info object or updates it asynchronously.
@@ -331,10 +280,10 @@ namespace Mithril.Data.Models.Security
         {
             if (dataService is null)
                 return;
-            var ContactType = await LookUp.LoadOrCreateAsync(type, LookUpTypeEnum.ContactInfoType, type.Icon ?? "", dataService).ConfigureAwait(false);
+            Core.Abstractions.Data.Interfaces.ILookUp? ContactType = await LookUp.LoadOrCreateAsync(type, LookUpTypeEnum.ContactInfoType, type.Icon ?? "", dataService).ConfigureAwait(false);
             value ??= Array.Empty<string>();
-            var Contacts = GetContactInfo(type).ToArray();
-            int x = 0;
+            ContactInfo[]? Contacts = GetContactInfo(type).ToArray();
+            var x = 0;
             if (Contacts.Length <= value.Length)
             {
                 for (; x < Contacts.Length; ++x)
@@ -366,10 +315,7 @@ namespace Mithril.Data.Models.Security
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(IUser? other)
-        {
-            return CompareTo(other) == 0;
-        }
+        public bool Equals(IUser? other) => CompareTo(other) == 0;
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -379,10 +325,7 @@ namespace Mithril.Data.Models.Security
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(User? other)
-        {
-            return CompareTo(other) == 0;
-        }
+        public bool Equals(User? other) => CompareTo(other) == 0;
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -391,40 +334,28 @@ namespace Mithril.Data.Models.Security
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return base.Equals(obj);
-        }
+        public override bool Equals(object? obj) => base.Equals(obj);
 
         /// <summary>
         /// Determines if this user object is equal to the user specified.
         /// </summary>
         /// <param name="user">The user.</param>
         /// <returns>True if they are the same, false otherwise.</returns>
-        public bool Equals(ClaimsPrincipal? user)
-        {
-            return user is not null && string.Equals(UserName, user.GetName(), StringComparison.OrdinalIgnoreCase);
-        }
+        public bool Equals(ClaimsPrincipal? user) => user is not null && string.Equals(UserName, user.GetName(), StringComparison.OrdinalIgnoreCase);
 
         /// <summary>
         /// Gets the claims of the type specified.
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>The list of user claims specified.</returns>
-        public IEnumerable<IUserClaim> GetClaims(UserClaimTypes type)
-        {
-            return Claims.Where(x => x.Type == type);
-        }
+        public IEnumerable<IUserClaim> GetClaims(UserClaimTypes type) => Claims.Where(x => x.Type == type);
 
         /// <summary>
         /// Gets the contact information requested.
         /// </summary>
         /// <param name="types">The display name.</param>
         /// <returns>The contact info specified.</returns>
-        public IEnumerable<ContactInfo> GetContactInfo(params ContactInfoType[] types)
-        {
-            return ContactInformation.Where(x => x.OfType(types.ToArray(y => (string)y))) ?? Array.Empty<ContactInfo>();
-        }
+        public IEnumerable<ContactInfo> GetContactInfo(params ContactInfoType[] types) => ContactInformation.Where(x => x.OfType(types.ToArray(y => (string)y))) ?? Array.Empty<ContactInfo>();
 
         /// <summary>
         /// Returns a hash code for this instance.
@@ -433,10 +364,7 @@ namespace Mithril.Data.Models.Security
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => base.GetHashCode();
 
         /// <summary>
         /// Returns a <see cref="string"/> that represents this instance.

@@ -17,6 +17,7 @@ namespace Mithril.Data.Mappings.Security
             : base(merge: true)
         {
             Reference(x => x.DisplayName).WithMaxLength(100);
+            ManyToOne(x => x.Users).CascadeChanges();
         }
     }
 }

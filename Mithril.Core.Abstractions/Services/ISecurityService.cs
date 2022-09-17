@@ -9,6 +9,12 @@ namespace Mithril.Core.Abstractions.Services
     public interface ISecurityService
     {
         /// <summary>
+        /// Loads all tenants.
+        /// </summary>
+        /// <returns>All tenants.</returns>
+        IEnumerable<ITenant> LoadAllTenants();
+
+        /// <summary>
         /// Loads all users.
         /// </summary>
         /// <returns>All users.</returns>
@@ -77,5 +83,11 @@ namespace Mithril.Core.Abstractions.Services
         /// </summary>
         /// <returns>The system account.</returns>
         IUser LoadSystemAccount();
+
+        /// <summary>
+        /// Loads the system tenant.
+        /// </summary>
+        /// <returns>The system tenant.</returns>
+        ITenant LoadSystemTenant();
     }
 }

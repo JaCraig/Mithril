@@ -68,37 +68,28 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// Gets or sets the tenant associated with the object.
         /// </summary>
         /// <value>The tenant associated with the object.</value>
-        public virtual ITenant? Tenant { get; set; }
+        public long TenantID { get; set; }
 
         /// <summary>
         /// Gets all entries.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <returns>All entries.</returns>
-        public static IEnumerable<TClass> All(IDataService dataService)
-        {
-            return Query(dataService).ToList();
-        }
+        public static IEnumerable<TClass> All(IDataService dataService) => Query(dataService).ToList();
 
         /// <summary>
         /// Gets all active entries.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <returns>The active entries.</returns>
-        public static IEnumerable<TClass> AllActive(IDataService dataService)
-        {
-            return Query(dataService).Where(x => x.Active).ToList();
-        }
+        public static IEnumerable<TClass> AllActive(IDataService dataService) => Query(dataService).Where(x => x.Active).ToList();
 
         /// <summary>
         /// Gets all inactive entries.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <returns>The inactive entries.</returns>
-        public static IEnumerable<TClass> AllInactive(IDataService dataService)
-        {
-            return Query(dataService).Where(x => !x.Active).ToList();
-        }
+        public static IEnumerable<TClass> AllInactive(IDataService dataService) => Query(dataService).Where(x => !x.Active).ToList();
 
         /// <summary>
         /// Loads the item based on the ID
@@ -106,10 +97,7 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// <param name="id">ID of the item to load</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>The specified item</returns>
-        public static TClass? Load(long id, IDataService dataService)
-        {
-            return Query(dataService).Where(x => x.ID == id).FirstOrDefault();
-        }
+        public static TClass? Load(long id, IDataService dataService) => Query(dataService).Where(x => x.ID == id).FirstOrDefault();
 
         /// <summary>
         /// != operator
@@ -185,10 +173,7 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// </summary>
         /// <param name="context">The context.</param>
         /// <returns>The IQueryable</returns>
-        public static IQueryable<TClass> Query(IDataService context)
-        {
-            return context.Query<TClass>();
-        }
+        public static IQueryable<TClass> Query(IDataService context) => context.Query<TClass>();
 
         /// <summary>
         /// Determines whether this instance [can be modified by] the specified user.
@@ -197,10 +182,7 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// <returns>
         /// <c>true</c> if this instance [can be modified by] the specified user; otherwise, <c>false</c>.
         /// </returns>
-        public virtual bool CanBeModifiedBy(ClaimsPrincipal? user)
-        {
-            return Tenant is null || (user?.HasClaim("Tennant", Tenant.DisplayName ?? "") ?? true);
-        }
+        public virtual bool CanBeModifiedBy(ClaimsPrincipal? user) => TenantID == 0 || (user?.HasClaim("Tennant", TenantID.ToString()) ?? true);
 
         /// <summary>
         /// Determines whether this instance [can be viewed by] the specified user.
@@ -209,34 +191,21 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// <returns>
         /// <c>true</c> if this instance [can be viewed by] the specified user; otherwise, <c>false</c>.
         /// </returns>
-        public virtual bool CanBeViewedBy(ClaimsPrincipal? user)
-        {
-            return Tenant is null || (user?.HasClaim("Tennant", Tenant.DisplayName ?? "") ?? true);
-        }
+        public virtual bool CanBeViewedBy(ClaimsPrincipal? user) => TenantID == 0 || (user?.HasClaim("Tennant", TenantID.ToString()) ?? true);
 
         /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="obj">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public int CompareTo(object? obj)
-        {
-            return obj is TClass modelBase ? CompareTo(modelBase) : -1;
-        }
+        public int CompareTo(object? obj) => obj is TClass modelBase ? CompareTo(modelBase) : -1;
 
         /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public virtual int CompareTo(TClass? other)
-        {
-            if (other is null)
-                return 1;
-            if (ReferenceEquals(this, other))
-                return 0;
-            return ID != 0 ? other.ID.CompareTo(ID) : 1;
-        }
+        public virtual int CompareTo(TClass? other) => other is null ? 1 : ReferenceEquals(this, other) ? 0 : ID != 0 ? other.ID.CompareTo(ID) : 1;
 
         /// <summary>
         /// Deletes this instance.
@@ -262,10 +231,7 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// </summary>
         /// <param name="obj">The object to compare this to</param>
         /// <returns>true if they are the same, false otherwise</returns>
-        public override bool Equals(object? obj)
-        {
-            return (obj is ModelBase<TClass> TempObject) && Equals(TempObject);
-        }
+        public override bool Equals(object? obj) => (obj is ModelBase<TClass> TempObject) && Equals(TempObject);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -275,10 +241,7 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(IModel? other)
-        {
-            return (other is ModelBase<TClass> TempObject) && Equals(TempObject);
-        }
+        public bool Equals(IModel? other) => (other is ModelBase<TClass> TempObject) && Equals(TempObject);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -288,10 +251,7 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(IModel<TClass>? other)
-        {
-            return (other is ModelBase<TClass> TempObject) && Equals(TempObject);
-        }
+        public bool Equals(IModel<TClass>? other) => (other is ModelBase<TClass> TempObject) && Equals(TempObject);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -301,29 +261,20 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(ModelBase<TClass>? other)
-        {
-            return other is not null && CompareTo(other) == 0;
-        }
+        public bool Equals(ModelBase<TClass>? other) => other is not null && CompareTo(other) == 0;
 
         /// <summary>
         /// Returns the hash of this item
         /// </summary>
         /// <returns>the int hash of the item</returns>
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(ID);
-        }
+        public override int GetHashCode() => HashCode.Combine(ID);
 
         /// <summary>
         /// Saves this instance.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <returns>This.</returns>
-        public Task SaveAsync(IDataService dataService)
-        {
-            return dataService?.SaveAsync(SetupObjectAndReturn(dataService)) ?? Task.CompletedTask;
-        }
+        public Task SaveAsync(IDataService dataService) => dataService?.SaveAsync(SetupObjectAndReturn(dataService)) ?? Task.CompletedTask;
 
         /// <summary>
         /// Sets up the object.
@@ -336,7 +287,8 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
             Modifier = dataService?.Query<IUser>().Where(x => x.UserName == CurrentUserName).FirstOrDefault() ?? Modifier;
             Creator ??= Modifier;
             Modifier ??= Creator;
-            Tenant ??= Creator?.Tenant;
+            if (TenantID == 0)
+                TenantID = Creator?.TenantID ?? 0;
         }
 
         /// <summary>

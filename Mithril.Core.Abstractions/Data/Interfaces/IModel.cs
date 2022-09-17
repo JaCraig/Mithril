@@ -70,7 +70,7 @@ namespace Mithril.Core.Abstractions.Data.Interfaces
         /// Gets or sets the tenant associated with the object.
         /// </summary>
         /// <value>The tenant associated with the object.</value>
-        ITenant? Tenant { get; set; }
+        long TenantID { get; set; }
 
         /// <summary>
         /// Determines whether this instance [can be modified by] the specified user.

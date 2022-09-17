@@ -46,7 +46,7 @@ namespace Mithril.Security.Windows.Services
             if (CurrentUser is null)
                 return Task.FromResult(principal);
             var NewIdentity = new ClaimsIdentity(principal.Identity, principal.Claims);
-            foreach (var Claim in CurrentUser.Claims)
+            foreach (Core.Abstractions.Security.Interfaces.IUserClaim? Claim in CurrentUser.Claims)
             {
                 if (Claim.Type == UserClaimTypes.Role)
                 {
@@ -54,6 +54,7 @@ namespace Mithril.Security.Windows.Services
                 }
                 NewIdentity.AddClaim(new Claim(Claim.Type ?? "", Claim.Value ?? ""));
             }
+            NewIdentity.AddClaim(new Claim("Tenant", CurrentUser.TenantID.ToString()));
             principal.AddIdentity(NewIdentity);
             return Task.FromResult(principal);
         }

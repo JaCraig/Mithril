@@ -22,7 +22,7 @@ namespace Mithril.Core.Models.Mappings
             Reference(x => x.DateModified).WithDefaultValue(() => new DateTime(1900, 1, 1));
             Map(x => x.Creator);
             Map(x => x.Modifier);
-            Map(x => x.Tenant);
+            Reference(x => x.TenantID);
         }
     }
 }

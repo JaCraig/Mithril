@@ -13,5 +13,11 @@ namespace Mithril.Core.Abstractions.Security.Interfaces
         /// </summary>
         /// <value>The full name.</value>
         string? DisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the users.
+        /// </summary>
+        /// <value>The users.</value>
+        IList<IUser> Users { get; set; }
     }
 }
