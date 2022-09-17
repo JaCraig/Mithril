@@ -65,6 +65,12 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         public virtual IUser? Modifier { get; set; }
 
         /// <summary>
+        /// Gets or sets the tenant associated with the object.
+        /// </summary>
+        /// <value>The tenant associated with the object.</value>
+        public virtual ITenant? Tenant { get; set; }
+
+        /// <summary>
         /// Gets all entries.
         /// </summary>
         /// <param name="dataService">The data service.</param>
@@ -193,7 +199,7 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// </returns>
         public virtual bool CanBeModifiedBy(ClaimsPrincipal? user)
         {
-            return true;
+            return Tenant is null || (user?.HasClaim("Tennant", Tenant.DisplayName ?? "") ?? true);
         }
 
         /// <summary>
@@ -205,7 +211,7 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// </returns>
         public virtual bool CanBeViewedBy(ClaimsPrincipal? user)
         {
-            return true;
+            return Tenant is null || (user?.HasClaim("Tennant", Tenant.DisplayName ?? "") ?? true);
         }
 
         /// <summary>
@@ -312,6 +318,7 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// <summary>
         /// Saves this instance.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
         /// <returns>This.</returns>
         public Task SaveAsync(IDataService dataService)
         {
@@ -321,15 +328,15 @@ namespace Mithril.Core.Abstractions.Data.BaseClasses
         /// <summary>
         /// Sets up the object.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
         public virtual void SetupObject(IDataService dataService)
         {
             DateModified = DateTime.UtcNow;
             var CurrentUserName = HttpContext.Current?.User.GetName() ?? "system_account";
             Modifier = dataService?.Query<IUser>().Where(x => x.UserName == CurrentUserName).FirstOrDefault() ?? Modifier;
-            if (Creator is null && Modifier != null)
-                Creator = Modifier;
-            if (Creator != null && Modifier is null)
-                Modifier = Creator;
+            Creator ??= Modifier;
+            Modifier ??= Creator;
+            Tenant ??= Creator?.Tenant;
         }
 
         /// <summary>

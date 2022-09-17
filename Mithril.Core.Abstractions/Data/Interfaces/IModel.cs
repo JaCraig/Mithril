@@ -67,6 +67,12 @@ namespace Mithril.Core.Abstractions.Data.Interfaces
         IUser? Modifier { get; set; }
 
         /// <summary>
+        /// Gets or sets the tenant associated with the object.
+        /// </summary>
+        /// <value>The tenant associated with the object.</value>
+        ITenant? Tenant { get; set; }
+
+        /// <summary>
         /// Determines whether this instance [can be modified by] the specified user.
         /// </summary>
         /// <param name="user">The user.</param>

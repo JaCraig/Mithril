@@ -17,7 +17,7 @@ namespace Mithril.Data.Mappings.Security
             : base(merge: true)
         {
             Reference(x => x.Type).WithMaxLength(128);
-            ManyToMany(x => x.Users);
+            ManyToMany(x => x.Users).OnDeleteDoNothing();
             Reference(x => x.Value).WithMaxLength();
         }
     }

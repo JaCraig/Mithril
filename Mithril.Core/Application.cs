@@ -89,7 +89,7 @@ namespace Mithril.Core
                 for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
                 {
                     var Module = Modules[i];
-                    endpoints = Module.ConfigureRoutes(endpoints, Configuration, Environment);
+                    endpoints = Module.ConfigureRoutes(endpoints, Configuration, Environment) ?? endpoints;
                 }
             });
 
