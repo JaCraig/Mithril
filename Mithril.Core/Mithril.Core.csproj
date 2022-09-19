@@ -9,13 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="CanisterModules\**" />
-    <Content Remove="CanisterModules\**" />
-    <EmbeddedResource Remove="CanisterModules\**" />
-    <None Remove="CanisterModules\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 

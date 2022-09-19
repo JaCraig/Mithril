@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="6.0.9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Mithril.Security\Mithril.Security.csproj" />
+    <ProjectReference Include="..\Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj" />
+    <ProjectReference Include="..\Mithril.Data\Mithril.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@ using Mithril.Core.Abstractions.Security.Interfaces;
 using Mithril.Core.Abstractions.Services;
 using Mithril.Data.Models.Security;
 
-namespace Mithril.Security.Windows.Services
+namespace Mithril.Security.Services
 {
     /// <summary>
     /// Security service
@@ -169,7 +169,6 @@ namespace Mithril.Security.Windows.Services
                     TempUser.AddClaim(AdminRole);
                     TempTenant.Users.Add(TempUser);
                     AsyncHelper.RunSync(() => DataService.SaveAsync(TempTenant));
-                    //AsyncHelper.RunSync(() => DataService.SaveAsync(TempTenant));
                 }
                 SystemUserAccount = TempUser;
                 return SystemUserAccount;

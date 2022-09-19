@@ -1,3 +1,5 @@
+using Serilog;
+
 namespace Mithril
 {
     /// <summary>
@@ -11,8 +13,19 @@ namespace Mithril
         /// <param name="args">The arguments.</param>
         public static async Task Main(string[] args)
         {
-            WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
-            await (builder.SetupMithril()?.RunAsync() ?? Task.CompletedTask).ConfigureAwait(false);
+            try
+            {
+                WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
+                await (builder.SetupMithril()?.RunAsync() ?? Task.CompletedTask).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex, "Host terminated unexpectedly");
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
         }
     }
 }

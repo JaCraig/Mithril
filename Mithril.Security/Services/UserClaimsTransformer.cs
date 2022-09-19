@@ -5,7 +5,7 @@ using Mithril.Core.Abstractions.Services;
 using Mithril.Data.Models.Security;
 using System.Security.Claims;
 
-namespace Mithril.Security.Windows.Services
+namespace Mithril.Security.Services
 {
     /// <summary>
     /// User claims transformer (adds claims to the ClaimsPrincipal object so we can use the system
@@ -40,7 +40,7 @@ namespace Mithril.Security.Windows.Services
         /// <returns>The transformed principal.</returns>
         public Task<ClaimsPrincipal> TransformAsync(ClaimsPrincipal principal)
         {
-            if (principal?.HasClaim(x => string.Equals(x.Type, "role", System.StringComparison.OrdinalIgnoreCase)) != false)
+            if (principal?.HasClaim(x => string.Equals(x.Type, "role", StringComparison.OrdinalIgnoreCase)) != false)
                 return Task.FromResult(principal)!;
             var CurrentUser = User.Load(principal.GetName(), DataService);
             if (CurrentUser is null)

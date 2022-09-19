@@ -1,17 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Core.Abstractions.Services;
-using Mithril.Security.Windows.Services;
+using Mithril.Security.Services;
 
-namespace Mithril.Security.Windows
+namespace Mithril.Security
 {
     /// <summary>
-    /// Authentication module
+    /// Windows Authentication module
     /// </summary>
     /// <seealso cref="ModuleBaseClass{AuthenticationModule}"/>
     public class AuthenticationModule : ModuleBaseClass<AuthenticationModule>
@@ -20,7 +19,7 @@ namespace Mithril.Security.Windows
         /// Initializes a new instance of the <see cref="AuthenticationModule"/> class.
         /// </summary>
         public AuthenticationModule()
-            : base("Windows Authentication Module", "Security", "Authentication", "Authorization")
+            : base("Authentication Module", "Security", "Authentication", "Authorization")
         {
         }
 
@@ -44,13 +43,10 @@ namespace Mithril.Security.Windows
         /// <param name="env"></param>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? env)
         {
-            //Set up authentication so things get activated in IIS.
-            services?.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
-                     .AddNegotiate();
-
+            // Add authorization.
             services?.AddAuthorization(options => options.FallbackPolicy = options.DefaultPolicy);
 
-            // Add the security service.
+            // Add the security services.
             return services?.AddSingleton<ISecurityService, SecurityService>()
                            // Add the claims transformer
                            .AddScoped<IClaimsTransformation, UserClaimsTransformer>();
