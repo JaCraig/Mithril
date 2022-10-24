@@ -8,10 +8,15 @@
 
   <ItemGroup>
     <PackageReference Include="GraphQL.Server.All" Version="7.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Mithril.API\Mithril.API.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="GraphTypes\BaseClasses\" />
   </ItemGroup>
 
 </Project>

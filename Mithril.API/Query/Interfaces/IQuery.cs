@@ -30,13 +30,23 @@
         string Name { get; }
 
         /// <summary>
+        /// Gets the nullable.
+        /// </summary>
+        /// <value>The nullable.</value>
+        bool? Nullable { get; }
+
+        /// <summary>
         /// Gets the type of the return.
         /// </summary>
         /// <value>The type of the return.</value>
         Type ReturnType { get; }
     }
 
-    public interface IQuery<TClass>
+    /// <summary>
+    /// Query interface
+    /// </summary>
+    /// <typeparam name="TClass">The type of the class.</typeparam>
+    public interface IQuery<TClass> : IQuery
         where TClass : class
     {
         /// <summary>
