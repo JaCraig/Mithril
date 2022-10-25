@@ -1,4 +1,6 @@
-﻿namespace Mithril.API.Query.Interfaces
+﻿using System.Security.Claims;
+
+namespace Mithril.API.Query.Interfaces
 {
     /// <summary>
     /// Query interface
@@ -9,19 +11,19 @@
         /// Gets the arguments.
         /// </summary>
         /// <value>The arguments.</value>
-        Argument[] Arguments { get; }
+        IArgument[] Arguments { get; }
 
         /// <summary>
         /// Gets the deprecation reason.
         /// </summary>
         /// <value>The deprecation reason.</value>
-        string DeprecationReason { get; }
+        string? DeprecationReason { get; }
 
         /// <summary>
         /// Gets the description.
         /// </summary>
         /// <value>The description.</value>
-        string Description { get; }
+        string? Description { get; }
 
         /// <summary>
         /// Gets the name.
@@ -50,9 +52,11 @@
         where TClass : class
     {
         /// <summary>
-        /// Gets the resolver.
+        /// Used to resolve the data asked for by the query.
         /// </summary>
-        /// <value>The resolver.</value>
-        Resolver<TClass> Resolver { get; }
+        /// <param name="user">The user.</param>
+        /// <param name="arguments">The arguments.</param>
+        /// <returns>The data specified.</returns>
+        Task<TClass?> ResolveAsync(ClaimsPrincipal? user, Arguments arguments);
     }
 }
