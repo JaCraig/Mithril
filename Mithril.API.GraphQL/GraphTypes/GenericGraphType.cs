@@ -7,6 +7,7 @@ using Mithril.API.GraphQL.ExtensionMethods;
 using Mithril.API.GraphQL.GraphTypes.Interfaces;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Text;
 
 namespace Mithril.API.GraphQL.GraphTypes
 {
@@ -24,7 +25,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// <inheritdoc/>
         public GenericGraphType()
         {
-            Name = typeof(TClass).Name.Replace("`1", "");
+            Name = GetName(typeof(TClass));
             Description = $"{Name} information";
             AutoWire();
         }
@@ -42,7 +43,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// <summary>
         /// The readable properties
         /// </summary>
-        private readonly PropertyInfo[] ReadableProperties = typeof(TClass)?.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead).ToArray() ?? Array.Empty<PropertyInfo>();
+        private readonly PropertyInfo[] ReadableProperties = GetProperties();
 
         /// <summary>
         /// Automatically wires up known properties of the view model.
@@ -64,6 +65,24 @@ namespace Mithril.API.GraphQL.GraphTypes
                     AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new[] { Property });
                 }
             }
+        }
+
+        /// <summary>
+        /// Gets the properties.
+        /// </summary>
+        /// <returns>The properties for the type.</returns>
+        private static PropertyInfo[] GetProperties()
+        {
+            var ClassType = typeof(TClass);
+            var Properties = new List<PropertyInfo>();
+            Properties.AddRange(ClassType.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead));
+            foreach (var Property in ClassType.GetInterfaces().SelectMany(Interface => Interface.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead)))
+            {
+                if (Properties.Any(x => x.Name == Property.Name))
+                    continue;
+                Properties.Add(Property);
+            }
+            return Properties.ToArray();
         }
 
         /// <summary>
@@ -100,6 +119,42 @@ namespace Mithril.API.GraphQL.GraphTypes
             var PropertyGet = Expression.Property(SourcePropertyGet, property);
 
             Field<TProperty>(PropertyName, Description, resolve: Expression.Lambda<Func<IResolveFieldContext<TClass>, object?>>(PropertyGet, ObjectInstance).Compile());
+        }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>The type's name</returns>
+        private string GetName(Type? type)
+        {
+            if (type is null)
+            {
+                return "";
+            }
+
+            var Output = new StringBuilder();
+            if (type.Name == "Void")
+            {
+                Output.Append("void");
+            }
+            else
+            {
+                if (type.Name.Contains('`', StringComparison.Ordinal))
+                {
+                    var GenericTypes = type.GetGenericArguments();
+                    Output.Append(type.Name, 0, type.Name.IndexOf("`", StringComparison.Ordinal));
+                    for (int x = 0, GenericTypesLength = GenericTypes.Length; x < GenericTypesLength; x++)
+                    {
+                        Output.Append(GetName(GenericTypes[x]));
+                    }
+                }
+                else
+                {
+                    Output.Append(type.Name);
+                }
+            }
+            return Output.ToString().Replace("&", "", StringComparison.Ordinal);
         }
     }
 }

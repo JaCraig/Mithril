@@ -15,8 +15,4 @@
     <ProjectReference Include="..\Mithril.API\Mithril.API.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="GraphTypes\BaseClasses\" />
-  </ItemGroup>
-
 </Project>
