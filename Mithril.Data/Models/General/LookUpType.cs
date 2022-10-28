@@ -1,7 +1,7 @@
-﻿using Mithril.Core.Abstractions.Data.BaseClasses;
-using Mithril.Core.Abstractions.Data.Interfaces;
-using Mithril.Core.Abstractions.Services;
-using Mithril.Data.Enums;
+﻿using Mithril.Data.Abstractions.BaseClasses;
+using Mithril.Data.Abstractions.Enums;
+using Mithril.Data.Abstractions.Interfaces;
+using Mithril.Data.Abstractions.Services;
 using System.ComponentModel.DataAnnotations;
 
 namespace Mithril.Data.Models.General

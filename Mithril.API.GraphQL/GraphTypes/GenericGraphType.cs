@@ -1,8 +1,9 @@
 ﻿using BigBook;
+using Fast.Activator;
 using GraphQL;
 using GraphQL.Types;
-using Mithril.API.Attributes;
-using Mithril.API.ExtensionMethods;
+using Mithril.API.Abstractions.Attributes;
+using Mithril.API.Abstractions.ExtensionMethods;
 using Mithril.API.GraphQL.ExtensionMethods;
 using Mithril.API.GraphQL.GraphTypes.Interfaces;
 using System.Linq.Expressions;
@@ -50,7 +51,6 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// </summary>
         protected void AutoWire(params string[] ignoreProperties)
         {
-            ignoreProperties ??= Array.Empty<string>();
             foreach (var Property in ReadableProperties.Where(x => x.GetCustomAttribute<ApiIgnoreAttribute>() is null))
             {
                 if (Property.PropertyType.IsBuiltInType())
@@ -62,7 +62,7 @@ namespace Mithril.API.GraphQL.GraphTypes
                     var GraphType = Property.PropertyType.FindGraphType();
                     if (GraphType is null)
                         continue;
-                    AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new[] { Property });
+                    AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object[] { Property, FastActivator.CreateInstance(GraphType) });
                 }
             }
         }
@@ -105,8 +105,8 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// </summary>
         /// <typeparam name="TProperty">The type of the property.</typeparam>
         /// <param name="property">The property.</param>
-        private void AddClassField<TProperty>(PropertyInfo property)
-            where TProperty : class, IGraphType
+        private void AddClassField<TProperty>(PropertyInfo property, IGraphType graphType)
+            where TProperty : IGraphType
         {
             if (property is null || property.DeclaringType is null)
                 return;
@@ -115,7 +115,10 @@ namespace Mithril.API.GraphQL.GraphTypes
 
             var ObjectType = typeof(IResolveFieldContext<TClass>);
             var ObjectInstance = Expression.Parameter(ObjectType, "x");
-            var SourcePropertyGet = Expression.Property(ObjectInstance, ObjectType.GetProperty("Source"));
+            var SourceProperty = ObjectType.GetProperty("Source");
+            if (SourceProperty is null)
+                return;
+            var SourcePropertyGet = Expression.Property(ObjectInstance, SourceProperty);
             var PropertyGet = Expression.Property(SourcePropertyGet, property);
 
             Field<TProperty>(PropertyName, Description, resolve: Expression.Lambda<Func<IResolveFieldContext<TClass>, object?>>(PropertyGet, ObjectInstance).Compile());

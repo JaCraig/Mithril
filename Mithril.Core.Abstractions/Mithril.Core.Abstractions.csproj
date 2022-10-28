@@ -12,10 +12,14 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BigBook" Version="4.0.19" />
+    <PackageReference Include="BigBook" Version="4.0.22" />
     <PackageReference Include="Canister.IoC" Version="4.0.14" />
     <PackageReference Include="FileCurator" Version="3.1.46" />
     <PackageReference Include="Valkyrie" Version="3.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mithril.Data.Abstractions\Mithril.Data.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

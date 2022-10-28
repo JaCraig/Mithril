@@ -1,5 +1,5 @@
-﻿using Mithril.Core.Abstractions.Data.BaseClasses;
-using Mithril.Core.Abstractions.Data.Interfaces;
+﻿using Mithril.Data.Abstractions.BaseClasses;
+using Mithril.Data.Abstractions.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
 namespace Mithril.Data.Models.Contact

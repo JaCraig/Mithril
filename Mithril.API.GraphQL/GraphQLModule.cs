@@ -1,11 +1,14 @@
-﻿using GraphQL;
+﻿using Canister.Interfaces;
+using GraphQL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Mithril.API.Abstractions.Query.Interfaces;
 using Mithril.API.GraphQL.Authorization;
 using Mithril.API.GraphQL.ObjectGraphs;
+using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 
 namespace Mithril.API.GraphQL
@@ -34,7 +37,7 @@ namespace Mithril.API.GraphQL
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
             // GraphQL endpoint
-            return app?.UseGraphQL<CompositeSchema>("/graphql");
+            return app?.UseGraphQL<CompositeSchema>(configuration.GetSystemConfig()?.API?.QueryEndpoint ?? "/graphql");
         }
 
         /// <summary>
@@ -62,6 +65,15 @@ namespace Mithril.API.GraphQL
                 ?.AddUserContextBuilder((context) => new GraphQLUserContextDictionary(context.User));
             });
             return services;
+        }
+
+        /// <summary>
+        /// Loads the module using the bootstrapper
+        /// </summary>
+        /// <param name="bootstrapper">The bootstrapper.</param>
+        public override void Load(IBootstrapper? bootstrapper)
+        {
+            bootstrapper?.RegisterAll<IQuery>(ServiceLifetime.Singleton);
         }
     }
 }

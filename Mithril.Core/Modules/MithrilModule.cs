@@ -6,12 +6,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Net.Http.Headers;
 using Mithril.Core.Abstractions.Configuration;
+using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Core.Abstractions.Modules.Features;
 using Mithril.Core.Abstractions.Modules.Interfaces;
-using Mithril.Core.Abstractions.Services;
 using Mithril.Core.Extensions;
 using Mithril.Core.Middleware;
+using Mithril.Data.Abstractions.Services;
 
 namespace Mithril.Core.Modules
 {
@@ -64,7 +65,7 @@ namespace Mithril.Core.Modules
             if (app is null || environment is null || configuration is null)
                 return app;
 
-            var Settings = GetSystemConfig(configuration);
+            var Settings = configuration.GetSystemConfig();
 
             // Sets up static HTTP context
             app.UseStaticHttpContext();
@@ -133,7 +134,7 @@ namespace Mithril.Core.Modules
             // Set up config.
             services = services.Configure<MithrilConfig>(configuration.GetSection("Mithril"));
 
-            var Settings = GetSystemConfig(configuration);
+            var Settings = configuration.GetSystemConfig();
             if (Settings?.Compression?.DynamicCompression == true)
             {
                 // Add compression.
@@ -183,13 +184,6 @@ namespace Mithril.Core.Modules
         }
 
         /// <summary>
-        /// Gets the system configuration from the IConfiguration? object.
-        /// </summary>
-        /// <param name="configuration">The configuration.</param>
-        /// <returns>The system configuration.</returns>
-        private static MithrilConfig? GetSystemConfig(IConfiguration? configuration) => configuration?.GetSection("Mithril").Get<MithrilConfig>();
-
-        /// <summary>
         /// Setups the extension mappings.
         /// </summary>
         /// <param name="Config">The configuration.</param>
@@ -214,7 +208,7 @@ namespace Mithril.Core.Modules
         /// <param name="environment">The environment.</param>
         private static IApplicationBuilder SetupStaticFiles(IApplicationBuilder app, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            MithrilConfig? Config = GetSystemConfig(configuration);
+            MithrilConfig? Config = configuration.GetSystemConfig();
 
             var provider = new FileExtensionContentTypeProvider();
             SetupMimeTypes(Config, provider);

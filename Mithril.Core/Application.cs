@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Mithril.Core.Abstractions.Services;
+using Mithril.Data.Abstractions.Services;
 using System.Reflection;
 
 namespace Mithril.Core

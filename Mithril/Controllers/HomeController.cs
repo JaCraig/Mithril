@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Mithril.Core.Abstractions.Services;
 using Mithril.Models;
+using Mithril.Security.Abstractions.Services;
 using System.Diagnostics;
 
 namespace Mithril.Controllers

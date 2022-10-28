@@ -1,8 +1,11 @@
 ﻿using BigBook;
-using Mithril.Core.Abstractions.Security.Enums;
-using Mithril.Core.Abstractions.Security.Interfaces;
-using Mithril.Core.Abstractions.Services;
-using Mithril.Data.Models.Security;
+using Mithril.Data.Abstractions.Enums;
+using Mithril.Data.Abstractions.Interfaces;
+using Mithril.Data.Abstractions.Services;
+using Mithril.Security.Abstractions.Enums;
+using Mithril.Security.Abstractions.Interfaces;
+using Mithril.Security.Abstractions.Services;
+using Mithril.Security.Models;
 
 namespace Mithril.Security.Services
 {

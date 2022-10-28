@@ -4,7 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
-using Mithril.Core.Abstractions.Services;
+using Mithril.Data.Abstractions.Services;
+using Mithril.Security.Abstractions.Services;
 using Mithril.Security.Services;
 
 namespace Mithril.Security

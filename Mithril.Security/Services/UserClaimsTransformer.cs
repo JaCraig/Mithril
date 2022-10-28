@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authentication;
-using Mithril.Core.Abstractions.ExtensionMethods;
-using Mithril.Core.Abstractions.Security.Enums;
-using Mithril.Core.Abstractions.Services;
-using Mithril.Data.Models.Security;
+using Mithril.Data.Abstractions.Enums;
+using Mithril.Data.Abstractions.ExtensionMethods;
+using Mithril.Data.Abstractions.Interfaces;
+using Mithril.Data.Abstractions.Services;
+using Mithril.Security.Models;
 using System.Security.Claims;
 
 namespace Mithril.Security.Services
@@ -46,7 +47,7 @@ namespace Mithril.Security.Services
             if (CurrentUser is null)
                 return Task.FromResult(principal);
             var NewIdentity = new ClaimsIdentity(principal.Identity, principal.Claims);
-            foreach (Core.Abstractions.Security.Interfaces.IUserClaim? Claim in CurrentUser.Claims)
+            foreach (IUserClaim? Claim in CurrentUser.Claims)
             {
                 if (Claim.Type == UserClaimTypes.Role)
                 {

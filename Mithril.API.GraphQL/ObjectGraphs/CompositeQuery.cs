@@ -1,10 +1,10 @@
 ﻿using BigBook;
 using GraphQL.Types;
+using Mithril.API.Abstractions.Query;
+using Mithril.API.Abstractions.Query.Interfaces;
 using Mithril.API.GraphQL.Authorization;
 using Mithril.API.GraphQL.ExtensionMethods;
 using Mithril.API.GraphQL.GraphTypes;
-using Mithril.API.Query;
-using Mithril.API.Query.Interfaces;
 using System.Reflection;
 
 namespace Mithril.API.GraphQL.ObjectGraphs

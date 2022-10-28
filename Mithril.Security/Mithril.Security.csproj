@@ -8,7 +8,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj" />
+    <ProjectReference Include="..\Mithril.Data.Abstractions\Mithril.Data.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.Data\Mithril.Data.csproj" />
+    <ProjectReference Include="..\Mithril.Security.Abstractions\Mithril.Security.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

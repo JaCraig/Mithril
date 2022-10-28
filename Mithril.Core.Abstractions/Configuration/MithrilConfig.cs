@@ -6,6 +6,12 @@
     public class MithrilConfig
     {
         /// <summary>
+        /// Gets or sets the API.
+        /// </summary>
+        /// <value>The API.</value>
+        public API? API { get; set; }
+
+        /// <summary>
         /// Gets or sets the compression.
         /// </summary>
         /// <value>The compression.</value>

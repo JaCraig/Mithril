@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Mithril.Core.Abstractions.Services;
+using Mithril.Data.Abstractions.Services;
 
 namespace Mithril.Core.Abstractions.Modules.Interfaces
 {
