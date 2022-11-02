@@ -94,7 +94,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         {
             if (property is null || property.DeclaringType is null)
                 return;
-            var ObjectInstance = Expression.Parameter(property.DeclaringType, "x");
+            var ObjectInstance = Expression.Parameter(typeof(TClass), "x");
             var PropertyGet = Expression.Property(ObjectInstance, property);
 
             Field(Expression.Lambda<Func<TClass, TProperty>>(PropertyGet, ObjectInstance), nullable: property.PropertyType.IsNullable());

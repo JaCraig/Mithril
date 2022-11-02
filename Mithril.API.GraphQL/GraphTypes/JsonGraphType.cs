@@ -38,7 +38,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// </summary>
         /// <param name="value">Runtime object from variables. May be <see langword="null"/>.</param>
         /// <returns></returns>
-        public override bool CanParseValue(object? value) => value is JsonDocument || value is string || value == null;
+        public override bool CanParseValue(object? value) => value is JsonDocument || value is string || value == null || value is IDictionary<string, object?>;
 
         /// <summary>
         /// Literal input coercion. It takes an abstract syntax tree (AST) element from a schema
@@ -74,6 +74,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         {
             JsonDocument _ => value,
             string s => JsonDocument.Parse(s),
+            IDictionary<string, object?> e => JsonDocument.Parse(JsonSerializer.Serialize(e)),
             null => null,
             _ => ThrowValueConversionError(value)
         };
