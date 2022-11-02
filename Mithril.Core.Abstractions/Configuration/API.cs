@@ -6,6 +6,18 @@
     public class API
     {
         /// <summary>
+        /// Gets or sets the command run frequency (in seconds).
+        /// </summary>
+        /// <value>The command run frequency (in seconds).</value>
+        public int? CommandRunFrequency { get; set; }
+
+        /// <summary>
+        /// Gets or sets the maximum command processing time (in ms).
+        /// </summary>
+        /// <value>The maximum command processing time (in ms).</value>
+        public int? MaxCommandProcessTime { get; set; }
+
+        /// <summary>
         /// Gets or sets the query endpoint.
         /// </summary>
         /// <value>The query endpoint.</value>

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mithril.API.Commands\Mithril.API.Commands.csproj" />
     <ProjectReference Include="..\Mithril.API.GraphQL\Mithril.API.GraphQL.csproj" />
     <ProjectReference Include="..\Mithril.Core\Mithril.Core.csproj" />
     <ProjectReference Include="..\Mithril.Logging.Serilog\Mithril.Logging.Serilog.csproj" />
