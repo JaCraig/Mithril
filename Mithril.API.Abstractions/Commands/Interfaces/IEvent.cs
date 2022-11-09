@@ -7,7 +7,7 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
     /// Event interface
     /// </summary>
     /// <seealso cref="IModel"/>
-    public interface ICommandEvent : IEquatable<ICommandEvent>, IModel
+    public interface IEvent : IEquatable<IEvent>, IModel
     {
         /// <summary>
         /// Gets the name.

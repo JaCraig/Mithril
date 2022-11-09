@@ -24,9 +24,8 @@ namespace Mithril.API.Commands.Services
         /// <param name="commandHandlers">The command handlers.</param>
         /// <param name="logger">The logger.</param>
         /// <param name="configuration">The configuration.</param>
-        public CommandService(IEnumerable<IEventHandler> eventHandlers, IEnumerable<ICommandHandler> commandHandlers, ILogger<CommandService> logger, IConfiguration configuration)
+        public CommandService(IEnumerable<ICommandHandler> commandHandlers, ILogger<CommandService> logger, IConfiguration configuration)
         {
-            EventHandlers = eventHandlers;
             CommandHandlers = commandHandlers.ToDictionary(x => x.CommandTypeAccepted.Name, StringComparer.OrdinalIgnoreCase);
             Logger = logger;
             Configuration = configuration.GetSystemConfig();
@@ -43,12 +42,6 @@ namespace Mithril.API.Commands.Services
         /// </summary>
         /// <value>The configuration.</value>
         private MithrilConfig? Configuration { get; }
-
-        /// <summary>
-        /// Gets the event handlers.
-        /// </summary>
-        /// <value>The event handlers.</value>
-        private IEnumerable<IEventHandler> EventHandlers { get; }
 
         /// <summary>
         /// Gets the logger.
@@ -78,7 +71,7 @@ namespace Mithril.API.Commands.Services
         /// <summary>
         /// Runs this instance.
         /// </summary>
-        public async Task RunAsync()
+        public async Task ProcessAsync()
         {
             int RunTime = Configuration?.API?.MaxCommandProcessTime ?? 40000;
             int Count = 0;
@@ -87,55 +80,26 @@ namespace Mithril.API.Commands.Services
             Stopwatch.Restart();
             while (Stopwatch.ElapsedMilliseconds <= RunTime || RunTime == -1)
             {
-                var Commands = DbContext<ICommand>.CreateQuery().Where(x => x.Active).Take(40).ToList();
-                Logger.LogInformation($"Pulled {Commands.Count} commands");
-                if (Commands.Count == 0)
+                var Commands = DbContext<ICommand>.CreateQuery().Where(x => x.Active).OrderBy(x => x.DateCreated).Take(40).ToList().ToArray();
+                Logger.LogInformation($"Pulled {Commands.Length} commands");
+                if (Commands.Length == 0)
                     break;
-                Count += Commands.Count;
+                Count += Commands.Length;
                 foreach (var Key in CommandHandlers.Keys)
                 {
-                    var TempEvents = CommandHandlers[Key].HandleCommand(Commands.ToArray());
-                    if (TempEvents.Length == 0)
-                        continue;
-                    Logger.LogInformation($"Created {TempEvents.Length} events");
-                    for (int y = 0; y < TempEvents.Length; y++)
-                    {
-                        var Event = TempEvents[y];
-                        Context.Delete(Event);
-                        foreach (var Handler in EventHandlers.Where(x => x.AcceptsEvent(Event)))
-                        {
-                            Handler.HandleEvent(Event);
-                        }
-                    }
-                    Logger.LogInformation($"Finished handling {TempEvents.Length} events");
+                    _ = CommandHandlers[Key].HandleCommand(Commands);
                 }
-                Logger.LogInformation($"Finished processing {Count} commands.");
-                Commands.ForEach(x => Context.Delete(x));
-                await Context.ExecuteAsync().ConfigureAwait(false);
-                Context = new DbContext();
-            }
-            Stopwatch.Restart();
-            Count = 0;
-            Context = new DbContext();
-            while (Stopwatch.ElapsedMilliseconds <= RunTime || RunTime == -1)
-            {
-                var Events = DbContext<ICommandEvent>.CreateQuery().Where(x => x.Active).Take(100).ToList().Where(x => x.CanRun()).ToList();
-                if (Events.Count == 0)
-                    break;
-                Count += Events.Count;
-                for (int x = 0; x < Events.Count; x++)
+                for (var x = 0; x < Commands.Length; ++x)
                 {
-                    var Event = Events[x];
-                    foreach (var Handler in EventHandlers.Where(Handler => Handler.AcceptsEvent(Event)))
-                    {
-                        Handler.HandleEvent(Event);
-                    }
-                    Context.Delete(Event);
+                    var Command = Commands[x];
+                    Command.Active = false;
+                    Context.Save(Command);
                 }
-                Logger.LogInformation($"Finished processing {Count} events.");
                 await Context.ExecuteAsync().ConfigureAwait(false);
                 Context = new DbContext();
+                Logger.LogInformation($"Finished processing {Count} commands.");
             }
+            Logger.LogInformation($"Finished processing {Count} commands.");
             Stopwatch.Stop();
         }
     }

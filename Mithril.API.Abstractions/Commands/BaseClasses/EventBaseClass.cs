@@ -10,8 +10,8 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
     /// </summary>
     /// <typeparam name="TEvent">The type of the event.</typeparam>
     /// <seealso cref="ModelBase{TEvent}"/>
-    /// <seealso cref="ICommandEvent"/>
-    public abstract class EventBaseClass<TEvent> : ModelBase<TEvent>, ICommandEvent, IEquatable<EventBaseClass<TEvent>>
+    /// <seealso cref="IEvent"/>
+    public abstract class EventBaseClass<TEvent> : ModelBase<TEvent>, IEvent, IEquatable<EventBaseClass<TEvent>>
         where TEvent : EventBaseClass<TEvent>, new()
     {
         /// <summary>
@@ -148,7 +148,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(ICommandEvent? other)
+        public bool Equals(IEvent? other)
         {
             return CompareTo(other) == 0;
         }

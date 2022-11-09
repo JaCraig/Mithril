@@ -17,8 +17,9 @@ namespace Mithril.API.Abstractions.Services
         ICommand? Convert(string type, ExpandoObject value);
 
         /// <summary>
-        /// Runs this instance.
+        /// Processes any new commands.
         /// </summary>
-        Task RunAsync();
+        /// <returns>The async task.</returns>
+        Task ProcessAsync();
     }
 }

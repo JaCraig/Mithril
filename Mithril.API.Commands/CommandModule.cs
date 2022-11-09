@@ -34,7 +34,9 @@ namespace Mithril.API.Commands
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
             return services?.AddSingleton<ICommandService, CommandService>()
-                        .AddHostedService<CommandProcessorTask>();
+                        .AddSingleton<IEventService, EventService>()
+                        .AddHostedService<CommandProcessorTask>()
+                        .AddHostedService<EventProcessorTask>();
         }
 
         /// <summary>
@@ -44,7 +46,7 @@ namespace Mithril.API.Commands
         public override void Load(IBootstrapper? bootstrapper)
         {
             bootstrapper?.RegisterAll<IEventHandler>()
-                .RegisterAll<ICommandEvent>()
+                .RegisterAll<IEvent>()
                 .RegisterAll<ICommand>()
                 .RegisterAll<ICommandHandler>();
         }

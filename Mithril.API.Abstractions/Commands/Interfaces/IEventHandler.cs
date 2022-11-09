@@ -10,12 +10,12 @@
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <returns>True if it accepts it, false otherwise.</returns>
-        bool AcceptsEvent(ICommandEvent arg);
+        bool Accepts(IEvent arg);
 
         /// <summary>
         /// Handles the event.
         /// </summary>
         /// <param name="arg">The argument.</param>
-        void HandleEvent(ICommandEvent arg);
+        void Handle(params IEvent[] arg);
     }
 }

@@ -25,6 +25,6 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <returns>Any events that are spawned by the command.</returns>
-        ICommandEvent[] HandleCommand(params ICommand[] arg);
+        IEvent[] HandleCommand(params ICommand[] arg);
     }
 }

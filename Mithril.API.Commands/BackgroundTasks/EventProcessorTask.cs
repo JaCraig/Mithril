@@ -8,36 +8,36 @@ using Mithril.Core.Abstractions.Extensions;
 namespace Mithril.API.Commands.BackgroundTasks
 {
     /// <summary>
-    /// Command processor task
+    /// Event processor task
     /// </summary>
     /// <seealso cref="IHostedService"/>
     /// <seealso cref="IDisposable"/>
-    public class CommandProcessorTask : IHostedService, IDisposable
+    public class EventProcessorTask : IHostedService, IDisposable
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CommandProcessorTask"/> class.
+        /// Initializes a new instance of the <see cref="EventProcessorTask"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
-        /// <param name="commandService">The command service.</param>
+        /// <param name="eventService">The event service.</param>
         /// <param name="configuration">The configuration.</param>
-        public CommandProcessorTask(ILogger<CommandProcessorTask> logger, ICommandService commandService, IConfiguration configuration)
+        public EventProcessorTask(ILogger<EventProcessorTask> logger, IEventService eventService, IConfiguration configuration)
         {
             Logger = logger;
-            CommandService = commandService;
-            CommandRunFrequency = configuration?.GetSystemConfig()?.API?.CommandRunFrequency ?? 60;
+            EventService = eventService;
+            EventRunFrequency = configuration?.GetSystemConfig()?.API?.EventRunFrequency ?? 60;
         }
 
         /// <summary>
-        /// Gets the command run frequency.
+        /// Gets the Event run frequency.
         /// </summary>
-        /// <value>The command run frequency.</value>
-        private int CommandRunFrequency { get; }
+        /// <value>The Event run frequency.</value>
+        private int EventRunFrequency { get; }
 
         /// <summary>
-        /// Gets the command service.
+        /// Gets the Event service.
         /// </summary>
-        /// <value>The command service.</value>
-        private ICommandService CommandService { get; }
+        /// <value>The Event service.</value>
+        private IEventService EventService { get; }
 
         /// <summary>
         /// Gets or sets the internal timer.
@@ -49,7 +49,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        private ILogger<CommandProcessorTask> Logger { get; }
+        private ILogger<EventProcessorTask> Logger { get; }
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting
@@ -68,8 +68,8 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <returns></returns>
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            Logger.LogInformation("Starting command background service");
-            InternalTimer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(CommandRunFrequency));
+            Logger.LogInformation("Starting event background service");
+            InternalTimer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(EventRunFrequency));
             return Task.CompletedTask;
         }
 
@@ -82,7 +82,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <returns></returns>
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            Logger.LogInformation("Stopping command background service");
+            Logger.LogInformation("Stopping event background service");
             InternalTimer?.Change(Timeout.Infinite, 0);
             return Task.CompletedTask;
         }
@@ -109,7 +109,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <param name="state">The state.</param>
         private void DoWork(object? state)
         {
-            AsyncHelper.RunSync(() => CommandService.ProcessAsync());
+            AsyncHelper.RunSync(() => EventService.ProcessAsync());
         }
     }
 }

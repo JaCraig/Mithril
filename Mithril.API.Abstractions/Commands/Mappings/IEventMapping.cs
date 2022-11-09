@@ -8,12 +8,12 @@ namespace Mithril.API.Abstractions.Commands.Mappings
     /// Event mapping
     /// </summary>
     /// <seealso cref="MappingBaseClass{IEvent, DefaultDatabase}"/>
-    public class ICommandEventMapping : MappingBaseClass<ICommandEvent, DefaultDatabase>
+    public class IEventMapping : MappingBaseClass<IEvent, DefaultDatabase>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ICommandEventMapping"/> class.
+        /// Initializes a new instance of the <see cref="IEventMapping"/> class.
         /// </summary>
-        public ICommandEventMapping()
+        public IEventMapping()
         {
         }
     }
