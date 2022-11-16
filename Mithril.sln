@@ -41,7 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Data", "Mithril.Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Abstractions", "Mithril.API.Abstractions\Mithril.API.Abstractions.csproj", "{C429D9BC-0F05-4D5B-BC8F-E86F4D46979D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.API.Commands", "Mithril.API.Commands\Mithril.API.Commands.csproj", "{EA98FF43-E601-428F-8412-F1B06979E083}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Commands", "Mithril.API.Commands\Mithril.API.Commands.csproj", "{EA98FF43-E601-428F-8412-F1B06979E083}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.API.Swagger", "Mithril.API.Swagger\Mithril.API.Swagger.csproj", "{E2A6146D-FEA8-498B-9362-AFD72AF82411}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +111,10 @@ Global
 		{EA98FF43-E601-428F-8412-F1B06979E083}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA98FF43-E601-428F-8412-F1B06979E083}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA98FF43-E601-428F-8412-F1B06979E083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2A6146D-FEA8-498B-9362-AFD72AF82411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2A6146D-FEA8-498B-9362-AFD72AF82411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2A6146D-FEA8-498B-9362-AFD72AF82411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2A6146D-FEA8-498B-9362-AFD72AF82411}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,6 +137,7 @@ Global
 		{7D8E66F5-1877-4590-B4BD-8C71BFA88C50} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
 		{C429D9BC-0F05-4D5B-BC8F-E86F4D46979D} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
 		{EA98FF43-E601-428F-8412-F1B06979E083} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
+		{E2A6146D-FEA8-498B-9362-AFD72AF82411} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}

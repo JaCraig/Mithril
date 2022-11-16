@@ -12,6 +12,12 @@
         public API? API { get; set; }
 
         /// <summary>
+        /// Gets or sets the name of the application.
+        /// </summary>
+        /// <value>The name of the application.</value>
+        public string? ApplicationName { get; set; }
+
+        /// <summary>
         /// Gets or sets the compression.
         /// </summary>
         /// <value>The compression.</value>

@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mithril</name>
+    </assembly>
+    <members>
+        <member name="T:Mithril.Controllers.HomeController">
+            <summary>
+            Home controller
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Controller"/>
+        </member>
+        <member name="M:Mithril.Controllers.HomeController.#ctor(Microsoft.Extensions.Logging.ILogger{Mithril.Controllers.HomeController},Mithril.Security.Abstractions.Services.ISecurityService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Mithril.Controllers.HomeController"/> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="securityService">The security service.</param>
+        </member>
+        <member name="F:Mithril.Controllers.HomeController._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="F:Mithril.Controllers.HomeController.securityService">
+            <summary>
+            The security service
+            </summary>
+        </member>
+        <member name="M:Mithril.Controllers.HomeController.Error">
+            <summary>
+            Errors this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mithril.Controllers.HomeController.Index">
+            <summary>
+            Indexes this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mithril.Controllers.HomeController.Privacy">
+            <summary>
+            Privacies this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Mithril.Models.ErrorViewModel">
+            <summary>
+            ERROR view model
+            </summary>
+        </member>
+        <member name="P:Mithril.Models.ErrorViewModel.RequestId">
+            <summary>
+            Gets or sets the request identifier.
+            </summary>
+            <value>The request identifier.</value>
+        </member>
+        <member name="P:Mithril.Models.ErrorViewModel.ShowRequestId">
+            <summary>
+            Gets a value indicating whether [show request identifier].
+            </summary>
+            <value><c>true</c> if [show request identifier]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Mithril.Models.TestQuery">
+            <summary>
+            Test query
+            </summary>
+            <seealso cref="T:Mithril.API.Abstractions.Query.BaseClasses.QueryBaseClass`1"/>
+        </member>
+        <member name="P:Mithril.Models.TestQuery.Arguments">
+            <summary>
+            Gets the arguments.
+            </summary>
+            <value>The arguments.</value>
+        </member>
+        <member name="M:Mithril.Models.TestQuery.ResolveAsync(System.Security.Claims.ClaimsPrincipal,Mithril.API.Abstractions.Query.Arguments)">
+            <summary>
+            Resolves the asynchronous.
+            </summary>
+            <param name="arg">The argument.</param>
+            <param name="arguments">The arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Mithril.Models.TestVM">
+            <summary>
+            Test VM
+            </summary>
+        </member>
+        <member name="P:Mithril.Models.TestVM.A">
+            <summary>
+            Gets or sets a.
+            </summary>
+            <value>a.</value>
+        </member>
+        <member name="T:Mithril.Models.TestVM2">
+            <summary>
+            TestVM 2
+            </summary>
+        </member>
+        <member name="P:Mithril.Models.TestVM2.A">
+            <summary>
+            Gets or sets a.
+            </summary>
+            <value>a.</value>
+        </member>
+        <member name="T:Mithril.Program">
+            <summary>
+            Main program
+            </summary>
+        </member>
+        <member name="M:Mithril.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+    </members>
+</doc>

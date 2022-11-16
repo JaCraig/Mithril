@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mithril.API.Abstractions\Mithril.API.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj" />
   </ItemGroup>
 

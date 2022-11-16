@@ -6,11 +6,23 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>Mithril.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Mithril.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Mithril.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Mithril.API.Commands\Mithril.API.Commands.csproj" />
     <ProjectReference Include="..\Mithril.API.GraphQL\Mithril.API.GraphQL.csproj" />
+    <ProjectReference Include="..\Mithril.API.Swagger\Mithril.API.Swagger.csproj" />
     <ProjectReference Include="..\Mithril.Core\Mithril.Core.csproj" />
     <ProjectReference Include="..\Mithril.Logging.Serilog\Mithril.Logging.Serilog.csproj" />
     <ProjectReference Include="..\Mithril.Security.Windows\Mithril.Security.Windows.csproj" />

@@ -6,6 +6,12 @@
     public class API
     {
         /// <summary>
+        /// Gets or sets the command endpoint.
+        /// </summary>
+        /// <value>The command endpoint.</value>
+        public string? CommandEndpoint { get; set; }
+
+        /// <summary>
         /// Gets or sets the command run frequency (in seconds).
         /// </summary>
         /// <value>The command run frequency (in seconds).</value>
@@ -28,6 +34,12 @@
         /// </summary>
         /// <value>The maximum event processing time (in ms).</value>
         public int? MaxEventProcessTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets the open API endpoint.
+        /// </summary>
+        /// <value>The open API endpoint.</value>
+        public string? OpenAPIEndpoint { get; set; }
 
         /// <summary>
         /// Gets or sets the query endpoint.

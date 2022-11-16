@@ -1,11 +1,16 @@
 ﻿using Canister.Interfaces;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.API.Abstractions.Services;
 using Mithril.API.Commands.BackgroundTasks;
+using Mithril.API.Commands.Endpoint;
 using Mithril.API.Commands.Services;
+using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 
 namespace Mithril.API.Commands
@@ -22,6 +27,21 @@ namespace Mithril.API.Commands
         public CommandModule()
             : base("Command Module", "API", "API", "CQRS", "Command")
         {
+        }
+
+        /// <summary>
+        /// Configures the routes.
+        /// </summary>
+        /// <param name="endpoints">The endpoints.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        /// <returns>Endpoint route builder</returns>
+        public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
+        {
+            endpoints?.MapPost(configuration.GetSystemConfig()?.API?.CommandEndpoint ?? "/api/command/{type}", CommandEndpoint.RequestDelegate)
+                .Produces(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status400BadRequest);
+            return endpoints;
         }
 
         /// <summary>
