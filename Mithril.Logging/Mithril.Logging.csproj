@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,14 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
-    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Mithril.API.Abstractions\Mithril.API.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj" />
-    <ProjectReference Include="..\Mithril.Logging\Mithril.Logging.csproj" />
   </ItemGroup>
 
 </Project>

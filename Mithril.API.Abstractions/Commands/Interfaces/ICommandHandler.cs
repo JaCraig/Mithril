@@ -1,6 +1,4 @@
-﻿using System.Dynamic;
-
-namespace Mithril.API.Abstractions.Commands.Interfaces
+﻿namespace Mithril.API.Abstractions.Commands.Interfaces
 {
     /// <summary>
     /// Command handler interface
@@ -11,14 +9,13 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
         /// Gets the command type accepted.
         /// </summary>
         /// <value>The command type accepted.</value>
-        Type CommandTypeAccepted { get; }
+        string CommandName { get; }
 
         /// <summary>
-        /// Creates the specified value.
+        /// Gets the type of the view model it accepts.
         /// </summary>
-        /// <param name="value">The value.</param>
-        /// <returns>A command value converted from the ExpandoObject.</returns>
-        ICommand? Create(ExpandoObject value);
+        /// <value>The type of the view model it accepts.</value>
+        Type ViewModelType { get; }
 
         /// <summary>
         /// Handles the Command.
@@ -26,5 +23,19 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
         /// <param name="arg">The argument.</param>
         /// <returns>Any events that are spawned by the command.</returns>
         IEvent[] HandleCommand(params ICommand[] arg);
+    }
+
+    /// <summary>
+    /// Command handler interface
+    /// </summary>
+    /// <typeparam name="TViewModel">The type of the view model.</typeparam>
+    public interface ICommandHandler<TViewModel> : ICommandHandler
+    {
+        /// <summary>
+        /// Creates the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>A command value converted from the view model.</returns>
+        ICommand? Create(TViewModel? value);
     }
 }

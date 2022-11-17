@@ -2,7 +2,7 @@
 using Mithril.API.Abstractions.Commands.BaseClasses;
 using System.ComponentModel.DataAnnotations;
 
-namespace Mithril.Logging.Serilog.Models
+namespace Mithril.Logging.Models
 {
     /// <summary>
     /// Log command

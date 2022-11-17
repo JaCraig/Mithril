@@ -247,7 +247,9 @@ namespace Mithril.Core
         /// <param name="services">The services.</param>
         private async Task InitializeDataAsync(IServiceProvider services)
         {
-            var DataService = services.GetRequiredService<IDataService>();
+            var DataService = services?.GetService<IDataService>();
+            if (DataService is null)
+                return;
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];

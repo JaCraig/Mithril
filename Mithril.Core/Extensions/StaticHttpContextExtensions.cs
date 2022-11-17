@@ -25,7 +25,7 @@ namespace Mithril.Core.Extensions
         /// <returns>The app builder</returns>
         public static IApplicationBuilder? UseStaticHttpContext(this IApplicationBuilder? app)
         {
-            var httpContextAccessor = app?.ApplicationServices.GetRequiredService<IHttpContextAccessor>();
+            var httpContextAccessor = app?.ApplicationServices.GetService<IHttpContextAccessor>();
             Abstractions.Mvc.Context.HttpContext.Configure(httpContextAccessor);
             return app;
         }

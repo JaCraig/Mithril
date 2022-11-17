@@ -1,4 +1,4 @@
-﻿namespace Mithril.Logging.Serilog.Exceptions
+﻿namespace Mithril.Logging.Exceptions
 {
     /// <summary>
     /// Javascript exception

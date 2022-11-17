@@ -57,7 +57,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         {
             GraphQLStringValue s => JsonDocument.Parse(s.Value),
             GraphQLNullValue _ => null,
-            _ => ThrowLiteralConversionError(value)
+            _ => null
         };
 
         /// <summary>

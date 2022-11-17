@@ -20,11 +20,10 @@
         /// <typeparam name="TValue">The type of the value.</typeparam>
         /// <param name="key">The key.</param>
         /// <returns>The value specified.</returns>
-        public TValue? GetValue<TValue>(string key)
+        public TValue? GetValue<TValue>(string? key)
         {
-            if (!TryGetValue(key, out var value))
-                return default;
-            return (TValue?)value ?? default;
+            TryGetValue<TValue>(key, out var value);
+            return value;
         }
 
         /// <summary>
@@ -34,14 +33,14 @@
         /// <param name="key">The key.</param>
         /// <param name="value">The value.</param>
         /// <returns>True if it is found, false otherwise.</returns>
-        public bool TryGetValue<TValue>(string key, out TValue? value)
+        public bool TryGetValue<TValue>(string? key, out TValue? value)
         {
-            if (string.IsNullOrWhiteSpace(key))
+            if (string.IsNullOrWhiteSpace(key) || !TryGetValue(key, out var value2))
             {
                 value = default;
                 return false;
             }
-            value = GetValue<TValue>(key);
+            value = (TValue?)value2;
             return true;
         }
     }

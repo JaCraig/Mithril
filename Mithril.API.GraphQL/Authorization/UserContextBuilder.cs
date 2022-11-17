@@ -37,7 +37,7 @@ namespace Mithril.API.GraphQL.Authorization
         /// <inheritdoc cref="T:GraphQL.Server.Transports.AspNetCore.IUserContextBuilder"/>
         public ValueTask<IDictionary<string, object?>?> BuildUserContextAsync(HttpContext context, object? payload)
         {
-            return ValueTask.FromResult((IDictionary<string, object?>?)new GraphQLUserContextDictionary(context.User));
+            return ValueTask.FromResult((IDictionary<string, object?>?)new GraphQLUserContextDictionary(context?.User));
         }
     }
 
@@ -51,7 +51,7 @@ namespace Mithril.API.GraphQL.Authorization
         /// Initializes a new instance of the <see cref="GraphQLUserContextDictionary"/> class.
         /// </summary>
         /// <param name="user">The user.</param>
-        public GraphQLUserContextDictionary(ClaimsPrincipal user)
+        public GraphQLUserContextDictionary(ClaimsPrincipal? user)
         {
             User = user;
         }
@@ -60,6 +60,6 @@ namespace Mithril.API.GraphQL.Authorization
         /// Gets the user.
         /// </summary>
         /// <value>The user.</value>
-        public ClaimsPrincipal User { get; }
+        public ClaimsPrincipal? User { get; }
     }
 }

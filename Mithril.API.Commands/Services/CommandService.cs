@@ -7,7 +7,6 @@ using Mithril.API.Abstractions.Services;
 using Mithril.Core.Abstractions.Configuration;
 using Mithril.Core.Abstractions.Extensions;
 using System.Diagnostics;
-using System.Dynamic;
 
 namespace Mithril.API.Commands.Services
 {
@@ -20,13 +19,12 @@ namespace Mithril.API.Commands.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandService"/> class.
         /// </summary>
-        /// <param name="eventHandlers">The event handlers.</param>
         /// <param name="commandHandlers">The command handlers.</param>
         /// <param name="logger">The logger.</param>
         /// <param name="configuration">The configuration.</param>
         public CommandService(IEnumerable<ICommandHandler> commandHandlers, ILogger<CommandService> logger, IConfiguration configuration)
         {
-            CommandHandlers = commandHandlers.ToDictionary(x => x.CommandTypeAccepted.Name, StringComparer.OrdinalIgnoreCase);
+            CommandHandlers = commandHandlers ?? Array.Empty<ICommandHandler>();
             Logger = logger;
             Configuration = configuration.GetSystemConfig();
         }
@@ -35,7 +33,7 @@ namespace Mithril.API.Commands.Services
         /// Gets the command handlers.
         /// </summary>
         /// <value>The command handlers.</value>
-        private Dictionary<string, ICommandHandler> CommandHandlers { get; }
+        public IEnumerable<ICommandHandler> CommandHandlers { get; }
 
         /// <summary>
         /// Gets the configuration.
@@ -56,23 +54,12 @@ namespace Mithril.API.Commands.Services
         private Stopwatch Stopwatch { get; } = new Stopwatch();
 
         /// <summary>
-        /// Converts the specified value to a command.
-        /// </summary>
-        /// <param name="type">The type.</param>
-        /// <param name="value">The value.</param>
-        /// <returns>The command based on the type.</returns>
-        public ICommand? Convert(string type, ExpandoObject value)
-        {
-            if (!CommandHandlers.TryGetValue(type, out var Handler))
-                return null;
-            return Handler.Create(value);
-        }
-
-        /// <summary>
         /// Runs this instance.
         /// </summary>
         public async Task ProcessAsync()
         {
+            if (!CommandHandlers.Any())
+                return;
             int RunTime = Configuration?.API?.MaxCommandProcessTime ?? 40000;
             int Count = 0;
             var Context = new DbContext();
@@ -85,9 +72,9 @@ namespace Mithril.API.Commands.Services
                 if (Commands.Length == 0)
                     break;
                 Count += Commands.Length;
-                foreach (var Key in CommandHandlers.Keys)
+                foreach (var Handler in CommandHandlers)
                 {
-                    _ = CommandHandlers[Key].HandleCommand(Commands);
+                    _ = Handler.HandleCommand(Commands);
                 }
                 for (var x = 0; x < Commands.Length; ++x)
                 {

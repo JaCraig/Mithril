@@ -24,7 +24,7 @@ namespace Mithril.API.Commands.Services
         /// <param name="configuration">The configuration.</param>
         public EventService(IEnumerable<IEventHandler> eventHandlers, ILogger<EventService> logger, IConfiguration configuration)
         {
-            EventHandlers = eventHandlers;
+            EventHandlers = eventHandlers ?? Array.Empty<IEventHandler>();
             Logger = logger;
             Configuration = configuration.GetSystemConfig();
         }
@@ -58,6 +58,8 @@ namespace Mithril.API.Commands.Services
         /// </summary>
         public async Task ProcessAsync()
         {
+            if (!EventHandlers.Any())
+                return;
             int RunTime = Configuration?.API?.MaxEventProcessTime ?? 40000;
             int Count = 0;
             var Context = new DbContext();

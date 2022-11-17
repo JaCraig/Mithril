@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Mithril.API.Abstractions.Services;
+using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.Data.Abstractions.Services;
-using System.Dynamic;
 using System.Security.Claims;
 
 namespace Mithril.API.Commands.Endpoint
@@ -15,17 +13,15 @@ namespace Mithril.API.Commands.Endpoint
         /// <summary>
         /// Requests the delegate.
         /// </summary>
-        /// <param name="commandService">The command service.</param>
+        /// <typeparam name="TViewModel">The type of the view model.</typeparam>
         /// <param name="dataService">The data service.</param>
         /// <param name="user">The user.</param>
-        /// <param name="type">The type.</param>
+        /// <param name="commandHandler">The command handler.</param>
         /// <param name="value">The value.</param>
         /// <returns></returns>
-        public static async Task<IResult> RequestDelegate(ICommandService commandService, IDataService dataService, ClaimsPrincipal user, [FromRoute] string type, [FromBody] ExpandoObject value)
+        public static async Task<IResult> RequestDelegate<TViewModel>(IDataService dataService, ClaimsPrincipal user, ICommandHandler<TViewModel> commandHandler, TViewModel value)
         {
-            if (commandService is null)
-                return Results.BadRequest();
-            var Command = commandService.Convert(type, value);
+            var Command = commandHandler?.Create(value);
             if (Command is null)
                 return Results.BadRequest();
             await Command.SaveAsync(dataService, user).ConfigureAwait(false);

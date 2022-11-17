@@ -109,6 +109,8 @@ namespace Mithril.Core.Modules
         /// <param name="environment">The environment.</param>
         public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
         {
+            if (!(endpoints?.IsSetup() ?? false))
+                return endpoints;
             endpoints?.MapAreaControllerRoute("Admin_Route", "Admin", "Admin/{controller}/{action}/{id?}");
             endpoints?.MapDefaultControllerRoute();
             return endpoints;
@@ -122,6 +124,9 @@ namespace Mithril.Core.Modules
         /// <param name="environment">The environment.</param>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
+            if (services is null)
+                return services;
+
             //Memory cache
             services = services.AddMemoryCache();
 
@@ -140,6 +145,10 @@ namespace Mithril.Core.Modules
                 // Add compression.
                 services = services.AddResponseCompression(options => options.EnableForHttps = Settings.Compression.AllowHttps);
             }
+
+            // Add mithril setup flag
+            services = services.AddSingleton<MithrilSetup>();
+
             return services;
         }
 

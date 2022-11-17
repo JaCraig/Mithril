@@ -1,7 +1,7 @@
 ﻿using Inflatable.BaseClasses;
 using Mithril.Data.Inflatable.Databases;
 
-namespace Mithril.Logging.Serilog.Models.Mappings
+namespace Mithril.Logging.Models.Mappings
 {
     /// <summary>
     /// Log command mapping
