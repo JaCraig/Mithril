@@ -1,4 +1,6 @@
-﻿namespace Mithril.API.Abstractions.Commands.Interfaces
+﻿using System.Security.Claims;
+
+namespace Mithril.API.Abstractions.Commands.Interfaces
 {
     /// <summary>
     /// Command handler interface
@@ -10,6 +12,12 @@
         /// </summary>
         /// <value>The command type accepted.</value>
         string CommandName { get; }
+
+        /// <summary>
+        /// Gets the tags (Used by OpenAPI, etc).
+        /// </summary>
+        /// <value>The tags (Used by OpenAPI, etc).</value>
+        string[] Tags { get; }
 
         /// <summary>
         /// Gets the type of the view model it accepts.
@@ -35,7 +43,8 @@
         /// Creates the specified value.
         /// </summary>
         /// <param name="value">The value.</param>
+        /// <param name="user">The user.</param>
         /// <returns>A command value converted from the view model.</returns>
-        ICommand? Create(TViewModel? value);
+        ICommand? Create(TViewModel? value, ClaimsPrincipal user);
     }
 }

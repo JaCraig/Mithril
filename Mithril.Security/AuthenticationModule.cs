@@ -25,6 +25,12 @@ namespace Mithril.Security
         }
 
         /// <summary>
+        /// Gets the order that they are initialized in.
+        /// </summary>
+        /// <value>The order that they are initialized in.</value>
+        public override int Order => int.MinValue;
+
+        /// <summary>
         /// Configures the application.
         /// </summary>
         /// <param name="app">The application.</param>
@@ -45,7 +51,10 @@ namespace Mithril.Security
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? env)
         {
             // Add authorization.
-            services?.AddAuthorization(options => options.FallbackPolicy = options.DefaultPolicy);
+            services?.AddAuthorization(options =>
+            {
+                options.FallbackPolicy = options.DefaultPolicy;
+            });
 
             // Add the security services.
             return services?.AddSingleton<ISecurityService, SecurityService>()

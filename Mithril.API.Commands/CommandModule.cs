@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.API.Abstractions.Services;
 using Mithril.API.Commands.BackgroundTasks;
 using Mithril.API.Commands.Endpoint;
 using Mithril.API.Commands.Services;
+using Mithril.Core.Abstractions.Configuration;
 using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Data.Abstractions.Services;
@@ -52,10 +54,11 @@ namespace Mithril.API.Commands
                 return endpoints;
             var EndPointMethod = typeof(CommandModule).GetMethod(nameof(SetupEndPoint), BindingFlags.Static | BindingFlags.NonPublic);
             var TempProvider = Services.BuildServiceProvider();
-            var CommandEndpoint = (configuration.GetSystemConfig()?.API?.CommandEndpoint ?? "/api/command/");
+            var SystemConfig = configuration.GetSystemConfig();
+            var CommandEndpoint = (SystemConfig?.API?.CommandEndpoint ?? "/api/command/");
             foreach (var Handler in TempProvider.GetServices<ICommandHandler>())
             {
-                EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object[] { endpoints, CommandEndpoint, Handler });
+                EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object[] { endpoints, CommandEndpoint, Handler, SystemConfig });
             }
             return endpoints;
         }
@@ -95,14 +98,29 @@ namespace Mithril.API.Commands
         /// <param name="endpoints">The endpoints.</param>
         /// <param name="commandEndPoint">The command end point.</param>
         /// <param name="commandHandler">The command handler.</param>
-        private static void SetupEndPoint<TViewModel>(IEndpointRouteBuilder? endpoints, string commandEndPoint, ICommandHandler<TViewModel> commandHandler)
+        private static void SetupEndPoint<TViewModel>(IEndpointRouteBuilder? endpoints, string commandEndPoint, ICommandHandler<TViewModel> commandHandler, MithrilConfig? config)
         {
-            endpoints?.MapPost(commandEndPoint + commandHandler.CommandName, (
-                        IDataService dataService,
-                        ClaimsPrincipal user,
-                        [FromBody] TViewModel value) => CommandEndpoint.RequestDelegate(dataService, user, commandHandler, value))
-                    .Produces(StatusCodes.Status200OK)
-                    .Produces(StatusCodes.Status400BadRequest);
+            var EndPointBuilder = endpoints?.MapPost(commandEndPoint + commandHandler.CommandName, (
+                                                        IDataService dataService,
+                                                        ILogger<CommandModule> logger,
+                                                        ClaimsPrincipal user,
+                                                        [FromBody] TViewModel value) => CommandEndpoint.RequestDelegate(dataService, logger, user, commandHandler, value))
+                                            .Produces(StatusCodes.Status200OK)
+                                            .Produces(StatusCodes.Status400BadRequest)
+                                            .WithName(commandHandler.CommandName)
+                                            .WithTags(commandHandler.Tags);
+            if (config?.API?.AllowAnonymous ?? false)
+            {
+                EndPointBuilder?.AllowAnonymous();
+            }
+            else if (!string.IsNullOrEmpty(config?.API?.AuthorizationPolicy))
+            {
+                EndPointBuilder?.RequireAuthorization(config.API.AuthorizationPolicy);
+            }
+            else
+            {
+                EndPointBuilder?.RequireAuthorization();
+            }
         }
     }
 }

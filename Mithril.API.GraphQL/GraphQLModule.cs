@@ -27,6 +27,8 @@ namespace Mithril.API.GraphQL
         {
         }
 
+        public override int Order => int.MaxValue;
+
         /// <summary>
         /// Configures the application.
         /// </summary>
@@ -36,8 +38,15 @@ namespace Mithril.API.GraphQL
         /// <returns>Application builder</returns>
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
+            var Settings = configuration.GetSystemConfig();
             // GraphQL endpoint
-            return app?.UseGraphQL<CompositeSchema>(configuration.GetSystemConfig()?.API?.QueryEndpoint ?? "/api/query");
+            return app?.UseGraphQL<CompositeSchema>(configuration.GetSystemConfig()?.API?.QueryEndpoint ?? "/api/query", options =>
+            {
+                if (!(Settings?.API?.AllowAnonymous ?? false))
+                    options.AuthorizationRequired = true;
+                if (!string.IsNullOrEmpty(Settings?.API?.AuthorizationPolicy))
+                    options.AuthorizedPolicy = Settings?.API?.AuthorizationPolicy;
+            });
         }
 
         /// <summary>
@@ -57,7 +66,7 @@ namespace Mithril.API.GraphQL
                     options.EnableMetrics = false;
                     options.UnhandledExceptionDelegate = ctx =>
                     {
-                        Canister.Builder.Bootstrapper?.Resolve<ILogger<GraphQLModule>>().LogError("{Error} occured", ctx.OriginalException.Message);
+                        ctx.Context?.RequestServices?.GetService<ILogger<GraphQLModule>>()?.LogError("{Error} occured", ctx.OriginalException.Message);
                         return Task.CompletedTask;
                     };
                 })

@@ -6,6 +6,18 @@
     public class API
     {
         /// <summary>
+        /// Gets or sets the allow anonymous users access (defaults to false).
+        /// </summary>
+        /// <value>The allow anonymous users access.</value>
+        public bool? AllowAnonymous { get; set; }
+
+        /// <summary>
+        /// Gets or sets the authorization policy (if empty then just Authorize called).
+        /// </summary>
+        /// <value>The authorization policy.</value>
+        public string? AuthorizationPolicy { get; set; }
+
+        /// <summary>
         /// Gets or sets the command endpoint.
         /// </summary>
         /// <value>The command endpoint.</value>

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Mithril.Models;
 using Mithril.Security.Abstractions.Services;
 using System.Diagnostics;
@@ -56,6 +57,7 @@ namespace Mithril.Controllers
         /// Privacies this instance.
         /// </summary>
         /// <returns></returns>
+        [Authorize(Policy = "A")]
         public IActionResult Privacy()
         {
             return View();

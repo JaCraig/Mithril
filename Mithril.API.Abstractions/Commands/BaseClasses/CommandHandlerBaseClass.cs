@@ -1,4 +1,5 @@
 ﻿using Mithril.API.Abstractions.Commands.Interfaces;
+using System.Security.Claims;
 
 namespace Mithril.API.Abstractions.Commands.BaseClasses
 {
@@ -24,6 +25,12 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         public virtual string CommandName { get; } = typeof(TCommand).Name;
 
         /// <summary>
+        /// Gets the tags (Used by OpenAPI, etc).
+        /// </summary>
+        /// <value>The tags (Used by OpenAPI, etc).</value>
+        public virtual string[] Tags { get; } = Array.Empty<string>();
+
+        /// <summary>
         /// Gets the type of the view model it accepts.
         /// </summary>
         /// <value>The type of the view model it accepts.</value>
@@ -33,8 +40,9 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// Creates the specified value.
         /// </summary>
         /// <param name="value">The value.</param>
+        /// <param name="user">The user.</param>
         /// <returns>A command value converted from the view model.</returns>
-        public abstract ICommand? Create(TViewModel? value);
+        public abstract ICommand? Create(TViewModel? value, ClaimsPrincipal user);
 
         /// <summary>
         /// Handles the Command.
