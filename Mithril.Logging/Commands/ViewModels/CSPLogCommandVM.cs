@@ -26,6 +26,8 @@ namespace Mithril.Logging.Commands.ViewModels
         /// <exception cref="BadHttpRequestException">Request content type was not 'application/csp-report'</exception>
         public static ValueTask<CSPLogCommandVM?> BindAsync(HttpContext context, ParameterInfo parameter)
         {
+            if (context?.Request is null || parameter is null)
+                return ValueTask.FromResult<CSPLogCommandVM?>(null);
             if (!string.Equals(context.Request.ContentType, "application/csp-report"))
             {
                 throw new BadHttpRequestException("Request content type was not 'application/csp-report'", StatusCodes.Status415UnsupportedMediaType);
