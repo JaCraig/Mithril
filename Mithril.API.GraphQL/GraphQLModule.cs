@@ -27,6 +27,10 @@ namespace Mithril.API.GraphQL
         {
         }
 
+        /// <summary>
+        /// Gets the order that they are initialized in.
+        /// </summary>
+        /// <value>The order that they are initialized in.</value>
         public override int Order => int.MaxValue;
 
         /// <summary>
@@ -71,7 +75,8 @@ namespace Mithril.API.GraphQL
                     };
                 })
                 ?.AddSystemTextJson()
-                ?.AddUserContextBuilder((context) => new GraphQLUserContextDictionary(context.User));
+                ?.AddUserContextBuilder((context) => new GraphQLUserContextDictionary(context.User))
+                ?.AddAuthorizationRule();
             });
             return services;
         }

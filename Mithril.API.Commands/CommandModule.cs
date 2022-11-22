@@ -1,12 +1,12 @@
 ﻿using Canister.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Mithril.API.Abstractions.Attributes;
 using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.API.Abstractions.Services;
 using Mithril.API.Commands.BackgroundTasks;
@@ -58,7 +58,7 @@ namespace Mithril.API.Commands
             var CommandEndpoint = (SystemConfig?.API?.CommandEndpoint ?? "/api/command/");
             foreach (var Handler in TempProvider.GetServices<ICommandHandler>())
             {
-                EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object[] { endpoints, CommandEndpoint, Handler, SystemConfig });
+                EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object?[] { endpoints, CommandEndpoint, Handler, SystemConfig });
             }
             return endpoints;
         }
@@ -98,28 +98,43 @@ namespace Mithril.API.Commands
         /// <param name="endpoints">The endpoints.</param>
         /// <param name="commandEndPoint">The command end point.</param>
         /// <param name="commandHandler">The command handler.</param>
+        /// <param name="config">The configuration.</param>
         private static void SetupEndPoint<TViewModel>(IEndpointRouteBuilder? endpoints, string commandEndPoint, ICommandHandler<TViewModel> commandHandler, MithrilConfig? config)
+            where TViewModel : notnull
         {
             var EndPointBuilder = endpoints?.MapPost(commandEndPoint + commandHandler.CommandName, (
                                                         IDataService dataService,
                                                         ILogger<CommandModule> logger,
                                                         ClaimsPrincipal user,
-                                                        [FromBody] TViewModel value) => CommandEndpoint.RequestDelegate(dataService, logger, user, commandHandler, value))
-                                            .Produces(StatusCodes.Status200OK)
-                                            .Produces(StatusCodes.Status400BadRequest)
+                                                        TViewModel value) => CommandEndpoint.RequestDelegate(dataService, logger, user, commandHandler, value))
+                                            .Produces<ReturnedResult>(StatusCodes.Status200OK, contentType: "application/json")
+                                            .Produces<ReturnedResult>(StatusCodes.Status400BadRequest, contentType: "application/json")
                                             .WithName(commandHandler.CommandName)
                                             .WithTags(commandHandler.Tags);
-            if (config?.API?.AllowAnonymous ?? false)
+            if (EndPointBuilder is null)
+                return;
+            if (commandHandler.ContentTypeAccepts.Length > 1)
+                EndPointBuilder = EndPointBuilder.Accepts<TViewModel>(commandHandler.ContentTypeAccepts[0], commandHandler.ContentTypeAccepts[1..^1]);
+            else if (commandHandler.ContentTypeAccepts.Length > 0)
+                EndPointBuilder = EndPointBuilder.Accepts<TViewModel>(commandHandler.ContentTypeAccepts[0]);
+
+            var HandlerType = commandHandler.GetType();
+
+            var AuthorizationAttribute = HandlerType.GetCustomAttribute<ApiAuthorizeAttribute>();
+
+            if ((config?.API?.AllowAnonymous ?? false) || HandlerType.GetCustomAttribute<ApiAllowAnonymousAttribute>() is not null)
             {
-                EndPointBuilder?.AllowAnonymous();
+                EndPointBuilder = EndPointBuilder?.AllowAnonymous();
             }
-            else if (!string.IsNullOrEmpty(config?.API?.AuthorizationPolicy))
+            else if (!string.IsNullOrEmpty(AuthorizationAttribute?.PolicyName) || !string.IsNullOrEmpty(config?.API?.AuthorizationPolicy))
             {
-                EndPointBuilder?.RequireAuthorization(config.API.AuthorizationPolicy);
+                EndPointBuilder = EndPointBuilder?.Produces(StatusCodes.Status401Unauthorized);
+                EndPointBuilder = EndPointBuilder?.RequireAuthorization(AuthorizationAttribute?.PolicyName ?? config?.API?.AuthorizationPolicy ?? "");
             }
             else
             {
-                EndPointBuilder?.RequireAuthorization();
+                EndPointBuilder = EndPointBuilder?.Produces(StatusCodes.Status401Unauthorized);
+                EndPointBuilder = EndPointBuilder?.RequireAuthorization();
             }
         }
     }

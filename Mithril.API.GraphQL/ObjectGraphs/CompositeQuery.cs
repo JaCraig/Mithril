@@ -12,7 +12,7 @@ namespace Mithril.API.GraphQL.ObjectGraphs
     /// <summary>
     /// Composite query that creates the root node.
     /// </summary>
-    /// <seealso cref="GraphQL.Types.ObjectGraphType"/>
+    /// <seealso cref="ObjectGraphType"/>
     public class CompositeQuery : ObjectGraphType
     {
         /// <summary>
@@ -39,9 +39,11 @@ namespace Mithril.API.GraphQL.ObjectGraphs
         /// <typeparam name="TValue">The type of the value.</typeparam>
         /// <param name="x">The x.</param>
         /// <returns>The query argument.</returns>
-        private static QueryArgument CreateArgument<TValue>(IArgument x)
+        private static QueryArgument? CreateArgument<TValue>(IArgument x)
             where TValue : IGraphType
         {
+            if (x is null)
+                return null;
             return new QueryArgument<TValue> { Name = x.Name, Description = x.Description, DefaultValue = x.DefaultValue };
         }
 
@@ -57,7 +59,7 @@ namespace Mithril.API.GraphQL.ObjectGraphs
             var GenericCreateArgument = Array.Find(Methods, x => x.IsGenericMethod && x.Name == nameof(CreateArgument));
             Field<TReturnType>(query.Name, query.Nullable ?? false)
                     .Description(query.Description)
-                    .Arguments(query.Arguments.ToArray(x => (QueryArgument)GenericCreateArgument?.MakeGenericMethod(x.ArgumentType.FindGraphType())?.Invoke(this, new object?[] { x })))
+                    .Arguments(query.Arguments?.ToArray(x => (QueryArgument?)GenericCreateArgument?.MakeGenericMethod(x.ArgumentType.FindGraphType())?.Invoke(this, new object?[] { x })))
                     .Type(new GenericGraphType<TReturnType>())
                     .ResolveAsync(context =>
                     {

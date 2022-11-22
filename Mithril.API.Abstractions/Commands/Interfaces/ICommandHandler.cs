@@ -14,6 +14,12 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
         string CommandName { get; }
 
         /// <summary>
+        /// Gets the content type accepted by command handler.
+        /// </summary>
+        /// <value>The content type accepted by command handler.</value>
+        string[] ContentTypeAccepts { get; }
+
+        /// <summary>
         /// Gets the tags (Used by OpenAPI, etc).
         /// </summary>
         /// <value>The tags (Used by OpenAPI, etc).</value>
@@ -45,6 +51,6 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
         /// <param name="value">The value.</param>
         /// <param name="user">The user.</param>
         /// <returns>A command value converted from the view model.</returns>
-        ICommand? Create(TViewModel? value, ClaimsPrincipal user);
+        CommandCreationResult? Create(TViewModel? value, ClaimsPrincipal user);
     }
 }

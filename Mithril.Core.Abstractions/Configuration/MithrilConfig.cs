@@ -12,6 +12,12 @@
         public API? API { get; set; }
 
         /// <summary>
+        /// Gets or sets the application description.
+        /// </summary>
+        /// <value>The application description.</value>
+        public string? ApplicationDescription { get; set; }
+
+        /// <summary>
         /// Gets or sets the name of the application.
         /// </summary>
         /// <value>The name of the application.</value>

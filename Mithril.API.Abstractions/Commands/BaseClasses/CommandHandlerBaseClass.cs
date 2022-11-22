@@ -7,12 +7,14 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
     /// Command handler base class
     /// </summary>
     /// <typeparam name="TCommand">The type of the command.</typeparam>
-    /// <seealso cref="ICommandHandler"/>
+    /// <typeparam name="TViewModel">The type of the view model.</typeparam>
+    /// <seealso cref="ICommandHandler&lt;TViewModel&gt;"/>
     public abstract class CommandHandlerBaseClass<TCommand, TViewModel> : ICommandHandler<TViewModel>
         where TCommand : class
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CommandHandlerBaseClass{TCommand}"/> class.
+        /// Initializes a new instance of the <see cref="CommandHandlerBaseClass{TCommand,
+        /// TViewModel}"/> class.
         /// </summary>
         protected CommandHandlerBaseClass()
         {
@@ -23,6 +25,12 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// </summary>
         /// <value>The command type accepted.</value>
         public virtual string CommandName { get; } = typeof(TCommand).Name;
+
+        /// <summary>
+        /// Gets the content type accepted by command handler.
+        /// </summary>
+        /// <value>The content type accepted by command handler.</value>
+        public virtual string[] ContentTypeAccepts { get; } = new string[] { "application/json", "text/json", "application/*+json" };
 
         /// <summary>
         /// Gets the tags (Used by OpenAPI, etc).
@@ -42,7 +50,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <param name="value">The value.</param>
         /// <param name="user">The user.</param>
         /// <returns>A command value converted from the view model.</returns>
-        public abstract ICommand? Create(TViewModel? value, ClaimsPrincipal user);
+        public abstract CommandCreationResult? Create(TViewModel? value, ClaimsPrincipal user);
 
         /// <summary>
         /// Handles the Command.

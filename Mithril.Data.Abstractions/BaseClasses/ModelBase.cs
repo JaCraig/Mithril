@@ -9,7 +9,6 @@ namespace Mithril.Data.Abstractions.BaseClasses
     /// Model base
     /// </summary>
     /// <typeparam name="TClass">The type of the class.</typeparam>
-    /// <seealso cref="IEquatable{ModelBase{TClass}}"/>
     /// <seealso cref="IModel"/>
     /// <seealso cref="IComparable"/>
     /// <seealso cref="IComparable{TClass}"/>

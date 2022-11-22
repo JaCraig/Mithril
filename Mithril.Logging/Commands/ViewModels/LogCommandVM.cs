@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Mithril.Logging.Commands
+namespace Mithril.Logging.Commands.ViewModels
 {
     /// <summary>
     /// Log Command VM

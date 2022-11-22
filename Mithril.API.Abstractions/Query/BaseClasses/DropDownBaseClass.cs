@@ -12,7 +12,7 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
     public abstract class DropDownBaseClass : IDropDownQuery
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BarAssociationDropDown"/> class.
+        /// Initializes a new instance of the <see cref="DropDownBaseClass"/> class.
         /// </summary>
         /// <param name="helper">The helper.</param>
         protected DropDownBaseClass(SQLHelper helper)

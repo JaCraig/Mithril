@@ -68,13 +68,13 @@ namespace Mithril.Core.Modules
             var Settings = configuration.GetSystemConfig();
 
             // Sets up static HTTP context
-            app.UseStaticHttpContext();
+            app = app.UseStaticHttpContext();
 
             // Setup CSP middleware.
-            app = app.UseMiddleware<CSPMiddleware>();
+            app = app?.UseMiddleware<CSPMiddleware>();
 
             // Setup XFrame middleware.
-            app = app.UseMiddleware<XFrameOptionsMiddleware>();
+            app = app?.UseMiddleware<XFrameOptionsMiddleware>();
 
             // Setup static files.
             app = SetupStaticFiles(app, configuration, environment);
@@ -86,19 +86,8 @@ namespace Mithril.Core.Modules
             }
 
             // Setup exception pages
-            return app.When(environment.IsDevelopment(), builder => builder.UseDeveloperExceptionPage())
-                      .When(!environment.IsDevelopment(), builder => builder.UseExceptionHandler("/Home/Error"));
-        }
-
-        /// <summary>
-        /// Configures the MVC.
-        /// </summary>
-        /// <param name="mvcBuilder">The MVC builder.</param>
-        /// <param name="configuration">The configuration.</param>
-        /// <param name="environment">The environment.</param>
-        public override IMvcBuilder? ConfigureMVC(IMvcBuilder? mvcBuilder, IConfiguration? configuration, IHostEnvironment? environment)
-        {
-            return mvcBuilder?.AddCspMediaType();
+            return app.When(environment.IsDevelopment(), builder => builder?.UseDeveloperExceptionPage())
+                      .When(!environment.IsDevelopment(), builder => builder?.UseExceptionHandler("/Home/Error"));
         }
 
         /// <summary>
@@ -215,8 +204,10 @@ namespace Mithril.Core.Modules
         /// <param name="app">The application.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        private static IApplicationBuilder SetupStaticFiles(IApplicationBuilder app, IConfiguration? configuration, IHostEnvironment? environment)
+        private static IApplicationBuilder? SetupStaticFiles(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
+            if (app is null) return null;
+
             MithrilConfig? Config = configuration.GetSystemConfig();
 
             var provider = new FileExtensionContentTypeProvider();

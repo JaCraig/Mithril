@@ -30,7 +30,9 @@ namespace Mithril.Logging.Serilog
         /// Configures the application.
         /// </summary>
         /// <param name="app">The application.</param>
+        /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
+        /// <returns>Application builder</returns>
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
             return app?.UseMiddleware<LoggingMiddleware>();
@@ -40,6 +42,9 @@ namespace Mithril.Logging.Serilog
         /// Configures the host settings.
         /// </summary>
         /// <param name="host">The host.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        /// <returns>Host builder</returns>
         public override IHostBuilder? ConfigureHostSettings(IHostBuilder? host, IConfiguration? configuration, IHostEnvironment? environment)
         {
             return host?.UseSerilog();
@@ -49,6 +54,9 @@ namespace Mithril.Logging.Serilog
         /// Configures the logging settings.
         /// </summary>
         /// <param name="logging">The logging.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        /// <returns>Logging builder</returns>
         public override ILoggingBuilder? ConfigureLoggingSettings(ILoggingBuilder? logging, IConfiguration? configuration, IHostEnvironment? environment)
         {
             return logging?.AddSerilog();
@@ -60,6 +68,7 @@ namespace Mithril.Logging.Serilog
         /// <param name="services">The services collection.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
+        /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
             string RootPath = environment?.ContentRootPath ?? ".";

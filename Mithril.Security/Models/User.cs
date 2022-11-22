@@ -273,6 +273,7 @@ namespace Mithril.Security.Models
         /// <summary>
         /// Creates the contact info object or updates it asynchronously.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
         /// <param name="type">The display name.</param>
         /// <param name="value">The value.</param>
         /// <returns>The async task</returns>

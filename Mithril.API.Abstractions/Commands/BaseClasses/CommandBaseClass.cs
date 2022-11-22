@@ -10,7 +10,6 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
     /// <typeparam name="TCommand">The type of the command.</typeparam>
     /// <seealso cref="ModelBase{TCommand}"/>
     /// <seealso cref="ICommand"/>
-    /// <seealso cref="IEquatable{CommandBaseClass{TCommand}}"/>
     public abstract class CommandBaseClass<TCommand> : ModelBase<TCommand>, ICommand, IEquatable<CommandBaseClass<TCommand>>
         where TCommand : CommandBaseClass<TCommand>, new()
     {

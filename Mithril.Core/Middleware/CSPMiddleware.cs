@@ -17,7 +17,7 @@ namespace Mithril.Core.Middleware
         public CSPMiddleware(RequestDelegate next, IOptions<MithrilConfig> configuration)
         {
             _next = next;
-            Policy = $"{configuration?.Value?.Security?.ContentSecurityPolicy ?? "default-src 'self'"}; report-uri /api/Command/CSPLogCommand";
+            Policy = $"{configuration?.Value?.Security?.ContentSecurityPolicy ?? "default-src 'self'"}; report-uri /api/Command/CSPLog";
         }
 
         /// <summary>

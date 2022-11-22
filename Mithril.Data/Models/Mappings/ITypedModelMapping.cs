@@ -7,7 +7,7 @@ namespace Mithril.Data.Inflatable.Models.Mappings
     /// <summary>
     /// Typed model mapping
     /// </summary>
-    /// <seealso cref="Inflatable.BaseClasses.MappingBaseClass{ITypedModel, DefaultDatabase}"/>
+    /// <seealso cref="MappingBaseClass{ITypedModel, DefaultDatabase}"/>
     public class ITypedModelMapping : MappingBaseClass<ITypedModel, DefaultDatabase>
     {
         /// <summary>

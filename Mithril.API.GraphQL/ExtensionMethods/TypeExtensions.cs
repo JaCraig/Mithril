@@ -8,13 +8,16 @@ using System.Reflection;
 
 namespace Mithril.API.GraphQL.ExtensionMethods
 {
+    /// <summary>
+    /// Type extensions
+    /// </summary>
     public static class TypeExtensions
     {
         /// <summary>
         /// Gets the assemblies.
         /// </summary>
         /// <value>The assemblies.</value>
-        private static Assembly[] Assemblies { get; set; }
+        private static Assembly[]? Assemblies { get; set; }
 
         /// <summary>
         /// Gets the built in graph types.
@@ -47,7 +50,7 @@ namespace Mithril.API.GraphQL.ExtensionMethods
         /// <summary>
         /// The assembly types
         /// </summary>
-        private static Type[] GraphTypes { get; set; }
+        private static Type[]? GraphTypes { get; set; }
 
         /// <summary>
         /// Gets the type of the nullable base.
@@ -231,6 +234,8 @@ namespace Mithril.API.GraphQL.ExtensionMethods
             FindAssemblies();
             if (GraphTypes is not null)
                 return GraphTypes;
+            if (Assemblies is null)
+                return Array.Empty<Type>();
             lock (GraphTypeLock)
             {
                 if (GraphTypes is not null)

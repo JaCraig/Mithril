@@ -1,4 +1,5 @@
 ﻿using BigBook;
+using Mithril.API.Abstractions.Attributes;
 using Mithril.API.Abstractions.Query;
 using Mithril.API.Abstractions.Query.BaseClasses;
 using Mithril.API.Abstractions.Query.Interfaces;
@@ -44,6 +45,8 @@ namespace Mithril.Models
         /// Gets or sets a.
         /// </summary>
         /// <value>a.</value>
+        [ApiAuthorize("Test")]
+        [ApiDescription("This will show up in the API")]
         public List<TestVM2> A { get; set; } = new List<TestVM2>();
     }
 
@@ -57,5 +60,7 @@ namespace Mithril.Models
         /// </summary>
         /// <value>a.</value>
         public string? A { get; set; }
+
+        public int B { get; set; }
     }
 }

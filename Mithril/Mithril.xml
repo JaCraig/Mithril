@@ -62,6 +62,21 @@
             </summary>
             <value><c>true</c> if [show request identifier]; otherwise, <c>false</c>.</value>
         </member>
+        <member name="T:Mithril.Models.TestModule">
+            <summary>
+            Test module
+            </summary>
+            <seealso cref="T:Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass`1"/>
+        </member>
+        <member name="M:Mithril.Models.TestModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">
+            <summary>
+            Configures the services for the module.
+            </summary>
+            <param name="services">The services collection.</param>
+            <param name="configuration">The configuration.</param>
+            <param name="environment">The environment.</param>
+            <returns>Services</returns>
+        </member>
         <member name="T:Mithril.Models.TestQuery">
             <summary>
             Test query

@@ -2,6 +2,10 @@
 
 namespace Mithril.API.Abstractions.Commands.BaseClasses
 {
+    /// <summary>
+    /// Event handler base class
+    /// </summary>
+    /// <seealso cref="IEventHandler"/>
     public abstract class EventHandlerBaseClass : IEventHandler
     {
         /// <summary>

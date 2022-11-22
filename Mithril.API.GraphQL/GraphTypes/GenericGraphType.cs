@@ -49,19 +49,19 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// <summary>
         /// Automatically wires up known properties of the view model.
         /// </summary>
-        protected void AutoWire(params string[] ignoreProperties)
+        protected void AutoWire()
         {
             foreach (var Property in ReadableProperties.Where(x => x.GetCustomAttribute<ApiIgnoreAttribute>() is null))
             {
+                var GraphType = Property.PropertyType.FindGraphType();
+                if (GraphType is null)
+                    continue;
                 if (Property.PropertyType.IsBuiltInType())
                 {
                     AddBasicFieldGeneric?.MakeGenericMethod(Property.PropertyType).Invoke(this, new[] { Property });
                 }
                 else
                 {
-                    var GraphType = Property.PropertyType.FindGraphType();
-                    if (GraphType is null)
-                        continue;
                     AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object[] { Property, FastActivator.CreateInstance(GraphType) });
                 }
             }
@@ -97,7 +97,20 @@ namespace Mithril.API.GraphQL.GraphTypes
             var ObjectInstance = Expression.Parameter(typeof(TClass), "x");
             var PropertyGet = Expression.Property(ObjectInstance, property);
 
-            Field(Expression.Lambda<Func<TClass, TProperty>>(PropertyGet, ObjectInstance), nullable: property.PropertyType.IsNullable());
+            var FieldBuilder = Field(Expression.Lambda<Func<TClass, TProperty>>(PropertyGet, ObjectInstance), nullable: property.PropertyType.IsNullable());
+
+            var AnonymousAttribute = property.GetCustomAttribute<ApiAllowAnonymousAttribute>();
+            if (AnonymousAttribute is not null)
+            {
+                return;
+            }
+            var AuthorizeAttribute = property.GetCustomAttribute<ApiAuthorizeAttribute>();
+            if (AuthorizeAttribute is null)
+                return;
+            if (!string.IsNullOrEmpty(AuthorizeAttribute.Roles))
+                FieldBuilder.AuthorizeWithRoles(AuthorizeAttribute.Roles ?? "");
+            else
+                FieldBuilder.AuthorizeWithPolicy(AuthorizeAttribute.PolicyName ?? "");
         }
 
         /// <summary>
@@ -105,13 +118,17 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// </summary>
         /// <typeparam name="TProperty">The type of the property.</typeparam>
         /// <param name="property">The property.</param>
+        /// <param name="graphType">Type of the graph.</param>
         private void AddClassField<TProperty>(PropertyInfo property, IGraphType graphType)
             where TProperty : IGraphType
         {
             if (property is null || property.DeclaringType is null)
                 return;
             var PropertyName = (new string(new char[] { property.Name[0] }).ToLower()) + property.Name.Right(property.Name.Length - 1);
-            var Description = $"Returns {property.Name.SplitCamelCase().ToString(StringCase.FirstCharacterUpperCase)} information.";
+            var DescriptionAttribute = property.GetCustomAttribute<ApiDescriptionAttribute>();
+            var Description = string.IsNullOrEmpty(DescriptionAttribute?.Description) ?
+                $"Returns {property.Name.SplitCamelCase().ToString(StringCase.FirstCharacterUpperCase)} information." :
+                DescriptionAttribute.Description;
 
             var ObjectType = typeof(IResolveFieldContext<TClass>);
             var ObjectInstance = Expression.Parameter(ObjectType, "x");
@@ -120,8 +137,22 @@ namespace Mithril.API.GraphQL.GraphTypes
                 return;
             var SourcePropertyGet = Expression.Property(ObjectInstance, SourceProperty);
             var PropertyGet = Expression.Property(SourcePropertyGet, property);
-
-            Field<TProperty>(PropertyName, Description, resolve: Expression.Lambda<Func<IResolveFieldContext<TClass>, object?>>(PropertyGet, ObjectInstance).Compile());
+            var FieldBuilder = Field<TProperty>(PropertyName, Description, resolve: Expression.Lambda<Func<IResolveFieldContext<TClass>, object?>>(PropertyGet, ObjectInstance).Compile());
+            var AnonymousAttribute = property.GetCustomAttribute<ApiAllowAnonymousAttribute>();
+            if (AnonymousAttribute is not null)
+            {
+                FieldBuilder.AllowAnonymous();
+                return;
+            }
+            var AuthorizeAttribute = property.GetCustomAttribute<ApiAuthorizeAttribute>();
+            if (AuthorizeAttribute is null)
+                return;
+            if (string.IsNullOrEmpty(AuthorizeAttribute.PolicyName) && string.IsNullOrEmpty(AuthorizeAttribute.Roles))
+                FieldBuilder.Authorize();
+            else if (!string.IsNullOrEmpty(AuthorizeAttribute.Roles))
+                FieldBuilder.AuthorizeWithRoles(AuthorizeAttribute.Roles ?? "");
+            else
+                FieldBuilder.AuthorizeWithPolicy(AuthorizeAttribute.PolicyName ?? "");
         }
 
         /// <summary>

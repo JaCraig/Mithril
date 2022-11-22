@@ -13,6 +13,7 @@ namespace Mithril.Core.Middleware
         /// Initializes a new instance of the <see cref="XFrameOptionsMiddleware"/> class.
         /// </summary>
         /// <param name="next">The next.</param>
+        /// <param name="configuration">The configuration.</param>
         public XFrameOptionsMiddleware(RequestDelegate next, IOptions<MithrilConfig> configuration)
         {
             _next = next;

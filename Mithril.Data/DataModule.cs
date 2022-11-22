@@ -55,7 +55,10 @@ namespace Mithril.Data.Inflatable
         /// <summary>
         /// Setups the look ups asynchronously.
         /// </summary>
+        /// <typeparam name="TLookUpClass">The type of the look up class.</typeparam>
         /// <param name="dataService">The data service.</param>
+        /// <param name="lookUps">The look ups.</param>
+        /// <param name="lookUpType">Type of the look up.</param>
         /// <returns>Async task.</returns>
         private static Task SetupLookUpsAsync<TLookUpClass>(IDataService dataService, IEnumerable<TLookUpClass> lookUps, LookUpTypeEnum lookUpType)
             where TLookUpClass : LookUpEnumBaseClass<TLookUpClass>, new()

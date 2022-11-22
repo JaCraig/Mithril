@@ -10,7 +10,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         where TClass : LookUpEnumBaseClass<TClass>, new()
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LookUpEnumBaseClass"/> class.
+        /// Initializes a new instance of the <see cref="LookUpEnumBaseClass{TClass}"/> class.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="icon">The icon.</param>

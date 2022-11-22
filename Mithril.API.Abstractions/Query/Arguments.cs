@@ -3,7 +3,6 @@
     /// <summary>
     /// Arguments
     /// </summary>
-    /// <seealso cref="Dictionary&lt;string, object&gt;"/>
     public class Arguments : Dictionary<string, object?>
     {
         /// <summary>

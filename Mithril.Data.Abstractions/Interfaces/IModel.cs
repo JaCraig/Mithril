@@ -9,7 +9,6 @@ namespace Mithril.Data.Abstractions.Interfaces
     /// </summary>
     /// <typeparam name="TClass">The type of the class.</typeparam>
     /// <seealso cref="IModel"/>
-    /// <seealso cref="IEquatable&lt;IModel&lt;TClass&gt;&gt;"/>
     public interface IModel<TClass> : IModel, IEquatable<IModel<TClass>>
         where TClass : IModel<TClass>, new()
     {

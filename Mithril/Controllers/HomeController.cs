@@ -57,7 +57,7 @@ namespace Mithril.Controllers
         /// Privacies this instance.
         /// </summary>
         /// <returns></returns>
-        [Authorize(Policy = "A")]
+        [Authorize(Policy = "Test")]
         public IActionResult Privacy()
         {
             return View();
