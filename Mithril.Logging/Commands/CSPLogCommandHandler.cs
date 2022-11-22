@@ -12,7 +12,7 @@ namespace Mithril.Logging.Commands
     /// CSP log command handler
     /// </summary>
     /// <seealso cref="CommandHandlerBaseClass&lt;LogCommand, CSPLogCommandVM&gt;"/>
-    internal class CSPLogCommandHandler : CommandHandlerBaseClass<LogCommand, CSPLogCommandVM>
+    public class CSPLogCommandHandler : CommandHandlerBaseClass<LogCommand, CSPLogCommandVM>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CSPLogCommandHandler"/> class.
