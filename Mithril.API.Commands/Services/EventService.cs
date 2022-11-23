@@ -70,7 +70,7 @@ namespace Mithril.API.Commands.Services
             Context = new DbContext();
             while (Stopwatch.ElapsedMilliseconds <= RunTime || RunTime == -1)
             {
-                var Events = DbContext<IEvent>.CreateQuery().Where(x => x.Active && (x.State == "Created" || x.State == "Retrying")).OrderBy(x => x.DateCreated).Take(40).ToList().Where(x => x.CanRun()).ToArray();
+                var Events = DbContext<IEvent>.CreateQuery().Where(x => x.Active && x.State != "Completed" && x.State != "Error").OrderBy(x => x.DateCreated).Take(40).ToList().Where(x => x.CanRun()).ToArray();
                 Logger?.LogInformation("Pulled {EventsLength} events", Events.Length);
                 Count += Events.Length;
                 if (Events.Length == 0)
