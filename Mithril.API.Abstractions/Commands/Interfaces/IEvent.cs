@@ -1,4 +1,5 @@
 ﻿using Mithril.Data.Abstractions.Interfaces;
+using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 
 namespace Mithril.API.Abstractions.Commands.Interfaces
@@ -14,6 +15,19 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
         /// </summary>
         /// <value>The name.</value>
         string Name { get; }
+
+        /// <summary>
+        /// Gets or sets the retry count.
+        /// </summary>
+        /// <value>The retry count.</value>
+        int RetryCount { get; set; }
+
+        /// <summary>
+        /// Gets or sets the state.
+        /// </summary>
+        /// <value>The state.</value>
+        [MaxLength(20)]
+        string? State { get; set; }
 
         /// <summary>
         /// Determines whether this instance can run.

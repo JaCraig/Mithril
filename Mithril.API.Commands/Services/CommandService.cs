@@ -63,12 +63,12 @@ namespace Mithril.API.Commands.Services
             int RunTime = Configuration?.API?.MaxCommandProcessTime ?? 40000;
             int Count = 0;
             var Context = new DbContext();
-            Logger.LogInformation($"Processing commands for {RunTime} ms");
+            Logger.LogInformation("Processing commands for {RunTime} ms", RunTime);
             Stopwatch.Restart();
             while (Stopwatch.ElapsedMilliseconds <= RunTime || RunTime == -1)
             {
                 var Commands = DbContext<ICommand>.CreateQuery().Where(x => x.Active).OrderBy(x => x.DateCreated).Take(40).ToList().ToArray();
-                Logger.LogInformation($"Pulled {Commands.Length} commands");
+                Logger.LogInformation("Pulled {CommandsLength} commands", Commands.Length);
                 if (Commands.Length == 0)
                     break;
                 Count += Commands.Length;
@@ -84,9 +84,9 @@ namespace Mithril.API.Commands.Services
                 }
                 await Context.ExecuteAsync().ConfigureAwait(false);
                 Context = new DbContext();
-                Logger.LogInformation($"Finished processing {Count} commands.");
+                Logger.LogInformation("Processed {Count} commands.", Count);
             }
-            Logger.LogInformation($"Finished processing {Count} commands.");
+            Logger.LogInformation("Finished processing {Count} commands.", Count);
             Stopwatch.Stop();
         }
     }

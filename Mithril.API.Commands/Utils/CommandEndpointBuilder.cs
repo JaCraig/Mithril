@@ -31,7 +31,9 @@ namespace Mithril.API.Commands.Utils
         {
             if (commandHandler is null || endpoints is null)
                 return;
-            var EndPointBuilder = endpoints.MapPost(commandEndPoint + commandHandler.CommandName, (
+            commandEndPoint = commandEndPoint?.Replace("{", "").Replace("}", "") ?? "";
+            var CommandName = (commandHandler?.CommandName ?? "").Replace("{", "").Replace("}", "");
+            var EndPointBuilder = endpoints.MapPost(commandEndPoint + CommandName, (
                                                         [FromServices] IDataService dataService,
                                                         [FromServices] ILogger<CommandModule> logger,
                                                         ClaimsPrincipal user,

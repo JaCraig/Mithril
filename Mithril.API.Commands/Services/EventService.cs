@@ -2,6 +2,8 @@
 using Inflatable;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Mithril.API.Abstractions.Commands;
+using Mithril.API.Abstractions.Commands.Enums;
 using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.API.Abstractions.Services;
 using Mithril.Core.Abstractions.Configuration;
@@ -63,33 +65,83 @@ namespace Mithril.API.Commands.Services
             int RunTime = Configuration?.API?.MaxEventProcessTime ?? 40000;
             int Count = 0;
             var Context = new DbContext();
-            Logger.LogInformation($"Processing Events for {RunTime} ms");
+            Logger.LogInformation("Processing Events for {RunTime} ms", RunTime);
             Stopwatch.Restart();
             Count = 0;
             Context = new DbContext();
             while (Stopwatch.ElapsedMilliseconds <= RunTime || RunTime == -1)
             {
-                var Events = DbContext<IEvent>.CreateQuery().Where(x => x.Active).OrderBy(x => x.DateCreated).Take(100).ToList().Where(x => x.CanRun()).ToArray();
-                Logger.LogInformation($"Pulled {Events.Length} events");
+                var Events = DbContext<IEvent>.CreateQuery().Where(x => x.Active && (x.State == "Created" || x.State == "Retrying")).OrderBy(x => x.DateCreated).Take(40).ToList().Where(x => x.CanRun()).ToArray();
+                Logger.LogInformation("Pulled {EventsLength} events", Events.Length);
                 Count += Events.Length;
                 if (Events.Length == 0)
                     break;
-                foreach (var Handler in EventHandlers)
+                var Results = new List<EventResult>();
+                foreach (var Event in Events)
                 {
-                    Handler.Handle(Events);
+                    Results.AddRange(EventHandlers.Where(x => x.Accepts(Event)).ForEachParallel(x => x.Handle(Event)));
+                    SetEventState(Results, Event);
+                    LogEventExceptions(Results, Event);
                 }
                 for (var x = 0; x < Events.Length; ++x)
                 {
                     var Event = Events[x];
-                    Event.Active = false;
                     Context.Save(Event);
                 }
                 await Context.ExecuteAsync().ConfigureAwait(false);
                 Context = new DbContext();
-                Logger.LogInformation($"Finished processing {Count} events.");
+                Logger.LogInformation("Processed {Count} events.", Count);
             }
-            Logger.LogInformation($"Finished processing {Count} events.");
+            Logger.LogInformation("Finished processing {Count} events.", Count);
             Stopwatch.Stop();
+        }
+
+        /// <summary>
+        /// Sets the state of the event.
+        /// </summary>
+        /// <param name="Results">The results.</param>
+        /// <param name="Event">The event.</param>
+        private static void SetEventState(List<EventResult> Results, IEvent? Event)
+        {
+            if (Event is null)
+                return;
+            if (Results.Count == 0)
+            {
+                Event.State = EventStateTypes.Completed;
+                return;
+            }
+            if (Results.Any(Result => Result.IsErrorState) || Results.Select(x => x.NewState).Distinct().Count() > 1)
+            {
+                if (Event.RetryCount <= 0)
+                {
+                    Event.State = EventStateTypes.Error;
+                    Event.RetryCount = 0;
+                }
+                else
+                {
+                    Event.State = EventStateTypes.Retrying;
+                    --Event.RetryCount;
+                }
+            }
+            else
+            {
+                Event.State = Results.FirstOrDefault()?.NewState;
+            }
+        }
+
+        /// <summary>
+        /// Logs the event exceptions.
+        /// </summary>
+        /// <param name="Results">The results.</param>
+        /// <param name="Event">The event.</param>
+        private void LogEventExceptions(List<EventResult> Results, IEvent? Event)
+        {
+            if (Event is null || Results.Count == 0)
+                return;
+            foreach (var Result in Results.Where(Result => Result.Exception is not null))
+            {
+                Logger.LogError(Result.Exception, "Error when processing event {EventID} of type {EventName} by {EventHandlerName}.", Event.ID, Event.Name, Result.EventHandler.Name);
+            }
         }
     }
 }

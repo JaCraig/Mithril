@@ -24,13 +24,15 @@
         public string? CommandEndpoint { get; set; }
 
         /// <summary>
-        /// Gets or sets the command run frequency (in seconds).
+        /// Gets or sets the command run frequency (in seconds). If set to 0, then command
+        /// processing will not run.
         /// </summary>
         /// <value>The command run frequency (in seconds).</value>
         public int? CommandRunFrequency { get; set; }
 
         /// <summary>
-        /// Gets or sets the event run frequency (in seconds).
+        /// Gets or sets the event run frequency (in seconds). If set to 0, then event processing
+        /// will not run.
         /// </summary>
         /// <value>The event run frequency (in seconds).</value>
         public int? EventRunFrequency { get; set; }

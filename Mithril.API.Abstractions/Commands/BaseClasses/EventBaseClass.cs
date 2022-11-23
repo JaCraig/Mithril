@@ -1,6 +1,7 @@
 ﻿using BigBook;
 using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.Data.Abstractions.BaseClasses;
+using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 
 namespace Mithril.API.Abstractions.Commands.BaseClasses
@@ -26,6 +27,19 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// </summary>
         /// <value>The name.</value>
         public string Name { get; } = typeof(TEvent).Name.AddSpaces();
+
+        /// <summary>
+        /// Gets or sets the retry count.
+        /// </summary>
+        /// <value>The retry count.</value>
+        public int RetryCount { get; set; } = 3;
+
+        /// <summary>
+        /// Gets or sets the state.
+        /// </summary>
+        /// <value>The state.</value>
+        [MaxLength(20)]
+        public string? State { get; set; } = "Created";
 
         /// <summary>
         /// Implements the operator !=.

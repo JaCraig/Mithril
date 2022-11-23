@@ -50,10 +50,7 @@ namespace Mithril.Logging.Commands
         /// <returns>A command value converted from the ExpandoObject.</returns>
         public override CommandCreationResult Create(LogCommandVM? value, ClaimsPrincipal user)
         {
-            return new CommandCreationResult
-            {
-                Command = new LogCommand(value?.LogLevel ?? LogLevel.Information, value?.Message ?? "")
-            };
+            return new CommandCreationResult(new LogCommand(value?.LogLevel ?? LogLevel.Information, value?.Message ?? ""));
         }
 
         /// <summary>

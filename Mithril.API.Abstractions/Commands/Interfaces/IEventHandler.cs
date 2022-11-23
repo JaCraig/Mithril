@@ -6,6 +6,12 @@
     public interface IEventHandler
     {
         /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>The name.</value>
+        string Name { get; }
+
+        /// <summary>
         /// Determines if this event handler accepts the event.
         /// </summary>
         /// <param name="arg">The argument.</param>
@@ -16,6 +22,7 @@
         /// Handles the event.
         /// </summary>
         /// <param name="arg">The argument.</param>
-        void Handle(params IEvent[] arg);
+        /// <returns>The result from processing the event.</returns>
+        EventResult Handle(IEvent arg);
     }
 }

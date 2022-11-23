@@ -68,6 +68,8 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <returns></returns>
         public Task StartAsync(CancellationToken cancellationToken)
         {
+            if (EventRunFrequency == 0)
+                return Task.CompletedTask;
             Logger.LogInformation("Starting event background service");
             InternalTimer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(EventRunFrequency));
             return Task.CompletedTask;
@@ -82,6 +84,8 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <returns></returns>
         public Task StopAsync(CancellationToken cancellationToken)
         {
+            if (EventRunFrequency == 0)
+                return Task.CompletedTask;
             Logger.LogInformation("Stopping event background service");
             InternalTimer?.Change(Timeout.Infinite, 0);
             return Task.CompletedTask;

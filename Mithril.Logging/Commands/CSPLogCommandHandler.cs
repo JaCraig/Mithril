@@ -55,11 +55,7 @@ namespace Mithril.Logging.Commands
         /// <returns>A command value converted from the ExpandoObject.</returns>
         public override CommandCreationResult Create(CSPLogCommandVM? value, ClaimsPrincipal user)
         {
-            return new CommandCreationResult
-            {
-                Command = new LogCommand(LogLevel.Error, $"CSP Violation: {value?.CspReport?.DocumentUri}, {value?.CspReport?.BlockedUri}"),
-                ResultText = "CSP violoation logged successfully"
-            };
+            return new CommandCreationResult(new LogCommand(LogLevel.Error, $"CSP Violation: {value?.CspReport?.DocumentUri}, {value?.CspReport?.BlockedUri}"), ResultText: "CSP violoation logged successfully");
         }
 
         /// <summary>
