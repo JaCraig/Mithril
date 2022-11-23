@@ -14,7 +14,7 @@ namespace Mithril.Core.Middleware
         /// </summary>
         /// <param name="next">The next.</param>
         /// <param name="configuration">The configuration.</param>
-        public XFrameOptionsMiddleware(RequestDelegate next, IOptions<MithrilConfig> configuration)
+        public XFrameOptionsMiddleware(RequestDelegate? next, IOptions<MithrilConfig>? configuration)
         {
             _next = next;
             Options = configuration?.Value?.Security?.XFrameOptions ?? "deny";
@@ -29,7 +29,7 @@ namespace Mithril.Core.Middleware
         /// <summary>
         /// The next
         /// </summary>
-        private readonly RequestDelegate _next;
+        private readonly RequestDelegate? _next;
 
         /// <summary>
         /// Invokes the specified context.
@@ -41,7 +41,7 @@ namespace Mithril.Core.Middleware
             if (context is null)
                 return Task.CompletedTask;
             context.Response.Headers.Add("X-Frame-Options", Options);
-            return _next.Invoke(context);
+            return _next?.Invoke(context) ?? Task.CompletedTask;
         }
     }
 }

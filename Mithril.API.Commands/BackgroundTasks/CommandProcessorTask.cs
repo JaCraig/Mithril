@@ -1,9 +1,9 @@
 ﻿using BigBook;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Mithril.API.Abstractions.Services;
-using Mithril.Core.Abstractions.Extensions;
+using Mithril.Core.Abstractions.Configuration;
 
 namespace Mithril.API.Commands.BackgroundTasks
 {
@@ -20,11 +20,11 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <param name="logger">The logger.</param>
         /// <param name="commandService">The command service.</param>
         /// <param name="configuration">The configuration.</param>
-        public CommandProcessorTask(ILogger<CommandProcessorTask> logger, ICommandService commandService, IConfiguration configuration)
+        public CommandProcessorTask(ILogger<CommandProcessorTask>? logger, ICommandService? commandService, IOptions<MithrilConfig>? configuration)
         {
             Logger = logger;
             CommandService = commandService;
-            CommandRunFrequency = configuration?.GetSystemConfig()?.API?.CommandRunFrequency ?? 60;
+            CommandRunFrequency = configuration?.Value?.API?.CommandRunFrequency ?? 60;
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// Gets the command service.
         /// </summary>
         /// <value>The command service.</value>
-        private ICommandService CommandService { get; }
+        private ICommandService? CommandService { get; }
 
         /// <summary>
         /// Gets or sets the internal timer.
@@ -49,7 +49,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        private ILogger<CommandProcessorTask> Logger { get; }
+        private ILogger<CommandProcessorTask>? Logger { get; }
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting
@@ -70,7 +70,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         {
             if (CommandRunFrequency == 0)
                 return Task.CompletedTask;
-            Logger.LogInformation("Starting command background service");
+            Logger?.LogInformation("Starting command background service");
             InternalTimer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(CommandRunFrequency));
             return Task.CompletedTask;
         }
@@ -86,7 +86,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         {
             if (CommandRunFrequency == 0)
                 return Task.CompletedTask;
-            Logger.LogInformation("Stopping command background service");
+            Logger?.LogInformation("Stopping command background service");
             InternalTimer?.Change(Timeout.Infinite, 0);
             return Task.CompletedTask;
         }
@@ -113,7 +113,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <param name="state">The state.</param>
         private void DoWork(object? state)
         {
-            AsyncHelper.RunSync(() => CommandService.ProcessAsync());
+            AsyncHelper.RunSync(() => CommandService?.ProcessAsync() ?? Task.CompletedTask);
         }
     }
 }

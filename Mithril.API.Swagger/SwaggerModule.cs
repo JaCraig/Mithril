@@ -74,7 +74,7 @@ namespace Mithril.API.Swagger
             return services;
         }
 
-        private void ScanForCommentFiles(string? directory, SwaggerGenOptions options)
+        private static void ScanForCommentFiles(string? directory, SwaggerGenOptions options)
         {
             if (string.IsNullOrEmpty(directory))
                 return;

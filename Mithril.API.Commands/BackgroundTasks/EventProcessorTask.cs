@@ -1,9 +1,9 @@
 ﻿using BigBook;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Mithril.API.Abstractions.Services;
-using Mithril.Core.Abstractions.Extensions;
+using Mithril.Core.Abstractions.Configuration;
 
 namespace Mithril.API.Commands.BackgroundTasks
 {
@@ -20,11 +20,11 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <param name="logger">The logger.</param>
         /// <param name="eventService">The event service.</param>
         /// <param name="configuration">The configuration.</param>
-        public EventProcessorTask(ILogger<EventProcessorTask> logger, IEventService eventService, IConfiguration configuration)
+        public EventProcessorTask(ILogger<EventProcessorTask>? logger, IEventService? eventService, IOptions<MithrilConfig>? configuration)
         {
             Logger = logger;
             EventService = eventService;
-            EventRunFrequency = configuration?.GetSystemConfig()?.API?.EventRunFrequency ?? 60;
+            EventRunFrequency = configuration?.Value?.API?.EventRunFrequency ?? 60;
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// Gets the Event service.
         /// </summary>
         /// <value>The Event service.</value>
-        private IEventService EventService { get; }
+        private IEventService? EventService { get; }
 
         /// <summary>
         /// Gets or sets the internal timer.
@@ -49,7 +49,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        private ILogger<EventProcessorTask> Logger { get; }
+        private ILogger<EventProcessorTask>? Logger { get; }
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting
@@ -70,7 +70,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         {
             if (EventRunFrequency == 0)
                 return Task.CompletedTask;
-            Logger.LogInformation("Starting event background service");
+            Logger?.LogInformation("Starting event background service");
             InternalTimer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(EventRunFrequency));
             return Task.CompletedTask;
         }
@@ -86,7 +86,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         {
             if (EventRunFrequency == 0)
                 return Task.CompletedTask;
-            Logger.LogInformation("Stopping event background service");
+            Logger?.LogInformation("Stopping event background service");
             InternalTimer?.Change(Timeout.Infinite, 0);
             return Task.CompletedTask;
         }
@@ -113,7 +113,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <param name="state">The state.</param>
         private void DoWork(object? state)
         {
-            AsyncHelper.RunSync(() => EventService.ProcessAsync());
+            AsyncHelper.RunSync(() => EventService?.ProcessAsync() ?? Task.CompletedTask);
         }
     }
 }

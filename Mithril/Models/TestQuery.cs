@@ -61,6 +61,10 @@ namespace Mithril.Models
         /// <value>a.</value>
         public string? A { get; set; }
 
+        /// <summary>
+        /// Gets or sets the b.
+        /// </summary>
+        /// <value>The b.</value>
         public int B { get; set; }
     }
 }

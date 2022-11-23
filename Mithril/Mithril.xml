@@ -119,6 +119,12 @@
             </summary>
             <value>a.</value>
         </member>
+        <member name="P:Mithril.Models.TestVM2.B">
+            <summary>
+            Gets or sets the b.
+            </summary>
+            <value>The b.</value>
+        </member>
         <member name="T:Mithril.Program">
             <summary>
             Main program

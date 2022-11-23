@@ -1,13 +1,12 @@
 ﻿using BigBook;
 using Inflatable;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Mithril.API.Abstractions.Commands;
 using Mithril.API.Abstractions.Commands.Enums;
 using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.API.Abstractions.Services;
 using Mithril.Core.Abstractions.Configuration;
-using Mithril.Core.Abstractions.Extensions;
 using System.Diagnostics;
 
 namespace Mithril.API.Commands.Services
@@ -24,11 +23,11 @@ namespace Mithril.API.Commands.Services
         /// <param name="eventHandlers">The event handlers.</param>
         /// <param name="logger">The logger.</param>
         /// <param name="configuration">The configuration.</param>
-        public EventService(IEnumerable<IEventHandler> eventHandlers, ILogger<EventService> logger, IConfiguration configuration)
+        public EventService(IEnumerable<IEventHandler> eventHandlers, ILogger<EventService>? logger, IOptions<MithrilConfig>? configuration)
         {
             EventHandlers = eventHandlers ?? Array.Empty<IEventHandler>();
             Logger = logger;
-            Configuration = configuration.GetSystemConfig();
+            Configuration = configuration?.Value;
         }
 
         /// <summary>
@@ -47,7 +46,7 @@ namespace Mithril.API.Commands.Services
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        private ILogger<EventService> Logger { get; }
+        private ILogger<EventService>? Logger { get; }
 
         /// <summary>
         /// Gets the stopwatch.
@@ -65,14 +64,14 @@ namespace Mithril.API.Commands.Services
             int RunTime = Configuration?.API?.MaxEventProcessTime ?? 40000;
             int Count = 0;
             var Context = new DbContext();
-            Logger.LogInformation("Processing Events for {RunTime} ms", RunTime);
+            Logger?.LogInformation("Processing Events for {RunTime} ms", RunTime);
             Stopwatch.Restart();
             Count = 0;
             Context = new DbContext();
             while (Stopwatch.ElapsedMilliseconds <= RunTime || RunTime == -1)
             {
                 var Events = DbContext<IEvent>.CreateQuery().Where(x => x.Active && (x.State == "Created" || x.State == "Retrying")).OrderBy(x => x.DateCreated).Take(40).ToList().Where(x => x.CanRun()).ToArray();
-                Logger.LogInformation("Pulled {EventsLength} events", Events.Length);
+                Logger?.LogInformation("Pulled {EventsLength} events", Events.Length);
                 Count += Events.Length;
                 if (Events.Length == 0)
                     break;
@@ -90,9 +89,9 @@ namespace Mithril.API.Commands.Services
                 }
                 await Context.ExecuteAsync().ConfigureAwait(false);
                 Context = new DbContext();
-                Logger.LogInformation("Processed {Count} events.", Count);
+                Logger?.LogInformation("Processed {Count} events.", Count);
             }
-            Logger.LogInformation("Finished processing {Count} events.", Count);
+            Logger?.LogInformation("Finished processing {Count} events.", Count);
             Stopwatch.Stop();
         }
 
@@ -140,7 +139,7 @@ namespace Mithril.API.Commands.Services
                 return;
             foreach (var Result in Results.Where(Result => Result.Exception is not null))
             {
-                Logger.LogError(Result.Exception, "Error when processing event {EventID} of type {EventName} by {EventHandlerName}.", Event.ID, Event.Name, Result.EventHandler.Name);
+                Logger?.LogError(Result.Exception, "Error when processing event {EventID} of type {EventName} by {EventHandlerName}.", Event.ID, Event.Name, Result.EventHandler.Name);
             }
         }
     }
