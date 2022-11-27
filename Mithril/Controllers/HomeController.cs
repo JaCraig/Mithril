@@ -1,11 +1,17 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.FeatureManagement.Mvc;
 using Mithril.Models;
 using Mithril.Security.Abstractions.Services;
 using System.Diagnostics;
 
 namespace Mithril.Controllers
 {
+    public enum MyFeatureFlags
+    {
+        ExampleFlag
+    }
+
     /// <summary>
     /// Home controller
     /// </summary>
@@ -38,10 +44,7 @@ namespace Mithril.Controllers
         /// </summary>
         /// <returns></returns>
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        public IActionResult Error() => View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 
         /// <summary>
         /// Indexes this instance.
@@ -58,9 +61,7 @@ namespace Mithril.Controllers
         /// </summary>
         /// <returns></returns>
         [Authorize(Policy = "Test")]
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        [FeatureGate(MyFeatureFlags.ExampleFlag)]
+        public IActionResult Privacy() => View();
     }
 }

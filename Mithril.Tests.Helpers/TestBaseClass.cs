@@ -48,7 +48,7 @@ namespace Mithril.Tests.Helpers
             var ExceptionHandlers = new ExceptionHandler();
             for (var x = 0; x < ExceptionsToIgnore.Length; ++x)
             {
-                var ExceptionToIgnore = ExceptionsToIgnore[x];
+                Type ExceptionToIgnore = ExceptionsToIgnore[x];
                 IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, new object?[] { null });
             }
 
@@ -127,7 +127,7 @@ namespace Mithril.Tests.Helpers
             var ExceptionHandlers = new ExceptionHandler();
             for (var x = 0; x < ExceptionsToIgnore.Length; ++x)
             {
-                var ExceptionToIgnore = ExceptionsToIgnore[x];
+                Type ExceptionToIgnore = ExceptionsToIgnore[x];
                 IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, new object?[] { null });
             }
 

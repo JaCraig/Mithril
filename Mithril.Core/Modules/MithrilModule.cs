@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.FeatureManagement;
 using Microsoft.Net.Http.Headers;
 using Mithril.Core.Abstractions.Configuration;
 using Mithril.Core.Abstractions.Extensions;
@@ -65,7 +66,7 @@ namespace Mithril.Core.Modules
             if (app is null || environment is null || configuration is null)
                 return app;
 
-            var Settings = configuration.GetSystemConfig();
+            MithrilConfig? Settings = configuration.GetSystemConfig();
 
             // Sets up static HTTP context
             app = app.UseStaticHttpContext();
@@ -116,6 +117,8 @@ namespace Mithril.Core.Modules
             if (services is null)
                 return services;
 
+            services.AddFeatureManagement();
+
             //Memory cache
             services = services.AddMemoryCache();
 
@@ -128,7 +131,7 @@ namespace Mithril.Core.Modules
             // Set up config.
             services = services.Configure<MithrilConfig>(configuration.GetSection("Mithril"));
 
-            var Settings = configuration.GetSystemConfig();
+            MithrilConfig? Settings = configuration.GetSystemConfig();
             if (Settings?.Compression?.DynamicCompression == true)
             {
                 // Add compression.
@@ -145,10 +148,7 @@ namespace Mithril.Core.Modules
         /// Initializes the data.
         /// </summary>
         /// <returns>The async task.</returns>
-        public override Task InitializeDataAsync(IDataService dataService)
-        {
-            return Task.CompletedTask;
-            /*var FeaturesFound = Feature.All();
+        public override Task InitializeDataAsync(IDataService dataService) => Task.CompletedTask;/*var FeaturesFound = Feature.All();
 
             var ModuleFeatures = Modules.SelectMany(x => x.Features);
 
@@ -179,7 +179,6 @@ namespace Mithril.Core.Modules
 
                 await TempFeature.SaveAsync().ConfigureAwait(false);
             }*/
-        }
 
         /// <summary>
         /// Setups the extension mappings.
@@ -190,7 +189,7 @@ namespace Mithril.Core.Modules
         {
             if (Config?.MimeTypes is null)
                 return;
-            foreach (var Value in Config.MimeTypes)
+            foreach (Mime Value in Config.MimeTypes)
             {
                 if (string.IsNullOrWhiteSpace(Value?.Extension) || string.IsNullOrWhiteSpace(Value?.MimeType))
                     continue;
