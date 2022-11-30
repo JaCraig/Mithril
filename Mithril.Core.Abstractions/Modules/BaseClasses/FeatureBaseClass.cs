@@ -1,5 +1,4 @@
-﻿using BigBook;
-using Mithril.Core.Abstractions.Modules.Interfaces;
+﻿using Mithril.Core.Abstractions.Modules.Interfaces;
 
 namespace Mithril.Core.Abstractions.Modules.BaseClasses
 {
@@ -22,7 +21,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         }
 
         /// <summary>
-        /// The group (by category) that the feature belongs. If not provided, defaults to 'Uncategorized'.
+        /// The group (by category) that the feature belongs.
         /// </summary>
         /// <value>The category.</value>
         public abstract string Category { get; }
@@ -34,17 +33,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         public abstract string Description { get; }
 
         /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>The identifier.</value>
-        public string Id { get; } = typeof(TFeature)
-            .GetName()
-            .Trim()
-            .Replace(" ", "-", StringComparison.OrdinalIgnoreCase)
-            .Replace("--", "-", StringComparison.OrdinalIgnoreCase);
-
-        /// <summary>
-        /// Human-readable name of the feature. If not provided, the identifier will be used.
+        /// Human-readable name of the feature.
         /// </summary>
         /// <value>The name.</value>
         public abstract string Name { get; }
@@ -88,11 +77,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(TFeature? other)
-        {
-            return other is not null
-                   && Id == other.Id;
-        }
+        public bool Equals(TFeature? other) => string.Equals(Name, other?.Name, StringComparison.OrdinalIgnoreCase);
 
         /// <summary>
         /// Returns a hash code for this instance.
@@ -101,6 +86,6 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode() => HashCode.Combine(Id);
+        public override int GetHashCode() => HashCode.Combine(Name);
     }
 }

@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.FeatureManagement;
 using Microsoft.Net.Http.Headers;
 using Mithril.Core.Abstractions.Configuration;
 using Mithril.Core.Abstractions.Extensions;
@@ -13,7 +12,6 @@ using Mithril.Core.Abstractions.Modules.Features;
 using Mithril.Core.Abstractions.Modules.Interfaces;
 using Mithril.Core.Extensions;
 using Mithril.Core.Middleware;
-using Mithril.Data.Abstractions.Services;
 
 namespace Mithril.Core.Modules
 {
@@ -30,7 +28,7 @@ namespace Mithril.Core.Modules
             : base(
                 name: "Mithril Core Module",
                 category: "Core",
-                tags: new[] { "Email", "Content", "Media", "Navigation", "Search", "Workflow", "Logging" })
+                tags: new[] { "Email", "Content", "Media", "Navigation", "Search", "Workflow" })
         {
         }
 
@@ -43,7 +41,6 @@ namespace Mithril.Core.Modules
             new ContentFeature(),
             new EmailFeature(),
             new IndexingFeature(),
-            new LoggingFeature(),
             new MediaFeature(),
             new NavigationFeature(),
             new WorkflowFeature()
@@ -83,7 +80,7 @@ namespace Mithril.Core.Modules
             if (Settings?.Compression?.DynamicCompression == true)
             {
                 // Use response compression.
-                app = app.UseResponseCompression();
+                app = app?.UseResponseCompression();
             }
 
             // Setup exception pages
@@ -117,8 +114,6 @@ namespace Mithril.Core.Modules
             if (services is null)
                 return services;
 
-            services.AddFeatureManagement();
-
             //Memory cache
             services = services.AddMemoryCache();
 
@@ -139,46 +134,8 @@ namespace Mithril.Core.Modules
             }
 
             // Add mithril setup flag
-            services = services.AddSingleton<MithrilSetup>();
-
-            return services;
+            return services.AddSingleton<MithrilSetup>();
         }
-
-        /// <summary>
-        /// Initializes the data.
-        /// </summary>
-        /// <returns>The async task.</returns>
-        public override Task InitializeDataAsync(IDataService dataService) => Task.CompletedTask;/*var FeaturesFound = Feature.All();
-
-            var ModuleFeatures = Modules.SelectMany(x => x.Features);
-
-            foreach (var ModuleFeature in ModuleFeatures)
-            {
-                if (!FeaturesFound.Any(x => x.Identifier == ModuleFeature.Id))
-                {
-                    var TempFeature = new Feature(ModuleFeature.Name ?? ModuleFeature.Id, ModuleFeature.Id, ModuleFeature.Category)
-                    {
-                        Description = ModuleFeature.Description,
-                    };
-                    await TempFeature.SaveAsync().ConfigureAwait(false);
-                }
-            }
-            foreach (var ModuleFeature in FeaturesFound)
-            {
-                if (!ModuleFeatures.Any(x => x.Id == ModuleFeature.Identifier))
-                {
-                    ModuleFeature.Delete(false);
-                }
-            }
-            FeaturesFound = Feature.All();
-            foreach (var ModuleFeature in ModuleFeatures)
-            {
-                var TempFeature = FeaturesFound.FirstOrDefault(x => x.Identifier == ModuleFeature.Id);
-                if (TempFeature is null)
-                    continue;
-
-                await TempFeature.SaveAsync().ConfigureAwait(false);
-            }*/
 
         /// <summary>
         /// Setups the extension mappings.

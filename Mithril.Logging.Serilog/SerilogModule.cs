@@ -4,8 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
-using Mithril.Core.Abstractions.Modules.Features;
 using Mithril.Core.Abstractions.Modules.Interfaces;
+using Mithril.Logging.Features;
 using Mithril.Logging.Serilog.Middleware;
 using Serilog;
 using Serilog.Enrichers;
@@ -19,12 +19,10 @@ namespace Mithril.Logging.Serilog
     public class SerilogModule : ModuleBaseClass<SerilogModule>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SerilogModule"/> class.
+        /// Gets the features.
         /// </summary>
-        public SerilogModule()
-        {
-            Features = new IFeature[] { new LoggingFeature() };
-        }
+        /// <value>The features.</value>
+        public override IFeature[] Features => new IFeature[] { new LoggingFeature() };
 
         /// <summary>
         /// Configures the application.

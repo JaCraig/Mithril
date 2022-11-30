@@ -1,7 +1,7 @@
-﻿using Mithril.Core.Abstractions.Modules.Features;
+﻿using Mithril.Logging.Features;
 using Mithril.Tests.Helpers;
 
-namespace Mithril.Core.Abstractions.Tests.Modules.Features
+namespace Mithril.Logging.Tests.Features
 {
     public class LoggingFeatureTests : TestBaseClass<LoggingFeature>
     {

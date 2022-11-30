@@ -31,8 +31,8 @@ namespace Mithril.API.Commands.Utils
         {
             if (commandHandler is null || endpoints is null)
                 return;
-            commandEndPoint = commandEndPoint?.Replace("{", "").Replace("}", "") ?? "";
-            var CommandName = (commandHandler.CommandName ?? "").Replace("{", "").Replace("}", "");
+            commandEndPoint = CleanText(commandEndPoint);
+            var CommandName = CleanText(commandHandler.CommandName);
             var EndPointBuilder = endpoints.MapPost(commandEndPoint + CommandName, (
                                                         [FromServices] IDataService dataService,
                                                         [FromServices] ILogger<CommandModule> logger,
@@ -56,6 +56,16 @@ namespace Mithril.API.Commands.Utils
         /// <param name="HandlerType">Type of the handler.</param>
         /// <returns>True if it should, false otherwise.</returns>
         private static bool AllowAnonymous(MithrilConfig? config, Type HandlerType) => (config?.API?.AllowAnonymous ?? false) || HandlerType.GetCustomAttribute<ApiAllowAnonymousAttribute>() is not null;
+
+        /// <summary>
+        /// Cleans the text.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns></returns>
+        private static string CleanText(string? text)
+        {
+            return text?.Replace("{", "").Replace("}", "").Replace("?", "") ?? "";
+        }
 
         /// <summary>
         /// Sets up the authorization.
@@ -107,9 +117,7 @@ namespace Mithril.API.Commands.Utils
         /// </summary>
         /// <param name="defaultAuthorizationPolicy">The default authorization policy.</param>
         /// <param name="AuthorizationAttribute">The authorization attribute.</param>
-        /// <returns>
-        /// True if it should, false otherwise.
-        /// </returns>
+        /// <returns>True if it should, false otherwise.</returns>
         private static bool UsePolicyForAuth(string defaultAuthorizationPolicy, ApiAuthorizeAttribute? AuthorizationAttribute) => !string.IsNullOrEmpty(AuthorizationAttribute?.PolicyName) || !string.IsNullOrEmpty(defaultAuthorizationPolicy);
     }
 }

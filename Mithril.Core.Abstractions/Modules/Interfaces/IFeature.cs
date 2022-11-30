@@ -18,12 +18,6 @@
         string Description { get; }
 
         /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>The identifier.</value>
-        string Id { get; }
-
-        /// <summary>
         /// Human-readable name of the feature. If not provided, the identifier will be used.
         /// </summary>
         /// <value>The name.</value>

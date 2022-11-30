@@ -5,10 +5,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
-using Mithril.Core.Abstractions.Modules.Features;
 using Mithril.Core.Abstractions.Modules.Interfaces;
+using Mithril.Logging.Features;
 
-namespace Mithril.Logging.Javascript
+namespace Mithril.Logging
 {
     /// <summary>
     /// Module that adds a command handler that accepts specific logging added to Mithril
@@ -17,12 +17,10 @@ namespace Mithril.Logging.Javascript
     public class LoggingModule : ModuleBaseClass<LoggingModule>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoggingModule"/> class.
+        /// Gets the features.
         /// </summary>
-        public LoggingModule()
-        {
-            Features = new IFeature[] { new LoggingFeature() };
-        }
+        /// <value>The features.</value>
+        public override IFeature[] Features => new IFeature[] { new LoggingFeature() };
 
         /// <summary>
         /// Gets the order that they are initialized in.

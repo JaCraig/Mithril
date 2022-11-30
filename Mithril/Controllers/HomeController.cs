@@ -7,8 +7,14 @@ using System.Diagnostics;
 
 namespace Mithril.Controllers
 {
+    /// <summary>
+    /// Example feature flags controlled by config
+    /// </summary>
     public enum MyFeatureFlags
     {
+        /// <summary>
+        /// The example flag
+        /// </summary>
         ExampleFlag
     }
 

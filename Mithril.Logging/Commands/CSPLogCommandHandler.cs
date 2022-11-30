@@ -1,8 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.FeatureManagement;
 using Mithril.API.Abstractions.Commands;
 using Mithril.API.Abstractions.Commands.BaseClasses;
 using Mithril.API.Abstractions.Commands.Interfaces;
+using Mithril.Core.Abstractions.Modules.Interfaces;
 using Mithril.Logging.Commands.ViewModels;
+using Mithril.Logging.Features;
 using Mithril.Logging.Models;
 using System.Security.Claims;
 
@@ -18,9 +21,10 @@ namespace Mithril.Logging.Commands
         /// Initializes a new instance of the <see cref="CSPLogCommandHandler"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
-        public CSPLogCommandHandler(ILogger<CSPLogCommandHandler>? logger)
+        /// <param name="featureManager">The feature manager.</param>
+        public CSPLogCommandHandler(ILogger<CSPLogCommandHandler>? logger, IFeatureManager? featureManager)
+            : base(logger, featureManager)
         {
-            Logger = logger;
         }
 
         /// <summary>
@@ -36,10 +40,10 @@ namespace Mithril.Logging.Commands
         public override string[] ContentTypeAccepts => new string[] { "application/csp-report" };
 
         /// <summary>
-        /// Gets the logger.
+        /// Gets the features associated with this command.
         /// </summary>
-        /// <value>The logger.</value>
-        public ILogger<CSPLogCommandHandler>? Logger { get; }
+        /// <value>The features associated with this command.</value>
+        public override IFeature[] Features => new IFeature[] { new LoggingFeature() };
 
         /// <summary>
         /// Gets the tags (Used by OpenAPI, etc).
@@ -53,9 +57,11 @@ namespace Mithril.Logging.Commands
         /// <param name="value">The value.</param>
         /// <param name="user">The user.</param>
         /// <returns>A command value converted from the ExpandoObject.</returns>
-        public override CommandCreationResult Create(CSPLogCommandVM? value, ClaimsPrincipal user)
+        public override CommandCreationResult? Create(CSPLogCommandVM? value, ClaimsPrincipal user)
         {
-            return new CommandCreationResult(new LogCommand(LogLevel.Error, $"CSP Violation: {value?.CspReport?.DocumentUri}, {value?.CspReport?.BlockedUri}"), ResultText: "CSP violoation logged successfully");
+            return IsFeatureEnabled()
+                ? new CommandCreationResult(new LogCommand(LogLevel.Error, $"CSP Violation: {value?.CspReport?.DocumentUri}, {value?.CspReport?.BlockedUri}"), ResultText: "CSP violoation logged successfully")
+                : null;
         }
 
         /// <summary>

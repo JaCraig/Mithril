@@ -7,7 +7,7 @@ namespace Mithril.Logging.Tests.Commands
     {
         public LogCommandHandlerTests()
         {
-            TestObject = new LogCommandHandler(null);
+            TestObject = new LogCommandHandler(null, null);
         }
     }
 }

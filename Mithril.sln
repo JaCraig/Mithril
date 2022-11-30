@@ -51,13 +51,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstractions", "Abstraction
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Abstractions.Tests", "Mithril.API.Abstractions.Tests\Mithril.API.Abstractions.Tests.csproj", "{76E3C27E-D42B-423C-986A-AE7C426028C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Core.Abstractions.Tests", "Mithril.Core.Abstractions.Tests\Mithril.Core.Abstractions.Tests.csproj", "{9F911A16-02CE-4045-8C3A-1BE7F51C95BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Core.Abstractions.Tests", "Mithril.Core.Abstractions.Tests\Mithril.Core.Abstractions.Tests.csproj", "{9F911A16-02CE-4045-8C3A-1BE7F51C95BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Logging.Tests", "Mithril.Logging.Tests\Mithril.Logging.Tests.csproj", "{B0A9A003-1FBF-42DA-A9BB-BD28D5F16778}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Logging.Tests", "Mithril.Logging.Tests\Mithril.Logging.Tests.csproj", "{B0A9A003-1FBF-42DA-A9BB-BD28D5F16778}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.API.GraphQL.Tests", "Mithril.API.GraphQL.Tests\Mithril.API.GraphQL.Tests.csproj", "{738EF5E5-39DE-4F0D-87F3-BA7BC4FC26D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.GraphQL.Tests", "Mithril.API.GraphQL.Tests\Mithril.API.GraphQL.Tests.csproj", "{738EF5E5-39DE-4F0D-87F3-BA7BC4FC26D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.API.Commands.Tests", "Mithril.API.Commands.Tests\Mithril.API.Commands.Tests.csproj", "{BD108CD2-B2DF-4E30-90AA-3C843EC5285D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Commands.Tests", "Mithril.API.Commands.Tests\Mithril.API.Commands.Tests.csproj", "{BD108CD2-B2DF-4E30-90AA-3C843EC5285D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Features", "Mithril.Features\Mithril.Features.csproj", "{3BACD676-717A-4E35-A695-B1D56D3B7D63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +155,10 @@ Global
 		{BD108CD2-B2DF-4E30-90AA-3C843EC5285D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD108CD2-B2DF-4E30-90AA-3C843EC5285D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD108CD2-B2DF-4E30-90AA-3C843EC5285D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BACD676-717A-4E35-A695-B1D56D3B7D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BACD676-717A-4E35-A695-B1D56D3B7D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BACD676-717A-4E35-A695-B1D56D3B7D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BACD676-717A-4E35-A695-B1D56D3B7D63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -183,6 +189,7 @@ Global
 		{B0A9A003-1FBF-42DA-A9BB-BD28D5F16778} = {20C64160-C469-46C8-9971-17C2435420AD}
 		{738EF5E5-39DE-4F0D-87F3-BA7BC4FC26D6} = {20C64160-C469-46C8-9971-17C2435420AD}
 		{BD108CD2-B2DF-4E30-90AA-3C843EC5285D} = {20C64160-C469-46C8-9971-17C2435420AD}
+		{3BACD676-717A-4E35-A695-B1D56D3B7D63} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}

@@ -14,7 +14,7 @@ namespace Mithril.Logging.Tests.Commands
         /// </summary>
         public CSPLogCommandHandlerTests()
         {
-            TestObject = new CSPLogCommandHandler(null);
+            TestObject = new CSPLogCommandHandler(null, null);
         }
     }
 }

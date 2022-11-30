@@ -1,6 +1,6 @@
 ﻿using Mithril.Core.Abstractions.Modules.BaseClasses;
 
-namespace Mithril.Core.Abstractions.Modules.Features
+namespace Mithril.Logging.Features
 {
     /// <summary>
     /// Logging feature
@@ -24,6 +24,6 @@ namespace Mithril.Core.Abstractions.Modules.Features
         /// Human-readable name of the feature. If not provided, the identifier will be used.
         /// </summary>
         /// <value>The name.</value>
-        public override string Name { get; } = "Logging";
+        public override string Name => nameof(LoggingFeature);
     }
 }

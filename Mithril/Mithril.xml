@@ -4,6 +4,16 @@
         <name>Mithril</name>
     </assembly>
     <members>
+        <member name="T:Mithril.Controllers.MyFeatureFlags">
+            <summary>
+            Example feature flags controlled by config
+            </summary>
+        </member>
+        <member name="F:Mithril.Controllers.MyFeatureFlags.ExampleFlag">
+            <summary>
+            The example flag
+            </summary>
+        </member>
         <member name="T:Mithril.Controllers.HomeController">
             <summary>
             Home controller

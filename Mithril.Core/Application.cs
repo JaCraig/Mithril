@@ -176,6 +176,11 @@ namespace Mithril.Core
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 var Module = Modules[i];
+                services = services?.AddSingleton(Module);
+            }
+            for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
+            {
+                var Module = Modules[i];
                 services = Module.ConfigureServices(services, Configuration, Environment);
             }
             return services?.AddCanisterModules();

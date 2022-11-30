@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using Mithril.Core.Abstractions.Modules.Interfaces;
+using System.Security.Claims;
 
 namespace Mithril.API.Abstractions.Commands.Interfaces
 {
@@ -18,6 +19,12 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
         /// </summary>
         /// <value>The content type accepted by command handler.</value>
         string[] ContentTypeAccepts { get; }
+
+        /// <summary>
+        /// Gets the features associated with this command.
+        /// </summary>
+        /// <value>The features associated with this command.</value>
+        IFeature[] Features { get; }
 
         /// <summary>
         /// Gets the tags (Used by OpenAPI, etc).
