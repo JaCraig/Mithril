@@ -1,4 +1,4 @@
-﻿using Mithril.API.GraphQL.ExtensionMethods;
+﻿using Mithril.API.GraphQL.GraphTypes.ExtensionMethods;
 using Mithril.Tests.Helpers;
 
 namespace Mithril.API.GraphQL.Tests.ExtensionMethods

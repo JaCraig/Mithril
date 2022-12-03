@@ -69,6 +69,18 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         protected ILogger? Logger { get; }
 
         /// <summary>
+        /// Determines whether this instance can handle the specified command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns>
+        /// <c>true</c> if this instance can handle the specified command; otherwise, <c>false</c>.
+        /// </returns>
+        public bool CanHandle(ICommand command)
+        {
+            return command is TCommand;
+        }
+
+        /// <summary>
         /// Creates the specified value.
         /// </summary>
         /// <param name="value">The value.</param>
@@ -84,7 +96,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         public IEvent[] HandleCommand(params ICommand[] arg)
         {
             arg ??= Array.Empty<ICommand>();
-            var Items = arg.Select(x => x as TCommand).Where(x => x is not null).ToArray();
+            var Items = arg.Where(x => CanHandle(x)).ToArray();
             if (Items.Length == 0)
                 return Array.Empty<IEvent>();
             return HandleCommand(Items) ?? Array.Empty<IEvent>();

@@ -67,9 +67,9 @@ namespace Mithril.Security.Models
         /// <param name="displayName">The display name.</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>Permission specified</returns>
-        public static Permission? Load(string displayName, IDataService dataService)
+        public static Permission? Load(string displayName, IDataService? dataService)
         {
-            return Query(dataService).Where(x => x.DisplayName == displayName).FirstOrDefault();
+            return Query(dataService)?.Where(x => x.DisplayName == displayName).FirstOrDefault();
         }
 
         /// <summary>
@@ -80,14 +80,15 @@ namespace Mithril.Security.Models
         /// <param name="claims">The claims.</param>
         /// <param name="context">The context.</param>
         /// <returns>The user claim specified.</returns>
-        public static async Task<IPermission> LoadOrCreateAsync(string displayName, PermissionType operand, IUserClaim[] claims, IDataService context)
+        public static async Task<IPermission> LoadOrCreateAsync(string displayName, PermissionType operand, IUserClaim[] claims, IDataService? context)
         {
             var ReturnValue = Load(displayName, context);
             if (ReturnValue is null)
             {
                 claims ??= Array.Empty<IUserClaim>();
                 ReturnValue = new Permission(displayName, operand, claims);
-                await context.SaveAsync(ReturnValue).ConfigureAwait(false);
+                if (context is not null)
+                    await context.SaveAsync(ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }
@@ -168,7 +169,8 @@ namespace Mithril.Security.Models
         /// <returns>This.</returns>
         public IPermission AddClaim(IUserClaim claim)
         {
-            if (Claims.Contains(claim))
+            Claims ??= new List<IUserClaim>();
+            if (claim is null || Claims.Contains(claim))
                 return this;
             Claims.Add(claim);
             return this;
@@ -269,7 +271,8 @@ namespace Mithril.Security.Models
         /// <returns>This.</returns>
         public IPermission RemoveClaim(IUserClaim claim)
         {
-            if (!Claims.Contains(claim))
+            Claims ??= new List<IUserClaim>();
+            if (claim is null || !Claims.Contains(claim))
                 return this;
             Claims.Remove(claim);
             return this;
@@ -283,6 +286,7 @@ namespace Mithril.Security.Models
         /// <returns>This</returns>
         public IPermission ReplaceClaim(IUserClaim originalClaim, IUserClaim newClaim)
         {
+            Claims ??= new List<IUserClaim>();
             if (Claims.Remove(originalClaim))
                 Claims.Add(newClaim);
             return this;

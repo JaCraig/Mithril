@@ -1,6 +1,10 @@
 ﻿using BigBook;
+using Microsoft.Extensions.Logging;
+using Microsoft.FeatureManagement;
+using Mithril.API.Abstractions.Commands.BaseClasses;
 using Mithril.API.Abstractions.ExtensionMethods;
 using Mithril.API.Abstractions.Query.Interfaces;
+using Mithril.Core.Abstractions.Modules.Interfaces;
 using System.Security.Claims;
 
 namespace Mithril.API.Abstractions.Query.BaseClasses
@@ -14,10 +18,12 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         where TClass : class
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="QueryBaseClass{TClass}"/> class.
+        /// Initializes a new instance of the <see cref="EventHandlerBaseClass{THandler}"/> class.
         /// </summary>
-        protected QueryBaseClass()
+        protected QueryBaseClass(ILogger? logger, IFeatureManager? featureManager)
         {
+            Logger = logger;
+            FeatureManager = featureManager;
             Description = $"Returns {Name.SplitCamelCase().ToString(StringCase.SentenceCapitalize)} information";
             if (Arguments.Length > 0)
                 Description += $" using the following arguments ({Arguments.ToString(x => x?.ToString() ?? "", ", ")})";
@@ -43,22 +49,34 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         public virtual string? Description { get; }
 
         /// <summary>
+        /// Gets the features associated with this command.
+        /// </summary>
+        /// <value>The features associated with this command.</value>
+        public virtual IFeature[] Features { get; } = Array.Empty<IFeature>();
+
+        /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
         public virtual string Name { get; } = typeof(TClass).Name.Replace("`", "").Replace("&", "");
 
         /// <summary>
-        /// Gets the nullable.
-        /// </summary>
-        /// <value>The nullable.</value>
-        public virtual bool? Nullable { get; } = IsNullable(typeof(TClass));
-
-        /// <summary>
         /// Gets the type of the return.
         /// </summary>
         /// <value>The type of the return.</value>
         public Type ReturnType { get; } = typeof(TClass);
+
+        /// <summary>
+        /// Gets the feature manager.
+        /// </summary>
+        /// <value>The feature manager.</value>
+        protected IFeatureManager? FeatureManager { get; }
+
+        /// <summary>
+        /// Gets the logger.
+        /// </summary>
+        /// <value>The logger.</value>
+        protected ILogger? Logger { get; }
 
         /// <summary>
         /// Used to resolve the data asked for by the query.
@@ -69,13 +87,15 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         public abstract Task<TClass?> ResolveAsync(ClaimsPrincipal? user, Arguments arguments);
 
         /// <summary>
-        /// Determines whether the specified property is nullable.
+        /// Determines whether the associated features are enabled.
         /// </summary>
-        /// <param name="type">The type.</param>
-        /// <returns><c>true</c> if the specified property is nullable; otherwise, <c>false</c>.</returns>
-        private static bool IsNullable(Type? type)
+        /// <returns><c>true</c> if all features are enabled; otherwise, <c>false</c>.</returns>
+        protected bool IsFeatureEnabled()
         {
-            return type is not null && (!type.IsValueType || System.Nullable.GetUnderlyingType(type) is not null);
+            return FeatureManager is null
+                || Features is null
+                || Features.Length == 0
+                || Features.All(x => AsyncHelper.RunSync(() => FeatureManager.IsEnabledAsync(x.Name)));
         }
     }
 }

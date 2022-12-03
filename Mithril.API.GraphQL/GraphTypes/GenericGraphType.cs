@@ -1,11 +1,9 @@
 ﻿using BigBook;
-using Fast.Activator;
 using GraphQL;
 using GraphQL.Types;
-using Mithril.API.Abstractions.Attributes;
-using Mithril.API.Abstractions.ExtensionMethods;
-using Mithril.API.GraphQL.ExtensionMethods;
-using Mithril.API.GraphQL.GraphTypes.Interfaces;
+using Mithril.API.GraphQL.GraphTypes.Builder;
+using Mithril.API.GraphQL.GraphTypes.ExtensionMethods;
+using ObjectCartographer;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
@@ -18,17 +16,27 @@ namespace Mithril.API.GraphQL.GraphTypes
     /// <typeparam name="TClass">The type of the class.</typeparam>
     /// <seealso cref="ObjectGraphType&lt;TClass&gt;"/>
     /// <seealso cref="IGraph"/>
-    public class GenericGraphType<TClass> : ObjectGraphType<TClass>, IGraph
+    public class GenericGraphType<TClass> : ObjectGraphType<TClass>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GenericGraphType{TClass}"/> class.
         /// </summary>
         /// <inheritdoc/>
-        public GenericGraphType()
+        public GenericGraphType(GraphTypeManager graphTypeManager)
         {
-            Name = GetName(typeof(TClass));
-            Description = $"{Name} information";
-            AutoWire();
+            var ObjectType = typeof(TClass);
+            Name = GetName(ObjectType);
+            Description = ObjectType.GetDescription();
+            AutoWire(graphTypeManager ?? new GraphTypeManager());
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenericGraphType{TClass}"/> class.
+        /// </summary>
+        /// <inheritdoc/>
+        public GenericGraphType()
+            : this(null)
+        {
         }
 
         /// <summary>
@@ -42,16 +50,21 @@ namespace Mithril.API.GraphQL.GraphTypes
         private readonly MethodInfo? AddClassFieldGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddClassField), StringComparison.OrdinalIgnoreCase));
 
         /// <summary>
-        /// The readable properties
+        /// The add method basic generic
         /// </summary>
-        private readonly PropertyInfo[] ReadableProperties = GetProperties();
+        private readonly MethodInfo? AddMethodBasicGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddBasicMethod), StringComparison.OrdinalIgnoreCase));
+
+        /// <summary>
+        /// The add method generic
+        /// </summary>
+        private readonly MethodInfo? AddMethodClassGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddMethodClass), StringComparison.OrdinalIgnoreCase));
 
         /// <summary>
         /// Automatically wires up known properties of the view model.
         /// </summary>
-        protected void AutoWire()
+        protected void AutoWire(GraphTypeManager graphTypeManager)
         {
-            foreach (var Property in ReadableProperties.Where(x => x.GetCustomAttribute<ApiIgnoreAttribute>() is null))
+            foreach (var Property in TypeCacheFor<TClass>.Properties)
             {
                 var GraphType = Property.PropertyType.FindGraphType();
                 if (GraphType is null)
@@ -62,27 +75,37 @@ namespace Mithril.API.GraphQL.GraphTypes
                 }
                 else
                 {
-                    AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object[] { Property, FastActivator.CreateInstance(GraphType) });
+                    AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object[] { Property, graphTypeManager.GetGraphType(Property.PropertyType) });
+                }
+            }
+            foreach (var Method in TypeCacheFor<TClass>.Methods)
+            {
+                var GraphType = Method.ReturnType.FindGraphType();
+                if (GraphType is null)
+                    continue;
+                if (Method.ReturnType.IsBuiltInType())
+                {
+                    AddMethodBasicGeneric?.MakeGenericMethod(Method.ReturnType).Invoke(this, new object[] { Method });
+                }
+                else
+                {
+                    AddMethodClassGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object[] { Method, graphTypeManager.GetGraphType(Method.ReturnType) });
                 }
             }
         }
 
         /// <summary>
-        /// Gets the properties.
+        /// Gets the parameter.
         /// </summary>
-        /// <returns>The properties for the type.</returns>
-        private static PropertyInfo[] GetProperties()
+        /// <typeparam name="TReturn">The type of the return.</typeparam>
+        /// <param name="context">The context.</param>
+        /// <param name="name">The name.</param>
+        /// <returns>The parameter</returns>
+        private static TReturn? GetParameter<TReturn>(IResolveFieldContext<TClass> context, string name)
         {
-            var ClassType = typeof(TClass);
-            var Properties = new List<PropertyInfo>();
-            Properties.AddRange(ClassType.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead));
-            foreach (var Property in ClassType.GetInterfaces().SelectMany(Interface => Interface.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead)))
-            {
-                if (Properties.Any(x => x.Name == Property.Name))
-                    continue;
-                Properties.Add(Property);
-            }
-            return Properties.ToArray();
+            if (context.Arguments?.TryGetValue(name, out var param) == true)
+                return param.Value.To<TReturn>();
+            return default;
         }
 
         /// <summary>
@@ -94,23 +117,43 @@ namespace Mithril.API.GraphQL.GraphTypes
         {
             if (property is null || property.DeclaringType is null)
                 return;
+
             var ObjectInstance = Expression.Parameter(typeof(TClass), "x");
             var PropertyGet = Expression.Property(ObjectInstance, property);
 
-            var FieldBuilder = Field(Expression.Lambda<Func<TClass, TProperty>>(PropertyGet, ObjectInstance), nullable: property.PropertyType.IsNullable());
+            Field(Expression.Lambda<Func<TClass, TProperty>>(PropertyGet, ObjectInstance), nullable: property.PropertyType.IsNullable())
+                .Description(property.GetDescription())
+                ?.SetSecurity(property)
+                ?.DeprecationReason(property.GetDeprecationReason());
+        }
 
-            var AnonymousAttribute = property.GetCustomAttribute<ApiAllowAnonymousAttribute>();
-            if (AnonymousAttribute is not null)
-            {
+        /// <summary>
+        /// Adds the basic method.
+        /// </summary>
+        /// <typeparam name="TReturn">The type of the return.</typeparam>
+        /// <param name="method">The method.</param>
+        private void AddBasicMethod<TReturn>(MethodInfo method)
+        {
+            if (method is null || method.DeclaringType is null)
                 return;
-            }
-            var AuthorizeAttribute = property.GetCustomAttribute<ApiAuthorizeAttribute>();
-            if (AuthorizeAttribute is null)
+
+            var ObjectType = typeof(IResolveFieldContext<TClass>);
+            var ObjectInstance = Expression.Parameter(ObjectType, "x");
+            var SourceProperty = ObjectType.GetProperty(nameof(IResolveFieldContext<TClass>.Source));
+            if (SourceProperty is null)
                 return;
-            if (!string.IsNullOrEmpty(AuthorizeAttribute.Roles))
-                FieldBuilder.AuthorizeWithRoles(AuthorizeAttribute.Roles ?? "");
-            else
-                FieldBuilder.AuthorizeWithPolicy(AuthorizeAttribute.PolicyName ?? "");
+
+            var GenericGetParameter = typeof(GenericGraphType<TClass>).GetMethod(nameof(GetParameter), BindingFlags.Static | BindingFlags.NonPublic);
+
+            var Arguments = method.GetParameters().Select(Param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(Param.ParameterType), ObjectInstance, Expression.Constant(Param.Name.ToCamelCase())));
+            var PropertyGet = Expression.Call(Expression.Property(ObjectInstance, SourceProperty), method, Arguments);
+
+            Field<TReturn>(method.GetName(), nullable: method.ReturnType.IsNullable())
+                .Description(method.GetDescription())
+                .Resolve(Expression.Lambda<Func<IResolveFieldContext<TClass>, TReturn?>>(PropertyGet, ObjectInstance).Compile())
+                .Arguments(method.GetParameters().ToArray(x => x.ToQueryArgument()))
+                ?.SetSecurity(method)
+                ?.DeprecationReason(method.GetDeprecationReason());
         }
 
         /// <summary>
@@ -124,35 +167,52 @@ namespace Mithril.API.GraphQL.GraphTypes
         {
             if (property is null || property.DeclaringType is null)
                 return;
-            var PropertyName = (new string(new char[] { property.Name[0] }).ToLower()) + property.Name.Right(property.Name.Length - 1);
-            var DescriptionAttribute = property.GetCustomAttribute<ApiDescriptionAttribute>();
-            var Description = string.IsNullOrEmpty(DescriptionAttribute?.Description) ?
-                $"Returns {property.Name.SplitCamelCase().ToString(StringCase.FirstCharacterUpperCase)} information." :
-                DescriptionAttribute.Description;
 
             var ObjectType = typeof(IResolveFieldContext<TClass>);
             var ObjectInstance = Expression.Parameter(ObjectType, "x");
-            var SourceProperty = ObjectType.GetProperty("Source");
+            var SourceProperty = ObjectType.GetProperty(nameof(IResolveFieldContext<TClass>.Source));
             if (SourceProperty is null)
                 return;
+
             var SourcePropertyGet = Expression.Property(ObjectInstance, SourceProperty);
             var PropertyGet = Expression.Property(SourcePropertyGet, property);
-            var FieldBuilder = Field<TProperty>(PropertyName, Description, resolve: Expression.Lambda<Func<IResolveFieldContext<TClass>, object?>>(PropertyGet, ObjectInstance).Compile());
-            var AnonymousAttribute = property.GetCustomAttribute<ApiAllowAnonymousAttribute>();
-            if (AnonymousAttribute is not null)
-            {
-                FieldBuilder.AllowAnonymous();
+            Field<TProperty>(property.GetName(),
+                    property.GetDescription(),
+                    resolve: Expression.Lambda<Func<IResolveFieldContext<TClass>, object?>>(PropertyGet, ObjectInstance).Compile(),
+                    deprecationReason: property.GetDeprecationReason())
+                .SetSecurity(property);
+        }
+
+        /// <summary>
+        /// Adds the method class type.
+        /// </summary>
+        /// <typeparam name="TGraphType">The type of the graph type.</typeparam>
+        /// <param name="method">The method.</param>
+        /// <param name="graphType">Type of the graph.</param>
+        private void AddMethodClass<TGraphType>(MethodInfo method, IGraphType graphType)
+                    where TGraphType : IGraphType
+        {
+            if (method is null || method.DeclaringType is null)
                 return;
-            }
-            var AuthorizeAttribute = property.GetCustomAttribute<ApiAuthorizeAttribute>();
-            if (AuthorizeAttribute is null)
+
+            var ObjectType = typeof(IResolveFieldContext<TClass>);
+            var ObjectInstance = Expression.Parameter(ObjectType, "x");
+            var SourceProperty = ObjectType.GetProperty(nameof(IResolveFieldContext<TClass>.Source));
+            if (SourceProperty is null)
                 return;
-            if (string.IsNullOrEmpty(AuthorizeAttribute.PolicyName) && string.IsNullOrEmpty(AuthorizeAttribute.Roles))
-                FieldBuilder.Authorize();
-            else if (!string.IsNullOrEmpty(AuthorizeAttribute.Roles))
-                FieldBuilder.AuthorizeWithRoles(AuthorizeAttribute.Roles ?? "");
-            else
-                FieldBuilder.AuthorizeWithPolicy(AuthorizeAttribute.PolicyName ?? "");
+
+            var GenericGetParameter = typeof(GenericGraphType<TClass>).GetMethod(nameof(GetParameter), BindingFlags.Static | BindingFlags.NonPublic);
+
+            var Arguments = method.GetParameters().Select(Param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(Param.ParameterType), ObjectInstance, Expression.Constant(Param.Name.ToCamelCase())));
+
+            var PropertyGet = Expression.Call(Expression.Property(ObjectInstance, SourceProperty), method, Arguments);
+
+            Field<TGraphType>(method.GetName(),
+                    method.GetDescription(),
+                    arguments: new QueryArguments(method.GetParameters().ToArray(x => x.ToQueryArgument())),
+                    resolve: Expression.Lambda<Func<IResolveFieldContext<TClass>, object?>>(PropertyGet, ObjectInstance).Compile(),
+                    deprecationReason: method.GetDeprecationReason())
+                .SetSecurity(method);
         }
 
         /// <summary>

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Mithril.Tests.Helpers": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:1241;http://localhost:1242"
+    }
+  }
+}

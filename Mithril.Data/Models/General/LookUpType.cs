@@ -66,9 +66,9 @@ namespace Mithril.Data.Models.General
         /// <param name="displayName">The display name.</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>The LookUpType specified.</returns>
-        public static LookUpType? Load(LookUpTypeEnum displayName, IDataService dataService)
+        public static LookUpType? Load(LookUpTypeEnum displayName, IDataService? dataService)
         {
-            return Query(dataService).Where(x => x.DisplayName == displayName).FirstOrDefault();
+            return Query(dataService)?.Where(x => x.DisplayName == displayName).FirstOrDefault();
         }
 
         /// <summary>
@@ -78,13 +78,14 @@ namespace Mithril.Data.Models.General
         /// <param name="description">The description.</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>The LookUpType</returns>
-        public static async Task<LookUpType> LoadOrCreateAsync(LookUpTypeEnum displayName, string description, IDataService dataService)
+        public static async Task<LookUpType> LoadOrCreateAsync(LookUpTypeEnum displayName, string description, IDataService? dataService)
         {
             var Result = Load(displayName, dataService);
             if (Result is null)
             {
                 Result = new LookUpType(displayName, description);
-                await dataService.SaveAsync(Result).ConfigureAwait(false);
+                if (dataService is not null)
+                    await dataService.SaveAsync(Result).ConfigureAwait(false);
             }
             return Result;
         }

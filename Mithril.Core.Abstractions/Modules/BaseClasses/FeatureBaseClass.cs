@@ -11,7 +11,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
     /// <seealso cref="System.IEquatable{FeatureBaseClass}"/>
     /// <seealso cref="IFeature"/>
     public abstract class FeatureBaseClass<TFeature> : IFeature, IEquatable<TFeature>
-        where TFeature : FeatureBaseClass<TFeature>, new()
+        where TFeature : FeatureBaseClass<TFeature>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeatureBaseClass{TFeature}"/> class.

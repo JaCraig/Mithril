@@ -37,7 +37,7 @@ namespace Mithril.API.Swagger
             var SystemConfig = configuration.GetSystemConfig();
             var EntryAssembly = Assembly.GetEntryAssembly();
             var EntryAssemblyName = EntryAssembly?.GetName().Name ?? "Mithril";
-            return app?.When(environment.IsDevelopment(), app =>
+            return app?.When(environment?.IsDevelopment() ?? false, app =>
             {
                 app?.UseSwagger()
                        .UseSwaggerUI(conf => conf.SwaggerEndpoint(SystemConfig?.API?.OpenAPIEndpoint ?? $"/swagger/v{EntryAssembly?.GetName().Version}/swagger.json",

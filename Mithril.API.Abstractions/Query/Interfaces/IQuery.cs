@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using Mithril.Core.Abstractions.Modules.Interfaces;
+using System.Security.Claims;
 
 namespace Mithril.API.Abstractions.Query.Interfaces
 {
@@ -26,16 +27,16 @@ namespace Mithril.API.Abstractions.Query.Interfaces
         string? Description { get; }
 
         /// <summary>
+        /// Gets the features associated with this command.
+        /// </summary>
+        /// <value>The features associated with this command.</value>
+        IFeature[] Features { get; }
+
+        /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
         string Name { get; }
-
-        /// <summary>
-        /// Gets the nullable.
-        /// </summary>
-        /// <value>The nullable.</value>
-        bool? Nullable { get; }
 
         /// <summary>
         /// Gets the type of the return.

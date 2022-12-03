@@ -5,10 +5,10 @@ using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Data.Abstractions.BaseClasses;
 using Mithril.Data.Abstractions.Enums;
 using Mithril.Data.Abstractions.Services;
-using Mithril.Data.Inflatable.Services;
 using Mithril.Data.Models.General;
+using Mithril.Data.Services;
 
-namespace Mithril.Data.Inflatable
+namespace Mithril.Data
 {
     /// <summary>
     /// Data module

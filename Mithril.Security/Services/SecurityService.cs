@@ -18,7 +18,7 @@ namespace Mithril.Security.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="SecurityService"/> class.
         /// </summary>
-        public SecurityService(IDataService dataService)
+        public SecurityService(IDataService? dataService)
         {
             DataService = dataService;
         }
@@ -33,7 +33,7 @@ namespace Mithril.Security.Services
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService DataService { get; }
+        private IDataService? DataService { get; }
 
         /// <summary>
         /// Gets or sets the system tenant.
@@ -92,7 +92,7 @@ namespace Mithril.Security.Services
                     ITenant? TempTenant = LoadSystemTenant();
                     TempUser = new User("anonymous_account", "Anonymous", "Account", TempTenant);
                     TempTenant.Users.Add(TempUser);
-                    AsyncHelper.RunSync(() => DataService.SaveAsync(TempTenant));
+                    AsyncHelper.RunSync(() => DataService?.SaveAsync(TempTenant) ?? Task.CompletedTask);
                 }
                 AnonymousUserAccount = TempUser;
                 return AnonymousUserAccount;
@@ -171,7 +171,7 @@ namespace Mithril.Security.Services
                     TempUser = new User("system_account", "System", "Account", TempTenant);
                     TempUser.AddClaim(AdminRole);
                     TempTenant.Users.Add(TempUser);
-                    AsyncHelper.RunSync(() => DataService.SaveAsync(TempTenant));
+                    AsyncHelper.RunSync(() => DataService?.SaveAsync(TempTenant) ?? Task.CompletedTask);
                 }
                 SystemUserAccount = TempUser;
                 return SystemUserAccount;
@@ -194,9 +194,9 @@ namespace Mithril.Security.Services
                 if (TempTenant is null)
                 {
                     TempTenant = new Tenant("system_tenant");
-                    AsyncHelper.RunSync(() => DataService.SaveAsync(TempTenant));
+                    AsyncHelper.RunSync(() => DataService?.SaveAsync(TempTenant) ?? Task.CompletedTask);
                     TempTenant.TenantID = TempTenant.ID;
-                    AsyncHelper.RunSync(() => DataService.SaveAsync(TempTenant));
+                    AsyncHelper.RunSync(() => DataService?.SaveAsync(TempTenant) ?? Task.CompletedTask);
                 }
                 SystemTenant = TempTenant;
                 return SystemTenant;

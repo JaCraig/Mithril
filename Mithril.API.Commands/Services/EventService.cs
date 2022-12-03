@@ -1,5 +1,4 @@
 ﻿using BigBook;
-using Inflatable;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Mithril.API.Abstractions.Commands;
@@ -7,6 +6,7 @@ using Mithril.API.Abstractions.Commands.Enums;
 using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.API.Abstractions.Services;
 using Mithril.Core.Abstractions.Configuration;
+using Mithril.Data.Abstractions.Services;
 using System.Diagnostics;
 
 namespace Mithril.API.Commands.Services
@@ -23,10 +23,12 @@ namespace Mithril.API.Commands.Services
         /// <param name="eventHandlers">The event handlers.</param>
         /// <param name="logger">The logger.</param>
         /// <param name="configuration">The configuration.</param>
-        public EventService(IEnumerable<IEventHandler> eventHandlers, ILogger<EventService>? logger, IOptions<MithrilConfig>? configuration)
+        /// <param name="dataService">The data service.</param>
+        public EventService(IEnumerable<IEventHandler> eventHandlers, ILogger<EventService>? logger, IOptions<MithrilConfig>? configuration, IDataService? dataService)
         {
             EventHandlers = eventHandlers ?? Array.Empty<IEventHandler>();
             Logger = logger;
+            DataService = dataService;
             Configuration = configuration?.Value;
         }
 
@@ -35,6 +37,12 @@ namespace Mithril.API.Commands.Services
         /// </summary>
         /// <value>The configuration.</value>
         private MithrilConfig? Configuration { get; }
+
+        /// <summary>
+        /// Gets the data service.
+        /// </summary>
+        /// <value>The data service.</value>
+        private IDataService? DataService { get; }
 
         /// <summary>
         /// Gets the event handlers.
@@ -62,15 +70,14 @@ namespace Mithril.API.Commands.Services
             if (!EventHandlers.Any())
                 return;
             int RunTime = Configuration?.API?.MaxEventProcessTime ?? 40000;
+            int BatchSize = Configuration?.API?.EventBatchSize ?? 40;
             int Count = 0;
-            var Context = new DbContext();
             Logger?.LogInformation("Processing Events for {RunTime} ms", RunTime);
             Stopwatch.Restart();
             Count = 0;
-            Context = new DbContext();
             while (Stopwatch.ElapsedMilliseconds <= RunTime || RunTime == -1)
             {
-                var Events = DbContext<IEvent>.CreateQuery().Where(x => x.Active && x.State != "Completed" && x.State != "Error").OrderBy(x => x.DateCreated).Take(40).ToList().Where(x => x.CanRun()).ToArray();
+                IEvent[] Events = GetEvents(BatchSize);
                 Logger?.LogInformation("Pulled {EventsLength} events", Events.Length);
                 Count += Events.Length;
                 if (Events.Length == 0)
@@ -82,13 +89,8 @@ namespace Mithril.API.Commands.Services
                     SetEventState(Results, Event);
                     LogEventExceptions(Results, Event);
                 }
-                for (var x = 0; x < Events.Length; ++x)
-                {
-                    var Event = Events[x];
-                    Context.Save(Event);
-                }
-                await Context.ExecuteAsync().ConfigureAwait(false);
-                Context = new DbContext();
+                if (DataService is not null)
+                    await DataService.SaveAsync(Events).ConfigureAwait(false);
                 Logger?.LogInformation("Processed {Count} events.", Count);
             }
             Logger?.LogInformation("Finished processing {Count} events.", Count);
@@ -127,6 +129,20 @@ namespace Mithril.API.Commands.Services
                 Event.State = Results.FirstOrDefault()?.NewState;
             }
         }
+
+        /// <summary>
+        /// Gets the events.
+        /// </summary>
+        /// <param name="batchSize">Size of the batch.</param>
+        /// <returns></returns>
+        private IEvent[] GetEvents(int batchSize) => DataService?
+            .Query<IEvent>()?
+            .Where(x => x.Active && x.State != "Completed" && x.State != "Error")
+            .OrderBy(x => x.DateCreated)
+            .Take(batchSize)
+            .ToList()
+            .Where(x => x.CanRun())
+            .ToArray() ?? Array.Empty<IEvent>();
 
         /// <summary>
         /// Logs the event exceptions.

@@ -1,4 +1,7 @@
-﻿using Mithril.API.Abstractions.Query;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.FeatureManagement;
+using Mithril.API.Abstractions.Attributes;
+using Mithril.API.Abstractions.Query;
 using Mithril.API.Abstractions.Query.BaseClasses;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Features.Models;
@@ -10,13 +13,17 @@ namespace Mithril.Features.Queries
     /// Features query
     /// </summary>
     /// <seealso cref="QueryBaseClass&lt;IEnumerable&lt;FeatureVM&gt;&gt;"/>
+    [ApiAuthorize("AdminOnly")]
     public class FeaturesQuery : QueryBaseClass<IEnumerable<FeatureVM>>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeaturesQuery"/> class.
         /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="featureManager">The feature manager.</param>
         /// <param name="dataService">The data service.</param>
-        public FeaturesQuery(IDataService dataService)
+        public FeaturesQuery(ILogger<FeaturesQuery>? logger, IFeatureManager? featureManager, IDataService? dataService)
+            : base(logger, featureManager)
         {
             DataService = dataService;
         }
@@ -25,7 +32,13 @@ namespace Mithril.Features.Queries
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        public IDataService DataService { get; }
+        public IDataService? DataService { get; }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>The name.</value>
+        public override string Name => "Features";
 
         /// <summary>
         /// Resolves the asynchronous.
@@ -35,8 +48,8 @@ namespace Mithril.Features.Queries
         /// <returns></returns>
         public override Task<IEnumerable<FeatureVM>?> ResolveAsync(ClaimsPrincipal? arg, Arguments arguments)
         {
-            if (!(arg?.HasClaim("Role", "Admin") ?? false))
-                return Task.FromResult<IEnumerable<FeatureVM>?>(Array.Empty<FeatureVM>());
+            //if (!(arg?.HasClaim("Role", "Admin") ?? false))
+            //    return Task.FromResult<IEnumerable<FeatureVM>?>(null);
             return Task.FromResult<IEnumerable<FeatureVM>?>(Feature.All(DataService).Select(x => new FeatureVM(x)));
         }
     }

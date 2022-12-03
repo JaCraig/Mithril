@@ -1,6 +1,12 @@
-﻿using Mithril.API.Abstractions.Commands.Interfaces;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.FeatureManagement;
+using Mithril.API.Abstractions.Commands;
+using Mithril.API.Abstractions.Commands.BaseClasses;
+using Mithril.API.Abstractions.Commands.Enums;
+using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.API.Commands.Services;
 using Mithril.Tests.Helpers;
+using System.Dynamic;
 
 namespace Mithril.API.Commands.Tests.Services
 {
@@ -8,8 +14,26 @@ namespace Mithril.API.Commands.Tests.Services
     {
         public EventServiceTests()
         {
-            TestObject = new EventService(new List<IEventHandler>(), null, null);
+            TestObject = new EventService(new IEventHandler[] { new TestEventHandler(null, null) }, null, null, null);
             ObjectType = typeof(EventService);
         }
+    }
+
+    internal class TestEvent : EventBaseClass<TestEvent>
+    {
+        public override ExpandoObject GetData() => new ExpandoObject();
+
+        public override string GetSchema() => "";
+    }
+
+    internal class TestEventHandler : EventHandlerBaseClass<TestEventHandler>
+    {
+        public TestEventHandler(ILogger? logger, IFeatureManager? featureManager) : base(logger, featureManager)
+        {
+        }
+
+        public override bool Accepts(IEvent arg) => true;
+
+        public override EventResult Handle(IEvent arg) => new EventResult(arg, EventStateTypes.Completed, this);
     }
 }

@@ -93,6 +93,13 @@
             </summary>
             <seealso cref="T:Mithril.API.Abstractions.Query.BaseClasses.QueryBaseClass`1"/>
         </member>
+        <member name="M:Mithril.Models.TestQuery.#ctor(Microsoft.Extensions.Logging.ILogger{Mithril.Models.TestQuery},Microsoft.FeatureManagement.IFeatureManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Mithril.Models.TestQuery"/> class.
+            </summary>
+            <param name="logger"></param>
+            <param name="featureManager"></param>
+        </member>
         <member name="P:Mithril.Models.TestQuery.Arguments">
             <summary>
             Gets the arguments.

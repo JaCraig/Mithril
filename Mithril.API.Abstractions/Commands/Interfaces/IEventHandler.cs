@@ -1,10 +1,18 @@
-﻿namespace Mithril.API.Abstractions.Commands.Interfaces
+﻿using Mithril.Core.Abstractions.Modules.Interfaces;
+
+namespace Mithril.API.Abstractions.Commands.Interfaces
 {
     /// <summary>
     /// Event handler interface
     /// </summary>
     public interface IEventHandler
     {
+        /// <summary>
+        /// Gets the features associated with this command.
+        /// </summary>
+        /// <value>The features associated with this command.</value>
+        IFeature[] Features { get; }
+
         /// <summary>
         /// Gets the name.
         /// </summary>

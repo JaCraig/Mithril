@@ -32,7 +32,7 @@ namespace Mithril.API.Commands.Utils
             if (commandHandler is null || endpoints is null)
                 return;
             commandEndPoint = CleanText(commandEndPoint);
-            var CommandName = CleanText(commandHandler.CommandName);
+            var CommandName = CleanText(commandHandler.CommandName, "/");
             var EndPointBuilder = endpoints.MapPost(commandEndPoint + CommandName, (
                                                         [FromServices] IDataService dataService,
                                                         [FromServices] ILogger<CommandModule> logger,
@@ -61,10 +61,17 @@ namespace Mithril.API.Commands.Utils
         /// Cleans the text.
         /// </summary>
         /// <param name="text">The text.</param>
+        /// <param name="extraCharactersToRemove">The extra characters to remove.</param>
         /// <returns></returns>
-        private static string CleanText(string? text)
+        private static string CleanText(string? text, params string[] extraCharactersToRemove)
         {
-            return text?.Replace("{", "").Replace("}", "").Replace("?", "") ?? "";
+            extraCharactersToRemove ??= Array.Empty<string>();
+            text = text?.Replace("{", "").Replace("}", "").Replace("?", "") ?? "";
+            for (var x = 0; x < extraCharactersToRemove.Length; ++x)
+            {
+                text.Replace(extraCharactersToRemove[x], "");
+            }
+            return text;
         }
 
         /// <summary>

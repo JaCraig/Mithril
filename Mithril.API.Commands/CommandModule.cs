@@ -43,7 +43,7 @@ namespace Mithril.API.Commands
         /// <returns>Endpoint route builder</returns>
         public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            if (endpoints is null)
+            if (endpoints is null || Services is null)
                 return endpoints;
             var EndPointMethod = typeof(CommandEndpointBuilder).GetMethod(nameof(CommandEndpointBuilder.SetupEndPoint), BindingFlags.Static | BindingFlags.Public);
             var TempProvider = Services.BuildServiceProvider();

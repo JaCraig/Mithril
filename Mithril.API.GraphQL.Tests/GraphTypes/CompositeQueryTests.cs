@@ -1,8 +1,8 @@
 ﻿using Mithril.API.Abstractions.Query.Interfaces;
-using Mithril.API.GraphQL.ObjectGraphs;
+using Mithril.API.GraphQL.GraphTypes;
 using Mithril.Tests.Helpers;
 
-namespace Mithril.API.GraphQL.Tests.ObjectGraphs
+namespace Mithril.API.GraphQL.Tests.GraphTypes
 {
     /// <summary>
     /// Composite query tests

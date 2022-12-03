@@ -1,24 +1,18 @@
 ﻿using BigBook;
 using GraphQL;
 using GraphQL.Types;
-using Mithril.API.GraphQL.GraphTypes;
+using Mithril.API.Abstractions.Attributes;
 using System.Dynamic;
 using System.Numerics;
 using System.Reflection;
 
-namespace Mithril.API.GraphQL.ExtensionMethods
+namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
 {
     /// <summary>
     /// Type extensions
     /// </summary>
     public static class TypeExtensions
     {
-        /// <summary>
-        /// Gets the assemblies.
-        /// </summary>
-        /// <value>The assemblies.</value>
-        private static Assembly[]? Assemblies { get; set; }
-
         /// <summary>
         /// Gets the built in graph types.
         /// </summary>
@@ -48,26 +42,10 @@ namespace Mithril.API.GraphQL.ExtensionMethods
         };
 
         /// <summary>
-        /// The assembly types
-        /// </summary>
-        private static Type[]? GraphTypes { get; set; }
-
-        /// <summary>
         /// Gets the type of the nullable base.
         /// </summary>
         /// <value>The type of the nullable base.</value>
         private static Type NullableBaseType { get; } = typeof(Nullable<>);
-
-        /// <summary>
-        /// Sets the assembly lock.
-        /// </summary>
-        /// <value>The assembly lock.</value>
-        private static readonly object AssemblyLock = new();
-
-        /// <summary>
-        /// The graph type lock
-        /// </summary>
-        private static readonly object GraphTypeLock = new();
 
         /// <summary>
         /// Finds the graph type associated with the C# type.
@@ -99,6 +77,55 @@ namespace Mithril.API.GraphQL.ExtensionMethods
                 return typeof(GenericGraphType<>).MakeGenericType(type);
             }
             return null;
+        }
+
+        /// <summary>
+        /// Gets the methods that are mappable by the system.
+        /// </summary>
+        /// <param name="classType">Type of the class.</param>
+        /// <returns>The methods.</returns>
+        public static MethodInfo[] GetMappableMethods(this Type classType)
+        {
+            if (classType is null)
+                return Array.Empty<MethodInfo>();
+            var Methods = new List<MethodInfo>();
+            Methods.AddRange(classType.GetMethods(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public));
+            foreach (var Method in classType.GetInterfaces().SelectMany(Interface => Interface.GetMethods(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public)))
+            {
+                if (Methods.Any(x => x.Name == Method.Name))
+                    continue;
+                Methods.Add(Method);
+            }
+            return Methods.Where(x => !x.IsGenericMethod
+                                    && !x.Name.StartsWith("set_", StringComparison.OrdinalIgnoreCase)
+                                    && !x.Name.StartsWith("get_", StringComparison.OrdinalIgnoreCase)
+                                    && x.GetParameters().All(x => x.ParameterType.FindGraphType().IsAssignableTo(typeof(ScalarGraphType)))
+                                    && !string.Equals(x.Name, "GetHashCode", StringComparison.OrdinalIgnoreCase)
+                                    && !string.Equals(x.Name, "ToString", StringComparison.OrdinalIgnoreCase)
+                                    && !string.Equals(x.Name, "GetType", StringComparison.OrdinalIgnoreCase)
+                                    && x.GetCustomAttribute<ApiIgnoreAttribute>() is null
+                                    && x.ReturnType.FindGraphType() is not null)
+                          .ToArray();
+        }
+
+        /// <summary>
+        /// Gets the mappable properties.
+        /// </summary>
+        /// <param name="classType">Type of the class.</param>
+        /// <returns>The mappable properties</returns>
+        public static PropertyInfo[] GetMappableProperties(this Type classType)
+        {
+            if (classType is null)
+                return Array.Empty<PropertyInfo>();
+            var Properties = new List<PropertyInfo>();
+            Properties.AddRange(classType.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead));
+            foreach (var Property in classType.GetInterfaces().SelectMany(Interface => Interface.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead)))
+            {
+                if (Properties.Any(x => x.Name == Property.Name))
+                    continue;
+                Properties.Add(Property);
+            }
+            return Properties.Where(x => x.GetCustomAttribute<ApiIgnoreAttribute>() is null && x.PropertyType.FindGraphType() is not null).ToArray();
         }
 
         /// <summary>
@@ -172,77 +199,6 @@ namespace Mithril.API.GraphQL.ExtensionMethods
         public static bool IsNullable(this Type? type)
         {
             return type is not null && (!type.IsValueType || Nullable.GetUnderlyingType(type) is not null);
-        }
-
-        /// <summary>
-        /// Finds the assemblies.
-        /// </summary>
-        /// <returns></returns>
-        private static void FindAssemblies()
-        {
-            if (Assemblies is not null)
-                return;
-            lock (AssemblyLock)
-            {
-                if (Assemblies is not null)
-                    return;
-                var EntryAssembly = Assembly.GetEntryAssembly();
-                if (EntryAssembly is null)
-                {
-                    Assemblies = Array.Empty<Assembly>();
-                    return;
-                }
-                var ExecutingAssembly = Assembly.GetExecutingAssembly();
-                if (ExecutingAssembly is null)
-                {
-                    Assemblies = Array.Empty<Assembly>();
-                    return;
-                }
-                var AssembliesFound = new List<Assembly>
-                {
-                    EntryAssembly,
-                    ExecutingAssembly
-                };
-                var PathsFound = new List<string>
-                {
-                    EntryAssembly.Location,
-                    ExecutingAssembly.Location
-                };
-                foreach (var Path in PathsFound)
-                {
-                    foreach (var TempAssembly in new FileInfo(Path).Directory?.EnumerateFiles("*.dll", SearchOption.TopDirectoryOnly) ?? Array.Empty<FileInfo>())
-                    {
-                        try
-                        {
-                            var LoadedTempAssembly = Assembly.Load(AssemblyName.GetAssemblyName(TempAssembly.FullName));
-                            if (!AssembliesFound.Contains(LoadedTempAssembly))
-                                AssembliesFound.Add(LoadedTempAssembly);
-                        }
-                        catch { }
-                    }
-                }
-                Assemblies = AssembliesFound.ToArray();
-            }
-        }
-
-        /// <summary>
-        /// Finds the graph types.
-        /// </summary>
-        /// <returns></returns>
-        private static Type[] FindGraphTypes()
-        {
-            FindAssemblies();
-            if (GraphTypes is not null)
-                return GraphTypes;
-            if (Assemblies is null)
-                return Array.Empty<Type>();
-            lock (GraphTypeLock)
-            {
-                if (GraphTypes is not null)
-                    return GraphTypes;
-                GraphTypes = Assemblies.SelectMany(x => x.GetTypes().Where(x => x.IsAssignableTo(typeof(IGraphType)) && !x.IsGenericType)).ToArray();
-            }
-            return GraphTypes;
         }
     }
 }

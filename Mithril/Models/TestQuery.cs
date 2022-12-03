@@ -1,8 +1,11 @@
 ﻿using BigBook;
+using Microsoft.FeatureManagement;
 using Mithril.API.Abstractions.Attributes;
 using Mithril.API.Abstractions.Query;
 using Mithril.API.Abstractions.Query.BaseClasses;
 using Mithril.API.Abstractions.Query.Interfaces;
+using Mithril.Core.Abstractions.Modules.Features;
+using Mithril.Core.Abstractions.Modules.Interfaces;
 using System.Security.Claims;
 
 namespace Mithril.Models
@@ -14,6 +17,16 @@ namespace Mithril.Models
     public class TestQuery : QueryBaseClass<TestVM>
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="TestQuery"/> class.
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="featureManager"></param>
+        public TestQuery(ILogger<TestQuery>? logger, IFeatureManager? featureManager)
+            : base(logger, featureManager)
+        {
+        }
+
+        /// <summary>
         /// Gets the arguments.
         /// </summary>
         /// <value>The arguments.</value>
@@ -21,6 +34,8 @@ namespace Mithril.Models
             new Argument<string> { DefaultValue = "A", Description = "Description", Name = "name" },
             new Argument<int> { DefaultValue = 1, Description = "Description", Name = "count" }
         };
+
+        public override IFeature[] Features => new IFeature[] { new GenericFeature("ExampleFeature", "My Category", "Some description") };
 
         /// <summary>
         /// Resolves the asynchronous.
@@ -30,6 +45,8 @@ namespace Mithril.Models
         /// <returns></returns>
         public override Task<TestVM?> ResolveAsync(ClaimsPrincipal? arg, Arguments arguments)
         {
+            if (!IsFeatureEnabled())
+                return Task.FromResult<TestVM?>(null);
             var List = new List<TestVM2>();
             arguments.GetValue<int>("Count").Times(x => List.Add(new TestVM2() { A = arguments.GetValue<string>("Name") }));
             return Task.FromResult<TestVM?>(new TestVM { A = List });
@@ -48,6 +65,17 @@ namespace Mithril.Models
         [ApiAuthorize("Test")]
         [ApiDescription("This will show up in the API")]
         public List<TestVM2> A { get; set; } = new List<TestVM2>();
+
+        public TestVM2 ExampleMethod(string A = "A", int B = 2)
+        {
+            return new TestVM2 { A = A, B = B };
+        }
+
+        [ApiDepricationReason("Because it is old or something")]
+        public string ExampleMethod2(string A, int B)
+        {
+            return A + B;
+        }
     }
 
     /// <summary>

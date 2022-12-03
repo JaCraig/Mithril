@@ -39,6 +39,15 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
         Type ViewModelType { get; }
 
         /// <summary>
+        /// Determines whether this instance can handle the specified command.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns>
+        /// <c>true</c> if this instance can handle the specified command; otherwise, <c>false</c>.
+        /// </returns>
+        bool CanHandle(ICommand command);
+
+        /// <summary>
         /// Handles the Command.
         /// </summary>
         /// <param name="arg">The argument.</param>

@@ -160,14 +160,14 @@ namespace Mithril.Security.Models
         /// <param name="userName">Name of the user.</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>The user specified.</returns>
-        public static User? Load(string userName, IDataService dataService) => Query(dataService).Where(x => x.UserName == userName).FirstOrDefault();
+        public static User? Load(string userName, IDataService? dataService) => Query(dataService)?.Where(x => x.UserName == userName).FirstOrDefault();
 
         /// <summary>
         /// Loads the current user.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <returns>The current user.</returns>
-        public static User? LoadCurrentUser(IDataService dataService)
+        public static User? LoadCurrentUser(IDataService? dataService)
         {
             var UserName = HttpContext.Current?.User?.GetName();
             return string.IsNullOrEmpty(UserName) ? null : Load(UserName, dataService);
@@ -249,6 +249,7 @@ namespace Mithril.Security.Models
         /// <returns>This.</returns>
         public User AddClaim(IUserClaim claim)
         {
+            Claims ??= new List<IUserClaim>();
             if (Claims.Contains(claim))
                 return this;
             Claims.Add(claim);
@@ -261,7 +262,11 @@ namespace Mithril.Security.Models
         /// <param name="type">The type.</param>
         /// <param name="name">The value.</param>
         /// <returns><c>true</c> if this instance can access the specified type; otherwise, <c>false</c>.</returns>
-        public bool CanAccess(string type, string? name) => Claims.Any(x => x.CanAccess(type, name));
+        public bool CanAccess(string type, string? name)
+        {
+            Claims ??= new List<IUserClaim>();
+            return Claims.Any(x => x?.CanAccess(type, name) ?? true);
+        }
 
         /// <summary>
         /// Compares the object to another object
@@ -277,11 +282,11 @@ namespace Mithril.Security.Models
         /// <param name="type">The display name.</param>
         /// <param name="value">The value.</param>
         /// <returns>The async task</returns>
-        public async Task CreateOrUpdateContactInfoAsync(IDataService dataService, ContactInfoType type, params string[] value)
+        public async Task CreateOrUpdateContactInfoAsync(IDataService? dataService, ContactInfoType type, params string[] value)
         {
             if (dataService is null)
                 return;
-            ILookUp? ContactType = await LookUp.LoadOrCreateAsync(type, LookUpTypeEnum.ContactInfoType, type.Icon ?? "", dataService).ConfigureAwait(false);
+            ILookUp? ContactType = await LookUp.LoadOrCreateAsync(type, LookUpTypeEnum.ContactInfoType, type?.Icon ?? "", dataService).ConfigureAwait(false);
             value ??= Array.Empty<string>();
             ContactInfo[]? Contacts = GetContactInfo(type).ToArray();
             var x = 0;
@@ -349,14 +354,22 @@ namespace Mithril.Security.Models
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>The list of user claims specified.</returns>
-        public IEnumerable<IUserClaim> GetClaims(UserClaimTypes type) => Claims.Where(x => x.Type == type);
+        public IEnumerable<IUserClaim> GetClaims(UserClaimTypes type)
+        {
+            Claims ??= new List<IUserClaim>();
+            return Claims.Where(x => x.Type == type);
+        }
 
         /// <summary>
         /// Gets the contact information requested.
         /// </summary>
         /// <param name="types">The display name.</param>
         /// <returns>The contact info specified.</returns>
-        public IEnumerable<ContactInfo> GetContactInfo(params ContactInfoType[] types) => ContactInformation.Where(x => x.OfType(types.ToArray(y => (string)y))) ?? Array.Empty<ContactInfo>();
+        public IEnumerable<ContactInfo> GetContactInfo(params ContactInfoType[] types)
+        {
+            ContactInformation ??= new List<ContactInfo>();
+            return ContactInformation.Where(x => x.OfType(types.ToArray(y => (string)y))) ?? Array.Empty<ContactInfo>();
+        }
 
         /// <summary>
         /// Returns a hash code for this instance.

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,6 +39,8 @@ namespace Mithril.Security
         /// <param name="environment">The environment.</param>
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
+            if (app?.ApplicationServices.GetService(typeof(IAuthorizationService)) is null)
+                return app;
             // Activate authentication/authorization
             return app?.UseAuthentication().UseAuthorization();
         }
@@ -66,10 +69,10 @@ namespace Mithril.Security
         /// Initializes the data.
         /// </summary>
         /// <returns>The async task.</returns>
-        public override Task InitializeDataAsync(IDataService dataService)
+        public override Task InitializeDataAsync(IDataService? dataService)
         {
+            if (dataService is null) return Task.CompletedTask;
             var UserService = new SecurityService(dataService);
-            if (UserService is null) return Task.CompletedTask;
             UserService.LoadSystemAccount();
             UserService.LoadAnonymousUserAccount();
             return Task.CompletedTask;

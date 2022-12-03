@@ -69,7 +69,7 @@ namespace Mithril.Data.Models.General
         /// <param name="type">The type.</param>
         /// <param name="context">The context.</param>
         /// <returns>The lookup specified.</returns>
-        public static ILookUp? Load(string displayName, LookUpTypeEnum type, IDataService context)
+        public static ILookUp? Load(string displayName, LookUpTypeEnum type, IDataService? context)
         {
             return LookUpType.Load(type, context)?.LookUps.FirstOrDefault(x => x.DisplayName == displayName);
         }
@@ -83,14 +83,15 @@ namespace Mithril.Data.Models.General
         /// <param name="icon">The icon.</param>
         /// <param name="context">The context.</param>
         /// <returns>LookUp associated with the display name</returns>
-        public static async Task<ILookUp> LoadOrCreateAsync(string displayName, LookUpTypeEnum type, string icon, IDataService context)
+        public static async Task<ILookUp> LoadOrCreateAsync(string displayName, LookUpTypeEnum type, string icon, IDataService? context)
         {
             var Result = Load(displayName, type, context);
             if (Result is null)
             {
                 var TempType = await LookUpType.LoadOrCreateAsync(type, "", context).ConfigureAwait(false);
                 Result = new LookUp(displayName, icon, TempType);
-                await context.SaveAsync(Result).ConfigureAwait(false);
+                if (context is not null)
+                    await context.SaveAsync(Result).ConfigureAwait(false);
             }
             return Result;
         }

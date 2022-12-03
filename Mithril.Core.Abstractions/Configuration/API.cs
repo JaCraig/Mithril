@@ -18,6 +18,12 @@
         public string? AuthorizationPolicy { get; set; }
 
         /// <summary>
+        /// Gets or sets the size of the command batch.
+        /// </summary>
+        /// <value>The size of the command batch.</value>
+        public int? CommandBatchSize { get; set; }
+
+        /// <summary>
         /// Gets or sets the command endpoint.
         /// </summary>
         /// <value>The command endpoint.</value>
@@ -29,6 +35,12 @@
         /// </summary>
         /// <value>The command run frequency (in seconds).</value>
         public int? CommandRunFrequency { get; set; }
+
+        /// <summary>
+        /// Gets or sets the size of the event batch.
+        /// </summary>
+        /// <value>The size of the event batch.</value>
+        public int? EventBatchSize { get; set; }
 
         /// <summary>
         /// Gets or sets the event run frequency (in seconds). If set to 0, then event processing

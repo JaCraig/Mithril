@@ -1,7 +1,7 @@
 ﻿using Inflatable;
 using Mithril.Data.Abstractions.Services;
 
-namespace Mithril.Data.Inflatable.Services
+namespace Mithril.Data.Services
 {
     /// <summary>
     /// Data service
@@ -13,7 +13,7 @@ namespace Mithril.Data.Inflatable.Services
         /// Initializes a new instance of the <see cref="DataService"/> class.
         /// </summary>
         /// <param name="dbContext">The database context.</param>
-        public DataService(DbContext dbContext)
+        public DataService(DbContext? dbContext)
         {
             DbContext = dbContext;
         }
@@ -22,7 +22,7 @@ namespace Mithril.Data.Inflatable.Services
         /// Gets the database context.
         /// </summary>
         /// <value>The database context.</value>
-        public DbContext DbContext { get; }
+        public DbContext? DbContext { get; }
 
         /// <summary>
         /// Deletes the objects asynchronously.
@@ -33,7 +33,7 @@ namespace Mithril.Data.Inflatable.Services
         public Task<int> DeleteAsync<TData>(params TData[] data)
             where TData : class
         {
-            return DbContext.Delete(data).ExecuteAsync();
+            return DbContext?.Delete(data).ExecuteAsync() ?? Task.FromResult(0);
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Mithril.Data.Inflatable.Services
         /// </summary>
         /// <typeparam name="TData">The type of the data.</typeparam>
         /// <returns>The IQueryable object.</returns>
-        public IQueryable<TData> Query<TData>()
+        public IQueryable<TData>? Query<TData>()
             where TData : class
         {
             return DbContext<TData>.CreateQuery();
@@ -56,7 +56,7 @@ namespace Mithril.Data.Inflatable.Services
         public Task<int> SaveAsync<TData>(params TData[] data)
             where TData : class
         {
-            return DbContext.Save(data).ExecuteAsync();
+            return DbContext?.Save(data).ExecuteAsync() ?? Task.FromResult(0);
         }
     }
 }

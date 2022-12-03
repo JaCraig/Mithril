@@ -69,9 +69,9 @@ namespace Mithril.Features.Models
         /// <param name="dataService">The data service.</param>
         /// <param name="name">The name.</param>
         /// <returns>The feature specified.</returns>
-        public static Feature? Load(IDataService dataService, string name)
+        public static Feature? Load(IDataService? dataService, string name)
         {
-            return Query(dataService).Where(x => x.Name == name).FirstOrDefault();
+            return Query(dataService)?.Where(x => x.Name == name).FirstOrDefault();
         }
 
         /// <summary>
@@ -81,13 +81,14 @@ namespace Mithril.Features.Models
         /// <param name="name">The name.</param>
         /// <param name="category">The category.</param>
         /// <returns>The user claim specified.</returns>
-        public static async Task<Feature> LoadOrCreateAsync(IDataService dataService, string name, string category)
+        public static async Task<Feature> LoadOrCreateAsync(IDataService? dataService, string name, string category)
         {
             var ReturnValue = Load(dataService, name);
             if (ReturnValue is null)
             {
                 ReturnValue = new Feature(name, category);
-                await dataService.SaveAsync(ReturnValue).ConfigureAwait(false);
+                if (dataService is not null)
+                    await dataService.SaveAsync(ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }

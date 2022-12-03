@@ -18,7 +18,11 @@ namespace Mithril.Models
         /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            return services?.Configure<AuthorizationOptions>(x => x.AddPolicy("Test", y => y.RequireAuthenticatedUser()));
+            return services?.Configure<AuthorizationOptions>(x =>
+            {
+                x.AddPolicy("AdminOnly", y => y.RequireAuthenticatedUser().RequireClaim("Role", "Admin2"));
+                x.AddPolicy("Test", y => y.RequireAuthenticatedUser());
+            });
         }
     }
 }

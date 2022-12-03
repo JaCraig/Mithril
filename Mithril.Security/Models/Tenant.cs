@@ -55,7 +55,7 @@ namespace Mithril.Security.Models
         /// <param name="displayName">The display name.</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>The tenant specified.</returns>
-        public static Tenant? Load(string displayName, IDataService dataService) => Query(dataService).Where(x => x.DisplayName == displayName).FirstOrDefault();
+        public static Tenant? Load(string displayName, IDataService? dataService) => Query(dataService)?.Where(x => x.DisplayName == displayName).FirstOrDefault();
 
         /// <summary>
         /// Loads or creates the Tenant if necessary.
@@ -63,13 +63,14 @@ namespace Mithril.Security.Models
         /// <param name="displayName">The display name.</param>
         /// <param name="context">The context.</param>
         /// <returns>The Tenant specified.</returns>
-        public static async Task<Tenant> LoadOrCreateAsync(string displayName, IDataService context)
+        public static async Task<Tenant> LoadOrCreateAsync(string displayName, IDataService? context)
         {
             Tenant? ReturnValue = Load(displayName, context);
             if (ReturnValue is null)
             {
                 ReturnValue = new Tenant(displayName);
-                await context.SaveAsync(ReturnValue).ConfigureAwait(false);
+                if (context is not null)
+                    await context.SaveAsync(ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }
@@ -197,7 +198,7 @@ namespace Mithril.Security.Models
         /// <param name="context">The context.</param>
         /// <param name="claims">The claims.</param>
         /// <returns>The user specified.</returns>
-        public async Task<User> LoadOrCreateUserAsync(string userName, string firstName, string lastName, IDataService context, params IUserClaim[] claims)
+        public async Task<User> LoadOrCreateUserAsync(string userName, string firstName, string lastName, IDataService? context, params IUserClaim[] claims)
         {
             claims ??= Array.Empty<IUserClaim>();
             var ReturnValue = User.Load(userName, context);
@@ -209,8 +210,10 @@ namespace Mithril.Security.Models
                     IUserClaim? Role = claims[i];
                     ReturnValue.AddClaim(Role);
                 }
+                Users ??= new List<IUser>();
                 Users.Add(ReturnValue);
-                await context.SaveAsync(this).ConfigureAwait(false);
+                if (context is not null)
+                    await context.SaveAsync(this).ConfigureAwait(false);
             }
             return ReturnValue;
         }

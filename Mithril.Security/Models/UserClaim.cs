@@ -63,9 +63,9 @@ namespace Mithril.Security.Models
         /// <param name="value">The value.</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>User claim specified</returns>
-        public static UserClaim? Load(UserClaimTypes type, string value, IDataService dataService)
+        public static UserClaim? Load(UserClaimTypes type, string value, IDataService? dataService)
         {
-            return Query(dataService).Where(x => x.Type == type && x.Value == value).FirstOrDefault();
+            return Query(dataService)?.Where(x => x.Type == type && x.Value == value).FirstOrDefault();
         }
 
         /// <summary>
@@ -75,13 +75,14 @@ namespace Mithril.Security.Models
         /// <param name="value">The value.</param>
         /// <param name="context">The context.</param>
         /// <returns>The user claim specified.</returns>
-        public static async Task<IUserClaim> LoadOrCreateAsync(UserClaimTypes type, string value, IDataService context)
+        public static async Task<IUserClaim> LoadOrCreateAsync(UserClaimTypes type, string value, IDataService? context)
         {
             var ReturnValue = Load(type, value, context);
             if (ReturnValue is null)
             {
                 ReturnValue = new UserClaim(type, value);
-                await context.SaveAsync(ReturnValue).ConfigureAwait(false);
+                if (context is not null)
+                    await context.SaveAsync(ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }

@@ -22,7 +22,7 @@ namespace Mithril.Features.Commands
         /// <param name="logger">The logger.</param>
         /// <param name="featureManager">The feature manager.</param>
         /// <param name="sessionManager">The session manager.</param>
-        public ToggleFeatureCommandHandler(ILogger<ToggleFeatureCommandHandler>? logger, IFeatureManager? featureManager, ISessionManager sessionManager)
+        public ToggleFeatureCommandHandler(ILogger<ToggleFeatureCommandHandler>? logger, IFeatureManager? featureManager, ISessionManager? sessionManager)
             : base(logger, featureManager)
         {
             SessionManager = sessionManager;
@@ -44,7 +44,7 @@ namespace Mithril.Features.Commands
         /// Gets the session manager.
         /// </summary>
         /// <value>The session manager.</value>
-        private ISessionManager SessionManager { get; }
+        private ISessionManager? SessionManager { get; }
 
         /// <summary>
         /// Creates the specified value.
@@ -73,7 +73,7 @@ namespace Mithril.Features.Commands
                 var arg = args[x];
                 if (arg is null)
                     continue;
-                AsyncHelper.RunSync(() => SessionManager.SetAsync(arg.FeatureName, arg.FeatureStatus));
+                AsyncHelper.RunSync(() => SessionManager?.SetAsync(arg.FeatureName, arg.FeatureStatus) ?? Task.CompletedTask);
             }
             return Array.Empty<IEvent>();
         }

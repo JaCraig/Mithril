@@ -1,5 +1,6 @@
 ﻿using GraphQL.Types;
 using Mithril.API.Abstractions.Query.Interfaces;
+using Mithril.API.GraphQL.GraphTypes;
 
 namespace Mithril.API.GraphQL.ObjectGraphs
 {

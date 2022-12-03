@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Mithril.API.Abstractions.Query.Interfaces;
 using Mithril.API.GraphQL.Authorization;
+using Mithril.API.GraphQL.GraphTypes.Builder;
 using Mithril.API.GraphQL.ObjectGraphs;
 using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
@@ -63,6 +64,7 @@ namespace Mithril.API.GraphQL
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
             services?.AddSingleton<CompositeSchema>();
+            services?.AddSingleton<GraphTypeManager>();
             services?.AddGraphQL(config =>
             {
                 config.ConfigureExecutionOptions((options) =>

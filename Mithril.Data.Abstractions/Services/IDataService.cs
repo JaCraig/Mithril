@@ -19,7 +19,7 @@
         /// </summary>
         /// <typeparam name="TData">The type of the data.</typeparam>
         /// <returns>The IQueryable object.</returns>
-        IQueryable<TData> Query<TData>()
+        IQueryable<TData>? Query<TData>()
             where TData : class;
 
         /// <summary>

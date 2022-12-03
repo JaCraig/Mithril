@@ -72,21 +72,21 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <returns>All entries.</returns>
-        public static IEnumerable<TClass> All(IDataService dataService) => Query(dataService).ToList();
+        public static IEnumerable<TClass> All(IDataService? dataService) => Query(dataService)?.ToList() ?? Enumerable.Empty<TClass>();
 
         /// <summary>
         /// Gets all active entries.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <returns>The active entries.</returns>
-        public static IEnumerable<TClass> AllActive(IDataService dataService) => Query(dataService).Where(x => x.Active).ToList();
+        public static IEnumerable<TClass> AllActive(IDataService? dataService) => Query(dataService)?.Where(x => x.Active).ToList() ?? Enumerable.Empty<TClass>();
 
         /// <summary>
         /// Gets all inactive entries.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <returns>The inactive entries.</returns>
-        public static IEnumerable<TClass> AllInactive(IDataService dataService) => Query(dataService).Where(x => !x.Active).ToList();
+        public static IEnumerable<TClass> AllInactive(IDataService? dataService) => Query(dataService)?.Where(x => !x.Active).ToList() ?? Enumerable.Empty<TClass>();
 
         /// <summary>
         /// Loads the item based on the ID
@@ -94,7 +94,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="id">ID of the item to load</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>The specified item</returns>
-        public static TClass? Load(long id, IDataService dataService) => Query(dataService).Where(x => x.ID == id).FirstOrDefault();
+        public static TClass? Load(long id, IDataService? dataService) => Query(dataService)?.Where(x => x.ID == id).FirstOrDefault();
 
         /// <summary>
         /// != operator
@@ -170,7 +170,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// </summary>
         /// <param name="context">The context.</param>
         /// <returns>The IQueryable</returns>
-        public static IQueryable<TClass> Query(IDataService context) => context.Query<TClass>();
+        public static IQueryable<TClass>? Query(IDataService? context) => context?.Query<TClass>();
 
         /// <summary>
         /// Determines whether this instance [can be modified by] the specified user.
