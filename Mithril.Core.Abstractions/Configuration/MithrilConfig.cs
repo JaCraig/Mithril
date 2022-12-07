@@ -30,6 +30,12 @@
         public Compression? Compression { get; set; }
 
         /// <summary>
+        /// Gets or sets the health checks.
+        /// </summary>
+        /// <value>The health checks.</value>
+        public HealthChecks? HealthChecks { get; set; }
+
+        /// <summary>
         /// Gets or sets the file mappings.
         /// </summary>
         /// <value>The file mappings.</value>

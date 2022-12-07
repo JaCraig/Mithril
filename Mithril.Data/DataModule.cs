@@ -1,10 +1,13 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
+using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Data.Abstractions.BaseClasses;
 using Mithril.Data.Abstractions.Enums;
 using Mithril.Data.Abstractions.Services;
+using Mithril.Data.HealthCheck;
 using Mithril.Data.Models.General;
 using Mithril.Data.Services;
 
@@ -38,7 +41,11 @@ namespace Mithril.Data
         /// <param name="environment">The environment.</param>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            return services?.AddTransient<IDataService, DataService>();
+            if (services is null)
+                return services;
+            var Timeout = configuration?.GetSystemConfig()?.HealthChecks?.DefaultTimeout ?? 3;
+            services.Configure<HealthCheckServiceOptions>(options => options.Registrations.Add(new HealthCheckRegistration("Database", new SqlConnectionHealthCheck(configuration), null, new string[] { "Database" }, new TimeSpan(0, 0, Timeout))));
+            return services.AddTransient<IDataService, DataService>();
         }
 
         /// <summary>

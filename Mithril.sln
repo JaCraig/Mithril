@@ -61,19 +61,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Commands.Tests"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Features", "Mithril.Features\Mithril.Features.csproj", "{3BACD676-717A-4E35-A695-B1D56D3B7D63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Features.Tests", "Mithril.Features.Tests\Mithril.Features.Tests.csproj", "{306ADA33-F4CC-4047-AB6B-B0A52C80805D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Features.Tests", "Mithril.Features.Tests\Mithril.Features.Tests.csproj", "{306ADA33-F4CC-4047-AB6B-B0A52C80805D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Security.Tests", "Mithril.Security.Tests\Mithril.Security.Tests.csproj", "{4EB4203D-B9B2-4BCC-BD52-D2DFADAB2325}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Tests", "Mithril.Security.Tests\Mithril.Security.Tests.csproj", "{4EB4203D-B9B2-4BCC-BD52-D2DFADAB2325}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Security.Windows.Tests", "Mithril.Security.Windows.Tests\Mithril.Security.Windows.Tests.csproj", "{4A0A9A6D-0265-4FD1-9458-BA2236BF434A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Windows.Tests", "Mithril.Security.Windows.Tests\Mithril.Security.Windows.Tests.csproj", "{4A0A9A6D-0265-4FD1-9458-BA2236BF434A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.API.Swagger.Tests", "Mithril.API.Swagger.Tests\Mithril.API.Swagger.Tests.csproj", "{45DAF526-4981-4ACE-8F73-C1C5E3A33E52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Swagger.Tests", "Mithril.API.Swagger.Tests\Mithril.API.Swagger.Tests.csproj", "{45DAF526-4981-4ACE-8F73-C1C5E3A33E52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Data.Abstractions.Tests", "Mithril.Data.Abstractions.Tests\Mithril.Data.Abstractions.Tests.csproj", "{716D8F6E-01CD-4776-95FB-6085144A588A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Data.Abstractions.Tests", "Mithril.Data.Abstractions.Tests\Mithril.Data.Abstractions.Tests.csproj", "{716D8F6E-01CD-4776-95FB-6085144A588A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Security.Abstractions.Tests", "Mithril.Security.Abstractions.Tests\Mithril.Security.Abstractions.Tests.csproj", "{7210B5B2-AEB9-46A2-B6DD-8A6BDC0078E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Abstractions.Tests", "Mithril.Security.Abstractions.Tests\Mithril.Security.Abstractions.Tests.csproj", "{7210B5B2-AEB9-46A2-B6DD-8A6BDC0078E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Data.Tests", "Mithril.Data.Tests\Mithril.Data.Tests.csproj", "{EF072E95-EF6C-444A-B9F1-91A0E1138132}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Data.Tests", "Mithril.Data.Tests\Mithril.Data.Tests.csproj", "{EF072E95-EF6C-444A-B9F1-91A0E1138132}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks", "Mithril.HealthChecks\Mithril.HealthChecks.csproj", "{6AE92229-5A0B-4E18-8BC0-620283F236BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks.Abstractions", "Mithril.HealthChecks.Abstractions\Mithril.HealthChecks.Abstractions.csproj", "{E8EC1DD3-D95F-4ED5-ACA7-FCAFA08A5A27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.HealthChecks.Tests", "Mithril.HealthChecks.Tests\Mithril.HealthChecks.Tests.csproj", "{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -201,6 +207,18 @@ Global
 		{EF072E95-EF6C-444A-B9F1-91A0E1138132}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF072E95-EF6C-444A-B9F1-91A0E1138132}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF072E95-EF6C-444A-B9F1-91A0E1138132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AE92229-5A0B-4E18-8BC0-620283F236BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AE92229-5A0B-4E18-8BC0-620283F236BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AE92229-5A0B-4E18-8BC0-620283F236BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AE92229-5A0B-4E18-8BC0-620283F236BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8EC1DD3-D95F-4ED5-ACA7-FCAFA08A5A27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8EC1DD3-D95F-4ED5-ACA7-FCAFA08A5A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8EC1DD3-D95F-4ED5-ACA7-FCAFA08A5A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8EC1DD3-D95F-4ED5-ACA7-FCAFA08A5A27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -239,6 +257,9 @@ Global
 		{716D8F6E-01CD-4776-95FB-6085144A588A} = {2F251ADC-5F62-4892-AD6E-EA191C741A18}
 		{7210B5B2-AEB9-46A2-B6DD-8A6BDC0078E6} = {2F251ADC-5F62-4892-AD6E-EA191C741A18}
 		{EF072E95-EF6C-444A-B9F1-91A0E1138132} = {20C64160-C469-46C8-9971-17C2435420AD}
+		{6AE92229-5A0B-4E18-8BC0-620283F236BD} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
+		{E8EC1DD3-D95F-4ED5-ACA7-FCAFA08A5A27} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
+		{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC} = {20C64160-C469-46C8-9971-17C2435420AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}

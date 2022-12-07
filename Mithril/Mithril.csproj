@@ -25,6 +25,7 @@
     <ProjectReference Include="..\Mithril.API.Swagger\Mithril.API.Swagger.csproj" />
     <ProjectReference Include="..\Mithril.Core\Mithril.Core.csproj" />
     <ProjectReference Include="..\Mithril.Features\Mithril.Features.csproj" />
+    <ProjectReference Include="..\Mithril.HealthChecks\Mithril.HealthChecks.csproj" />
     <ProjectReference Include="..\Mithril.Logging.Serilog\Mithril.Logging.Serilog.csproj" />
     <ProjectReference Include="..\Mithril.Security.Windows\Mithril.Security.Windows.csproj" />
   </ItemGroup>
