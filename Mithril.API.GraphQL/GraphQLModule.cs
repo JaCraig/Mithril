@@ -1,6 +1,7 @@
 ﻿using Canister.Interfaces;
 using GraphQL;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -43,15 +44,31 @@ namespace Mithril.API.GraphQL
         /// <returns>Application builder</returns>
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            var Settings = configuration.GetSystemConfig();
+            var Settings = configuration?.GetSystemConfig();
             // GraphQL endpoint
-            return app?.UseGraphQL<CompositeSchema>(configuration.GetSystemConfig()?.API?.QueryEndpoint ?? "/api/query", options =>
+            return app?.UseGraphQL<CompositeSchema>(Settings?.API?.QueryEndpoint ?? "/api/query", options =>
             {
                 if (!(Settings?.API?.AllowAnonymous ?? false))
                     options.AuthorizationRequired = true;
                 if (!string.IsNullOrEmpty(Settings?.API?.AuthorizationPolicy))
                     options.AuthorizedPolicy = Settings?.API?.AuthorizationPolicy;
             });
+        }
+
+        /// <summary>
+        /// Configures the routes.
+        /// </summary>
+        /// <param name="endpoints">The endpoints.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        /// <returns>Endpoint route builder</returns>
+        public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
+        {
+            var Settings = configuration?.GetSystemConfig();
+            var EndpointBuilder = endpoints?.MapGraphQL(Settings?.API?.QueryEndpoint ?? "/api/query");
+            if (!string.IsNullOrEmpty(Settings?.Security?.DefaultCorsPolicy))
+                EndpointBuilder?.RequireCors(Settings.Security.DefaultCorsPolicy);
+            return endpoints;
         }
 
         /// <summary>

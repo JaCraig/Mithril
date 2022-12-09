@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.FeatureManagement.Mvc;
+using Mithril.Core.Abstractions.Mvc.Attributes;
 using Mithril.Models;
 using Mithril.Security.Abstractions.Services;
 using System.Diagnostics;
@@ -63,11 +64,23 @@ namespace Mithril.Controllers
         }
 
         /// <summary>
+        /// Indexes the specified form.
+        /// </summary>
+        /// <param name="form">The form.</param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult Index(IFormCollection form)
+        {
+            return RedirectToAction();
+        }
+
+        /// <summary>
         /// Privacies this instance.
         /// </summary>
         /// <returns></returns>
         [Authorize(Policy = "Test")]
         [FeatureGate(MyFeatureFlags.ExampleFlag)]
+        [IPFilter("AdminSection")]
         public IActionResult Privacy() => View();
     }
 }

@@ -10,8 +10,11 @@ using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Core.Abstractions.Modules.Features;
 using Mithril.Core.Abstractions.Modules.Interfaces;
+using Mithril.Core.Abstractions.Services;
+using Mithril.Core.Abstractions.Services.Options;
 using Mithril.Core.Extensions;
 using Mithril.Core.Middleware;
+using Mithril.Core.Services;
 
 namespace Mithril.Core.Modules
 {
@@ -74,6 +77,12 @@ namespace Mithril.Core.Modules
             // Setup XFrame middleware.
             app = app?.UseMiddleware<XFrameOptionsMiddleware>();
 
+            // Setup IP Filter middleware for default policy.
+            app = app?.UseMiddleware<IPFilterMiddleware>();
+
+            if (!string.IsNullOrEmpty(Settings?.Security?.DefaultCorsPolicy))
+                app = app?.UseCors(Settings?.Security?.DefaultCorsPolicy);
+
             // Setup static files.
             app = SetupStaticFiles(app, configuration, environment);
 
@@ -84,8 +93,14 @@ namespace Mithril.Core.Modules
             }
 
             // Setup exception pages
-            return app.When(environment.IsDevelopment(), builder => builder?.UseDeveloperExceptionPage())
+            app = app.When(environment.IsDevelopment(), builder => builder?.UseDeveloperExceptionPage())
                       .When(!environment.IsDevelopment(), builder => builder?.UseExceptionHandler("/Home/Error"));
+            if (Settings?.Security?.RequireHttps ?? false)
+            {
+                // Require HTTPS
+                app = app?.UseHttpsRedirection()?.UseHsts();
+            }
+            return app;
         }
 
         /// <summary>
@@ -132,6 +147,16 @@ namespace Mithril.Core.Modules
                 // Add compression.
                 services = services.AddResponseCompression(options => options.EnableForHttps = Settings.Compression.AllowHttps);
             }
+
+            if (!string.IsNullOrEmpty(Settings?.Security?.DefaultCorsPolicy))
+            {
+                // Set up CORS
+                services.AddCors();
+            }
+
+            // Set up IP filtering services.
+            services.AddSingleton<IIPFilterService, IPFilterService>();
+            services.AddOptions<IPFilterOptions>();
 
             // Add mithril setup flag
             return services.AddSingleton<MithrilSetup>();

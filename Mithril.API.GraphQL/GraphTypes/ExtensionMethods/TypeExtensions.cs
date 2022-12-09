@@ -5,6 +5,7 @@ using Mithril.API.Abstractions.Attributes;
 using System.Dynamic;
 using System.Numerics;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
 {
@@ -39,6 +40,24 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
             [typeof(ulong)] = typeof(ULongGraphType),
             [typeof(Uri)] = typeof(UriGraphType),
             [typeof(ushort)] = typeof(UShortGraphType),
+
+            [typeof(int?)] = typeof(IntGraphType),
+            [typeof(float?)] = typeof(FloatGraphType),
+            [typeof(bool?)] = typeof(BooleanGraphType),
+            [typeof(byte?)] = typeof(ByteGraphType),
+            [typeof(DateTime?)] = typeof(DateTimeGraphType),
+            [typeof(DateOnly?)] = typeof(DateOnlyGraphType),
+            [typeof(DateTimeOffset?)] = typeof(DateTimeOffsetGraphType),
+            [typeof(decimal?)] = typeof(DecimalGraphType),
+            [typeof(Guid?)] = typeof(GuidGraphType),
+            [typeof(long?)] = typeof(LongGraphType),
+            [typeof(TimeSpan?)] = typeof(TimeSpanMillisecondsGraphType),
+            [typeof(sbyte?)] = typeof(ShortGraphType),
+            [typeof(short?)] = typeof(ShortGraphType),
+            [typeof(TimeOnly?)] = typeof(TimeOnlyGraphType),
+            [typeof(uint?)] = typeof(UIntGraphType),
+            [typeof(ulong?)] = typeof(ULongGraphType),
+            [typeof(ushort?)] = typeof(UShortGraphType),
         };
 
         /// <summary>
@@ -97,14 +116,16 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
                 Methods.Add(Method);
             }
             return Methods.Where(x => !x.IsGenericMethod
-                                    && !x.Name.StartsWith("set_", StringComparison.OrdinalIgnoreCase)
-                                    && !x.Name.StartsWith("get_", StringComparison.OrdinalIgnoreCase)
-                                    && x.GetParameters().All(x => x.ParameterType.FindGraphType().IsAssignableTo(typeof(ScalarGraphType)))
+                                    && !string.Equals(x.Name, "<Clone>$", StringComparison.OrdinalIgnoreCase)
                                     && !string.Equals(x.Name, "GetHashCode", StringComparison.OrdinalIgnoreCase)
                                     && !string.Equals(x.Name, "ToString", StringComparison.OrdinalIgnoreCase)
                                     && !string.Equals(x.Name, "GetType", StringComparison.OrdinalIgnoreCase)
+                                    && !x.Name.StartsWith("set_", StringComparison.OrdinalIgnoreCase)
+                                    && !x.Name.StartsWith("get_", StringComparison.OrdinalIgnoreCase)
                                     && x.GetCustomAttribute<ApiIgnoreAttribute>() is null
-                                    && x.ReturnType.FindGraphType() is not null)
+                                    && IsTypeValidForGraph(x.ReturnType)
+                                    && x.GetParameters().All(x => IsTypeValidForGraph(x.ParameterType))
+                                    && x.GetParameters().All(x => x.ParameterType.FindGraphType()?.IsAssignableTo(typeof(ScalarGraphType)) ?? false))
                           .ToArray();
         }
 
@@ -125,7 +146,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
                     continue;
                 Properties.Add(Property);
             }
-            return Properties.Where(x => x.GetCustomAttribute<ApiIgnoreAttribute>() is null && x.PropertyType.FindGraphType() is not null).ToArray();
+            return Properties.Where(x => x.GetCustomAttribute<ApiIgnoreAttribute>() is null && x.PropertyType.FindGraphType() is not null && x.GetIndexParameters().Length == 0).ToArray();
         }
 
         /// <summary>
@@ -151,7 +172,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         /// </returns>
         public static bool IsClassType(this Type? type)
         {
-            return type is not null && type.IsClass && type.IsConcrete() && !type.IsGenericType;
+            return type is not null && type.IsClass && type.IsConcrete() && !type.ContainsGenericParameters;
         }
 
         /// <summary>
@@ -173,7 +194,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         /// </returns>
         public static bool IsInterfaceType(this Type? type)
         {
-            return type is not null && type.IsInterface && !type.IsGenericType;
+            return type is not null && type.IsInterface && !type.ContainsGenericParameters;
         }
 
         /// <summary>
@@ -188,7 +209,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
             if (type is null)
                 return false;
             var ElementType = type.GetIEnumerableElementType();
-            return ElementType != type && !ElementType.IsGenericType;
+            return ElementType != type && !ElementType.ContainsGenericParameters;
         }
 
         /// <summary>
@@ -199,6 +220,23 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         public static bool IsNullable(this Type? type)
         {
             return type is not null && (!type.IsValueType || Nullable.GetUnderlyingType(type) is not null);
+        }
+
+        /// <summary>
+        /// Determines whether [is type valid for graph] [the specified type].
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>
+        /// <c>true</c> if [is type valid for graph] [the specified type]; otherwise, <c>false</c>.
+        /// </returns>
+        private static bool IsTypeValidForGraph(Type type)
+        {
+            return !type.IsByRef
+                && type != typeof(TaskAwaiter)
+                && type != typeof(TaskStatus)
+                && !type.IsAssignableTo(typeof(Task))
+                && type.FindGraphType() is not null
+                && type != typeof(void);
         }
     }
 }

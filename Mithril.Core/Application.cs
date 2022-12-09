@@ -2,6 +2,7 @@
 using Canister.IoC.Default;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -146,7 +147,7 @@ namespace Mithril.Core
                 return services;
 
             // MVC Builder setup with debug runtime compilation if needed.
-            var MVCBuilder = services.AddControllersWithViews()
+            var MVCBuilder = services.AddControllersWithViews(options => options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()))
                                     .When(Environment.IsDevelopment(), x => x.AddRazorRuntimeCompilation(options => SetupFileProviders(options.FileProviders)));
 
             //Add modules

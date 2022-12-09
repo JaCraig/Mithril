@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
+using Mithril.Core.Abstractions.Services.Options;
 
 namespace Mithril.Models
 {
@@ -18,6 +20,19 @@ namespace Mithril.Models
         /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
+            // Set IP filtering policies
+            services = services?.Configure<IPFilterOptions>(options =>
+            {
+                options.AddPolicy("AdminSection").SetWhiteList("127.0.0.1;::1");
+                options.AddDefaultPolicy().SetBlackList("10.0.0.1");
+            });
+            //Set up CORS
+            services = services?.Configure<CorsOptions>(options =>
+            {
+                options.AddDefaultPolicy(x => x.AllowCredentials().WithOrigins("https://www.google.com"));
+                options.AddPolicy("DefaultPolicy", x => x.AllowAnyOrigin());
+            });
+            //Set up authorization policies.
             return services?.Configure<AuthorizationOptions>(x =>
             {
                 x.AddPolicy("AdminOnly", y => y.RequireAuthenticatedUser().RequireClaim("Role", "Admin2"));

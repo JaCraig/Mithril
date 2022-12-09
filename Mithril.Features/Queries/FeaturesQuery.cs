@@ -13,7 +13,7 @@ namespace Mithril.Features.Queries
     /// Features query
     /// </summary>
     /// <seealso cref="QueryBaseClass&lt;IEnumerable&lt;FeatureVM&gt;&gt;"/>
-    [ApiAuthorize("AdminOnly")]
+    [ApiAuthorize("Admin Only")]
     public class FeaturesQuery : QueryBaseClass<IEnumerable<FeatureVM>>
     {
         /// <summary>
@@ -48,8 +48,6 @@ namespace Mithril.Features.Queries
         /// <returns></returns>
         public override Task<IEnumerable<FeatureVM>?> ResolveAsync(ClaimsPrincipal? arg, Arguments arguments)
         {
-            //if (!(arg?.HasClaim("Role", "Admin") ?? false))
-            //    return Task.FromResult<IEnumerable<FeatureVM>?>(null);
             return Task.FromResult<IEnumerable<FeatureVM>?>(Feature.All(DataService).Select(x => new FeatureVM(x)));
         }
     }

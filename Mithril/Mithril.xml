@@ -49,6 +49,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Mithril.Controllers.HomeController.Index(Microsoft.AspNetCore.Http.IFormCollection)">
+            <summary>
+            Indexes the specified form.
+            </summary>
+            <param name="form">The form.</param>
+            <returns></returns>
+        </member>
         <member name="M:Mithril.Controllers.HomeController.Privacy">
             <summary>
             Privacies this instance.

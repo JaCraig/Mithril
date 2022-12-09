@@ -47,6 +47,8 @@ namespace Mithril.API.Commands.Utils
             EndPointBuilder = SetupContentTypesAccepted(commandHandler, EndPointBuilder);
 
             SetupAuthorization(config, EndPointBuilder, commandHandler.GetType());
+
+            SetupSecurity(config, EndPointBuilder);
         }
 
         /// <summary>
@@ -117,6 +119,18 @@ namespace Mithril.API.Commands.Utils
                 return EndPointBuilder;
             var ExtraArgs = commandHandler.ContentTypeAccepts.Length > 1 ? commandHandler.ContentTypeAccepts[1..^1] : Array.Empty<string>();
             return EndPointBuilder.Accepts<TViewModel>(commandHandler.ContentTypeAccepts[0], ExtraArgs);
+        }
+
+        /// <summary>
+        /// Setups the security.
+        /// </summary>
+        /// <param name="config">The configuration.</param>
+        /// <param name="endPointBuilder">The end point builder.</param>
+        private static void SetupSecurity(MithrilConfig? config, RouteHandlerBuilder? endPointBuilder)
+        {
+            if (string.IsNullOrEmpty(config?.Security?.DefaultCorsPolicy) || endPointBuilder is null)
+                return;
+            endPointBuilder.RequireCors(config.Security.DefaultCorsPolicy);
         }
 
         /// <summary>

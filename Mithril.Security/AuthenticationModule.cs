@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Data.Abstractions.Services;
+using Mithril.Security.Abstractions.Enums;
 using Mithril.Security.Abstractions.Services;
 using Mithril.Security.Services;
 
@@ -57,6 +58,12 @@ namespace Mithril.Security
             services?.AddAuthorization(options =>
             {
                 options.FallbackPolicy = options.DefaultPolicy;
+            });
+
+            //Set up default authorization policies.
+            services?.Configure<AuthorizationOptions>(x =>
+            {
+                x.AddPolicy(SystemPermissions.AdminOnly, y => y.RequireAuthenticatedUser().RequireClaim("Role", "Admin"));
             });
 
             // Add the security services.

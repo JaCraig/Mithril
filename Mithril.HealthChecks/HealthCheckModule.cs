@@ -40,7 +40,7 @@ namespace Mithril.HealthChecks
             var SystemConfig = configuration?.GetSystemConfig();
             var JsonConfig = new JsonSerializerOptions(JsonSerializerDefaults.Web);
             JsonConfig.Converters.Add(new JsonStringEnumConverter());
-            endpoints?.MapHealthChecks(SystemConfig?.HealthChecks?.CheckEndPoint ?? "/api/healthchecks.{format}", new HealthCheckOptions
+            var EndpointBuilder = endpoints?.MapHealthChecks(SystemConfig?.HealthChecks?.CheckEndPoint ?? "/api/healthchecks.{format}", new HealthCheckOptions
             {
                 Predicate = _ => true,
                 ResponseWriter = (context, result) =>
@@ -49,7 +49,9 @@ namespace Mithril.HealthChecks
                     return Formatter?.FormatResponse(context, result) ?? Task.CompletedTask;
                 }
             });
-            endpoints?.MapHealthChecks(SystemConfig?.HealthChecks?.CheckEndPoint ?? "/api/healthchecks", new HealthCheckOptions
+            if (!string.IsNullOrEmpty(SystemConfig?.Security?.DefaultCorsPolicy))
+                EndpointBuilder?.RequireCors(SystemConfig.Security.DefaultCorsPolicy);
+            EndpointBuilder = endpoints?.MapHealthChecks(SystemConfig?.HealthChecks?.CheckEndPoint ?? "/api/healthchecks", new HealthCheckOptions
             {
                 Predicate = _ => true,
                 ResponseWriter = (context, result) =>
@@ -58,6 +60,8 @@ namespace Mithril.HealthChecks
                     return Formatter?.FormatResponse(context, result) ?? Task.CompletedTask;
                 }
             });
+            if (!string.IsNullOrEmpty(SystemConfig?.Security?.DefaultCorsPolicy))
+                EndpointBuilder?.RequireCors(SystemConfig.Security.DefaultCorsPolicy);
             return endpoints;
         }
 
