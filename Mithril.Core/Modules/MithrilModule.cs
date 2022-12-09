@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
@@ -83,6 +84,9 @@ namespace Mithril.Core.Modules
             if (!string.IsNullOrEmpty(Settings?.Security?.DefaultCorsPolicy))
                 app = app?.UseCors(Settings?.Security?.DefaultCorsPolicy);
 
+            // Setup response caching.
+            app = app?.UseResponseCaching();
+
             // Setup static files.
             app = SetupStaticFiles(app, configuration, environment);
 
@@ -129,17 +133,31 @@ namespace Mithril.Core.Modules
             if (services is null)
                 return services;
 
-            //Memory cache
-            services = services.AddMemoryCache();
-
             //Static HTTP context accessor services
             services = services.AddStaticHttpContextAccessor();
 
             if (configuration is null)
                 return services;
 
+            var Config = configuration.GetSystemConfig();
+
             // Set up config.
             services = services.Configure<MithrilConfig>(configuration.GetSection("Mithril"));
+
+            // Set up default response caching profile
+            services = services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new ResponseCacheAttribute { CacheProfileName = "Default" });
+                options.CacheProfiles.Add("Default", new CacheProfile()
+                {
+                    Location = ResponseCacheLocation.Any,
+                    NoStore = false,
+                    Duration = (Config?.StaticFiles?.CacheControlMaxAge ?? 0) <= 0 ? 31557600 : (int)(Config?.StaticFiles?.CacheControlMaxAge ?? 0)
+                });
+            });
+
+            // Set up response caching
+            services = services.AddResponseCaching();
 
             MithrilConfig? Settings = configuration.GetSystemConfig();
             if (Settings?.Compression?.DynamicCompression == true)

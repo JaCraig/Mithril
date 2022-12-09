@@ -79,7 +79,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks", "Mit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks.Abstractions", "Mithril.HealthChecks.Abstractions\Mithril.HealthChecks.Abstractions.csproj", "{E8EC1DD3-D95F-4ED5-ACA7-FCAFA08A5A27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.HealthChecks.Tests", "Mithril.HealthChecks.Tests\Mithril.HealthChecks.Tests.csproj", "{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks.Tests", "Mithril.HealthChecks.Tests\Mithril.HealthChecks.Tests.csproj", "{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Caching.InMemory", "Mithril.Caching.InMemory\Mithril.Caching.InMemory.csproj", "{77A383C5-0642-4A96-AFD8-79C2A1D6087E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -219,6 +221,10 @@ Global
 		{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77A383C5-0642-4A96-AFD8-79C2A1D6087E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A383C5-0642-4A96-AFD8-79C2A1D6087E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A383C5-0642-4A96-AFD8-79C2A1D6087E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A383C5-0642-4A96-AFD8-79C2A1D6087E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -260,6 +266,7 @@ Global
 		{6AE92229-5A0B-4E18-8BC0-620283F236BD} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
 		{E8EC1DD3-D95F-4ED5-ACA7-FCAFA08A5A27} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
 		{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC} = {20C64160-C469-46C8-9971-17C2435420AD}
+		{77A383C5-0642-4A96-AFD8-79C2A1D6087E} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}
