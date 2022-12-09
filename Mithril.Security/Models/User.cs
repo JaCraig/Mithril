@@ -284,9 +284,9 @@ namespace Mithril.Security.Models
         /// <returns>The async task</returns>
         public async Task CreateOrUpdateContactInfoAsync(IDataService? dataService, ContactInfoType type, params string[] value)
         {
-            if (dataService is null)
+            if (dataService is null || type is null)
                 return;
-            ILookUp? ContactType = await LookUp.LoadOrCreateAsync(type, LookUpTypeEnum.ContactInfoType, type?.Icon ?? "", dataService).ConfigureAwait(false);
+            ILookUp? ContactType = await LookUp.LoadOrCreateAsync(type, LookUpTypeEnum.ContactInfoType, type.Icon ?? "", dataService).ConfigureAwait(false);
             value ??= Array.Empty<string>();
             ContactInfo[]? Contacts = GetContactInfo(type).ToArray();
             var x = 0;

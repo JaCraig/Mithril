@@ -35,6 +35,10 @@ namespace Mithril.Models
             new Argument<int> { DefaultValue = 1, Description = "Description", Name = "count" }
         };
 
+        /// <summary>
+        /// Gets the features associated with this command.
+        /// </summary>
+        /// <value>The features associated with this command.</value>
         public override IFeature[] Features => new IFeature[] { new GenericFeature("ExampleFeature", "My Category", "Some description") };
 
         /// <summary>
@@ -66,11 +70,23 @@ namespace Mithril.Models
         [ApiDescription("This will show up in the API")]
         public List<TestVM2> A { get; set; } = new List<TestVM2>();
 
+        /// <summary>
+        /// Examples the method.
+        /// </summary>
+        /// <param name="A">a.</param>
+        /// <param name="B">The b.</param>
+        /// <returns></returns>
         public TestVM2 ExampleMethod(string A = "A", int B = 2)
         {
             return new TestVM2 { A = A, B = B };
         }
 
+        /// <summary>
+        /// Examples the method2.
+        /// </summary>
+        /// <param name="A">a.</param>
+        /// <param name="B">The b.</param>
+        /// <returns></returns>
         [ApiDepricationReason("Because it is old or something")]
         public string ExampleMethod2(string A, int B)
         {

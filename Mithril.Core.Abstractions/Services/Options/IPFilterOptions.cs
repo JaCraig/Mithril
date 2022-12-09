@@ -15,7 +15,7 @@
         /// Adds the default policy.
         /// </summary>
         /// <returns>The default policy.</returns>
-        public IPFilterPolicy AddDefaultPolicy()
+        public IPFilterPolicy? AddDefaultPolicy()
         {
             return AddPolicy("DefaultPolicy");
         }
@@ -25,8 +25,10 @@
         /// </summary>
         /// <param name="name">The name.</param>
         /// <returns>The IP filter policy specified.</returns>
-        public IPFilterPolicy AddPolicy(string name)
+        public IPFilterPolicy? AddPolicy(string name)
         {
+            if (string.IsNullOrEmpty(name))
+                return null;
             if (Policies.TryGetValue(name, out var policy))
                 return policy;
             policy = new IPFilterPolicy(name);
@@ -42,6 +44,11 @@
         /// <returns>True if it is found, false otherwise.</returns>
         public bool TryGetPolicy(string policyName, out IPFilterPolicy? policy)
         {
+            if (string.IsNullOrEmpty(policyName))
+            {
+                policy = null;
+                return false;
+            }
             return Policies.TryGetValue(policyName, out policy);
         }
     }

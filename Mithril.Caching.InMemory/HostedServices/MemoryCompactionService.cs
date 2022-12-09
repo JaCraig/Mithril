@@ -15,7 +15,7 @@ namespace Mithril.Caching.InMemory.HostedServices
         /// </summary>
         /// <param name="memoryCache">The memory cache.</param>
         /// <param name="logger">The logger.</param>
-        public MemoryCompactionService(Cache memoryCache, ILogger<MemoryCompactionService> logger)
+        public MemoryCompactionService(Cache? memoryCache, ILogger<MemoryCompactionService>? logger)
         {
             MemoryCache = memoryCache;
             Logger = logger;
@@ -25,13 +25,13 @@ namespace Mithril.Caching.InMemory.HostedServices
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        public ILogger<MemoryCompactionService> Logger { get; }
+        public ILogger<MemoryCompactionService>? Logger { get; }
 
         /// <summary>
         /// Gets the memory cache.
         /// </summary>
         /// <value>The memory cache.</value>
-        public Cache MemoryCache { get; }
+        public Cache? MemoryCache { get; }
 
         /// <summary>
         /// Gets or sets the internal timer.
@@ -56,7 +56,7 @@ namespace Mithril.Caching.InMemory.HostedServices
         /// <returns>The async task.</returns>
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            Logger.LogInformation("Starting memory compacting background service");
+            Logger?.LogInformation("Starting memory compacting background service");
             InternalTimer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(60));
             return Task.CompletedTask;
         }
@@ -70,7 +70,7 @@ namespace Mithril.Caching.InMemory.HostedServices
         /// <returns>The async task.</returns>
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            Logger.LogInformation("Stopping memory compacting background service");
+            Logger?.LogInformation("Stopping memory compacting background service");
             InternalTimer?.Change(Timeout.Infinite, 0);
             return Task.CompletedTask;
         }
@@ -97,7 +97,9 @@ namespace Mithril.Caching.InMemory.HostedServices
         /// <param name="state">The state.</param>
         private void DoWork(object? state)
         {
-            Logger.LogInformation("Running memory compaction");
+            if (MemoryCache is null)
+                return;
+            Logger?.LogInformation("Running memory compaction");
             MemoryCache.GetOrAddCache()?.Compact(.1);
             MemoryCache.GetOrAddCache("Inflatable")?.Compact(.1);
         }

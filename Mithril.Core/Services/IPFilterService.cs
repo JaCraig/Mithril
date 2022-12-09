@@ -17,9 +17,9 @@ namespace Mithril.Core.Services
         /// </summary>
         /// <param name="options">The options.</param>
         /// <param name="logger">The logger.</param>
-        public IPFilterService(IOptions<IPFilterOptions> options, ILogger<IPFilterService> logger)
+        public IPFilterService(IOptions<IPFilterOptions>? options, ILogger<IPFilterService>? logger)
         {
-            Options = options.Value;
+            Options = options?.Value ?? new IPFilterOptions();
             Logger = logger;
         }
 
@@ -27,7 +27,7 @@ namespace Mithril.Core.Services
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        public ILogger<IPFilterService> Logger { get; }
+        public ILogger<IPFilterService>? Logger { get; }
 
         /// <summary>
         /// Gets the options.
@@ -50,7 +50,7 @@ namespace Mithril.Core.Services
             if (RemoteIP is null)
                 return false;
 
-            Logger.LogDebug("Request from remote IP address: {RemoteIP}", RemoteIP);
+            Logger?.LogDebug("Request from remote IP address: {RemoteIP}", RemoteIP);
 
             return Policy.IsAllowed(RemoteIP.ToString());
         }

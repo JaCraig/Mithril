@@ -113,6 +113,12 @@
             </summary>
             <value>The arguments.</value>
         </member>
+        <member name="P:Mithril.Models.TestQuery.Features">
+            <summary>
+            Gets the features associated with this command.
+            </summary>
+            <value>The features associated with this command.</value>
+        </member>
         <member name="M:Mithril.Models.TestQuery.ResolveAsync(System.Security.Claims.ClaimsPrincipal,Mithril.API.Abstractions.Query.Arguments)">
             <summary>
             Resolves the asynchronous.
@@ -131,6 +137,22 @@
             Gets or sets a.
             </summary>
             <value>a.</value>
+        </member>
+        <member name="M:Mithril.Models.TestVM.ExampleMethod(System.String,System.Int32)">
+            <summary>
+            Examples the method.
+            </summary>
+            <param name="A">a.</param>
+            <param name="B">The b.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mithril.Models.TestVM.ExampleMethod2(System.String,System.Int32)">
+            <summary>
+            Examples the method2.
+            </summary>
+            <param name="A">a.</param>
+            <param name="B">The b.</param>
+            <returns></returns>
         </member>
         <member name="T:Mithril.Models.TestVM2">
             <summary>

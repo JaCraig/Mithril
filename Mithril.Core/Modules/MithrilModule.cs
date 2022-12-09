@@ -82,7 +82,7 @@ namespace Mithril.Core.Modules
             app = app?.UseMiddleware<IPFilterMiddleware>();
 
             if (!string.IsNullOrEmpty(Settings?.Security?.DefaultCorsPolicy))
-                app = app?.UseCors(Settings?.Security?.DefaultCorsPolicy);
+                app = app?.UseCors(Settings.Security.DefaultCorsPolicy);
 
             // Setup response caching.
             app = app?.UseResponseCaching();

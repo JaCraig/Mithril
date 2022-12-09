@@ -1,7 +1,4 @@
-﻿using BigBook;
-using System.Text.RegularExpressions;
-
-namespace Mithril.Core.Abstractions.Services.Options
+﻿namespace Mithril.Core.Abstractions.Services.Options
 {
     /// <summary>
     /// IP Filter policy
@@ -39,13 +36,13 @@ namespace Mithril.Core.Abstractions.Services.Options
         /// Gets or sets the black list filters.
         /// </summary>
         /// <value>The black list filters.</value>
-        private Regex[]? BlackListFilters { get; set; }
+        private string[]? BlackListFilters { get; set; }
 
         /// <summary>
         /// Gets or sets the white list filters.
         /// </summary>
         /// <value>The white list filters.</value>
-        private Regex[]? WhiteListFilters { get; set; }
+        private string[]? WhiteListFilters { get; set; }
 
         /// <summary>
         /// Determines whether the specified ip address is allowed.
@@ -54,8 +51,8 @@ namespace Mithril.Core.Abstractions.Services.Options
         /// <returns><c>true</c> if the specified ip address is allowed; otherwise, <c>false</c>.</returns>
         public bool IsAllowed(string ipAddress)
         {
-            return !(BlackListFilters?.Any(x => x.IsMatch(ipAddress)) ?? false)
-                && (WhiteListFilters?.Any(x => x.IsMatch(ipAddress)) ?? true);
+            return !(BlackListFilters?.Any(x => ipAddress.StartsWith(x)) ?? false)
+                && (WhiteListFilters?.Any(x => ipAddress.StartsWith(x)) ?? true);
         }
 
         /// <summary>
@@ -66,7 +63,7 @@ namespace Mithril.Core.Abstractions.Services.Options
         public IPFilterPolicy SetBlackList(string? blackList)
         {
             BlackList = blackList ?? "";
-            BlackListFilters = BlackList.Split(';', StringSplitOptions.RemoveEmptyEntries).ToArray(x => new Regex(x, RegexOptions.IgnoreCase | RegexOptions.Compiled));
+            BlackListFilters = BlackList.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>();
             return this;
         }
 
@@ -78,7 +75,7 @@ namespace Mithril.Core.Abstractions.Services.Options
         public IPFilterPolicy SetWhiteList(string? whiteList)
         {
             WhiteList = whiteList ?? "";
-            WhiteListFilters = WhiteList.Split(';', StringSplitOptions.RemoveEmptyEntries).ToArray(x => new Regex(x, RegexOptions.IgnoreCase | RegexOptions.Compiled));
+            WhiteListFilters = WhiteList.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>();
             return this;
         }
     }

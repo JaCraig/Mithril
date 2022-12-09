@@ -23,8 +23,8 @@ namespace Mithril.Models
             // Set IP filtering policies
             services = services?.Configure<IPFilterOptions>(options =>
             {
-                options.AddPolicy("AdminSection").SetWhiteList("127.0.0.1;::1");
-                options.AddDefaultPolicy().SetBlackList("10.0.0.1");
+                options?.AddPolicy("AdminSection")?.SetWhiteList("127.0.0.1;::1");
+                options?.AddDefaultPolicy()?.SetBlackList("10.0.0.1");
             });
             //Set up CORS
             services = services?.Configure<CorsOptions>(options =>

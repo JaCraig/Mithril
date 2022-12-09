@@ -14,7 +14,7 @@ namespace Mithril.HealthChecks.HealthChecks
         /// Initializes a new instance of the <see cref="SystemStatusHealthCheck"/> class.
         /// </summary>
         /// <param name="hostApplicationLifetime">The host application lifetime.</param>
-        public SystemStatusHealthCheck(IHostApplicationLifetime hostApplicationLifetime)
+        public SystemStatusHealthCheck(IHostApplicationLifetime? hostApplicationLifetime)
         {
             if (hostApplicationLifetime is null) return;
             HostApplicationLifetime = hostApplicationLifetime;
@@ -59,6 +59,7 @@ namespace Mithril.HealthChecks.HealthChecks
         {
             CancellationTokenRegistration.Dispose();
             CancellationTokenRegistration = default;
+            GC.SuppressFinalize(this);
         }
 
         /// <summary>

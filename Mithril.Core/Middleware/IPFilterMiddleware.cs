@@ -5,6 +5,9 @@ using System.Net;
 
 namespace Mithril.Core.Middleware
 {
+    /// <summary>
+    /// IP Filter Middleware
+    /// </summary>
     public class IPFilterMiddleware
     {
         /// <summary>
@@ -13,7 +16,7 @@ namespace Mithril.Core.Middleware
         /// <param name="next">The next.</param>
         /// <param name="iPFilterService">The i p filter service.</param>
         /// <param name="logger">The logger.</param>
-        public IPFilterMiddleware(RequestDelegate? next, IIPFilterService iPFilterService, ILogger<IPFilterMiddleware> logger)
+        public IPFilterMiddleware(RequestDelegate? next, IIPFilterService? iPFilterService, ILogger<IPFilterMiddleware>? logger)
         {
             _next = next;
             IPFilterService = iPFilterService;
@@ -28,12 +31,12 @@ namespace Mithril.Core.Middleware
         /// <summary>
         /// The ip filter service
         /// </summary>
-        private readonly IIPFilterService IPFilterService;
+        private readonly IIPFilterService? IPFilterService;
 
         /// <summary>
         /// The logger
         /// </summary>
-        private readonly ILogger<IPFilterMiddleware> Logger;
+        private readonly ILogger<IPFilterMiddleware>? Logger;
 
         /// <summary>
         /// Invokes the specified context.
@@ -44,10 +47,10 @@ namespace Mithril.Core.Middleware
         {
             if (context is null)
                 return Task.CompletedTask;
-            if (!IPFilterService.CheckIPAllowed(context, "DefaultPolicy"))
+            if (!(IPFilterService?.CheckIPAllowed(context, "DefaultPolicy") ?? true))
             {
                 context.Response.StatusCode = (int)HttpStatusCode.Forbidden;
-                Logger.LogWarning("Request from remote IP address blocked: {RemoteIP}", context.Connection.RemoteIpAddress);
+                Logger?.LogWarning("Request from remote IP address blocked: {RemoteIP}", context.Connection.RemoteIpAddress);
                 return Task.CompletedTask;
             }
             return _next?.Invoke(context) ?? Task.CompletedTask;

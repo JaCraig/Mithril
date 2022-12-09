@@ -272,7 +272,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="dataService">The data service.</param>
         /// <param name="currentUser">The current user.</param>
         /// <returns>This.</returns>
-        public Task SaveAsync(IDataService dataService, ClaimsPrincipal? currentUser) => dataService?.SaveAsync(SetupObjectAndReturn(dataService, currentUser)) ?? Task.CompletedTask;
+        public Task SaveAsync(IDataService? dataService, ClaimsPrincipal? currentUser) => dataService?.SaveAsync(SetupObjectAndReturn(dataService, currentUser)) ?? Task.CompletedTask;
 
         /// <summary>
         /// Sets up the object.
@@ -283,7 +283,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         {
             DateModified = DateTime.UtcNow;
             var CurrentUserName = currentUser?.GetName() ?? "system_account";
-            Modifier = dataService?.Query<IUser>().Where(x => x.UserName == CurrentUserName).FirstOrDefault() ?? Modifier;
+            Modifier = dataService?.Query<IUser>()?.Where(x => x.UserName == CurrentUserName).FirstOrDefault() ?? Modifier;
             Creator ??= Modifier;
             Modifier ??= Creator;
             if (TenantID == 0)

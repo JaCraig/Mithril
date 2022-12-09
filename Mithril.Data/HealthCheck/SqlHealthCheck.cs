@@ -59,27 +59,25 @@ namespace Mithril.Data.HealthCheck
         /// <param name="cancellationToken">The cancellation token.</param>
         private static async Task<CheckHealthResult> CheckHealthAsync(string connectionString, CancellationToken cancellationToken)
         {
-            using (var connection = new SqlConnection(connectionString))
+            using var connection = new SqlConnection(connectionString);
+            try
             {
-                try
-                {
-                    await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+                await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
 
-                    var command = connection.CreateCommand();
-                    command.CommandText = "SELECT 1";
+                var command = connection.CreateCommand();
+                command.CommandText = "SELECT 1";
 
-                    await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
-                }
-                catch (Exception exception)
-                {
-                    return new CheckHealthResult { Exception = exception };
-                }
-                finally
-                {
-                    await connection.CloseAsync().ConfigureAwait(false);
-                }
-                return new CheckHealthResult();
+                await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
             }
+            catch (Exception exception)
+            {
+                return new CheckHealthResult { Exception = exception };
+            }
+            finally
+            {
+                await connection.CloseAsync().ConfigureAwait(false);
+            }
+            return new CheckHealthResult();
         }
     }
 
@@ -92,6 +90,6 @@ namespace Mithril.Data.HealthCheck
         /// Gets or sets the exception.
         /// </summary>
         /// <value>The exception.</value>
-        public Exception Exception { get; set; }
+        public Exception? Exception { get; set; }
     }
 }

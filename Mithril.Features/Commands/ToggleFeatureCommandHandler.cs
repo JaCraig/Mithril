@@ -70,14 +70,16 @@ namespace Mithril.Features.Commands
         {
             if (args is null || Logger is null)
                 return Array.Empty<IEvent>();
+            List<IEvent> ReturnValues = new List<IEvent>();
             for (var x = 0; x < args.Length; ++x)
             {
                 var arg = args[x];
-                if (arg is null)
+                if (arg is null || string.IsNullOrEmpty(arg.FeatureName))
                     continue;
                 AsyncHelper.RunSync(() => SessionManager?.SetAsync(arg.FeatureName, arg.FeatureStatus) ?? Task.CompletedTask);
+                ReturnValues.Add(new FeatureToggledEvent(arg.FeatureName, arg.FeatureStatus));
             }
-            return Array.Empty<IEvent>();
+            return ReturnValues.ToArray();
         }
     }
 }

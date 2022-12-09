@@ -15,14 +15,13 @@ namespace Mithril.API.GraphQL.GraphTypes
     /// </summary>
     /// <typeparam name="TClass">The type of the class.</typeparam>
     /// <seealso cref="ObjectGraphType&lt;TClass&gt;"/>
-    /// <seealso cref="IGraph"/>
     public class GenericGraphType<TClass> : ObjectGraphType<TClass>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GenericGraphType{TClass}"/> class.
         /// </summary>
         /// <inheritdoc/>
-        public GenericGraphType(GraphTypeManager graphTypeManager)
+        public GenericGraphType(GraphTypeManager? graphTypeManager)
         {
             var ObjectType = typeof(TClass);
             Name = GetName(ObjectType);
@@ -75,7 +74,7 @@ namespace Mithril.API.GraphQL.GraphTypes
                 }
                 else
                 {
-                    AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object[] { Property, graphTypeManager.GetGraphType(Property.PropertyType) });
+                    AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Property, graphTypeManager.GetGraphType(Property.PropertyType) });
                 }
             }
             foreach (var Method in TypeCacheFor<TClass>.Methods)
@@ -89,7 +88,7 @@ namespace Mithril.API.GraphQL.GraphTypes
                 }
                 else
                 {
-                    AddMethodClassGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object[] { Method, graphTypeManager.GetGraphType(Method.ReturnType) });
+                    AddMethodClassGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Method, graphTypeManager.GetGraphType(Method.ReturnType) });
                 }
             }
         }
@@ -144,14 +143,16 @@ namespace Mithril.API.GraphQL.GraphTypes
                 return;
 
             var GenericGetParameter = typeof(GenericGraphType<TClass>).GetMethod(nameof(GetParameter), BindingFlags.Static | BindingFlags.NonPublic);
+            if (GenericGetParameter is null)
+                return;
 
-            var Arguments = method.GetParameters().Select(Param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(Param.ParameterType), ObjectInstance, Expression.Constant(Param.Name.ToCamelCase())));
+            var Arguments = method.GetParameters().Select(Param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(Param.ParameterType), ObjectInstance, Expression.Constant(Param.Name?.ToCamelCase() ?? "")));
             var PropertyGet = Expression.Call(Expression.Property(ObjectInstance, SourceProperty), method, Arguments);
 
             Field<TReturn>(method.GetName(), nullable: method.ReturnType.IsNullable())
                 .Description(method.GetDescription())
                 .Resolve(Expression.Lambda<Func<IResolveFieldContext<TClass>, TReturn?>>(PropertyGet, ObjectInstance).Compile())
-                .Arguments(method.GetParameters().ToArray(x => x.ToQueryArgument()))
+                .Arguments(method.GetParameters().ToArray(x => x.ToQueryArgument()) ?? Array.Empty<QueryArgument>())
                 ?.SetSecurity(method)
                 ?.DeprecationReason(method.GetDeprecationReason());
         }
@@ -202,8 +203,10 @@ namespace Mithril.API.GraphQL.GraphTypes
                 return;
 
             var GenericGetParameter = typeof(GenericGraphType<TClass>).GetMethod(nameof(GetParameter), BindingFlags.Static | BindingFlags.NonPublic);
+            if (GenericGetParameter is null)
+                return;
 
-            var Arguments = method.GetParameters().Select(Param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(Param.ParameterType), ObjectInstance, Expression.Constant(Param.Name.ToCamelCase())));
+            var Arguments = method.GetParameters().Select(Param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(Param.ParameterType), ObjectInstance, Expression.Constant(Param.Name?.ToCamelCase() ?? "")));
 
             var PropertyGet = Expression.Call(Expression.Property(ObjectInstance, SourceProperty), method, Arguments);
 

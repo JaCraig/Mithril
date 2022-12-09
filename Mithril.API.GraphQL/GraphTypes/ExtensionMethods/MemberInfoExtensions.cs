@@ -71,7 +71,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
             {
                 var Result = $"Returns {memberInfo.Name.SplitCamelCase().ToLowerInvariant()} information of type {memberInfo.ReturnType.Name}";
                 if (memberInfo.GetParameters().Length > 0)
-                    Result += $" using the following arguments ({memberInfo.GetParameters().ToString(x => x?.Name.ToCamelCase() + (x.HasDefaultValue ? (" = " + x.DefaultValue) : "") ?? "", ", ")})";
+                    Result += $" using the following arguments ({memberInfo.GetParameters().ToString(x => (x.Name?.ToCamelCase() ?? "") + (x.HasDefaultValue ? (" = " + x.DefaultValue) : "") ?? "", ", ")})";
                 return Result + ".";
             }
             return DescriptionAttribute.Description;
