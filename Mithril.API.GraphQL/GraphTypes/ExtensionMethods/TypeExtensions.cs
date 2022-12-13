@@ -80,16 +80,16 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
                 BuiltInGraphTypes.TryGetValue(type, out var graphType);
                 return graphType;
             }
+            else if (type.IsExpando())
+            {
+                return typeof(JsonGraphType);
+            }
             else if (type.IsListType())
             {
                 var ListType = type.GetIEnumerableElementType().FindGraphType();
                 if (ListType is null)
                     return null;
                 return typeof(ListGraphType<>).MakeGenericType(ListType);
-            }
-            else if (type.IsExpando())
-            {
-                return typeof(JsonGraphType);
             }
             else if (type.IsClassType() || type.IsInterfaceType())
             {
