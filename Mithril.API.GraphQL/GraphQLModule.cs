@@ -1,5 +1,4 @@
-﻿using Canister.Interfaces;
-using GraphQL;
+﻿using GraphQL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
@@ -44,7 +43,7 @@ namespace Mithril.API.GraphQL
         /// <returns>Application builder</returns>
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            var Settings = configuration?.GetSystemConfig();
+            Core.Abstractions.Configuration.MithrilConfig? Settings = configuration?.GetSystemConfig();
             // GraphQL endpoint
             return app?.UseGraphQL<CompositeSchema>(Settings?.API?.QueryEndpoint ?? "/api/query", options =>
             {
@@ -64,8 +63,8 @@ namespace Mithril.API.GraphQL
         /// <returns>Endpoint route builder</returns>
         public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            var Settings = configuration?.GetSystemConfig();
-            var EndpointBuilder = endpoints?.MapGraphQL(Settings?.API?.QueryEndpoint ?? "/api/query");
+            Core.Abstractions.Configuration.MithrilConfig? Settings = configuration?.GetSystemConfig();
+            GraphQLEndpointConventionBuilder? EndpointBuilder = endpoints?.MapGraphQL(Settings?.API?.QueryEndpoint ?? "/api/query");
             if (!string.IsNullOrEmpty(Settings?.Security?.DefaultCorsPolicy))
                 EndpointBuilder?.RequireCors(Settings.Security.DefaultCorsPolicy);
             return endpoints;
@@ -97,16 +96,8 @@ namespace Mithril.API.GraphQL
                 ?.AddUserContextBuilder((context) => new GraphQLUserContextDictionary(context.User))
                 ?.AddAuthorizationRule();
             });
+            services?.AddAllSingleton<IQuery>();
             return services;
-        }
-
-        /// <summary>
-        /// Loads the module using the bootstrapper
-        /// </summary>
-        /// <param name="bootstrapper">The bootstrapper.</param>
-        public override void Load(IBootstrapper? bootstrapper)
-        {
-            bootstrapper?.RegisterAll<IQuery>(ServiceLifetime.Singleton);
         }
     }
 }

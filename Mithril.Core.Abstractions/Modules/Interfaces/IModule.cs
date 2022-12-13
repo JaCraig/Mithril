@@ -12,7 +12,7 @@ namespace Mithril.Core.Abstractions.Modules.Interfaces
     /// <summary>
     /// Module interface. Defines a module and initializes it.
     /// </summary>
-    public interface IModule : Canister.Interfaces.IModule
+    public interface IModule
     {
         /// <summary>
         /// Gets the type.
@@ -49,6 +49,12 @@ namespace Mithril.Core.Abstractions.Modules.Interfaces
         /// </summary>
         /// <value>The name.</value>
         string Name { get; }
+
+        /// <summary>
+        /// Gets the order.
+        /// </summary>
+        /// <value>The order.</value>
+        int Order { get; }
 
         /// <summary>
         /// Gets the tags.

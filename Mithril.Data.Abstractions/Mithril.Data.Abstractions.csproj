@@ -9,9 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BigBook" Version="4.0.22" />
-    <PackageReference Include="Inflatable" Version="3.0.111" />
-    <PackageReference Include="Valkyrie" Version="3.0.10" />
+    <PackageReference Include="BigBook" Version="5.0.2" />
+    <PackageReference Include="Inflatable" Version="4.0.1" />
+    <PackageReference Include="Valkyrie" Version="4.0.1" />
   </ItemGroup>
 
 </Project>
