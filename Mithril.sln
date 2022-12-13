@@ -81,9 +81,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks.Abstra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks.Tests", "Mithril.HealthChecks.Tests\Mithril.HealthChecks.Tests.csproj", "{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Caching.InMemory", "Mithril.Caching.InMemory\Mithril.Caching.InMemory.csproj", "{77A383C5-0642-4A96-AFD8-79C2A1D6087E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Caching.InMemory", "Mithril.Caching.InMemory\Mithril.Caching.InMemory.csproj", "{77A383C5-0642-4A96-AFD8-79C2A1D6087E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Caching.InMemory.Tests", "Mithril.Caching.InMemory.Tests\Mithril.Caching.InMemory.Tests.csproj", "{169EAED2-734B-40DC-9744-13DF0448854F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Caching.InMemory.Tests", "Mithril.Caching.InMemory.Tests\Mithril.Caching.InMemory.Tests.csproj", "{169EAED2-734B-40DC-9744-13DF0448854F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.FileSystem.Abstractions", "Mithril.FileSystem.Abstractions\Mithril.FileSystem.Abstractions.csproj", "{9B16EAE6-F6D5-4C66-B3E0-8C7567EFEFA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.FileSystem", "Mithril.FileSystem\Mithril.FileSystem.csproj", "{6DCC8FF2-4BCF-499C-8A11-558F7DFD208B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.FileSystem.Tests", "Mithril.FileSystem.Tests\Mithril.FileSystem.Tests.csproj", "{3B541BBD-4702-45C7-8904-AF7BED024632}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -231,6 +237,18 @@ Global
 		{169EAED2-734B-40DC-9744-13DF0448854F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{169EAED2-734B-40DC-9744-13DF0448854F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{169EAED2-734B-40DC-9744-13DF0448854F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B16EAE6-F6D5-4C66-B3E0-8C7567EFEFA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B16EAE6-F6D5-4C66-B3E0-8C7567EFEFA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B16EAE6-F6D5-4C66-B3E0-8C7567EFEFA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B16EAE6-F6D5-4C66-B3E0-8C7567EFEFA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DCC8FF2-4BCF-499C-8A11-558F7DFD208B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DCC8FF2-4BCF-499C-8A11-558F7DFD208B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DCC8FF2-4BCF-499C-8A11-558F7DFD208B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DCC8FF2-4BCF-499C-8A11-558F7DFD208B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B541BBD-4702-45C7-8904-AF7BED024632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B541BBD-4702-45C7-8904-AF7BED024632}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B541BBD-4702-45C7-8904-AF7BED024632}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B541BBD-4702-45C7-8904-AF7BED024632}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -274,6 +292,9 @@ Global
 		{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC} = {20C64160-C469-46C8-9971-17C2435420AD}
 		{77A383C5-0642-4A96-AFD8-79C2A1D6087E} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
 		{169EAED2-734B-40DC-9744-13DF0448854F} = {20C64160-C469-46C8-9971-17C2435420AD}
+		{9B16EAE6-F6D5-4C66-B3E0-8C7567EFEFA3} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
+		{6DCC8FF2-4BCF-499C-8A11-558F7DFD208B} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
+		{3B541BBD-4702-45C7-8904-AF7BED024632} = {20C64160-C469-46C8-9971-17C2435420AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}
