@@ -19,7 +19,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
     /// <seealso cref="IEquatable{TModule}"/>
     /// <seealso cref="IEquatable{ModuleBaseClass}"/>
     /// <seealso cref="IModule"/>
-    public abstract class ModuleBaseClass<TModule> : IModule, IEquatable<TModule>
+    public abstract class ModuleBaseClass<TModule> : IEquatable<TModule>, IModule
         where TModule : ModuleBaseClass<TModule>, new()
     {
         /// <summary>
@@ -224,13 +224,6 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// </summary>
         /// <returns>The async task.</returns>
         public virtual Task InitializeDataAsync(IDataService dataService) => Task.CompletedTask;
-
-        /// <summary>
-        /// Loads the module using the bootstrapper
-        /// </summary>
-        /// <param name="bootstrapper">The bootstrapper.</param>
-        public virtual void Load(Canister.Interfaces.IBootstrapper? bootstrapper)
-        { }
 
         /// <summary>
         /// Called when the application is [started].

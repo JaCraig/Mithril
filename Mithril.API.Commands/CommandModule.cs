@@ -1,5 +1,4 @@
-﻿using Canister.Interfaces;
-using Microsoft.AspNetCore.Routing;
+﻿using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -45,11 +44,11 @@ namespace Mithril.API.Commands
         {
             if (endpoints is null || Services is null)
                 return endpoints;
-            var EndPointMethod = typeof(CommandEndpointBuilder).GetMethod(nameof(CommandEndpointBuilder.SetupEndPoint), BindingFlags.Static | BindingFlags.Public);
-            var TempProvider = Services.BuildServiceProvider();
-            var SystemConfig = configuration.GetSystemConfig();
-            var CommandEndpoint = (SystemConfig?.API?.CommandEndpoint ?? "/api/command/");
-            foreach (var Handler in TempProvider.GetServices<ICommandHandler>())
+            MethodInfo? EndPointMethod = typeof(CommandEndpointBuilder).GetMethod(nameof(CommandEndpointBuilder.SetupEndPoint), BindingFlags.Static | BindingFlags.Public);
+            ServiceProvider TempProvider = Services.BuildServiceProvider();
+            Core.Abstractions.Configuration.MithrilConfig? SystemConfig = configuration.GetSystemConfig();
+            var CommandEndpoint = SystemConfig?.API?.CommandEndpoint ?? "/api/command/";
+            foreach (ICommandHandler Handler in TempProvider.GetServices<ICommandHandler>())
             {
                 EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object?[] { endpoints, CommandEndpoint, Handler, SystemConfig });
             }
@@ -69,19 +68,11 @@ namespace Mithril.API.Commands
                         .AddSingleton<IEventService, EventService>()
                         .AddHostedService<CommandProcessorTask>()
                         .AddHostedService<EventProcessorTask>();
+            services?.AddAllTransient<IEventHandler>()
+                .AddAllTransient<IEvent>()
+                .AddAllTransient<ICommand>()
+                .AddAllTransient<ICommandHandler>();
             return Services;
-        }
-
-        /// <summary>
-        /// Loads the module using the bootstrapper
-        /// </summary>
-        /// <param name="bootstrapper">The bootstrapper.</param>
-        public override void Load(IBootstrapper? bootstrapper)
-        {
-            bootstrapper?.RegisterAll<IEventHandler>()
-                .RegisterAll<IEvent>()
-                .RegisterAll<ICommand>()
-                .RegisterAll<ICommandHandler>();
         }
     }
 }

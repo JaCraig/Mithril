@@ -1,5 +1,4 @@
 ﻿using BigBook;
-using Canister.IoC.Default;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -79,7 +78,7 @@ namespace Mithril.Core
             //Configure modules
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
-                var Module = Modules[i];
+                Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 ApplicationBuilder = Module.ConfigureApplication(ApplicationBuilder, Configuration, Environment);
             }
 
@@ -89,7 +88,7 @@ namespace Mithril.Core
                 //Module specific routes added
                 for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
                 {
-                    var Module = Modules[i];
+                    Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                     endpoints = Module.ConfigureRoutes(endpoints, Configuration, Environment) ?? endpoints;
                 }
             });
@@ -110,13 +109,10 @@ namespace Mithril.Core
         {
             if (host is null)
                 return;
-            // By default set the service provider to Canister which is just a wrapper for the
-            // default provider.
-            host = host.UseServiceProviderFactory(new CanisterServiceProviderFactory());
 
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
-                var Module = Modules[i];
+                Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 host = Module.ConfigureHostSettings(host, Configuration, Environment);
             }
         }
@@ -131,7 +127,7 @@ namespace Mithril.Core
                 return;
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
-                var Module = Modules[i];
+                Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 logging = Module.ConfigureLoggingSettings(logging, Configuration, Environment);
             }
         }
@@ -147,13 +143,13 @@ namespace Mithril.Core
                 return services;
 
             // MVC Builder setup with debug runtime compilation if needed.
-            var MVCBuilder = services.AddControllersWithViews(options => options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()))
+            IMvcBuilder? MVCBuilder = services.AddControllersWithViews(options => options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()))
                                     .When(Environment.IsDevelopment(), x => x.AddRazorRuntimeCompilation(options => SetupFileProviders(options.FileProviders)));
 
             //Add modules
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
-                var Module = Modules[i];
+                Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 MVCBuilder = Module.ConfigureMVC(MVCBuilder, Configuration, Environment);
                 MVCBuilder?.AddApplicationPart(Module.GetType().Assembly);
             }
@@ -176,12 +172,12 @@ namespace Mithril.Core
             //Add modules
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
-                var Module = Modules[i];
+                Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 services = services?.AddSingleton(Module);
             }
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
-                var Module = Modules[i];
+                Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 services = Module.ConfigureServices(services, Configuration, Environment);
             }
             return services?.AddCanisterModules();
@@ -197,7 +193,7 @@ namespace Mithril.Core
                 return;
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
-                var Module = Modules[i];
+                Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 webHost = Module.ConfigureWebHostSettings(webHost, Configuration, Environment);
             }
         }
@@ -206,10 +202,7 @@ namespace Mithril.Core
         /// Initializes any data associated with the modules.
         /// </summary>
         /// <param name="services">The services.</param>
-        public void InitializeData(IServiceProvider services)
-        {
-            AsyncHelper.RunSync(() => InitializeDataAsync(services));
-        }
+        public void InitializeData(IServiceProvider services) => AsyncHelper.RunSync(() => InitializeDataAsync(services));
 
         /// <summary>
         /// Finds the modules.
@@ -230,14 +223,14 @@ namespace Mithril.Core
                 }
                 catch { }
             }
-            var Assemblies = AssembliesFound.ToArray();
+            Assembly[] Assemblies = AssembliesFound.ToArray();
             var TempModules = new List<Abstractions.Modules.Interfaces.IModule>();
             for (int i = 0, AssembliesLength = Assemblies.Length; i < AssembliesLength; i++)
             {
                 Assembly? TempAssembly = Assemblies[i];
                 try
                 {
-                    var ModuleTypes = TempAssembly.DefinedTypes
+                    IEnumerable<TypeInfo> ModuleTypes = TempAssembly.DefinedTypes
                                                   .Where(x => x.Is<Abstractions.Modules.Interfaces.IModule>()
                                                            && x.HasDefaultConstructor());
                     TempModules.Add(ModuleTypes.Create<Abstractions.Modules.Interfaces.IModule>());
@@ -253,12 +246,12 @@ namespace Mithril.Core
         /// <param name="services">The services.</param>
         private async Task InitializeDataAsync(IServiceProvider services)
         {
-            var DataService = services?.GetService<IDataService>();
+            IDataService? DataService = services?.GetService<IDataService>();
             if (DataService is null)
                 return;
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
-                var Module = Modules[i];
+                Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 await Module.InitializeDataAsync(DataService).ConfigureAwait(false);
             }
         }
@@ -270,7 +263,7 @@ namespace Mithril.Core
         {
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
-                var Module = Modules[i];
+                Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 Module.OnStarted();
             }
         }
@@ -282,7 +275,7 @@ namespace Mithril.Core
         {
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
-                var Module = Modules[i];
+                Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 Module.OnStopped();
             }
         }
@@ -294,7 +287,7 @@ namespace Mithril.Core
         {
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
-                var Module = Modules[i];
+                Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 Module.OnStopping();
             }
         }

@@ -1,5 +1,4 @@
-﻿using Canister.Interfaces;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
@@ -37,15 +36,15 @@ namespace Mithril.HealthChecks
         /// <returns>Endpoint route builder</returns>
         public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            var SystemConfig = configuration?.GetSystemConfig();
+            Core.Abstractions.Configuration.MithrilConfig? SystemConfig = configuration?.GetSystemConfig();
             var JsonConfig = new JsonSerializerOptions(JsonSerializerDefaults.Web);
             JsonConfig.Converters.Add(new JsonStringEnumConverter());
-            var EndpointBuilder = endpoints?.MapHealthChecks(SystemConfig?.HealthChecks?.CheckEndPoint ?? "/api/healthchecks.{format}", new HealthCheckOptions
+            IEndpointConventionBuilder? EndpointBuilder = endpoints?.MapHealthChecks(SystemConfig?.HealthChecks?.CheckEndPoint ?? "/api/healthchecks.{format}", new HealthCheckOptions
             {
                 Predicate = _ => true,
                 ResponseWriter = (context, result) =>
                 {
-                    var Formatter = context.RequestServices.GetService<IResponseFormatterService>();
+                    IResponseFormatterService? Formatter = context.RequestServices.GetService<IResponseFormatterService>();
                     return Formatter?.FormatResponse(context, result) ?? Task.CompletedTask;
                 }
             });
@@ -56,7 +55,7 @@ namespace Mithril.HealthChecks
                 Predicate = _ => true,
                 ResponseWriter = (context, result) =>
                 {
-                    var Formatter = context.RequestServices.GetService<IResponseFormatterService>();
+                    IResponseFormatterService? Formatter = context.RequestServices.GetService<IResponseFormatterService>();
                     return Formatter?.FormatResponse(context, result) ?? Task.CompletedTask;
                 }
             });
@@ -78,16 +77,9 @@ namespace Mithril.HealthChecks
             services?.AddHealthChecks()
                 .AddCheck<SystemStatusHealthCheck>("System", null, new string[] { "System" }, new TimeSpan(0, 0, Timeout));
             services?.AddSingleton<IResponseFormatterService, ResponseFormatterService>();
+            services?.AddAllTransient<IResponseFormatter>();
             return services;
         }
 
-        /// <summary>
-        /// Loads the module using the bootstrapper
-        /// </summary>
-        /// <param name="bootstrapper">The bootstrapper.</param>
-        public override void Load(IBootstrapper? bootstrapper)
-        {
-            bootstrapper?.RegisterAll<IResponseFormatter>();
-        }
     }
 }
