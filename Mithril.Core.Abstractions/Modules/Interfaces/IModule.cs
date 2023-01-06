@@ -135,8 +135,9 @@ namespace Mithril.Core.Abstractions.Modules.Interfaces
         /// Initializes the data.
         /// </summary>
         /// <param name="dataService">The data service.</param>
+        /// <param name="services">The services for the application.</param>
         /// <returns>The async task.</returns>
-        Task InitializeDataAsync(IDataService dataService);
+        Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services);
 
         /// <summary>
         /// Called when the application is [started].

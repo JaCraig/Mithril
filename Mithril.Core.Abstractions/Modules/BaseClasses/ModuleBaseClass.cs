@@ -222,8 +222,10 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <summary>
         /// Initializes the data.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="services">The services for the application.</param>
         /// <returns>The async task.</returns>
-        public virtual Task InitializeDataAsync(IDataService dataService) => Task.CompletedTask;
+        public virtual Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services) => Task.CompletedTask;
 
         /// <summary>
         /// Called when the application is [started].

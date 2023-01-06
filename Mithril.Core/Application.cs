@@ -202,7 +202,7 @@ namespace Mithril.Core
         /// Initializes any data associated with the modules.
         /// </summary>
         /// <param name="services">The services.</param>
-        public void InitializeData(IServiceProvider services) => AsyncHelper.RunSync(() => InitializeDataAsync(services));
+        public void InitializeData(IServiceProvider? services) => AsyncHelper.RunSync(() => InitializeDataAsync(services));
 
         /// <summary>
         /// Finds the modules.
@@ -244,7 +244,7 @@ namespace Mithril.Core
         /// Initializes the data.
         /// </summary>
         /// <param name="services">The services.</param>
-        private async Task InitializeDataAsync(IServiceProvider services)
+        private async Task InitializeDataAsync(IServiceProvider? services)
         {
             IDataService? DataService = services?.GetService<IDataService>();
             if (DataService is null)
@@ -252,7 +252,7 @@ namespace Mithril.Core
             for (int i = 0, ModulesLength = Modules.Length; i < ModulesLength; i++)
             {
                 Abstractions.Modules.Interfaces.IModule Module = Modules[i];
-                await Module.InitializeDataAsync(DataService).ConfigureAwait(false);
+                await Module.InitializeDataAsync(DataService, services).ConfigureAwait(false);
             }
         }
 

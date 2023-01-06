@@ -75,12 +75,12 @@ namespace Mithril.Features.Models
         }
 
         /// <summary>
-        /// Loads a specific claim or creates it.
+        /// Loads a specific feature or creates it.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <param name="name">The name.</param>
         /// <param name="category">The category.</param>
-        /// <returns>The user claim specified.</returns>
+        /// <returns>The feature specified.</returns>
         public static async Task<Feature> LoadOrCreateAsync(IDataService? dataService, string name, string category)
         {
             var ReturnValue = Load(dataService, name);

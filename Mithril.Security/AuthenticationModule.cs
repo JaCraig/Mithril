@@ -75,8 +75,10 @@ namespace Mithril.Security
         /// <summary>
         /// Initializes the data.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="services">The services for the application.</param>
         /// <returns>The async task.</returns>
-        public override Task InitializeDataAsync(IDataService? dataService)
+        public override Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)
         {
             if (dataService is null) return Task.CompletedTask;
             var UserService = new SecurityService(dataService);

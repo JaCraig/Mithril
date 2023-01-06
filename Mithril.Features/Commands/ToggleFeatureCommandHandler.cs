@@ -19,7 +19,7 @@ namespace Mithril.Features.Commands
     public class ToggleFeatureCommandHandler : CommandHandlerBaseClass<ToggleFeatureCommand, ToggleFeatureCommandVM>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CSPLogCommandHandler"/> class.
+        /// Initializes a new instance of the <see cref="ToggleFeatureCommandHandler"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="featureManager">The feature manager.</param>

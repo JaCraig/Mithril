@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.FeatureManagement;
@@ -33,7 +34,20 @@ namespace Mithril.Features
         /// Gets or sets the services.
         /// </summary>
         /// <value>The services.</value>
-        private IServiceCollection? Services { get; set; }
+        private IServiceProvider? Services { get; set; }
+
+        /// <summary>
+        /// Configures the application.
+        /// </summary>
+        /// <param name="app">The application.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        /// <returns>Application builder</returns>
+        public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
+        {
+            Services = app?.ApplicationServices;
+            return app;
+        }
 
         /// <summary>
         /// Configures the services for the module.
@@ -44,7 +58,6 @@ namespace Mithril.Features
         /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            Services = services;
             services?.AddFeatureManagement()
                 .AddSessionManager<DatabaseSessionManager>();
             return services;
@@ -54,9 +67,10 @@ namespace Mithril.Features
         /// Initializes the data.
         /// </summary>
         /// <param name="dataService">The data service</param>
-        public override async Task InitializeDataAsync(IDataService dataService)
+        /// <param name="services">The services for the application.</param>
+        public override async Task InitializeDataAsync(IDataService dataService, IServiceProvider services)
         {
-            var Modules = Services.BuildServiceProvider()?.GetServices<IModule>();
+            var Modules = Services?.GetServices<IModule>();
             if (Modules is null)
                 return;
 

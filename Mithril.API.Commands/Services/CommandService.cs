@@ -82,8 +82,8 @@ namespace Mithril.API.Commands.Services
                 for (var x = 0; x < Commands.Length; ++x)
                 {
                     var Command = Commands[x];
-                    await HandleCommand(Command).ConfigureAwait(false);
-                    Command.Active = false;
+                    var Handled = await HandleCommand(Command).ConfigureAwait(false);
+                    Command.Active = !Handled;
                 }
                 if (DataService is not null)
                     await DataService.SaveAsync(Commands).ConfigureAwait(false);
@@ -103,12 +103,22 @@ namespace Mithril.API.Commands.Services
         /// Handles the command.
         /// </summary>
         /// <param name="Command">The command.</param>
-        private async Task HandleCommand(ICommand Command)
+        private async Task<bool> HandleCommand(ICommand Command)
         {
-            var Events = CommandHandlers.FirstOrDefault(x => x.CanHandle(Command))?.HandleCommand(Command);
-            if (Events is null || Events.Length == 0 || DataService is null)
-                return;
-            await DataService.SaveAsync(Events).ConfigureAwait(false);
+            var CommandHandler = CommandHandlers.FirstOrDefault(x => x.CanHandle(Command));
+            try
+            {
+                var Events = CommandHandler?.HandleCommand(Command);
+                if (Events is null || Events.Length == 0 || DataService is null)
+                    return true;
+                await DataService.SaveAsync(Events).ConfigureAwait(false);
+                return true;
+            }
+            catch (Exception e)
+            {
+                Logger?.LogError(e, "Error when processing command {CommandID} of type {CommandName} by {CommandHandlerName}.", Command.ID, Command.GetType().GetName(), CommandHandler?.CommandName ?? "Handler not found");
+                return false;
+            }
         }
     }
 }

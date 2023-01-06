@@ -51,9 +51,10 @@ namespace Mithril.Data
         /// <summary>
         /// Initializes the data.
         /// </summary>
-        /// <param name="dataService"></param>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="services">The services for the application.</param>
         /// <returns>The async task.</returns>
-        public override async Task InitializeDataAsync(IDataService dataService)
+        public override async Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)
         {
             await SetupLookUpTypesAsync(dataService).ConfigureAwait(false);
             await SetupLookUpsAsync(dataService, ContactInfoType.GetContactInfoTypes(), LookUpTypeEnum.ContactInfoType).ConfigureAwait(false);

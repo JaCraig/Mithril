@@ -1,4 +1,5 @@
 ﻿using Mithril.Communication.Abstractions.Interfaces;
+using System.Security.Claims;
 
 namespace Mithril.Communication.Abstractions.Services
 {
@@ -7,6 +8,13 @@ namespace Mithril.Communication.Abstractions.Services
     /// </summary>
     public interface ICommunicationService
     {
+        /// <summary>
+        /// Creates a message based on the channel specified.
+        /// </summary>
+        /// <param name="channel">The channel.</param>
+        /// <returns>The message object.</returns>
+        IMessage? CreateMessage(string channel);
+
         /// <summary>
         /// Loads or creates a template asynchronously.
         /// </summary>
@@ -18,7 +26,8 @@ namespace Mithril.Communication.Abstractions.Services
         /// Sends the message asynchronously.
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <returns>The async task.</returns>
-        Task SendMessageAsync(IMessage message);
+        /// <param name="user">The user.</param>
+        /// <returns>The message result.</returns>
+        Task<MessageResult> SendMessageAsync(IMessage? message, ClaimsPrincipal? user);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.FeatureManagement.Mvc;
+using Mithril.Communication.Abstractions.Services;
 using Mithril.Core.Abstractions.Mvc.Attributes;
 using Mithril.Models;
 using Mithril.Security.Abstractions.Services;
@@ -30,10 +31,12 @@ namespace Mithril.Controllers
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="securityService">The security service.</param>
-        public HomeController(ILogger<HomeController> logger, ISecurityService securityService)
+        /// <param name="communicationService">The communication service.</param>
+        public HomeController(ILogger<HomeController> logger, ISecurityService securityService, ICommunicationService communicationService)
         {
             _logger = logger;
             this.securityService = securityService;
+            this.communicationService = communicationService;
         }
 
         /// <summary>
@@ -42,9 +45,29 @@ namespace Mithril.Controllers
         private readonly ILogger<HomeController> _logger;
 
         /// <summary>
+        /// The communication service
+        /// </summary>
+        private readonly ICommunicationService communicationService;
+
+        /// <summary>
         /// The security service
         /// </summary>
         private readonly ISecurityService securityService;
+
+        /// <summary>
+        /// Email test.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IActionResult> EmailTest()
+        {
+            var Message = communicationService.CreateMessage("Email");
+            Message.Template = "Template1";
+            Message.From = "ThatGuy";
+            Message.To = "ThatOtherGuy";
+            Message.Subject = "That Thing";
+            await communicationService.SendMessageAsync(Message, User).ConfigureAwait(false);
+            return RedirectToAction("Index");
+        }
 
         /// <summary>
         /// Errors this instance.
