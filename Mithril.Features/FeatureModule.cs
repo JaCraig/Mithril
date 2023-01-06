@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.FeatureManagement;
@@ -31,25 +30,6 @@ namespace Mithril.Features
         public override int Order => int.MinValue;
 
         /// <summary>
-        /// Gets or sets the services.
-        /// </summary>
-        /// <value>The services.</value>
-        private IServiceProvider? Services { get; set; }
-
-        /// <summary>
-        /// Configures the application.
-        /// </summary>
-        /// <param name="app">The application.</param>
-        /// <param name="configuration">The configuration.</param>
-        /// <param name="environment">The environment.</param>
-        /// <returns>Application builder</returns>
-        public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
-        {
-            Services = app?.ApplicationServices;
-            return app;
-        }
-
-        /// <summary>
         /// Configures the services for the module.
         /// </summary>
         /// <param name="services">The services collection.</param>
@@ -68,9 +48,9 @@ namespace Mithril.Features
         /// </summary>
         /// <param name="dataService">The data service</param>
         /// <param name="services">The services for the application.</param>
-        public override async Task InitializeDataAsync(IDataService dataService, IServiceProvider services)
+        public override async Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)
         {
-            var Modules = Services?.GetServices<IModule>();
+            var Modules = services?.GetServices<IModule>();
             if (Modules is null)
                 return;
 

@@ -1,4 +1,6 @@
-﻿using Mithril.Communication.Abstractions.Interfaces;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.FeatureManagement;
+using Mithril.Communication.Abstractions.Interfaces;
 
 namespace Mithril.Communication.Abstractions.BaseClasses
 {
@@ -13,8 +15,10 @@ namespace Mithril.Communication.Abstractions.BaseClasses
         /// <summary>
         /// Initializes a new instance of the <see cref="ChannelBaseClass"/> class.
         /// </summary>
-        protected ChannelBaseClass()
+        protected ChannelBaseClass(ILogger<TMessage> logger, IFeatureManager? featureManager)
         {
+            Logger = logger;
+            FeatureManager = featureManager;
         }
 
         /// <summary>
@@ -22,6 +26,18 @@ namespace Mithril.Communication.Abstractions.BaseClasses
         /// </summary>
         /// <value>The name.</value>
         public abstract string Name { get; }
+
+        /// <summary>
+        /// Gets the feature manager.
+        /// </summary>
+        /// <value>The feature manager.</value>
+        protected IFeatureManager? FeatureManager { get; }
+
+        /// <summary>
+        /// Gets the logger.
+        /// </summary>
+        /// <value>The logger.</value>
+        protected ILogger<TMessage> Logger { get; }
 
         /// <summary>
         /// Determines whether this instance can handle the specified message.
