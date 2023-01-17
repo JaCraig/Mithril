@@ -36,7 +36,7 @@ namespace Mithril.HealthChecks
         /// <returns>Endpoint route builder</returns>
         public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            if (endpoints?.ServiceProvider.GetService<SystemStatusHealthCheck>() is null)
+            if (endpoints?.ServiceProvider.GetService<IResponseFormatterService>() is null)
                 return endpoints;
             Core.Abstractions.Configuration.MithrilConfig? SystemConfig = configuration?.GetSystemConfig();
             var JsonConfig = new JsonSerializerOptions(JsonSerializerDefaults.Web);

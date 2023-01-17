@@ -48,7 +48,7 @@ namespace Mithril.HealthChecks.HealthChecks
         public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
         {
             cancellationToken.ThrowIfCancellationRequested();
-            return Task.FromResult(CancellationTokenRegistration == default ? HealthCheckResult.Unhealthy("Application stopping") : HealthCheckResult.Healthy());
+            return Task.FromResult(CancellationTokenRegistration == default ? HealthCheckResult.Unhealthy("Application stopping") : HealthCheckResult.Healthy("No issues discovered"));
         }
 
         /// <summary>

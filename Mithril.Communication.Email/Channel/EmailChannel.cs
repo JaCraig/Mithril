@@ -58,6 +58,7 @@ namespace Mithril.Communication.Email.Channel
         {
             if (message is null || !CanHandle(message))
                 return new MessageResult("Message is empty", new ArgumentNullException(nameof(message)));
+            Logger?.LogInformation("Sending email");
             var Sender = new EmailSender(FeatureManager, DataService);
             string Body = !string.IsNullOrEmpty(message.Body)
                 ? message.Body
@@ -72,7 +73,7 @@ namespace Mithril.Communication.Email.Channel
             if (!string.IsNullOrEmpty(message.From))
                 Sender.From = message.From;
             await Sender.SendAsync().ConfigureAwait(false);
-
+            Logger?.LogInformation("Email successfully sent");
             return new MessageResult("Sent");
         }
 
