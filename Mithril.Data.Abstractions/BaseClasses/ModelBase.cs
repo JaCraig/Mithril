@@ -279,11 +279,21 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <param name="currentUser">The current user.</param>
-        public virtual void SetupObject(IDataService dataService, ClaimsPrincipal? currentUser)
+        public virtual void SetupObject(IDataService? dataService, ClaimsPrincipal? currentUser)
+        {
+            var CurrentUserName = currentUser?.GetName() ?? "system_account";
+            SetupObject(dataService, dataService?.Query<IUser>()?.Where(x => x.UserName == CurrentUserName).FirstOrDefault());
+        }
+
+        /// <summary>
+        /// Sets up the object.
+        /// </summary>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="currentUser">The current user.</param>
+        public virtual void SetupObject(IDataService? dataService, IUser? currentUser)
         {
             DateModified = DateTime.UtcNow;
-            var CurrentUserName = currentUser?.GetName() ?? "system_account";
-            Modifier = dataService?.Query<IUser>()?.Where(x => x.UserName == CurrentUserName).FirstOrDefault() ?? Modifier;
+            Modifier = currentUser ?? Modifier;
             Creator ??= Modifier;
             Modifier ??= Creator;
             if (TenantID == 0)

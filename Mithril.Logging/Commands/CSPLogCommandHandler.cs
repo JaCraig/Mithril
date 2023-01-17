@@ -43,7 +43,7 @@ namespace Mithril.Logging.Commands
         /// Gets the features associated with this command.
         /// </summary>
         /// <value>The features associated with this command.</value>
-        public override IFeature[] Features => new IFeature[] { new LoggingFeature() };
+        public override IFeature[] Features => new IFeature[] { LoggingFeature.Instance };
 
         /// <summary>
         /// Gets the tags (Used by OpenAPI, etc).

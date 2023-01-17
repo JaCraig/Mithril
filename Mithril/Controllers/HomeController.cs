@@ -61,6 +61,8 @@ namespace Mithril.Controllers
         public async Task<IActionResult> EmailTest()
         {
             var Message = communicationService.CreateMessage("Email");
+            if (Message is null)
+                return RedirectToAction("Index");
             Message.Template = "Template1";
             Message.From = "ThatGuy";
             Message.To = "ThatOtherGuy";

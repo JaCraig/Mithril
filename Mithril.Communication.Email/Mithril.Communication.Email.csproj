@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mithril.Communication\Mithril.Communication.csproj" />
+    <ProjectReference Include="..\Mithril.Mvc.Abstractions\Mithril.Mvc.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

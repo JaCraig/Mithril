@@ -191,7 +191,7 @@ namespace Mithril.Communication.Models
                 return "";
             return string.IsNullOrEmpty(DisplayName)
                 ? ""
-                : new FileCurator.FileInfo($"{hostingEnvironment.ContentRootPath}/Views/EmailTemplates/{FixDisplayName()}.cshtml").Read();
+                : new FileCurator.FileInfo($"{hostingEnvironment.ContentRootPath}/Views/MessageTemplates/{FixDisplayName()}.cshtml").Read();
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Mithril.Communication.Models
         {
             if (string.IsNullOrEmpty(DisplayName) || hostingEnvironment is null)
                 return this;
-            new FileCurator.FileInfo($"{hostingEnvironment.ContentRootPath}/Views/EmailTemplates/{FixDisplayName()}.cshtml").Write(content);
+            new FileCurator.FileInfo($"{hostingEnvironment.ContentRootPath}/Views/MessageTemplates/{FixDisplayName()}.cshtml").Write(content);
             return this;
         }
 

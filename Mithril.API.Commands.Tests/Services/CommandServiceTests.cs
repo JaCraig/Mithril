@@ -13,7 +13,7 @@ namespace Mithril.API.Commands.Tests.Services
     {
         public CommandServiceTests()
         {
-            TestObject = new CommandService(new ICommandHandler[] { new TestCommandHandler(null, null) }, null, null, null);
+            TestObject = new CommandService(new ICommandHandler[] { new TestCommandHandler(null, null) }, null, null, null, null);
             ObjectType = typeof(CommandService);
         }
     }

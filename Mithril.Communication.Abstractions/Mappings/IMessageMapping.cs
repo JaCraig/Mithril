@@ -16,13 +16,15 @@ namespace Mithril.Communication.Abstractions.Mappings
         public IMessageMapping()
         {
             Reference(x => x.Application);
-            ManyToOne(x => x.Attachments);
+            ManyToOne<Attachment>(x => x.Attachments!);
             Reference(x => x.BCC);
             Reference(x => x.Body);
             Reference(x => x.CC);
             Reference(x => x.From);
             Reference(x => x.Subject);
             Reference(x => x.To);
+            Reference(x => x.Template);
+            Reference(x => x.TemplateData);
         }
     }
 }

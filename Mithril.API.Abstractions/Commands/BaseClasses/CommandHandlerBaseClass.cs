@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.FeatureManagement;
 using Mithril.API.Abstractions.Commands.Interfaces;
+using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.Interfaces;
 using System.Security.Claims;
 
@@ -115,10 +116,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <returns><c>true</c> if all features are enabled; otherwise, <c>false</c>.</returns>
         protected bool IsFeatureEnabled()
         {
-            return FeatureManager is null
-                || Features is null
-                || Features.Length == 0
-                || Features.All(x => AsyncHelper.RunSync(() => FeatureManager.IsEnabledAsync(x.Name)));
+            return FeatureManager.AreFeaturesEnabled(Features);
         }
     }
 }

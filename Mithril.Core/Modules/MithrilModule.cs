@@ -42,12 +42,12 @@ namespace Mithril.Core.Modules
         /// <value>The features.</value>
         public override IFeature[] Features { get; protected set; } = new IFeature[]
         {
-            new ContentFeature(),
-            new EmailFeature(),
-            new IndexingFeature(),
-            new MediaFeature(),
-            new NavigationFeature(),
-            new WorkflowFeature()
+            ContentFeature.Instance,
+            EmailFeature.Instance,
+            IndexingFeature.Instance,
+            MediaFeature.Instance,
+            NavigationFeature.Instance,
+            WorkflowFeature.Instance
         };
 
         /// <summary>

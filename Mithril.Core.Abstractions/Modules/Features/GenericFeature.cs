@@ -22,6 +22,14 @@ namespace Mithril.Core.Abstractions.Modules.Features
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="GenericFeature"/> class.
+        /// </summary>
+        public GenericFeature()
+            : this("Generic", "", "Generic feature")
+        {
+        }
+
+        /// <summary>
         /// The group (by category) that the feature belongs. If not provided, defaults to 'Uncategorized'.
         /// </summary>
         /// <value>The category.</value>

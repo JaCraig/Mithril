@@ -1,9 +1,9 @@
 ﻿using BigBook;
 using Microsoft.Extensions.Logging;
 using Microsoft.FeatureManagement;
-using Mithril.API.Abstractions.Commands.BaseClasses;
 using Mithril.API.Abstractions.ExtensionMethods;
 using Mithril.API.Abstractions.Query.Interfaces;
+using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.Interfaces;
 using System.Security.Claims;
 
@@ -18,8 +18,10 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         where TClass : class
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventHandlerBaseClass{THandler}"/> class.
+        /// Initializes a new instance of the <see cref="QueryBaseClass{TClass}"/> class.
         /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="featureManager">The feature manager.</param>
         protected QueryBaseClass(ILogger? logger, IFeatureManager? featureManager)
         {
             Logger = logger;
@@ -92,10 +94,7 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <returns><c>true</c> if all features are enabled; otherwise, <c>false</c>.</returns>
         protected bool IsFeatureEnabled()
         {
-            return FeatureManager is null
-                || Features is null
-                || Features.Length == 0
-                || Features.All(x => AsyncHelper.RunSync(() => FeatureManager.IsEnabledAsync(x.Name)));
+            return FeatureManager.AreFeaturesEnabled(Features);
         }
     }
 }

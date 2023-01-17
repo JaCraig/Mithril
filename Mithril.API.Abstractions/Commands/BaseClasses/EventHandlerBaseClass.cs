@@ -1,7 +1,8 @@
-﻿using BigBook;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Microsoft.FeatureManagement;
+using Mithril.API.Abstractions.Commands.Enums;
 using Mithril.API.Abstractions.Commands.Interfaces;
+using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.Interfaces;
 
 namespace Mithril.API.Abstractions.Commands.BaseClasses
@@ -10,13 +11,14 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
     /// Event handler base class
     /// </summary>
     /// <seealso cref="IEventHandler"/>
-    public abstract class EventHandlerBaseClass<THandler> : IEventHandler
-        where THandler : EventHandlerBaseClass<THandler>
+    public abstract class EventHandlerBaseClass<THandler, TEvent> : IEventHandler
+        where THandler : EventHandlerBaseClass<THandler, TEvent>
+        where TEvent : IEvent
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventHandlerBaseClass{THandler}"/> class.
+        /// Initializes a new instance of the <see cref="EventHandlerBaseClass{THandler,TEvent}"/> class.
         /// </summary>
-        protected EventHandlerBaseClass(ILogger? logger, IFeatureManager? featureManager)
+        protected EventHandlerBaseClass(ILogger<THandler>? logger, IFeatureManager? featureManager)
         {
             Logger = logger;
             FeatureManager = featureManager;
@@ -44,21 +46,36 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        protected ILogger? Logger { get; }
+        protected ILogger<THandler>? Logger { get; }
 
         /// <summary>
         /// Determines if this event handler accepts the event.
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <returns>True if it accepts it, false otherwise.</returns>
-        public abstract bool Accepts(IEvent arg);
+        public virtual bool Accepts(IEvent arg)
+        {
+            return arg is TEvent;
+        }
 
         /// <summary>
         /// Handles the event.
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <returns>The result from processing the event.</returns>
-        public abstract EventResult Handle(IEvent arg);
+        public EventResult Handle(IEvent arg)
+        {
+            if (arg is null || !Accepts(arg))
+                return new EventResult(arg, EventStateTypes.Error, this, new ArgumentNullException(nameof(arg)));
+            return Handle((TEvent)arg);
+        }
+
+        /// <summary>
+        /// Handles the specified argument.
+        /// </summary>
+        /// <param name="arg">The argument.</param>
+        /// <returns>The result from processing the event.</returns>
+        protected abstract EventResult Handle(TEvent arg);
 
         /// <summary>
         /// Determines whether the associated features are enabled.
@@ -66,10 +83,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <returns><c>true</c> if all features are enabled; otherwise, <c>false</c>.</returns>
         protected bool IsFeatureEnabled()
         {
-            return FeatureManager is null
-                || Features is null
-                || Features.Length == 0
-                || Features.All(x => AsyncHelper.RunSync(() => FeatureManager.IsEnabledAsync(x.Name)));
+            return FeatureManager.AreFeaturesEnabled(Features);
         }
     }
 }

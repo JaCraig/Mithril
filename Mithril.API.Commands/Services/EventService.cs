@@ -7,6 +7,7 @@ using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.API.Abstractions.Services;
 using Mithril.Core.Abstractions.Configuration;
 using Mithril.Data.Abstractions.Services;
+using Mithril.Security.Abstractions.Services;
 using System.Diagnostics;
 
 namespace Mithril.API.Commands.Services
@@ -24,11 +25,18 @@ namespace Mithril.API.Commands.Services
         /// <param name="logger">The logger.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="dataService">The data service.</param>
-        public EventService(IEnumerable<IEventHandler> eventHandlers, ILogger<EventService>? logger, IOptions<MithrilConfig>? configuration, IDataService? dataService)
+        /// <param name="securityService">The security service.</param>
+        public EventService(
+            IEnumerable<IEventHandler> eventHandlers,
+            ILogger<EventService>? logger,
+            IOptions<MithrilConfig>? configuration,
+            IDataService? dataService,
+            ISecurityService? securityService)
         {
             EventHandlers = eventHandlers ?? Array.Empty<IEventHandler>();
             Logger = logger;
             DataService = dataService;
+            SecurityService = securityService;
             Configuration = configuration?.Value;
         }
 
@@ -55,6 +63,12 @@ namespace Mithril.API.Commands.Services
         /// </summary>
         /// <value>The logger.</value>
         private ILogger<EventService>? Logger { get; }
+
+        /// <summary>
+        /// Gets the security service.
+        /// </summary>
+        /// <value>The security service.</value>
+        private ISecurityService? SecurityService { get; }
 
         /// <summary>
         /// Gets the stopwatch.
@@ -90,7 +104,10 @@ namespace Mithril.API.Commands.Services
                     LogEventExceptions(Results, Event);
                 }
                 if (DataService is not null)
+                {
+                    Events.ForEach(x => x.SetupObject(DataService, SecurityService?.LoadSystemAccount()));
                     await DataService.SaveAsync(Events).ConfigureAwait(false);
+                }
                 Logger?.LogInformation("Processed {Count} events.", Count);
             }
             Logger?.LogInformation("Finished processing {Count} events.", Count);

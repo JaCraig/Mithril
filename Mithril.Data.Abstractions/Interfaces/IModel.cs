@@ -111,6 +111,13 @@ namespace Mithril.Data.Abstractions.Interfaces
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <param name="currentUser">The current user.</param>
-        void SetupObject(IDataService dataService, ClaimsPrincipal? currentUser);
+        void SetupObject(IDataService? dataService, ClaimsPrincipal? currentUser);
+
+        /// <summary>
+        /// Sets up the object.
+        /// </summary>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="currentUser">The current user.</param>
+        void SetupObject(IDataService? dataService, IUser? currentUser);
     }
 }

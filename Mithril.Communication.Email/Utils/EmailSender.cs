@@ -1,6 +1,9 @@
-﻿using Microsoft.FeatureManagement;
+﻿using BigBook;
+using Microsoft.FeatureManagement;
 using Mithril.Communication.Email.Models;
+using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.Features;
+using Mithril.Data.Abstractions.Services;
 
 namespace Mithril.Communication.Email.Utils
 {
@@ -13,11 +16,12 @@ namespace Mithril.Communication.Email.Utils
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="featureService">The feature service.</param>
-        public Email(IFeatureManager? featureManager)
+        /// <param name="featureManager">The feature manager.</param>
+        /// <param name="dataService">The data service.</param>
+        public EmailSender(IFeatureManager? featureManager, IDataService? dataService)
         {
-            CanSend = featureManager.?.Load<EmailFeature>()?.Active == true;
-            var Settings = EmailSettings.Load();
+            CanSend = featureManager.AreFeaturesEnabled(EmailFeature.Instance);
+            var Settings = AsyncHelper.RunSync(() => EmailSettings.LoadOrCreateAsync(dataService));
             if (Settings is null)
                 return;
             From = Settings.SystemAddress;
@@ -43,14 +47,6 @@ namespace Mithril.Communication.Email.Utils
         {
             if (string.IsNullOrEmpty(Server) || !CanSend)
                 return;
-            new EmailRecord
-            {
-                Body = Body,
-                From = From,
-                Subject = Subject,
-                To = To,
-                Application = System.Reflection.Assembly.GetEntryAssembly()?.GetName().Name ?? string.Empty
-            }.Save();
             base.Send();
         }
 
@@ -62,14 +58,6 @@ namespace Mithril.Communication.Email.Utils
         {
             if (string.IsNullOrEmpty(Server) || !CanSend)
                 return;
-            await new EmailRecord
-            {
-                Body = Body,
-                From = From,
-                Subject = Subject,
-                To = To,
-                Application = System.Reflection.Assembly.GetEntryAssembly()?.GetName().Name ?? string.Empty
-            }.SaveAsync().ConfigureAwait(false);
             await base.SendAsync().ConfigureAwait(false);
         }
     }

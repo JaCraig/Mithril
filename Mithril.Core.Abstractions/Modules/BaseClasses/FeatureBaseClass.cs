@@ -11,7 +11,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
     /// <seealso cref="System.IEquatable{FeatureBaseClass}"/>
     /// <seealso cref="IFeature"/>
     public abstract class FeatureBaseClass<TFeature> : IFeature, IEquatable<TFeature>
-        where TFeature : FeatureBaseClass<TFeature>
+        where TFeature : FeatureBaseClass<TFeature>, new()
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FeatureBaseClass{TFeature}"/> class.
@@ -19,6 +19,12 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         protected FeatureBaseClass()
         {
         }
+
+        /// <summary>
+        /// Gets an instance of the feature.
+        /// </summary>
+        /// <value>The feature instance.</value>
+        public static TFeature Instance { get; } = new TFeature();
 
         /// <summary>
         /// The group (by category) that the feature belongs.

@@ -2,6 +2,8 @@
 using Mithril.Communication.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.BaseClasses;
 using System.ComponentModel.DataAnnotations;
+using System.Dynamic;
+using System.Text.Json;
 
 namespace Mithril.Communication.Email.Models
 {
@@ -22,7 +24,7 @@ namespace Mithril.Communication.Email.Models
         /// Gets or sets the attachments.
         /// </summary>
         /// <value>The attachments.</value>
-        public virtual IList<Attachment> Attachments { get; set; } = new List<Attachment>();
+        public virtual IList<Attachment?> Attachments { get; set; } = new List<Attachment?>();
 
         /// <summary>
         /// Gets or sets the BCC.
@@ -69,6 +71,19 @@ namespace Mithril.Communication.Email.Models
         /// <value>The template.</value>
         [MaxLength(128)]
         public string? Template { get; set; }
+
+        /// <summary>
+        /// Gets or sets the template data (JSON).
+        /// </summary>
+        /// <value>The template data in JSON format.</value>
+        [MaxLength]
+        public string? TemplateData { get; set; }
+
+        /// <summary>
+        /// Gets or sets the template data.
+        /// </summary>
+        /// <value>The template data.</value>
+        public ExpandoObject? TemplateFields => JsonSerializer.Deserialize<ExpandoObject>(TemplateData ?? "{}");
 
         /// <summary>
         /// Gets or sets to.

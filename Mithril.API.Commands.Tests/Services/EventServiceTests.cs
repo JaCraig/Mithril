@@ -14,7 +14,7 @@ namespace Mithril.API.Commands.Tests.Services
     {
         public EventServiceTests()
         {
-            TestObject = new EventService(new IEventHandler[] { new TestEventHandler(null, null) }, null, null, null);
+            TestObject = new EventService(new IEventHandler[] { new TestEventHandler(null, null) }, null, null, null, null);
             ObjectType = typeof(EventService);
         }
     }

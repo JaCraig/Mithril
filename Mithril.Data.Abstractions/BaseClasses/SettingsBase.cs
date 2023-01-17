@@ -8,7 +8,6 @@ namespace Mithril.Data.Abstractions.BaseClasses
     /// </summary>
     /// <typeparam name="TClass">The type of the class.</typeparam>
     /// <seealso cref="ModelBase&lt;TClass&gt;"/>
-    /// <seealso cref="IEquatable&lt;SettingsBase&lt;TClass&gt;&gt;"/>
     public abstract class SettingsBase<TClass> : ModelBase<TClass>, IEquatable<SettingsBase<TClass>>
         where TClass : SettingsBase<TClass>, new()
     {

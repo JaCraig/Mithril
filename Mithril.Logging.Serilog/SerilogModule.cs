@@ -22,7 +22,7 @@ namespace Mithril.Logging.Serilog
         /// Gets the features.
         /// </summary>
         /// <value>The features.</value>
-        public override IFeature[] Features => new IFeature[] { new LoggingFeature() };
+        public override IFeature[] Features => new IFeature[] { LoggingFeature.Instance };
 
         /// <summary>
         /// Configures the application.

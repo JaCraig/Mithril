@@ -1,5 +1,6 @@
 ﻿using Mithril.Data.Abstractions.Interfaces;
 using System.ComponentModel.DataAnnotations;
+using System.Dynamic;
 
 namespace Mithril.Communication.Abstractions.Interfaces
 {
@@ -66,6 +67,19 @@ namespace Mithril.Communication.Abstractions.Interfaces
         /// <value>The template.</value>
         [MaxLength(128)]
         string? Template { get; set; }
+
+        /// <summary>
+        /// Gets or sets the template data (JSON).
+        /// </summary>
+        /// <value>The template data in JSON format.</value>
+        [MaxLength]
+        string? TemplateData { get; set; }
+
+        /// <summary>
+        /// Gets or sets the template data.
+        /// </summary>
+        /// <value>The template data.</value>
+        ExpandoObject? TemplateFields { get; }
 
         /// <summary>
         /// Gets or sets to.

@@ -10,6 +10,19 @@ namespace Mithril.Communication.Abstractions
     public class Attachment : ModelBase<Attachment>
     {
         /// <summary>
+        /// Gets the content.
+        /// </summary>
+        /// <value>The content.</value>
+        public byte[] Content
+        {
+            get
+            {
+                var TempFile = new FileCurator.FileInfo($"Mithril://{Location}");
+                return TempFile.ReadBinary();
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the file hash.
         /// </summary>
         /// <value>The file hash.</value>
@@ -30,6 +43,13 @@ namespace Mithril.Communication.Abstractions
         /// <value>The location on disk.</value>
         [MaxLength(1028)]
         public string? Location { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type of the MIME.
+        /// </summary>
+        /// <value>The type of the MIME.</value>
+        [MaxLength(64)]
+        public string? MimeType { get; set; }
 
         /// <summary>
         /// Gets or sets the size.

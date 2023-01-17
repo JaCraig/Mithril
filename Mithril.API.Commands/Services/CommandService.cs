@@ -5,6 +5,7 @@ using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.API.Abstractions.Services;
 using Mithril.Core.Abstractions.Configuration;
 using Mithril.Data.Abstractions.Services;
+using Mithril.Security.Abstractions.Services;
 using System.Diagnostics;
 
 namespace Mithril.API.Commands.Services
@@ -22,11 +23,18 @@ namespace Mithril.API.Commands.Services
         /// <param name="logger">The logger.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="dataService">The data service.</param>
-        public CommandService(IEnumerable<ICommandHandler> commandHandlers, ILogger<CommandService>? logger, IOptions<MithrilConfig>? configuration, IDataService? dataService)
+        /// <param name="securityService">The security service.</param>
+        public CommandService(
+            IEnumerable<ICommandHandler> commandHandlers,
+            ILogger<CommandService>? logger,
+            IOptions<MithrilConfig>? configuration,
+            IDataService? dataService,
+            ISecurityService? securityService)
         {
             CommandHandlers = commandHandlers ?? Array.Empty<ICommandHandler>();
             Logger = logger;
             DataService = dataService;
+            SecurityService = securityService;
             Configuration = configuration?.Value;
         }
 
@@ -53,6 +61,12 @@ namespace Mithril.API.Commands.Services
         /// </summary>
         /// <value>The logger.</value>
         private ILogger<CommandService>? Logger { get; }
+
+        /// <summary>
+        /// Gets the security service.
+        /// </summary>
+        /// <value>The security service.</value>
+        private ISecurityService? SecurityService { get; }
 
         /// <summary>
         /// Gets the stopwatch.
@@ -84,6 +98,7 @@ namespace Mithril.API.Commands.Services
                     var Command = Commands[x];
                     var Handled = await HandleCommand(Command).ConfigureAwait(false);
                     Command.Active = !Handled;
+                    Command.SetupObject(DataService, SecurityService?.LoadSystemAccount());
                 }
                 if (DataService is not null)
                     await DataService.SaveAsync(Commands).ConfigureAwait(false);

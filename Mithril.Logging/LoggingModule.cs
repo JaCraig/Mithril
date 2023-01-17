@@ -20,7 +20,7 @@ namespace Mithril.Logging
         /// Gets the features.
         /// </summary>
         /// <value>The features.</value>
-        public override IFeature[] Features => new IFeature[] { new LoggingFeature() };
+        public override IFeature[] Features => new IFeature[] { LoggingFeature.Instance };
 
         /// <summary>
         /// Gets the order that they are initialized in.
