@@ -26,14 +26,12 @@ namespace Mithril.API.Commands.Tests.Services
         public override string GetSchema() => "";
     }
 
-    internal class TestEventHandler : EventHandlerBaseClass<TestEventHandler>
+    internal class TestEventHandler : EventHandlerBaseClass<TestEventHandler, TestEvent>
     {
-        public TestEventHandler(ILogger? logger, IFeatureManager? featureManager) : base(logger, featureManager)
+        public TestEventHandler(ILogger<TestEventHandler>? logger, IFeatureManager? featureManager) : base(logger, featureManager)
         {
         }
 
-        public override bool Accepts(IEvent arg) => true;
-
-        public override EventResult Handle(IEvent arg) => new EventResult(arg, EventStateTypes.Completed, this);
+        protected override EventResult Handle(TestEvent arg) => new EventResult(arg, EventStateTypes.Completed, this);
     }
 }

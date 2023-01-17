@@ -68,7 +68,7 @@ namespace Mithril.Data
         /// <param name="lookUps">The look ups.</param>
         /// <param name="lookUpType">Type of the look up.</param>
         /// <returns>Async task.</returns>
-        private static Task SetupLookUpsAsync<TLookUpClass>(IDataService dataService, IEnumerable<TLookUpClass> lookUps, LookUpTypeEnum lookUpType)
+        private static Task SetupLookUpsAsync<TLookUpClass>(IDataService? dataService, IEnumerable<TLookUpClass> lookUps, LookUpTypeEnum lookUpType)
             where TLookUpClass : LookUpEnumBaseClass<TLookUpClass>, new()
         {
             if (dataService is null)
@@ -86,7 +86,7 @@ namespace Mithril.Data
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <returns>The async task.</returns>
-        private static Task SetupLookUpTypesAsync(IDataService dataService)
+        private static Task SetupLookUpTypesAsync(IDataService? dataService)
         {
             if (dataService is null)
                 return Task.CompletedTask;

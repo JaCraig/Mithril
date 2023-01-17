@@ -20,7 +20,7 @@ namespace Mithril.Core.Abstractions.Extensions
             return featureManager is null
                 || features is null
                 || features.Length == 0
-                || features.All(x => AsyncHelper.RunSync(() => featureManager.IsEnabledAsync(x.Name)));
+                || features.All(x => AsyncHelper.RunSync(() => featureManager.IsEnabledAsync(x?.Name ?? "")));
         }
     }
 }

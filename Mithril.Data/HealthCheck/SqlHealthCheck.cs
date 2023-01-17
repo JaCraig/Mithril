@@ -57,8 +57,10 @@ namespace Mithril.Data.HealthCheck
         /// </summary>
         /// <param name="connectionString">The connection string.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        private static async Task<CheckHealthResult> CheckHealthAsync(string connectionString, CancellationToken cancellationToken)
+        private static async Task<CheckHealthResult> CheckHealthAsync(string? connectionString, CancellationToken cancellationToken)
         {
+            if (string.IsNullOrEmpty(connectionString))
+                return new CheckHealthResult();
             using var connection = new SqlConnection(connectionString);
             try
             {

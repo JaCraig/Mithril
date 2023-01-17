@@ -96,7 +96,7 @@ namespace Mithril.Data.Abstractions.Interfaces
         /// <param name="currentUser">The current user.</param>
         /// <param name="softDelete">if set to <c>true</c> [soft delete].</param>
         /// <returns></returns>
-        Task DeleteAsync(IDataService dataService, ClaimsPrincipal? currentUser, bool softDelete = true);
+        Task DeleteAsync(IDataService? dataService, ClaimsPrincipal? currentUser, bool softDelete = true);
 
         /// <summary>
         /// Saves this instance asynchronously.
@@ -104,7 +104,7 @@ namespace Mithril.Data.Abstractions.Interfaces
         /// <param name="dataService">The data service.</param>
         /// <param name="currentUser">The current user.</param>
         /// <returns>The async task.</returns>
-        Task SaveAsync(IDataService dataService, ClaimsPrincipal? currentUser);
+        Task SaveAsync(IDataService? dataService, ClaimsPrincipal? currentUser);
 
         /// <summary>
         /// Sets up the object.

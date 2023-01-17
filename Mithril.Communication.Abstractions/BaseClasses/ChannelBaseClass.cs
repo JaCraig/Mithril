@@ -16,7 +16,7 @@ namespace Mithril.Communication.Abstractions.BaseClasses
         /// <summary>
         /// Initializes a new instance of the <see cref="ChannelBaseClass"/> class.
         /// </summary>
-        protected ChannelBaseClass(ILogger<TChannel> logger, IFeatureManager? featureManager)
+        protected ChannelBaseClass(ILogger<TChannel>? logger, IFeatureManager? featureManager)
         {
             Logger = logger;
             FeatureManager = featureManager;
@@ -38,7 +38,7 @@ namespace Mithril.Communication.Abstractions.BaseClasses
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        protected ILogger<TChannel> Logger { get; }
+        protected ILogger<TChannel>? Logger { get; }
 
         /// <summary>
         /// Determines whether this instance can handle the specified message.

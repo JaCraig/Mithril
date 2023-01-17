@@ -24,7 +24,7 @@ namespace Mithril.Communication.Email.Channel
         /// <param name="featureManager">The feature manager.</param>
         /// <param name="dataService">The data service.</param>
         /// <param name="viewRendererService">The view renderer service.</param>
-        public EmailChannel(ILogger<EmailChannel> logger, IFeatureManager? featureManager, IDataService dataService, IViewRendererService viewRendererService)
+        public EmailChannel(ILogger<EmailChannel>? logger, IFeatureManager? featureManager, IDataService? dataService, IViewRendererService? viewRendererService)
             : base(logger, featureManager)
         {
             DataService = dataService;
@@ -41,13 +41,13 @@ namespace Mithril.Communication.Email.Channel
         /// Gets the data services.
         /// </summary>
         /// <value>The data services.</value>
-        private IDataService DataService { get; }
+        private IDataService? DataService { get; }
 
         /// <summary>
         /// Gets the view renderer service.
         /// </summary>
         /// <value>The view renderer service.</value>
-        private IViewRendererService ViewRendererService { get; }
+        private IViewRendererService? ViewRendererService { get; }
 
         /// <summary>
         /// Sends the message asynchronously.
@@ -81,9 +81,9 @@ namespace Mithril.Communication.Email.Channel
         /// </summary>
         /// <param name="message">The message.</param>
         /// <returns>The body if a template is specified.</returns>
-        private static async Task<string> GetBodyFromTemplate(IMessage message, IViewRendererService viewRendererService)
+        private static async Task<string> GetBodyFromTemplate(IMessage message, IViewRendererService? viewRendererService)
         {
-            if (string.IsNullOrEmpty(message.Template))
+            if (string.IsNullOrEmpty(message.Template) || viewRendererService is null)
                 return "";
             return Encoding.UTF8.GetString(await viewRendererService.RenderAsync($"MessageTemplates/{message.Template}", message.TemplateFields).ConfigureAwait(false));
         }

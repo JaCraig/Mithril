@@ -50,6 +50,8 @@ namespace Mithril.Features
         /// <param name="services">The services for the application.</param>
         public override async Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)
         {
+            if (services?.GetService<IModule>() is null)
+                return;
             var Modules = services?.GetServices<IModule>();
             if (Modules is null)
                 return;

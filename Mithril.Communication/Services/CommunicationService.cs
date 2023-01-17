@@ -19,7 +19,7 @@ namespace Mithril.Communication.Services
         /// </summary>
         /// <param name="channels">The channels.</param>
         /// <param name="dataService">The data service.</param>
-        public CommunicationService(IEnumerable<IChannel> channels, IDataService dataService)
+        public CommunicationService(IEnumerable<IChannel> channels, IDataService? dataService)
         {
             Channels = channels;
             DataService = dataService;
@@ -35,7 +35,7 @@ namespace Mithril.Communication.Services
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService DataService { get; }
+        private IDataService? DataService { get; }
 
         /// <summary>
         /// Creates a message based on the channel specified.

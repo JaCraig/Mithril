@@ -83,7 +83,17 @@ namespace Mithril.Communication.Email.Models
         /// Gets or sets the template data.
         /// </summary>
         /// <value>The template data.</value>
-        public ExpandoObject? TemplateFields => JsonSerializer.Deserialize<ExpandoObject>(TemplateData ?? "{}");
+        public ExpandoObject? TemplateFields
+        {
+            get
+            {
+                try
+                {
+                    return JsonSerializer.Deserialize<ExpandoObject>(TemplateData ?? "{}");
+                }
+                catch { return null; }
+            }
+        }
 
         /// <summary>
         /// Gets or sets to.

@@ -35,18 +35,16 @@ namespace Mithril.Mvc.Services
         /// <param name="webHostEnvironment">The web host environment.</param>
         /// <param name="logger">The logger.</param>
         public ViewRendererService(
-            IRazorViewEngine viewEngine,
-            ITempDataProvider tempDataProvider,
-            IServiceProvider serviceProvider,
-            IServiceScopeFactory serviceScopeFactory,
-            IConverter pdfConverter,
-            IWebHostEnvironment webHostEnvironment,
-            ILogger<ViewRendererService> logger)
+            IRazorViewEngine? viewEngine,
+            ITempDataProvider? tempDataProvider,
+            IServiceProvider? serviceProvider,
+            IConverter? pdfConverter,
+            IWebHostEnvironment? webHostEnvironment,
+            ILogger<ViewRendererService>? logger)
         {
             _viewEngine = viewEngine;
             _tempDataProvider = tempDataProvider;
             _serviceProvider = serviceProvider;
-            ServiceScopeFactory = serviceScopeFactory;
             PdfConverter = pdfConverter;
             WebHostEnvironment = webHostEnvironment;
             Logger = logger;
@@ -56,39 +54,34 @@ namespace Mithril.Mvc.Services
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        public ILogger<ViewRendererService> Logger { get; }
+        public ILogger<ViewRendererService>? Logger { get; }
 
         /// <summary>
         /// Gets the PDF converter.
         /// </summary>
         /// <value>The PDF converter.</value>
-        public IConverter PdfConverter { get; }
+        public IConverter? PdfConverter { get; }
 
         /// <summary>
         /// Gets the web host environment.
         /// </summary>
         /// <value>The web host environment.</value>
-        public IWebHostEnvironment WebHostEnvironment { get; }
+        public IWebHostEnvironment? WebHostEnvironment { get; }
 
         /// <summary>
         /// The service provider
         /// </summary>
-        private readonly IServiceProvider _serviceProvider;
+        private readonly IServiceProvider? _serviceProvider;
 
         /// <summary>
         /// The temporary data provider
         /// </summary>
-        private readonly ITempDataProvider _tempDataProvider;
+        private readonly ITempDataProvider? _tempDataProvider;
 
         /// <summary>
         /// The view engine
         /// </summary>
-        private readonly IRazorViewEngine _viewEngine;
-
-        /// <summary>
-        /// The service scope factory
-        /// </summary>
-        private readonly IServiceScopeFactory ServiceScopeFactory;
+        private readonly IRazorViewEngine? _viewEngine;
 
         /// <summary>
         /// Renders the specified name.
@@ -102,7 +95,7 @@ namespace Mithril.Mvc.Services
         /// <exception cref="InvalidOperationException">Couldn't find view '{name}'</exception>
         public async Task<byte[]> RenderAsync<TModel>(string? name, TModel model, RenderOptions? renderOptions = default, RenderFormat format = RenderFormat.HTML)
         {
-            if (string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(name) || _serviceProvider is null || _viewEngine is null || _tempDataProvider is null)
                 return Array.Empty<byte>();
             renderOptions ??= new RenderOptions { Orientation = Orientation.Landscape };
             using var Scope = _serviceProvider.CreateScope();
@@ -149,7 +142,7 @@ namespace Mithril.Mvc.Services
         /// Gets the action context.
         /// </summary>
         /// <returns></returns>
-        private ActionContext GetActionContext(IServiceScope serviceScope)
+        private static ActionContext GetActionContext(IServiceScope serviceScope)
         {
             var httpContext = new DefaultHttpContext
             {
@@ -185,7 +178,7 @@ namespace Mithril.Mvc.Services
                 }
             };
 
-            return PdfConverter.Convert(doc);
+            return PdfConverter?.Convert(doc) ?? Array.Empty<byte>();
         }
     }
 }

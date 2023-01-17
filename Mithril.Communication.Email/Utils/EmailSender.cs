@@ -47,6 +47,7 @@ namespace Mithril.Communication.Email.Utils
         {
             if (string.IsNullOrEmpty(Server) || !CanSend)
                 return;
+            CheckValues();
             base.Send();
         }
 
@@ -58,7 +59,17 @@ namespace Mithril.Communication.Email.Utils
         {
             if (string.IsNullOrEmpty(Server) || !CanSend)
                 return;
+            CheckValues();
             await base.SendAsync().ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Checks the values.
+        /// </summary>
+        private void CheckValues()
+        {
+            Subject ??= "";
+            Body ??= "";
         }
     }
 }

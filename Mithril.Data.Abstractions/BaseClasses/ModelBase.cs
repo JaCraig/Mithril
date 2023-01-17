@@ -211,7 +211,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="currentUser">The current user.</param>
         /// <param name="softDelete">if set to <c>true</c> [soft delete].</param>
         /// <returns>The async task.</returns>
-        public Task DeleteAsync(IDataService dataService, ClaimsPrincipal? currentUser, bool softDelete = true)
+        public Task DeleteAsync(IDataService? dataService, ClaimsPrincipal? currentUser, bool softDelete = true)
         {
             if (dataService is null)
                 return Task.CompletedTask;
@@ -306,7 +306,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="dataService">The data service.</param>
         /// <param name="currentUser">The current user.</param>
         /// <returns>This.</returns>
-        public virtual TClass SetupObjectAndReturn(IDataService dataService, ClaimsPrincipal? currentUser)
+        public virtual TClass SetupObjectAndReturn(IDataService? dataService, ClaimsPrincipal? currentUser)
         {
             SetupObject(dataService, currentUser);
             return (TClass)this;

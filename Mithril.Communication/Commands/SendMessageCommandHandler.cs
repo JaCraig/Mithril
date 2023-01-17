@@ -40,7 +40,7 @@ namespace Mithril.Communication.Commands
             ILogger<SendMessageCommandHandler>? logger,
             IFeatureManager? featureManager,
             ICommunicationService? communicationService,
-            IDataService dataService,
+            IDataService? dataService,
             IOptions<MithrilConfig>? mithrilConfig,
             IEnumerable<IChannel> channels)
             : base(logger, featureManager)
@@ -80,7 +80,7 @@ namespace Mithril.Communication.Commands
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService DataService { get; }
+        private IDataService? DataService { get; }
 
         /// <summary>
         /// Gets the hash algorithm.
