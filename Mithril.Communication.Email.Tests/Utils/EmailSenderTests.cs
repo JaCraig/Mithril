@@ -40,7 +40,7 @@ namespace Mithril.Communication.Email.Tests.Utils
 
         protected class AsyncEnumerator : IAsyncEnumerator<string>
         {
-            public string Current { get; }
+            public string Current { get; } = "";
 
             public ValueTask DisposeAsync()
             { return ValueTask.CompletedTask; }

@@ -35,7 +35,7 @@ namespace Mithril.API.Commands.Tests.Services
             return new CommandCreationResult(new TestCommand());
         }
 
-        protected override IEvent[] HandleCommand(params TestCommand?[]? args)
+        protected override IEvent[] HandleCommand(TestCommand?[]? args)
         {
             return Array.Empty<IEvent>();
         }

@@ -174,7 +174,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         /// </returns>
         public static bool IsClassType(this Type? type)
         {
-            return type is not null && type.IsClass && type.IsConcrete() && !type.ContainsGenericParameters;
+            return type?.IsClass == true && type.IsConcrete() && !type.ContainsGenericParameters;
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         /// <returns><c>true</c> if the specified property type is expando; otherwise, <c>false</c>.</returns>
         public static bool IsExpando(this Type? type)
         {
-            return type is not null && type.IsAssignableTo(typeof(ExpandoObject));
+            return type?.IsAssignableTo(typeof(ExpandoObject)) == true;
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         /// </returns>
         public static bool IsInterfaceType(this Type? type)
         {
-            return type is not null && type.IsInterface && !type.ContainsGenericParameters;
+            return type?.IsInterface == true && !type.ContainsGenericParameters;
         }
 
         /// <summary>

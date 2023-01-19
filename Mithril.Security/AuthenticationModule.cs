@@ -55,16 +55,10 @@ namespace Mithril.Security
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? env)
         {
             // Add authorization.
-            services?.AddAuthorization(options =>
-            {
-                options.FallbackPolicy = options.DefaultPolicy;
-            });
+            services?.AddAuthorization(options => options.FallbackPolicy = options.DefaultPolicy);
 
             //Set up default authorization policies.
-            services?.Configure<AuthorizationOptions>(x =>
-            {
-                x.AddPolicy(SystemPermissions.AdminOnly, y => y.RequireAuthenticatedUser().RequireClaim("Role", "Admin"));
-            });
+            services?.Configure<AuthorizationOptions>(x => x.AddPolicy(SystemPermissions.AdminOnly, y => y.RequireAuthenticatedUser().RequireClaim("Role", "Admin")));
 
             // Add the security services.
             return services?.AddSingleton<ISecurityService, SecurityService>()

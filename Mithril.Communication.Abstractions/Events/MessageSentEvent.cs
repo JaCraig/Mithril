@@ -146,7 +146,7 @@ namespace Mithril.Communication.Abstractions.Events
         /// Gets the data within the event.
         /// </summary>
         /// <returns>The data from the event.</returns>
-        public override ExpandoObject GetData() => new ExpandoObject();
+        public override ExpandoObject GetData() => new();
 
         /// <summary>
         /// Returns a hash code for this instance.

@@ -21,7 +21,7 @@ namespace Mithril.API.Commands.Tests.Services
 
     internal class TestEvent : EventBaseClass<TestEvent>
     {
-        public override ExpandoObject GetData() => new ExpandoObject();
+        public override ExpandoObject GetData() => new();
 
         public override string GetSchema() => "";
     }
@@ -32,6 +32,6 @@ namespace Mithril.API.Commands.Tests.Services
         {
         }
 
-        protected override EventResult Handle(TestEvent arg) => new EventResult(arg, EventStateTypes.Completed, this);
+        protected override EventResult Handle(TestEvent arg) => new(arg, EventStateTypes.Completed, this);
     }
 }

@@ -97,19 +97,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication", "Mi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Email", "Mithril.Communication.Email\Mithril.Communication.Email.csproj", "{C101CF40-5033-492E-AAE9-F65425A11160}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Mvc.Abstractions", "Mithril.Mvc.Abstractions\Mithril.Mvc.Abstractions.csproj", "{D6F63078-0049-4967-9DC2-2D7ED6F1E813}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc.Abstractions", "Mithril.Mvc.Abstractions\Mithril.Mvc.Abstractions.csproj", "{D6F63078-0049-4967-9DC2-2D7ED6F1E813}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Mvc", "Mithril.Mvc\Mithril.Mvc.csproj", "{1131BD52-EB05-4E29-9545-ADEC32C2358E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc", "Mithril.Mvc\Mithril.Mvc.csproj", "{1131BD52-EB05-4E29-9545-ADEC32C2358E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Communication.Abstractions.Tests", "Mithril.Communication.Abstractions.Tests\Mithril.Communication.Abstractions.Tests.csproj", "{B9558B1B-0A95-4150-9314-293B5293A87B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Abstractions.Tests", "Mithril.Communication.Abstractions.Tests\Mithril.Communication.Abstractions.Tests.csproj", "{B9558B1B-0A95-4150-9314-293B5293A87B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Mvc.Abstractions.Tests", "Mithril.Mvc.Abstractions.Tests\Mithril.Mvc.Abstractions.Tests.csproj", "{4DFE5F75-1A2B-4BC0-A023-B73B283A1B8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc.Abstractions.Tests", "Mithril.Mvc.Abstractions.Tests\Mithril.Mvc.Abstractions.Tests.csproj", "{4DFE5F75-1A2B-4BC0-A023-B73B283A1B8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Communication.Tests", "Mithril.Communication.Tests\Mithril.Communication.Tests.csproj", "{2709F014-3158-43D6-B3FC-1CCD7D648991}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Tests", "Mithril.Communication.Tests\Mithril.Communication.Tests.csproj", "{2709F014-3158-43D6-B3FC-1CCD7D648991}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Communication.Email.Tests", "Mithril.Communication.Email.Tests\Mithril.Communication.Email.Tests.csproj", "{4D2A852C-E015-448B-AB51-CC4E9A08AD3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Email.Tests", "Mithril.Communication.Email.Tests\Mithril.Communication.Email.Tests.csproj", "{4D2A852C-E015-448B-AB51-CC4E9A08AD3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Mvc.Tests", "Mithril.Mvc.Tests\Mithril.Mvc.Tests.csproj", "{5920B631-0C38-44F1-829A-2A9E41529480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc.Tests", "Mithril.Mvc.Tests\Mithril.Mvc.Tests.csproj", "{5920B631-0C38-44F1-829A-2A9E41529480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Apm.Abstractions", "Mithril.Apm.Abstractions\Mithril.Apm.Abstractions.csproj", "{0A1372CB-A53B-4B09-A5B3-7D65B1233F91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Apm.Default", "Mithril.Apm.Default\Mithril.Apm.Default.csproj", "{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -309,6 +313,14 @@ Global
 		{5920B631-0C38-44F1-829A-2A9E41529480}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5920B631-0C38-44F1-829A-2A9E41529480}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5920B631-0C38-44F1-829A-2A9E41529480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A1372CB-A53B-4B09-A5B3-7D65B1233F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A1372CB-A53B-4B09-A5B3-7D65B1233F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A1372CB-A53B-4B09-A5B3-7D65B1233F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A1372CB-A53B-4B09-A5B3-7D65B1233F91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -365,6 +377,8 @@ Global
 		{2709F014-3158-43D6-B3FC-1CCD7D648991} = {20C64160-C469-46C8-9971-17C2435420AD}
 		{4D2A852C-E015-448B-AB51-CC4E9A08AD3F} = {20C64160-C469-46C8-9971-17C2435420AD}
 		{5920B631-0C38-44F1-829A-2A9E41529480} = {20C64160-C469-46C8-9971-17C2435420AD}
+		{0A1372CB-A53B-4B09-A5B3-7D65B1233F91} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
+		{2316D8B6-6860-4AB0-9F06-C413DF0A1B32} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}

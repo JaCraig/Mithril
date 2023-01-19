@@ -9,7 +9,5 @@ namespace Mithril.API.Abstractions.Commands
     /// </summary>
     /// <seealso cref="IEquatable&lt;CommandCreationResult&gt;"/>
     public record CommandCreationResult(ICommand? Command, Exception? Exception = null, string? ResultText = "Success", int ReturnCode = StatusCodes.Status200OK)
-        : GenericResult(Exception is null ? $"{Command} handled with result: {ResultText}" : "Exception occurred", Exception)
-    {
-    }
+        : GenericResult(Exception is null ? $"{Command} handled with result: {ResultText}" : "Exception occurred", Exception);
 }

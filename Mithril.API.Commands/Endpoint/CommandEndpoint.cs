@@ -49,11 +49,11 @@ namespace Mithril.API.Commands.Endpoint
 
             if (command.Exception is not null)
             {
-                logger.LogError(command.Exception, command.ResultText);
+                logger.LogError(command.Exception, "{ResultText}", command.ResultText);
                 return;
             }
 
-            logger.LogDebug($"Command recieved: {command.Command}");
+            logger.LogDebug("Command recieved: {Command}", command.Command);
         }
     }
 }

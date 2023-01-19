@@ -11,7 +11,5 @@ namespace Mithril.Communication.Abstractions
     /// <seealso cref="IEquatable&lt;GenericResult&gt;"/>
     /// <seealso cref="IEquatable&lt;MessageResult&gt;"/>
     public record MessageResult(string Message, Exception? Exception = null)
-        : GenericResult(Message, Exception)
-    {
-    }
+        : GenericResult(Message, Exception);
 }
