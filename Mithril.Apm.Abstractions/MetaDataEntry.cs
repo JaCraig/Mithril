@@ -9,5 +9,5 @@ namespace Mithril.Apm.Abstractions
     /// <param name="TraceIdentifier">The trace identifier.</param>
     /// <param name="Data">Data to save.</param>
     /// <seealso cref="IEquatable&lt;TraceEntry&gt;"/>
-    public record TraceEntry(ITraceDataCollector Source, string TraceIdentifier, KeyValuePair<string, string> Data);
+    public readonly record struct MetaDataEntry(IMetaDataCollector Source, string TraceIdentifier, KeyValuePair<string, string>[] Data);
 }

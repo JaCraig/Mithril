@@ -3,7 +3,7 @@
     /// <summary>
     /// Trace data collector
     /// </summary>
-    public interface ITraceDataCollector : IObservable<TraceEntry>, IDisposable
+    public interface IMetaDataCollector : IObservable<MetaDataEntry>, IDisposable
     {
         /// <summary>
         /// Gets the name.
@@ -15,8 +15,8 @@
         /// Adds an entry to the collector.
         /// </summary>
         /// <param name="traceId">The trace identifier.</param>
-        /// <param name="entry">The entry.</param>
+        /// <param name="entries">The entries.</param>
         /// <returns>This.</returns>
-        public ITraceDataCollector AddEntry(string traceId, KeyValuePair<string, string> entry);
+        public IMetaDataCollector AddEntry(string traceId, params KeyValuePair<string, string>[] entries);
     }
 }

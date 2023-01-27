@@ -1,8 +1,11 @@
 ﻿using BigBook;
 using Microsoft.Extensions.Logging;
+using Microsoft.FeatureManagement;
 using Mithril.Apm.Abstractions;
+using Mithril.Apm.Abstractions.Features;
 using Mithril.Apm.Abstractions.Interfaces;
 using Mithril.Apm.Abstractions.Services;
+using Mithril.Core.Abstractions.Extensions;
 
 namespace Mithril.Apm.Default.Services
 {
@@ -18,16 +21,19 @@ namespace Mithril.Apm.Default.Services
         /// <param name="sources">The sources.</param>
         /// <param name="metricsReporters">The metrics reporters.</param>
         /// <param name="traceDataCollectors">The trace data collectors.</param>
+        /// <param name="featureManager">The feature manager.</param>
         /// <param name="logger">The logger.</param>
         public MetricsCollectorService(
             IEnumerable<IMetricsCollector> sources,
             IEnumerable<IMetricsReporter> metricsReporters,
-            IEnumerable<ITraceDataCollector> traceDataCollectors,
+            IEnumerable<IMetaDataCollector> traceDataCollectors,
+            IFeatureManager featureManager,
             ILogger<MetricsCollectorService> logger)
         {
             Sources = sources ?? Array.Empty<IMetricsCollector>();
             MetricsReporters = metricsReporters ?? Array.Empty<IMetricsReporter>();
-            TraceDataCollectors = traceDataCollectors ?? Array.Empty<ITraceDataCollector>();
+            TraceDataCollectors = traceDataCollectors ?? Array.Empty<IMetaDataCollector>();
+            FeatureManager = featureManager;
             Logger = logger;
             foreach (var Source in Sources)
             {
@@ -46,6 +52,12 @@ namespace Mithril.Apm.Default.Services
         {
             Dispose(disposing: false);
         }
+
+        /// <summary>
+        /// Gets the feature manager.
+        /// </summary>
+        /// <value>The feature manager.</value>
+        private IFeatureManager FeatureManager { get; }
 
         /// <summary>
         /// Gets the logger.
@@ -69,13 +81,13 @@ namespace Mithril.Apm.Default.Services
         /// Gets the trace data collectors.
         /// </summary>
         /// <value>The trace data collectors.</value>
-        private IEnumerable<ITraceDataCollector> TraceDataCollectors { get; }
+        private IEnumerable<IMetaDataCollector> TraceDataCollectors { get; }
 
         /// <summary>
         /// Gets or sets the trace information.
         /// </summary>
         /// <value>The trace information.</value>
-        private Dictionary<string, TraceInformation> TraceInformation { get; set; } = new Dictionary<string, TraceInformation>();
+        private Dictionary<string, TraceInformation> TraceInformation { get; } = new Dictionary<string, TraceInformation>();
 
         /// <summary>
         /// The lock object
@@ -93,6 +105,8 @@ namespace Mithril.Apm.Default.Services
         /// <returns>This.</returns>
         public IMetricsCollectorService BatchCollectedMetrics()
         {
+            if (!FeatureManager.AreFeaturesEnabled(APMFeature.Instance))
+                return this;
             var TempData = new Dictionary<string, TraceInformation>();
             lock (LockObject)
             {
@@ -122,6 +136,8 @@ namespace Mithril.Apm.Default.Services
         /// <returns>The metric source object specified.</returns>
         public IMetricsCollector? GetMetricsCollector(string name)
         {
+            if (!FeatureManager.AreFeaturesEnabled(APMFeature.Instance))
+                return null;
             return Sources.FirstOrDefault(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
         }
 
@@ -130,8 +146,10 @@ namespace Mithril.Apm.Default.Services
         /// </summary>
         /// <param name="name">The name.</param>
         /// <returns>The trace data collector specified.</returns>
-        public ITraceDataCollector? GetTraceDataCollector(string name)
+        public IMetaDataCollector? GetTraceDataCollector(string name)
         {
+            if (!FeatureManager.AreFeaturesEnabled(APMFeature.Instance))
+                return null;
             return TraceDataCollectors.FirstOrDefault(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
         }
 
@@ -159,7 +177,7 @@ namespace Mithril.Apm.Default.Services
         /// <param name="value">The current notification information.</param>
         public void OnNext(MetricsEntry value)
         {
-            if (value is null)
+            if (!FeatureManager.AreFeaturesEnabled(APMFeature.Instance))
                 return;
             GetTraceInformation(value.TraceIdentifier).Metrics.Add(value);
         }
@@ -168,11 +186,11 @@ namespace Mithril.Apm.Default.Services
         /// Provides the observer with new data.
         /// </summary>
         /// <param name="value">The current notification information.</param>
-        public void OnNext(TraceEntry value)
+        public void OnNext(MetaDataEntry value)
         {
-            if (value is null)
+            if (!FeatureManager.AreFeaturesEnabled(APMFeature.Instance))
                 return;
-            GetTraceInformation(value.TraceIdentifier).Data.Add(value.Data.Key, value.Data.Value);
+            GetTraceInformation(value.TraceIdentifier).MetaData.Add(value);
         }
 
         /// <summary>

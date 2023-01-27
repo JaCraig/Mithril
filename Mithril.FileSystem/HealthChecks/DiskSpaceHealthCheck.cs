@@ -22,7 +22,7 @@ namespace Mithril.FileSystem.HealthChecks
         /// </returns>
         public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
         {
-            foreach (var Drive in DriveInfo.GetDrives())
+            foreach (var Drive in DriveInfo.GetDrives().Where(Drive => Drive.IsReady))
             {
                 long FreeSpaceMegabytes = Drive.AvailableFreeSpace / 1024 / 1024;
                 if (FreeSpaceMegabytes < 1024)

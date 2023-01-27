@@ -15,8 +15,9 @@
         /// Adds an entry to the collector.
         /// </summary>
         /// <param name="traceId">The trace identifier.</param>
-        /// <param name="entry">The entry.</param>
+        /// <param name="metaData">The meta data.</param>
+        /// <param name="entries">The entries.</param>
         /// <returns>This.</returns>
-        public IMetricsCollector AddEntry(string traceId, KeyValuePair<string, double> entry);
+        public IMetricsCollector AddEntry(string traceId, string metaData, params KeyValuePair<string, decimal>[] entries);
     }
 }

@@ -46,16 +46,16 @@ namespace Mithril.Apm.Abstractions.BaseClasses
         /// Adds the entry.
         /// </summary>
         /// <param name="traceId">The trace identifier.</param>
-        /// <param name="entry">The entry.</param>
-        /// <returns></returns>
-        public IMetricsCollector AddEntry(string traceId, KeyValuePair<string, double> entry)
+        /// <param name="entries">The entries.</param>
+        /// <returns>This.</returns>
+        public IMetricsCollector AddEntry(string traceId, string metaData, params KeyValuePair<string, decimal>[] entries)
         {
             try
             {
                 for (var x = 0; x < Observers.Count; ++x)
                 {
                     var Observer = Observers[x];
-                    Observer.OnNext(new MetricsEntry(this, traceId, entry));
+                    Observer.OnNext(new MetricsEntry(this, traceId, metaData, entries));
                 }
             }
             catch (Exception ex)

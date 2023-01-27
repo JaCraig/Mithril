@@ -33,7 +33,7 @@ namespace Mithril.Apm.Default.Middleware
         /// Gets the trace data collector.
         /// </summary>
         /// <value>The trace data collector.</value>
-        private ITraceDataCollector? TraceDataCollector { get; }
+        private IMetaDataCollector? TraceDataCollector { get; }
 
         /// <summary>
         /// Request handling method.
@@ -55,9 +55,8 @@ namespace Mithril.Apm.Default.Middleware
 
             var StopTimeTicks = Stopwatch.GetTimestamp();
 
-            Source?.AddEntry(context.TraceIdentifier, new KeyValuePair<string, double>("Total Transaction Time", (StopTimeTicks - StartTimeTicks) / 1000));
-            TraceDataCollector?.AddEntry(context.TraceIdentifier, new KeyValuePair<string, string>("Path", context.Request.Path));
-            TraceDataCollector?.AddEntry(context.TraceIdentifier, new KeyValuePair<string, string>("Method", context.Request.Method));
+            Source?.AddEntry(context.TraceIdentifier, "Request", new KeyValuePair<string, decimal>("Total Transaction Time", (StopTimeTicks - StartTimeTicks) / 10000));
+            TraceDataCollector?.AddEntry(context.TraceIdentifier, new KeyValuePair<string, string>("Path", context.Request.Path), new KeyValuePair<string, string>("Method", context.Request.Method));
         }
     }
 }

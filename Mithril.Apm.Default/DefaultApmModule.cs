@@ -2,12 +2,14 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Mithril.Apm.Abstractions.Features;
 using Mithril.Apm.Abstractions.Interfaces;
 using Mithril.Apm.Abstractions.Services;
 using Mithril.Apm.Default.HostedServices;
 using Mithril.Apm.Default.Middleware;
 using Mithril.Apm.Default.Services;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
+using Mithril.Core.Abstractions.Modules.Interfaces;
 
 namespace Mithril.Apm.Default
 {
@@ -17,6 +19,12 @@ namespace Mithril.Apm.Default
     /// <seealso cref="ModuleBaseClass&lt;DefaultApmModule&gt;"/>
     public class DefaultApmModule : ModuleBaseClass<DefaultApmModule>
     {
+        /// <summary>
+        /// Gets or sets the features.
+        /// </summary>
+        /// <value>The features.</value>
+        public override IFeature[] Features { get; protected set; } = new IFeature[] { APMFeature.Instance };
+
         /// <summary>
         /// Configures the application.
         /// </summary>
@@ -39,7 +47,7 @@ namespace Mithril.Apm.Default
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
             return services?.AddAllSingleton<IMetricsCollector>()
-                           ?.AddAllSingleton<ITraceDataCollector>()
+                           ?.AddAllSingleton<IMetaDataCollector>()
                            ?.AddSingleton<IMetricsCollectorService, MetricsCollectorService>()
                            ?.AddAllSingleton<IMetricsReporter>()
                            ?.AddScoped<ApmMiddleware>()

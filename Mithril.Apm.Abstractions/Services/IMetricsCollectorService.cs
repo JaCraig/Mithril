@@ -7,7 +7,7 @@ namespace Mithril.Apm.Abstractions.Services
     /// </summary>
     /// <seealso cref="IObserver&lt;MetricsEntry&gt;"/>
     /// <seealso cref="IDisposable"/>
-    public interface IMetricsCollectorService : IObserver<MetricsEntry>, IObserver<TraceEntry>, IDisposable
+    public interface IMetricsCollectorService : IObserver<MetricsEntry>, IObserver<MetaDataEntry>, IDisposable
     {
         /// <summary>
         /// Reports the collected metrics to the registered reporters.
@@ -27,6 +27,6 @@ namespace Mithril.Apm.Abstractions.Services
         /// </summary>
         /// <param name="name">The name.</param>
         /// <returns>The trace data collector specified.</returns>
-        ITraceDataCollector? GetTraceDataCollector(string name);
+        IMetaDataCollector? GetTraceDataCollector(string name);
     }
 }

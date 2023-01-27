@@ -6,20 +6,20 @@ namespace Mithril.Apm.Abstractions.BaseClasses
     /// TraceData source base class
     /// </summary>
     /// <typeparam name="TSource">The type of the source.</typeparam>
-    /// <seealso cref="ITraceDataCollector"/>
-    public abstract class TraceDataCollectorBaseClass<TSource> : ITraceDataCollector
-        where TSource : TraceDataCollectorBaseClass<TSource>
+    /// <seealso cref="IMetaDataCollector"/>
+    public abstract class MetaDataCollectorBaseClass<TSource> : IMetaDataCollector
+        where TSource : MetaDataCollectorBaseClass<TSource>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TraceDataSourceBaseClass"/> class.
         /// </summary>
-        protected TraceDataCollectorBaseClass()
+        protected MetaDataCollectorBaseClass()
         { }
 
         /// <summary>
         /// Finalizes an instance of the <see cref="TraceDataSourceBaseClass"/> class.
         /// </summary>
-        ~TraceDataCollectorBaseClass()
+        ~MetaDataCollectorBaseClass()
         {
             // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
             Dispose(disposing: false);
@@ -35,7 +35,7 @@ namespace Mithril.Apm.Abstractions.BaseClasses
         /// Gets the observers.
         /// </summary>
         /// <value>The observers.</value>
-        private List<IObserver<TraceEntry>> Observers { get; } = new List<IObserver<TraceEntry>>();
+        private List<IObserver<MetaDataEntry>> Observers { get; } = new List<IObserver<MetaDataEntry>>();
 
         /// <summary>
         /// The disposed value
@@ -46,16 +46,16 @@ namespace Mithril.Apm.Abstractions.BaseClasses
         /// Adds an entry to the collector.
         /// </summary>
         /// <param name="traceId">The trace identifier.</param>
-        /// <param name="entry">The entry.</param>
+        /// <param name="entries">The entries.</param>
         /// <returns>This.</returns>
-        public ITraceDataCollector AddEntry(string traceId, KeyValuePair<string, string> entry)
+        public IMetaDataCollector AddEntry(string traceId, params KeyValuePair<string, string>[] entries)
         {
             try
             {
                 for (var x = 0; x < Observers.Count; ++x)
                 {
                     var Observer = Observers[x];
-                    Observer.OnNext(new TraceEntry(this, traceId, entry));
+                    Observer.OnNext(new MetaDataEntry(this, traceId, entries));
                 }
             }
             catch (Exception ex)
@@ -84,7 +84,7 @@ namespace Mithril.Apm.Abstractions.BaseClasses
         /// </summary>
         /// <param name="observer">The observer.</param>
         /// <returns></returns>
-        public IDisposable Subscribe(IObserver<TraceEntry> observer)
+        public IDisposable Subscribe(IObserver<MetaDataEntry> observer)
         {
             Observers.Add(observer);
             return this;

@@ -5,8 +5,8 @@ namespace Mithril.Apm.Default.TraceData
     /// <summary>
     /// Default trace data
     /// </summary>
-    /// <seealso cref="TraceDataCollectorBaseClass&lt;DefaultTraceData&gt;"/>
-    public class DefaultTraceData : TraceDataCollectorBaseClass<DefaultTraceData>
+    /// <seealso cref="MetaDataCollectorBaseClass&lt;DefaultTraceData&gt;"/>
+    public class DefaultTraceData : MetaDataCollectorBaseClass<DefaultTraceData>
     {
     }
 }
