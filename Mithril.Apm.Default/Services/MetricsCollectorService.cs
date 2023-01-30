@@ -21,18 +21,21 @@ namespace Mithril.Apm.Default.Services
         /// <param name="sources">The sources.</param>
         /// <param name="metricsReporters">The metrics reporters.</param>
         /// <param name="traceDataCollectors">The trace data collectors.</param>
+        /// <param name="eventListeners">The event listeners.</param>
         /// <param name="featureManager">The feature manager.</param>
         /// <param name="logger">The logger.</param>
         public MetricsCollectorService(
             IEnumerable<IMetricsCollector> sources,
             IEnumerable<IMetricsReporter> metricsReporters,
             IEnumerable<IMetaDataCollector> traceDataCollectors,
-            IFeatureManager featureManager,
-            ILogger<MetricsCollectorService> logger)
+            IEnumerable<IEventListener> eventListeners,
+            IFeatureManager? featureManager,
+            ILogger<MetricsCollectorService>? logger)
         {
             Sources = sources ?? Array.Empty<IMetricsCollector>();
             MetricsReporters = metricsReporters ?? Array.Empty<IMetricsReporter>();
             TraceDataCollectors = traceDataCollectors ?? Array.Empty<IMetaDataCollector>();
+            EventListeners = eventListeners;
             FeatureManager = featureManager;
             Logger = logger;
             foreach (var Source in Sources)
@@ -42,6 +45,10 @@ namespace Mithril.Apm.Default.Services
             foreach (var TraceSource in TraceDataCollectors)
             {
                 TraceSource.Subscribe(this);
+            }
+            foreach (var EventListener in EventListeners)
+            {
+                EventListener.Subscribe(this);
             }
         }
 
@@ -54,16 +61,22 @@ namespace Mithril.Apm.Default.Services
         }
 
         /// <summary>
+        /// Gets the event listeners.
+        /// </summary>
+        /// <value>The event listeners.</value>
+        private IEnumerable<IEventListener> EventListeners { get; set; }
+
+        /// <summary>
         /// Gets the feature manager.
         /// </summary>
         /// <value>The feature manager.</value>
-        private IFeatureManager FeatureManager { get; }
+        private IFeatureManager? FeatureManager { get; }
 
         /// <summary>
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        private ILogger<MetricsCollectorService> Logger { get; }
+        private ILogger<MetricsCollectorService>? Logger { get; }
 
         /// <summary>
         /// Gets the metrics reporters.
@@ -136,27 +149,27 @@ namespace Mithril.Apm.Default.Services
         }
 
         /// <summary>
+        /// Gets the trace data collector.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>The trace data collector specified.</returns>
+        public IMetaDataCollector? GetMetaDataCollector(string name)
+        {
+            if (FeatureManager?.AreFeaturesEnabled(APMFeature.Instance) != true)
+                return null;
+            return TraceDataCollectors.FirstOrDefault(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
+        }
+
+        /// <summary>
         /// Gets the source specified.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <returns>The metric source object specified.</returns>
         public IMetricsCollector? GetMetricsCollector(string name)
         {
-            if (!FeatureManager.AreFeaturesEnabled(APMFeature.Instance))
+            if (FeatureManager?.AreFeaturesEnabled(APMFeature.Instance) != true)
                 return null;
             return Sources.FirstOrDefault(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
-        }
-
-        /// <summary>
-        /// Gets the trace data collector.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        /// <returns>The trace data collector specified.</returns>
-        public IMetaDataCollector? GetTraceDataCollector(string name)
-        {
-            if (!FeatureManager.AreFeaturesEnabled(APMFeature.Instance))
-                return null;
-            return TraceDataCollectors.FirstOrDefault(x => string.Equals(x.Name, name, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>
@@ -183,7 +196,7 @@ namespace Mithril.Apm.Default.Services
         /// <param name="value">The current notification information.</param>
         public void OnNext(MetricsEntry value)
         {
-            GetTraceInformation(value.TraceIdentifier).Metrics.Add(value);
+            GetTraceInformation(value.TraceIdentifier)?.Metrics.Add(value);
         }
 
         /// <summary>
@@ -192,7 +205,7 @@ namespace Mithril.Apm.Default.Services
         /// <param name="value">The current notification information.</param>
         public void OnNext(MetaDataEntry value)
         {
-            GetTraceInformation(value.TraceIdentifier).MetaData.Add(value);
+            GetTraceInformation(value.TraceIdentifier)?.MetaData.Add(value);
         }
 
         /// <summary>
@@ -212,8 +225,9 @@ namespace Mithril.Apm.Default.Services
                     {
                         Source.Dispose();
                     }
-                    Sources = new List<IMetricsCollector>();
-                    MetricsReporters = new List<IMetricsReporter>();
+                    Sources = Array.Empty<IMetricsCollector>();
+                    MetricsReporters = Array.Empty<IMetricsReporter>();
+                    EventListeners = Array.Empty<IEventListener>();
                 }
                 disposedValue = true;
             }
@@ -224,8 +238,10 @@ namespace Mithril.Apm.Default.Services
         /// </summary>
         /// <param name="traceIdentifier">The trace identifier.</param>
         /// <returns>The trace information.</returns>
-        private TraceInformation GetTraceInformation(string traceIdentifier)
+        private TraceInformation? GetTraceInformation(string traceIdentifier)
         {
+            if (string.IsNullOrEmpty(traceIdentifier))
+                return null;
             if (TraceInformation.TryGetValue(traceIdentifier, out var Trace))
                 return Trace;
             lock (LockObject)

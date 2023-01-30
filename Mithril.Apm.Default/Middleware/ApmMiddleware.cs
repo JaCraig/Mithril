@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Mithril.Apm.Abstractions;
 using Mithril.Apm.Abstractions.Interfaces;
 using Mithril.Apm.Abstractions.Services;
-using Mithril.Apm.Default.Sources;
-using Mithril.Apm.Default.TraceData;
 using System.Diagnostics;
 
 namespace Mithril.Apm.Default.Middleware
@@ -19,21 +18,21 @@ namespace Mithril.Apm.Default.Middleware
         /// <param name="metricsCollectorService">The metrics collector service.</param>
         public ApmMiddleware(IMetricsCollectorService? metricsCollectorService)
         {
-            Source = metricsCollectorService?.GetMetricsCollector(nameof(RequestSource));
-            TraceDataCollector = metricsCollectorService?.GetTraceDataCollector(nameof(DefaultTraceData));
+            MetricsCollector = metricsCollectorService?.GetMetricsCollector(nameof(DefaultMetricsCollector));
+            MetaDataCollector = metricsCollectorService?.GetMetaDataCollector(nameof(DefaultMetaDataCollector));
         }
-
-        /// <summary>
-        /// Gets the metrics collector service.
-        /// </summary>
-        /// <value>The metrics collector service.</value>
-        private IMetricsCollector? Source { get; }
 
         /// <summary>
         /// Gets the trace data collector.
         /// </summary>
         /// <value>The trace data collector.</value>
-        private IMetaDataCollector? TraceDataCollector { get; }
+        private IMetaDataCollector? MetaDataCollector { get; }
+
+        /// <summary>
+        /// Gets the metrics collector service.
+        /// </summary>
+        /// <value>The metrics collector service.</value>
+        private IMetricsCollector? MetricsCollector { get; }
 
         /// <summary>
         /// Request handling method.
@@ -49,14 +48,16 @@ namespace Mithril.Apm.Default.Middleware
         /// </returns>
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
+            if (next is null || context is null)
+                return;
             var StartTimeTicks = Stopwatch.GetTimestamp();
 
             await next.Invoke(context).ConfigureAwait(false);
 
             var StopTimeTicks = Stopwatch.GetTimestamp();
 
-            Source?.AddEntry(context.TraceIdentifier, "Request", new KeyValuePair<string, decimal>("Total Transaction Time", (StopTimeTicks - StartTimeTicks) / 10000));
-            TraceDataCollector?.AddEntry(context.TraceIdentifier, new KeyValuePair<string, string>("Path", context.Request.Path), new KeyValuePair<string, string>("Method", context.Request.Method));
+            MetricsCollector?.AddEntry(context.TraceIdentifier, "Request", new KeyValuePair<string, decimal>("Total Transaction Time", (StopTimeTicks - StartTimeTicks) / 10000));
+            MetaDataCollector?.AddEntry(context.TraceIdentifier, new KeyValuePair<string, string>("Path", context.Request.Path), new KeyValuePair<string, string>("Method", context.Request.Method));
         }
     }
 }

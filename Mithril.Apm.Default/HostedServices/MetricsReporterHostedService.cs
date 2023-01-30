@@ -15,7 +15,7 @@ namespace Mithril.Apm.Default.HostedServices
         /// Initializes a new instance of the <see cref="MetricsReporterHostedService"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
-        public MetricsReporterHostedService(ILogger<MetricsReporterHostedService>? logger, IMetricsCollectorService metricsCollectorService)
+        public MetricsReporterHostedService(ILogger<MetricsReporterHostedService>? logger, IMetricsCollectorService? metricsCollectorService)
         {
             Logger = logger;
             MetricsCollectorService = metricsCollectorService;
@@ -37,7 +37,7 @@ namespace Mithril.Apm.Default.HostedServices
         /// Gets the metrics collector service.
         /// </summary>
         /// <value>The metrics collector service.</value>
-        private IMetricsCollectorService MetricsCollectorService { get; }
+        private IMetricsCollectorService? MetricsCollectorService { get; }
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting

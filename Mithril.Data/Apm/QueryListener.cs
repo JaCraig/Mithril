@@ -16,14 +16,14 @@ namespace Mithril.Data.Apm
     /// Query listener
     /// </summary>
     /// <seealso cref="EventListener"/>
-    public class QueryListener : EventListener, IMetricsCollector
+    public class QueryListener : EventListener, IEventListener
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryListener"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="featureManager">The feature manager.</param>
-        public QueryListener(ILogger<QueryListener>? logger, IFeatureManager featureManager)
+        public QueryListener(ILogger<QueryListener>? logger, IFeatureManager? featureManager)
         {
             Logger = logger;
             FeatureManager = featureManager;
@@ -57,16 +57,22 @@ namespace Mithril.Data.Apm
         private ILogger<QueryListener>? Logger { get; }
 
         /// <summary>
+        /// Gets or sets the meta data collector.
+        /// </summary>
+        /// <value>The meta data collector.</value>
+        private IMetaDataCollector? MetaDataCollector { get; set; }
+
+        /// <summary>
+        /// Gets or sets the metrics collector.
+        /// </summary>
+        /// <value>The metrics collector.</value>
+        private IMetricsCollector? MetricsCollector { get; set; }
+
+        /// <summary>
         /// Gets or sets the metrics collector service.
         /// </summary>
         /// <value>The metrics collector service.</value>
         private IMetricsCollectorService? MetricsCollectorService { get; set; }
-
-        /// <summary>
-        /// Gets the observers.
-        /// </summary>
-        /// <value>The observers.</value>
-        private List<IObserver<MetricsEntry>> Observers { get; } = new List<IObserver<MetricsEntry>>();
 
         /// <summary>
         /// Gets the start time stamps.
@@ -83,34 +89,6 @@ namespace Mithril.Data.Apm
         /// The disposed value
         /// </summary>
         private bool disposedValue;
-
-        /// <summary>
-        /// Adds an entry to the collector.
-        /// </summary>
-        /// <param name="traceId">The trace identifier.</param>
-        /// <param name="metaData">The meta data.</param>
-        /// <param name="entries">The entries.</param>
-        /// <returns>This.</returns>
-        public IMetricsCollector AddEntry(string traceId, string metaData, params KeyValuePair<string, decimal>[] entries)
-        {
-            try
-            {
-                for (var x = 0; x < Observers.Count; ++x)
-                {
-                    var Observer = Observers[x];
-                    Observer.OnNext(new MetricsEntry(this, traceId, metaData, entries));
-                }
-            }
-            catch (Exception ex)
-            {
-                for (var x = 0; x < Observers.Count; ++x)
-                {
-                    var Observer = Observers[x];
-                    Observer.OnError(ex);
-                }
-            }
-            return this;
-        }
 
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.
@@ -130,10 +108,11 @@ namespace Mithril.Data.Apm
         /// A reference to an interface that allows observers to stop receiving notifications before
         /// the provider has finished sending them.
         /// </returns>
-        public IDisposable Subscribe(IObserver<MetricsEntry> observer)
+        public IEventListener Subscribe(IMetricsCollectorService observer)
         {
-            MetricsCollectorService = observer as IMetricsCollectorService;
-            Observers.Add(observer);
+            MetricsCollectorService = observer;
+            MetaDataCollector = MetricsCollectorService?.GetMetaDataCollector(nameof(DefaultMetaDataCollector));
+            MetricsCollector = MetricsCollectorService?.GetMetricsCollector(nameof(DefaultMetricsCollector));
             return this;
         }
 
@@ -178,7 +157,7 @@ namespace Mithril.Data.Apm
         /// <param name="eventData">The event arguments that describe the event.</param>
         protected override void OnEventWritten(EventWrittenEventArgs eventData)
         {
-            if (eventData?.Payload is null)
+            if (eventData?.Payload is null || MetricsCollectorService is null)
                 return;
             try
             {
@@ -227,23 +206,17 @@ namespace Mithril.Data.Apm
             var TraceId = (Metrics.Database + Metrics.DataSource + Metrics.CommandText).Left(100);
             if (Metrics.CommandText?.Contains("RequestTrace_") == true)
                 return;
-            MetricsCollectorService?.OnNext(new MetaDataEntry(
-                null,
-                TraceId,
+            MetaDataCollector?.AddEntry(TraceId,
                 new[] {
                     new KeyValuePair<string, string>("Database", Metrics.Database??"Default"),
                     new KeyValuePair<string, string>("Datasource", Metrics.DataSource??""),
                     new KeyValuePair<string, string>("CommandText", Metrics.CommandText??""),
-                }));
-            MetricsCollectorService?.OnNext(new MetricsEntry(
-                this,
-                TraceId,
-                "Database query",
+                });
+            MetricsCollector?.AddEntry(TraceId, "Database query",
                 new[]
                 {
                     new KeyValuePair<string, decimal>("Total Query Time",(Stopwatch.GetTimestamp()- Metrics.StartTime)/10000)
-                }
-                ));
+                });
         }
 
         /// <summary>

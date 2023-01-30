@@ -16,17 +16,17 @@ namespace Mithril.Apm.Abstractions.Services
         IMetricsCollectorService BatchCollectedMetrics();
 
         /// <summary>
+        /// Gets the trace data collector.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>The trace data collector specified.</returns>
+        IMetaDataCollector? GetMetaDataCollector(string name);
+
+        /// <summary>
         /// Gets the source specified.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <returns>Metrics source object specified.</returns>
         IMetricsCollector? GetMetricsCollector(string name);
-
-        /// <summary>
-        /// Gets the trace data collector.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        /// <returns>The trace data collector specified.</returns>
-        IMetaDataCollector? GetTraceDataCollector(string name);
     }
 }

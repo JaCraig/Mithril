@@ -16,7 +16,7 @@ namespace Mithril.Apm.Default.Reporter
         /// Initializes a new instance of the <see cref="MetricsReporter"/> class.
         /// </summary>
         /// <param name="dataService">The data service.</param>
-        public MetricsReporter(IDataService dataService)
+        public MetricsReporter(IDataService? dataService)
         {
             DataService = dataService;
         }
@@ -25,7 +25,7 @@ namespace Mithril.Apm.Default.Reporter
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService DataService { get; }
+        private IDataService? DataService { get; }
 
         /// <summary>
         /// Batches the specified data for reporting.
@@ -33,6 +33,8 @@ namespace Mithril.Apm.Default.Reporter
         /// <param name="data">The data.</param>
         public void Batch(Dictionary<string, TraceInformation> data)
         {
+            if (DataService is null)
+                return;
             var Requests = new List<RequestTrace>();
             foreach (var entry in data)
             {

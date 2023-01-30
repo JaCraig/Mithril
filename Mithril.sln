@@ -111,9 +111,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Email
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc.Tests", "Mithril.Mvc.Tests\Mithril.Mvc.Tests.csproj", "{5920B631-0C38-44F1-829A-2A9E41529480}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Apm.Abstractions", "Mithril.Apm.Abstractions\Mithril.Apm.Abstractions.csproj", "{0A1372CB-A53B-4B09-A5B3-7D65B1233F91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Abstractions", "Mithril.Apm.Abstractions\Mithril.Apm.Abstractions.csproj", "{0A1372CB-A53B-4B09-A5B3-7D65B1233F91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Apm.Default", "Mithril.Apm.Default\Mithril.Apm.Default.csproj", "{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Default", "Mithril.Apm.Default\Mithril.Apm.Default.csproj", "{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Apm.Abstractions.Tests", "Mithril.Apm.Abstractions.Tests\Mithril.Apm.Abstractions.Tests.csproj", "{6F177D53-B500-4D1D-8841-8E8E65C0B1BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Apm.Default.Tests", "Mithril.Apm.Default.Tests\Mithril.Apm.Default.Tests.csproj", "{3E56FB7A-E2BF-4F3D-A899-61083F10FEDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -321,6 +325,14 @@ Global
 		{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F177D53-B500-4D1D-8841-8E8E65C0B1BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F177D53-B500-4D1D-8841-8E8E65C0B1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F177D53-B500-4D1D-8841-8E8E65C0B1BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F177D53-B500-4D1D-8841-8E8E65C0B1BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E56FB7A-E2BF-4F3D-A899-61083F10FEDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E56FB7A-E2BF-4F3D-A899-61083F10FEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E56FB7A-E2BF-4F3D-A899-61083F10FEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E56FB7A-E2BF-4F3D-A899-61083F10FEDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -379,6 +391,8 @@ Global
 		{5920B631-0C38-44F1-829A-2A9E41529480} = {20C64160-C469-46C8-9971-17C2435420AD}
 		{0A1372CB-A53B-4B09-A5B3-7D65B1233F91} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
 		{2316D8B6-6860-4AB0-9F06-C413DF0A1B32} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
+		{6F177D53-B500-4D1D-8841-8E8E65C0B1BD} = {2F251ADC-5F62-4892-AD6E-EA191C741A18}
+		{3E56FB7A-E2BF-4F3D-A899-61083F10FEDC} = {20C64160-C469-46C8-9971-17C2435420AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}
