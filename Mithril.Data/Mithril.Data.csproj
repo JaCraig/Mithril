@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Inflatable" Version="4.0.3" />
+    <PackageReference Include="Inflatable" Version="4.0.5" />
   </ItemGroup>
 
   <ItemGroup>

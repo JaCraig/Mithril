@@ -106,7 +106,13 @@ namespace Mithril.Apm.Default.Services
         public IMetricsCollectorService BatchCollectedMetrics()
         {
             if (!FeatureManager.AreFeaturesEnabled(APMFeature.Instance))
+            {
+                lock (LockObject)
+                {
+                    TraceInformation.Clear();
+                }
                 return this;
+            }
             var TempData = new Dictionary<string, TraceInformation>();
             lock (LockObject)
             {
@@ -177,8 +183,6 @@ namespace Mithril.Apm.Default.Services
         /// <param name="value">The current notification information.</param>
         public void OnNext(MetricsEntry value)
         {
-            if (!FeatureManager.AreFeaturesEnabled(APMFeature.Instance))
-                return;
             GetTraceInformation(value.TraceIdentifier).Metrics.Add(value);
         }
 
@@ -188,8 +192,6 @@ namespace Mithril.Apm.Default.Services
         /// <param name="value">The current notification information.</param>
         public void OnNext(MetaDataEntry value)
         {
-            if (!FeatureManager.AreFeaturesEnabled(APMFeature.Instance))
-                return;
             GetTraceInformation(value.TraceIdentifier).MetaData.Add(value);
         }
 

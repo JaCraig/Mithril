@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace Mithril.Data.HealthCheck
 {

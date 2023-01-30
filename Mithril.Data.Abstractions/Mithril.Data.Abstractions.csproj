@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="BigBook" Version="5.0.2" />
-    <PackageReference Include="Inflatable" Version="4.0.3" />
+    <PackageReference Include="Inflatable" Version="4.0.5" />
     <PackageReference Include="Valkyrie" Version="4.0.1" />
   </ItemGroup>
 

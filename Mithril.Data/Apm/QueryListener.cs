@@ -1,8 +1,11 @@
 ﻿using BigBook;
 using Microsoft.Extensions.Logging;
+using Microsoft.FeatureManagement;
 using Mithril.Apm.Abstractions;
+using Mithril.Apm.Abstractions.Features;
 using Mithril.Apm.Abstractions.Interfaces;
 using Mithril.Apm.Abstractions.Services;
+using Mithril.Core.Abstractions.Extensions;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Diagnostics.Tracing;
@@ -19,13 +22,15 @@ namespace Mithril.Data.Apm
         /// Initializes a new instance of the <see cref="QueryListener"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
-        public QueryListener(ILogger<QueryListener> logger)
+        /// <param name="featureManager">The feature manager.</param>
+        public QueryListener(ILogger<QueryListener>? logger, IFeatureManager featureManager)
         {
             Logger = logger;
+            FeatureManager = featureManager;
         }
 
         /// <summary>
-        /// Finalizes an instance of the <see cref="MetricsSourceBaseClass"/> class.
+        /// Finalizes an instance of the <see cref="QueryListener"/> class.
         /// </summary>
         ~QueryListener()
         {
@@ -40,10 +45,16 @@ namespace Mithril.Data.Apm
         public string Name { get; } = nameof(QueryListener);
 
         /// <summary>
+        /// Gets the feature manager.
+        /// </summary>
+        /// <value>The feature manager.</value>
+        private IFeatureManager? FeatureManager { get; }
+
+        /// <summary>
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        private ILogger<QueryListener> Logger { get; }
+        private ILogger<QueryListener>? Logger { get; }
 
         /// <summary>
         /// Gets or sets the metrics collector service.
@@ -104,7 +115,7 @@ namespace Mithril.Data.Apm
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.
         /// </summary>
-        public void Dispose()
+        public override void Dispose()
         {
             // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
             Dispose(disposing: true);
@@ -151,12 +162,11 @@ namespace Mithril.Data.Apm
         /// <param name="eventSource">The event source.</param>
         protected override void OnEventSourceCreated(EventSource eventSource)
         {
-            if (eventSource is null)
+            if (eventSource is null || FeatureManager?.AreFeaturesEnabled(APMFeature.Instance) != true)
             {
                 return;
             }
-            Logger?.LogInformation("Event source: {Name}", eventSource.Name);
-            if (eventSource.Name == "Microsoft.Data.SqlClient.EventSource" || (eventSource.Name == "Microsoft-AdoNet-SystemData" && eventSource.GetType().FullName == "System.Data.SqlEventSource"))
+            if (eventSource.Name == "Microsoft.Data.SqlClient.EventSource")
                 EnableEvents(eventSource, EventLevel.Informational, (EventKeywords)1);
             base.OnEventSourceCreated(eventSource);
         }
@@ -183,7 +193,7 @@ namespace Mithril.Data.Apm
                         break;
                 }
             }
-            catch (Exception ex) { Logger.LogError(ex, "Error when attempting to capture SQL query metrics. Event data: {EventData}", eventData); }
+            catch (Exception ex) { Logger?.LogError(ex, "Error when attempting to capture SQL query metrics. Event data: {EventData}", eventData); }
         }
 
         /// <summary>
@@ -192,6 +202,9 @@ namespace Mithril.Data.Apm
         /// <param name="payload">The payload.</param>
         private void BeginProcessing(ReadOnlyCollection<object?> payload)
         {
+            var CommandText = Convert.ToString(payload[3]);
+            if (CommandText?.Contains("RequestTrace_") == true)
+                return;
             var Metrics = GetMetrics(Convert.ToInt32(payload[0]));
             if (Metrics is null)
                 return;
@@ -199,7 +212,6 @@ namespace Mithril.Data.Apm
             Metrics.Database = Convert.ToString(payload[2]);
             Metrics.CommandText = Convert.ToString(payload[3]);
             Metrics.StartTime = Stopwatch.GetTimestamp();
-            TimeMetrics.Add(Metrics.ID, Metrics);
         }
 
         /// <summary>
@@ -232,7 +244,6 @@ namespace Mithril.Data.Apm
                     new KeyValuePair<string, decimal>("Total Query Time",(Stopwatch.GetTimestamp()- Metrics.StartTime)/10000)
                 }
                 ));
-            TimeMetrics.Add(Metrics.ID, Metrics);
         }
 
         /// <summary>

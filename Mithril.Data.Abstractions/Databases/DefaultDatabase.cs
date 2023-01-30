@@ -1,8 +1,8 @@
 ﻿using Inflatable.DataSource;
 using Inflatable.Enums;
 using Inflatable.Interfaces;
+using Microsoft.Data.SqlClient;
 using System.Data.Common;
-using System.Data.SqlClient;
 
 namespace Mithril.Data.Inflatable.Databases
 {
