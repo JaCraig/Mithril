@@ -141,7 +141,7 @@ namespace Mithril.Data.Apm
         /// <param name="eventSource">The event source.</param>
         protected override void OnEventSourceCreated(EventSource eventSource)
         {
-            if (eventSource is null || FeatureManager?.AreFeaturesEnabled(APMFeature.Instance) != true)
+            if (eventSource is null || FeatureManager?.AreFeaturesEnabled(APMFeature.Instance) != true || MetricsCollectorService is null)
             {
                 return;
             }
