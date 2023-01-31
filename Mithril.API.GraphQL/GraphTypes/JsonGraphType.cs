@@ -1,5 +1,6 @@
 ﻿using GraphQL.Types;
 using GraphQLParser.AST;
+using System.Dynamic;
 using System.Text.Json;
 
 namespace Mithril.API.GraphQL.GraphTypes
@@ -74,6 +75,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         {
             JsonDocument _ => value,
             string s => JsonDocument.Parse(s),
+            ExpandoObject e => JsonDocument.Parse(JsonSerializer.Serialize(e)),
             IDictionary<string, object?> e => JsonDocument.Parse(JsonSerializer.Serialize(e)),
             null => null,
             _ => ThrowValueConversionError(value)

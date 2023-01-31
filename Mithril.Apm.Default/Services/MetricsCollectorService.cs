@@ -18,18 +18,18 @@ namespace Mithril.Apm.Default.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="MetricsCollectorService"/> class.
         /// </summary>
+        /// <param name="featureManager">The feature manager.</param>
         /// <param name="sources">The sources.</param>
         /// <param name="metricsReporters">The metrics reporters.</param>
         /// <param name="traceDataCollectors">The trace data collectors.</param>
         /// <param name="eventListeners">The event listeners.</param>
-        /// <param name="featureManager">The feature manager.</param>
         /// <param name="logger">The logger.</param>
         public MetricsCollectorService(
+            IFeatureManager? featureManager,
             IEnumerable<IMetricsCollector> sources,
             IEnumerable<IMetricsReporter> metricsReporters,
             IEnumerable<IMetaDataCollector> traceDataCollectors,
             IEnumerable<IEventListener> eventListeners,
-            IFeatureManager? featureManager,
             ILogger<MetricsCollectorService>? logger)
         {
             Sources = sources ?? Array.Empty<IMetricsCollector>();

@@ -59,12 +59,13 @@ namespace Mithril.API.GraphQL.GraphTypes.Builder
                 var Params = Array.Empty<object?>();
                 if (objectType.IsClass || objectType.IsInterface)
                     Params = new object?[] { this };
+                var Instance = FastActivator.CreateInstance(GraphTypeType, Params);
+                GraphTypes.Add(objectType, (GraphType)Instance);
 
-                GraphTypes.Add(objectType, (GraphType)FastActivator.CreateInstance(GraphTypeType, Params));
+                if (Instance is IGenericGraphType TempGenericGraphType)
+                    TempGenericGraphType.AutoWire(this);
 
-                if (GraphTypes.TryGetValue(objectType, out graphType))
-                    return graphType;
-                return null;
+                return (GraphType)Instance;
             }
         }
     }

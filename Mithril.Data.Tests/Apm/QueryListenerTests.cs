@@ -14,7 +14,7 @@ namespace Mithril.Data.Tests.Apm
         /// </summary>
         public QueryListenerTests()
         {
-            TestObject = new QueryListener(null, null);
+            TestObject = new QueryListener(null);
             ObjectType = typeof(QueryListener);
         }
     }

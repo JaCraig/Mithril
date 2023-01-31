@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BigBook;
+using Microsoft.AspNetCore.Http;
 using Mithril.Apm.Abstractions;
 using Mithril.Apm.Abstractions.Interfaces;
 using Mithril.Apm.Abstractions.Services;
+using Mithril.Data.Abstractions.ExtensionMethods;
 using System.Diagnostics;
+using System.Text;
 
 namespace Mithril.Apm.Default.Middleware
 {
@@ -50,6 +53,7 @@ namespace Mithril.Apm.Default.Middleware
         {
             if (next is null || context is null)
                 return;
+            context.Request.EnableBuffering();
             var StartTimeTicks = Stopwatch.GetTimestamp();
 
             await next.Invoke(context).ConfigureAwait(false);
@@ -57,7 +61,28 @@ namespace Mithril.Apm.Default.Middleware
             var StopTimeTicks = Stopwatch.GetTimestamp();
 
             MetricsCollector?.AddEntry(context.TraceIdentifier, "Request", new KeyValuePair<string, decimal>("Total Transaction Time", (StopTimeTicks - StartTimeTicks) / 10000));
-            MetaDataCollector?.AddEntry(context.TraceIdentifier, new KeyValuePair<string, string>("Path", context.Request.Path), new KeyValuePair<string, string>("Method", context.Request.Method));
+            MetaDataCollector?.AddEntry(
+                context.TraceIdentifier,
+                new KeyValuePair<string, string>("Path", context.Request.Path),
+                new KeyValuePair<string, string>("Method", context.Request.Method),
+                new KeyValuePair<string, string>("User", context.User.GetName()),
+                new KeyValuePair<string, string>("RequestBody", await GetBody(context.Request).ConfigureAwait(false)));
+        }
+
+        /// <summary>
+        /// Gets the body.
+        /// </summary>
+        /// <param name="httpRequest">The HTTP request.</param>
+        /// <returns></returns>
+        private static async Task<string> GetBody(HttpRequest httpRequest)
+        {
+            using var Reader = new StreamReader(httpRequest.Body, Encoding.UTF8, false, leaveOpen: true);
+            httpRequest.Body.Position = 0;
+            var ReturnValue = await Reader.ReadToEndAsync().ConfigureAwait(false);
+            httpRequest.Body.Position = 0;
+            if (string.IsNullOrEmpty(ReturnValue))
+                return "[Empty]";
+            return ReturnValue;
         }
     }
 }

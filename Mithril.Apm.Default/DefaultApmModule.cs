@@ -50,6 +50,7 @@ namespace Mithril.Apm.Default
                            ?.AddAllSingleton<IMetaDataCollector>()
                            ?.AddSingleton<IMetricsCollectorService, MetricsCollectorService>()
                            ?.AddAllSingleton<IMetricsReporter>()
+                           ?.AddAllSingleton<IEventListener>()
                            ?.AddScoped<ApmMiddleware>()
                            ?.AddHostedService<MetricsReporterHostedService>();
         }

@@ -44,6 +44,7 @@ namespace Mithril.API.GraphQL
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
             Core.Abstractions.Configuration.MithrilConfig? Settings = configuration?.GetSystemConfig();
+
             // GraphQL endpoint
             return app?.UseGraphQL<CompositeSchema>(Settings?.API?.QueryEndpoint ?? "/api/query", options =>
             {

@@ -1,11 +1,7 @@
-﻿using BigBook;
-using Microsoft.Extensions.Logging;
-using Microsoft.FeatureManagement;
+﻿using Microsoft.Extensions.Logging;
 using Mithril.Apm.Abstractions;
-using Mithril.Apm.Abstractions.Features;
 using Mithril.Apm.Abstractions.Interfaces;
 using Mithril.Apm.Abstractions.Services;
-using Mithril.Core.Abstractions.Extensions;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Diagnostics.Tracing;
@@ -23,10 +19,9 @@ namespace Mithril.Data.Apm
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="featureManager">The feature manager.</param>
-        public QueryListener(ILogger<QueryListener>? logger, IFeatureManager? featureManager)
+        public QueryListener(ILogger<QueryListener>? logger)
         {
             Logger = logger;
-            FeatureManager = featureManager;
         }
 
         /// <summary>
@@ -43,12 +38,6 @@ namespace Mithril.Data.Apm
         /// </summary>
         /// <value>The name.</value>
         public string Name { get; } = nameof(QueryListener);
-
-        /// <summary>
-        /// Gets the feature manager.
-        /// </summary>
-        /// <value>The feature manager.</value>
-        private IFeatureManager? FeatureManager { get; }
 
         /// <summary>
         /// Gets the logger.
@@ -141,7 +130,7 @@ namespace Mithril.Data.Apm
         /// <param name="eventSource">The event source.</param>
         protected override void OnEventSourceCreated(EventSource eventSource)
         {
-            if (eventSource is null || FeatureManager?.AreFeaturesEnabled(APMFeature.Instance) != true || MetricsCollectorService is null)
+            if (eventSource is null)
             {
                 return;
             }
@@ -203,7 +192,7 @@ namespace Mithril.Data.Apm
             if (Metrics is null)
                 return;
             Metrics.ExceptionNumber = Convert.ToInt32(payload[2]);
-            var TraceId = (Metrics.Database + Metrics.DataSource + Metrics.CommandText).Left(100);
+            var TraceId = Guid.NewGuid().ToString();
             if (Metrics.CommandText?.Contains("RequestTrace_") == true)
                 return;
             MetaDataCollector?.AddEntry(TraceId,

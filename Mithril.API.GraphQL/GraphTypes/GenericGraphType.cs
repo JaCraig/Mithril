@@ -13,6 +13,18 @@ namespace Mithril.API.GraphQL.GraphTypes
     /// <summary>
     /// Generic graph type
     /// </summary>
+    public interface IGenericGraphType
+    {
+        /// <summary>
+        /// Automatically wires up the graph type.
+        /// </summary>
+        /// <param name="graphTypeManager">The graph type manager.</param>
+        void AutoWire(GraphTypeManager graphTypeManager);
+    }
+
+    /// <summary>
+    /// Generic graph type
+    /// </summary>
     /// <typeparam name="TClass">The type of the class.</typeparam>
     /// <seealso cref="ObjectGraphType&lt;TClass&gt;"/>
     public class GenericGraphType<TClass> : ObjectGraphType<TClass>
@@ -26,7 +38,6 @@ namespace Mithril.API.GraphQL.GraphTypes
             var ObjectType = typeof(TClass);
             Name = GetName(ObjectType);
             Description = ObjectType.GetDescription();
-            AutoWire(graphTypeManager ?? new GraphTypeManager());
         }
 
         /// <summary>
@@ -36,6 +47,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         public GenericGraphType()
             : this(null)
         {
+            AutoWire(new GraphTypeManager());
         }
 
         /// <summary>
@@ -59,10 +71,18 @@ namespace Mithril.API.GraphQL.GraphTypes
         private readonly MethodInfo? AddMethodClassGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddMethodClass), StringComparison.OrdinalIgnoreCase));
 
         /// <summary>
+        /// The initialized
+        /// </summary>
+        private bool Initialized = false;
+
+        /// <summary>
         /// Automatically wires up known properties of the view model.
         /// </summary>
-        protected void AutoWire(GraphTypeManager graphTypeManager)
+        public void AutoWire(GraphTypeManager graphTypeManager)
         {
+            if (graphTypeManager is null || Initialized)
+                return;
+            Initialized = true;
             foreach (var Property in TypeCacheFor<TClass>.Properties)
             {
                 var GraphType = Property.PropertyType.FindGraphType();
