@@ -52,6 +52,12 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         public virtual string[] Tags { get; } = Array.Empty<string>();
 
         /// <summary>
+        /// Gets the version.
+        /// </summary>
+        /// <value>The version.</value>
+        public virtual string? Version { get; } = "v1";
+
+        /// <summary>
         /// Gets the type of the view model it accepts.
         /// </summary>
         /// <value>The type of the view model it accepts.</value>

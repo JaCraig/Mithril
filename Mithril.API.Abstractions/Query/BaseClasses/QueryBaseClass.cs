@@ -69,6 +69,12 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         public Type ReturnType { get; } = typeof(TClass);
 
         /// <summary>
+        /// Gets the version.
+        /// </summary>
+        /// <value>The version.</value>
+        public virtual string? Version { get; } = "v1";
+
+        /// <summary>
         /// Gets the feature manager.
         /// </summary>
         /// <value>The feature manager.</value>

@@ -50,9 +50,12 @@ namespace Mithril.API.Commands
             var TempProvider = endpoints.ServiceProvider;
             var SystemConfig = configuration.GetConfig<APIOptions>("Mithril:API");
             var CommandEndpoint = SystemConfig?.CommandEndpoint ?? "/api/command/";
-            foreach (ICommandHandler Handler in TempProvider.GetServices<ICommandHandler>().Where(x => x.GetType().GetCustomAttribute<ApiIgnoreAttribute>() is null))
+            foreach (var Versions in TempProvider.GetServices<ICommandHandler>().Where(x => x.GetType().GetCustomAttribute<ApiIgnoreAttribute>() is null).GroupBy(x => x.Version))
             {
-                EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object?[] { endpoints, CommandEndpoint, Handler, configuration.GetSystemConfig(), SystemConfig });
+                foreach (var Handler in Versions)
+                {
+                    EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object?[] { endpoints, CommandEndpoint + Versions.Key + "/", Handler, configuration.GetSystemConfig(), SystemConfig });
+                }
             }
             return endpoints;
         }

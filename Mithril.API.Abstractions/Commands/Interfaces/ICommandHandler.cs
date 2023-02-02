@@ -33,6 +33,12 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
         string[] Tags { get; }
 
         /// <summary>
+        /// Gets the version (not guaranteed to be used in all query providers, but defaults to "v1").
+        /// </summary>
+        /// <value>The version.</value>
+        string? Version { get; }
+
+        /// <summary>
         /// Gets the type of the view model it accepts.
         /// </summary>
         /// <value>The type of the view model it accepts.</value>

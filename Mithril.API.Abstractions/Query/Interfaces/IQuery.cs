@@ -43,6 +43,12 @@ namespace Mithril.API.Abstractions.Query.Interfaces
         /// </summary>
         /// <value>The type of the return.</value>
         Type ReturnType { get; }
+
+        /// <summary>
+        /// Gets the version (not guaranteed to be used in all query providers, but defaults to "v1").
+        /// </summary>
+        /// <value>The version.</value>
+        string? Version { get; }
     }
 
     /// <summary>
