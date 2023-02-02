@@ -123,6 +123,9 @@ namespace Mithril.Apm.Default.Models
         /// <param name="metaData">The meta data.</param>
         public void AddMetaData(string displayName, string metaData)
         {
+            if (string.IsNullOrEmpty(displayName) || string.IsNullOrEmpty(metaData))
+                return;
+            MetaData ??= new List<RequestMetaData>();
             if (MetaData.Any(x => string.Equals(x.MetaData, metaData, StringComparison.OrdinalIgnoreCase) && string.Equals(x.DisplayName, displayName, StringComparison.OrdinalIgnoreCase)))
                 return;
             MetaData.Add(new RequestMetaData(displayName, metaData));
@@ -136,6 +139,9 @@ namespace Mithril.Apm.Default.Models
         /// <param name="metric">The metric.</param>
         public void AddMetrics(string displayName, string metaData, decimal metric)
         {
+            if (string.IsNullOrEmpty(displayName))
+                return;
+            Metrics ??= new List<RequestMetric>();
             if (Metrics.Any(x => string.Equals(x.MetaData, metaData, StringComparison.OrdinalIgnoreCase) && string.Equals(x.DisplayName, displayName, StringComparison.OrdinalIgnoreCase) && x.Metric == metric))
                 return;
             Metrics.Add(new RequestMetric(displayName, metaData, metric));

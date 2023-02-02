@@ -14,7 +14,7 @@ namespace Mithril.Apm.Default.Tests.HostedServices
         /// </summary>
         public MetricsReporterHostedServiceTests()
         {
-            TestObject = new MetricsReporterHostedService(null, null);
+            TestObject = new MetricsReporterHostedService(null, null, null, null);
             ObjectType = typeof(MetricsReporterHostedService);
         }
     }
