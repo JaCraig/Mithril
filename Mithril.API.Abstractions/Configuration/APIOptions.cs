@@ -1,9 +1,9 @@
-﻿namespace Mithril.Core.Abstractions.Configuration
+﻿namespace Mithril.API.Abstractions.Configuration
 {
     /// <summary>
     /// API configuration information
     /// </summary>
-    public class API
+    public class APIOptions
     {
         /// <summary>
         /// Gets or sets the allow anonymous users access (defaults to false).

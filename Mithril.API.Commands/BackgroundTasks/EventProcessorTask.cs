@@ -2,8 +2,8 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Services;
-using Mithril.Core.Abstractions.Configuration;
 
 namespace Mithril.API.Commands.BackgroundTasks
 {
@@ -20,11 +20,11 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <param name="logger">The logger.</param>
         /// <param name="eventService">The event service.</param>
         /// <param name="configuration">The configuration.</param>
-        public EventProcessorTask(ILogger<EventProcessorTask>? logger, IEventService? eventService, IOptions<MithrilConfig>? configuration)
+        public EventProcessorTask(ILogger<EventProcessorTask>? logger, IEventService? eventService, IOptions<APIOptions>? configuration)
         {
             Logger = logger;
             EventService = eventService;
-            EventRunFrequency = configuration?.Value?.API?.EventRunFrequency ?? 60;
+            EventRunFrequency = configuration?.Value?.EventRunFrequency ?? 60;
         }
 
         /// <summary>

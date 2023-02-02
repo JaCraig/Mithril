@@ -10,6 +10,7 @@ using Mithril.Data.Abstractions.Services;
 using Mithril.Data.HealthCheck;
 using Mithril.Data.Models.General;
 using Mithril.Data.Services;
+using Mithril.HealthChecks.Abstractions.Configuration;
 
 namespace Mithril.Data
 {
@@ -43,7 +44,7 @@ namespace Mithril.Data
         {
             if (services is null)
                 return services;
-            var Timeout = configuration?.GetSystemConfig()?.HealthChecks?.DefaultTimeout ?? 3;
+            var Timeout = configuration.GetConfig<MithrilHealthCheckOptions>("Mithril:HealthChecks")?.DefaultTimeout ?? 3;
             services.Configure<HealthCheckServiceOptions>(options => options.Registrations.Add(new HealthCheckRegistration("Database", new SqlConnectionHealthCheck(configuration), null, new string[] { "Database" }, new TimeSpan(0, 0, Timeout))));
             return services.AddTransient<IDataService, DataService>();
         }

@@ -8,6 +8,7 @@ using Mithril.FileSystem.Abstractions.Interfaces;
 using Mithril.FileSystem.Abstractions.Services;
 using Mithril.FileSystem.HealthChecks;
 using Mithril.FileSystem.Services;
+using Mithril.HealthChecks.Abstractions.Configuration;
 
 namespace Mithril.FileSystem
 {
@@ -28,7 +29,7 @@ namespace Mithril.FileSystem
         {
             if (services is null)
                 return services;
-            var Timeout = configuration?.GetSystemConfig()?.HealthChecks?.DefaultTimeout ?? 3;
+            var Timeout = configuration.GetConfig<MithrilHealthCheckOptions>("Mithril:HealthChecks")?.DefaultTimeout ?? 3;
             return services.Configure<HealthCheckServiceOptions>(options => options.Registrations.Add(new HealthCheckRegistration("Disk", new DiskSpaceHealthCheck(), null, new string[] { "Disk" }, new TimeSpan(0, 0, Timeout))))
                 .AddSingleton<IFileSystemService, FileSystemService>()
                 .AddAllSingleton<IPathConverter>();

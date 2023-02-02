@@ -4,8 +4,8 @@ using Microsoft.Extensions.Options;
 using Mithril.API.Abstractions.Commands;
 using Mithril.API.Abstractions.Commands.Enums;
 using Mithril.API.Abstractions.Commands.Interfaces;
+using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Services;
-using Mithril.Core.Abstractions.Configuration;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Security.Abstractions.Services;
 using System.Diagnostics;
@@ -29,7 +29,7 @@ namespace Mithril.API.Commands.Services
         public EventService(
             IEnumerable<IEventHandler> eventHandlers,
             ILogger<EventService>? logger,
-            IOptions<MithrilConfig>? configuration,
+            IOptions<APIOptions>? configuration,
             IDataService? dataService,
             ISecurityService? securityService)
         {
@@ -44,7 +44,7 @@ namespace Mithril.API.Commands.Services
         /// Gets the configuration.
         /// </summary>
         /// <value>The configuration.</value>
-        private MithrilConfig? Configuration { get; }
+        private APIOptions? Configuration { get; }
 
         /// <summary>
         /// Gets the data service.
@@ -83,8 +83,8 @@ namespace Mithril.API.Commands.Services
         {
             if (!EventHandlers.Any())
                 return;
-            int RunTime = Configuration?.API?.MaxEventProcessTime ?? 40000;
-            int BatchSize = Configuration?.API?.EventBatchSize ?? 40;
+            int RunTime = Configuration?.MaxEventProcessTime ?? 40000;
+            int BatchSize = Configuration?.EventBatchSize ?? 40;
             int Count = 0;
             Logger?.LogInformation("Processing Events for {RunTime} ms", RunTime);
             Stopwatch.Restart();

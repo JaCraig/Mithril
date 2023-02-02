@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.FileSystem.Abstractions\Mithril.FileSystem.Abstractions.csproj" />
+    <ProjectReference Include="..\Mithril.HealthChecks.Abstractions\Mithril.HealthChecks.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

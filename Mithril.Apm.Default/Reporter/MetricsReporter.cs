@@ -38,7 +38,9 @@ namespace Mithril.Apm.Default.Reporter
             var Requests = new List<RequestTrace>();
             foreach (var entry in data)
             {
-                var Trace = new RequestTrace(entry.Key)
+                if (entry.Value.MetaData.Count == 0 && entry.Value.Metrics.Count == 0)
+                    continue;
+                var Trace = RequestTrace.Query(DataService)?.Where(x => x.TraceIdentifier == entry.Key && x.DateCreated == entry.Value.Created).FirstOrDefault() ?? new RequestTrace(entry.Key)
                 {
                     DateCreated = entry.Value.Created
                 };
@@ -46,14 +48,14 @@ namespace Mithril.Apm.Default.Reporter
                 {
                     foreach (var Entry in MetaData.Data)
                     {
-                        Trace.MetaData.Add(new RequestMetaData(Entry.Key, Entry.Value));
+                        Trace.AddMetaData(Entry.Key, Entry.Value);
                     }
                 }
                 foreach (var Metric in entry.Value.Metrics)
                 {
                     foreach (var Entry in Metric.Data)
                     {
-                        Trace.Metrics.Add(new RequestMetric(Entry.Key, Metric.MetaData, Entry.Value));
+                        Trace.AddMetrics(Entry.Key, Metric.MetaData, Entry.Value);
                     }
                 }
                 Requests.Add(Trace);

@@ -2,8 +2,8 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Services;
-using Mithril.Core.Abstractions.Configuration;
 
 namespace Mithril.API.Commands.BackgroundTasks
 {
@@ -20,11 +20,11 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <param name="logger">The logger.</param>
         /// <param name="commandService">The command service.</param>
         /// <param name="configuration">The configuration.</param>
-        public CommandProcessorTask(ILogger<CommandProcessorTask>? logger, ICommandService? commandService, IOptions<MithrilConfig>? configuration)
+        public CommandProcessorTask(ILogger<CommandProcessorTask>? logger, ICommandService? commandService, IOptions<APIOptions>? configuration)
         {
             Logger = logger;
             CommandService = commandService;
-            CommandRunFrequency = configuration?.Value?.API?.CommandRunFrequency ?? 60;
+            CommandRunFrequency = configuration?.Value?.CommandRunFrequency ?? 60;
         }
 
         /// <summary>

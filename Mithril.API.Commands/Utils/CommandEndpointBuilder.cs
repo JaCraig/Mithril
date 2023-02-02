@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 using Mithril.API.Abstractions.Attributes;
 using Mithril.API.Abstractions.Commands.Interfaces;
+using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Commands.Endpoint;
 using Mithril.Core.Abstractions.Configuration;
 using Mithril.Data.Abstractions.Services;
@@ -26,7 +27,9 @@ namespace Mithril.API.Commands.Utils
         /// <param name="commandEndPoint">The command end point.</param>
         /// <param name="commandHandler">The command handler.</param>
         /// <param name="config">The configuration.</param>
-        public static void SetupEndPoint<TViewModel>(IEndpointRouteBuilder? endpoints, string commandEndPoint, ICommandHandler<TViewModel> commandHandler, MithrilConfig? config)
+        /// <param name="apiOptions">The API options.</param>
+        /// <returns></returns>
+        public static void SetupEndPoint<TViewModel>(IEndpointRouteBuilder? endpoints, string commandEndPoint, ICommandHandler<TViewModel> commandHandler, MithrilConfig? config, APIOptions? apiOptions)
             where TViewModel : notnull
         {
             if (commandHandler is null || endpoints is null)
@@ -46,7 +49,7 @@ namespace Mithril.API.Commands.Utils
                 return;
             EndPointBuilder = SetupContentTypesAccepted(commandHandler, EndPointBuilder);
 
-            SetupAuthorization(config, EndPointBuilder, commandHandler.GetType());
+            SetupAuthorization(apiOptions, EndPointBuilder, commandHandler.GetType());
 
             SetupSecurity(config, EndPointBuilder);
         }
@@ -57,7 +60,7 @@ namespace Mithril.API.Commands.Utils
         /// <param name="config">The configuration.</param>
         /// <param name="HandlerType">Type of the handler.</param>
         /// <returns>True if it should, false otherwise.</returns>
-        private static bool AllowAnonymous(MithrilConfig? config, Type HandlerType) => (config?.API?.AllowAnonymous ?? false) || HandlerType.GetCustomAttribute<ApiAllowAnonymousAttribute>() is not null;
+        private static bool AllowAnonymous(APIOptions? config, Type HandlerType) => (config?.AllowAnonymous ?? false) || HandlerType.GetCustomAttribute<ApiAllowAnonymousAttribute>() is not null;
 
         /// <summary>
         /// Cleans the text.
@@ -83,12 +86,12 @@ namespace Mithril.API.Commands.Utils
         /// <param name="EndPointBuilder">The end point builder.</param>
         /// <param name="HandlerType">Type of the handler.</param>
         /// <returns></returns>
-        private static void SetupAuthorization(MithrilConfig? config, RouteHandlerBuilder? EndPointBuilder, Type HandlerType)
+        private static void SetupAuthorization(APIOptions? config, RouteHandlerBuilder? EndPointBuilder, Type HandlerType)
         {
             if (EndPointBuilder is null)
                 return;
             var AuthorizationAttribute = HandlerType.GetCustomAttribute<ApiAuthorizeAttribute>();
-            var DefaultAuthorizationPolicy = config?.API?.AuthorizationPolicy ?? "";
+            var DefaultAuthorizationPolicy = config?.AuthorizationPolicy ?? "";
 
             if (AllowAnonymous(config, HandlerType))
             {

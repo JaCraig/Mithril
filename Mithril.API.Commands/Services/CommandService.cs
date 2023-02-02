@@ -2,8 +2,8 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Mithril.API.Abstractions.Commands.Interfaces;
+using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Services;
-using Mithril.Core.Abstractions.Configuration;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Security.Abstractions.Services;
 using System.Diagnostics;
@@ -27,7 +27,7 @@ namespace Mithril.API.Commands.Services
         public CommandService(
             IEnumerable<ICommandHandler> commandHandlers,
             ILogger<CommandService>? logger,
-            IOptions<MithrilConfig>? configuration,
+            IOptions<APIOptions>? configuration,
             IDataService? dataService,
             ISecurityService? securityService)
         {
@@ -48,7 +48,7 @@ namespace Mithril.API.Commands.Services
         /// Gets the configuration.
         /// </summary>
         /// <value>The configuration.</value>
-        private MithrilConfig? Configuration { get; }
+        private APIOptions? Configuration { get; }
 
         /// <summary>
         /// Gets the data service.
@@ -81,8 +81,8 @@ namespace Mithril.API.Commands.Services
         {
             if (!CommandHandlers.Any())
                 return;
-            int RunTime = Configuration?.API?.MaxCommandProcessTime ?? 40000;
-            int BatchSize = Configuration?.API?.CommandBatchSize ?? 40;
+            int RunTime = Configuration?.MaxCommandProcessTime ?? 40000;
+            int BatchSize = Configuration?.CommandBatchSize ?? 40;
             int Count = 0;
             Logger?.LogInformation("Processing commands for {RunTime} ms", RunTime);
             Stopwatch.Restart();

@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Mithril.API.Abstractions.Configuration;
 using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -35,12 +36,13 @@ namespace Mithril.API.Swagger
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
             var SystemConfig = configuration.GetSystemConfig();
+            var APIConfig = configuration.GetConfig<APIOptions>("Mithril:API");
             var EntryAssembly = Assembly.GetEntryAssembly();
             var EntryAssemblyName = EntryAssembly?.GetName().Name ?? "Mithril";
             return app?.When(environment?.IsDevelopment() ?? false, app =>
             {
                 app?.UseSwagger()
-                       .UseSwaggerUI(conf => conf.SwaggerEndpoint(SystemConfig?.API?.OpenAPIEndpoint ?? $"/swagger/v{EntryAssembly?.GetName().Version}/swagger.json",
+                       .UseSwaggerUI(conf => conf.SwaggerEndpoint(APIConfig?.OpenAPIEndpoint ?? $"/swagger/v{EntryAssembly?.GetName().Version}/swagger.json",
                                                                   SystemConfig?.ApplicationName ?? $"{EntryAssemblyName} API v{EntryAssembly?.GetName().Version}"));
             });
         }
@@ -74,6 +76,11 @@ namespace Mithril.API.Swagger
             return services;
         }
 
+        /// <summary>
+        /// Scans for comment files.
+        /// </summary>
+        /// <param name="directory">The directory.</param>
+        /// <param name="options">The options.</param>
         private static void ScanForCommentFiles(string? directory, SwaggerGenOptions options)
         {
             if (string.IsNullOrEmpty(directory))

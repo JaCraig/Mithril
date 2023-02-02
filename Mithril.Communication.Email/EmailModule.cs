@@ -8,6 +8,7 @@ using Mithril.Communication.Email.Models;
 using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Data.Abstractions.Services;
+using Mithril.HealthChecks.Abstractions.Configuration;
 
 namespace Mithril.Communication.Email
 {
@@ -28,7 +29,7 @@ namespace Mithril.Communication.Email
         {
             if (services is null)
                 return services;
-            var Timeout = configuration?.GetSystemConfig()?.HealthChecks?.DefaultTimeout ?? 3;
+            var Timeout = configuration.GetConfig<MithrilHealthCheckOptions>("Mithril:HealthChecks")?.DefaultTimeout ?? 3;
             return services.Configure<HealthCheckServiceOptions>(options => options.Registrations.Add(new HealthCheckRegistration("Smtp", new SMTPHealthCheck(), null, new string[] { "Smtp" }, new TimeSpan(0, 0, Timeout))));
         }
 

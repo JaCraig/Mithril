@@ -1,6 +1,11 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using BigBook;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Mithril.Apm.Abstractions.Configuration;
 using Mithril.Apm.Abstractions.Services;
+using Mithril.Apm.Default.Models;
+using Mithril.Data.Abstractions.Services;
 
 namespace Mithril.Apm.Default.HostedServices
 {
@@ -15,11 +20,22 @@ namespace Mithril.Apm.Default.HostedServices
         /// Initializes a new instance of the <see cref="MetricsReporterHostedService"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
-        public MetricsReporterHostedService(ILogger<MetricsReporterHostedService>? logger, IMetricsCollectorService? metricsCollectorService)
+        /// <param name="metricsCollectorService">The metrics collector service.</param>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="options">The options.</param>
+        public MetricsReporterHostedService(ILogger<MetricsReporterHostedService>? logger, IMetricsCollectorService? metricsCollectorService, IDataService? dataService, IOptions<APMOptions>? options)
         {
             Logger = logger;
             MetricsCollectorService = metricsCollectorService;
+            DataService = dataService;
+            Options = options?.Value;
         }
+
+        /// <summary>
+        /// Gets the data service.
+        /// </summary>
+        /// <value>The data service.</value>
+        private IDataService? DataService { get; }
 
         /// <summary>
         /// Gets or sets the internal timer.
@@ -40,6 +56,12 @@ namespace Mithril.Apm.Default.HostedServices
         private IMetricsCollectorService? MetricsCollectorService { get; }
 
         /// <summary>
+        /// Gets the options.
+        /// </summary>
+        /// <value>The options.</value>
+        private APMOptions? Options { get; }
+
+        /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting
         /// unmanaged resources.
         /// </summary>
@@ -57,7 +79,7 @@ namespace Mithril.Apm.Default.HostedServices
         public Task StartAsync(CancellationToken cancellationToken)
         {
             Logger?.LogInformation("Starting metrics reporter background service");
-            InternalTimer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
+            InternalTimer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(Options?.BatchingFrequency ?? 10));
             return Task.CompletedTask;
         }
 
@@ -101,6 +123,12 @@ namespace Mithril.Apm.Default.HostedServices
                 return;
             Logger?.LogInformation("Reporting APM metrics");
             MetricsCollectorService.BatchCollectedMetrics();
+
+            if (DataService is null)
+                return;
+            Logger?.LogInformation("Cleaning APM metrics");
+            var MaxAge = DateTime.UtcNow.AddHours(-(Options?.MaximumAge ?? 1));
+            AsyncHelper.RunSync(() => DataService.DeleteAsync(RequestTrace.Query(DataService)?.Where(x => x.DateCreated <= MaxAge).ToList().ToArray() ?? Array.Empty<RequestTrace>()));
         }
     }
 }

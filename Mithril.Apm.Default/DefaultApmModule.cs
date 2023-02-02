@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Mithril.Apm.Abstractions.Configuration;
 using Mithril.Apm.Abstractions.Features;
 using Mithril.Apm.Abstractions.Interfaces;
 using Mithril.Apm.Abstractions.Services;
@@ -46,7 +47,10 @@ namespace Mithril.Apm.Default
         /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            return services?.AddAllSingleton<IMetricsCollector>()
+            if (services is null || configuration is null)
+                return services;
+            return services.Configure<APMOptions>(configuration.GetSection("Mithril:APM"))
+                           ?.AddAllSingleton<IMetricsCollector>()
                            ?.AddAllSingleton<IMetaDataCollector>()
                            ?.AddSingleton<IMetricsCollectorService, MetricsCollectorService>()
                            ?.AddAllSingleton<IMetricsReporter>()

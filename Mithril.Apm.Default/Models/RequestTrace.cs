@@ -117,6 +117,31 @@ namespace Mithril.Apm.Default.Models
         }
 
         /// <summary>
+        /// Adds the meta data.
+        /// </summary>
+        /// <param name="displayName">The display name.</param>
+        /// <param name="metaData">The meta data.</param>
+        public void AddMetaData(string displayName, string metaData)
+        {
+            if (MetaData.Any(x => string.Equals(x.MetaData, metaData, StringComparison.OrdinalIgnoreCase) && string.Equals(x.DisplayName, displayName, StringComparison.OrdinalIgnoreCase)))
+                return;
+            MetaData.Add(new RequestMetaData(displayName, metaData));
+        }
+
+        /// <summary>
+        /// Adds the metrics.
+        /// </summary>
+        /// <param name="displayName">The display name.</param>
+        /// <param name="metaData">The meta data.</param>
+        /// <param name="metric">The metric.</param>
+        public void AddMetrics(string displayName, string metaData, decimal metric)
+        {
+            if (Metrics.Any(x => string.Equals(x.MetaData, metaData, StringComparison.OrdinalIgnoreCase) && string.Equals(x.DisplayName, displayName, StringComparison.OrdinalIgnoreCase) && x.Metric == metric))
+                return;
+            Metrics.Add(new RequestMetric(displayName, metaData, metric));
+        }
+
+        /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="other">Object to compare to</param>

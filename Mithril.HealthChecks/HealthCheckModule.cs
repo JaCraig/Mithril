@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
+using Mithril.HealthChecks.Abstractions.Configuration;
 using Mithril.HealthChecks.Abstractions.Interfaces;
 using Mithril.HealthChecks.Abstractions.Services;
 using Mithril.HealthChecks.HealthChecks;
@@ -41,7 +42,8 @@ namespace Mithril.HealthChecks
             Core.Abstractions.Configuration.MithrilConfig? SystemConfig = configuration?.GetSystemConfig();
             var JsonConfig = new JsonSerializerOptions(JsonSerializerDefaults.Web);
             JsonConfig.Converters.Add(new JsonStringEnumConverter());
-            IEndpointConventionBuilder? EndpointBuilder = endpoints?.MapHealthChecks(SystemConfig?.HealthChecks?.CheckEndPoint ?? "/api/healthchecks.{format}", new HealthCheckOptions
+            var HealthCheckEndPoint = configuration.GetConfig<MithrilHealthCheckOptions>("Mithril:HealthChecks")?.CheckEndPoint ?? "/api/healthchecks";
+            IEndpointConventionBuilder? EndpointBuilder = endpoints?.MapHealthChecks(HealthCheckEndPoint + ".{format}", new HealthCheckOptions
             {
                 Predicate = _ => true,
                 ResponseWriter = (context, result) =>
@@ -52,7 +54,7 @@ namespace Mithril.HealthChecks
             });
             if (!string.IsNullOrEmpty(SystemConfig?.Security?.DefaultCorsPolicy))
                 EndpointBuilder?.RequireCors(SystemConfig.Security.DefaultCorsPolicy);
-            EndpointBuilder = endpoints?.MapHealthChecks(SystemConfig?.HealthChecks?.CheckEndPoint ?? "/api/healthchecks", new HealthCheckOptions
+            EndpointBuilder = endpoints?.MapHealthChecks(HealthCheckEndPoint, new HealthCheckOptions
             {
                 Predicate = _ => true,
                 ResponseWriter = (context, result) =>
@@ -75,11 +77,17 @@ namespace Mithril.HealthChecks
         /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            var Timeout = configuration?.GetSystemConfig()?.HealthChecks?.DefaultTimeout ?? 3;
-            services?.AddHealthChecks()
+            if (configuration is null || services is null)
+                return services;
+
+            // Set up config.
+            services = services.Configure<MithrilHealthCheckOptions>(configuration.GetSection("Mithril:HealthChecks"));
+
+            var Timeout = configuration.GetConfig<MithrilHealthCheckOptions>("Mithril:HealthChecks")?.DefaultTimeout ?? 3;
+            services.AddHealthChecks()
                 .AddCheck<SystemStatusHealthCheck>("System", null, new string[] { "System" }, new TimeSpan(0, 0, Timeout));
-            services?.AddSingleton<IResponseFormatterService, ResponseFormatterService>();
-            services?.AddAllTransient<IResponseFormatter>();
+            services.AddSingleton<IResponseFormatterService, ResponseFormatterService>();
+            services.AddAllTransient<IResponseFormatter>();
             return services;
         }
     }

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Query.Interfaces;
 using Mithril.API.GraphQL.Authorization;
 using Mithril.API.GraphQL.GraphTypes.Builder;
@@ -43,15 +44,15 @@ namespace Mithril.API.GraphQL
         /// <returns>Application builder</returns>
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            Core.Abstractions.Configuration.MithrilConfig? Settings = configuration?.GetSystemConfig();
+            var Settings = configuration.GetConfig<APIOptions>("Mithril:API");
 
             // GraphQL endpoint
-            return app?.UseGraphQL<CompositeSchema>(Settings?.API?.QueryEndpoint ?? "/api/query", options =>
+            return app?.UseGraphQL<CompositeSchema>(Settings?.QueryEndpoint ?? "/api/query", options =>
             {
-                if (!(Settings?.API?.AllowAnonymous ?? false))
+                if (!(Settings?.AllowAnonymous ?? false))
                     options.AuthorizationRequired = true;
-                if (!string.IsNullOrEmpty(Settings?.API?.AuthorizationPolicy))
-                    options.AuthorizedPolicy = Settings?.API?.AuthorizationPolicy;
+                if (!string.IsNullOrEmpty(Settings?.AuthorizationPolicy))
+                    options.AuthorizedPolicy = Settings?.AuthorizationPolicy;
             });
         }
 
@@ -65,7 +66,8 @@ namespace Mithril.API.GraphQL
         public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
         {
             Core.Abstractions.Configuration.MithrilConfig? Settings = configuration?.GetSystemConfig();
-            GraphQLEndpointConventionBuilder? EndpointBuilder = endpoints?.MapGraphQL(Settings?.API?.QueryEndpoint ?? "/api/query");
+            var APIConfig = configuration.GetConfig<APIOptions>("Mithril:API");
+            GraphQLEndpointConventionBuilder? EndpointBuilder = endpoints?.MapGraphQL(APIConfig?.QueryEndpoint ?? "/api/query");
             if (!string.IsNullOrEmpty(Settings?.Security?.DefaultCorsPolicy))
                 EndpointBuilder?.RequireCors(Settings.Security.DefaultCorsPolicy);
             return endpoints;

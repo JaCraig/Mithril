@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mithril.API.Abstractions.Attributes;
 using Mithril.API.Abstractions.Commands.Interfaces;
+using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Services;
 using Mithril.API.Commands.BackgroundTasks;
 using Mithril.API.Commands.Services;
@@ -47,11 +48,11 @@ namespace Mithril.API.Commands
                 return endpoints;
             MethodInfo? EndPointMethod = typeof(CommandEndpointBuilder).GetMethod(nameof(CommandEndpointBuilder.SetupEndPoint), BindingFlags.Static | BindingFlags.Public);
             var TempProvider = endpoints.ServiceProvider;
-            Core.Abstractions.Configuration.MithrilConfig? SystemConfig = configuration.GetSystemConfig();
-            var CommandEndpoint = SystemConfig?.API?.CommandEndpoint ?? "/api/command/";
+            var SystemConfig = configuration.GetConfig<APIOptions>("Mithril:API");
+            var CommandEndpoint = SystemConfig?.CommandEndpoint ?? "/api/command/";
             foreach (ICommandHandler Handler in TempProvider.GetServices<ICommandHandler>().Where(x => x.GetType().GetCustomAttribute<ApiIgnoreAttribute>() is null))
             {
-                EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object?[] { endpoints, CommandEndpoint, Handler, SystemConfig });
+                EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object?[] { endpoints, CommandEndpoint, Handler, configuration.GetSystemConfig(), SystemConfig });
             }
             return endpoints;
         }
