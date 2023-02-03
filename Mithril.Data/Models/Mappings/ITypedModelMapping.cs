@@ -1,8 +1,8 @@
 ﻿using Inflatable.BaseClasses;
+using Mithril.Data.Abstractions.Databases;
 using Mithril.Data.Abstractions.Interfaces;
-using Mithril.Data.Inflatable.Databases;
 
-namespace Mithril.Data.Inflatable.Models.Mappings
+namespace Mithril.Data.Models.Mappings
 {
     /// <summary>
     /// Typed model mapping

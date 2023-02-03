@@ -1,5 +1,5 @@
 ﻿using Inflatable.BaseClasses;
-using Mithril.Data.Inflatable.Databases;
+using Mithril.Data.Abstractions.Databases;
 using Mithril.Security.Abstractions.Interfaces;
 
 namespace Mithril.Security.Models.Mappings

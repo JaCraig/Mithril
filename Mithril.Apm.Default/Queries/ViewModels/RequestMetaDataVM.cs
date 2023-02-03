@@ -11,7 +11,7 @@ namespace Mithril.Apm.Default.Queries.ViewModels
         /// Initializes a new instance of the <see cref="RequestMetaDataVM"/> class.
         /// </summary>
         /// <param name="model">The model.</param>
-        public RequestMetaDataVM(RequestMetaData model)
+        public RequestMetaDataVM(RequestMetaData? model)
         {
             if (model is null)
                 return;

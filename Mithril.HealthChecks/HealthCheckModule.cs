@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Mithril.Core.Abstractions.Configuration;
 using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.HealthChecks.Abstractions.Configuration;
@@ -37,34 +38,32 @@ namespace Mithril.HealthChecks
         /// <returns>Endpoint route builder</returns>
         public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            if (endpoints?.ServiceProvider.GetService<IResponseFormatterService>() is null)
+            if (endpoints is null || endpoints.ServiceProvider.GetService<IResponseFormatterService>() is null || configuration is null)
                 return endpoints;
-            Core.Abstractions.Configuration.MithrilConfig? SystemConfig = configuration?.GetSystemConfig();
+            var SystemConfig = configuration.GetSystemConfig();
             var JsonConfig = new JsonSerializerOptions(JsonSerializerDefaults.Web);
             JsonConfig.Converters.Add(new JsonStringEnumConverter());
             var HealthCheckEndPoint = configuration.GetConfig<MithrilHealthCheckOptions>("Mithril:HealthChecks")?.CheckEndPoint ?? "/api/healthchecks";
-            IEndpointConventionBuilder? EndpointBuilder = endpoints?.MapHealthChecks(HealthCheckEndPoint + ".{format}", new HealthCheckOptions
+            var EndpointBuilder = endpoints.MapHealthChecks(HealthCheckEndPoint + ".{format}", new HealthCheckOptions
             {
                 Predicate = _ => true,
                 ResponseWriter = (context, result) =>
                 {
-                    IResponseFormatterService? Formatter = context.RequestServices.GetService<IResponseFormatterService>();
+                    var Formatter = context.RequestServices.GetService<IResponseFormatterService>();
                     return Formatter?.FormatResponse(context, result) ?? Task.CompletedTask;
                 }
             });
-            if (!string.IsNullOrEmpty(SystemConfig?.Security?.DefaultCorsPolicy))
-                EndpointBuilder?.RequireCors(SystemConfig.Security.DefaultCorsPolicy);
-            EndpointBuilder = endpoints?.MapHealthChecks(HealthCheckEndPoint, new HealthCheckOptions
+            AddCORS(SystemConfig, EndpointBuilder);
+            EndpointBuilder = endpoints.MapHealthChecks(HealthCheckEndPoint, new HealthCheckOptions
             {
                 Predicate = _ => true,
                 ResponseWriter = (context, result) =>
                 {
-                    IResponseFormatterService? Formatter = context.RequestServices.GetService<IResponseFormatterService>();
+                    var Formatter = context.RequestServices.GetService<IResponseFormatterService>();
                     return Formatter?.FormatResponse(context, result) ?? Task.CompletedTask;
                 }
             });
-            if (!string.IsNullOrEmpty(SystemConfig?.Security?.DefaultCorsPolicy))
-                EndpointBuilder?.RequireCors(SystemConfig.Security.DefaultCorsPolicy);
+            AddCORS(SystemConfig, EndpointBuilder);
             return endpoints;
         }
 
@@ -89,6 +88,18 @@ namespace Mithril.HealthChecks
             services.AddSingleton<IResponseFormatterService, ResponseFormatterService>();
             services.AddAllTransient<IResponseFormatter>();
             return services;
+        }
+
+        /// <summary>
+        /// Adds the CORS.
+        /// </summary>
+        /// <param name="SystemConfig">The system configuration.</param>
+        /// <param name="EndpointBuilder">The endpoint builder.</param>
+        private static void AddCORS(MithrilConfig? SystemConfig, IEndpointConventionBuilder EndpointBuilder)
+        {
+            if (SystemConfig is null || string.IsNullOrEmpty(SystemConfig.Security?.DefaultCorsPolicy))
+                return;
+            EndpointBuilder.RequireCors(SystemConfig.Security.DefaultCorsPolicy);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Mithril.Mvc.Tests.Services
         public ViewRendererServiceTests()
         {
             TestObject = new ViewRendererService(null, null, null, null, null, null);
+            ObjectType = typeof(ViewRendererService);
         }
     }
 }

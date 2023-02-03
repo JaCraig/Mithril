@@ -1,6 +1,6 @@
 ﻿using Inflatable.BaseClasses;
 using Mithril.API.Abstractions.Commands.Interfaces;
-using Mithril.Data.Inflatable.Databases;
+using Mithril.Data.Abstractions.Databases;
 
 namespace Mithril.API.Abstractions.Commands.Mappings
 {

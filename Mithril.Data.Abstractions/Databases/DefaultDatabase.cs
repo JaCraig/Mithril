@@ -4,7 +4,7 @@ using Inflatable.Interfaces;
 using Microsoft.Data.SqlClient;
 using System.Data.Common;
 
-namespace Mithril.Data.Inflatable.Databases
+namespace Mithril.Data.Abstractions.Databases
 {
     /// <summary>
     /// Default database

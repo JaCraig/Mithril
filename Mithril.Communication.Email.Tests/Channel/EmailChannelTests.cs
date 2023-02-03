@@ -15,6 +15,7 @@ namespace Mithril.Communication.Email.Tests.Channel
         public EmailChannelTests()
         {
             TestObject = new EmailChannel(null, null, null, null);
+            ObjectType = typeof(EmailChannel);
         }
     }
 }

@@ -36,6 +36,7 @@ namespace Mithril.Communication.Commands
         /// <param name="communicationService">The communication service.</param>
         /// <param name="dataService">The data service.</param>
         /// <param name="mithrilConfig">The mithril configuration.</param>
+        /// <param name="channels">The channels.</param>
         public SendMessageCommandHandler(
             ILogger<SendMessageCommandHandler>? logger,
             IFeatureManager? featureManager,

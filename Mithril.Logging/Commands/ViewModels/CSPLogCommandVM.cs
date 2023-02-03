@@ -6,12 +6,12 @@ using System.Text.Json.Serialization;
 namespace Mithril.Logging.Commands.ViewModels
 {
     /// <summary>
-    /// CSP Log Command VM
+    /// CSP Log Command, used for reporting CSP violations.
     /// </summary>
     public class CSPLogCommandVM
     {
         /// <summary>
-        /// Gets or sets the CSP report.
+        /// The CSP report.
         /// </summary>
         /// <value>The CSP report.</value>
         [JsonPropertyName("csp-report")]
@@ -42,49 +42,49 @@ namespace Mithril.Logging.Commands.ViewModels
     public class CspReport
     {
         /// <summary>
-        /// Gets or sets the blocked URI.
+        /// The blocked URI.
         /// </summary>
         /// <value>The blocked URI.</value>
         [JsonPropertyName("blocked-uri")]
         public string? BlockedUri { get; set; }
 
         /// <summary>
-        /// Gets or sets the document URI.
+        /// The document URI.
         /// </summary>
         /// <value>The document URI.</value>
         [JsonPropertyName("document-uri")]
         public string? DocumentUri { get; set; }
 
         /// <summary>
-        /// Gets or sets the effective directive.
+        /// The effective directive.
         /// </summary>
         /// <value>The effective directive.</value>
         [JsonPropertyName("effective-directive")]
         public string? EffectiveDirective { get; set; }
 
         /// <summary>
-        /// Gets or sets the original policy.
+        /// The original policy.
         /// </summary>
         /// <value>The original policy.</value>
         [JsonPropertyName("original-policy")]
         public string? OriginalPolicy { get; set; }
 
         /// <summary>
-        /// Gets or sets the referrer.
+        /// The referrer.
         /// </summary>
         /// <value>The referrer.</value>
         [JsonPropertyName("referrer")]
         public string? Referrer { get; set; }
 
         /// <summary>
-        /// Gets or sets the status code.
+        /// The status code.
         /// </summary>
         /// <value>The status code.</value>
         [JsonPropertyName("status-code")]
         public int StatusCode { get; set; }
 
         /// <summary>
-        /// Gets or sets the violated directive.
+        /// The violated directive.
         /// </summary>
         /// <value>The violated directive.</value>
         [JsonPropertyName("violated-directive")]

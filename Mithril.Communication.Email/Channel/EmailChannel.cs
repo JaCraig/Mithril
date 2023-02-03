@@ -14,7 +14,7 @@ namespace Mithril.Communication.Email.Channel
     /// <summary>
     /// Email channel for communication
     /// </summary>
-    /// <seealso cref="ChannelBaseClass&lt;EmailMessage&gt;"/>
+    /// <seealso cref="ChannelBaseClass&lt;EmailChannel, EmailMessage&gt;"/>
     public class EmailChannel : ChannelBaseClass<EmailChannel, EmailMessage>
     {
         /// <summary>
@@ -81,6 +81,7 @@ namespace Mithril.Communication.Email.Channel
         /// Gets the body from the template specified in the message.
         /// </summary>
         /// <param name="message">The message.</param>
+        /// <param name="viewRendererService">The view renderer service.</param>
         /// <returns>The body if a template is specified.</returns>
         private static async Task<string> GetBodyFromTemplate(IMessage message, IViewRendererService? viewRendererService)
         {

@@ -3,18 +3,18 @@
 namespace Mithril.Logging.Commands.ViewModels
 {
     /// <summary>
-    /// Log Command VM
+    /// Log Command, used for reporting javascript related logging messages.
     /// </summary>
     public class LogCommandVM
     {
         /// <summary>
-        /// Gets or sets the log level.
+        /// The log level to use for the message.
         /// </summary>
         /// <value>The log level.</value>
         public LogLevel LogLevel { get; set; }
 
         /// <summary>
-        /// Gets or sets the message.
+        /// The message.
         /// </summary>
         /// <value>The message.</value>
         public string? Message { get; set; }

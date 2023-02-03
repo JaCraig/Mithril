@@ -11,7 +11,7 @@ namespace Mithril.Apm.Default.Queries.ViewModels
         /// Initializes a new instance of the <see cref="RequestMetricVM"/> class.
         /// </summary>
         /// <param name="model">The model.</param>
-        public RequestMetricVM(RequestMetric model)
+        public RequestMetricVM(RequestMetric? model)
         {
             if (model is null)
                 return;

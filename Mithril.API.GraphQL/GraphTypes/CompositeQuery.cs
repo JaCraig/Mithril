@@ -40,13 +40,14 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// <typeparam name="TReturnType">The type of the return type.</typeparam>
         /// <typeparam name="TGraphType">The type of the graph type.</typeparam>
         /// <param name="query">The query.</param>
+        [Obsolete]
         private void AddField<TReturnType, TGraphType>(IQuery<TReturnType> query)
             where TReturnType : class
             where TGraphType : class, IGraphType
         {
             Field<TGraphType>(name: query.Name,
                     description: query.Description,
-                    arguments: new QueryArguments(query.Arguments?.ToArray(x => x.CreateArgument()) ?? Array.Empty<QueryArgument>()),
+                    arguments: new QueryArguments(query.Arguments?.ToArray(x => x.CreateArgument()!) ?? Array.Empty<QueryArgument>()),
                     resolve: context =>
                     {
                         var CurrentUser = (context.UserContext as GraphQLUserContextDictionary)?.User;

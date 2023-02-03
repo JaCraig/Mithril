@@ -1,8 +1,8 @@
 ﻿using Inflatable.BaseClasses;
-using Mithril.Data.Inflatable.Databases;
+using Mithril.Data.Abstractions.Databases;
 using Mithril.Data.Models.General;
 
-namespace Mithril.Data.Inflatable.Models.General.Mappings
+namespace Mithril.Data.Abstractions.Models.General.Mappings
 {
     /// <summary>
     /// LookUpType mapping

@@ -12,7 +12,7 @@ namespace Mithril.Apm.Default.Queries.ViewModels
         /// Initializes a new instance of the <see cref="RequestTraceVM"/> class.
         /// </summary>
         /// <param name="model">The model.</param>
-        public RequestTraceVM(RequestTrace model)
+        public RequestTraceVM(RequestTrace? model)
         {
             if (model is null)
                 return;

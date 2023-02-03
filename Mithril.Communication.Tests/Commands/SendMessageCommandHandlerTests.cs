@@ -16,6 +16,7 @@ namespace Mithril.Communication.Tests.Commands
         public SendMessageCommandHandlerTests()
         {
             TestObject = new SendMessageCommandHandler(null, null, null, null, null, Array.Empty<IChannel>());
+            ObjectType = typeof(SendMessageCommandHandler);
         }
     }
 }

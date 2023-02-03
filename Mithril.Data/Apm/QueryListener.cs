@@ -11,6 +11,7 @@ namespace Mithril.Data.Apm
     /// <summary>
     /// Query listener
     /// </summary>
+    /// <seealso cref="IEventListener"/>
     /// <seealso cref="EventListener"/>
     public class QueryListener : EventListener, IEventListener
     {
@@ -18,7 +19,6 @@ namespace Mithril.Data.Apm
         /// Initializes a new instance of the <see cref="QueryListener"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
         public QueryListener(ILogger<QueryListener>? logger)
         {
             Logger = logger;

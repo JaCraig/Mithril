@@ -172,7 +172,7 @@ namespace Mithril.API.GraphQL.GraphTypes
             Field<TReturn>(method.GetName(), nullable: method.ReturnType.IsNullable())
                 .Description(method.GetDescription())
                 .Resolve(Expression.Lambda<Func<IResolveFieldContext<TClass>, TReturn?>>(PropertyGet, ObjectInstance).Compile())
-                .Arguments(method.GetParameters().ToArray(x => x.ToQueryArgument()) ?? Array.Empty<QueryArgument>())
+                .Arguments(method.GetParameters().ToArray(x => x.ToQueryArgument()!) ?? Array.Empty<QueryArgument>())
                 ?.SetSecurity(method)
                 ?.DeprecationReason(method.GetDeprecationReason());
         }
@@ -183,6 +183,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// <typeparam name="TProperty">The type of the property.</typeparam>
         /// <param name="property">The property.</param>
         /// <param name="graphType">Type of the graph.</param>
+        [Obsolete]
         private void AddClassField<TProperty>(PropertyInfo property, IGraphType graphType)
             where TProperty : IGraphType
         {
@@ -210,6 +211,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// <typeparam name="TGraphType">The type of the graph type.</typeparam>
         /// <param name="method">The method.</param>
         /// <param name="graphType">Type of the graph.</param>
+        [Obsolete]
         private void AddMethodClass<TGraphType>(MethodInfo method, IGraphType graphType)
                     where TGraphType : IGraphType
         {
@@ -232,7 +234,7 @@ namespace Mithril.API.GraphQL.GraphTypes
 
             Field<TGraphType>(method.GetName(),
                     method.GetDescription(),
-                    arguments: new QueryArguments(method.GetParameters().ToArray(x => x.ToQueryArgument())),
+                    arguments: new QueryArguments(method.GetParameters().ToArray(x => x.ToQueryArgument()!)),
                     resolve: Expression.Lambda<Func<IResolveFieldContext<TClass>, object?>>(PropertyGet, ObjectInstance).Compile(),
                     deprecationReason: method.GetDeprecationReason())
                 .SetSecurity(method);

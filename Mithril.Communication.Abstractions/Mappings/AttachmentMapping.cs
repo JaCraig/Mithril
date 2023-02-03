@@ -1,5 +1,5 @@
 ﻿using Inflatable.BaseClasses;
-using Mithril.Data.Inflatable.Databases;
+using Mithril.Data.Abstractions.Databases;
 
 namespace Mithril.Communication.Abstractions
 {

@@ -16,12 +16,11 @@ namespace Mithril.Apm.Default.Queries
     /// <summary>
     /// Request trace query
     /// </summary>
-    /// <seealso cref="QueryBaseClass&lt;IEnumerable&lt;RequestTraceVM&gt;&gt;"/>
     [ApiAuthorize("Admin Only")]
     public class RequestTraceQuery : QueryBaseClass<IEnumerable<RequestTraceVM>>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="FeaturesQuery"/> class.
+        /// Initializes a new instance of the <see cref="RequestTraceQuery"/> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="featureManager">The feature manager.</param>
@@ -70,10 +69,11 @@ namespace Mithril.Apm.Default.Queries
         /// <returns></returns>
         public override Task<IEnumerable<RequestTraceVM>?> ResolveAsync(ClaimsPrincipal? arg, Arguments arguments)
         {
+            arguments ??= new Arguments();
             var Start = arguments.GetValue<DateTime>("start");
             var End = arguments.GetValue<DateTime>("end");
 
-            return Task.FromResult<IEnumerable<RequestTraceVM>>(RequestTrace.Query(DataService)?.Where(x => x.DateCreated >= Start && x.DateCreated <= End).ToList().Select(x => new RequestTraceVM(x)));
+            return Task.FromResult(RequestTrace.Query(DataService)?.Where(x => x.DateCreated >= Start && x.DateCreated <= End).ToList().Select(x => new RequestTraceVM(x)));
         }
     }
 }

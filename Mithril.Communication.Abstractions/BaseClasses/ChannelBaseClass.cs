@@ -7,6 +7,7 @@ namespace Mithril.Communication.Abstractions.BaseClasses
     /// <summary>
     /// Communication channel base class
     /// </summary>
+    /// <typeparam name="TChannel">The type of the channel.</typeparam>
     /// <typeparam name="TMessage">The type of the message.</typeparam>
     /// <seealso cref="IChannel"/>
     public abstract class ChannelBaseClass<TChannel, TMessage> : IChannel
@@ -14,8 +15,10 @@ namespace Mithril.Communication.Abstractions.BaseClasses
         where TMessage : IMessage, new()
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChannelBaseClass"/> class.
+        /// Initializes a new instance of the <see cref="ChannelBaseClass{TChannel, TMessage}"/> class.
         /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="featureManager">The feature manager.</param>
         protected ChannelBaseClass(ILogger<TChannel>? logger, IFeatureManager? featureManager)
         {
             Logger = logger;

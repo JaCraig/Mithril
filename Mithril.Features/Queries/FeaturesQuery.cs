@@ -12,7 +12,6 @@ namespace Mithril.Features.Queries
     /// <summary>
     /// Features query
     /// </summary>
-    /// <seealso cref="QueryBaseClass&lt;IEnumerable&lt;FeatureVM&gt;&gt;"/>
     [ApiAuthorize("Admin Only")]
     public class FeaturesQuery : QueryBaseClass<IEnumerable<FeatureVM>>
     {

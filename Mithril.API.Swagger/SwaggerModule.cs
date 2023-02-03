@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Mithril.API.Abstractions.Configuration;
+using Mithril.API.Swagger.SchemaFilters;
 using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -62,6 +63,7 @@ namespace Mithril.API.Swagger
             services?.AddEndpointsApiExplorer();
             services?.AddSwaggerGen(options =>
             {
+                options.SchemaFilter<EnumNameSchemaFilter>();
                 options.SwaggerDoc($"v{EntryAssembly?.GetName().Version}", new OpenApiInfo
                 {
                     Title = SystemConfig?.ApplicationName ?? $"{EntryAssemblyName} API v{EntryAssembly?.GetName().Version}",
