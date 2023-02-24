@@ -3,6 +3,10 @@ using Mithril.Data.Abstractions.Databases;
 
 namespace Mithril.Communication.Email.Models.Mappings
 {
+    /// <summary>
+    /// Email settings mapping
+    /// </summary>
+    /// <seealso cref="MappingBaseClass&lt;EmailSettings, DefaultDatabase&gt;"/>
     public class EmailSettingsMapping : MappingBaseClass<EmailSettings, DefaultDatabase>
     {
         /// <summary>

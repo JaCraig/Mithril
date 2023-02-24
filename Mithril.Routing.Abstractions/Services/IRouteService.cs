@@ -20,6 +20,6 @@ namespace Mithril.Routing.Abstractions.Services
         /// </summary>
         /// <param name="inputPath">The input path.</param>
         /// <returns>The route specified.</returns>
-        IRoute GetRoute(string inputPath);
+        IRoute? GetRoute(string? inputPath);
     }
 }

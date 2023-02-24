@@ -4,6 +4,7 @@ using Mithril.Data.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Security.Abstractions.Interfaces;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace Mithril.Security.Models
 {
@@ -62,15 +63,16 @@ namespace Mithril.Security.Models
         /// </summary>
         /// <param name="displayName">The display name.</param>
         /// <param name="context">The context.</param>
+        /// <param name="user">The user.</param>
         /// <returns>The Tenant specified.</returns>
-        public static async Task<Tenant> LoadOrCreateAsync(string displayName, IDataService? context)
+        public static async Task<Tenant> LoadOrCreateAsync(string displayName, IDataService? context, ClaimsPrincipal? user)
         {
             Tenant? ReturnValue = Load(displayName, context);
             if (ReturnValue is null)
             {
                 ReturnValue = new Tenant(displayName);
                 if (context is not null)
-                    await context.SaveAsync(ReturnValue).ConfigureAwait(false);
+                    await context.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }
@@ -195,13 +197,14 @@ namespace Mithril.Security.Models
         /// <param name="userName">Name of the user.</param>
         /// <param name="firstName">The first name.</param>
         /// <param name="lastName">The last name.</param>
-        /// <param name="context">The context.</param>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="user">The user.</param>
         /// <param name="claims">The claims.</param>
         /// <returns>The user specified.</returns>
-        public async Task<User> LoadOrCreateUserAsync(string userName, string firstName, string lastName, IDataService? context, params IUserClaim[] claims)
+        public async Task<User> LoadOrCreateUserAsync(string userName, string firstName, string lastName, IDataService? dataService, ClaimsPrincipal? user, params IUserClaim[] claims)
         {
             claims ??= Array.Empty<IUserClaim>();
-            var ReturnValue = User.Load(userName, context);
+            var ReturnValue = User.Load(userName, dataService);
             if (ReturnValue is null)
             {
                 ReturnValue = new User(userName, firstName, lastName, this);
@@ -212,8 +215,8 @@ namespace Mithril.Security.Models
                 }
                 Users ??= new List<IUser>();
                 Users.Add(ReturnValue);
-                if (context is not null)
-                    await context.SaveAsync(this).ConfigureAwait(false);
+                if (dataService is not null)
+                    await dataService.SaveAsync(user, this).ConfigureAwait(false);
             }
             return ReturnValue;
         }

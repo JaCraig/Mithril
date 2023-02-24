@@ -61,12 +61,12 @@ namespace Mithril.Apm.Default.Reporter
                 Requests.Add(Trace);
                 if (Requests.Count >= 40)
                 {
-                    AsyncHelper.RunSync(() => DataService.SaveAsync(Requests.ToArray()));
+                    AsyncHelper.RunSync(() => DataService.SaveAsync(null, Requests.ToArray()));
                     Requests.Clear();
                 }
             }
 
-            AsyncHelper.RunSync(() => DataService.SaveAsync(Requests.ToArray()));
+            AsyncHelper.RunSync(() => DataService.SaveAsync(null, Requests.ToArray()));
         }
     }
 }

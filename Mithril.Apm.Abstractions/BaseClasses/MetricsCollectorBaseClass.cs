@@ -11,13 +11,13 @@ namespace Mithril.Apm.Abstractions.BaseClasses
         where TSource : MetricsCollectorBaseClass<TSource>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MetricsSourceBaseClass"/> class.
+        /// Initializes a new instance of the <see cref="MetricsCollectorBaseClass{TSource}"/> class.
         /// </summary>
         protected MetricsCollectorBaseClass()
         { }
 
         /// <summary>
-        /// Finalizes an instance of the <see cref="MetricsSourceBaseClass"/> class.
+        /// Finalizes an instance of the <see cref="MetricsCollectorBaseClass{TSource}"/> class.
         /// </summary>
         ~MetricsCollectorBaseClass()
         {
@@ -46,6 +46,7 @@ namespace Mithril.Apm.Abstractions.BaseClasses
         /// Adds the entry.
         /// </summary>
         /// <param name="traceId">The trace identifier.</param>
+        /// <param name="metaData">The meta data.</param>
         /// <param name="entries">The entries.</param>
         /// <returns>This.</returns>
         public IMetricsCollector AddEntry(string traceId, string metaData, params KeyValuePair<string, decimal>[] entries)

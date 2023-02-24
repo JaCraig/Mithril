@@ -7,7 +7,7 @@ namespace Mithril.Security.Tests.Services
     {
         public SecurityServiceTests()
         {
-            TestObject = new SecurityService(null);
+            TestObject = new SecurityService(null, null);
             ObjectType = typeof(SecurityService);
         }
     }

@@ -101,7 +101,7 @@ namespace Mithril.API.Commands.Services
                     Command.SetupObject(DataService, SecurityService?.LoadSystemAccount());
                 }
                 if (DataService is not null)
-                    await DataService.SaveAsync(Commands).ConfigureAwait(false);
+                    await DataService.SaveAsync(null, Commands).ConfigureAwait(false);
                 Logger?.LogInformation("Processed {Count} commands.", Count);
             }
             Logger?.LogInformation("Finished processing {Count} commands.", Count);
@@ -126,7 +126,7 @@ namespace Mithril.API.Commands.Services
                 var Events = CommandHandler?.HandleCommand(Command);
                 if (Events is null || Events.Length == 0 || DataService is null)
                     return true;
-                await DataService.SaveAsync(Events).ConfigureAwait(false);
+                await DataService.SaveAsync(null, Events).ConfigureAwait(false);
                 return true;
             }
             catch (Exception e)

@@ -1,5 +1,6 @@
 ﻿using Mithril.Data.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
+using System.Security.Claims;
 
 namespace Mithril.Data.Abstractions.BaseClasses
 {
@@ -22,15 +23,16 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// Loads or creates the settings asynchronously.
         /// </summary>
         /// <param name="dataService">The data service.</param>
+        /// <param name="user">The user.</param>
         /// <returns>The settings</returns>
-        public static async Task<TClass> LoadOrCreateAsync(IDataService? dataService)
+        public static async Task<TClass> LoadOrCreateAsync(IDataService? dataService, ClaimsPrincipal? user)
         {
             var ReturnValue = dataService?.Query<TClass>()?.FirstOrDefault();
             if (ReturnValue is null)
             {
                 ReturnValue = new TClass();
                 if (dataService is not null)
-                    await dataService.SaveAsync(ReturnValue).ConfigureAwait(false);
+                    await dataService.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }

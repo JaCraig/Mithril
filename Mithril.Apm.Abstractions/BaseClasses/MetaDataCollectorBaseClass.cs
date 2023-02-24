@@ -11,13 +11,13 @@ namespace Mithril.Apm.Abstractions.BaseClasses
         where TSource : MetaDataCollectorBaseClass<TSource>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TraceDataSourceBaseClass"/> class.
+        /// Initializes a new instance of the <see cref="MetaDataCollectorBaseClass{TSource}"/> class.
         /// </summary>
         protected MetaDataCollectorBaseClass()
         { }
 
         /// <summary>
-        /// Finalizes an instance of the <see cref="TraceDataSourceBaseClass"/> class.
+        /// Finalizes an instance of the <see cref="MetaDataCollectorBaseClass{TSource}"/> class.
         /// </summary>
         ~MetaDataCollectorBaseClass()
         {

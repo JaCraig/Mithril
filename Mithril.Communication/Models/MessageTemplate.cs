@@ -3,6 +3,7 @@ using Mithril.Communication.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.BaseClasses;
 using Mithril.Data.Abstractions.Services;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace Mithril.Communication.Models
 {
@@ -47,10 +48,10 @@ namespace Mithril.Communication.Models
         /// <summary>
         /// Loads the message template based on the name specified.
         /// </summary>
-        /// <param name="dataService">The data service.</param>
         /// <param name="displayName">The display name.</param>
+        /// <param name="dataService">The data service.</param>
         /// <returns>The message template.</returns>
-        public static MessageTemplate? Load(IDataService? dataService, string displayName)
+        public static MessageTemplate? Load(string displayName, IDataService? dataService)
         {
             return Query(dataService)?.Where(x => x.DisplayName == displayName).FirstOrDefault();
         }
@@ -58,17 +59,18 @@ namespace Mithril.Communication.Models
         /// <summary>
         /// Loads a specific message template or creates it.
         /// </summary>
-        /// <param name="dataService">The data service.</param>
         /// <param name="displayName">The display name.</param>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="user">The user.</param>
         /// <returns>The message template specified.</returns>
-        public static async Task<IMessageTemplate> LoadOrCreateAsync(IDataService? dataService, string displayName)
+        public static async Task<IMessageTemplate> LoadOrCreateAsync(string displayName, IDataService? dataService, ClaimsPrincipal? user)
         {
-            var ReturnValue = Load(dataService, displayName);
+            var ReturnValue = Load(displayName, dataService);
             if (ReturnValue is null)
             {
                 ReturnValue = new MessageTemplate(displayName);
                 if (dataService is not null)
-                    await dataService.SaveAsync(ReturnValue).ConfigureAwait(false);
+                    await dataService.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }

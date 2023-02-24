@@ -32,6 +32,7 @@
     <ProjectReference Include="..\Mithril.HealthChecks\Mithril.HealthChecks.csproj" />
     <ProjectReference Include="..\Mithril.Logging.Serilog\Mithril.Logging.Serilog.csproj" />
     <ProjectReference Include="..\Mithril.Mvc\Mithril.Mvc.csproj" />
+    <ProjectReference Include="..\Mithril.Routing\Mithril.Routing.csproj" />
     <ProjectReference Include="..\Mithril.Security.Windows\Mithril.Security.Windows.csproj" />
   </ItemGroup>
 

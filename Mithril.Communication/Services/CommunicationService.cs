@@ -51,10 +51,11 @@ namespace Mithril.Communication.Services
         /// Loads or creates a template asynchronously.
         /// </summary>
         /// <param name="displayName">The display name.</param>
+        /// <param name="user">The user.</param>
         /// <returns>The message template.</returns>
-        public Task<IMessageTemplate> LoadOrCreateTemplateAsync(string displayName)
+        public Task<IMessageTemplate> LoadOrCreateTemplateAsync(string displayName, ClaimsPrincipal? user)
         {
-            return MessageTemplate.LoadOrCreateAsync(DataService, displayName);
+            return MessageTemplate.LoadOrCreateAsync(displayName, DataService, user);
         }
 
         /// <summary>

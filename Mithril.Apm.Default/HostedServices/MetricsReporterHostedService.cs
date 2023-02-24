@@ -128,7 +128,7 @@ namespace Mithril.Apm.Default.HostedServices
                 return;
             Logger?.LogInformation("Cleaning APM metrics");
             var MaxAge = DateTime.UtcNow.AddHours(-(Options?.MaximumAge ?? 1));
-            AsyncHelper.RunSync(() => DataService.DeleteAsync(RequestTrace.Query(DataService)?.Where(x => x.DateCreated <= MaxAge).ToList().ToArray() ?? Array.Empty<RequestTrace>()));
+            AsyncHelper.RunSync(() => DataService.DeleteAsync(null, RequestTrace.Query(DataService)?.Where(x => x.DateCreated <= MaxAge).ToList().ToArray() ?? Array.Empty<RequestTrace>()));
         }
     }
 }

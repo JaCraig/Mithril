@@ -4,6 +4,10 @@ using Mithril.HealthChecks.Abstractions.BaseClasses;
 
 namespace Mithril.HealthChecks.Formatters
 {
+    /// <summary>
+    /// Default text formatter
+    /// </summary>
+    /// <seealso cref="ResponseFormatterBaseClass"/>
     public class DefaultTextFormatter : ResponseFormatterBaseClass
     {
         /// <summary>

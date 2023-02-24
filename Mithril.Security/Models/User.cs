@@ -278,15 +278,16 @@ namespace Mithril.Security.Models
         /// <summary>
         /// Creates the contact info object or updates it asynchronously.
         /// </summary>
-        /// <param name="dataService">The data service.</param>
         /// <param name="type">The display name.</param>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="user">The user.</param>
         /// <param name="value">The value.</param>
         /// <returns>The async task</returns>
-        public async Task CreateOrUpdateContactInfoAsync(IDataService? dataService, ContactInfoType type, params string[] value)
+        public async Task CreateOrUpdateContactInfoAsync(ContactInfoType type, IDataService? dataService, ClaimsPrincipal? user, params string[] value)
         {
             if (dataService is null || type is null)
                 return;
-            ILookUp? ContactType = await LookUp.LoadOrCreateAsync(type, LookUpTypeEnum.ContactInfoType, type.Icon ?? "", dataService).ConfigureAwait(false);
+            ILookUp? ContactType = await LookUp.LoadOrCreateAsync(type, LookUpTypeEnum.ContactInfoType, type.Icon ?? "", dataService, user).ConfigureAwait(false);
             value ??= Array.Empty<string>();
             ContactInfo[]? Contacts = GetContactInfo(type).ToArray();
             var x = 0;

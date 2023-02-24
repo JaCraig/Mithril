@@ -21,7 +21,7 @@ namespace Mithril.Communication.Email.Utils
         public EmailSender(IFeatureManager? featureManager, IDataService? dataService)
         {
             CanSend = featureManager.AreFeaturesEnabled(EmailFeature.Instance);
-            var Settings = AsyncHelper.RunSync(() => EmailSettings.LoadOrCreateAsync(dataService));
+            var Settings = AsyncHelper.RunSync(() => EmailSettings.LoadOrCreateAsync(dataService, null));
             if (Settings is null)
                 return;
             From = Settings.SystemAddress;

@@ -33,7 +33,7 @@ namespace Mithril.Features.Services
         /// <returns>The state of the feature if it is present in the session, otherwise null.</returns>
         public Task<bool?> GetAsync(string featureName)
         {
-            return Task.FromResult(Feature.Load(DataService, featureName)?.Active);
+            return Task.FromResult(Feature.Load(featureName, DataService)?.Active);
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Mithril.Features.Services
         /// <returns>The async task.</returns>
         public Task SetAsync(string featureName, bool enabled)
         {
-            var TempFeature = Feature.Load(DataService, featureName);
+            var TempFeature = Feature.Load(featureName, DataService);
             if (TempFeature is null)
                 return Task.CompletedTask;
             TempFeature.Active = enabled;

@@ -74,15 +74,16 @@ namespace Mithril.Security.Models
         /// <param name="type">The type.</param>
         /// <param name="value">The value.</param>
         /// <param name="context">The context.</param>
+        /// <param name="user">The user.</param>
         /// <returns>The user claim specified.</returns>
-        public static async Task<IUserClaim> LoadOrCreateAsync(UserClaimTypes type, string value, IDataService? context)
+        public static async Task<IUserClaim> LoadOrCreateAsync(UserClaimTypes type, string value, IDataService? context, ClaimsPrincipal? user)
         {
             var ReturnValue = Load(type, value, context);
             if (ReturnValue is null)
             {
                 ReturnValue = new UserClaim(type, value);
                 if (context is not null)
-                    await context.SaveAsync(ReturnValue).ConfigureAwait(false);
+                    await context.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }

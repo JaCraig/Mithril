@@ -1,5 +1,8 @@
 ﻿using Inflatable;
+using Mithril.Data.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
+using Mithril.Security.Abstractions;
+using System.Security.Claims;
 
 namespace Mithril.Data.Services
 {
@@ -13,27 +16,38 @@ namespace Mithril.Data.Services
         /// Initializes a new instance of the <see cref="DataService"/> class.
         /// </summary>
         /// <param name="dbContext">The database context.</param>
-        public DataService(DbContext? dbContext)
+        /// <param name="systemAccounts">The system accounts.</param>
+        public DataService(DbContext? dbContext, SystemAccounts systemAccounts)
         {
             DbContext = dbContext;
+            SystemAccounts = systemAccounts;
         }
 
         /// <summary>
         /// Gets the database context.
         /// </summary>
         /// <value>The database context.</value>
-        public DbContext? DbContext { get; }
+        private DbContext? DbContext { get; }
+
+        /// <summary>
+        /// Gets the system accounts.
+        /// </summary>
+        /// <value>The system accounts.</value>
+        private SystemAccounts SystemAccounts { get; }
 
         /// <summary>
         /// Deletes the objects asynchronously.
         /// </summary>
         /// <typeparam name="TData">The type of the data.</typeparam>
+        /// <param name="user">The user.</param>
         /// <param name="data">The data.</param>
         /// <returns>The number of objects updated.</returns>
-        public Task<int> DeleteAsync<TData>(params TData[] data)
-            where TData : class
+        public Task<int> DeleteAsync<TData>(ClaimsPrincipal? user, params TData[] data)
+            where TData : class, IModel
         {
-            return DbContext?.Delete(data).ExecuteAsync() ?? Task.FromResult(0);
+            if (data is null || data.Length == 0)
+                return Task.FromResult(0);
+            return DbContext?.Delete(data.Where(x => x.CanBeModifiedBy(user ?? SystemAccounts.SystemClaimsPrincipal)).ToArray()).ExecuteAsync() ?? Task.FromResult(0);
         }
 
         /// <summary>
@@ -51,11 +65,20 @@ namespace Mithril.Data.Services
         /// Saves the objects asynchronously.
         /// </summary>
         /// <typeparam name="TData">The type of the data.</typeparam>
+        /// <param name="user">The user.</param>
         /// <param name="data">The data.</param>
         /// <returns>The number of objects updated.</returns>
-        public Task<int> SaveAsync<TData>(params TData[] data)
-            where TData : class
+        public Task<int> SaveAsync<TData>(ClaimsPrincipal? user, params TData[] data)
+            where TData : class, IModel
         {
+            if (data is null || data.Length == 0)
+                return Task.FromResult(0);
+            user ??= SystemAccounts.SystemClaimsPrincipal;
+            data = data.Where(x => x.CanBeModifiedBy(user)).ToArray();
+            for (var x = 0; x < data.Length; x++)
+            {
+                data[x].SetupObject(this, user);
+            }
             return DbContext?.Save(data).ExecuteAsync() ?? Task.FromResult(0);
         }
     }

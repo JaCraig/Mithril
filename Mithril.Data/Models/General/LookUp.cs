@@ -3,6 +3,7 @@ using Mithril.Data.Abstractions.Enums;
 using Mithril.Data.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace Mithril.Data.Models.General
 {
@@ -81,17 +82,18 @@ namespace Mithril.Data.Models.General
         /// <param name="displayName">Display name specified</param>
         /// <param name="type">Lookup type specified</param>
         /// <param name="icon">The icon.</param>
-        /// <param name="context">The context.</param>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="user">The user.</param>
         /// <returns>LookUp associated with the display name</returns>
-        public static async Task<ILookUp> LoadOrCreateAsync(string displayName, LookUpTypeEnum type, string icon, IDataService? context)
+        public static async Task<ILookUp> LoadOrCreateAsync(string displayName, LookUpTypeEnum type, string icon, IDataService? dataService, ClaimsPrincipal? user)
         {
-            var Result = Load(displayName, type, context);
+            var Result = Load(displayName, type, dataService);
             if (Result is null)
             {
-                var TempType = await LookUpType.LoadOrCreateAsync(type, "", context).ConfigureAwait(false);
+                var TempType = await LookUpType.LoadOrCreateAsync(type, "", dataService, user).ConfigureAwait(false);
                 Result = new LookUp(displayName, icon, TempType);
-                if (context is not null)
-                    await context.SaveAsync(Result).ConfigureAwait(false);
+                if (dataService is not null)
+                    await dataService.SaveAsync(user, Result).ConfigureAwait(false);
             }
             return Result;
         }

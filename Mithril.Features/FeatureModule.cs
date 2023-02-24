@@ -58,7 +58,7 @@ namespace Mithril.Features
 
             foreach (var Feature in Modules.SelectMany(x => x.Features).Distinct())
             {
-                var TempFeature = await Models.Feature.LoadOrCreateAsync(dataService, Feature.Name, Feature.Category).ConfigureAwait(false);
+                var TempFeature = await Models.Feature.LoadOrCreateAsync(Feature.Name, Feature.Category, dataService, null).ConfigureAwait(false);
                 TempFeature.Category = Feature.Category;
                 TempFeature.Description = Feature.Description;
                 await TempFeature.SaveAsync(dataService, null).ConfigureAwait(false);

@@ -106,7 +106,7 @@ namespace Mithril.API.Commands.Services
                 if (DataService is not null)
                 {
                     Events.ForEach(x => x.SetupObject(DataService, SecurityService?.LoadSystemAccount()));
-                    await DataService.SaveAsync(Events).ConfigureAwait(false);
+                    await DataService.SaveAsync(null, Events).ConfigureAwait(false);
                 }
                 Logger?.LogInformation("Processed {Count} events.", Count);
             }

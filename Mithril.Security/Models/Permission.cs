@@ -79,8 +79,9 @@ namespace Mithril.Security.Models
         /// <param name="operand">The operand.</param>
         /// <param name="claims">The claims.</param>
         /// <param name="context">The context.</param>
+        /// <param name="user">The user.</param>
         /// <returns>The user claim specified.</returns>
-        public static async Task<IPermission> LoadOrCreateAsync(string displayName, PermissionType operand, IUserClaim[] claims, IDataService? context)
+        public static async Task<IPermission> LoadOrCreateAsync(string displayName, PermissionType operand, IUserClaim[] claims, IDataService? context, ClaimsPrincipal? user)
         {
             var ReturnValue = Load(displayName, context);
             if (ReturnValue is null)
@@ -88,7 +89,7 @@ namespace Mithril.Security.Models
                 claims ??= Array.Empty<IUserClaim>();
                 ReturnValue = new Permission(displayName, operand, claims);
                 if (context is not null)
-                    await context.SaveAsync(ReturnValue).ConfigureAwait(false);
+                    await context.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }

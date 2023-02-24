@@ -77,7 +77,7 @@ namespace Mithril.Data
             var Tasks = new List<Task>();
             foreach (var TempType in lookUps)
             {
-                Tasks.Add(LookUp.LoadOrCreateAsync(TempType, lookUpType, TempType?.Icon ?? "", dataService));
+                Tasks.Add(LookUp.LoadOrCreateAsync(TempType, lookUpType, TempType?.Icon ?? "", dataService, null));
             }
             return Task.WhenAll(Tasks);
         }
@@ -87,16 +87,14 @@ namespace Mithril.Data
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <returns>The async task.</returns>
-        private static Task SetupLookUpTypesAsync(IDataService? dataService)
+        private static async Task SetupLookUpTypesAsync(IDataService? dataService)
         {
             if (dataService is null)
-                return Task.CompletedTask;
-            List<Task> Tasks = new List<Task>();
+                return;
             foreach (var TempType in LookUpTypeEnum.GetLookUpTypes())
             {
-                Tasks.Add(LookUpType.LoadOrCreateAsync(TempType, TempType?.Description ?? "", dataService));
+                await LookUpType.LoadOrCreateAsync(TempType, TempType?.Description ?? "", dataService, null).ConfigureAwait(false);
             }
-            return Task.WhenAll(Tasks);
         }
     }
 }

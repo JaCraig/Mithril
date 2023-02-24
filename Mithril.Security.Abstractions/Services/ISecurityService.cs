@@ -26,7 +26,7 @@ namespace Mithril.Security.Abstractions.Services
         /// Loads the anonymous user account.
         /// </summary>
         /// <returns>The anonymous user account.</returns>
-        IUser LoadAnonymousUserAccount();
+        IUser? LoadAnonymousUserAccount();
 
         /// <summary>
         /// Loads the user claim specified by the identifier.
@@ -84,12 +84,12 @@ namespace Mithril.Security.Abstractions.Services
         /// Loads the system account.
         /// </summary>
         /// <returns>The system account.</returns>
-        IUser LoadSystemAccount();
+        IUser? LoadSystemAccount();
 
         /// <summary>
         /// Loads the system tenant.
         /// </summary>
         /// <returns>The system tenant.</returns>
-        ITenant LoadSystemTenant();
+        ITenant? LoadSystemTenant();
     }
 }

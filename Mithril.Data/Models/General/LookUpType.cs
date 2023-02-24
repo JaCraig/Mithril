@@ -3,6 +3,7 @@ using Mithril.Data.Abstractions.Enums;
 using Mithril.Data.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace Mithril.Data.Models.General
 {
@@ -77,15 +78,16 @@ namespace Mithril.Data.Models.General
         /// <param name="displayName">The display name.</param>
         /// <param name="description">The description.</param>
         /// <param name="dataService">The data service.</param>
+        /// <param name="user">The user.</param>
         /// <returns>The LookUpType</returns>
-        public static async Task<LookUpType> LoadOrCreateAsync(LookUpTypeEnum displayName, string description, IDataService? dataService)
+        public static async Task<LookUpType> LoadOrCreateAsync(LookUpTypeEnum displayName, string description, IDataService? dataService, ClaimsPrincipal? user)
         {
             var Result = Load(displayName, dataService);
             if (Result is null)
             {
                 Result = new LookUpType(displayName, description);
                 if (dataService is not null)
-                    await dataService.SaveAsync(Result).ConfigureAwait(false);
+                    await dataService.SaveAsync(user, Result).ConfigureAwait(false);
             }
             return Result;
         }

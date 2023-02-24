@@ -1,6 +1,7 @@
 ﻿using Mithril.Data.Abstractions.BaseClasses;
 using Mithril.Data.Abstractions.Services;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace Mithril.Features.Models
 {
@@ -66,10 +67,10 @@ namespace Mithril.Features.Models
         /// <summary>
         /// Loads the feature based on the name specified.
         /// </summary>
-        /// <param name="dataService">The data service.</param>
         /// <param name="name">The name.</param>
+        /// <param name="dataService">The data service.</param>
         /// <returns>The feature specified.</returns>
-        public static Feature? Load(IDataService? dataService, string name)
+        public static Feature? Load(string name, IDataService? dataService)
         {
             return Query(dataService)?.Where(x => x.Name == name).FirstOrDefault();
         }
@@ -77,18 +78,19 @@ namespace Mithril.Features.Models
         /// <summary>
         /// Loads a specific feature or creates it.
         /// </summary>
-        /// <param name="dataService">The data service.</param>
         /// <param name="name">The name.</param>
         /// <param name="category">The category.</param>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="user">The user.</param>
         /// <returns>The feature specified.</returns>
-        public static async Task<Feature> LoadOrCreateAsync(IDataService? dataService, string name, string category)
+        public static async Task<Feature> LoadOrCreateAsync(string name, string category, IDataService? dataService, ClaimsPrincipal? user)
         {
-            var ReturnValue = Load(dataService, name);
+            var ReturnValue = Load(name, dataService);
             if (ReturnValue is null)
             {
                 ReturnValue = new Feature(name, category);
                 if (dataService is not null)
-                    await dataService.SaveAsync(ReturnValue).ConfigureAwait(false);
+                    await dataService.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }
@@ -134,13 +136,10 @@ namespace Mithril.Features.Models
         /// <returns>The result of the operator.</returns>
         public static bool operator ==(Feature first, Feature second)
         {
-            if (ReferenceEquals(first, second))
-                return true;
-
-            if (first is null || second is null)
-                return false;
-
-            return first.CompareTo(second) == 0;
+            return ReferenceEquals(first, second)
+                || (first is not null
+                    && second is not null
+                    && first.CompareTo(second) == 0);
         }
 
         /// <summary>

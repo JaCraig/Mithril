@@ -179,7 +179,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <returns>
         /// <c>true</c> if this instance [can be modified by] the specified user; otherwise, <c>false</c>.
         /// </returns>
-        public virtual bool CanBeModifiedBy(ClaimsPrincipal? user) => TenantID == 0 || (user?.HasClaim("Tennant", TenantID.ToString()) ?? true);
+        public virtual bool CanBeModifiedBy(ClaimsPrincipal? user) => TenantID == 0 || (user?.HasClaim("Tenant", TenantID.ToString()) ?? true);
 
         /// <summary>
         /// Determines whether this instance [can be viewed by] the specified user.
@@ -188,7 +188,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <returns>
         /// <c>true</c> if this instance [can be viewed by] the specified user; otherwise, <c>false</c>.
         /// </returns>
-        public virtual bool CanBeViewedBy(ClaimsPrincipal? user) => TenantID == 0 || (user?.HasClaim("Tennant", TenantID.ToString()) ?? true);
+        public virtual bool CanBeViewedBy(ClaimsPrincipal? user) => TenantID == 0 || (user?.HasClaim("Tenant", TenantID.ToString()) ?? true);
 
         /// <summary>
         /// Compares the object to another object
@@ -220,7 +220,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
                 Active = false;
                 return SaveAsync(dataService, currentUser);
             }
-            return dataService.DeleteAsync((TClass)this);
+            return dataService.DeleteAsync(currentUser, (TClass)this);
         }
 
         /// <summary>
@@ -272,7 +272,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="dataService">The data service.</param>
         /// <param name="currentUser">The current user.</param>
         /// <returns>This.</returns>
-        public Task SaveAsync(IDataService? dataService, ClaimsPrincipal? currentUser) => dataService?.SaveAsync(SetupObjectAndReturn(dataService, currentUser)) ?? Task.CompletedTask;
+        public Task SaveAsync(IDataService? dataService, ClaimsPrincipal? currentUser) => dataService?.SaveAsync(currentUser, this) ?? Task.CompletedTask;
 
         /// <summary>
         /// Sets up the object.

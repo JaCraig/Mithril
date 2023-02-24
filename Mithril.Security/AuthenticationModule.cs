@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Data.Abstractions.Services;
+using Mithril.Security.Abstractions;
 using Mithril.Security.Abstractions.Enums;
 using Mithril.Security.Abstractions.Services;
 using Mithril.Security.Services;
@@ -63,7 +64,9 @@ namespace Mithril.Security
             // Add the security services.
             return services?.AddSingleton<ISecurityService, SecurityService>()
                            // Add the claims transformer
-                           .AddScoped<IClaimsTransformation, UserClaimsTransformer>();
+                           .AddScoped<IClaimsTransformation, UserClaimsTransformer>()
+                           // Add the system accounts
+                           .AddSingleton<SystemAccounts>();
         }
 
         /// <summary>
@@ -75,7 +78,7 @@ namespace Mithril.Security
         public override Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)
         {
             if (dataService is null) return Task.CompletedTask;
-            var UserService = new SecurityService(dataService);
+            var UserService = new SecurityService(dataService, services?.GetService<SystemAccounts>());
             UserService.LoadSystemAccount();
             UserService.LoadAnonymousUserAccount();
             return Task.CompletedTask;

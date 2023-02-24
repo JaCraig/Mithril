@@ -43,7 +43,7 @@ namespace Mithril.Communication.Email
         {
             SMTPHealthCheck.DataService = dataService;
             SMTPHealthCheck.FeatureManager = services?.GetService<IFeatureManager>();
-            return EmailSettings.LoadOrCreateAsync(dataService);
+            return EmailSettings.LoadOrCreateAsync(dataService, null);
         }
     }
 }

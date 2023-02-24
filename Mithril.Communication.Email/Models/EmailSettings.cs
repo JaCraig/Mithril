@@ -109,13 +109,10 @@ namespace Mithril.Communication.Email.Models
         /// <returns>The result of the operator.</returns>
         public static bool operator ==(EmailSettings first, EmailSettings second)
         {
-            if (ReferenceEquals(first, second))
-                return true;
-
-            if (first is null || second is null)
-                return false;
-
-            return first.CompareTo(second) == 0;
+            return ReferenceEquals(first, second)
+                || (first is not null
+                    && second is not null
+                    && first.CompareTo(second) == 0);
         }
 
         /// <summary>

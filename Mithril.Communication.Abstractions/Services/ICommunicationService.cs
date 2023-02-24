@@ -19,8 +19,9 @@ namespace Mithril.Communication.Abstractions.Services
         /// Loads or creates a template asynchronously.
         /// </summary>
         /// <param name="displayName">The display name.</param>
+        /// <param name="user">The user.</param>
         /// <returns>The message template.</returns>
-        Task<IMessageTemplate> LoadOrCreateTemplateAsync(string displayName);
+        Task<IMessageTemplate> LoadOrCreateTemplateAsync(string displayName, ClaimsPrincipal? user);
 
         /// <summary>
         /// Sends the message asynchronously.
