@@ -1,5 +1,4 @@
 ﻿using BigBook;
-using GraphQL;
 using GraphQL.Types;
 using Mithril.API.Abstractions.Attributes;
 using System.Dynamic;
@@ -174,7 +173,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         /// </returns>
         public static bool IsClassType(this Type? type)
         {
-            return type?.IsClass == true && type.IsConcrete() && !type.ContainsGenericParameters;
+            return type?.IsClass == true && !type.IsAbstract && !type.IsInterface && !type.ContainsGenericParameters;
         }
 
         /// <summary>

@@ -25,8 +25,10 @@ namespace Mithril.Routing
         /// <returns>Endpoint route builder</returns>
         public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
         {
+            if (endpoints is null || endpoints.ServiceProvider.GetService<RouteTransformer>() is null)
+                return endpoints;
             // Add generic slug endpoint
-            endpoints?.MapDynamicControllerRoute<RouteTransformer>("{**slug}");
+            endpoints.MapDynamicControllerRoute<RouteTransformer>("{**slug}");
             return endpoints;
         }
 

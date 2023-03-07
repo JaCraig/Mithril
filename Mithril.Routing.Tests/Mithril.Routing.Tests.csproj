@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mithril.Mvc.Abstractions\Mithril.Mvc.Abstractions.csproj" />
+    <ProjectReference Include="..\Mithril.Routing\Mithril.Routing.csproj" />
     <ProjectReference Include="..\Mithril.Tests.Helpers\Mithril.Tests.Helpers.csproj" />
   </ItemGroup>
 

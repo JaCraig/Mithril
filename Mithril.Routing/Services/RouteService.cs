@@ -15,7 +15,7 @@ namespace Mithril.Routing.Services
         /// Initializes a new instance of the <see cref="RouteService"/> class.
         /// </summary>
         /// <param name="dataService">The data service.</param>
-        public RouteService(IDataService dataService)
+        public RouteService(IDataService? dataService)
         {
             DataService = dataService;
         }
@@ -24,7 +24,7 @@ namespace Mithril.Routing.Services
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService DataService { get; }
+        private IDataService? DataService { get; }
 
         /// <summary>
         /// Adds the route.

@@ -15,7 +15,7 @@ namespace Mithril.Routing.Transformers
         /// Initializes a new instance of the <see cref="RouteTransformer"/> class.
         /// </summary>
         /// <param name="routeManager">The route manager.</param>
-        public RouteTransformer(IRouteService routeManager)
+        public RouteTransformer(IRouteService? routeManager)
         {
             RouteManager = routeManager;
         }
@@ -24,7 +24,7 @@ namespace Mithril.Routing.Transformers
         /// Gets the route manager.
         /// </summary>
         /// <value>The route manager.</value>
-        public IRouteService RouteManager { get; }
+        public IRouteService? RouteManager { get; }
 
         /// <summary>
         /// Creates a set of transformed route values that will be used to select an action.
@@ -43,7 +43,7 @@ namespace Mithril.Routing.Transformers
                 return new ValueTask<RouteValueDictionary>(values!);
             var RequestPath = httpContext.Request.Path.Value;
 
-            var TempRoute = RouteManager.GetRoute(RequestPath);
+            var TempRoute = RouteManager?.GetRoute(RequestPath);
 
             values["slug"] = null;
 

@@ -119,9 +119,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Abstractions.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Default.Tests", "Mithril.Apm.Default.Tests\Mithril.Apm.Default.Tests.csproj", "{3E56FB7A-E2BF-4F3D-A899-61083F10FEDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Routing.Abstractions", "Mithril.Routing.Abstractions\Mithril.Routing.Abstractions.csproj", "{27A0FB0A-697F-4EF5-BE06-5EC28BAF16F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Routing.Abstractions", "Mithril.Routing.Abstractions\Mithril.Routing.Abstractions.csproj", "{27A0FB0A-697F-4EF5-BE06-5EC28BAF16F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Routing", "Mithril.Routing\Mithril.Routing.csproj", "{17FB975A-E99A-48E3-BCCA-42F6441C75C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Routing", "Mithril.Routing\Mithril.Routing.csproj", "{17FB975A-E99A-48E3-BCCA-42F6441C75C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Routing.Tests", "Mithril.Routing.Tests\Mithril.Routing.Tests.csproj", "{B71A614E-67DF-475B-8097-87D91FBE489D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -345,6 +347,10 @@ Global
 		{17FB975A-E99A-48E3-BCCA-42F6441C75C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17FB975A-E99A-48E3-BCCA-42F6441C75C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17FB975A-E99A-48E3-BCCA-42F6441C75C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B71A614E-67DF-475B-8097-87D91FBE489D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B71A614E-67DF-475B-8097-87D91FBE489D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B71A614E-67DF-475B-8097-87D91FBE489D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B71A614E-67DF-475B-8097-87D91FBE489D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -407,6 +413,7 @@ Global
 		{3E56FB7A-E2BF-4F3D-A899-61083F10FEDC} = {20C64160-C469-46C8-9971-17C2435420AD}
 		{27A0FB0A-697F-4EF5-BE06-5EC28BAF16F3} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
 		{17FB975A-E99A-48E3-BCCA-42F6441C75C6} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
+		{B71A614E-67DF-475B-8097-87D91FBE489D} = {20C64160-C469-46C8-9971-17C2435420AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}

@@ -79,7 +79,7 @@ namespace Mithril.Routing.Models
         /// <param name="dataService">The data service.</param>
         /// <param name="user">The user.</param>
         /// <returns>The route entry.</returns>
-        public static async Task<RouteEntry> LoadOrCreateAsync(string inputPath, string outputPath, IDataService dataService, ClaimsPrincipal? user)
+        public static async Task<RouteEntry> LoadOrCreateAsync(string inputPath, string outputPath, IDataService? dataService, ClaimsPrincipal? user)
         {
             var ReturnValue = Load(inputPath, dataService);
             if (ReturnValue is null)
