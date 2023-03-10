@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+	  <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+	  <Nullable>enable</Nullable>
+	  <StaticWebAssetBasePath>DefaultTheme</StaticWebAssetBasePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj" />
+    <ProjectReference Include="..\Mithril.Themes.Abstractions\Mithril.Themes.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

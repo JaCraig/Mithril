@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_ExampleLayout";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome @ViewBag.UserName</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form method="post">
+        <input type="text" />
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+<script>
+    var headers = new Headers();
+    headers.set("Content-Type", "application/json");
+    fetch('/api/query', {
+        credentials: "include",
+        method: "POST",
+        body: JSON.stringify({
+            query: `query {
+          testVM(name: "A", count: 5) {
+            a {
+              a
+            }
+          }
+        }` }),
+        headers: headers
+    })
+        .then(x => x.json())
+        .then(x => console.log(x))
+        .catch(x => alert(x));
+</script>
