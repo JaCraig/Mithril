@@ -1,4 +1,5 @@
-﻿using Inflatable;
+﻿using BigBook;
+using Inflatable;
 using Mithril.Data.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Security.Abstractions;
@@ -68,18 +69,32 @@ namespace Mithril.Data.Services
         /// <param name="user">The user.</param>
         /// <param name="data">The data.</param>
         /// <returns>The number of objects updated.</returns>
-        public Task<int> SaveAsync<TData>(ClaimsPrincipal? user, params TData[] data)
+        public Task<int> SaveAsync<TData>(ClaimsPrincipal? user, params TData?[] data)
             where TData : class, IModel
         {
             if (data is null || data.Length == 0)
                 return Task.FromResult(0);
             user ??= SystemAccounts.SystemClaimsPrincipal;
-            data = data.Where(x => x.CanBeModifiedBy(user)).ToArray();
-            for (var x = 0; x < data.Length; x++)
+            return DbContext?.Save(FilterData(user, data).ToArray()).ExecuteAsync() ?? Task.FromResult(0);
+        }
+
+        /// <summary>
+        /// Filters the data based on what the user can modify.
+        /// </summary>
+        /// <typeparam name="TData">The type of the data.</typeparam>
+        /// <param name="user">The user.</param>
+        /// <param name="data">The data.</param>
+        /// <returns>The filtered data.</returns>
+        private IEnumerable<TData> FilterData<TData>(ClaimsPrincipal? user, params TData?[] data)
+            where TData : class, IModel
+        {
+            foreach (var Item in data)
             {
-                data[x].SetupObject(this, user);
+                if (Item?.CanBeModifiedBy(user) != true)
+                    continue;
+                Item.SetupObject(this, user);
+                yield return Item;
             }
-            return DbContext?.Save(data).ExecuteAsync() ?? Task.FromResult(0);
         }
     }
 }

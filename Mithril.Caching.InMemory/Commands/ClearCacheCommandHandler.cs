@@ -95,13 +95,13 @@ namespace Mithril.Caching.InMemory.Commands
         /// <param name="value">The value.</param>
         /// <param name="user">The user.</param>
         /// <returns>A command value converted from the view model.</returns>
-        public CommandCreationResult? Create(ClearCacheCommandVM? value, ClaimsPrincipal user)
+        public ValueTask<CommandCreationResult?> CreateAsync(ClearCacheCommandVM? value, ClaimsPrincipal user)
         {
             if (MemoryCache is null)
-                return new CommandCreationResult(null);
+                return ValueTask.FromResult<CommandCreationResult?>(new CommandCreationResult(null));
             Logger?.LogInformation("Clearing cache via command sent by {user}", user.GetName());
             MemoryCache.GetOrAddCache(value?.CacheName ?? "Default")?.Compact(1);
-            return new CommandCreationResult(null);
+            return ValueTask.FromResult<CommandCreationResult?>(new CommandCreationResult(null));
         }
 
         /// <summary>
@@ -109,9 +109,9 @@ namespace Mithril.Caching.InMemory.Commands
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <returns>Any events that are spawned by the command.</returns>
-        public IEvent[] HandleCommand(params ICommand[] arg)
+        public Task<IEvent[]> HandleCommandAsync(params ICommand[] arg)
         {
-            return Array.Empty<IEvent>();
+            return Task.FromResult(Array.Empty<IEvent>());
         }
     }
 }

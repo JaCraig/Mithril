@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DefaultTheme\DefaultTheme.csproj" />
     <ProjectReference Include="..\Mithril.API.Commands\Mithril.API.Commands.csproj" />
     <ProjectReference Include="..\Mithril.API.GraphQL\Mithril.API.GraphQL.csproj" />
     <ProjectReference Include="..\Mithril.API.Swagger\Mithril.API.Swagger.csproj" />
@@ -35,6 +34,7 @@
     <ProjectReference Include="..\Mithril.Mvc\Mithril.Mvc.csproj" />
     <ProjectReference Include="..\Mithril.Routing\Mithril.Routing.csproj" />
     <ProjectReference Include="..\Mithril.Security.Windows\Mithril.Security.Windows.csproj" />
+    <ProjectReference Include="..\Mithril.Theme.Default\Mithril.Theme.Default.csproj" />
     <ProjectReference Include="..\Mithril.Themes\Mithril.Themes.csproj" />
   </ItemGroup>
 

@@ -33,7 +33,7 @@ namespace Mithril.Data.Abstractions.Services
         /// <param name="user">The user.</param>
         /// <param name="data">The data.</param>
         /// <returns>The number of objects updated.</returns>
-        Task<int> SaveAsync<TData>(ClaimsPrincipal? user, params TData[] data)
+        Task<int> SaveAsync<TData>(ClaimsPrincipal? user, params TData?[] data)
             where TData : class, IModel;
     }
 }

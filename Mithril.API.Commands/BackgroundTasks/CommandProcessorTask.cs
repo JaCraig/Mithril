@@ -1,9 +1,9 @@
-﻿using BigBook;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Services;
+using Mithril.Core.Abstractions.BaseClasses;
 
 namespace Mithril.API.Commands.BackgroundTasks
 {
@@ -12,7 +12,7 @@ namespace Mithril.API.Commands.BackgroundTasks
     /// </summary>
     /// <seealso cref="IHostedService"/>
     /// <seealso cref="IDisposable"/>
-    public class CommandProcessorTask : IHostedService, IDisposable
+    public class CommandProcessorTask : HostedServiceBaseClass<CommandProcessorTask>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandProcessorTask"/> class.
@@ -21,17 +21,10 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// <param name="commandService">The command service.</param>
         /// <param name="configuration">The configuration.</param>
         public CommandProcessorTask(ILogger<CommandProcessorTask>? logger, ICommandService? commandService, IOptions<APIOptions>? configuration)
+            : base(logger, configuration?.Value?.CommandRunFrequency ?? 60)
         {
-            Logger = logger;
             CommandService = commandService;
-            CommandRunFrequency = configuration?.Value?.CommandRunFrequency ?? 60;
         }
-
-        /// <summary>
-        /// Gets the command run frequency.
-        /// </summary>
-        /// <value>The command run frequency.</value>
-        private int CommandRunFrequency { get; }
 
         /// <summary>
         /// Gets the command service.
@@ -40,80 +33,12 @@ namespace Mithril.API.Commands.BackgroundTasks
         private ICommandService? CommandService { get; }
 
         /// <summary>
-        /// Gets or sets the internal timer.
-        /// </summary>
-        /// <value>The internal timer.</value>
-        private Timer? InternalTimer { get; set; }
-
-        /// <summary>
-        /// Gets the logger.
-        /// </summary>
-        /// <value>The logger.</value>
-        private ILogger<CommandProcessorTask>? Logger { get; }
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting
-        /// unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        /// <summary>
-        /// Triggered when the application host is ready to start the service.
-        /// </summary>
-        /// <param name="cancellationToken">Indicates that the start process has been aborted.</param>
-        /// <returns></returns>
-        public Task StartAsync(CancellationToken cancellationToken)
-        {
-            if (CommandRunFrequency == 0)
-                return Task.CompletedTask;
-            Logger?.LogInformation("Starting command background service");
-            InternalTimer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(CommandRunFrequency));
-            return Task.CompletedTask;
-        }
-
-        /// <summary>
-        /// Triggered when the application host is performing a graceful shutdown.
-        /// </summary>
-        /// <param name="cancellationToken">
-        /// Indicates that the shutdown process should no longer be graceful.
-        /// </param>
-        /// <returns></returns>
-        public Task StopAsync(CancellationToken cancellationToken)
-        {
-            if (CommandRunFrequency == 0)
-                return Task.CompletedTask;
-            Logger?.LogInformation("Stopping command background service");
-            InternalTimer?.Change(Timeout.Infinite, 0);
-            return Task.CompletedTask;
-        }
-
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources.
-        /// </summary>
-        /// <param name="managed">
-        /// <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release
-        /// only unmanaged resources.
-        /// </param>
-        protected virtual void Dispose(bool managed)
-        {
-            if (managed)
-            {
-                InternalTimer?.Dispose();
-                InternalTimer = null;
-            }
-        }
-
-        /// <summary>
         /// Does the work.
         /// </summary>
-        /// <param name="state">The state.</param>
-        private void DoWork(object? state)
+        /// <returns>Async task.</returns>
+        protected override Task DoWorkAsync()
         {
-            AsyncHelper.RunSync(() => CommandService?.ProcessAsync() ?? Task.CompletedTask);
+            return CommandService?.ProcessAsync() ?? Task.CompletedTask;
         }
     }
 }

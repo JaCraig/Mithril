@@ -24,7 +24,9 @@ namespace Mithril.API.Commands.Endpoint
         /// <returns></returns>
         public static async Task<IResult> RequestDelegate<TViewModel>(IDataService dataService, ILogger logger, ClaimsPrincipal user, ICommandHandler<TViewModel> commandHandler, TViewModel value)
         {
-            var Command = commandHandler?.Create(value, user);
+            if (commandHandler is null)
+                return Results.BadRequest(new ReturnedResult { Result = "Command was not successful." });
+            var Command = await commandHandler.CreateAsync(value, user).ConfigureAwait(false);
             LogCommand(logger, Command);
             if (Command is null || Command.Command is null || Command.ReturnCode == StatusCodes.Status400BadRequest)
             {

@@ -121,9 +121,11 @@ namespace Mithril.API.Commands.Services
         private async Task<bool> HandleCommand(ICommand Command)
         {
             var CommandHandler = CommandHandlers.FirstOrDefault(x => x.CanHandle(Command));
+            if (CommandHandler is null)
+                return true;
             try
             {
-                var Events = CommandHandler?.HandleCommand(Command);
+                var Events = await CommandHandler.HandleCommandAsync(Command).ConfigureAwait(false);
                 if (Events is null || Events.Length == 0 || DataService is null)
                     return true;
                 await DataService.SaveAsync(null, Events).ConfigureAwait(false);

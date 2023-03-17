@@ -58,7 +58,7 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <returns>Any events that are spawned by the command.</returns>
-        IEvent[] HandleCommand(params ICommand[] arg);
+        Task<IEvent[]> HandleCommandAsync(params ICommand[] arg);
     }
 
     /// <summary>
@@ -73,6 +73,6 @@ namespace Mithril.API.Abstractions.Commands.Interfaces
         /// <param name="value">The value.</param>
         /// <param name="user">The user.</param>
         /// <returns>A command value converted from the view model.</returns>
-        CommandCreationResult? Create(TViewModel? value, ClaimsPrincipal user);
+        ValueTask<CommandCreationResult?> CreateAsync(TViewModel? value, ClaimsPrincipal user);
     }
 }

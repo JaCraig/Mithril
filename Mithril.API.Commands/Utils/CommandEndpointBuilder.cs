@@ -74,7 +74,7 @@ namespace Mithril.API.Commands.Utils
             text = text?.Replace("{", "").Replace("}", "").Replace("?", "") ?? "";
             for (var x = 0; x < extraCharactersToRemove.Length; ++x)
             {
-                text.Replace(extraCharactersToRemove[x], "");
+                text = text.Replace(extraCharactersToRemove[x], "");
             }
             return text;
         }
