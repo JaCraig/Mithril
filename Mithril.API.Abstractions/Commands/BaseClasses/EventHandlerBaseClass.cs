@@ -16,8 +16,10 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         where TEvent : IEvent
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventHandlerBaseClass{THandler,TEvent}"/> class.
+        /// Initializes a new instance of the <see cref="EventHandlerBaseClass{THandler,TEvent}" /> class.
         /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="featureManager">The feature manager.</param>
         protected EventHandlerBaseClass(ILogger<THandler>? logger, IFeatureManager? featureManager)
         {
             Logger = logger;

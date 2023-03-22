@@ -62,6 +62,9 @@ namespace Mithril.Themes.Commands
         /// <summary>
         /// Themes available.
         /// </summary>
+        /// <value>
+        /// The themes.
+        /// </value>
         private IDictionary<string, ITheme> Themes { get; }
 
         /// <summary>
