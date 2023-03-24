@@ -36,6 +36,9 @@ namespace Mithril.Themes.LocationExpanders
         public virtual IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context,
                                                                IEnumerable<string> viewLocations)
         {
+            if (context is null)
+                return Array.Empty<string>();
+            viewLocations ??= Array.Empty<string>();
             if (context.ActionContext.ActionDescriptor is PageActionDescriptor page)
             {
                 var pageViewLocations = PageViewLocations().ToList();

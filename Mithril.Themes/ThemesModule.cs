@@ -31,12 +31,16 @@ namespace Mithril.Themes
             //View location expander providers.
             return services?.AddScoped<IViewLocationExpanderProvider, DefaultViewLocationExpanderProvider>()
                             .AddScoped<IViewLocationExpanderProvider, ModuleViewLocationExpanderProvider>()
+
                             //Add theme service and themes
                             .AddAllSingleton<ITheme>()
                            ?.AddSingleton<IThemeService, ThemeService>()
 
                            //Add the view location expanders to the razor engine.
-                           ?.Configure<RazorViewEngineOptions>(options => options.ViewLocationExpanders.Add(new CompositeViewLocationExpanderProvider()));
+                           ?.Configure<RazorViewEngineOptions>(options => options.ViewLocationExpanders.Add(new CompositeViewLocationExpanderProvider()))
+
+                           //Add the resource services
+                           .AddScoped<IResourceService, ResourceService>();
         }
 
         /// <summary>

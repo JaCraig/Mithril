@@ -131,7 +131,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes", "Mithril.T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes.Abstractions", "Mithril.Themes.Abstractions\Mithril.Themes.Abstractions.csproj", "{B9C935DD-12C4-47A9-8451-BC366FAB8B02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Theme.Default", "Mithril.Theme.Default\Mithril.Theme.Default.csproj", "{7B2C72F2-E487-4937-AFB5-8A315B55E034}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Theme.Default", "Mithril.Theme.Default\Mithril.Theme.Default.csproj", "{7B2C72F2-E487-4937-AFB5-8A315B55E034}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Themes.Tests", "Mithril.Themes.Tests\Mithril.Themes.Tests.csproj", "{2F42C949-38D8-4B7A-B5CD-9FAFA59DDB71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Themes.Abstractions.Tests", "Mithril.Themes.Abstractions.Tests\Mithril.Themes.Abstractions.Tests.csproj", "{927C9F2E-E726-49A5-A640-204D8BB18286}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -371,6 +375,14 @@ Global
 		{7B2C72F2-E487-4937-AFB5-8A315B55E034}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B2C72F2-E487-4937-AFB5-8A315B55E034}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B2C72F2-E487-4937-AFB5-8A315B55E034}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F42C949-38D8-4B7A-B5CD-9FAFA59DDB71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F42C949-38D8-4B7A-B5CD-9FAFA59DDB71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F42C949-38D8-4B7A-B5CD-9FAFA59DDB71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F42C949-38D8-4B7A-B5CD-9FAFA59DDB71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{927C9F2E-E726-49A5-A640-204D8BB18286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{927C9F2E-E726-49A5-A640-204D8BB18286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{927C9F2E-E726-49A5-A640-204D8BB18286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{927C9F2E-E726-49A5-A640-204D8BB18286}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -437,6 +449,8 @@ Global
 		{77F5CEAC-F991-4773-809B-3FB53F53D53C} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
 		{B9C935DD-12C4-47A9-8451-BC366FAB8B02} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
 		{7B2C72F2-E487-4937-AFB5-8A315B55E034} = {47D96B65-40DB-4C44-BCF8-050F96EC868F}
+		{2F42C949-38D8-4B7A-B5CD-9FAFA59DDB71} = {20C64160-C469-46C8-9971-17C2435420AD}
+		{927C9F2E-E726-49A5-A640-204D8BB18286} = {2F251ADC-5F62-4892-AD6E-EA191C741A18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}

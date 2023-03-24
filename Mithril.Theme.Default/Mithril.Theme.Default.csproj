@@ -1,9 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+	<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<StaticWebAssetBasePath>DefaultTheme</StaticWebAssetBasePath>
   </PropertyGroup>
 
   <ItemGroup>
