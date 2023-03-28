@@ -133,11 +133,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes.Abstractions
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Theme.Default", "Mithril.Theme.Default\Mithril.Theme.Default.csproj", "{7B2C72F2-E487-4937-AFB5-8A315B55E034}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes.Tests", "Mithril.Themes.Tests\Mithril.Themes.Tests.csproj", "{2F42C949-38D8-4B7A-B5CD-9FAFA59DDB71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Themes.Tests", "Mithril.Themes.Tests\Mithril.Themes.Tests.csproj", "{2F42C949-38D8-4B7A-B5CD-9FAFA59DDB71}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes.Abstractions.Tests", "Mithril.Themes.Abstractions.Tests\Mithril.Themes.Abstractions.Tests.csproj", "{927C9F2E-E726-49A5-A640-204D8BB18286}"
-EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Mithril.Web.Common", "Mithril.Web.Common\Mithril.Web.Common.njsproj", "{09F68843-805E-4B2B-86E7-551479F6BFBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Themes.Abstractions.Tests", "Mithril.Themes.Abstractions.Tests\Mithril.Themes.Abstractions.Tests.csproj", "{927C9F2E-E726-49A5-A640-204D8BB18286}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -385,10 +383,6 @@ Global
 		{927C9F2E-E726-49A5-A640-204D8BB18286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{927C9F2E-E726-49A5-A640-204D8BB18286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{927C9F2E-E726-49A5-A640-204D8BB18286}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09F68843-805E-4B2B-86E7-551479F6BFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09F68843-805E-4B2B-86E7-551479F6BFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09F68843-805E-4B2B-86E7-551479F6BFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09F68843-805E-4B2B-86E7-551479F6BFBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -457,7 +451,6 @@ Global
 		{7B2C72F2-E487-4937-AFB5-8A315B55E034} = {47D96B65-40DB-4C44-BCF8-050F96EC868F}
 		{2F42C949-38D8-4B7A-B5CD-9FAFA59DDB71} = {20C64160-C469-46C8-9971-17C2435420AD}
 		{927C9F2E-E726-49A5-A640-204D8BB18286} = {2F251ADC-5F62-4892-AD6E-EA191C741A18}
-		{09F68843-805E-4B2B-86E7-551479F6BFBA} = {E11DBDB8-9874-4DA1-86A7-7DEE0544A00B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}
