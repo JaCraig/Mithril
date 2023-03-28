@@ -17,15 +17,15 @@ const isProduction = !process.env.ROLLUP_WATCH;
 const globals = { vue: 'Vue', moment: 'moment' };
 
 var LessExports = [
-    { directory: 'Mithril.Theme.Default', file: 'default' }
+    { directory: '../Mithril.Theme.Default', file: 'default' }
 ];
 
 var TypeScriptExports = [
-	{ directory: 'Mithril.Theme.Default', input: 'default.ts', name:'defaultTheme', output:'site.umd.min.js'  }
+	{ directory: '../Mithril.Theme.Default', input: 'default.ts', name:'defaultTheme', output:'site.umd.min.js'  }
 ];
 
 var JavaScriptExports = [
-	{ directory: 'Mithril.Theme.Default', input: 'vendor.js', name:'defaultTheme', output:'Vendor.min.js'  }
+	{ directory: '../Mithril.Theme.Default', input: 'vendor.js', name:'defaultTheme', output:'Vendor.min.js'  }
 ];
 
 var DefaultExport = [];
