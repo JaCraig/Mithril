@@ -1,5 +1,8 @@
 ﻿namespace Mithril.Mvc.Abstractions.Enums
 {
+    /// <summary>
+    /// Orientation
+    /// </summary>
     public enum Orientation
     {
         /// <summary>

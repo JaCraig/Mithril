@@ -143,12 +143,12 @@ namespace Mithril.Themes.Resources
         public override int GetHashCode()
         {
             var hashCode = -2081355158;
-            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Charset);
-            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Content);
-            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(HttpEquiv);
-            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Name);
-            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Property);
-            return (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Scheme);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Charset ?? "");
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Content ?? "");
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(HttpEquiv ?? "");
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Name ?? "");
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Property ?? "");
+            return (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Scheme ?? "");
         }
 
         /// <summary>

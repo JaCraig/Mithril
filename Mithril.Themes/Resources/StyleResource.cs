@@ -137,7 +137,7 @@ namespace Mithril.Themes.Resources
         /// <param name="builder">The builder.</param>
         /// <param name="key">The key.</param>
         /// <param name="value">The value.</param>
-        private static void MergeAttribute(TagBuilder builder, string key, string value)
+        private static void MergeAttribute(TagBuilder builder, string key, string? value)
         {
             if (!string.IsNullOrEmpty(value))
                 builder.MergeAttribute(key, value);
