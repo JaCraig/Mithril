@@ -54,9 +54,12 @@
             &copy; 2022 - Mithril - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="/DefaultTheme/lib/jquery/dist/jquery.min.js"></script>
-    <script src="/DefaultTheme/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/DefaultTheme/js/Vendor.min.js"></script>
     <script src="/DefaultTheme/js/site.umd.min.js"></script>
+    <script>
+        let Mithril = new mithril.Mithril();
+        console.log("A");
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
     @ResourceHolder?.Render(ResourceType.JavaScript)
 </body>

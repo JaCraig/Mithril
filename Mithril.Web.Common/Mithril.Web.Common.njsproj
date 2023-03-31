@@ -19,6 +19,70 @@
   <ItemGroup>
     <Content Include="package.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="build\" />
+    <Folder Include="build\ts\" />
+    <Folder Include="build\ts\Component\VueExtensions\" />
+    <Folder Include="build\ts\Framework\" />
+    <Folder Include="build\ts\Framework\AJAX\" />
+    <Folder Include="build\ts\Framework\Database\" />
+    <Folder Include="build\ts\Framework\Browser\" />
+    <Folder Include="build\ts\Framework\Extensions\" />
+    <Folder Include="build\ts\Framework\History\" />
+    <Folder Include="build\ts\Framework\Hotkey\" />
+    <Folder Include="build\ts\Framework\Hotkey\Interfaces\" />
+    <Folder Include="build\ts\Framework\Interfaces\" />
+    <Folder Include="build\ts\Framework\IO\" />
+    <Folder Include="build\ts\Framework\Logging\" />
+    <Folder Include="build\ts\Framework\Router\" />
+    <Folder Include="build\ts\Framework\Router\DataTypes\" />
+    <Folder Include="build\ts\Framework\Router\Interfaces\" />
+    <Folder Include="build\ts\Framework\Utils\" />
+    <Folder Include="build\ts\Framework\WebStorage\" />
+    <Folder Include="build\ts\Framework\Validation\" />
+    <Folder Include="build\ts\Framework\Types\" />
+    <Folder Include="build\ts\Framework\WebStorage\Interfaces\" />
+    <Folder Include="build\ts\Component\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueDirectives.ts" />
+    <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueFilters.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\AJAX\Request.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Browser\BrowserUtils.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Database\Database.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Extensions\HTMLElement.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Extensions\NodeList.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Extensions\ObjectConstructor.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Extensions\String.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Framework.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\History\PageHistory.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Hotkey\Globals.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Hotkey\Hotkeys.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Hotkey\Interfaces\IHotkeys.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Hotkey\Keypress.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Hotkey\Scope.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Hotkey\Sequence.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Interfaces\IHotkeyConfiguration.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Interfaces\IRouteConfiguration.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\IO\Downloader.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Logging\ErrorLogging.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Logging\Signature.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Router\DataTypes\RouteData.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Router\HashPart.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Router\Interfaces\IRouter.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Router\PathPart.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Router\QueryPart.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Router\Route.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Router\Router.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Types\NumberDictionary.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Types\StringDictionary.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Utils\SortFuncs.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Validation\FormValidation.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\WebStorage\Interfaces\IStorage.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\WebStorage\LocalStorage.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\WebStorage\SessionStorage.ts" />
+    <TypeScriptCompile Include="build\ts\Mithril.ts" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

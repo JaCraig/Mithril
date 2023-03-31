@@ -15,11 +15,11 @@
     },
   
     "include": [
-      "build/ts/**/*.ts",
-      "build/ts/**/*.vue"
+      "Mithril.Web.Common/build/ts/**/*.ts",
+      "Mithril.Web.Common/build/ts/**/*.vue",
     ],
     "files": [
-      "build/vue-shims.d.ts"
+      "Mithril.Web.Common/build/vue-shims.d.ts"
     ],
     "exclude": [
       "node_modules"

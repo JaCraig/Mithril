@@ -1,7 +1,11 @@
-﻿class ThemeStartup {
+﻿import { BrowserUtils, DatabaseConnection, Mithril, Request, StorageMode, Downloader } from "../../../Mithril.Web.Common/build/ts/Mithril"
+
+class ThemeStartup {
     constructor() {
-        console.log("A");
+        this.Core = new Mithril();
     }
+
+    private Core: Mithril;
 }
 
 export default (() => {
