@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Themes.Abstractions.Interfaces;
@@ -50,6 +51,8 @@ namespace Mithril.Themes
         /// <param name="services">The services for the application.</param>
         public override async Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)
         {
+            if (!services.Exists<ITheme>())
+                return;
             var AvailableThemes = services?.GetServices<ITheme>() ?? Array.Empty<ITheme>();
             var ExistingThemes = Theme.All(dataService);
 

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.FeatureManagement;
+using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Core.Abstractions.Modules.Interfaces;
 using Mithril.Data.Abstractions.Services;
@@ -50,7 +51,7 @@ namespace Mithril.Features
         /// <param name="services">The services for the application.</param>
         public override async Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)
         {
-            if (services?.GetService<IModule>() is null)
+            if (!services.Exists<IModule>())
                 return;
             var Modules = services?.GetServices<IModule>();
             if (Modules is null)

@@ -1,0 +1,77 @@
+﻿@import (reference) 'styles.less';
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+    & thead tr th {
+        padding: .750em 1.063em;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    & tbody tr td,
+    & tfoot tr td {
+        padding: .438em 1.063em;
+    }
+
+    &.no-break {
+        & tbody tr td,
+        & thead tr th,
+        & tfoot tr td {
+            white-space: nowrap;
+        }
+    }
+
+    &.sortable {
+        & thead tr th {
+            cursor: pointer;
+
+            &:before {
+                content: '\21C5';
+                float: right;
+            }
+        }
+
+        & thead tr th.headerSortUp:before {
+            content: '\25B2';
+        }
+
+        & thead tr th.headerSortDown:before {
+            content: '\25BC';
+        }
+    }
+
+    &.condensed thead tr th,
+    &.condensed tbody tr td,
+    &.condensed tfoot tr td {
+        padding: .125em 1.063em;
+    }
+
+    &.vertical thead tr th:first-child,
+    &.vertical tbody tr td:first-child,
+    &.vertical tfoot tr td:first-child {
+        border-left: none;
+    }
+
+    &.vertical thead tr th:last-child,
+    &.vertical tbody tr td:last-child,
+    &.vertical tfoot tr td:last-child {
+        border-right: none;
+    }
+
+    & caption {
+        padding: .5em 0;
+        text-align: left;
+    }
+
+    & .grid-group-header,
+    & .grid-group-footer {
+        font-weight: bold;
+    }
+
+    &.no-border tr:first-child, &.no-border tfoot tr:first-child &.no-border tr, &.no-border td {
+        border: 0;
+    }
+}

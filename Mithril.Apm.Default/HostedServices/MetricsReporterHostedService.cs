@@ -51,21 +51,32 @@ namespace Mithril.Apm.Default.HostedServices
         private APMOptions? Options { get; }
 
         /// <summary>
+        /// The lock object
+        /// </summary>
+        private SemaphoreSlim LockObject = new SemaphoreSlim(1, 1);
+
+        /// <summary>
         /// Does the work
         /// </summary>
         /// <returns>Async task.</returns>
-        protected override Task DoWorkAsync()
+        protected override async Task DoWorkAsync()
         {
             if (MetricsCollectorService is null)
-                return Task.CompletedTask;
+                return;
             Logger?.LogInformation("Reporting APM metrics");
             MetricsCollectorService.BatchCollectedMetrics();
 
             if (DataService is null)
-                return Task.CompletedTask;
-            Logger?.LogInformation("Cleaning APM metrics");
-            var MaxAge = DateTime.UtcNow.AddHours(-(Options?.MaximumAge ?? 1));
-            return DataService.DeleteAsync(null, RequestTrace.Query(DataService)?.Where(x => x.DateCreated <= MaxAge).ToList().ToArray() ?? Array.Empty<RequestTrace>());
+                return;
+            await LockObject.WaitAsync();
+            try
+            {
+                Logger?.LogInformation("Cleaning APM metrics");
+                var MaxAge = DateTime.UtcNow.AddHours(-(Options?.MaximumAge ?? 1));
+                var OldTraces = RequestTrace.Query(DataService)?.Where(x => x.DateCreated <= MaxAge).ToList().ToArray() ?? Array.Empty<RequestTrace>();
+                await DataService.DeleteAsync(null, OldTraces).ConfigureAwait(false);
+            }
+            finally { LockObject.Release(); }
         }
     }
 }

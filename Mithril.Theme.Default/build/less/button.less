@@ -1,0 +1,20 @@
+﻿@import (reference) 'styles.less';
+
+button, input[type='button'], input[type='submit'], input[type='reset'] {
+    outline: none;
+    margin: .625em .125em;
+    padding: .313em;
+    min-width: 4.688em;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    user-select: none;
+    font-size: 1em;
+
+    &:disabled {
+        background-image: none;
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+        .opacity(.7);
+        cursor: not-allowed;
+    }
+}

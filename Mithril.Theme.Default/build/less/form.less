@@ -1,0 +1,230 @@
+﻿@import (reference) 'styles.less';
+
+input[type='text'], input[type='password'], input[type='email'], input[type='url'], input[type='date'], input[type='month'], input[type='time'], input[type='datetime'], input[type='datetime-local'], input[type='week'], input[type='number'], input[type='search'], input[type='tel'], input[type='color'], input[type='file'], input[list], select, textarea {
+    display: inline-block;
+    .depth-minus-1;
+    margin: .625em .125em;
+    padding: .3em;
+    cursor: text;
+    height: 2.25em;
+}
+
+input[type='file'] {
+    height: 2.45em;
+    cursor: default;
+}
+
+input[type='range'] {
+    min-height: 2em;
+}
+
+textarea, select[multiple], input[type='range'] {
+    vertical-align: middle;
+}
+
+input[type='color'], select, input[list] {
+    cursor: default;
+}
+
+input:not([type])[disabled], input[disabled], select[disabled], textarea[disabled], fieldset:disabled input, fieldset:disabled select, fieldset:disabled textarea {
+    cursor: not-allowed;
+}
+
+.file-upload {
+    padding: 2em 0;
+    text-align: center;
+    position: relative;
+    margin: .625em .125em;
+
+    & input {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+}
+
+.upload-preview {
+    margin: .625em .5em .625em 0;
+    max-width: 200px;
+    overflow: hidden;
+
+    & .body {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    & .header {
+        float: right;
+        font-size: 1.5em;
+        font-weight: @defaultFontWeightBold;
+        line-height: .75em;
+        .opacity(.5);
+        cursor: pointer;
+
+        &:hover {
+            .opacity(.8);
+        }
+    }
+}
+
+.form-table {
+    margin: .625em .125em;
+
+    & tbody tr td:last-child {
+        width: 1em;
+
+        & a {
+            cursor: pointer;
+            display: inline-block;
+            width: 100%;
+        }
+    }
+
+    & tfoot tr:first-child {
+        border-top: 0;
+
+        & td {
+            padding: 0;
+            border-top: 0;
+
+            & a {
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+                cursor: pointer;
+                padding: .5em;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+textarea {
+    height: auto;
+}
+
+select[multiple] {
+    height: auto;
+    padding-top: .625em;
+}
+
+fieldset {
+    margin: 0;
+    padding: .35em 0 .75em;
+    border: 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    padding: .3em 0;
+    margin-bottom: .3em;
+}
+
+form.stacked {
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+        flex: 1 1 auto;
+        display: inline-block;
+    }
+
+    & input[type='text'], & input[type='password'], & input[type='email'], & input[type='url'], & input[type='date'], & input[type='month'], & input[type='time'], & input[type='datetime'], & input[type='datetime-local'], & input[type='week'], & input[type='number'], & input[type='search'], & input[type='tel'], & input[type='color'], & input[type='file'], & input[type='range'], & select, & label, & textarea {
+        display: inline-block;
+        margin: 0 0 .625em 0;
+    }
+
+    & label {
+        margin: 0;
+    }
+
+    & input:not([type]) {
+        display: block;
+    }
+
+    & input, & textarea, & select {
+        width: 100%;
+    }
+
+    & input[type='checkbox'], & input[type='radio'], input[type='checkbox'], input[type='radio'] {
+        margin: .5em .5em;
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
+}
+
+form.aligned {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    & > * {
+        flex: 1 1 40%;
+        width: 40%;
+        display: block;
+    }
+
+    & > .controls {
+        margin-left: 50%;
+    }
+
+    & > textarea {
+        vertical-align: top;
+    }
+
+    & input[type='range'] {
+        margin-top: .75em;
+    }
+
+    & input[type='radio'], & input[type='checkbox'] {
+        margin: 1em 1em;
+
+        &:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+    }
+
+    & > label {
+        padding-top: 1em;
+        text-align: right;
+        padding-right: 1em;
+    }
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: nowrap;
+
+    & > input[type='text'], & > input[type='text'], & > input[type='password'], & > input[type='email'], & > input[type='url'], & > input[type='date'], & > input[type='month'], & > input[type='time'], & > input[type='datetime'], & > input[type='datetime-local'], & > input[type='week'], & > input[type='number'], & > input[type='search'], & > input[type='tel'], & > input[type='color'], & > input[type='file'], & > button, & > input[type='button'], & > input[type='reset'], & > input[type='submit'] {
+        flex: 1 1 auto;
+        margin: .625em 0;
+        border-radius: 0;
+        vertical-align: middle;
+    }
+
+    & > input[type='text']:first-child, & > input[type='text']:first-child, & > input[type='password']:first-child, & > input[type='email']:first-child, & > input[type='url']:first-child, & > input[type='date']:first-child, & > input[type='month']:first-child, & > input[type='time']:first-child, & > input[type='datetime']:first-child, & > input[type='datetime-local']:first-child, & > input[type='week']:first-child, & > input[type='number']:first-child, & > input[type='search']:first-child, & > input[type='tel']:first-child, & > input[type='color']:first-child, & > input[type='file']:first-child, & > button:first-child, & > input[type='button']:first-child, & > input[type='reset']:first-child, & > input[type='submit']:first-child {
+        border-bottom-left-radius: @roundedCorner;
+        border-top-left-radius: @roundedCorner;
+    }
+
+    & > input[type='text']:last-child, & > input[type='text']:last-child, & > input[type='password']:last-child, & > input[type='email']:last-child, & > input[type='url']:last-child, & > input[type='date']:last-child, & > input[type='month']:last-child, & > input[type='time']:last-child, & > input[type='datetime']:last-child, & > input[type='datetime-local']:last-child, & > input[type='week']:last-child, & > input[type='number']:last-child, & > input[type='search']:last-child, & > input[type='tel']:last-child, & > input[type='color']:last-child, & > input[type='file']:last-child, & > button:last-child, & > input[type='button']:last-child, & > input[type='reset']:last-child, & > input[type='submit']:last-child {
+        border-bottom-right-radius: @roundedCorner;
+        border-top-right-radius: @roundedCorner;
+    }
+}

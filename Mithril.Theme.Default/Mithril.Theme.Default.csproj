@@ -12,4 +12,8 @@
     <ProjectReference Include="..\Mithril.Themes.Abstractions\Mithril.Themes.Abstractions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="build\js\" />
+  </ItemGroup>
+
 </Project>

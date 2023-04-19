@@ -74,12 +74,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Mithril.Controllers.HomeController.Theme">
-            <summary>
-            Themes this instance.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:Mithril.Models.ErrorViewModel">
             <summary>
             ERROR view model

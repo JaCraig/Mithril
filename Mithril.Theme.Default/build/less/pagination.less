@@ -1,0 +1,98 @@
+﻿@import (reference) 'styles.less';
+
+ul.paged > li,
+ul.chevron > li,
+ul.dotted > li {
+    list-style: none;
+
+    & > a {
+        float: left;
+        padding: .45em .9em;
+    }
+
+    &:last-child:after {
+        content: '\0020';
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+ul.paged {
+    display: flex;
+    flex: 0 1 auto;
+    padding-left: 0;
+    margin: 0;
+
+    & > li {
+        flex-grow: 1;
+
+        & > a {
+            width: 100%;
+            border: 0;
+            text-align: center;
+        }
+
+        & > a:focus,
+        & > a:hover {
+            text-decoration: none;
+        }
+
+        &.disabled {
+            &,
+            & > a,
+            & > a:focus,
+            & > a:hover {
+                cursor: not-allowed;
+            }
+        }
+
+        &.active {
+            &,
+            & > a,
+            & > a:focus,
+            & > a:hover {
+                cursor: default;
+            }
+        }
+
+        &:last-child > a {
+            border-top-right-radius: @roundedCorner;
+            border-bottom-right-radius: @roundedCorner;
+        }
+
+        &:first-child > a {
+            margin-left: 0;
+            border-top-left-radius: @roundedCorner;
+            border-bottom-left-radius: @roundedCorner;
+        }
+    }
+}
+
+ul.chevron > li {
+    &:first-child > a,
+    &:last-child > a {
+        border-radius: @circularCorners;
+        .opacity(.6);
+        padding: .5em 1em;
+    }
+
+    &:first-child > a:hover,
+    &:last-child > a:hover,
+    &:first-child > a:focus,
+    &:last-child > a:focus {
+        .opacity(.8);
+        text-decoration: none;
+    }
+}
+
+ul.dotted > li {
+    & > a {
+        padding: 0;
+        border-radius: @circularCorners;
+        margin-right: .6em;
+        height: 1em;
+        width: 1em;
+    }
+}

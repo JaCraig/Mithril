@@ -1,0 +1,273 @@
+﻿@import (reference) 'styles.less';
+
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.flex {
+    display: flex;
+    flex: 1 1 0px;
+
+    &.column {
+        flex-direction: column;
+    }
+
+    &.column-reverse {
+        flex-direction: column-reverse;
+    }
+
+    &.row {
+        flex-direction: row;
+    }
+
+    &.row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    & .align-self-start {
+        align-self: flex-start;
+    }
+
+    & .align-self-end {
+        align-self: flex-end;
+    }
+
+    & .align-self-baseline {
+        align-self: baseline;
+    }
+
+    & .align-self-center {
+        align-self: center;
+    }
+
+    & .align-self-stretch {
+        align-self: stretch;
+    }
+
+    & .columns {
+        &.zero {
+            flex-grow: 0;
+        }
+
+        &.one {
+            flex-grow: 1;
+        }
+
+        &.two {
+            flex-grow: 2;
+        }
+
+        &.three {
+            flex-grow: 3;
+        }
+
+        &.four {
+            flex-grow: 4;
+        }
+
+        &.five {
+            flex-grow: 5;
+        }
+
+        &.six {
+            flex-grow: 6;
+        }
+
+        &.seven {
+            flex-grow: 7;
+        }
+
+        &.eight {
+            flex-grow: 8;
+        }
+
+        &.nine {
+            flex-grow: 9;
+        }
+
+        &.ten {
+            flex-grow: 10;
+        }
+
+        &.eleven {
+            flex-grow: 11;
+        }
+
+        &.twelve {
+            flex-grow: 12;
+        }
+
+        &.thirteen {
+            flex-grow: 13;
+        }
+
+        &.fourteen {
+            flex-grow: 14;
+        }
+
+        &.fifteen {
+            flex-grow: 15;
+        }
+
+        &.sixteen {
+            flex-grow: 16;
+        }
+
+        &.seventeen {
+            flex-grow: 17;
+        }
+
+        &.eighteen {
+            flex-grow: 18;
+        }
+
+        &.nineteen {
+            flex-grow: 19;
+        }
+
+        &.twenty {
+            flex-grow: 20;
+        }
+    }
+
+    &.row, &.row-reverse {
+        & > * {
+            flex: 1 1 0px;
+        }
+    }
+
+    &.column, &.row, &.row-reverse, &.column-reverse {
+        &.wrap {
+            flex-wrap: wrap;
+        }
+
+        &.no-wrap {
+            flex-wrap: nowrap;
+        }
+
+        &.justify-start {
+            justify-content: flex-start;
+        }
+
+        &.justify-end {
+            justify-content: flex-end;
+        }
+
+        &.justify-center {
+            justify-content: center;
+        }
+
+        &.justify-space-between {
+            justify-content: space-between;
+        }
+
+        &.justify-space-around {
+            justify-content: space-around;
+        }
+
+        &.align-items-start {
+            align-items: flex-start;
+        }
+
+        &.align-items-end {
+            align-items: flex-end;
+        }
+
+        &.align-items-center {
+            align-items: center;
+        }
+
+        &.align-items-baseline {
+            align-items: baseline;
+        }
+
+        &.align-items-stretch {
+            align-items: stretch;
+        }
+
+        &.align-content-start {
+            align-content: flex-start;
+        }
+
+        &.align-content-end {
+            align-content: flex-end;
+        }
+
+        &.align-content-center {
+            align-content: center;
+        }
+
+        &.align-content-space-between {
+            align-content: space-between;
+        }
+
+        &.align-content-space-around {
+            align-content: space-around;
+        }
+
+        &.align-content-stretch {
+            align-content: stretch;
+        }
+
+        &::before, &::after {
+            content: '\0020';
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+    }
+}
+
+.display-on-desktop {
+    display: block !important;
+}
+
+.hidden-on-desktop {
+    display: none !important;
+}
+
+@media only screen and (max-width: @tabletLandscape) {
+    .display-on-tablet-landscape {
+        display: block !important;
+    }
+
+    .hidden-on-tablet-landscape {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: @tabletPortrait) {
+    .display-on-tablet-portrait {
+        display: block !important;
+    }
+
+    .hidden-on-tablet-portrait {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: @mobileLandscape) {
+    .display-on-mobile-landscape {
+        display: block !important;
+    }
+
+    .hidden-on-mobile-landscape {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: @mobilePortrait) {
+    .display-on-mobile-portrait {
+        display: block !important;
+    }
+
+    .hidden-on-mobile-portrait {
+        display: none !important;
+    }
+}

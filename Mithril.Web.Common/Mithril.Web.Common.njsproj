@@ -17,6 +17,9 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include="build\dummy.js" />
+    <Content Include="build\rollup-plugin-copy.mjs" />
+    <Content Include="build\ts\Component\DataHandler.vue" />
     <Content Include="package.json" />
   </ItemGroup>
   <ItemGroup>

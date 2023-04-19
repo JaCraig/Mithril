@@ -11,6 +11,7 @@ import multi from '@rollup/plugin-multi-entry';
 import alias from '@rollup/plugin-alias';
 import concat from './Mithril.Web.Common/build/rollup-plugin-concat.mjs';
 import replace from '@rollup/plugin-replace';
+import copy from "./Mithril.Web.Common/build/rollup-plugin-copy.mjs";
 
 const external = Object.keys(pkg.dependencies);
 const isProduction = !process.env.ROLLUP_WATCH;
@@ -24,8 +25,12 @@ var TypeScriptExports = [
 	{ directory: 'Mithril.Theme.Default', input: 'default.ts', name:'defaultTheme', output:'site.umd.min.js'  }
 ];
 
+var fileExports = [
+	{ source:'../../node_modules/@fortawesome/fontawesome-free/webfonts', destination:"../../Mithril.Theme.Default/wwwroot/css/webfonts" }
+];
+
 var JavaScriptExports = [
-	{ directory: 'Mithril.Theme.Default', input: 'vendor.js', name:'defaultTheme', output:'Vendor.min.js'  }
+
 ];
 
 var DefaultExport = [];
@@ -47,7 +52,7 @@ for (let x = 0; x < TypeScriptExports.length; ++x)
 	DefaultExport.push({
 		input: val.directory + '/build/ts/' + val.input,
 		external: external,
-		output: [{ name: val.name, file: output, format: 'umd', globals: globals, sourcemap: true , plugins: [terser()], strict: false}],
+		output: [{ name: val.name, file: output, format: "umd", globals: globals, sourcemap: true , plugins: [terser()], strict: false}],
 		plugins: [VuePlugin(),resolve(),typescript(),commonjs(),multi(),alias({ entries: [{ find: 'vue', replacement: 'vue/dist/vue.js' }]}),replace({'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'), preventAssignment: false})]
 	});
 }
@@ -57,8 +62,22 @@ for (let x = 0; x < JavaScriptExports.length; ++x)
 	let val = JavaScriptExports[x];
 	DefaultExport.push({
 		input: [val.directory + '/build/js/' + val.input],
-		output: [{ name: val.name, file: val.directory+'/wwwroot/js/'+val.output, format: 'umd', plugins: [terser()]}],
-		plugins: [concat({ output:  val.directory+'/build/Export.dummy.min.js' })]
+		output: [{ name: val.name, file: val.directory+'/build/Export.dummy.min.js', format: 'umd'}],
+		plugins: [concat({ output: val.directory+'/wwwroot/js/'+val.output })]
+	});
+}
+
+for (let x = 0; x < fileExports.length; ++x) {
+	let val = fileExports[x];
+	DefaultExport.push({
+			input: "Mithril.Web.Common/build/dummy.js",
+			output: {
+				file: "Mithril.Web.Common/temp/dummy.js",
+				format: "cjs"
+			},
+			plugins: [
+				copy({ assets: [{ source: val.source, destination: val.destination }] })
+			]
 	});
 }
 

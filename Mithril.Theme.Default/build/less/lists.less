@@ -1,0 +1,136 @@
+﻿@import (reference) 'styles.less';
+
+ul.unstyled {
+    list-style-type: none;
+}
+
+ul.inline {
+    list-style: none;
+    padding-left: 0;
+
+    & > li {
+        display: inline-block;
+        padding-left: .5em;
+        padding-right: .5em;
+        list-style: none;
+    }
+}
+
+ul.grouped {
+    list-style-type: none;
+    padding: 0;
+
+    & > li {
+        position: relative;
+        display: block;
+        padding: .5em .8em;
+
+        &:first-child {
+            border-top-left-radius: @roundedCorner;
+            border-top-right-radius: @roundedCorner;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: @roundedCorner;
+            border-bottom-right-radius: @roundedCorner;
+        }
+    }
+
+    & > .badge {
+        float: right;
+        margin-top: .2em;
+    }
+}
+
+ul.checklist {
+    list-style: none;
+    padding: 0 1em;
+
+    & > li:before {
+        content: '\2610';
+        display: inline-block;
+        width: 1.1em;
+        margin-right: .25em;
+        font-weight: @defaultFontWeight;
+        font-style: normal;
+        text-decoration: inherit;
+        -webkit-font-smoothing: antialiased;
+        font-size: 1.2em;
+        vertical-align: baseline;
+        margin-top: 0;
+    }
+
+    & > li.checked:before {
+        content: '\2611';
+    }
+}
+
+ul.arrow {
+    list-style: none;
+    padding: 0 1em;
+
+    & > li:before {
+        content: '\27A4';
+        display: inline-block;
+        width: 1.1em;
+        margin-right: .25em;
+        font-weight: @defaultFontWeight;
+        font-style: normal;
+        text-decoration: inherit;
+        -webkit-font-smoothing: antialiased;
+        font-size: 1.2em;
+        margin-top: 0;
+    }
+}
+
+.step-list {
+    list-style: none;
+    counter-reset: li;
+
+    & > li {
+        position: relative;
+        padding: 0 .625em;
+        margin: .625em;
+        vertical-align: top;
+    }
+
+    & > li:before {
+        position: absolute;
+        content: counter(li);
+        counter-increment: li;
+        font-size: 2em;
+        left: 0;
+        top: .3125em;
+        margin-left: -1.5em;
+    }
+}
+
+ul.breadcrumb {
+    list-style: none;
+    padding: 0;
+
+    & > li {
+        display: inline;
+        padding-left: .2em;
+        padding-right: .2em;
+
+        & > a {
+            .opacity(.5);
+        }
+
+        &:last-child > a,
+        & > a:hover {
+            .opacity(1);
+        }
+
+        &:before {
+            content: '/';
+            margin-right: .5em;
+        }
+
+        &:first-child:before {
+            content: '';
+            margin-right: 0;
+        }
+    }
+}

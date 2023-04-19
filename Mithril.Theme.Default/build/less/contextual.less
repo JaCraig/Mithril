@@ -1,0 +1,257 @@
+﻿@import (reference) 'styles.less';
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.alert, .panel {
+    display: block;
+    padding: 1em;
+    line-height: 1;
+    border-radius: .25em;
+    margin-bottom: .5em;
+
+    &.hidden {
+        .opacity(0);
+        animation: fadeIn .35s;
+    }
+
+    &.show {
+        .opacity(1);
+        animation: fadeIn .35s;
+    }
+}
+
+*[data-tooltip] {
+    cursor: help;
+    position: relative;
+    display: inline-block;
+
+    &:before,
+    &:after {
+        .opacity(0);
+        bottom: 100%;
+        left: 50%;
+        position: absolute;
+        z-index: 10;
+        transition: all .18s ease-out .18s;
+        transform: translate(-50%, 10px);
+        transform-origin: top;
+        pointer-events: none;
+        width: 100%;
+    }
+
+    &:after {
+        font-size: .8em;
+        .layer(2);
+        .depth-1;
+        content: attr(data-tooltip);
+        padding: 1em;
+        margin-bottom: .5em;
+    }
+
+    &:before {
+        content: "";
+        margin-bottom: 0.1875em;
+    }
+
+    &:hover {
+        &:before,
+        &:after {
+            .opacity(1);
+            pointer-events: auto;
+            transform: translate(-50%, 0);
+        }
+    }
+}
+
+[data-tooltip-pos="down"] {
+    &:before,
+    &:after {
+        bottom: auto;
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -10px);
+    }
+
+    &:after {
+        margin-top: 0.375em;
+    }
+
+    &:before {
+        margin-top: 0.1875em;
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        &:before,
+        &:after {
+            transform: translate(-50%, 0);
+        }
+    }
+}
+
+[data-tooltip-pos="left"] {
+    &:before,
+    &:after {
+        bottom: auto;
+        left: auto;
+        right: 100%;
+        top: 50%;
+        transform: translate(10px, -50%);
+    }
+
+    &:after {
+        margin-right: 0.375em;
+    }
+
+    &:before {
+        margin-right: 0.1875em;
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        &:before,
+        &:after {
+            transform: translate(0, -50%);
+        }
+    }
+}
+
+[data-tooltip-pos="right"] {
+    &:before,
+    &:after {
+        bottom: auto;
+        left: 100%;
+        top: 50%;
+        transform: translate(-10px, -50%);
+    }
+
+    &:after {
+        margin-left: 0.375em;
+    }
+
+    &:before {
+        margin-bottom: 0;
+        margin-left: 0.1875em;
+    }
+
+    &:hover {
+        &:before,
+        &:after {
+            transform: translate(0, -50%);
+        }
+    }
+}
+
+:after {
+    [data-tooltip-size="small"]& {
+        width: 5em;
+    }
+
+    [data-tooltip-size="medium"]& {
+        width: 9.375em;
+    }
+
+    [data-tooltip-size="large"]& {
+        width: 16.250em;
+    }
+
+    [data-tooltip-size="extra-large"]& {
+        width: 56.250em;
+
+        @media screen and (min-width: 768px) {
+            width: 23.750em;
+        }
+    }
+}
+
+.mithril-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 5% 5%;
+    .layer(3);
+    .opacity(0);
+
+    &.show {
+        .opacity(1);
+        animation: fadeIn .35s;
+    }
+
+    & .panel {
+        .layer(3);
+        position: relative;
+        .depth-5;
+    }
+}
+
+.mithril-alert {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    .layer(3);
+}
+
+.panel {
+    padding: 0;
+
+    & .body {
+        padding: 1em;
+    }
+
+    & header,
+    & footer {
+        padding: 1em;
+    }
+
+    & ul.grouped {
+        margin: 0;
+        border-radius: 0;
+
+        & li {
+            border-left: none;
+            border-right: none;
+            padding: .8em 1em;
+        }
+    }
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-weight: @defaultFontWeightBold;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.badge {
+    display: inline-block;
+    min-width: 0.625em;
+    padding: .2em .4em;
+    font-size: .8em;
+    font-weight: @defaultFontWeightBold;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: @circularCorners;
+}
+
+.primary a, .active a, .success a, .info a, .warning a, .error a {
+    font-weight: @defaultFontWeightBold;
+}

@@ -1,13 +1,9 @@
-﻿import { BrowserUtils, DatabaseConnection, Mithril, Request, StorageMode, Downloader } from "../../../Mithril.Web.Common/build/ts/Mithril"
+﻿import { BrowserUtils, DatabaseConnection, Mithril, Request, StorageMode, Downloader } from "../../../Mithril.Web.Common/build/ts/Mithril";
 
-class ThemeStartup {
+export class ThemeStartup {
     constructor() {
         this.Core = new Mithril();
     }
 
-    private Core: Mithril;
+    public Core: Mithril;
 }
-
-export default (() => {
-    let DefaultTheme = new ThemeStartup();
-})();

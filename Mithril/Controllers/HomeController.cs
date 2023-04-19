@@ -107,14 +107,5 @@ namespace Mithril.Controllers
         [FeatureGate(MyFeatureFlags.ExampleFlag)]
         [IPFilter("AdminSection")]
         public IActionResult Privacy() => View();
-
-        /// <summary>
-        /// Themes this instance.
-        /// </summary>
-        /// <returns></returns>
-        public IActionResult Theme()
-        {
-            return View();
-        }
     }
 }

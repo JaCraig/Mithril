@@ -13,53 +13,52 @@
 
     <title>@ViewData["Title"]</title>
 
-    <link rel="stylesheet" href="/DefaultTheme/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/DefaultTheme/css/default.min.css" />
     @ResourceHolder?.Render(ResourceType.CSS)
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Mithril</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="EmailTest">Email Test</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <div>Default Theme</div>
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Mithril - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <a href="#">
+            COMPANY LOGO
+        </a>
+        <div class="inline-block right">
+            <nav class="horizontal">
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                </ul>
+            </nav>
         </div>
+        <div class="inline-block">
+            <nav class="horizontal">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="flex row">
+        <div>&copy; 2023 COMPANY. All rights reserved.</div>
+        <div class="align-self-end text-right">Made with Mithril</div>
     </footer>
-    <script src="/DefaultTheme/js/Vendor.min.js"></script>
+    <script src="/DefaultTheme/js/moment.min.js"></script>
+    <script src="/DefaultTheme/js/vue.global.prod.js"></script>
     <script src="/DefaultTheme/js/site.umd.min.js"></script>
+
     <script>
-        let Mithril = new mithril.Mithril();
-        console.log("A");
+        let TempDefaultTheme = new defaultTheme.ThemeStartup();
+        let TempApp = Vue.createApp({});
+        TempDefaultTheme.Core.SetupComponents(TempApp);
+        TempApp.mount("#mainContent");
     </script>
+
     @await RenderSectionAsync("Scripts", required: false)
     @ResourceHolder?.Render(ResourceType.JavaScript)
 </body>

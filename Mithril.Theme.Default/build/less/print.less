@@ -1,0 +1,162 @@
+﻿@import (reference) 'styles.less';
+
+@media print {
+    *, *:before, *:after {
+        color: @lightTextColor !important;
+        text-shadow: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    html {
+        font-size: @defaultFontSize;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        background: @lightBackgroundColor !important;
+        color: @lightTextColor !important;
+        font-family: @defaultFontFamily;
+        font-size: 1rem;
+        line-height: @defaultLineSize;
+        margin: 0 auto;
+        text-rendering: optimizeLegibility;
+    }
+
+    p, blockquote, table, ul, ol, dl {
+        margin-bottom: @defaultLineSize;
+        margin-top: 0;
+    }
+
+    p, ul, ol {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    a, a:visited {
+        color: @lightCallToActionColor;
+        text-decoration: underline;
+
+        &[href^='http'],
+        &[href^='ftp'] {
+            &:after {
+                content: ' (' attr(href) ')';
+                font-size: 80%;
+            }
+        }
+
+        &[href$='.jpg'],
+        &[href$='.jpeg'],
+        &[href$='.gif'],
+        &[href$='.png'],
+        &[href^='#'],
+        &[href^='javascript:'] {
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    abbr[title],
+    acronym[title] {
+        &:after {
+            content: ' (' attr(title) ')';
+        }
+    }
+
+    pre, blockquote {
+        white-space: pre-wrap !important;
+        word-wrap: break-word;
+        border: 1px solid @lightBorderColor;
+        page-break-inside: avoid;
+    }
+
+    table, blockquote, pre, code, figure, li, hr, ul, ol, a, tr {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+        page-break-after: auto;
+        page-break-before: auto;
+        page-break-inside: avoid;
+    }
+
+    p, h2, h3, h4, a {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+
+        & + p, & + img {
+            page-break-before: avoid;
+        }
+    }
+
+    table {
+        border-collapse: collapse !important;
+
+        & thead {
+            display: table-header-group;
+        }
+
+        & td, & th {
+            background-color: @lightBackgroundColor !important;
+        }
+
+        &.bordered th, &.bordered td {
+            border: 1px solid @lightBorderColor !important;
+        }
+
+        &.sortable {
+            & thead tr th {
+                &:before {
+                    content: '' !important;
+                }
+            }
+
+            & thead tr th.headerSortUp:before {
+                content: '' !important;
+            }
+
+            & thead tr th.headerSortDown:before {
+                content: '' !important;
+            }
+        }
+    }
+
+    .do-not-print {
+        display: none !important;
+    }
+
+    .print-block {
+        display: block !important;
+    }
+
+    .print-inline-block {
+        display: inline-block !important;
+    }
+
+    .print-inline {
+        display: inline !important;
+    }
+
+    .print-page-break-before {
+        page-break-before: always;
+    }
+
+    .print-page-break-after {
+        page-break-after: always;
+    }
+
+    .print-avoid-break-inside {
+        page-break-inside: avoid;
+    }
+}

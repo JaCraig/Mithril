@@ -1,0 +1,124 @@
+﻿@import (reference) 'styles.less';
+
+.menu, nav {
+    & ul, & ul li {
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    & a, & .heading {
+        display: block;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    & .heading a {
+        display: inline;
+    }
+
+    & > ul > li > ul {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        .layer(2);
+        min-width: 10em;
+        background-clip: padding-box;
+        border-left: 0;
+        .depth-1;
+    }
+
+    & > ul > li:hover > ul,
+    & > ul > li.active > ul {
+        display: block;
+    }
+
+    & > ul > li.drop-down:hover > ul {
+        display: none;
+    }
+
+    & > ul > li.drop-down.active > ul {
+        display: block;
+    }
+
+    & .has-children > a:after {
+        content: '\25B8';
+    }
+
+    & .separator {
+        height: .125em;
+        margin: .3em 0;
+    }
+
+    & .heading {
+        font-weight: @defaultFontWeightBold;
+    }
+
+    & a,
+    & .disabled,
+    & .heading {
+        padding: .5em 1em;
+    }
+
+    & .active > a,
+    & a:hover,
+    & a:focus,
+    & ul li.item:hover,
+    &.horizontal ul li.item:hover,
+    & > ul > li > ul > li > a:hover {
+        text-decoration: none;
+    }
+
+    & .disabled a {
+        padding: 0;
+        .opacity(.5);
+        cursor: not-allowed;
+    }
+
+    &.horizontal, &.pill {
+        width: 100%;
+        white-space: nowrap;
+
+        & ul li {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        & > ul > li > ul > li {
+            display: block;
+        }
+
+        & > ul > li > ul {
+            left: 0;
+            top: auto;
+            width: inherit;
+            border-top: 0;
+            .depth-1;
+        }
+
+        & .has-children > a:after {
+            content: '\25BE';
+        }
+
+        & .separator {
+            width: .125em;
+            height: 2.5em;
+            margin: 0 .3em;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    nav.mobile, .menu.mobile {
+        display: none;
+    }
+
+    .mobile-toggler {
+        width: 1.563em;
+        margin-left: 0.625em;
+    }
+}

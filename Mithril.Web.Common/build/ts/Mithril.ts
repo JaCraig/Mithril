@@ -1,6 +1,5 @@
 import { Framework, DatabaseConnection, Request, StorageMode, BrowserUtils, Downloader } from "./Framework/Framework";
-import { RegisterDirectives } from "./Component/VueExtensions/VueDirectives";
-import { RegisterFilters } from "./Component/VueExtensions/VueFilters";
+import MithrilPlugin from "./Component/VueExtensions/MithrilPlugin";
 
 import Vue from 'vue';
 
@@ -14,8 +13,8 @@ class Mithril {
 
     // Sets up Vue components
     public SetupComponents(app: Vue.App<Element>): Vue.App<Element> {
-        RegisterFilters(app);
-        return RegisterDirectives(app);
+        app.use(MithrilPlugin);
+        return app;
     }
 
     //Framework items

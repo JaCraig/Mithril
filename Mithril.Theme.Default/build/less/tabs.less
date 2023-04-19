@@ -1,0 +1,75 @@
+﻿@import (reference) 'styles.less';
+
+.mithril-tabs {
+    position: relative;
+
+    & > section {
+        padding: 1em;
+    }
+
+    & > header {
+        padding: 0;
+
+        & > ul {
+            list-style-type: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+
+            & > li {
+                flex: 1 1 auto;
+                display: inline-block;
+                list-style: none;
+
+                & > a {
+                    display: block;
+                    width: 100%;
+                    line-height: 1.8em;
+                    text-align: center;
+                    text-decoration: none;
+                    outline: 0 none;
+                    padding: 0.5em 0.5em;
+                }
+
+                &:first-child > a {
+                    border-left: none;
+                }
+            }
+        }
+    }
+
+    &.vertical {
+        display: flex;
+        flex-flow: row;
+
+        & > section {
+            flex: 1 1 100%;
+            align-items: stretch;
+            padding: 1em;
+        }
+
+        & > header {
+            border-bottom: none;
+            min-width: 100px;
+            display: block;
+
+            & > ul {
+                display: flex;
+                flex-flow: column;
+
+                & > li {
+                    flex: 1 1 auto;
+
+                    & > a {
+                        border-left: none;
+                    }
+
+                    &:first-child > a {
+                        border-top: none;
+                    }
+                }
+            }
+        }
+    }
+}
