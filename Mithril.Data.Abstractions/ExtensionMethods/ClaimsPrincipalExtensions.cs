@@ -28,5 +28,16 @@ namespace Mithril.Data.Abstractions.ExtensionMethods
                 return UserName.Split('@', StringSplitOptions.RemoveEmptyEntries)[0];
             return UserNameParts;
         }
+
+        /// <summary>
+        /// Gets the tennant ID for the user if it exists.
+        /// </summary>
+        /// <param name="claimsPrincipal">The claims principal.</param>
+        /// <param name="tennantID">The tennant identifier.</param>
+        /// <returns>True if it exists, false otherwise.</returns>
+        public static bool TryGetTennant(this ClaimsPrincipal? claimsPrincipal, out long tennantID)
+        {
+            return long.TryParse(claimsPrincipal?.Claims.FirstOrDefault(x => string.Equals(x.Type, "Tenant", StringComparison.OrdinalIgnoreCase))?.Value ?? "", out tennantID);
+        }
     }
 }

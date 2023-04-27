@@ -132,6 +132,18 @@ namespace Mithril.Navigation.Models
         }
 
         /// <summary>
+        /// Determines whether this instance [can be viewed by] the specified user.
+        /// </summary>
+        /// <param name="user">The user.</param>
+        /// <returns>
+        /// <c>true</c> if this instance [can be viewed by] the specified user; otherwise, <c>false</c>.
+        /// </returns>
+        public override bool CanBeViewedBy(ClaimsPrincipal? user)
+        {
+            return (Permissions?.HasPermission(user) ?? true) && base.CanBeViewedBy(user);
+        }
+
+        /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="other">Object to compare to</param>
@@ -185,18 +197,6 @@ namespace Mithril.Navigation.Models
         public override string ToString()
         {
             return Display ?? "";
-        }
-
-        /// <summary>
-        /// Determines whether this instance [can be viewed by] the specified user.
-        /// </summary>
-        /// <param name="user">The user.</param>
-        /// <returns>
-        /// <c>true</c> if this instance [can be viewed by] the specified user; otherwise, <c>false</c>.
-        /// </returns>
-        public override bool CanBeViewedBy(ClaimsPrincipal? user)
-        {
-            return (Permissions?.HasPermission(user) ?? true) && base.CanBeViewedBy(user);
         }
     }
 }

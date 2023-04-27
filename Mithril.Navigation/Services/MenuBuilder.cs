@@ -36,20 +36,20 @@ namespace Mithril.Navigation.Services
         public string Display { get; }
 
         /// <summary>
+        /// Gets the permissions.
+        /// </summary>
+        /// <value>
+        /// The permissions.
+        /// </value>
+        public IPermission? Permissions => InternalMenu?.Permissions;
+
+        /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>
         /// The data service.
         /// </value>
         private IDataService? DataService { get; }
-
-        /// <summary>
-        /// Gets the user.
-        /// </summary>
-        /// <value>
-        /// The user.
-        /// </value>
-        private ClaimsPrincipal? User { get; }
 
         /// <summary>
         /// Gets the internal menu.
@@ -60,12 +60,12 @@ namespace Mithril.Navigation.Services
         private Menu InternalMenu { get; }
 
         /// <summary>
-        /// Gets the permissions.
+        /// Gets the user.
         /// </summary>
         /// <value>
-        /// The permissions.
+        /// The user.
         /// </value>
-        public IPermission? Permissions => InternalMenu?.Permissions;
+        private ClaimsPrincipal? User { get; }
 
         /// <summary>
         /// Adds a menu item.
@@ -86,18 +86,14 @@ namespace Mithril.Navigation.Services
         }
 
         /// <summary>
-        /// Sets the security.
+        /// Builds this instance.
         /// </summary>
-        /// <param name="permission">The permission.</param>
         /// <returns>
-        /// This.
+        /// The async task.
         /// </returns>
-        public IMenuBuilder SetSecurity(IPermission? permission)
+        public Task BuildAsync()
         {
-            if (InternalMenu is null)
-                return this;
-            InternalMenu.Permissions = permission;
-            return this;
+            return InternalMenu?.SaveAsync(DataService, User) ?? Task.CompletedTask;
         }
 
         /// <summary>
@@ -113,14 +109,18 @@ namespace Mithril.Navigation.Services
         }
 
         /// <summary>
-        /// Builds this instance.
+        /// Sets the security.
         /// </summary>
+        /// <param name="permission">The permission.</param>
         /// <returns>
-        /// The async task.
+        /// This.
         /// </returns>
-        public Task BuildAsync()
+        public IMenuBuilder SetSecurity(IPermission? permission)
         {
-            return InternalMenu?.SaveAsync(DataService, User) ?? Task.CompletedTask;
+            if (InternalMenu is null)
+                return this;
+            InternalMenu.Permissions = permission;
+            return this;
         }
     }
 }

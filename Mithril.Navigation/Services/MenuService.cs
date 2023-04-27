@@ -26,20 +26,20 @@ namespace Mithril.Navigation.Services
         }
 
         /// <summary>
-        /// Gets the feature manager.
-        /// </summary>
-        /// <value>
-        /// The feature manager.
-        /// </value>
-        private IFeatureManager? FeatureManager { get; }
-
-        /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>
         /// The data service.
         /// </value>
         private IDataService? DataService { get; }
+
+        /// <summary>
+        /// Gets the feature manager.
+        /// </summary>
+        /// <value>
+        /// The feature manager.
+        /// </value>
+        private IFeatureManager? FeatureManager { get; }
 
         /// <summary>
         /// Creates a menu builder.
