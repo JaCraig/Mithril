@@ -43,10 +43,8 @@ namespace Mithril.Core.Modules
         public override IFeature[] Features { get; protected set; } = new IFeature[]
         {
             ContentFeature.Instance,
-            EmailFeature.Instance,
             IndexingFeature.Instance,
             MediaFeature.Instance,
-            NavigationFeature.Instance,
             WorkflowFeature.Instance
         };
 

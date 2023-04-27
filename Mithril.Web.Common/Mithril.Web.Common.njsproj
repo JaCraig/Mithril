@@ -18,13 +18,18 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Content Include="build\dummy.js" />
+    <Content Include="build\rollup-plugin-concat.mjs" />
     <Content Include="build\rollup-plugin-copy.mjs" />
     <Content Include="build\ts\Component\DataHandler.vue" />
+    <Content Include="build\ts\Component\SideMenu.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="build\" />
     <Folder Include="build\ts\" />
+    <Folder Include="build\ts\Component\DataTypes\" />
     <Folder Include="build\ts\Component\VueExtensions\" />
     <Folder Include="build\ts\Framework\" />
     <Folder Include="build\ts\Framework\AJAX\" />
@@ -48,6 +53,9 @@
     <Folder Include="build\ts\Component\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="build\ts\Component\DataTypes\ComponentSchema.ts" />
+    <TypeScriptCompile Include="build\ts\Component\VueExtensions\MithrilPlugin.ts" />
+    <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueComponents.ts" />
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueDirectives.ts" />
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueFilters.ts" />
     <TypeScriptCompile Include="build\ts\Framework\AJAX\Request.ts" />
@@ -85,6 +93,7 @@
     <TypeScriptCompile Include="build\ts\Framework\WebStorage\LocalStorage.ts" />
     <TypeScriptCompile Include="build\ts\Framework\WebStorage\SessionStorage.ts" />
     <TypeScriptCompile Include="build\ts\Mithril.ts" />
+    <TypeScriptCompile Include="build\vue-shims.d.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />

@@ -17,37 +17,11 @@
     @ResourceHolder?.Render(ResourceType.CSS)
 </head>
 <body>
-    <header>
-        <a href="#">
-            COMPANY LOGO
-        </a>
-        <div class="inline-block right">
-            <nav class="horizontal">
-                <ul>
-                    <li><a href="#">Item 1</a></li>
-                    <li><a href="#">Item 2</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="inline-block">
-            <nav class="horizontal">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    
     <main role="main">
         @RenderBody()
     </main>
 
-    <footer class="flex row">
-        <div>&copy; 2023 COMPANY. All rights reserved.</div>
-        <div class="align-self-end text-right">Made with Mithril</div>
-    </footer>
     <script src="/DefaultTheme/js/moment.min.js"></script>
     <script src="/DefaultTheme/js/vue.global.prod.js"></script>
     <script src="/DefaultTheme/js/site.umd.min.js"></script>

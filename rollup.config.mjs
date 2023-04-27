@@ -26,7 +26,7 @@ var TypeScriptExports = [
 ];
 
 var fileExports = [
-	{ source:'../../node_modules/@fortawesome/fontawesome-free/webfonts', destination:"../../Mithril.Theme.Default/wwwroot/css/webfonts" }
+	{ source:'../../node_modules/@fortawesome/fontawesome-free/webfonts', destination:"../../Mithril.Theme.Default/wwwroot/webfonts" }
 ];
 
 var JavaScriptExports = [

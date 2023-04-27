@@ -11,6 +11,8 @@ using Mithril.Apm.Default.Middleware;
 using Mithril.Apm.Default.Services;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using Mithril.Core.Abstractions.Modules.Interfaces;
+using Mithril.Data.Abstractions.Services;
+using System.Data;
 
 namespace Mithril.Apm.Default
 {
@@ -57,6 +59,19 @@ namespace Mithril.Apm.Default
                            ?.AddAllSingleton<IEventListener>()
                            ?.AddScoped<ApmMiddleware>()
                            ?.AddHostedService<MetricsReporterHostedService>();
+        }
+
+        /// <summary>
+        /// Initializes the data.
+        /// </summary>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="services">The services for the application.</param>
+        /// <returns>
+        /// The async task.
+        /// </returns>
+        public override Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)
+        {
+            return dataService?.QueryDynamicAsync("DELETE FROM [RequestMetaData_];DELETE FROM [RequestMetric_];DELETE FROM [RequestTrace_];", CommandType.Text, "Default") ?? Task.CompletedTask;
         }
     }
 }

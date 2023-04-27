@@ -1,6 +1,28 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<header>
+    <a href="#">
+        COMPANY LOGO
+    </a>
+    <div class="inline-block right">
+        <nav class="horizontal">
+            <ul>
+                <li><a href="#" class="large"><span class="fas fa-circle-user"></span></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="inline-block">
+        <nav class="horizontal">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
 <div class="text-center">
     <mithril-data-handler></mithril-data-handler>
@@ -36,6 +58,12 @@
         <button>Sign Up</button>
     </section>
 </div>
+
+
+<footer class="flex row">
+    <div>&copy; 2023 COMPANY. All rights reserved.</div>
+    <div class="align-self-end text-right">Made with Mithril</div>
+</footer>
 
 @section Scripts {
 @*

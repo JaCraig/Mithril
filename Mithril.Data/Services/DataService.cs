@@ -3,6 +3,7 @@ using Inflatable;
 using Mithril.Data.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Security.Abstractions;
+using System.Data;
 using System.Security.Claims;
 
 namespace Mithril.Data.Services
@@ -60,6 +61,53 @@ namespace Mithril.Data.Services
             where TData : class
         {
             return DbContext<TData>.CreateQuery();
+        }
+
+        /// <summary>
+        /// Runs a scalar query and returns data of the specific type.
+        /// </summary>
+        /// <typeparam name="TData">The type of the data.</typeparam>
+        /// <param name="query">The query.</param>
+        /// <param name="commandType">Type of the command.</param>
+        /// <param name="connection">The connection.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>
+        /// The resulting data.
+        /// </returns>
+        public Task<TData> QueryScalarAsync<TData>(string query, CommandType commandType, string connection, params object[] parameters)
+            where TData : class
+        {
+            return DbContext<TData>.ExecuteScalarAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
+        }
+
+        /// <summary>
+        /// Runs a query and returns data of the specific type.
+        /// </summary>
+        /// <typeparam name="TData">The type of the data.</typeparam>
+        /// <param name="query">The query.</param>
+        /// <param name="commandType">Type of the command.</param>
+        /// <param name="connection">The connection.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>
+        /// The resulting data.
+        /// </returns>
+        public Task<IEnumerable<TData>> QueryAsync<TData>(string query, CommandType commandType, string connection, params object[] parameters)
+            where TData : class
+        {
+            return DbContext<TData>.ExecuteAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
+        }
+
+        /// <summary>
+        /// Runs a dynamic query and returns the results.
+        /// </summary>
+        /// <param name="query">The query.</param>
+        /// <param name="commandType">Type of the command.</param>
+        /// <param name="connection">The connection.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>The data resulting from the query.</returns>
+        public Task<IEnumerable<dynamic>> QueryDynamicAsync(string query, CommandType commandType, string connection, params object[] parameters)
+        {
+            return DbContext.ExecuteAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
         }
 
         /// <summary>

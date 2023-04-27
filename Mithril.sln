@@ -141,13 +141,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{A09A261A-D72
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Mithril.Web.Common", "Mithril.Web.Common\Mithril.Web.Common.njsproj", "{17CE4E40-1A71-4D7A-BD59-BCD15457A46C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Content.Abstractions", "Mithril.Content.Abstractions\Mithril.Content.Abstractions.csproj", "{DA25C7CB-D750-428C-8138-9BD4E6862F5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content.Abstractions", "Mithril.Content.Abstractions\Mithril.Content.Abstractions.csproj", "{DA25C7CB-D750-428C-8138-9BD4E6862F5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Content", "Mithril.Content\Mithril.Content.csproj", "{215BDBCB-7DDE-4AC7-BB34-21203C13FE18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content", "Mithril.Content\Mithril.Content.csproj", "{215BDBCB-7DDE-4AC7-BB34-21203C13FE18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Content.Tests", "Mithril.Content.Tests\Mithril.Content.Tests.csproj", "{F194F4A2-7A92-40F0-8595-1B81BFD4B595}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content.Tests", "Mithril.Content.Tests\Mithril.Content.Tests.csproj", "{F194F4A2-7A92-40F0-8595-1B81BFD4B595}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Content.Forms", "Mithril.Content.Forms\Mithril.Content.Forms.csproj", "{0A8F3A2B-E08A-4888-9B5E-52B25B86BF46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content.Forms", "Mithril.Content.Forms\Mithril.Content.Forms.csproj", "{0A8F3A2B-E08A-4888-9B5E-52B25B86BF46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Navigation", "Mithril.Navigation\Mithril.Navigation.csproj", "{B9E70080-81B0-48A6-9F65-C30663A9E4B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Navigation.Abstractions", "Mithril.Navigation.Abstractions\Mithril.Navigation.Abstractions.csproj", "{70A17D7E-E9D0-43C7-8FBD-6A00FAC5F693}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Navigation.Tests", "Mithril.Navigation.Tests\Mithril.Navigation.Tests.csproj", "{4B28473B-EC81-470B-8D0D-46D55CCB52A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -415,6 +421,18 @@ Global
 		{0A8F3A2B-E08A-4888-9B5E-52B25B86BF46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A8F3A2B-E08A-4888-9B5E-52B25B86BF46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A8F3A2B-E08A-4888-9B5E-52B25B86BF46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9E70080-81B0-48A6-9F65-C30663A9E4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9E70080-81B0-48A6-9F65-C30663A9E4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9E70080-81B0-48A6-9F65-C30663A9E4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9E70080-81B0-48A6-9F65-C30663A9E4B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70A17D7E-E9D0-43C7-8FBD-6A00FAC5F693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70A17D7E-E9D0-43C7-8FBD-6A00FAC5F693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70A17D7E-E9D0-43C7-8FBD-6A00FAC5F693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70A17D7E-E9D0-43C7-8FBD-6A00FAC5F693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B28473B-EC81-470B-8D0D-46D55CCB52A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B28473B-EC81-470B-8D0D-46D55CCB52A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B28473B-EC81-470B-8D0D-46D55CCB52A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B28473B-EC81-470B-8D0D-46D55CCB52A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -489,6 +507,9 @@ Global
 		{215BDBCB-7DDE-4AC7-BB34-21203C13FE18} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
 		{F194F4A2-7A92-40F0-8595-1B81BFD4B595} = {20C64160-C469-46C8-9971-17C2435420AD}
 		{0A8F3A2B-E08A-4888-9B5E-52B25B86BF46} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
+		{B9E70080-81B0-48A6-9F65-C30663A9E4B1} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
+		{70A17D7E-E9D0-43C7-8FBD-6A00FAC5F693} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
+		{4B28473B-EC81-470B-8D0D-46D55CCB52A3} = {20C64160-C469-46C8-9971-17C2435420AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}

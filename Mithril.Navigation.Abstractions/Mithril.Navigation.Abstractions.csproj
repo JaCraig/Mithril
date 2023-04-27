@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mithril.Data.Abstractions\Mithril.Data.Abstractions.csproj" />
+    <ProjectReference Include="..\Mithril.Security.Abstractions\Mithril.Security.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

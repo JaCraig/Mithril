@@ -1,8 +1,8 @@
 ﻿using BigBook;
 using Microsoft.FeatureManagement;
+using Mithril.Communication.Email.Features;
 using Mithril.Communication.Email.Models;
 using Mithril.Core.Abstractions.Extensions;
-using Mithril.Core.Abstractions.Modules.Features;
 using Mithril.Data.Abstractions.Services;
 
 namespace Mithril.Communication.Email.Utils

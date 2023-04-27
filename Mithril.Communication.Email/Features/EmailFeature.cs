@@ -1,6 +1,6 @@
 ﻿using Mithril.Core.Abstractions.Modules.BaseClasses;
 
-namespace Mithril.Core.Abstractions.Modules.Features
+namespace Mithril.Communication.Email.Features
 {
     /// <summary>
     /// Email feature.
