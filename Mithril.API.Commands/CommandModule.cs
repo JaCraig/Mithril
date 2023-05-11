@@ -6,7 +6,6 @@ using Mithril.API.Abstractions.Attributes;
 using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Services;
-using Mithril.API.Commands.BackgroundTasks;
 using Mithril.API.Commands.Services;
 using Mithril.API.Commands.Utils;
 using Mithril.Core.Abstractions.Extensions;
@@ -70,9 +69,7 @@ namespace Mithril.API.Commands
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
             Services = services?.AddSingleton<ICommandService, CommandService>()
-                        .AddSingleton<IEventService, EventService>()
-                        .AddHostedService<CommandProcessorTask>()
-                        .AddHostedService<EventProcessorTask>();
+                        .AddSingleton<IEventService, EventService>();
             services?.AddAllTransient<IEventHandler>()
                 .AddAllTransient<IEvent>()
                 .AddAllTransient<ICommand>()

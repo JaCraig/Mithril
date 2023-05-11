@@ -7,3 +7,5 @@ export class ThemeStartup {
 
     public Core: Mithril;
 }
+
+export { Request, DatabaseConnection, StorageMode, BrowserUtils, Mithril, Downloader };

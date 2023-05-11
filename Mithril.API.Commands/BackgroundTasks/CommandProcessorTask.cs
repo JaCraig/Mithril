@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Services;
-using Mithril.Core.Abstractions.BaseClasses;
+using Mithril.Background.Abstractions.Frequencies;
+using Mithril.Background.Abstractions.Interfaces;
 
 namespace Mithril.API.Commands.BackgroundTasks
 {
@@ -12,19 +12,42 @@ namespace Mithril.API.Commands.BackgroundTasks
     /// </summary>
     /// <seealso cref="IHostedService"/>
     /// <seealso cref="IDisposable"/>
-    public class CommandProcessorTask : HostedServiceBaseClass<CommandProcessorTask>
+    public class CommandProcessorTask : IScheduledTask
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CommandProcessorTask"/> class.
+        /// Initializes a new instance of the <see cref="CommandProcessorTask" /> class.
         /// </summary>
-        /// <param name="logger">The logger.</param>
         /// <param name="commandService">The command service.</param>
         /// <param name="configuration">The configuration.</param>
-        public CommandProcessorTask(ILogger<CommandProcessorTask>? logger, ICommandService? commandService, IOptions<APIOptions>? configuration)
-            : base(logger, configuration?.Value?.CommandRunFrequency ?? 60)
+        public CommandProcessorTask(ICommandService? commandService, IOptions<APIOptions>? configuration)
         {
             CommandService = commandService;
+            Frequencies = new IFrequency[] { new RunEvery(TimeSpan.FromSeconds(configuration?.Value?.CommandRunFrequency ?? 60)) };
         }
+
+        /// <summary>
+        /// Gets the frequencies.
+        /// </summary>
+        /// <value>
+        /// The frequencies.
+        /// </value>
+        public IFrequency[] Frequencies { get; }
+
+        /// <summary>
+        /// Gets the last run time.
+        /// </summary>
+        /// <value>
+        /// The last run time.
+        /// </value>
+        public DateTime LastRunTime { get; set; }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public string Name { get; } = "Command Processor";
 
         /// <summary>
         /// Gets the command service.
@@ -33,10 +56,10 @@ namespace Mithril.API.Commands.BackgroundTasks
         private ICommandService? CommandService { get; }
 
         /// <summary>
-        /// Does the work.
+        /// Executes the asynchronous.
         /// </summary>
-        /// <returns>Async task.</returns>
-        protected override Task DoWorkAsync()
+        /// <returns></returns>
+        public Task ExecuteAsync()
         {
             return CommandService?.ProcessAsync() ?? Task.CompletedTask;
         }

@@ -149,11 +149,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content.Tests", "Mi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content.Forms", "Mithril.Content.Forms\Mithril.Content.Forms.csproj", "{0A8F3A2B-E08A-4888-9B5E-52B25B86BF46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Navigation", "Mithril.Navigation\Mithril.Navigation.csproj", "{B9E70080-81B0-48A6-9F65-C30663A9E4B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Navigation", "Mithril.Navigation\Mithril.Navigation.csproj", "{B9E70080-81B0-48A6-9F65-C30663A9E4B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Navigation.Abstractions", "Mithril.Navigation.Abstractions\Mithril.Navigation.Abstractions.csproj", "{70A17D7E-E9D0-43C7-8FBD-6A00FAC5F693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Navigation.Abstractions", "Mithril.Navigation.Abstractions\Mithril.Navigation.Abstractions.csproj", "{70A17D7E-E9D0-43C7-8FBD-6A00FAC5F693}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Navigation.Tests", "Mithril.Navigation.Tests\Mithril.Navigation.Tests.csproj", "{4B28473B-EC81-470B-8D0D-46D55CCB52A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Navigation.Tests", "Mithril.Navigation.Tests\Mithril.Navigation.Tests.csproj", "{4B28473B-EC81-470B-8D0D-46D55CCB52A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Background.Abstractions", "Mithril.Background.Abstractions\Mithril.Background.Abstractions.csproj", "{885418D3-318E-4033-88AD-BB5571E16D5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Background.Default", "Mithril.Background.Default\Mithril.Background.Default.csproj", "{DA90559D-DD79-4041-B9F1-888415D5F124}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Background.Default.Tests", "Mithril.Background.Default.Tests\Mithril.Background.Default.Tests.csproj", "{712F8E77-64D1-4FFD-908A-EF8B32142A12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Background.Abstractions.Tests", "Mithril.Background.Abstractions.Tests\Mithril.Background.Abstractions.Tests.csproj", "{7DF11FA6-2072-4ACC-B666-BF3F904B8A16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -433,6 +441,22 @@ Global
 		{4B28473B-EC81-470B-8D0D-46D55CCB52A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B28473B-EC81-470B-8D0D-46D55CCB52A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B28473B-EC81-470B-8D0D-46D55CCB52A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{885418D3-318E-4033-88AD-BB5571E16D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{885418D3-318E-4033-88AD-BB5571E16D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{885418D3-318E-4033-88AD-BB5571E16D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{885418D3-318E-4033-88AD-BB5571E16D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA90559D-DD79-4041-B9F1-888415D5F124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA90559D-DD79-4041-B9F1-888415D5F124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA90559D-DD79-4041-B9F1-888415D5F124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA90559D-DD79-4041-B9F1-888415D5F124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712F8E77-64D1-4FFD-908A-EF8B32142A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712F8E77-64D1-4FFD-908A-EF8B32142A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712F8E77-64D1-4FFD-908A-EF8B32142A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712F8E77-64D1-4FFD-908A-EF8B32142A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF11FA6-2072-4ACC-B666-BF3F904B8A16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF11FA6-2072-4ACC-B666-BF3F904B8A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF11FA6-2072-4ACC-B666-BF3F904B8A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF11FA6-2072-4ACC-B666-BF3F904B8A16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -510,6 +534,10 @@ Global
 		{B9E70080-81B0-48A6-9F65-C30663A9E4B1} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
 		{70A17D7E-E9D0-43C7-8FBD-6A00FAC5F693} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
 		{4B28473B-EC81-470B-8D0D-46D55CCB52A3} = {20C64160-C469-46C8-9971-17C2435420AD}
+		{885418D3-318E-4033-88AD-BB5571E16D5B} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
+		{DA90559D-DD79-4041-B9F1-888415D5F124} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
+		{712F8E77-64D1-4FFD-908A-EF8B32142A12} = {20C64160-C469-46C8-9971-17C2435420AD}
+		{7DF11FA6-2072-4ACC-B666-BF3F904B8A16} = {2F251ADC-5F62-4892-AD6E-EA191C741A18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}

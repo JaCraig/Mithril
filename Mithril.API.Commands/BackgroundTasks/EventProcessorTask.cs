@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Services;
-using Mithril.Core.Abstractions.BaseClasses;
+using Mithril.Background.Abstractions.Frequencies;
+using Mithril.Background.Abstractions.Interfaces;
 
 namespace Mithril.API.Commands.BackgroundTasks
 {
@@ -12,19 +12,42 @@ namespace Mithril.API.Commands.BackgroundTasks
     /// </summary>
     /// <seealso cref="IHostedService"/>
     /// <seealso cref="IDisposable"/>
-    public class EventProcessorTask : HostedServiceBaseClass<EventProcessorTask>
+    public class EventProcessorTask : IScheduledTask
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventProcessorTask"/> class.
+        /// Initializes a new instance of the <see cref="EventProcessorTask" /> class.
         /// </summary>
-        /// <param name="logger">The logger.</param>
         /// <param name="eventService">The event service.</param>
         /// <param name="configuration">The configuration.</param>
-        public EventProcessorTask(ILogger<EventProcessorTask>? logger, IEventService? eventService, IOptions<APIOptions>? configuration)
-            : base(logger, configuration?.Value?.EventRunFrequency ?? 60)
+        public EventProcessorTask(IEventService? eventService, IOptions<APIOptions>? configuration)
         {
             EventService = eventService;
+            Frequencies = new IFrequency[] { new RunEvery(TimeSpan.FromSeconds(configuration?.Value?.EventRunFrequency ?? 60)) };
         }
+
+        /// <summary>
+        /// Gets the frequencies that the task is run at.
+        /// </summary>
+        /// <value>
+        /// The frequencies the task is run at.
+        /// </value>
+        public IFrequency[] Frequencies { get; }
+
+        /// <summary>
+        /// Gets the last run time.
+        /// </summary>
+        /// <value>
+        /// The last run time.
+        /// </value>
+        public DateTime LastRunTime { get; set; }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public string Name { get; } = "Event Processor";
 
         /// <summary>
         /// Gets the Event service.
@@ -33,10 +56,12 @@ namespace Mithril.API.Commands.BackgroundTasks
         private IEventService? EventService { get; }
 
         /// <summary>
-        /// Does the work.
+        /// Executes this instance.
         /// </summary>
-        /// <returns>The async task.</returns>
-        protected override Task DoWorkAsync()
+        /// <returns>
+        /// Async task.
+        /// </returns>
+        public Task ExecuteAsync()
         {
             return EventService?.ProcessAsync() ?? Task.CompletedTask;
         }

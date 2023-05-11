@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mithril.API.Abstractions\Mithril.API.Abstractions.csproj" />
+    <ProjectReference Include="..\Mithril.Background.Abstractions\Mithril.Background.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.Security.Abstractions\Mithril.Security.Abstractions.csproj" />
   </ItemGroup>

@@ -57,7 +57,7 @@ namespace Mithril.Navigation.Services
         /// <value>
         /// The internal menu.
         /// </value>
-        private Menu InternalMenu { get; }
+        private Menu? InternalMenu { get; }
 
         /// <summary>
         /// Gets the user.

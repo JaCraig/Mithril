@@ -4,13 +4,9 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mithril.API.Abstractions\Mithril.API.Abstractions.csproj" />
-    <ProjectReference Include="..\Mithril.Apm.Abstractions\Mithril.Apm.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.Background.Abstractions\Mithril.Background.Abstractions.csproj" />
   </ItemGroup>
 

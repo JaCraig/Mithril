@@ -7,7 +7,7 @@ namespace Mithril.API.Commands.Tests.BackgroundTasks
     {
         public EventProcessorTaskTests()
         {
-            TestObject = new EventProcessorTask(null, null, null);
+            TestObject = new EventProcessorTask(null, null);
             ObjectType = typeof(EventProcessorTask);
         }
     }

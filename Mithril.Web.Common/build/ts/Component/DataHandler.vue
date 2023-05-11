@@ -67,6 +67,7 @@ export default Vue.defineComponent({
             return;
         }
         let that = this;
+        that.fetchData();
     },
     watch: {
         model: function(newModel, oldModel) {

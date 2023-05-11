@@ -6,7 +6,6 @@ using Mithril.Apm.Abstractions.Configuration;
 using Mithril.Apm.Abstractions.Features;
 using Mithril.Apm.Abstractions.Interfaces;
 using Mithril.Apm.Abstractions.Services;
-using Mithril.Apm.Default.HostedServices;
 using Mithril.Apm.Default.Middleware;
 using Mithril.Apm.Default.Services;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
@@ -57,8 +56,7 @@ namespace Mithril.Apm.Default
                            ?.AddSingleton<IMetricsCollectorService, MetricsCollectorService>()
                            ?.AddAllSingleton<IMetricsReporter>()
                            ?.AddAllSingleton<IEventListener>()
-                           ?.AddScoped<ApmMiddleware>()
-                           ?.AddHostedService<MetricsReporterHostedService>();
+                           ?.AddScoped<ApmMiddleware>();
         }
 
         /// <summary>

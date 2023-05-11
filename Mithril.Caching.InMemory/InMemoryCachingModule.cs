@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Mithril.Caching.InMemory.HostedServices;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 
 namespace Mithril.Caching.InMemory
@@ -34,7 +33,7 @@ namespace Mithril.Caching.InMemory
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
             //Memory cache
-            return services?.AddMemoryCacheHoard().AddHostedService<MemoryCompactionService>();
+            return services?.AddMemoryCacheHoard();
         }
     }
 }

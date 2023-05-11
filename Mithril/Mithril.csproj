@@ -24,6 +24,7 @@
     <ProjectReference Include="..\Mithril.API.GraphQL\Mithril.API.GraphQL.csproj" />
     <ProjectReference Include="..\Mithril.API.Swagger\Mithril.API.Swagger.csproj" />
     <ProjectReference Include="..\Mithril.Apm.Default\Mithril.Apm.Default.csproj" />
+    <ProjectReference Include="..\Mithril.Background.Default\Mithril.Background.Default.csproj" />
     <ProjectReference Include="..\Mithril.Caching.InMemory\Mithril.Caching.InMemory.csproj" />
     <ProjectReference Include="..\Mithril.Communication.Email\Mithril.Communication.Email.csproj" />
     <ProjectReference Include="..\Mithril.Core\Mithril.Core.csproj" />

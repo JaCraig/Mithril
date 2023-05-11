@@ -6,11 +6,7 @@
         COMPANY LOGO
     </a>
     <div class="inline-block right">
-        <nav class="horizontal">
-            <ul>
-                <li><a href="#" class="large"><span class="fas fa-circle-user"></span></a></li>
-            </ul>
-        </nav>
+        <mithril-side-menu :items="items"></mithril-side-menu>
     </div>
     <div class="inline-block">
         <nav class="horizontal">
@@ -66,6 +62,37 @@
 </footer>
 
 @section Scripts {
+    <script>
+        let HeaderApp = Vue.createApp({
+            data: function() {
+                return { items: [{ url: "A",display: "AAA" }] };
+            },
+            created: function() {
+                let that = this;
+                defaultTheme.Request.post('/api/query', {
+                    query: `query{
+          menu(name: "SideMenu"){
+            display
+            menuItems {
+              description
+              display
+              icon
+              order
+              url
+            }
+          }
+        }`
+                })
+                    .onSuccess((data) => {
+                        that.items = data.data.menu.menuItems;
+                    })
+                    .setMode(defaultTheme.StorageMode.StorageAndUpdate)
+                    .send();
+            }
+        });
+        TempDefaultTheme.Core.SetupComponents(HeaderApp);
+        HeaderApp.mount("header");
+    </script>
 @*
 <script>
     var headers = new Headers();

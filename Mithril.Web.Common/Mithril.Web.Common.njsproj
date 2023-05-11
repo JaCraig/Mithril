@@ -31,6 +31,7 @@
     <Folder Include="build\ts\" />
     <Folder Include="build\ts\Component\DataTypes\" />
     <Folder Include="build\ts\Component\VueExtensions\" />
+    <Folder Include="build\ts\Component\VueExtensions\Directives\" />
     <Folder Include="build\ts\Framework\" />
     <Folder Include="build\ts\Framework\AJAX\" />
     <Folder Include="build\ts\Framework\Database\" />
@@ -54,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="build\ts\Component\DataTypes\ComponentSchema.ts" />
+    <TypeScriptCompile Include="build\ts\Component\VueExtensions\Directives\clickOutside.ts" />
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\MithrilPlugin.ts" />
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueComponents.ts" />
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueDirectives.ts" />
