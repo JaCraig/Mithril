@@ -58,8 +58,13 @@ namespace Mithril.Themes.Abstractions.Services
         /// <param name="xMLSpace">The xml:space.</param>
         /// <param name="tagOrder">The tag order.</param>
         /// <param name="location">The location.</param>
-        /// <returns>True if it is successfully added, false otherwise.</returns>
-        bool AddScriptContentResource(string? content, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location);
+        /// <param name="integrity">The integrity.</param>
+        /// <param name="crossOrigin">The cross origin.</param>
+        /// <param name="referrerPolicy">The referrer policy.</param>
+        /// <returns>
+        /// True if it is successfully added, false otherwise.
+        /// </returns>
+        bool AddScriptContentResource(string? content, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location, string? integrity, string? crossOrigin, string? referrerPolicy);
 
         /// <summary>
         /// Adds the script file resource.
@@ -72,8 +77,13 @@ namespace Mithril.Themes.Abstractions.Services
         /// <param name="xMLSpace">The x ml space.</param>
         /// <param name="tagOrder">The tag order.</param>
         /// <param name="location">The location.</param>
-        /// <returns>True if it is successfully added, false otherwise.</returns>
-        bool AddScriptFileResource(string? file, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location);
+        /// <param name="integrity">The integrity.</param>
+        /// <param name="crossOrigin">The cross origin.</param>
+        /// <param name="referrerPolicy">The referrer policy.</param>
+        /// <returns>
+        /// True if it is successfully added, false otherwise.
+        /// </returns>
+        bool AddScriptFileResource(string? file, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location, string? integrity, string? crossOrigin, string? referrerPolicy);
 
         /// <summary>
         /// Adds the style resource.

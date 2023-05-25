@@ -13,21 +13,21 @@
 
     <title>@ViewData["Title"]</title>
 
-    <link rel="stylesheet" href="/DefaultTheme/css/default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/DefaultTheme/css/style.min.css" />
     @ResourceHolder?.Render(ResourceType.CSS)
 </head>
 <body>
-    
     <main role="main">
         @RenderBody()
     </main>
 
-    <script src="/DefaultTheme/js/moment.min.js"></script>
-    <script src="/DefaultTheme/js/vue.global.prod.js"></script>
-    <script src="/DefaultTheme/js/site.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" integrity="sha512-+H4iLjY3JsKiF2V6N366in5IQHj2uEsGV7Pp/GRcm0fn76aPAk5V8xB6n8fQhhSonTqTXs/klFz4D0GIn6Br9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.min.js" integrity="sha512-39BSQXI5q1XlvVhLfFRidKG8KM6Tr6VS/XSnNo6N/A0ZXexHCeoUI/s+ulujQy3UREjoLNrMnFat8VI0mMugWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/DefaultTheme/js/module.umd.min.js"></script>
 
     <script>
-        let TempDefaultTheme = new defaultTheme.ThemeStartup();
+        let TempDefaultTheme = new themedefault.ThemeStartup();
         let TempApp = Vue.createApp({});
         TempDefaultTheme.Core.SetupComponents(TempApp);
         TempApp.mount("#mainContent");

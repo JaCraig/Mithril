@@ -51,14 +51,17 @@ namespace Mithril.Themes.Abstractions.TagHelpers
             var Type = GetValue(context, "type");
             var XMLSpace = GetValue(context, "xml:space");
             var Location = GetValue(context, "location");
+            var Integrity = GetValue(context, "integrity");
+            var CrossOrigin = GetValue(context, "crossorigin");
+            var ReferrerPolicy = GetValue(context, "referrerpolicy");
             if (!string.IsNullOrEmpty(Src))
             {
-                Resources?.AddScriptFileResource(Src, Async, Charset, Defer, Type, XMLSpace, TagOrder, Location);
+                Resources?.AddScriptFileResource(Src, Async, Charset, Defer, Type, XMLSpace, TagOrder, Location, Integrity, CrossOrigin, ReferrerPolicy);
             }
             else
             {
                 var Content = (await output.GetChildContentAsync().ConfigureAwait(false)).GetContent();
-                Resources?.AddScriptContentResource(Content, Async, Charset, Defer, Type, XMLSpace, TagOrder, Location);
+                Resources?.AddScriptContentResource(Content, Async, Charset, Defer, Type, XMLSpace, TagOrder, Location, Integrity, CrossOrigin, ReferrerPolicy);
             }
             output.SuppressOutput();
         }

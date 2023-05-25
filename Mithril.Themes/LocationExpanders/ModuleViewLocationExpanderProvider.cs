@@ -21,16 +21,16 @@ namespace Mithril.Themes.LocationExpanders
         }
 
         /// <summary>
-        /// Gets the priority.
-        /// </summary>
-        /// <value>The priority.</value>
-        public int Priority { get; } = 5;
-
-        /// <summary>
         /// Gets the theme manager.
         /// </summary>
         /// <value>The theme manager.</value>
         private static IThemeService? ThemeManager;
+
+        /// <summary>
+        /// Gets the priority.
+        /// </summary>
+        /// <value>The priority.</value>
+        public int Priority { get; } = 5;
 
         /// <inheritdoc/>
         public virtual IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context,
@@ -61,8 +61,6 @@ namespace Mithril.Themes.LocationExpanders
                 if (CurrentTheme is not null)
                 {
                     var extensionViewsPath = $"/Views/Shared/_{CurrentTheme.Name}Layout" + RazorViewEngine.ViewExtension;
-                    result.Add(extensionViewsPath);
-                    extensionViewsPath = $"/Views/_{CurrentTheme.Name}Layout" + RazorViewEngine.ViewExtension;
                     result.Add(extensionViewsPath);
                 }
             }

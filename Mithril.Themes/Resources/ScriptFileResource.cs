@@ -22,10 +22,13 @@ namespace Mithril.Themes.Resources
         /// <param name="xMLSpace">The xml space.</param>
         /// <param name="order">The order.</param>
         /// <param name="location">The location.</param>
-        public ScriptFileResource(string? source, string? async, string? charset, string? defer, string? type, string? xMLSpace, int order, string? location)
+        public ScriptFileResource(string? source, string? async, string? charset, string? defer, string? type, string? xMLSpace, int order, string? location, string? integrity, string? crossOrigin, string? referrerPolicy)
         {
             Source = source?.Replace("~/", "/") ?? "";
             Order = order;
+            Integrity = integrity ?? "";
+            CrossOrigin = crossOrigin ?? "";
+            ReferrerPolicy = referrerPolicy ?? "";
             Async = async ?? "";
             Charset = charset ?? "";
             Defer = string.Equals(defer, "TRUE", StringComparison.OrdinalIgnoreCase);
@@ -56,10 +59,26 @@ namespace Mithril.Themes.Resources
         public string Charset { get; }
 
         /// <summary>
+        /// Gets the crossorigin.
+        /// </summary>
+        /// <value>
+        /// The crossorigin.
+        /// </value>
+        public string CrossOrigin { get; }
+
+        /// <summary>
         /// Gets the defer.
         /// </summary>
         /// <value>The defer.</value>
         public bool Defer { get; }
+
+        /// <summary>
+        /// Gets the integrity.
+        /// </summary>
+        /// <value>
+        /// The integrity.
+        /// </value>
+        public string Integrity { get; }
 
         /// <summary>
         /// Gets the location.
@@ -72,6 +91,14 @@ namespace Mithril.Themes.Resources
         /// </summary>
         /// <value>The order.</value>
         public int Order { get; set; }
+
+        /// <summary>
+        /// Gets the referrerpolicy.
+        /// </summary>
+        /// <value>
+        /// The referrerpolicy.
+        /// </value>
+        public string ReferrerPolicy { get; }
 
         /// <summary>
         /// Gets or sets the source.
@@ -173,6 +200,9 @@ namespace Mithril.Themes.Resources
             MergeAttribute(Builder, "defer", Defer);
             MergeAttribute(Builder, "type", Type);
             MergeAttribute(Builder, "xml:space", XMLSpace);
+            MergeAttribute(Builder, "integrity", Integrity);
+            MergeAttribute(Builder, "crossorigin", CrossOrigin);
+            MergeAttribute(Builder, "referrerpolicy", ReferrerPolicy);
             return Builder;
         }
 

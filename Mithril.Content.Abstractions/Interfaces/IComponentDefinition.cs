@@ -1,4 +1,6 @@
-﻿namespace Mithril.Content.Abstractions.Interfaces
+﻿using System.Dynamic;
+
+namespace Mithril.Content.Abstractions.Interfaces
 {
     /// <summary>
     /// Component definition interface
@@ -18,9 +20,19 @@
         string Name { get; }
 
         /// <summary>
-        /// Gets the definition.
+        /// Gets the schema.
         /// </summary>
-        /// <returns>The component's definition.</returns>
-        string GetDefinition();
+        /// <value>
+        /// The schema.
+        /// </value>
+        ExpandoObject? Schema { get; }
+
+        /// <summary>
+        /// Gets the script file.
+        /// </summary>
+        /// <value>
+        /// The script file.
+        /// </value>
+        string ScriptFile { get; }
     }
 }

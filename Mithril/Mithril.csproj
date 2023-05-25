@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mithril.Admin\Mithril.Admin.csproj" />
     <ProjectReference Include="..\Mithril.API.Commands\Mithril.API.Commands.csproj" />
     <ProjectReference Include="..\Mithril.API.GraphQL\Mithril.API.GraphQL.csproj" />
     <ProjectReference Include="..\Mithril.API.Swagger\Mithril.API.Swagger.csproj" />

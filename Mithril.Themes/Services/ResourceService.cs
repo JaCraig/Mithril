@@ -84,10 +84,15 @@ namespace Mithril.Themes.Services
         /// <param name="xMLSpace">The xml:space.</param>
         /// <param name="tagOrder">The tag order.</param>
         /// <param name="location">The position.</param>
-        /// <returns>True if it is successfully added, false otherwise.</returns>
-        public bool AddScriptContentResource(string? content, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location)
+        /// <param name="integrity">The integrity.</param>
+        /// <param name="crossOrigin">The cross origin.</param>
+        /// <param name="referrerPolicy">The referrer policy.</param>
+        /// <returns>
+        /// True if it is successfully added, false otherwise.
+        /// </returns>
+        public bool AddScriptContentResource(string? content, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location, string? integrity, string? crossOrigin, string? referrerPolicy)
         {
-            return AddResource(ResourceType.JavaScript, new ScriptContentResource(content, async, charset, defer, type, xMLSpace, tagOrder, location));
+            return AddResource(ResourceType.JavaScript, new ScriptContentResource(content, async, charset, defer, type, xMLSpace, tagOrder, location, integrity, crossOrigin, referrerPolicy));
         }
 
         /// <summary>
@@ -101,10 +106,15 @@ namespace Mithril.Themes.Services
         /// <param name="xMLSpace">The x ml space.</param>
         /// <param name="tagOrder">The tag order.</param>
         /// <param name="location">The position.</param>
-        /// <returns>True if it is successfully added, false otherwise.</returns>
-        public bool AddScriptFileResource(string? file, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location)
+        /// <param name="integrity">The integrity.</param>
+        /// <param name="crossOrigin">The cross origin.</param>
+        /// <param name="referrerPolicy">The referrer policy.</param>
+        /// <returns>
+        /// True if it is successfully added, false otherwise.
+        /// </returns>
+        public bool AddScriptFileResource(string? file, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location, string? integrity, string? crossOrigin, string? referrerPolicy)
         {
-            return AddResource(ResourceType.JavaScript, new ScriptFileResource(file, async, charset, defer, type, xMLSpace, tagOrder, location));
+            return AddResource(ResourceType.JavaScript, new ScriptFileResource(file, async, charset, defer, type, xMLSpace, tagOrder, location, integrity, crossOrigin, referrerPolicy));
         }
 
         /// <summary>

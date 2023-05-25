@@ -1,6 +1,8 @@
 ﻿using BigBook;
 using Mithril.Content.Abstractions.Interfaces;
+using System.Dynamic;
 using System.Globalization;
+using System.Text.Json;
 
 namespace Mithril.Content.Abstractions.BaseClasses
 {
@@ -16,8 +18,19 @@ namespace Mithril.Content.Abstractions.BaseClasses
         /// </summary>
         protected ComponentDefinitionBaseClass()
         {
-            Name = FixName(typeof(TClass).Name);
+            Name = typeof(TClass).Name.Split("`").FirstOrDefault().AddSpaces() ?? "Component";
+            ComponentType = FixName(typeof(TClass).Name);
         }
+
+        /// <summary>
+        /// The lock object
+        /// </summary>
+        private readonly object LockObject = new();
+
+        /// <summary>
+        /// The schema
+        /// </summary>
+        private ExpandoObject? _schema;
 
         /// <summary>
         /// Gets the default class.
@@ -38,26 +51,55 @@ namespace Mithril.Content.Abstractions.BaseClasses
         public string Name { get; }
 
         /// <summary>
-        /// Gets the definition.
+        /// Gets the schema.
         /// </summary>
-        /// <returns>The component's definition.</returns>
-        public string GetDefinition()
+        /// <value>
+        /// The schema.
+        /// </value>
+        public ExpandoObject? Schema
         {
-            if (DefaultProperties.Count == 0)
-                return $"{{ \"type\": \"{Name}\", \"style\":\"\", \"class\":\"{DefaultClass}\" }}";
-            return $"{{ \"type\": \"{Name}\", \"style\":\"\", \"class\":\"{DefaultClass}\", {DefaultProperties.ToString(x => $"\"{x.Key}\": {x.Value}", ", ")} }}";
+            get
+            {
+                if (_schema is not null)
+                    return _schema;
+                lock (LockObject)
+                {
+                    if (_schema is not null)
+                        return _schema;
+                    if (DefaultProperties.Count == 0)
+                        _schema = JsonSerializer.Deserialize<ExpandoObject>($"{{ \"type\": \"{ComponentType}\", \"style\":\"\", \"class\":\"{DefaultClass}\" }}");
+                    _schema = JsonSerializer.Deserialize<ExpandoObject>($"{{ \"type\": \"{ComponentType}\", \"style\":\"\", \"class\":\"{DefaultClass}\", {DefaultProperties.ToString(x => $"\"{x.Key}\": {x.Value}", ", ")} }}");
+                }
+                return _schema;
+            }
         }
+
+        /// <summary>
+        /// Gets the script file.
+        /// </summary>
+        /// <value>
+        /// The script file.
+        /// </value>
+        public virtual string ScriptFile { get; } = "/Core/js/core.umd.min.js";
+
+        /// <summary>
+        /// Gets or sets the type of the component.
+        /// </summary>
+        /// <value>
+        /// The type of the component.
+        /// </value>
+        private string ComponentType { get; set; }
 
         /// <summary>
         /// Fixes the name.
         /// </summary>
         /// <param name="name">The name.</param>
-        /// <returns></returns>
+        /// <returns>The fixed name</returns>
         private static string FixName(string? name)
         {
             if (string.IsNullOrEmpty(name))
                 return "";
-            return SplitCamelCase(name).ToLower(CultureInfo.InvariantCulture);
+            return SplitCamelCase(name.Split("`").FirstOrDefault()).ToLower(CultureInfo.InvariantCulture);
         }
 
         /// <summary>
@@ -65,7 +107,7 @@ namespace Mithril.Content.Abstractions.BaseClasses
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>Splits the camel case names</returns>
-        private static string SplitCamelCase(string input)
+        private static string SplitCamelCase(string? input)
         {
             return input.AddSpaces().Replace(" ", "-", StringComparison.Ordinal);
         }

@@ -69,7 +69,7 @@
             },
             created: function() {
                 let that = this;
-                defaultTheme.Request.post('/api/query', {
+                themedefault.Request.post('/api/query', {
                     query: `query{
           menu(name: "SideMenu"){
             display
@@ -86,7 +86,7 @@
                     .onSuccess((data) => {
                         that.items = data.data.menu.menuItems;
                     })
-                    .setMode(defaultTheme.StorageMode.StorageAndUpdate)
+                    .setMode(themedefault.StorageMode.StorageAndUpdate)
                     .send();
             }
         });

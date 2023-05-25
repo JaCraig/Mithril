@@ -12,7 +12,7 @@ namespace Mithril.Themes.Resources
     public class ScriptContentResource : IResource, IEquatable<ScriptContentResource>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScriptContentResource"/> class.
+        /// Initializes a new instance of the <see cref="ScriptContentResource" /> class.
         /// </summary>
         /// <param name="content">The content.</param>
         /// <param name="async">The asynchronous.</param>
@@ -22,9 +22,15 @@ namespace Mithril.Themes.Resources
         /// <param name="xMLSpace">The x ml space.</param>
         /// <param name="tagOrder">The tag order.</param>
         /// <param name="location">The position.</param>
-        public ScriptContentResource(string? content, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location)
+        /// <param name="integrity">The integrity.</param>
+        /// <param name="crossOrigin">The cross origin.</param>
+        /// <param name="referrerPolicy">The referrer policy.</param>
+        public ScriptContentResource(string? content, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location, string? integrity, string? crossOrigin, string? referrerPolicy)
         {
             Order = tagOrder;
+            Integrity = integrity ?? "";
+            CrossOrigin = crossOrigin ?? "";
+            ReferrerPolicy = referrerPolicy ?? "";
             Content = content ?? "";
             Async = async ?? "";
             Charset = charset ?? "";
@@ -53,10 +59,26 @@ namespace Mithril.Themes.Resources
         public string Content { get; set; }
 
         /// <summary>
+        /// Gets the crossorigin.
+        /// </summary>
+        /// <value>
+        /// The crossorigin.
+        /// </value>
+        public string CrossOrigin { get; }
+
+        /// <summary>
         /// Gets the defer.
         /// </summary>
         /// <value>The defer.</value>
         public bool Defer { get; }
+
+        /// <summary>
+        /// Gets the integrity.
+        /// </summary>
+        /// <value>
+        /// The integrity.
+        /// </value>
+        public string Integrity { get; }
 
         /// <summary>
         /// Gets the position.
@@ -69,6 +91,14 @@ namespace Mithril.Themes.Resources
         /// </summary>
         /// <value>The order.</value>
         public int Order { get; set; }
+
+        /// <summary>
+        /// Gets the referrerpolicy.
+        /// </summary>
+        /// <value>
+        /// The referrerpolicy.
+        /// </value>
+        public string ReferrerPolicy { get; }
 
         /// <summary>
         /// Gets the type.
@@ -155,6 +185,9 @@ namespace Mithril.Themes.Resources
             MergeAttribute(Builder, "defer", Defer);
             MergeAttribute(Builder, "type", Type);
             MergeAttribute(Builder, "xml:space", XMLSpace);
+            MergeAttribute(Builder, "integrity", Integrity);
+            MergeAttribute(Builder, "crossorigin", CrossOrigin);
+            MergeAttribute(Builder, "referrerpolicy", ReferrerPolicy);
             Builder.InnerHtml.AppendHtml(Content);
             return Builder;
         }
