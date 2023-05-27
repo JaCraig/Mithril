@@ -6,7 +6,7 @@ namespace Mithril.Themes.Tests.Resources
     /// <summary>
     /// ScriptFileResource tests
     /// </summary>
-    /// <seealso cref="TestBaseClass&lt;ScriptFileResource&gt;" />
+    /// <seealso cref="TestBaseClass&lt;ScriptFileResource&gt;"/>
     public class ScriptFileResourceTests : TestBaseClass<ScriptFileResource>
     {
         /// <summary>
@@ -14,7 +14,7 @@ namespace Mithril.Themes.Tests.Resources
         /// </summary>
         public ScriptFileResourceTests()
         {
-            TestObject = new ScriptFileResource("", "", "", "", "", "", 0, "");
+            TestObject = new ScriptFileResource("", "", "", "", "", "", 0, "", "", "", "");
             ObjectType = typeof(ScriptFileResource);
         }
     }

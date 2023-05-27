@@ -348,9 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
-/Mithril.Admin/wwwroot/css/style.min.css
-/Mithril.Admin/wwwroot/js/module.es.min.js
-/Mithril.Admin/wwwroot/js/module.umd.min.js
-/Mithril.Theme.Default/wwwroot/css/style.min.css
-/Mithril.Theme.Default/wwwroot/js/module.es.min.js
-/Mithril.Theme.Default/wwwroot/js/module.umd.min.js
+
+/*/wwwroot/*
