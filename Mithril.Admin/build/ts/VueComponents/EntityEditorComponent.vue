@@ -1,13 +1,15 @@
 ﻿<style type="text/less" scoped>
 </style>
 <template>
-    <div>
-        Entity Editor
-        <div v-if="debug && schema" class="panel debug">
-            <header>Editor Schema</header>
-            <pre>
-    {{schema}}
-                </pre>
+    <div class="panel" :class="schema.class">
+        <header>{{name}}</header>
+        <div class="body">
+            <div v-if="debug && schema" class="panel debug">
+                <header>Editor Schema</header>
+                <pre>
+{{schema}}
+            </pre>
+            </div>
         </div>
     </div>
 </template>
@@ -16,8 +18,12 @@
     import Vue from "vue";
 
     export default Vue.defineComponent({
-        name: "entity-editor-component",
+        name: "data-editor-component",
         props: {
+            name: {
+                type: String,
+                default: ""
+            },
             schema: {
                 type: Object,
                 default: {}

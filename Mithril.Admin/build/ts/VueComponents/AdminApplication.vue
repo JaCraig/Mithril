@@ -49,6 +49,7 @@
         <div class="editor-content">
             <component :is="currentEditor.componentDefinition.schema.type"
                        :schema="currentEditor.componentDefinition.schema"
+                       :name="currentEditor.name"
                        :debug="debug"
                        @error="error" v-if="currentEditor">
             </component>
@@ -89,6 +90,8 @@
             },
             sortedEditors: function () {
                 return this.editors.sort((a, b) => {
+                    if (a.category < b.category) return -1;
+                    if (a.category > b.category) return 1;
                     if (a.name < b.name) return -1;
                     if (a.name > b.name) return 1;
                     return 0;

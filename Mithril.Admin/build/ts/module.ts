@@ -24,7 +24,7 @@ class AdminInitializer {
         app.use(MithrilPlugin);
         app.component("admin-application", AdminApplication);
         app.component("settings-editor-component", SettingsEditorComponent);
-        app.component("entity-editor-component", EntityEditorComponent);
+        app.component("data-editor-component", EntityEditorComponent);
         return app;
     }
 }

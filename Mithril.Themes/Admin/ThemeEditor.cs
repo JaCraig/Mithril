@@ -12,11 +12,11 @@ namespace Mithril.Themes.Admin
     /// Theme editor
     /// TODO: Add tests
     /// </summary>
-    /// <seealso cref="SettingsEditorBaseClass&lt;ThemeSettingsVM&gt;" />
+    /// <seealso cref="SettingsEditorBaseClass&lt;ThemeSettingsVM&gt;"/>
     public class ThemeEditor : SettingsEditorBaseClass<ThemeSettingsVM>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ThemeEditor" /> class.
+        /// Initializes a new instance of the <see cref="ThemeEditor"/> class.
         /// </summary>
         /// <param name="themeService">The theme service.</param>
         /// <param name="dataService">The data service.</param>
@@ -27,11 +27,15 @@ namespace Mithril.Themes.Admin
         }
 
         /// <summary>
+        /// Gets the icon.
+        /// </summary>
+        /// <value>The icon.</value>
+        public override string Icon { get; } = "fas fa-palette";
+
+        /// <summary>
         /// Gets the theme service.
         /// </summary>
-        /// <value>
-        /// The theme service.
-        /// </value>
+        /// <value>The theme service.</value>
         private IThemeService ThemeService { get; }
 
         /// <summary>
@@ -40,13 +44,8 @@ namespace Mithril.Themes.Admin
         /// <param name="id">The identifier.</param>
         /// <param name="model">The model.</param>
         /// <param name="currentUser"></param>
-        /// <returns>
-        /// The entity specified.
-        /// </returns>
-        public override IEntity? Load(long id, ExpandoObject? model, ClaimsPrincipal? currentUser)
-        {
-            return new ThemeSettingsVM(ThemeService);
-        }
+        /// <returns>The entity specified.</returns>
+        public override IEntity? Load(long id, ExpandoObject? model, ClaimsPrincipal? currentUser) => new ThemeSettingsVM(ThemeService);
 
         /// <summary>
         /// Saves the entity asynchronous.
@@ -59,7 +58,7 @@ namespace Mithril.Themes.Admin
         {
             if (entity is null)
                 return false;
-            var DesiredTheme = ThemeService.LoadTheme(entity.CurrentTheme);
+            Abstractions.Interfaces.ITheme? DesiredTheme = ThemeService.LoadTheme(entity.CurrentTheme);
             await ThemeService.SetDefaultThemeAsync(DesiredTheme, currentUser).ConfigureAwait(false);
             return true;
         }

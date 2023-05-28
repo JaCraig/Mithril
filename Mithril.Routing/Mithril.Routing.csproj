@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mithril.Admin.Abstractions\Mithril.Admin.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.Routing.Abstractions\Mithril.Routing.Abstractions.csproj" />
   </ItemGroup>
 

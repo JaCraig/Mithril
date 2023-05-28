@@ -9,7 +9,7 @@ namespace Mithril.Themes.Abstractions.BaseClasses
     /// Themed Razor page
     /// </summary>
     /// <typeparam name="TModel">The type of the model.</typeparam>
-    /// <seealso cref="Microsoft.AspNetCore.Mvc.Razor.RazorPage&lt;TModel&gt;" />
+    /// <seealso cref="Microsoft.AspNetCore.Mvc.Razor.RazorPage&lt;TModel&gt;"/>
     public abstract class ThemedRazorPage<TModel> : Microsoft.AspNetCore.Mvc.Razor.RazorPage<TModel>
     {
         /// <summary>
@@ -33,6 +33,12 @@ namespace Mithril.Themes.Abstractions.BaseClasses
         /// </summary>
         /// <value>The current theme.</value>
         protected ITheme? CurrentTheme { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="ThemedRazorPage{TModel}"/> is in debug mode.
+        /// </summary>
+        /// <value><c>true</c> if debug; otherwise, <c>false</c>.</value>
+        protected bool Debug => System.Diagnostics.Debugger.IsAttached;
 
         /// <summary>
         /// Gets the resource holder.
@@ -60,9 +66,6 @@ namespace Mithril.Themes.Abstractions.BaseClasses
         /// </summary>
         /// <typeparam name="TService">The type of the service.</typeparam>
         /// <returns>The service specified.</returns>
-        protected TService? GetService<TService>()
-        {
-            return (TService?)HttpContext.Current?.RequestServices.GetService(typeof(TService));
-        }
+        protected TService? GetService<TService>() => (TService?)HttpContext.Current?.RequestServices.GetService(typeof(TService));
     }
 }

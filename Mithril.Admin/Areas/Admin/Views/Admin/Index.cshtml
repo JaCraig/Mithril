@@ -2,7 +2,7 @@
     <link type="text/css" href="/Admin/css/style.min.css" />
 }
 <div id="AdminApplication">
-    <admin-application :debug="@(System.Diagnostics.Debugger.IsAttached?"true":"false")"></admin-application>
+    <admin-application :debug="@(Debug?"true":"false")"></admin-application>
 </div>
 
 @section Scripts {
