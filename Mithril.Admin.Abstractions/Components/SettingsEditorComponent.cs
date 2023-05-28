@@ -1,4 +1,6 @@
-﻿using Mithril.Content.Abstractions.BaseClasses;
+﻿using Mithril.Admin.Abstractions.Services;
+using Mithril.Content.Abstractions.BaseClasses;
+using System.Text.Json;
 
 namespace Mithril.Admin.Abstractions.Components
 {
@@ -6,7 +8,7 @@ namespace Mithril.Admin.Abstractions.Components
     /// Settings editor component
     /// TODO: Add tests
     /// </summary>
-    /// <seealso cref="ComponentDefinitionBaseClass&lt;SettingsEditorComponent&gt;" />
+    /// <seealso cref="ComponentDefinitionBaseClass&lt;SettingsEditorComponent&gt;"/>
     public class SettingsEditorComponent<TEntity> : ComponentDefinitionBaseClass<SettingsEditorComponent<TEntity>>
     {
         /// <summary>
@@ -16,21 +18,21 @@ namespace Mithril.Admin.Abstractions.Components
         { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SettingsEditorComponent" /> class.
+        /// Initializes a new instance of the <see cref="SettingsEditorComponent"/> class.
         /// </summary>
         /// <param name="dataType">Type of the data.</param>
-        public SettingsEditorComponent(string dataType)
+        /// <param name="entityMetadataService">The entity metadata service.</param>
+        public SettingsEditorComponent(string dataType, IEntityMetadataService entityMetadataService)
         {
             DataType = dataType;
             DefaultProperties["dataType"] = $"\"{DataType}\"";
+            DefaultProperties["modelSchema"] = JsonSerializer.Serialize(entityMetadataService.ExtractMetadata<TEntity>().Properties);
         }
 
         /// <summary>
         /// Gets the default properties.
         /// </summary>
-        /// <value>
-        /// The default properties.
-        /// </value>
+        /// <value>The default properties.</value>
         public override Dictionary<string, string> DefaultProperties { get; } = new Dictionary<string, string>
         {
             ["dataType"] = "\"\"",
@@ -40,9 +42,7 @@ namespace Mithril.Admin.Abstractions.Components
         /// <summary>
         /// Gets the type of the data.
         /// </summary>
-        /// <value>
-        /// The type of the data.
-        /// </value>
+        /// <value>The type of the data.</value>
         private string? DataType { get; }
     }
 }

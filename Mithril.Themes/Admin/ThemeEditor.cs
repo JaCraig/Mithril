@@ -1,5 +1,6 @@
 ﻿using Mithril.Admin.Abstractions.BaseClasses;
 using Mithril.Admin.Abstractions.Interfaces;
+using Mithril.Admin.Abstractions.Services;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Themes.Abstractions.Services;
 using Mithril.Themes.Admin.ViewModels;
@@ -20,8 +21,9 @@ namespace Mithril.Themes.Admin
         /// </summary>
         /// <param name="themeService">The theme service.</param>
         /// <param name="dataService">The data service.</param>
-        public ThemeEditor(IThemeService themeService, IDataService dataService)
-            : base(dataService)
+        /// <param name="entityMetadataService">The entity metadata service.</param>
+        public ThemeEditor(IThemeService themeService, IDataService dataService, IEntityMetadataService entityMetadataService)
+            : base(dataService, entityMetadataService)
         {
             ThemeService = themeService;
         }

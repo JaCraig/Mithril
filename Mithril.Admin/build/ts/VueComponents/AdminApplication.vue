@@ -106,11 +106,15 @@
         },
         methods: {
             editorSelected: function (editor: any) {
-                console.log("Switching to editor:",editor.name);
+                if (this.debug) {
+                    console.log("Switching to editor:", editor.name);
+                }
                 this.currentEditor = editor;
             },
             loadEditors: function () {
-                console.log("Loading Editors");
+                if (this.debug) {
+                    console.log("Loading Editors");
+                }
                 let that = this;
                 Request.post('/api/query', {
                     query: `query{
@@ -129,6 +133,14 @@
                 })
                     .onSuccess((data) => {
                         that.editors = data.data.editors;
+                        if (that.debug) {
+                            console.log("Finished loading editors:", data.data.editors);
+                        }
+                    })
+                    .onError((error) => {
+                        if (that.debug) {
+                            console.log("Error loading editors:", error);
+                        }
                     })
                     .setMode(StorageMode.StorageAndUpdate)
                     .send();

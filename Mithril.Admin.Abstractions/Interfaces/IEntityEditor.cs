@@ -4,19 +4,23 @@ using System.Security.Claims;
 namespace Mithril.Admin.Abstractions.Interfaces
 {
     /// <summary>
-    /// Entity editor interface
+    /// Entity editor
     /// </summary>
-    public interface IEntityEditor<TEntity> : IEditor
-        where TEntity : IEntity, new()
+    /// <seealso cref="IEditor"/>
+    public interface IEntityEditor : IEditor
     {
+        /// <summary>
+        /// Gets the type of the entity.
+        /// </summary>
+        /// <value>The type of the entity.</value>
+        string EntityType { get; }
+
         /// <summary>
         /// Activates the entity specified asynchronously.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="currentUser">The current user.</param>
-        /// <returns>
-        /// True if it succeeds, false otherwise.
-        /// </returns>
+        /// <returns>True if it succeeds, false otherwise.</returns>
         Task<bool> ActivateAsync(long id, ClaimsPrincipal? currentUser);
 
         /// <summary>
@@ -24,9 +28,7 @@ namespace Mithril.Admin.Abstractions.Interfaces
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="currentUser">The current user.</param>
-        /// <returns>
-        /// True if it succeeds, false otherwise.
-        /// </returns>
+        /// <returns>True if it succeeds, false otherwise.</returns>
         Task<bool> DeleteEntityAsync(long id, ClaimsPrincipal? currentUser);
 
         /// <summary>
@@ -47,9 +49,7 @@ namespace Mithril.Admin.Abstractions.Interfaces
         /// <param name="sortAscending">if set to <c>true</c> [sort ascending].</param>
         /// <param name="searchQuery">The search query.</param>
         /// <param name="currentUser">The current user.</param>
-        /// <returns>
-        /// The entities specified.
-        /// </returns>
+        /// <returns>The entities specified.</returns>
         Task<IEnumerable<IEntity>> LoadPageAsync(int page, int pageSize, string sortField, bool sortAscending, string searchQuery, ClaimsPrincipal? currentUser);
 
         /// <summary>
@@ -58,18 +58,14 @@ namespace Mithril.Admin.Abstractions.Interfaces
         /// <param name="id">The identifier.</param>
         /// <param name="entity">The entity.</param>
         /// <param name="currentUser">The current user.</param>
-        /// <returns>
-        /// True if it succeeds, false otherwise.
-        /// </returns>
+        /// <returns>True if it succeeds, false otherwise.</returns>
         Task<bool> SaveEntityAsync(long id, ExpandoObject entity, ClaimsPrincipal? currentUser);
 
         /// <summary>
         /// Gets the total active items.
         /// </summary>
         /// <param name="currentUser">The current user.</param>
-        /// <returns>
-        /// The total.
-        /// </returns>
+        /// <returns>The total.</returns>
         Task<int> TotalActiveAsync(ClaimsPrincipal? currentUser);
     }
 }

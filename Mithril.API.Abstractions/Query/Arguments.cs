@@ -1,4 +1,6 @@
-﻿namespace Mithril.API.Abstractions.Query
+﻿using ObjectCartographer;
+
+namespace Mithril.API.Abstractions.Query
 {
     /// <summary>
     /// Arguments
@@ -21,7 +23,7 @@
         /// <returns>The value specified.</returns>
         public TValue? GetValue<TValue>(string? key)
         {
-            TryGetValue<TValue>(key, out var value);
+            TryGetValue(key, out TValue? value);
             return value;
         }
 
@@ -39,7 +41,7 @@
                 value = default;
                 return false;
             }
-            value = (TValue?)value2;
+            value = value2.To<TValue>();
             return true;
         }
     }

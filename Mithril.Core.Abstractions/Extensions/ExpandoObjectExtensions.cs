@@ -1,5 +1,6 @@
 ﻿using BigBook;
 using System.Dynamic;
+using System.Reflection;
 
 namespace Mithril.Core.Abstractions.Extensions
 {
@@ -14,10 +15,8 @@ namespace Mithril.Core.Abstractions.Extensions
         /// </summary>
         /// <typeparam name="TEntity">The type of the entity.</typeparam>
         /// <param name="value">The value.</param>
-        /// <returns>
-        /// The view model equivalent.
-        /// </returns>
-        public static TEntity? ConvertExpando<TEntity>(this ExpandoObject value)
+        /// <returns>The view model equivalent.</returns>
+        public static TEntity? ConvertExpando<TEntity>(this ExpandoObject? value)
         {
             if (value is null)
                 return default;
@@ -29,6 +28,27 @@ namespace Mithril.Core.Abstractions.Extensions
             }
             dynamic TempValue = new Dynamo(TempValues);
             return (TEntity)TempValue;
+        }
+
+        /// <summary>
+        /// Converts the object to an expando.
+        /// </summary>
+        /// <typeparam name="TEntity">The type of the entity.</typeparam>
+        /// <param name="value">The value.</param>
+        /// <returns>The resulting object</returns>
+        public static ExpandoObject? ConvertToExpando<TEntity>(this TEntity? value)
+        {
+            if (value is null)
+                return null;
+            var ReturnValue = new ExpandoObject();
+            var ReturnValueDictionary = ReturnValue as IDictionary<string, object?>;
+
+            foreach (PropertyInfo Property in value.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
+            {
+                ReturnValueDictionary[Property.Name.ToString(StringCase.CamelCase)] = Property.GetValue(value);
+            }
+
+            return ReturnValue;
         }
     }
 }

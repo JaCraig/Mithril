@@ -12,7 +12,7 @@ namespace Mithril.Admin
     /// Admin module
     /// TODO: Add tests
     /// </summary>
-    /// <seealso cref="ModuleBaseClass&lt;AdminModule&gt;" />
+    /// <seealso cref="ModuleBaseClass&lt;AdminModule&gt;"/>
     public class AdminModule : ModuleBaseClass<AdminModule>
     {
         /// <summary>
@@ -21,13 +21,13 @@ namespace Mithril.Admin
         /// <param name="services">The services collection.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
-        /// <returns>
-        /// Services
-        /// </returns>
+        /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
             return services?.AddAllTransient<IEditor>()
-                ?.AddSingleton<IEditorService, EditorService>();
+                ?.AddAllTransient<IMetadataBuilder>()
+                ?.AddSingleton<IEditorService, EditorService>()
+                ?.AddSingleton<IEntityMetadataService, EntityMetadataService>();
         }
     }
 }

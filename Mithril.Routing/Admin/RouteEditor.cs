@@ -1,5 +1,6 @@
 ﻿using Mithril.Admin.Abstractions.BaseClasses;
 using Mithril.Admin.Abstractions.Interfaces;
+using Mithril.Admin.Abstractions.Services;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Routing.Admin.ViewModels;
 using Mithril.Routing.Models;
@@ -15,9 +16,10 @@ namespace Mithril.Routing.Admin
         /// <summary>
         /// Initializes a new instance of the <see cref="RouteEditor"/> class.
         /// </summary>
-        /// <param name="dataService"></param>
-        /// <param name="dataType"></param>
-        public RouteEditor(IDataService dataService, string? dataType = null) : base(dataService, dataType)
+        /// <param name="dataService">The data service.</param>
+        /// <param name="entityMetadataService">The entity metadata service.</param>
+        /// <param name="dataType">Type of the data.</param>
+        public RouteEditor(IDataService dataService, IEntityMetadataService entityMetadataService, string? dataType = null) : base(dataService, entityMetadataService, dataType)
         {
         }
 
