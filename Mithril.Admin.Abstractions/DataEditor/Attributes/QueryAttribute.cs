@@ -1,19 +1,19 @@
 ﻿namespace Mithril.Admin.Abstractions.DataEditor.Attributes
 {
     /// <summary>
-    /// Drop down attribute
+    /// Query attribute
     /// TODO: Add tests
     /// </summary>
     /// <seealso cref="Attribute" />
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class DropDownAttribute : Attribute
+    public class QueryAttribute : Attribute
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DropDownAttribute"/> class.
+        /// Initializes a new instance of the <see cref="QueryAttribute"/> class.
         /// </summary>
         /// <param name="queryType">Type of the query.</param>
         /// <param name="filter">The filter.</param>
-        public DropDownAttribute(Type queryType, string filter = "")
+        public QueryAttribute(Type queryType, string filter = "")
         {
             QueryType = queryType;
             Filter = filter;

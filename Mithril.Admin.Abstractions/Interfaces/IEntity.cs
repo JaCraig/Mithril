@@ -1,4 +1,5 @@
 ﻿using Mithril.Admin.Abstractions.DataEditor.Attributes;
+using Mithril.Data.Abstractions.Interfaces;
 
 namespace Mithril.Admin.Abstractions.Interfaces
 {
@@ -11,7 +12,7 @@ namespace Mithril.Admin.Abstractions.Interfaces
         /// Gets or sets a value indicating whether this <see cref="IEntity"/> is active.
         /// </summary>
         /// <value><c>true</c> if active; otherwise, <c>false</c>.</value>
-        [ReadOnly]
+        [DoNotList]
         bool Active { get; set; }
 
         /// <summary>
@@ -19,6 +20,7 @@ namespace Mithril.Admin.Abstractions.Interfaces
         /// </summary>
         /// <value>The identifier.</value>
         [ReadOnly]
+        [DoNotList]
         long ID { get; set; }
     }
 
@@ -27,6 +29,7 @@ namespace Mithril.Admin.Abstractions.Interfaces
     /// </summary>
     /// <typeparam name="TModel">The type of the model.</typeparam>
     public interface IEntity<TModel> : IEntity
+        where TModel : IModel
     {
         /// <summary>
         /// Saves the changes asynchronously.

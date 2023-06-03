@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using BigBook;
+using Mithril.Admin.Abstractions.DataEditor.Attributes;
+using System.Reflection;
 
 namespace Mithril.Admin.Abstractions.DataEditor
 {
@@ -14,7 +16,11 @@ namespace Mithril.Admin.Abstractions.DataEditor
         /// <param name="objectType">Type of the object.</param>
         public EntityMetadata(Type objectType)
         {
-            PropertyInfo[] PublicProperties = objectType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            if (objectType is null)
+                return;
+            Name = objectType.GetName();
+            DisplayName = SplitCamelCase(Name);
+            PropertyInfo[] PublicProperties = GetProperties(objectType);
             Properties = new PropertyMetadata[PublicProperties.Length];
             for (var x = 0; x < PublicProperties.Length; ++x)
             {
@@ -24,9 +30,60 @@ namespace Mithril.Admin.Abstractions.DataEditor
         }
 
         /// <summary>
+        /// Gets or sets the display name.
+        /// </summary>
+        /// <value>
+        /// The display name.
+        /// </value>
+        public string DisplayName { get; } = "";
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public string Name { get; } = "";
+
+        /// <summary>
         /// Gets the properties.
         /// </summary>
         /// <value>The properties.</value>
-        public PropertyMetadata[] Properties { get; }
+        public PropertyMetadata[] Properties { get; } = Array.Empty<PropertyMetadata>();
+
+        /// <summary>
+        /// Gets the properties.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>The properties on the object type.</returns>
+        private static PropertyInfo[] GetProperties(Type type)
+        {
+            var EntityIEnumerableType = type.GetIEnumerableElementType();
+            return OrderProperties(EntityIEnumerableType == type
+                ? type.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                : EntityIEnumerableType.GetProperties(BindingFlags.Public | BindingFlags.Instance));
+        }
+
+        /// <summary>
+        /// Orders the properties.
+        /// </summary>
+        /// <param name="properties">The properties.</param>
+        /// <returns>The ordered properties</returns>
+        private static PropertyInfo[] OrderProperties(PropertyInfo[] properties)
+        {
+            return properties is null
+                ? Array.Empty<PropertyInfo>()
+                : properties.OrderBy(x => x.GetCustomAttribute<OrderAttribute>()?.Order ?? int.MaxValue).ThenBy(x => x.Name).ToArray();
+        }
+
+        /// <summary>
+        /// Splits the camel case.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns>Splits the camel case names</returns>
+        private static string SplitCamelCase(string? input)
+        {
+            return input?.AddSpaces() ?? "";
+        }
     }
 }

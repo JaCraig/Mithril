@@ -7,9 +7,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Query.Interfaces;
+using Mithril.API.Abstractions.Services;
 using Mithril.API.GraphQL.Authorization;
 using Mithril.API.GraphQL.GraphTypes.Builder;
 using Mithril.API.GraphQL.ObjectGraphs;
+using Mithril.API.GraphQL.Services;
 using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 
@@ -99,7 +101,9 @@ namespace Mithril.API.GraphQL
                 ?.AddUserContextBuilder((context) => new GraphQLUserContextDictionary(context.User))
                 ?.AddAuthorizationRule();
             });
-            services?.AddAllSingleton<IQuery>();
+            services?.AddAllSingleton<IQuery>()
+                ?.AddAllSingleton<IDropDownQuery>()
+                ?.AddSingleton<IQueryService, QueryService>();
             return services;
         }
     }

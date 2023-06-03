@@ -2,6 +2,7 @@
 using Mithril.Admin.Abstractions.BaseClasses;
 using Mithril.Admin.Abstractions.DataEditor;
 using Mithril.Admin.Abstractions.Interfaces;
+using Mithril.Admin.Abstractions.Services;
 using System.ComponentModel.DataAnnotations;
 
 namespace Mithril.Admin.Services.MetadataBuilders
@@ -18,7 +19,7 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// </summary>
         /// <param name="propertyMetadata">The property metadata.</param>
         /// <returns>The resulting property metadata.</returns>
-        public override PropertyMetadata? ExtractMetadata(PropertyMetadata? propertyMetadata)
+        public override PropertyMetadata? ExtractMetadata(PropertyMetadata? propertyMetadata, IEntityMetadataService metadataService)
         {
             if (propertyMetadata is null)
                 return propertyMetadata;
@@ -27,23 +28,23 @@ namespace Mithril.Admin.Services.MetadataBuilders
 
             MaxLengthAttribute? MaxLength = propertyMetadata.Property?.Attributes<MaxLengthAttribute>()?.FirstOrDefault();
             if (MaxLength is not null)
-                propertyMetadata.Metadata["maxLength"] = MaxLength.Length;
+                propertyMetadata.Metadata["maxlength"] = MaxLength.Length;
 
             MinLengthAttribute? MinLength = propertyMetadata.Property?.Attributes<MinLengthAttribute>()?.FirstOrDefault();
             if (MinLength is not null)
-                propertyMetadata.Metadata["minLength"] = MinLength.Length;
+                propertyMetadata.Metadata["minlength"] = MinLength.Length;
 
             RangeAttribute? RangeAttribute = propertyMetadata.Property?.Attributes<RangeAttribute>()?.FirstOrDefault();
-            if (RangeAttribute is not null && RangeAttribute.Minimum is not null)
-                propertyMetadata.Metadata["minLength"] = RangeAttribute.Minimum;
-            if (RangeAttribute is not null && RangeAttribute.Maximum is not null)
-                propertyMetadata.Metadata["maxLength"] = RangeAttribute.Maximum;
+            if (RangeAttribute?.Minimum is not null)
+                propertyMetadata.Metadata["minlength"] = RangeAttribute.Minimum;
+            if (RangeAttribute?.Maximum is not null)
+                propertyMetadata.Metadata["maxlength"] = RangeAttribute.Maximum;
 
             StringLengthAttribute? StringLengthAttribute = propertyMetadata.Property?.Attributes<StringLengthAttribute>()?.FirstOrDefault();
-            if (StringLengthAttribute is not null && StringLengthAttribute.MinimumLength > 0)
-                propertyMetadata.Metadata["minLength"] = StringLengthAttribute.MinimumLength;
-            if (StringLengthAttribute is not null && StringLengthAttribute.MaximumLength > 0)
-                propertyMetadata.Metadata["maxLength"] = StringLengthAttribute.MaximumLength;
+            if (StringLengthAttribute?.MinimumLength > 0)
+                propertyMetadata.Metadata["minlength"] = StringLengthAttribute.MinimumLength;
+            if (StringLengthAttribute?.MaximumLength > 0)
+                propertyMetadata.Metadata["maxlength"] = StringLengthAttribute.MaximumLength;
 
             AddValidationMessages(propertyMetadata);
 
@@ -54,14 +55,14 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// Adds the validation messages.
         /// </summary>
         /// <param name="propertyMetadata">The property metadata.</param>
-        private void AddValidationMessages(PropertyMetadata propertyMetadata)
+        private static void AddValidationMessages(PropertyMetadata propertyMetadata)
         {
-            if (propertyMetadata.Metadata.TryGetValue("maxLength", out var MaxLength))
-                propertyMetadata.Metadata["data-error-message-too-long"] = $"{propertyMetadata.DisplayName} is too long. Max length allowed is {MaxLength}.";
-            if (propertyMetadata.Metadata.TryGetValue("minLength", out var MinLength))
-                propertyMetadata.Metadata["data-error-message-too-short"] = $"{propertyMetadata.DisplayName} is too short. Min length allowed is {MinLength}.";
-            if (propertyMetadata.Metadata.TryGetValue("required", out var Required))
-                propertyMetadata.Metadata["data-error-message-value-missing"] = $"{propertyMetadata.DisplayName} is required.";
+            if (propertyMetadata.Metadata.TryGetValue("maxlength", out var MaxLength))
+                propertyMetadata.Metadata["errorMessageTooLong"] = $"{propertyMetadata.DisplayName} can only have a maximum length of {MaxLength}.";
+            if (propertyMetadata.Metadata.TryGetValue("minlength", out var MinLength))
+                propertyMetadata.Metadata["errorMessageTooShort"] = $"{propertyMetadata.DisplayName} must have a minimum length of {MinLength}.";
+            if (propertyMetadata.Metadata.TryGetValue("required", out _))
+                propertyMetadata.Metadata["errorMessageValueMissing"] = $"{propertyMetadata.DisplayName} is required.";
         }
     }
 }

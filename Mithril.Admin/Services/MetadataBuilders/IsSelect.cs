@@ -1,15 +1,17 @@
 ﻿using Mithril.Admin.Abstractions.BaseClasses;
 using Mithril.Admin.Abstractions.DataEditor;
+using Mithril.Admin.Abstractions.DataEditor.Attributes;
+using Mithril.Admin.Abstractions.ExtensionMethods;
 using Mithril.Admin.Abstractions.Services;
 
 namespace Mithril.Admin.Services.MetadataBuilders
 {
     /// <summary>
-    /// Is Checkbox
-    /// TODO: Add Tests
+    /// Determines if the property is a select object.
+    /// TODO: Add tests
     /// </summary>
-    /// <seealso cref="MetadataBuilderBaseClass"/>
-    public class IsCheckbox : MetadataBuilderBaseClass
+    /// <seealso cref="MetadataBuilderBaseClass" />
+    public class IsSelect : MetadataBuilderBaseClass
     {
         /// <summary>
         /// Extracts metadata and adds it to the PropertyMetadata object.
@@ -21,9 +23,9 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// </returns>
         public override PropertyMetadata? ExtractMetadata(PropertyMetadata? propertyMetadata, IEntityMetadataService metadataService)
         {
-            if (propertyMetadata?.Property?.PropertyType != typeof(bool))
+            if (propertyMetadata?.Property.HasAttribute<SelectAttribute>() != true)
                 return propertyMetadata;
-            propertyMetadata.PropertyType = "checkbox";
+            propertyMetadata.PropertyType = "select";
             return propertyMetadata;
         }
     }

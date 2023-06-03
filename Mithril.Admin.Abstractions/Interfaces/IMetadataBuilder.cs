@@ -1,4 +1,5 @@
 ﻿using Mithril.Admin.Abstractions.DataEditor;
+using Mithril.Admin.Abstractions.Services;
 
 namespace Mithril.Admin.Abstractions.Interfaces
 {
@@ -17,7 +18,10 @@ namespace Mithril.Admin.Abstractions.Interfaces
         /// Extracts metadata and adds it to the PropertyMetadata object.
         /// </summary>
         /// <param name="propertyMetadata">The property metadata.</param>
-        /// <returns>The resulting property metadata.</returns>
-        PropertyMetadata? ExtractMetadata(PropertyMetadata? propertyMetadata);
+        /// <param name="metadataService">The metadata service.</param>
+        /// <returns>
+        /// The resulting property metadata.
+        /// </returns>
+        PropertyMetadata? ExtractMetadata(PropertyMetadata? propertyMetadata, IEntityMetadataService metadataService);
     }
 }

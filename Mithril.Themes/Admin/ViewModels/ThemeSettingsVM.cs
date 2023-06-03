@@ -43,7 +43,7 @@ namespace Mithril.Themes.Admin.ViewModels
         /// <value>
         /// The current theme.
         /// </value>
-        [DropDown(typeof(ThemeList))]
+        [Select(typeof(ThemeList))]
         public string? CurrentTheme { get; set; }
 
         /// <summary>

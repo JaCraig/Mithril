@@ -1,4 +1,5 @@
 ﻿using Mithril.Admin.Abstractions.DataEditor;
+using System.Reflection;
 
 namespace Mithril.Admin.Abstractions.Services
 {
@@ -12,13 +13,22 @@ namespace Mithril.Admin.Abstractions.Services
         /// </summary>
         /// <typeparam name="TEntity">The type of the entity.</typeparam>
         /// <returns>The metadata for the entity type.</returns>
-        EntityMetadata ExtractMetadata<TEntity>();
+        EntityMetadata? ExtractMetadata<TEntity>();
 
         /// <summary>
         /// Extracts the metadata defining this entity.
         /// </summary>
         /// <param name="entityType">Type of the entity.</param>
         /// <returns>The metadata for the entity type.</returns>
-        EntityMetadata ExtractMetadata(Type entityType);
+        EntityMetadata? ExtractMetadata(Type? entityType);
+
+        /// <summary>
+        /// Extracts the metadata defining this entity.
+        /// </summary>
+        /// <param name="property">The property.</param>
+        /// <returns>
+        /// The metadata for the entity type.
+        /// </returns>
+        EntityMetadata? ExtractMetadata(PropertyInfo? property);
     }
 }
