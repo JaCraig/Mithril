@@ -21,15 +21,34 @@
     <Content Include="build\rollup-plugin-concat.mjs" />
     <Content Include="build\rollup-plugin-copy.mjs" />
     <Content Include="build\ts\Component\DataHandler.vue" />
+    <Content Include="build\ts\Component\DataTypes\PropertySchema.ts" />
+    <Content Include="build\ts\Component\Form.vue" />
+    <Content Include="build\ts\Component\FormComponents\Buttons.vue" />
+    <Content Include="build\ts\Component\FormComponents\Checkbox.vue" />
+    <Content Include="build\ts\Component\FormComponents\Complex.vue" />
+    <Content Include="build\ts\Component\FormComponents\ComplexConditional.vue" />
+    <Content Include="build\ts\Component\FormComponents\ComplexList.vue" />
+    <Content Include="build\ts\Component\FormComponents\ComplexRepeater.vue" />
+    <Content Include="build\ts\Component\FormComponents\ComplexTabs.vue" />
+    <Content Include="build\ts\Component\FormComponents\Input.vue" />
+    <Content Include="build\ts\Component\FormComponents\Radio.vue" />
+    <Content Include="build\ts\Component\FormComponents\Select.vue" />
+    <Content Include="build\ts\Component\FormComponents\Text.vue" />
+    <Content Include="build\ts\Component\FormComponents\TextArea.vue" />
+    <Content Include="build\ts\Component\FormComponents\Upload.vue" />
+    <Content Include="build\ts\Component\FormValidator.vue" />
+    <Content Include="build\ts\Component\Listing.vue" />
     <Content Include="build\ts\Component\SideMenu.vue">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="build\ts\Component\Tabs.vue" />
     <Content Include="package.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="build\" />
     <Folder Include="build\ts\" />
     <Folder Include="build\ts\Component\DataTypes\" />
+    <Folder Include="build\ts\Component\FormComponents\" />
     <Folder Include="build\ts\Component\VueExtensions\" />
     <Folder Include="build\ts\Component\VueExtensions\Directives\" />
     <Folder Include="build\ts\Framework\" />
@@ -55,6 +74,10 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="build\ts\Component\DataTypes\ComponentSchema.ts" />
+    <TypeScriptCompile Include="build\ts\Component\DataTypes\FilterEvent.ts" />
+    <TypeScriptCompile Include="build\ts\Component\DataTypes\KeyValuePair.ts" />
+    <TypeScriptCompile Include="build\ts\Component\DataTypes\MetadataSchema.ts" />
+    <TypeScriptCompile Include="build\ts\Component\DataTypes\Tab.ts" />
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\Directives\clickOutside.ts" />
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\MithrilPlugin.ts" />
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueComponents.ts" />
@@ -62,6 +85,7 @@
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueFilters.ts" />
     <TypeScriptCompile Include="build\ts\Framework\AJAX\Request.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Browser\BrowserUtils.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Browser\Debounce.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Database\Database.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Extensions\HTMLElement.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Extensions\NodeList.ts" />

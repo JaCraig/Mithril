@@ -1,9 +1,22 @@
 ﻿<style type="text/less" scoped>
+    a {
+        cursor: pointer;
+    }
 </style>
 <template>
     <div class="panel" :class="schema.class">
-        <header>{{name}}</header>
+        <header>
+            {{name}}
+            <a @click="editEntity({ id: 0 })" :title="'Add New ' + name" v-if="mode=='listing'"><span class="fas fa-plus right"></span></a>
+            <a @click="saveEntity(null)" title="Show Listing"  v-if="mode=='editor'"><span class="fas fa-list right"></span></a>
+        </header>
         <div class="body">
+            <div v-if="mode=='listing'">
+                <listing :schema="schema.modelSchema" :model="entities" :debug="debug" @select="editEntity" @filter="filter"></listing>
+            </div>
+            <div  v-if="mode=='editor'">
+                <mithril-form :schema="schema.modelSchema" :model="currentEntity" :debug="debug" @submit="saveEntity"></mithril-form>
+            </div>
             <div v-if="debug && schema" class="panel debug">
                 <header>Editor Schema</header>
                 <pre>
@@ -16,9 +29,64 @@
 
 <script lang="ts">
     import Vue from "vue";
+    import Listing from "../../../../Mithril.Web.Common/build/ts/Component/Listing.vue";
+    import Form from "../../../../Mithril.Web.Common/build/ts/Component/Form.vue";
+    import { Request, StorageMode } from "../../../../Mithril.Web.Common/build/ts/Framework/AJAX/Request";
+    import FilterEvent from "../../../../Mithril.Web.Common/build/ts/Component/DataTypes/FilterEvent";
 
     export default Vue.defineComponent({
         name: "data-editor-component",
+        components: {
+            "listing": Listing,
+            "mithril-form": Form
+        },
+        data: function () {
+            return {
+                entities: [],
+                mode: "listing",
+                currentEntity: null,
+                entitiesQuery: `query($entityType: String, $pageSize: Int, $page: Int, $sortField: String, $sortAscending: Boolean, $filter: String) {
+                    entities(entityType: $entityType, pageSize: $pageSize, page: $page, sortField: $sortField, sortAscending: $sortAscending, filter: $filter)
+                }`,
+                currentFilter: new FilterEvent("", 10, 0, "", false)
+            };
+        },
+        methods: {
+            editEntity: function (entity: any) {
+                if (entity == null) {
+                    return;
+                }
+                this.currentEntity = entity;
+                this.mode = "editor";
+            },
+            filter: function (event: Event, filter: FilterEvent) {
+                //Load data based on the filter string
+                this.currentFilter = filter;
+                this.loadData();
+            },
+            loadData: function () {
+                let that = this;
+                Request.post("/api/query", {
+                    query: that.entitiesQuery,
+                    variables: { 
+                        entityType: that.schema.dataType,
+                        pageSize: that.currentFilter.pageSize,
+                        page: that.currentFilter.page,
+                        sortField: that.currentFilter.sortField,
+                        sortAscending: that.currentFilter.sortAscending,
+                        filter: that.currentFilter.filter
+                    }
+                })
+                .onSuccess(results => {
+                    that.entities = results.data.entities;
+                })
+                .send();
+            },
+            saveEntity: function (entity: any) {
+                this.currentEntity = null;
+                this.mode = "listing";
+            }
+        },
         props: {
             name: {
                 type: String,
@@ -32,6 +100,9 @@
                 type: Boolean,
                 default: true
             }
+        },
+        created: function() {
+            this.loadData();
         }
     });
 </script>

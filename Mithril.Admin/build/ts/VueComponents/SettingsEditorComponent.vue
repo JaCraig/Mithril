@@ -4,7 +4,10 @@
     <div class="panel" :class="schema.class">
         <header>{{name}}</header>
         <div class="body">
-            <div>
+            <div v-if="mode == 'listing'">
+                <mithril-listing :model="model" :schema="schema.modelSchema"></mithril-listing>
+            </div>
+            <div v-if="mode=='form'">
                 <mithril-form :model="model" :schema="schema.modelSchema"></mithril-form>
             </div>
             <div v-if="debug && schema" class="panel debug">
@@ -29,7 +32,8 @@
         },
         data: function () {
             return {
-                model: {}
+                model: {},
+                mode: "listing"
             };
         },
         props: {
