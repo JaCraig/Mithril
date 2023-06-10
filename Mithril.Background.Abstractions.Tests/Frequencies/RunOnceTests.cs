@@ -6,7 +6,7 @@ namespace Mithril.Background.Abstractions.Tests.Frequencies
     /// <summary>
     /// RunOnce tests
     /// </summary>
-    /// <seealso cref="TestBaseClass&lt;RunOnce&gt;" />
+    /// <seealso cref="TestBaseClass&lt;RunOnce&gt;"/>
     public class RunOnceTests : TestBaseClass<RunOnce>
     {
         /// <summary>
@@ -23,12 +23,12 @@ namespace Mithril.Background.Abstractions.Tests.Frequencies
         [Fact]
         public void CanRun_ReturnsFalse_WhenHasRunBefore()
         {
-            RunOnce RunOnce = new RunOnce();
+            var RunOnce = new RunOnce();
             RunOnce.CanRun(DateTime.Now, DateTime.Now);
             DateTime LastRunTime = DateTime.Now;
             DateTime CurrentTime = DateTime.Now;
 
-            bool CanRun = RunOnce.CanRun(LastRunTime, CurrentTime);
+            var CanRun = RunOnce.CanRun(LastRunTime, CurrentTime);
 
             Assert.False(CanRun);
         }
@@ -39,11 +39,11 @@ namespace Mithril.Background.Abstractions.Tests.Frequencies
         [Fact]
         public void CanRun_ReturnsTrue_WhenHasNotRunBefore()
         {
-            RunOnce RunOnce = new RunOnce();
+            var RunOnce = new RunOnce();
             DateTime LastRunTime = DateTime.Now;
             DateTime CurrentTime = DateTime.Now;
 
-            bool CanRun = RunOnce.CanRun(LastRunTime, CurrentTime);
+            var CanRun = RunOnce.CanRun(LastRunTime, CurrentTime);
 
             Assert.True(CanRun);
         }

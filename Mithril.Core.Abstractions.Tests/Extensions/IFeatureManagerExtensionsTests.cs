@@ -1,5 +1,8 @@
-﻿using Mithril.Core.Abstractions.Extensions;
+﻿using Microsoft.FeatureManagement;
+using Mithril.Core.Abstractions.Extensions;
+using Mithril.Core.Abstractions.Modules.Interfaces;
 using Mithril.Tests.Helpers;
+using NSubstitute;
 
 namespace Mithril.Core.Abstractions.Tests.Extensions
 {
@@ -14,5 +17,35 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
         /// </summary>
         /// <value>The type of the object.</value>
         protected override Type? ObjectType { get; set; } = typeof(IFeatureManagerExtensions);
+
+        /// <summary>
+        /// When the features are enabled are features enabled returns true.
+        /// </summary>
+        [Fact]
+        public void When_FeaturesAreEnabled_AreFeaturesEnabledReturnsTrue()
+        {
+            IFeature MockFeature = Substitute.For<IFeature>();
+            IFeatureManager MockFeatureManager = Substitute.For<IFeatureManager>();
+            MockFeatureManager.IsEnabledAsync(MockFeature.Name).Returns(true);
+
+            var result = MockFeatureManager.AreFeaturesEnabled(MockFeature);
+
+            Assert.True(result);
+        }
+
+        /// <summary>
+        /// Whens the features are not enabled are features enabled returns false.
+        /// </summary>
+        [Fact]
+        public void When_FeaturesAreNotEnabled_AreFeaturesEnabledReturnsFalse()
+        {
+            IFeature MockFeature = Substitute.For<IFeature>();
+            IFeatureManager MockFeatureManager = Substitute.For<IFeatureManager>();
+            MockFeatureManager.IsEnabledAsync(MockFeature.Name).Returns(false);
+
+            var result = MockFeatureManager.AreFeaturesEnabled(MockFeature);
+
+            Assert.False(result);
+        }
     }
 }

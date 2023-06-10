@@ -7,7 +7,7 @@ namespace Mithril.Background.Abstractions.Tests.Frequencies
     /// <summary>
     /// RunEvery tests
     /// </summary>
-    /// <seealso cref="TestBaseClass&lt;RunEvery&gt;" />
+    /// <seealso cref="TestBaseClass&lt;RunEvery&gt;"/>
     public class RunEveryTests : TestBaseClass<RunEvery>
     {
         /// <summary>
@@ -19,6 +19,11 @@ namespace Mithril.Background.Abstractions.Tests.Frequencies
             ObjectType = typeof(RunEvery);
         }
 
+        /// <summary>
+        /// Determines whether this instance [can run returns false when not enough time has passed]
+        /// the specified time span.
+        /// </summary>
+        /// <param name="timeSpan">The time span.</param>
         [Property]
         public void CanRun_ReturnsFalse_WhenNotEnoughTimeHasPassed(TimeSpan timeSpan)
         {
@@ -26,15 +31,20 @@ namespace Mithril.Background.Abstractions.Tests.Frequencies
                 timeSpan = TimeSpan.FromSeconds(1);
             else if (timeSpan >= TimeSpan.FromDays(30))
                 timeSpan = TimeSpan.FromDays(30);
-            RunEvery RunEvery = new RunEvery(timeSpan);
+            var RunEvery = new RunEvery(timeSpan);
             DateTime LastRunTime = DateTime.Now;
             DateTime CurrentTime = DateTime.Now;
 
-            bool canRun = RunEvery.CanRun(LastRunTime, CurrentTime);
+            var canRun = RunEvery.CanRun(LastRunTime, CurrentTime);
 
             Assert.False(canRun);
         }
 
+        /// <summary>
+        /// Determines whether this instance [can run returns true when enough time has passed] the
+        /// specified time span.
+        /// </summary>
+        /// <param name="timeSpan">The time span.</param>
         [Property]
         public void CanRun_ReturnsTrue_WhenEnoughTimeHasPassed(TimeSpan timeSpan)
         {
@@ -42,11 +52,11 @@ namespace Mithril.Background.Abstractions.Tests.Frequencies
                 timeSpan = TimeSpan.Zero;
             else if (timeSpan >= TimeSpan.FromDays(30))
                 timeSpan = TimeSpan.FromDays(30);
-            RunEvery RunEvery = new RunEvery(timeSpan);
+            var RunEvery = new RunEvery(timeSpan);
             DateTime LastRunTime = DateTime.Now.Subtract(timeSpan);
             DateTime CurrentTime = DateTime.Now;
 
-            bool canRun = RunEvery.CanRun(LastRunTime, CurrentTime);
+            var canRun = RunEvery.CanRun(LastRunTime, CurrentTime);
 
             Assert.True(canRun);
         }

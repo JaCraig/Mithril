@@ -27,7 +27,7 @@ namespace Mithril.Core.Services
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        public ILogger<IPFilterService>? Logger { get; }
+        private ILogger<IPFilterService>? Logger { get; }
 
         /// <summary>
         /// Gets the options.
@@ -43,10 +43,10 @@ namespace Mithril.Core.Services
         /// <returns>True if it is, false otherwise.</returns>
         public bool CheckIPAllowed(HttpContext context, string policyName)
         {
-            if (!Options.TryGetPolicy(policyName, out var Policy) || Policy is null)
+            if (!Options.TryGetPolicy(policyName, out IPFilterPolicy? Policy) || Policy is null)
                 return true;
 
-            var RemoteIP = context.Connection.RemoteIpAddress;
+            System.Net.IPAddress? RemoteIP = context.Connection.RemoteIpAddress;
             if (RemoteIP is null)
                 return false;
 
