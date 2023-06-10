@@ -44,9 +44,9 @@ namespace Mithril.API.GraphQL.Services
         /// <returns>
         /// The drop down query specified.
         /// </returns>
-        public IDropDownQuery? FindDropDownQuery(string name)
+        public IDropDownQuery? FindDropDownQuery(string? name)
         {
-            DropDownQueries.TryGetValue(name, out var query);
+            DropDownQueries.TryGetValue(name ?? "", out var query);
             return query;
         }
 
@@ -57,9 +57,9 @@ namespace Mithril.API.GraphQL.Services
         /// <returns>
         /// The query specified.
         /// </returns>
-        public IQuery? FindQuery(string name)
+        public IQuery? FindQuery(string? name)
         {
-            Queries.TryGetValue(name, out var query);
+            Queries.TryGetValue(name ?? "", out var query);
             return query;
         }
     }

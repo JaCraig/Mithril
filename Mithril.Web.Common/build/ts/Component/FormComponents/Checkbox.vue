@@ -1,5 +1,6 @@
 <template>
     <div>
+        Checkbox
         <input :id="getFieldID()"
                 type="checkbox"
                 :checked="internalModel"

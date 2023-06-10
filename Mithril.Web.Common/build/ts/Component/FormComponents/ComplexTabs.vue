@@ -1,5 +1,6 @@
 <template>
     <div>
+        Complex Tabs
         <tabs
             :sections="schema.tabs"
             v-on:section-changed="tabChanged"

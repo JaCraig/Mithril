@@ -22,13 +22,13 @@ namespace Mithril.API.Abstractions.Query.Interfaces
         /// <returns>
         /// <c>true</c> if this instance can run the specified data type; otherwise, <c>false</c>.
         /// </returns>
-        bool CanRun(string dataType, ClaimsPrincipal user);
+        bool CanRun(string? dataType, ClaimsPrincipal? user);
 
         /// <summary>
         /// Gets the data asynchronously.
         /// </summary>
         /// <param name="filter">The filter.</param>
         /// <returns>The drop down items.</returns>
-        Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string filter);
+        Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string? filter);
     }
 }

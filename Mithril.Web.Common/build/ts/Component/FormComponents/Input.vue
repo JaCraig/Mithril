@@ -1,63 +1,57 @@
 
 <template>
     <div>
-        <label :for="getFieldID()" v-if="!schema.label && label" :class="schema.labelClasses">
-            {{ $filters.capitalize(schema.model) }}
-            <span class="error clear-background" v-if="schema.required">*</span>
-            <i class="clear-background active no-border small" v-if="schema.hint"><span class="fas fa-info-circle"></span>{{ schema.hint }}</i>
-        </label>
-        <label :for="getFieldID()" v-if="schema.label && label" :class="schema.labelClasses">
-            {{ schema.label }}
-            <span class="error clear-background" v-if="schema.required">*</span>
-            <i class="clear-background active no-border small" v-if="schema.hint"><span class="fas fa-info-circle"></span>{{ schema.hint }}</i>
+        <label :for="getFieldID()" v-if="internalSchema.displayName">
+            {{ internalSchema.displayName }}
+            <span class="error clear-background" v-if="internalSchema.metadata.required">*</span>
+            <i class="clear-background active no-border small" v-if="internalSchema.metadata.hint"><span class="fas fa-info-circle"></span>{{ internalSchema.metadata.hint }}</i>
         </label>
         <input :id="getFieldID()"
-                :type="schema.inputType"
+                :type="internalSchema.metadata.inputType"
                 v-model="internalModel"
                 @input="changed($event.target.value)"
-                :disabled="schema.disabled"
-                :accept="schema.accept"
-                :alt="schema.alt"
-                :autocomplete="schema.autocomplete"
-                :checked="schema.checked"
-                :dirname="schema.dirname"
-                :formaction="schema.formaction"
-                :formenctype="schema.formenctype"
-                :formmethod="schema.formmethod"
-                :formnovalidate="schema.formnovalidate"
-                :formtarget="schema.formtarget"
-                :height="schema.height"
+                :disabled="internalSchema.metadata.disabled"
+                :accept="internalSchema.metadata.accept"
+                :alt="internalSchema.metadata.alt"
+                :autocomplete="internalSchema.metadata.autocomplete"
+                :checked="internalSchema.metadata.checked"
+                :dirname="internalSchema.metadata.dirname"
+                :formaction="internalSchema.metadata.formaction"
+                :formenctype="internalSchema.metadata.formenctype"
+                :formmethod="internalSchema.metadata.formmethod"
+                :formnovalidate="internalSchema.metadata.formnovalidate"
+                :formtarget="internalSchema.metadata.formtarget"
+                :height="internalSchema.metadata.height"
                 :list="getList()"
-                :max="schema.max"
-                :maxlength="schema.maxlength"
-                :min="schema.min"
-                :minlength="schema.minlength"
-                :multiple="schema.multiple"
-                :name="schema.inputName || getFieldID()"
-                :pattern="schema.pattern"
-                :placeholder="schema.placeholder"
-                :title="schema.placeholder"
-                :readonly="schema.readonly"
-                :required="schema.required"
-                :size="schema.size"
-                :src="schema.src"
-                :step="schema.step"
-                :width="schema.width"
-                :files="schema.files"
-                :class="schema.inputClasses"
-                :data-error-message-value-missing="schema.errorMessageValueMissing"
-                :data-error-message-pattern-mismatch="schema.errorMessagePatternMismatch"
-                :data-error-message-range-overflow="schema.errorMessageRangeOverflow"
-                :data-error-message-range-underflow="schema.errorMessageRangeUnderflow"
-                :data-error-message-step-mismatch="schema.errorMessageStepMismatch"
-                :data-error-message-too-long="schema.errorMessageTooLong"
-                :data-error-message-too-short="schema.errorMessageTooShort"
-                :data-error-message-bad-input="schema.errorMessageBadInput"
-                :data-error-message-type-mismatch="schema.errorMessageTypeMismatch"
+                :max="internalSchema.metadata.max"
+                :maxlength="internalSchema.metadata.maxlength"
+                :min="internalSchema.metadata.min"
+                :minlength="internalSchema.metadata.minlength"
+                :multiple="internalSchema.metadata.multiple"
+                :name="getFieldID()"
+                :pattern="internalSchema.metadata.pattern"
+                :placeholder="internalSchema.metadata.placeholder"
+                :title="internalSchema.metadata.placeholder"
+                :readonly="internalSchema.metadata.readonly"
+                :required="internalSchema.metadata.required"
+                :size="internalSchema.metadata.size"
+                :src="internalSchema.metadata.src"
+                :step="internalSchema.metadata.step"
+                :width="internalSchema.metadata.width"
+                :files="internalSchema.metadata.files"
+                :data-error-message-value-missing="internalSchema.metadata.errorMessageValueMissing"
+                :data-error-message-pattern-mismatch="internalSchema.metadata.errorMessagePatternMismatch"
+                :data-error-message-range-overflow="internalSchema.metadata.errorMessageRangeOverflow"
+                :data-error-message-range-underflow="internalSchema.metadata.errorMessageRangeUnderflow"
+                :data-error-message-step-mismatch="internalSchema.metadata.errorMessageStepMismatch"
+                :data-error-message-too-long="internalSchema.metadata.errorMessageTooLong"
+                :data-error-message-too-short="internalSchema.metadata.errorMessageTooShort"
+                :data-error-message-bad-input="internalSchema.metadata.errorMessageBadInput"
+                :data-error-message-type-mismatch="internalSchema.metadata.errorMessageTypeMismatch"
                 />
-        <div class="text-center" v-if="schema.inputType === 'color' || schema.inputType === 'range'">{{ internalModel }}</div>
-        <datalist v-if="schema.datalist" :id="getList()">
-            <option v-for="(item) in schema.datalist" :value="item.value" v-bind:key="item.key" />
+        <div class="text-center" v-if="internalSchema.metadata.inputType === 'color' || internalSchema.metadata.inputType === 'range'">{{ internalModel }}</div>
+        <datalist v-if="internalSchema.metadata.datalist" :id="getList()">
+            <option v-for="(item) in internalSchema.metadata.datalist" :value="item.value" v-bind:key="item.key" />
         </datalist>
     </div>
 </template>
@@ -68,109 +62,85 @@ import { StorageMode } from "../../Framework/AJAX/Request";
 import "../../Framework/Extensions/String";
 import Vue from 'vue';
 import moment from 'moment';
+import PropertySchema from '../DataTypes/PropertySchema';
 
 export default Vue.defineComponent({
     data: function() {
-        let returnedModel: any;
-        if (this.schema.inputType === "date"
-            || this.schema.inputType === "datetime-local" 
-            || this.schema.inputType === "datetime"
-            || this.schema.inputType === "month") {
-
-            let tempDate = moment(this.model||new Date());
-            if (this.schema.isUTC) {
-                tempDate = moment.utc(this.model||new Date()).local();
-            }
-
-            if (this.schema.inputType === "date") {
-                returnedModel= tempDate.format('YYYY-MM-DD');
-            }
-            else if (this.schema.inputType === "datetime-local" || this.schema.inputType === "datetime") {
-                returnedModel= tempDate.format('YYYY-MM-DDTHH:mm');
-            }
-            else if (this.schema.inputType === "month") {
-                returnedModel= tempDate.format('YYYY-MM');
-            }
-        }
-        else {
-            returnedModel = this.model;
-        }
         return {
-            count: 0,
-            timer: 0,
-            internalModel: returnedModel
+            internalModel: this.formatValue(this.model),
+            internalSchema: this.schema
         };
     },
     props: {
-        model: Object,
-        schema: Object,
-        idSuffix: String,
-        label: {
-            default: true,
-            type: Boolean,
+        model: {
+            type: String,
+            default: ""
         },
+        schema: {
+            type: PropertySchema,
+            default: new PropertySchema()
+        }
     },
     methods: {
-        getFieldID: function() {
-            let result = "";
-            if (this.schema.id) {
-                result = this.schema.id;
-            } else {
-                result = this.schema.model.slugify();
+        convertToDate: function (value: string) {
+            if (this.schema.metadata.isUTC) {
+                return moment.utc(value || new Date()).local();
             }
-            if (this.idSuffix !== undefined) {
-                result += this.idSuffix;
+            return moment(value || new Date());
+        },
+        formatValue: function (value: string) {
+            if (!value) {
+                return value;
             }
-            return result;
+            if (this.schema.metadata.inputType === "date") {
+                return this.convertToDate(value).format('YYYY-MM-DD');
+            }
+            if (this.schema.metadata.inputType === "datetime-local" || this.schema.metadata.inputType === "datetime") {
+                return this.convertToDate(value).format('YYYY-MM-DDTHH:mm');
+            }
+            if (this.schema.metadata.inputType === "month") {
+                return this.convertToDate(value).format('YYYY-MM');
+            }
+            return value;
+        },
+        getFieldID: function () {
+            return this.internalSchema.propertyName.slugify() + this.internalSchema.key;
         },
         changed: function(newValue: any) {
             let that = this;
-            if(that.schema.datalistUrl) {
-                if(that.timer !== 0) {
-                    clearTimeout(that.timer);
-                }
-                that.timer = setTimeout(function() {
-                Request.post(that.schema.datalistUrl,{ value: newValue, queryCount: ++that.count })
-                        .onSuccess(function(ev:any){
-                            if(!ev){
-                                return;
-                            }else if(ev.queryCount && ev.queryCount == that.count) {
-                                that.schema.datalist = ev.value;
-                            } else if(!ev.queryCount) {
-                                that.schema.datalist = ev;
-                            }
-                        })
-                        .onError(function (x) {
-                            that.$emit("error", x);
-                        })
-                        .send();
-                }, 100);
-            }
+            //if(that.schema.datalistUrl) {
+            //    if(that.timer !== 0) {
+            //        clearTimeout(that.timer);
+            //    }
+            //    that.timer = setTimeout(function() {
+            //    Request.post(that.schema.datalistUrl,{ value: newValue, queryCount: ++that.count })
+            //            .onSuccess(function(ev:any){
+            //                if(!ev){
+            //                    return;
+            //                }else if(ev.queryCount && ev.queryCount == that.count) {
+            //                    that.schema.datalist = ev.value;
+            //                } else if(!ev.queryCount) {
+            //                    that.schema.datalist = ev;
+            //                }
+            //            })
+            //            .onError(function (x) {
+            //                that.$emit("error", x);
+            //            })
+            //            .send();
+            //    }, 100);
+            //}
             this.$emit("changed", newValue, this.schema);
         },
         getList: function() {
-            if (this.schema.datalist !== undefined) {
-                return this.getFieldID() + "-list";
-            } else {
-                return null;
-            }
-        },
-        generateGuid: function (item: any) {
-            let Key = item.key;
-            if(Key) {
-                return Key;
-            }
-            let result = ''
-            for (let j = 0; j < 32; j++) {
-                let i = Math.floor(Math.random() * 16).toString(16).toUpperCase();
-                result = result + i;
-            }
-            item.key = result;
-            return item.key;
-        },
+            //if (this.schema.datalist !== undefined) {
+            //    return this.getFieldID() + "-list";
+            //} else {
+            //    return null;
+            //}
+        }
     },
-    beforeMount: function() {
-        if(!this.schema.datalistQuery) {
+    created: function () {
+        if (!this.schema.queryType) {
             return;
         }
         let that = this;
@@ -191,6 +161,12 @@ export default Vue.defineComponent({
             }
             this.internalModel = newModel;
         },
+        schema: function (newSchema, oldSchema) {
+            if (oldSchema === newSchema) {
+                return;
+            }
+            this.internalSchema = newSchema;
+        }
     }
 });
 
