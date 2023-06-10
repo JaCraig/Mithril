@@ -7,7 +7,7 @@
     <div class="panel" :class="schema.class">
         <header>
             {{name}}
-            <a @click="editEntity({ id: 0 })" :title="'Add New ' + name" v-if="mode=='listing'"><span class="fas fa-plus right"></span></a>
+            <a @click="editEntity({ iD: 0 })" :title="'Add New ' + name" v-if="mode=='listing'"><span class="fas fa-plus right"></span></a>
             <a @click="saveEntity(null)" title="Show Listing"  v-if="mode=='editor'"><span class="fas fa-list right"></span></a>
         </header>
         <div class="body">

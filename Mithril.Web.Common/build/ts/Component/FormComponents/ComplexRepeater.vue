@@ -1,6 +1,7 @@
 
 <template>
     <div>
+        Complex Repeater
         <div v-for="(item, index) in internalModel"  v-bind:key="generateGuid(item)" class="border-bottom">
             <a class="fas fa-minus-circle right" @click.stop.prevent="removeItem(item)"></a>
             <div v-for="(field) in schema.fields"  v-bind:key="generateGuid(field)">

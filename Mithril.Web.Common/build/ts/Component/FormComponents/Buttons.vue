@@ -1,6 +1,7 @@
 
 <template>
     <div class="controls">
+        Buttons
         <div class="input-group">
             <input v-for="(button) in schema.buttons"
                     v-bind:key="generateGuid(button)"

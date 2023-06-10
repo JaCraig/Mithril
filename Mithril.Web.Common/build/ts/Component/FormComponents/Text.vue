@@ -1,6 +1,9 @@
 
 <template>
-    <div :class="schema.classes" v-html="internalModel || schema.model"></div>
+    <div>
+        Text
+        <div :class="schema.classes" v-html="internalModel || schema.model"></div>
+    </div>
 </template>
 
 <script lang="ts">

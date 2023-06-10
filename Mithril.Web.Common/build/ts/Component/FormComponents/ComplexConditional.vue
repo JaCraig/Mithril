@@ -1,6 +1,7 @@
 
 <template>
     <div>
+        Conditional
         <div v-if="show(internalModel.display || schema.display)">
             <div v-for="(item) in schema.fields" v-bind:key="generateGuid(item)">
                 <component :is="getFieldType(item)"

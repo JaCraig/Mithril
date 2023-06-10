@@ -1,6 +1,7 @@
 
 <template>
     <div>
+        Select
         <label :for="getFieldID()" v-if="!schema.label && label" :class="schema.labelClasses">
             {{ $filters.capitalize(schema.model) }}
             <span class="error clear-background" v-if="schema.required">*</span>

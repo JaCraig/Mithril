@@ -1,6 +1,7 @@
 
 <template>
     <div>
+        Radio
         <div v-if="!schema.label" :class="schema.labelClasses">
             {{ $filters.capitalize(schema.model) }}
             <span class="error clear-background" v-if="schema.required">*</span>

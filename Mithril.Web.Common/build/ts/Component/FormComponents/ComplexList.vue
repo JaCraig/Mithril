@@ -1,6 +1,7 @@
 
 <template>
     <div>
+        Complex List
         <h2 v-if="schema.label" :class="schema.labelClasses">
             {{ $filters.capitalize(schema.label) }}
         </h2>
