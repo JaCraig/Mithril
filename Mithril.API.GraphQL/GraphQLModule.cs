@@ -46,7 +46,7 @@ namespace Mithril.API.GraphQL
         /// <returns>Application builder</returns>
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            var Settings = configuration.GetConfig<APIOptions>("Mithril:API");
+            APIOptions? Settings = configuration.GetConfig<APIOptions>("Mithril:API");
 
             // GraphQL endpoint
             return app?.UseGraphQL<CompositeSchema>(Settings?.QueryEndpoint ?? "/api/query", options =>
@@ -68,7 +68,7 @@ namespace Mithril.API.GraphQL
         public override IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)
         {
             Core.Abstractions.Configuration.MithrilConfig? Settings = configuration?.GetSystemConfig();
-            var APIConfig = configuration.GetConfig<APIOptions>("Mithril:API");
+            APIOptions? APIConfig = configuration.GetConfig<APIOptions>("Mithril:API");
             GraphQLEndpointConventionBuilder? EndpointBuilder = endpoints?.MapGraphQL(APIConfig?.QueryEndpoint ?? "/api/query");
             if (!string.IsNullOrEmpty(Settings?.Security?.DefaultCorsPolicy))
                 EndpointBuilder?.RequireCors(Settings.Security.DefaultCorsPolicy);
@@ -103,7 +103,8 @@ namespace Mithril.API.GraphQL
             });
             services?.AddAllSingleton<IQuery>()
                 ?.AddAllSingleton<IDropDownQuery>()
-                ?.AddSingleton<IQueryService, QueryService>();
+                ?.AddSingleton<IQueryService, QueryService>()
+                ?.AddSingleton<IDropDownQueryService, DropDownQueryService>();
             return services;
         }
     }

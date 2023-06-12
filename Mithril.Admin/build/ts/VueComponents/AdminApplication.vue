@@ -3,29 +3,35 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        
-        & .left-nav {
-            width: 200px;
-            height: calc(100vh - 1px);
-            border-bottom: 0;
-            border-left: 0;
-            border-top: 0;
-            margin: 0;
-            overflow-y: auto;
-            
-            & ul {
-                padding: 0 5px;
-                list-style: none;
-            }
-        }
+        & .left-nav
 
-        & .editor-content {
-            flex-grow: 1;
-            overflow-y: auto;
-            & pre {
-                width: 100%;
-            }
-        }
+    {
+        width: 200px;
+        height: calc(100vh - 1px);
+        border-bottom: 0;
+        border-left: 0;
+        border-top: 0;
+        margin: 0;
+        overflow-y: auto;
+        & ul
+
+    {
+        padding: 0 5px;
+        list-style: none;
+    }
+
+    }
+
+    & .editor-content {
+        flex-grow: 1;
+        overflow-y: auto;
+        & pre
+
+    {
+        width: 100%;
+    }
+
+    }
     }
 </style>
 <template>
@@ -136,7 +142,7 @@
                             console.log("Error loading editors:", error);
                         }
                     })
-                    .setMode(StorageMode.StorageAndUpdate)
+                    .withStorageMode(StorageMode.StorageAndUpdate)
                     .send();
             }
         },

@@ -1,242 +1,296 @@
+//TODO: Add retry logic, cancellation tokens, progress tracking, authentication/authorization, etc.
 import { DatabaseConnection } from "../Database/Database";
 
-//Ajax request that the system uses.
+// Request options
+export interface RequestOptions {
+    // Request method (default: GET)
+    method: string;
+    // Request url (default: "")
+    url: string;
+    // Request data
+    data?: any;
+    // Request headers (default: {})
+    headers?: Record<string, string>;
+    // Request credentials (default: same-origin)
+    credentials?: RequestCredentials;
+    // Request serializer (default: JSON.stringify)
+    serializer?: (data: any) => string;
+    // Request parser (default: response.json())
+    parser?: (response: Response) => Promise<any>;
+    // Request success callback (default: console.log)
+    success?: (response: any) => void;
+    // Request error callback (default: console.error)
+    error?: (reason: any) => void;
+    // Storage mode (default: StorageMode.NetworkFirst)
+    storageMode?: StorageMode;
+    // Cache key (default: url + JSON.stringify(data))
+    cacheKey?: string;
+    // Database name (default: MithrilStorage)
+    databaseName?: string;
+    // Timeout in milliseconds (default: 60000)
+    timeout?: number;
+}
+
+// Request class
+// Used to make AJAX requests and also cache the response in IndexedDB.
+// It can also return the cached response if the request fails or times out (see StorageMode).
 export class Request {
+    // Request options
+    private options: RequestOptions = {
+        method: "GET",
+        url: "",
+        headers: {},
+        credentials: "same-origin",
+        serializer: JSON.stringify,
+        parser: (response: Response) => response.json(),
+        success: (response) => { console.log("Request response:", response) },
+        error: (reason) => { console.error("Request error:", reason) },
+        storageMode: StorageMode.NetworkFirst,
+        cacheKey: "",
+        databaseName: "MithrilStorage",
+        timeout: 60000
+    };
+
+    // Abort controller (used to abort the request) (default: null)
+    private abortController: AbortController | null = null;
+
     // Constructor
-    constructor(method: string, url: string, data?: any) {
-        this.url = url;
-        this.method = method.toUpperCase();
-        this.data = data;
-        this.headers = new Headers();
-        if (this.method !== "GET" &&
-            this.method !== "HEAD" &&
-            this.method !== "DELETE" &&
-            this.method !== "TRACE") {
-            this.type("application/json");
-        }
-        this.accept("application/json");
-        this.parser = x => x.json();
-        this.serializer = x => JSON.stringify(x);
-        this.storageMode = StorageMode.NetworkOnly;
-        this.databaseName = "MithrilStorage"
-        this.cacheKey = this.url + this.serializer(this.data);
-        this.credentials = "same-origin";
+    // options: The request options
+    constructor(options: RequestOptions) {
+        this.options = { ...this.options, ...options };
     }
 
-    // The serializer that the application uses
-    private serializer: (data: any) => string;
-
-    // URL to call
-    private url: string;
-
-    // Credentials type sent with the request ("same-origin", "include", or "omit")
-    private credentials: RequestCredentials;
-
-    // Method to use when calling
-    private method: string;
-
-    // Success callback
-    private success: (response: any) => any;
-
-    // Parser callback
-    private parser: (response: Response) => Promise<any>;
-
-    // Data to send in the request
-    private data: any;
-
-    // Error callback
-    private error: (reason: any) => any;
-
-    // Any headers to add to the call
-    private headers: Headers;
-
-    // The cache key
-    private cacheKey: string;
-
-    // Database to cache the results
-    private databaseName: string;
-
-    // Storage mode
-    private storageMode: StorageMode;
-
-    // GET method.
+    // Creates a GET request
+    // Note: GET requests are cached by default
+    // url: The request url
+    // data: The request data
     public static get(url: string, data?: any): Request {
-        return Request.makeRequest("GET", url, data);
+        return new Request({ method: "GET", url, data, cacheKey: url + JSON.stringify(data) })
+            .withHeaders({
+                "Accept": "application/json"
+            });
     }
 
-    // A request using a HTTP verb that is not GET, POST, PUT, or DELETE
-    public static makeRequest(method: string, url: string, data?: any): Request {
-        return new Request(method, url, data);
-    }
-
-    // POST method.
+    // Creates a POST request
+    // Note: POST requests are not cached by default
+    // url: The request url
+    // data: The request data
     public static post(url: string, data?: any): Request {
-        return Request.makeRequest("POST", url, data);
+        return new Request({ method: "POST", url, data, cacheKey: url + JSON.stringify(data), storageMode: StorageMode.NetworkOnly })
+            .withHeaders({
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            });
     }
 
-    // PUT method.
+    // Creates a PUT request
+    // Note: PUT requests are not cached by default
+    // url: The request url
+    // data: The request data
     public static put(url: string, data?: any): Request {
-        return Request.makeRequest("PUT", url, data);
+        return new Request({ method: "PUT", url, data, cacheKey: url + JSON.stringify(data), storageMode: StorageMode.NetworkOnly })
+            .withHeaders({
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            });
     }
 
-    // DELETE method.
+    // Creates a DELETE request
+    // Note: DELETE requests are not cached by default
+    // url: The request url
+    // data: The request data
     public static delete(url: string, data?: any): Request {
-        return Request.makeRequest("DELETE", url, data);
+        return new Request({ method: "DELETE", url, data, cacheKey: url + JSON.stringify(data), storageMode: StorageMode.NetworkOnly })
+            .withHeaders({
+                "Accept": "application/json"
+            });
     }
 
-    // Adds a callback to call if the AJAX request succeeds.
-    public onSuccess(callback: (ev: any) => any): Request {
-        this.success = callback;
+    // Adds header values to the request
+    // headers: The header values
+    public withHeaders(headers: Record<string, string>): this {
+        this.options.headers = { ...this.options.headers, ...headers };
         return this;
     }
 
-    // Adds a callback to call if the AJAX request fails.
-    public onError(callback: (ev: any) => any): Request {
-        this.error = callback;
+    // Adds credentials to the request
+    // credentials: The credentials
+    public withCredentials(credentials: RequestCredentials): this {
+        this.options.credentials = credentials;
         return this;
     }
 
-    // Adds a header value to the AJAX request.
-    public setHeader(key: string, value: string): Request {
-        this.headers.set(key, value);
+    // Sets the serializer for the request
+    // serializer: The serializer
+    public withSerializer(serializer: (data: any) => string): this {
+        this.options.serializer = serializer;
         return this;
     }
 
-    // Sets the cache key
-    public setCacheKey(key: string): Request {
-        this.cacheKey = key;
+    // Sets the parser for the request
+    // parser: The parser
+    public withParser(parser: (response: Response) => Promise<any>): this {
+        this.options.parser = parser;
         return this;
     }
 
-    // Sets the credentials type used for the call
-    public setCredentials(type: RequestCredentials): Request {
-        this.credentials = type;
+    // Sets the success callback for the request
+    // callback: The success callback
+    public onSuccess(callback: (response: any) => void): this {
+        this.options.success = callback ?? ((response) => { console.log("Request response:", response) });
         return this;
     }
 
-    // Short hand for setting the content type header value
-    public type(value: string): Request {
-        return this.setHeader("Content-Type", value);
-    }
-
-    // Short hand for setting the accepts header value
-    public accept(value: string): Request {
-        return this.setHeader("Accept", value);
-    }
-
-    // Sets the parser that the request uses
-    public setParser(parser: (response: Response) => Promise<any>): Request {
-        this.parser = parser;
+    // Sets the error callback for the request
+    // callback: The error callback
+    public onError(callback: (reason: any) => void): this {
+        this.options.error = callback ?? ((reason) => { console.error("Request error:", reason) });
         return this;
     }
 
-    // Ensures that the result of the request will be cached and used in future requests.
-    public setMode(storageMode: StorageMode, databaseName: string = "MithrilStorage"): Request {
-        this.databaseName = databaseName;
-        this.storageMode = storageMode;
+    // Sets the storage mode for the request
+    // storageMode: The storage mode
+    // databaseName: The database name (default: MithrilStorage)
+    public withStorageMode(storageMode: StorageMode, databaseName = "MithrilStorage"): this {
+        this.options.storageMode = storageMode;
+        this.options.databaseName = databaseName;
         return this;
     }
 
-    // Sets the serializer that the request uses
-    public setSerializer(serializer: (data: any) => string): Request {
-        this.serializer = serializer;
+    // Sets the cache key for the request
+    // cacheKey: The cache key
+    public withCacheKey(cacheKey: string): this {
+        this.options.cacheKey = cacheKey;
+        return this;
+    }
+
+    // Sets the timeout for the request
+    // timeout: The timeout in milliseconds (default: 60000)
+    // Note: The timeout is only used for network requests
+    public withTimeout(timeout?: number): this {
+        this.options.timeout = timeout ?? 60000;
+        return this;
+    }
+
+    // Aborts the request, if it is still running, and calls the error callback.
+    // Note: This is only supported for network requests
+    public abort(): this {
+        if (this.abortController === null) {
+            return this;
+        }
+        this.abortController.abort();
+        this.options.error(new Error("The request was aborted."));
         return this;
     }
 
     // Actually sends the request, parses it, and calls either the
     // success or error functions if they exist.
-    public send(): void {
-        if (this.error === undefined || this.error === null) {
-            this.error = x => { };
+    // Returns the parsed response.
+    public async send(): Promise<any> {
+        const { method, url, data, headers, credentials, serializer, parser, success, error, storageMode, cacheKey, databaseName, timeout } = this.options;
+        const serializedData = serializer(data);
+        const abortController = new AbortController();
+        this.abortController = abortController;
+
+        if (storageMode === StorageMode.StorageFirst || storageMode === StorageMode.StorageAndUpdate) {
+            const cachedValue = await Request.getValueFromDB(cacheKey, databaseName);
+            if (cachedValue !== undefined) {
+                success(cachedValue);
+                if (storageMode === StorageMode.StorageFirst) {
+                    return cachedValue;
+                }
+            }
         }
-        if (this.success === undefined || this.success === null) {
-            this.success = x => { };
+
+        if (!navigator.onLine) {
+            if (storageMode === StorageMode.NetworkFirst) {
+                const cachedValue = await Request.getValueFromDB(cacheKey, databaseName);
+                if (cachedValue !== undefined) {
+                    success(cachedValue);
+                    return cachedValue;
+                }
+                let errorMessage = new Error("No cached value found and system is offline");
+                error(errorMessage);
+                return Promise.reject(errorMessage);
+            }
+            const errorMessage = new Error("System is offline");
+            error(errorMessage);
+            return Promise.reject(errorMessage);
         }
-        let serializedData = this.serializer(this.data);
-        if (this.storageMode === StorageMode.StorageFirst) {
-            Request.returnValueFromDB(this.cacheKey, this.databaseName, this.success);
-            this.queryNetwork(serializedData, this.cacheKey, this.databaseName, response => { }, response => {
-                Request.saveValueToDB(response, this.cacheKey, this.databaseName);
-            });
-            return;
+
+        try {
+            const response = await Promise.race([
+                fetch(url, {
+                    method,
+                    credentials,
+                    headers,
+                    body: serializedData,
+                    signal: abortController.signal
+                }),
+                this.handleTimeout(timeout)
+            ]);
+
+            const parsedResponse = await parser(response);
+            success(parsedResponse);
+
+            if (storageMode !== StorageMode.NetworkOnly) {
+                Request.saveValueToDB(parsedResponse, cacheKey, databaseName);
+            }
+
+            return parsedResponse;
+        } catch (err) {
+            error(err);
+            return Promise.reject(err);
         }
-        if (this.storageMode === StorageMode.StorageAndUpdate) {
-            Request.returnValueFromDB(this.cacheKey, this.databaseName, this.success);
-            this.queryNetwork(serializedData, this.cacheKey, this.databaseName, response => { }, response => {
-                Request.saveValueToDB(response, this.cacheKey, this.databaseName);
-                this.success(response);
-            });
-            return;
-        }
-        if (this.storageMode === StorageMode.NetworkFirst) {
-            this.queryNetwork(serializedData, this.cacheKey, this.databaseName, this.success, response => {
-                Request.saveValueToDB(response, this.cacheKey, this.databaseName);
-                this.success(response);
-            });
-            return;
-        }
-        this.queryNetwork(serializedData, this.cacheKey, this.databaseName, x => { }, this.success);
+    }
+
+    // Handles the timeout for the request
+    // timeout: The timeout in milliseconds (default: 60000)
+    // returns: A promise that rejects when the timeout is reached
+    private async handleTimeout(timeout?: number): Promise<never> {
+        timeout ??= 60000;
+        await new Promise<void>((_, reject) => {
+            setTimeout(() => {
+                reject(new Error('Request timeout'));
+            }, timeout);
+        });
+        throw new Error('Request timeout');
     }
 
     // Saves a value to the database/cache
-    private static saveValueToDB(data: string, dataKey: string, databaseName: string) {
-        new DatabaseConnection(databaseName, ["cache", "cacheExpirations"], 1)
-            .openDatabase(database => {
-                if (data === undefined) {
-                    return;
-                }
-                database.add("cache", data, dataKey);
-                database.add("cacheExpirations", Date.now(), dataKey);
-            });
-    }
-
-    // Queries the network and saves the data to the appropriate cache table.
-    private queryNetwork(
-        serializedData: string,
-        dataKey: string,
-        databaseName: string,
-        offlineCallback: (response: any) => any,
-        onlineCallback: (response: any) => any) {
-        if (!navigator.onLine) {
-            if (this.storageMode === StorageMode.NetworkFirst) {
-                Request.returnValueFromDB(dataKey, databaseName, offlineCallback);
-            }
+    // data: The data to save
+    // dataKey: The key to save the data under
+    // databaseName: The database name
+    // returns: A promise that resolves when the data is saved
+    private static async saveValueToDB(data: string, dataKey: string, databaseName: string): Promise<void> {
+        if (data === undefined) {
             return;
         }
-        fetch(this.url, {
-            credentials: this.credentials,
-            method: this.method,
-            body: serializedData,
-            headers: this.headers
-        })
-            .then(this.parser)
-            .then(onlineCallback)
-            .catch(this.error);
+        const connection = new DatabaseConnection(databaseName, ["cache", "cacheExpirations"], 1);
+        const database = await connection.openDatabase();
+        await database.add("cache", data, dataKey);
+        await database.add("cacheExpirations", Date.now(), dataKey);
     }
 
-    // Gets the value in the database and returns that for success.
-    private static returnValueFromDB(dataKey: string, databaseName: string, callback: (response: any) => any) {
-        new DatabaseConnection(databaseName, ["cache", "cacheExpirations"], 1)
-            .openDatabase(database => {
-                database.getByKey("cache", dataKey, event => {
-                    let result = (<any>event.target).result;
-                    if (result === undefined) {
-                        return;
-                    }
-                    callback(result);
-                });
-            });
+    // Returns a value from the database/cache
+    // dataKey: The key to get the data from
+    // databaseName: The database name
+    // returns: The value from the database
+    private static async getValueFromDB(dataKey: string, databaseName: string): Promise<any> {
+        const connection = new DatabaseConnection(databaseName, ["cache", "cacheExpirations"], 1);
+        const database = await connection.openDatabase();
+        return await database.getByKey("cache", dataKey);
     }
 }
 
-// Storage mode
+// Storage mode for the request
 export enum StorageMode {
-    // network first
+    // network first (default)
     NetworkFirst = 0,
-    // storage first
+    // storage first (cache first)
     StorageFirst = 1,
-    // network only
+    // network only (no storage)
     NetworkOnly = 2,
-    // Storage and then update
+    // Storage and then update from network
     StorageAndUpdate = 3
 }

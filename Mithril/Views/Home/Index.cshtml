@@ -88,7 +88,7 @@
                     .onSuccess((data) => {
                         that.items = data.data.menu.menuItems;
                     })
-                    .setMode(themedefault.StorageMode.StorageAndUpdate)
+                    .withStorageMode(themedefault.StorageMode.StorageAndUpdate)
                     .send();
             }
         });

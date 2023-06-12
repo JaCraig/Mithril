@@ -8,13 +8,13 @@
         <header>
             {{name}}
             <a @click="editEntity({ iD: 0 })" :title="'Add New ' + name" v-if="mode=='listing'"><span class="fas fa-plus right"></span></a>
-            <a @click="saveEntity(null)" title="Show Listing"  v-if="mode=='editor'"><span class="fas fa-list right"></span></a>
+            <a @click="saveEntity(null)" title="Show Listing" v-if="mode=='editor'"><span class="fas fa-list right"></span></a>
         </header>
         <div class="body">
             <div v-if="mode=='listing'">
                 <listing :schema="schema.modelSchema" :model="entities" :debug="debug" @select="editEntity" @filter="filter"></listing>
             </div>
-            <div  v-if="mode=='editor'">
+            <div v-if="mode=='editor'">
                 <mithril-form :schema="schema.modelSchema" :model="currentEntity" :debug="debug" @submit="saveEntity"></mithril-form>
             </div>
             <div v-if="debug && schema" class="panel debug">
@@ -68,7 +68,7 @@
                 let that = this;
                 Request.post("/api/query", {
                     query: that.entitiesQuery,
-                    variables: { 
+                    variables: {
                         entityType: that.schema.dataType,
                         pageSize: that.currentFilter.pageSize,
                         page: that.currentFilter.page,
@@ -77,10 +77,9 @@
                         filter: that.currentFilter.filter
                     }
                 })
-                .onSuccess(results => {
-                    that.entities = results.data.entities;
-                })
-                .send();
+                    .onSuccess(results => {
+                        that.entities = results.data.entities;
+                    }).send();
             },
             saveEntity: function (entity: any) {
                 this.currentEntity = null;
@@ -101,7 +100,7 @@
                 default: true
             }
         },
-        created: function() {
+        created: function () {
             this.loadData();
         }
     });

@@ -73,7 +73,7 @@
                             console.log("Error loading data:", data);
                         }
                     })
-                    .setMode(StorageMode.NetworkOnly)
+                    .withStorageMode(StorageMode.NetworkOnly)
                     .send();
             }
         },
