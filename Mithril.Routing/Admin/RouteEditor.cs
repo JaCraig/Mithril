@@ -36,5 +36,18 @@ namespace Mithril.Routing.Admin
         /// <param name="full">if set to <c>true</c> [full].</param>
         /// <returns>The view model</returns>
         protected override IEntity Convert(RouteEntry model, bool full = true) => new RouteEntryVM(model);
+
+        /// <summary>
+        /// Filters the query by search term.
+        /// </summary>
+        /// <param name="query">The query.</param>
+        /// <param name="searchQuery">The search query.</param>
+        /// <returns>The resulting query.</returns>
+        protected override IQueryable<RouteEntry>? FilterQueryBySearchQuery(IQueryable<RouteEntry>? query, string searchQuery)
+        {
+            return string.IsNullOrEmpty(searchQuery)
+                ? query
+                : (query?.Where(Route => Route.InputPath.Contains(searchQuery) || Route.OutputPath.Contains(searchQuery)));
+        }
     }
 }

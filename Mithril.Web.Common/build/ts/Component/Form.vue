@@ -1,11 +1,22 @@
+<style scoped>
+    .input-group input[type=submit] {
+        margin-right: 10px;
+    }
+</style>
 <template>
-    <form :action="action" class="stacked" @reset="reset" @submit="submit" method="post" v-cloak :enctype="encoding">
+    <form :action="action" class="stacked" @reset.stop.prevent="reset" @submit="submit" method="post" v-cloak :enctype="encoding">
         <form-validator ref="validation">
             <slot name="validationHeader">The following errors were found</slot>
         </form-validator>
         <form-field-complex :schema="internalSchema" :model="internalModel" @changed="setModelValue" @click="buttonClicked" @error="error"
-            @exception="exception">
+                            @exception="exception">
         </form-field-complex>
+        <div>
+            <div class="input-group">
+                <input type="submit" :disabled="submitting" :value="submitting ? 'Submitting...' : 'Submit'" />
+                <input type="reset" :disabled="submitting" value="Reset" />
+            </div>
+        </div>
 
         <pre v-if="debug">
             {{ internalModel }}
@@ -18,10 +29,11 @@
 </template>
 
 <script lang="ts">
-import { Request } from '../Framework/AJAX/Request';
-import Vue from 'vue';
-import FormValidator from './FormValidator.vue';
-import FormFieldComplex from './FormComponents/Complex.vue';
+    import { Request } from '../Framework/AJAX/Request';
+    import Vue from 'vue';
+    import FormValidator from './FormValidator.vue';
+    import FormFieldComplex from './FormComponents/Complex.vue';
+    import PropertySchema from "./DataTypes/PropertySchema";
 
     export default Vue.defineComponent({
         name: "mithril-form",
@@ -32,13 +44,19 @@ import FormFieldComplex from './FormComponents/Complex.vue';
         data: function () {
             return {
                 submitting: false,
-                internalModel: this.model,
+                internalModel: JSON.parse(JSON.stringify(this.model)),
                 internalSchema: { fields: this.schema }
             };
         },
         props: {
-            schema: Object,
-            model: Object,
+            schema: {
+                type: Array<PropertySchema>,
+                default: []
+            },
+            model: {
+                type: Object,
+                default: {}
+            },
             action: {
                 default: "",
                 type: String,
@@ -77,6 +95,8 @@ import FormFieldComplex from './FormComponents/Complex.vue';
             },
             reset: function () {
                 let that = this;
+                console.log("Resetting form to state: ", that.model);
+                that.internalModel = JSON.parse(JSON.stringify(that.model));
                 setTimeout(function () {
                     that.revalidate();
                 }, 100);
@@ -87,6 +107,7 @@ import FormFieldComplex from './FormComponents/Complex.vue';
                     event.preventDefault();
                     return false;
                 }
+                console.log("Submitting form to location: ", that.ajaxAction);
                 that.submitting = true;
                 if (that.ajaxAction) {
                     Request.post(that.ajaxAction, that.internalModel)
@@ -109,7 +130,18 @@ import FormFieldComplex from './FormComponents/Complex.vue';
             },
         },
         watch: {
-            model: function (newModel, oldModel) {
+            schema: function (newSchema: Array<PropertySchema>, oldSchema: Array<PropertySchema>) {
+                if (oldSchema === newSchema) {
+                    return;
+                }
+                this.internalSchema = newSchema;
+                if (this.internalModel !== null) {
+                    this.$nextTick(() => {
+                        this.revalidate();
+                    });
+                }
+            },
+            model: function (newModel: Object, oldModel: Object) {
                 if (oldModel === newModel) {
                     return;
                 }

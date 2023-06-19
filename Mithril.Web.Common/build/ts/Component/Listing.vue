@@ -68,7 +68,7 @@
     import debounce from "../Framework/Browser/Debounce";
     import Vue from 'vue';
     import PropertySchema from "./DataTypes/PropertySchema";
-import FilterEvent from "./DataTypes/FilterEvent";
+    import FilterEvent from "./DataTypes/FilterEvent";
 
     export default Vue.defineComponent({
         name: "mithril-listing",
@@ -102,21 +102,21 @@ import FilterEvent from "./DataTypes/FilterEvent";
                 let that = this;
                 that.$emit("filter", event, new FilterEvent(that.filter, that.pageSize, that.page, that.sortField, that.sortAscending));
             }, 300),
-            entitySelected: function(entity: any) {
-                this.$emit("select", entity);
+            entitySelected: function (entity: any) {
+                this.$emit("entity-selected", entity);
             }
         },
         created: function () {
 
         },
         watch: {
-            model: function (newModel, oldModel) {
+            model: function (newModel: Object, oldModel: Object) {
                 if (oldModel === newModel) {
                     return;
                 }
                 this.internalModel = newModel;
             },
-            schema: function (newSchema, oldSchema) {
+            schema: function (newSchema: Array<PropertySchema>, oldSchema: Array<PropertySchema>) {
                 if (oldSchema === newSchema) {
                     return;
                 }

@@ -12,7 +12,7 @@
         </header>
         <div class="body">
             <div v-if="mode=='listing'">
-                <listing :schema="schema.modelSchema" :model="entities" :debug="debug" @select="editEntity" @filter="filter"></listing>
+                <listing :schema="schema.modelSchema" :model="entities" :debug="debug" @entity-selected="editEntity" @filter="filter"></listing>
             </div>
             <div v-if="mode=='editor'">
                 <mithril-form :schema="schema.modelSchema" :model="currentEntity" :debug="debug" @submit="saveEntity"></mithril-form>
@@ -33,6 +33,7 @@
     import Form from "../../../../Mithril.Web.Common/build/ts/Component/Form.vue";
     import { Request, StorageMode } from "../../../../Mithril.Web.Common/build/ts/Framework/AJAX/Request";
     import FilterEvent from "../../../../Mithril.Web.Common/build/ts/Component/DataTypes/FilterEvent";
+    import debounce from "../../../../Mithril.Web.Common/build/ts/Framework/Browser/Debounce";
 
     export default Vue.defineComponent({
         name: "data-editor-component",
@@ -64,14 +65,14 @@
                 this.currentFilter = filter;
                 this.loadData();
             },
-            loadData: function () {
+            loadData: debounce(function () {
                 let that = this;
                 Request.post("/api/query", {
                     query: that.entitiesQuery,
                     variables: {
                         entityType: that.schema.dataType,
-                        pageSize: that.currentFilter.pageSize,
-                        page: that.currentFilter.page,
+                        pageSize: Number.parseInt(that.currentFilter.pageSize),
+                        page: Number.parseInt(that.currentFilter.page),
                         sortField: that.currentFilter.sortField,
                         sortAscending: that.currentFilter.sortAscending,
                         filter: that.currentFilter.filter
@@ -80,7 +81,7 @@
                     .onSuccess(results => {
                         that.entities = results.data.entities;
                     }).send();
-            },
+            }, 100),
             saveEntity: function (entity: any) {
                 this.currentEntity = null;
                 this.mode = "listing";

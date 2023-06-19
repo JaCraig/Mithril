@@ -1,34 +1,48 @@
 //TODO: Add retry logic, cancellation tokens, progress tracking, authentication/authorization, etc.
 import { DatabaseConnection } from "../Database/Database";
 
+// Cancellation token
+export class CancellationToken {
+    // Indicates whether the request is cancelled (default: false)
+    canceled: boolean;
+}
+
 // Request options
 export interface RequestOptions {
-    // Request method (default: GET)
-    method: string;
-    // Request url (default: "")
-    url: string;
-    // Request data
-    data?: any;
-    // Request headers (default: {})
-    headers?: Record<string, string>;
-    // Request credentials (default: same-origin)
-    credentials?: RequestCredentials;
-    // Request serializer (default: JSON.stringify)
-    serializer?: (data: any) => string;
-    // Request parser (default: response.json())
-    parser?: (response: Response) => Promise<any>;
-    // Request success callback (default: console.log)
-    success?: (response: any) => void;
-    // Request error callback (default: console.error)
-    error?: (reason: any) => void;
-    // Storage mode (default: StorageMode.NetworkFirst)
-    storageMode?: StorageMode;
     // Cache key (default: url + JSON.stringify(data))
     cacheKey?: string;
+    // Request cancellation token (default: null)
+    cancellationToken?: CancellationToken;
+    // Request credentials (default: same-origin)
+    credentials?: RequestCredentials;
+    // Request data
+    data?: any;
     // Database name (default: MithrilStorage)
     databaseName?: string;
+    // Request error callback (default: console.error)
+    error?: (reason: any) => void;
+    // Request headers (default: {})
+    headers?: Record<string, string>;
+    // Request method (default: GET)
+    method: string;
+    // Request parser (default: response.json())
+    parser?: (response: Response) => Promise<any>;
+    // Request retry callback (default: console.log)
+    retry?: (attempt: number) => void;
+    // Retry attempts (default: 3)
+    retryAttempts?: number;
+    // Retry delay in milliseconds (default: 1000)
+    retryDelay?: number;
+    // Request serializer (default: JSON.stringify)
+    serializer?: (data: any) => string;
+    // Storage mode (default: StorageMode.NetworkFirst)
+    storageMode?: StorageMode;
+    // Request success callback (default: console.log)
+    success?: (response: any) => void;
     // Timeout in milliseconds (default: 60000)
     timeout?: number;
+    // Request url (default: "")
+    url: string;
 }
 
 // Request class
@@ -45,10 +59,13 @@ export class Request {
         parser: (response: Response) => response.json(),
         success: (response) => { console.log("Request response:", response) },
         error: (reason) => { console.error("Request error:", reason) },
+        retry: (attempt) => { console.log("Request retry:", attempt) },
         storageMode: StorageMode.NetworkFirst,
         cacheKey: "",
         databaseName: "MithrilStorage",
-        timeout: 60000
+        timeout: 60000,
+        retryAttempts: 3,
+        retryDelay: 1000
     };
 
     // Abort controller (used to abort the request) (default: null)
@@ -113,6 +130,14 @@ export class Request {
         return this;
     }
 
+    // Adds a cancellation token to the request (used to cancel the request)
+    // cancellationToken: The cancellation token
+    // Note: The request will finish executing, but the success/error callbacks will not be called if the request is cancelled.
+    public withCancellationToken(cancellationToken: CancellationToken): this {
+        this.options.cancellationToken = cancellationToken;
+        return this;
+    }
+
     // Adds credentials to the request
     // credentials: The credentials
     public withCredentials(credentials: RequestCredentials): this {
@@ -148,6 +173,13 @@ export class Request {
         return this;
     }
 
+    // Sets the retry callback for the request
+    // callback: The retry callback
+    public onRetry(callback: (attempt: number) => void): this {
+        this.options.retry = callback ?? ((attempt) => { console.log("Request retry:", attempt) });
+        return this;
+    }
+
     // Sets the storage mode for the request
     // storageMode: The storage mode
     // databaseName: The database name (default: MithrilStorage)
@@ -172,6 +204,22 @@ export class Request {
         return this;
     }
 
+    // Sets the number of retry attempts for the request
+    // retryAttempts: The number of retry attempts (default: 3)
+    // Note: The retry attempts are only used for network requests
+    public withRetryAttempts(retryAttempts: number): this {
+        this.options.retryAttempts = retryAttempts;
+        return this;
+    }
+
+    // Sets the retry delay for the request in milliseconds
+    // retryDelay: The retry delay in milliseconds (default: 1000)
+    // Note: The retry delay is only used for network requests
+    public withRetryDelay(retryDelay: number): this {
+        this.options.retryDelay = retryDelay;
+        return this;
+    }
+
     // Aborts the request, if it is still running, and calls the error callback.
     // Note: This is only supported for network requests
     public abort(): this {
@@ -187,61 +235,77 @@ export class Request {
     // success or error functions if they exist.
     // Returns the parsed response.
     public async send(): Promise<any> {
-        const { method, url, data, headers, credentials, serializer, parser, success, error, storageMode, cacheKey, databaseName, timeout } = this.options;
-        const serializedData = serializer(data);
+        const { method, url, data, headers, credentials, serializer, parser, success, error, storageMode, cacheKey, databaseName, timeout, retryAttempts, retryDelay, retry, cancellationToken } = this.options;
         const abortController = new AbortController();
         this.abortController = abortController;
 
-        if (storageMode === StorageMode.StorageFirst || storageMode === StorageMode.StorageAndUpdate) {
-            const cachedValue = await Request.getValueFromDB(cacheKey, databaseName);
-            if (cachedValue !== undefined) {
-                success(cachedValue);
-                if (storageMode === StorageMode.StorageFirst) {
-                    return cachedValue;
-                }
-            }
-        }
+        // Retry-related variables
+        let attempts = 0;
+        let lastError: any = null;
 
-        if (!navigator.onLine) {
-            if (storageMode === StorageMode.NetworkFirst) {
+        const sendRequest = async (): Promise<any> => {
+            if (storageMode === StorageMode.StorageFirst || storageMode === StorageMode.StorageAndUpdate) {
                 const cachedValue = await Request.getValueFromDB(cacheKey, databaseName);
                 if (cachedValue !== undefined) {
                     success(cachedValue);
-                    return cachedValue;
+                    if (storageMode === StorageMode.StorageFirst) {
+                        return cachedValue;
+                    }
                 }
-                let errorMessage = new Error("No cached value found and system is offline");
+            }
+
+            if (!navigator.onLine) {
+                if (storageMode === StorageMode.NetworkFirst) {
+                    const cachedValue = await Request.getValueFromDB(cacheKey, databaseName);
+                    if (cachedValue !== undefined) {
+                        success(cachedValue);
+                        return cachedValue;
+                    }
+                }
+                const errorMessage = new Error("System is offline");
                 error(errorMessage);
                 return Promise.reject(errorMessage);
             }
-            const errorMessage = new Error("System is offline");
-            error(errorMessage);
-            return Promise.reject(errorMessage);
-        }
 
-        try {
-            const response = await Promise.race([
-                fetch(url, {
-                    method,
-                    credentials,
-                    headers,
-                    body: serializedData,
-                    signal: abortController.signal
-                }),
-                this.handleTimeout(timeout)
-            ]);
+            try {
+                const serializedData = serializer(data);
+                const response = await Promise.race([
+                    fetch(url, {
+                        method,
+                        credentials,
+                        headers,
+                        body: serializedData,
+                        signal: abortController.signal,
+                    }),
+                    this.handleTimeout(timeout)
+                ]);
+                if (cancellationToken?.canceled) {
+                    return Promise.reject(new Error("The request was canceled."));
+                }
+                if (response.status >= 200 && response.status < 300) {
+                    const parsedResponse = await parser(response);
+                    success(parsedResponse);
 
-            const parsedResponse = await parser(response);
-            success(parsedResponse);
+                    if (storageMode !== StorageMode.NetworkOnly) {
+                        Request.saveValueToDB(parsedResponse, cacheKey, databaseName);
+                    }
 
-            if (storageMode !== StorageMode.NetworkOnly) {
-                Request.saveValueToDB(parsedResponse, cacheKey, databaseName);
+                    return parsedResponse;
+                }
+                lastError = new Error(response.statusText);
+            } catch (err) {
+                lastError = err;
             }
-
-            return parsedResponse;
-        } catch (err) {
-            error(err);
-            return Promise.reject(err);
+            if (attempts < retryAttempts) {
+                ++attempts;
+                await new Promise(resolve => setTimeout(resolve, retryDelay)); // Delay before retrying
+                retry(attempts);
+                return sendRequest(); // Retry the request
+            }
+            error(lastError);
+            return Promise.reject(lastError);
         }
+        return sendRequest();
     }
 
     // Handles the timeout for the request
