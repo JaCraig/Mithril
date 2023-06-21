@@ -1,4 +1,5 @@
 import { DatabaseConnection } from "../Database/Database";
+import { Logger } from "../Logging/Logging";
 
 // Cancellation token
 export class CancellationToken {
@@ -33,7 +34,7 @@ export interface RequestOptions {
     data?: any;
     // Database name (default: MithrilStorage)
     databaseName?: string;
-    // Request error callback (default: console.error)
+    // Request error callback (default: Logger.error)
     error?: (reason: any) => void;
     // Request headers (default: {})
     headers?: Record<string, string>;
@@ -41,7 +42,7 @@ export interface RequestOptions {
     method: string;
     // Request parser (default: response.json())
     parser?: (response: Response) => Promise<any>;
-    // Request retry callback (default: console.log)
+    // Request retry callback (default: Logger.debug)
     retry?: (attempt: number) => void;
     // Retry attempts (default: 3)
     retryAttempts?: number;
@@ -51,7 +52,7 @@ export interface RequestOptions {
     serializer?: (data: any) => string;
     // Storage mode (default: StorageMode.NetworkFirst)
     storageMode?: StorageMode;
-    // Request success callback (default: console.log)
+    // Request success callback (default: Logger.debug)
     success?: (response: any) => void;
     // Timeout in milliseconds (default: 60000)
     timeout?: number;
@@ -71,9 +72,9 @@ export class Request {
         credentials: "same-origin",
         serializer: JSON.stringify,
         parser: (response: Response) => response.json(),
-        success: (response) => { console.log("Request response:", response) },
-        error: (reason) => { console.error("Request error:", reason) },
-        retry: (attempt) => { console.log("Request retry:", attempt) },
+        success: (response) => { Logger.debug("Request response from "+this.options.url+":", response) },
+        error: (reason) => { Logger.error("Request error from " + this.options.url +":", reason) },
+        retry: (attempt) => { Logger.debug("Request retry on " + this.options.url +":", { "attempt": attempt }) },
         storageMode: StorageMode.NetworkFirst,
         cacheKey: "",
         databaseName: "MithrilStorage",
@@ -194,21 +195,21 @@ export class Request {
     // Sets the success callback for the request
     // callback: The success callback
     public onSuccess(callback: (response: any) => void): this {
-        this.options.success = callback ?? ((response) => { console.log("Request response:", response) });
+        this.options.success = callback ?? ((response) => { Logger.debug("Request response:", response) });
         return this;
     }
 
     // Sets the error callback for the request
     // callback: The error callback
     public onError(callback: (reason: any) => void): this {
-        this.options.error = callback ?? ((reason) => { console.error("Request error:", reason) });
+        this.options.error = callback ?? ((reason) => { Logger.error("Request error:", reason) });
         return this;
     }
 
     // Sets the retry callback for the request
     // callback: The retry callback
     public onRetry(callback: (attempt: number) => void): this {
-        this.options.retry = callback ?? ((attempt) => { console.log("Request retry:", attempt) });
+        this.options.retry = callback ?? ((attempt) => { Logger.debug("Request retry:", { "attempt": attempt }) });
         return this;
     }
 

@@ -71,6 +71,7 @@
 <script lang="ts">
     import Vue from "vue";
     import { Request, StorageMode } from "../../../../Mithril.Web.Common/build/ts/Framework/AJAX/Request";
+    import { Logger } from "../../../../Mithril.Web.Common/build/ts/Framework/Logging/Logging";
 
     export default Vue.defineComponent({
         name: "admin-application",
@@ -107,13 +108,13 @@
         methods: {
             editorSelected: function (editor: any) {
                 if (this.debug) {
-                    console.log("Switching to editor:", editor.name);
+                    Logger.debug("Switching to editor:", editor.name);
                 }
                 this.currentEditor = editor;
             },
             loadEditors: function () {
                 if (this.debug) {
-                    console.log("Loading Editors");
+                    Logger.debug("Loading Editors");
                 }
                 let that = this;
                 Request.post('/api/query', {
@@ -134,12 +135,7 @@
                     .onSuccess((data) => {
                         that.editors = data.data.editors;
                         if (that.debug) {
-                            console.log("Finished loading editors:", data.data.editors);
-                        }
-                    })
-                    .onError((error) => {
-                        if (that.debug) {
-                            console.log("Error loading editors:", error);
+                            Logger.debug("Finished loading editors:", data.data.editors);
                         }
                     })
                     .withStorageMode(StorageMode.StorageAndUpdate)

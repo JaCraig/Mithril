@@ -34,6 +34,7 @@
     import { Request, StorageMode, CancellationToken } from "../../../../Mithril.Web.Common/build/ts/Framework/AJAX/Request";
     import FilterEvent from "../../../../Mithril.Web.Common/build/ts/Component/DataTypes/FilterEvent";
     import debounce from "../../../../Mithril.Web.Common/build/ts/Framework/Browser/Debounce";
+    import { Logger } from "../../../../Mithril.Web.Common/build/ts/Framework/Logging/Logging";
 
     export default Vue.defineComponent({
         name: "data-editor-component",
@@ -85,6 +86,7 @@
                 })
                     .withCancellationToken(that.cancellationToken)
                     .onSuccess(results => {
+                        Logger.debug("Entities loaded successfully", results.data.entities);
                         that.entities = results.data.entities;
                     });
                 await that.currentRequest.send();

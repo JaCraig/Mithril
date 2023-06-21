@@ -24,6 +24,7 @@
     import Vue from "vue";
     import { Request, StorageMode } from "../../../../Mithril.Web.Common/build/ts/Framework/AJAX/Request";
     import Form from "../../../../Mithril.Web.Common/build/ts/Component/Form.vue";
+    import { Logger } from "../../../../Mithril.Web.Common/build/ts/Framework/Logging/Logging";
 
     export default Vue.defineComponent({
         name: "settings-editor-component",
@@ -53,7 +54,7 @@
         methods: {
             loadData: function () {
                 if (this.debug) {
-                    console.log("Loading", this.name, "data.");
+                    Logger.debug("Loading" + this.name + "data.");
                 }
                 let that = this;
                 Request.post('/api/query', {
@@ -64,14 +65,9 @@
                 })
                     .onSuccess((data) => {
                         if (that.debug) {
-                            console.log("Successfully loaded data:", data);
+                            Logger.debug("Successfully loaded data:", data);
                         }
                         that.model = data.data.entity;
-                    })
-                    .onError((error) => {
-                        if (that.debug) {
-                            console.log("Error loading data:", data);
-                        }
                     })
                     .withStorageMode(StorageMode.NetworkOnly)
                     .send();

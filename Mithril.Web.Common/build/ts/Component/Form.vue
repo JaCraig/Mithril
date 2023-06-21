@@ -34,6 +34,7 @@
     import FormValidator from './FormValidator.vue';
     import FormFieldComplex from './FormComponents/Complex.vue';
     import PropertySchema from "./DataTypes/PropertySchema";
+    import { Logger } from '../Framework/Logging/Logging';
 
     export default Vue.defineComponent({
         name: "mithril-form",
@@ -95,7 +96,7 @@
             },
             reset: function () {
                 let that = this;
-                console.log("Resetting form to state: ", that.model);
+                Logger.debug("Resetting form to state:", that.model);
                 that.internalModel = JSON.parse(JSON.stringify(that.model));
                 setTimeout(function () {
                     that.revalidate();
@@ -107,7 +108,7 @@
                     event.preventDefault();
                     return false;
                 }
-                console.log("Submitting form to location: ", that.ajaxAction);
+                Logger.debug("Submitting form to location: ", { "location": that.ajaxAction });
                 that.submitting = true;
                 if (that.ajaxAction) {
                     Request.post(that.ajaxAction, that.internalModel)

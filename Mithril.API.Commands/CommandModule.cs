@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Routing;
+﻿using Microsoft.AspNetCore.Http.Json;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +12,7 @@ using Mithril.API.Commands.Utils;
 using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.BaseClasses;
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 namespace Mithril.API.Commands
 {
@@ -33,6 +35,22 @@ namespace Mithril.API.Commands
         /// </summary>
         /// <value>The services.</value>
         private IServiceCollection? Services { get; set; }
+
+        /// <summary>
+        /// Configures the MVC.
+        /// </summary>
+        /// <param name="mvcBuilder">The MVC builder.</param>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="environment">The environment.</param>
+        /// <returns>
+        /// MVC Builder
+        /// </returns>
+        public override IMvcBuilder? ConfigureMVC(IMvcBuilder? mvcBuilder, IConfiguration? configuration, IHostEnvironment? environment)
+        {
+            if (mvcBuilder is null)
+                return mvcBuilder;
+            return mvcBuilder.AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+        }
 
         /// <summary>
         /// Configures the routes.
@@ -73,7 +91,8 @@ namespace Mithril.API.Commands
             services?.AddAllTransient<IEventHandler>()
                 .AddAllTransient<IEvent>()
                 .AddAllTransient<ICommand>()
-                .AddAllTransient<ICommandHandler>();
+                .AddAllTransient<ICommandHandler>()
+                ?.Configure<JsonOptions>(o => o.SerializerOptions.Converters.Add(new JsonStringEnumConverter()));
             return Services;
         }
     }

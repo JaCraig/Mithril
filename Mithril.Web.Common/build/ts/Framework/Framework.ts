@@ -1,5 +1,4 @@
 import { FormValidation } from "./Validation/FormValidation";
-import { ErrorLogging } from "./Logging/ErrorLogging";
 import { LocalStorage } from "./WebStorage/LocalStorage";
 import { SessionStorage } from "./WebStorage/SessionStorage";
 import { Request, StorageMode } from "./AJAX/Request";
@@ -10,13 +9,14 @@ import { Hotkeys } from "./Hotkey/Hotkeys";
 import { Router } from "./Router/Router";
 import { PageHistory } from "./History/PageHistory";
 import { Downloader } from "./IO/Downloader";
+import { ConsoleSink, Logger } from "./Logging/Logging";
 
 // Starts up and generally manages the framework
 class Framework {
     // constructor
     constructor() {
         this.validation = new FormValidation();
-        this.errorLogger = new ErrorLogging();
+        Logger.configure().minimumLevel("Debug").writeTo(new ConsoleSink());
         this.localStorage = new LocalStorage();
         this.sessionStorage = new SessionStorage();
         this.hotkeys = new Hotkeys();
@@ -26,9 +26,8 @@ class Framework {
         window.addEventListener("keydown", x => this.hotkeys.press(x));
         window.addEventListener("load", x => this.validation.initialize(), false);
         window.onerror = (msg, url, ln, col, error) => {
-            this.errorLogger.onError(msg.toString(), url, ln, col, error);
+            Logger.error(msg.toString(), { "url": url, "line": ln, "column": col, "stack": error?.stack || "" }, error);
         };
-        this.errorLogger.setLoggingFunction((message: string, stack: string) => { console.log(message); });
     }
 
     // the hotkeys object
@@ -39,9 +38,6 @@ class Framework {
 
     // The form validation object
     public validation: FormValidation;
-
-    // The error logging object
-    public errorLogger: ErrorLogging;
 
     // The page history object
     public history: PageHistory;

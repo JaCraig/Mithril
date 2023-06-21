@@ -1,5 +1,5 @@
 // Log levels defined in order of severity (lowest to highest)
-export type LogLevel = 'Debug' | 'Information' | 'Warning' | 'Error' | 'Fatal';
+export type LogLevel = 'Verbose' | 'Debug' | 'Information' | 'Warning' | 'Error' | 'Fatal';
 
 // Log event interface
 export interface LogEvent {
@@ -80,19 +80,43 @@ export class DefaultFormatter implements OutputFormatter {
 // Log filter implementation that filters log events by minimum level (lowest level to write)
 export class MinimumLevelLogFilter implements LogFilter {
     // Creates a new minimum level log filter
-    constructor(minimumLevel?: LogLevel = "Debug") {
+    // minimumLevel: The minimum level to write (defaults to "Debug")
+    constructor(minimumLevel: LogLevel = "Debug") {
         this.minimumLevel = minimumLevel;
+        this.allowedLevels = this.allowedLevels.slice(this.allowedLevels.indexOf(minimumLevel));
     }
+
+    // The allowed levels
+    private allowedLevels: LogLevel[] = ["Verbose", "Debug", "Information", "Warning", "Error", "Fatal"];
 
     // Filters a log event and returns true if the event should be written to a sink or false if it should be discarded
     // event: The log event to filter
     // Returns true if the event should be written to a sink or false if it should be discarded
     public filter(event: LogEvent): boolean {
-        return event.level >= this.minimumLevel;
+        return this.allowedLevels.indexOf(event.level) >= 0;
     }
 
     // The minimum level to write
     private minimumLevel: LogLevel;
+}
+
+// Console sink implementation that writes log events to the console
+export class ConsoleSink implements LogSink {
+    // Writes a log event to the console
+    // event: The log event to write
+    write(event: LogEvent): void {
+        if (event.level === "Error" || event.level === "Fatal") {
+            console.error(event.message, event.exception, event.properties || "");
+        } else if (event.level === "Warning") {
+            console.warn(event.message, event.properties || "");
+        } else if (event.level === "Information") {
+            console.info(event.message, event.properties || "");
+        } else if (event.level === "Debug") {
+            console.debug(event.message, event.properties || "");
+        } else {
+            console.log(event.message, event.properties || "");
+        }
+    }
 }
 
 // The pipline for a log sink that can be used to add filters, formatters and enrichers
@@ -118,9 +142,6 @@ export class LogSinkPipeline {
     // sink: The sink to write to
     // Returns the logger configuration that the pipeline belongs to
     public writeTo(sink: LogSink): LoggerConfiguration {
-        if (this.formatter == null) {
-            this.formatter = new DefaultFormatter();
-        }
         this.sink = sink;
         return this.loggerConfiguration;
     }
@@ -158,13 +179,16 @@ export class LogSinkPipeline {
     }
 
     // Processes a log event by filtering, enriching and formatting it before writing it to the sink
+    // event: The log event to process
     public process(event: LogEvent): void {
+        this.formatter ??= new DefaultFormatter();
+        this.sink ??= new ConsoleSink();
         let eventCopy: LogEvent = Object.assign({}, event) as LogEvent;
-        if (this.filters.some(filter => filter.filter(eventCopy))) {
+        if (!this.filters.some(filter => filter.filter(eventCopy))) {
             return;
         }
         this.enrichers.forEach(enricher => enricher.enrich(eventCopy));
-        eventCopy.message = this.formatter?.format(eventCopy) || eventCopy.message;
+        eventCopy.message = this.formatter.format(eventCopy) || eventCopy.message;
         this.sink.write(eventCopy);
     }
 }
@@ -172,6 +196,8 @@ export class LogSinkPipeline {
 // Logger configuration that can be used to configure loggers
 // The configuration is used to configure the sinks, filters, formatters and enrichers that are used by the logger
 export class LoggerConfiguration {
+    constructor() { }
+    // The pipelines that the configuration uses to process log events
     private pipelines: LogSinkPipeline[] = [];
 
     // Sets the sink that the pipeline writes to
@@ -179,9 +205,8 @@ export class LoggerConfiguration {
     // Returns the logger configuration that the pipeline belongs to
     public writeTo(sink: LogSink): LoggerConfiguration {
         let pipeline = new LogSinkPipeline(this);
-        pipeline.writeTo(sink);
         this.pipelines.push(pipeline);
-        return this;
+        return pipeline.writeTo(sink);
     }
 
     // Adds a filter to the pipeline that filters log events by minimum level (lowest level to write)
@@ -219,6 +244,22 @@ export class LoggerConfiguration {
         this.pipelines.push(pipeline);
         return pipeline.enrichWith(enricher);
     }
+
+    // Writes a log event to the configured sinks after processing it with the configured pipelines
+    // level: The level of the log event
+    // message: The message of the log event
+    // properties: The properties of the log event
+    // exception: The exception of the log event
+    public write(level: LogLevel, message: string, properties?: { [key: string]: any }, exception?: Error): void {
+        let currentEvent: LogEvent = {
+            level: level,
+            message: message,
+            properties: properties,
+            exception: exception,
+            timestamp: new Date()
+        };
+        this.pipelines.forEach(pipeline => pipeline.process(currentEvent));
+    }
 }
 
 // Log sink interface
@@ -228,8 +269,71 @@ export interface LogSink {
     write(event: LogEvent): void;
 }
 
-export class Logger {
-    private static sinks: LogSink[] = [];
 
-    static addSink(sink: LogSink): void {
+// Logger class that is used to write log events
+export class Logger {
+    // Hides the constructor
+    private constructor() { }
+    // The logger configuration
+    private static loggerConfiguration: LoggerConfiguration;
+
+    // Gets the logger configuration that the logger uses to configure its sinks, filters, formatters and enrichers
+    public static configure(): LoggerConfiguration {
+        this.loggerConfiguration ??= window.LoggerConfiguration || new LoggerConfiguration();
+        window.LoggerConfiguration = this.loggerConfiguration;
+        return this.loggerConfiguration;
     }
+
+    // Writes a log event to the logger
+    // level: The level of the log event
+    // message: The message of the log event
+    // properties: The properties of the log event
+    // exception: The exception of the log event
+    public static write(level: LogLevel, message: string, properties?: { [key: string]: any }, exception?: Error): void {
+        Logger.configure().write(level, message, properties, exception);
+    }
+
+    // Writes a log event to the logger with the Verbose level
+    // message: The message of the log event
+    // properties: The properties of the log event
+    public static verbose(message: string, properties?: { [key: string]: any }): void {
+        this.write("Verbose", message, properties);
+    }
+
+    // Writes a log event to the logger with the Debug level
+    // message: The message of the log event
+    // properties: The properties of the log event
+    public static debug(message: string, properties?: { [key: string]: any }): void {
+        this.write("Debug", message, properties);
+    }
+
+    // Writes a log event to the logger with the Information level
+    // message: The message of the log event
+    // properties: The properties of the log event
+    public static information(message: string, properties?: { [key: string]: any }): void {
+        this.write("Information", message, properties);
+    }
+
+    // Writes a log event to the logger with the Warning level
+    // message: The message of the log event
+    // properties: The properties of the log event
+    public static warning(message: string, properties?: { [key: string]: any }): void {
+        this.write("Warning", message, properties);
+    }
+
+    // Writes a log event to the logger with the Error level
+    // message: The message of the log event
+    // properties: The properties of the log event
+    // exception: The exception of the log event
+    public static error(message: string, properties?: { [key: string]: any }, exception?: Error): void {
+        this.write("Error", message, properties, exception);
+    }
+
+    // Writes a log event to the logger with the Fatal level
+    // message: The message of the log event
+    // properties: The properties of the log event
+    // exception: The exception of the log event
+    public static fatal(message: string, properties?: { [key: string]: any }, exception?: Error): void {
+        this.write("Fatal", message, properties, exception);
+    }
+}
