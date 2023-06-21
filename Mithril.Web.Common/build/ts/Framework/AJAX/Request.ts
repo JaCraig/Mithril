@@ -1,4 +1,3 @@
-//TODO: Add retry logic, cancellation tokens, progress tracking, authentication/authorization, etc.
 import { DatabaseConnection } from "../Database/Database";
 
 // Cancellation token
@@ -7,8 +6,23 @@ export class CancellationToken {
     canceled: boolean;
 }
 
+// Authentication provider interface (used to authenticate requests)
+export interface AuthenticationProvider {
+    // Authenticates the request (e.g. adds authentication headers)
+    // request: The request to authenticate
+    // Note: This method should reject the promise if the request cannot be authenticated.
+    authenticate(request: Request): Promise<void>;
+
+    // Called when the request fails with a 401 Unauthorized response
+    // request: The request that failed
+    // reason: The reason for the failure
+    authenticationFailed(request: Request, reason: Response): Promise<void>;
+}
+
 // Request options
 export interface RequestOptions {
+    // Authentication provider (default: null)
+    authenticationProvider?: AuthenticationProvider;
     // Cache key (default: url + JSON.stringify(data))
     cacheKey?: string;
     // Request cancellation token (default: null)
@@ -123,6 +137,24 @@ export class Request {
             });
     }
 
+    // Creates a request of the specified type (e.g. GET, POST, PUT, DELETE, etc.)
+    // method: The request method
+    // url: The request url
+    // data: The request data
+    public static ofType(method: string, url: string, data?: any): Request {
+        return new Request({ method, url, data, cacheKey: url + JSON.stringify(data) })
+            .withHeaders({
+                "Accept": "application/json"
+            });
+    }
+
+    // Adds an authentication provider to the request (used to authenticate the request)
+    // authenticationProvider: The authentication provider
+    public withAuthenticationProvider(authenticationProvider: AuthenticationProvider): this {
+        this.options.authenticationProvider = authenticationProvider;
+        return this;
+    }
+
     // Adds header values to the request
     // headers: The header values
     public withHeaders(headers: Record<string, string>): this {
@@ -235,7 +267,7 @@ export class Request {
     // success or error functions if they exist.
     // Returns the parsed response.
     public async send(): Promise<any> {
-        const { method, url, data, headers, credentials, serializer, parser, success, error, storageMode, cacheKey, databaseName, timeout, retryAttempts, retryDelay, retry, cancellationToken } = this.options;
+        const { authenticationProvider, method, url, data, headers, credentials, serializer, parser, success, error, storageMode, cacheKey, databaseName, timeout, retryAttempts, retryDelay, retry, cancellationToken } = this.options;
         const abortController = new AbortController();
         this.abortController = abortController;
 
@@ -269,6 +301,8 @@ export class Request {
 
             try {
                 const serializedData = serializer(data);
+                await authenticationProvider?.authenticate(this);
+
                 const response = await Promise.race([
                     fetch(url, {
                         method,
@@ -293,6 +327,9 @@ export class Request {
                     return parsedResponse;
                 }
                 lastError = new Error(response.statusText);
+                if (response.status === 401) {
+                    await authenticationProvider?.authenticationFailed(this, response);
+                }
             } catch (err) {
                 lastError = err;
             }

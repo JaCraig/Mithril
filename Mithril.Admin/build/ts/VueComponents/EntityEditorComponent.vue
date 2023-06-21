@@ -31,7 +31,7 @@
     import Vue from "vue";
     import Listing from "../../../../Mithril.Web.Common/build/ts/Component/Listing.vue";
     import Form from "../../../../Mithril.Web.Common/build/ts/Component/Form.vue";
-    import { Request, StorageMode } from "../../../../Mithril.Web.Common/build/ts/Framework/AJAX/Request";
+    import { Request, StorageMode, CancellationToken } from "../../../../Mithril.Web.Common/build/ts/Framework/AJAX/Request";
     import FilterEvent from "../../../../Mithril.Web.Common/build/ts/Component/DataTypes/FilterEvent";
     import debounce from "../../../../Mithril.Web.Common/build/ts/Framework/Browser/Debounce";
 
@@ -49,7 +49,8 @@
                 entitiesQuery: `query($entityType: String, $pageSize: Int, $page: Int, $sortField: String, $sortAscending: Boolean, $filter: String) {
                     entities(entityType: $entityType, pageSize: $pageSize, page: $page, sortField: $sortField, sortAscending: $sortAscending, filter: $filter)
                 }`,
-                currentFilter: new FilterEvent("", 10, 0, "", false)
+                currentFilter: new FilterEvent("", 10, 0, "", false),
+                currentRequest: null
             };
         },
         methods: {
@@ -65,9 +66,13 @@
                 this.currentFilter = filter;
                 this.loadData();
             },
-            loadData: debounce(function () {
+            loadData: debounce(async function () {
                 let that = this;
-                Request.post("/api/query", {
+                if (that.currentRequest != null) {
+                    that.cancellationToken.canceled = true;
+                }
+                that.cancellationToken = new CancellationToken();
+                that.currentRequest = Request.post("/api/query", {
                     query: that.entitiesQuery,
                     variables: {
                         entityType: that.schema.dataType,
@@ -78,9 +83,11 @@
                         filter: that.currentFilter.filter
                     }
                 })
+                    .withCancellationToken(that.cancellationToken)
                     .onSuccess(results => {
                         that.entities = results.data.entities;
-                    }).send();
+                    });
+                await that.currentRequest.send();
             }, 100),
             saveEntity: function (entity: any) {
                 this.currentEntity = null;

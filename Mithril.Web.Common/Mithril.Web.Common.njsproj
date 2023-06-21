@@ -103,6 +103,7 @@
     <TypeScriptCompile Include="build\ts\Framework\Interfaces\IRouteConfiguration.ts" />
     <TypeScriptCompile Include="build\ts\Framework\IO\Downloader.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Logging\ErrorLogging.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Logging\Logging.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Logging\Signature.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Router\DataTypes\RouteData.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Router\HashPart.ts" />
