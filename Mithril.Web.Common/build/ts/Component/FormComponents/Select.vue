@@ -4,11 +4,16 @@
         <label :for="getFieldID()" v-if="!schema.label && label" :class="schema.labelClasses">
             {{ $filters.capitalize(schema.model) }}
             <span class="error clear-background" v-if="schema.required">*</span>
+            <span class="error clear-background" v-if="errorMessage">{{errorMessage}}</span>
+            <span class="success clear-background fas fa-check-circle" v-if="!errorMessage && willValidate()"></span>
         </label>
         <label :for="getFieldID()" v-if="schema.label && label" :class="schema.labelClasses">
             {{ schema.label }}
             <span class="error clear-background" v-if="schema.required">*</span>
+            <span class="error clear-background" v-if="errorMessage">{{errorMessage}}</span>
+            <span class="success clear-background fas fa-check-circle" v-if="!errorMessage && willValidate()"></span>
         </label>
+        <div v-if="internalSchema.metadata.subtitle">{{internalSchema.metadata.subtitle}}</div>
         <select v-model="internalModel"
                 :disabled="schema.disabled"
                 :name="schema.inputName || getFieldID()"
@@ -31,12 +36,14 @@
 <script lang="ts">
     import Vue from 'vue';
     import "../../Framework/Extensions/String";
-    import { Request, StorageMode } from "../../Framework/AJAX/Request";
+    import { Request, StorageMode } from "../../Framework/Request";
+    import { InputElementValidationRule } from '../../Framework/Validation';
 
     export default Vue.defineComponent({
         data: function () {
             return {
-                internalModel: this.model
+                internalModel: this.model,
+                errorMessage: "",
             };
         },
         props: {
@@ -49,6 +56,14 @@
             idSuffix: String,
         },
         methods: {
+            willValidate: function() {
+                return this.internalSchema.metadata.required || this.internalSchema.metadata.maxlength || this.internalSchema.metadata.minlength || this.internalSchema.metadata.pattern || this.internalSchema.metadata.min || this.internalSchema.metadata.max;
+            },
+            revalidate: async function () {
+                let result = await new InputElementValidationRule().validate(document.getElementById(this.getFieldID()) as HTMLInputElement);
+                this.errorMessage = result.errorMessage;
+                return result.isValid;
+            },
             getFieldID: function () {
                 let result = "";
                 if (this.schema.id) {
@@ -62,6 +77,7 @@
                 return result;
             },
             changed: function (newValue: any) {
+                this.revalidate();
                 this.$emit("changed", newValue, this.schema);
             },
             isSelected: function (value: any) {
@@ -110,7 +126,15 @@
                     return;
                 }
                 this.internalModel = newModel;
+                this.$nextTick(function () {
+                    this.revalidate();
+                });
             },
+        },
+        mounted: function() {
+            this.$nextTick(function () {
+                this.revalidate();
+            });
         }
     });
 </script>

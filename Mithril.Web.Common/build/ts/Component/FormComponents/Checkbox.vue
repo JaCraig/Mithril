@@ -5,6 +5,9 @@
                 {{ internalSchema.displayName }}
             </span>
             <span class="error clear-background" v-if="internalSchema.metadata.required">*</span>
+            <span class="error clear-background" v-if="errorMessage">{{errorMessage}}</span>
+            <span class="success clear-background fas fa-check-circle" v-if="!errorMessage && willValidate()"></span>
+            <div v-if="internalSchema.metadata.subtitle">{{internalSchema.metadata.subtitle}}</div>
             <input :id="getFieldID()"
                    type="checkbox"
                    :checked="internalModel"
@@ -13,8 +16,7 @@
                    :dirname="internalSchema.metadata.dirname"
                    :name="getFieldID()"
                    :readonly="internalSchema.metadata.readonly"
-                   :required="internalSchema.metadata.required"
-                   :data-error-message-value-missing="internalSchema.metadata.errorMessageValueMissing" />
+                   :required="internalSchema.metadata.required" />
         </label>
     </div>
 </template>
@@ -23,6 +25,7 @@
 import Vue from 'vue';
 import "../../Framework/Extensions/String";
 import PropertySchema from '../DataTypes/PropertySchema';
+import { InputElementValidationRule } from '../../Framework/Validation';
 
     export default Vue.defineComponent({
         name: "form-field-checkbox",
@@ -30,6 +33,7 @@ import PropertySchema from '../DataTypes/PropertySchema';
             return {
                 internalModel: this.model,
                 internalSchema: this.schema,
+                errorMessage: ""
             };
         },
         props: {
@@ -45,10 +49,19 @@ import PropertySchema from '../DataTypes/PropertySchema';
             }
         },
         methods: {
+            willValidate: function() {
+                return this.internalSchema.metadata.required;
+            },
+            revalidate: async function () {
+                let result = await new InputElementValidationRule().validate(document.getElementById(this.getFieldID()) as HTMLInputElement);
+                this.errorMessage = result.errorMessage;
+                return result.isValid;
+            },
             getFieldID: function () {
                 return this.internalSchema.propertyName.slugify() + this.internalSchema.key;
             },
             changed: function(newValue: any) {
+                this.revalidate();
                 this.$emit("changed", newValue, this.schema);
             },
         },
@@ -58,13 +71,24 @@ import PropertySchema from '../DataTypes/PropertySchema';
                     return;
                 }
                 this.internalModel = newModel;
+                this.$nextTick(function () {
+                    this.revalidate();
+                });
             },
             schema: function (newSchema, oldSchema) {
                 if (oldSchema === newSchema) {
                    return;            
                 }
                 this.internalSchema = newSchema;
+                this.$nextTick(function () {
+                    this.revalidate();
+                });
             }
+        },
+        mounted: function() {
+            this.$nextTick(function () {
+                this.revalidate();
+            });
         }
     });
 

@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-    import { Request, StorageMode } from '../Framework/AJAX/Request';
+    import { Request, StorageMode } from '../Framework/Request';
     import ComponentSchema from "./DataTypes/ComponentSchema";
     import "../Framework/Extensions/String";
     import Vue from 'vue';

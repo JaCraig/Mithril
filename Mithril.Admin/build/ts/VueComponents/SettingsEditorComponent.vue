@@ -22,9 +22,9 @@
 
 <script lang="ts">
     import Vue from "vue";
-    import { Request, StorageMode } from "../../../../Mithril.Web.Common/build/ts/Framework/AJAX/Request";
+    import { Request, StorageMode } from "../../../../Mithril.Web.Common/build/ts/Framework/Request";
     import Form from "../../../../Mithril.Web.Common/build/ts/Component/Form.vue";
-    import { Logger } from "../../../../Mithril.Web.Common/build/ts/Framework/Logging/Logging";
+    import { Logger } from "../../../../Mithril.Web.Common/build/ts/Framework/Logging";
 
     export default Vue.defineComponent({
         name: "settings-editor-component",

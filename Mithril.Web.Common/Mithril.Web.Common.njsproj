@@ -52,8 +52,6 @@
     <Folder Include="build\ts\Component\VueExtensions\" />
     <Folder Include="build\ts\Component\VueExtensions\Directives\" />
     <Folder Include="build\ts\Framework\" />
-    <Folder Include="build\ts\Framework\AJAX\" />
-    <Folder Include="build\ts\Framework\Database\" />
     <Folder Include="build\ts\Framework\Browser\" />
     <Folder Include="build\ts\Framework\Extensions\" />
     <Folder Include="build\ts\Framework\History\" />
@@ -61,8 +59,6 @@
     <Folder Include="build\ts\Framework\Hotkey\Interfaces\" />
     <Folder Include="build\ts\Framework\Interfaces\" />
     <Folder Include="build\ts\Framework\IO\" />
-    <Folder Include="build\ts\Framework\Logging\" />
-    <Folder Include="build\ts\Framework\Cache\" />
     <Folder Include="build\ts\Framework\Router\" />
     <Folder Include="build\ts\Framework\Router\DataTypes\" />
     <Folder Include="build\ts\Framework\Router\Interfaces\" />
@@ -84,11 +80,11 @@
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueComponents.ts" />
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueDirectives.ts" />
     <TypeScriptCompile Include="build\ts\Component\VueExtensions\VueFilters.ts" />
-    <TypeScriptCompile Include="build\ts\Framework\AJAX\Request.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Request.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Browser\BrowserUtils.ts" />
-    <TypeScriptCompile Include="build\ts\Framework\Browser\Debounce.ts" />
-    <TypeScriptCompile Include="build\ts\Framework\Cache\Cache.ts" />
-    <TypeScriptCompile Include="build\ts\Framework\Database\Database.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Utils\Debounce.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Cache.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Database.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Extensions\HTMLElement.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Extensions\NodeList.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Extensions\ObjectConstructor.ts" />
@@ -104,7 +100,7 @@
     <TypeScriptCompile Include="build\ts\Framework\Interfaces\IHotkeyConfiguration.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Interfaces\IRouteConfiguration.ts" />
     <TypeScriptCompile Include="build\ts\Framework\IO\Downloader.ts" />
-    <TypeScriptCompile Include="build\ts\Framework\Logging\Logging.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Logging.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Router\DataTypes\RouteData.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Router\HashPart.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Router\Interfaces\IRouter.ts" />
@@ -115,6 +111,7 @@
     <TypeScriptCompile Include="build\ts\Framework\Types\NumberDictionary.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Types\StringDictionary.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Utils\SortFuncs.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Validation.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Validation\FormValidation.ts" />
     <TypeScriptCompile Include="build\ts\Framework\WebStorage\Interfaces\IStorage.ts" />
     <TypeScriptCompile Include="build\ts\Framework\WebStorage\LocalStorage.ts" />

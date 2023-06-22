@@ -1,15 +1,15 @@
 import { FormValidation } from "./Validation/FormValidation";
 import { LocalStorage } from "./WebStorage/LocalStorage";
 import { SessionStorage } from "./WebStorage/SessionStorage";
-import { Request, StorageMode } from "./AJAX/Request";
-import { DatabaseConnection } from "./Database/Database";
+import { Request, StorageMode } from "./Request";
+import { DatabaseConnection } from "./Database";
 import { BrowserUtils } from "./Browser/BrowserUtils";
 
 import { Hotkeys } from "./Hotkey/Hotkeys";
 import { Router } from "./Router/Router";
 import { PageHistory } from "./History/PageHistory";
 import { Downloader } from "./IO/Downloader";
-import { CallerEnricher, ConsoleSink, DefaultFormatter, Logger, UrlEnricher } from "./Logging/Logging";
+import { CallerEnricher, ConsoleSink, DefaultFormatter, Logger, UrlEnricher } from "./Logging";
 
 // Starts up and generally manages the framework
 class Framework {

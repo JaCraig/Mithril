@@ -1,5 +1,5 @@
-import { DatabaseConnection } from "../Database/Database";
-import { Logger } from "../Logging/Logging";
+import { Cache } from "./Cache";
+import { Logger } from "./Logging";
 
 // Cancellation token
 export class CancellationToken {
@@ -32,8 +32,6 @@ export interface RequestOptions {
     credentials?: RequestCredentials;
     // Request data
     data?: any;
-    // Database name (default: MithrilStorage)
-    databaseName?: string;
     // Request error callback (default: Logger.error)
     error?: (reason: any) => void;
     // Request headers (default: {})
@@ -72,12 +70,11 @@ export class Request {
         credentials: "same-origin",
         serializer: JSON.stringify,
         parser: (response: Response) => response.json(),
-        success: (response) => { Logger.debug("Request response from "+this.options.url+":", response) },
-        error: (reason) => { Logger.error("Request error from " + this.options.url +":", reason) },
-        retry: (attempt) => { Logger.debug("Request retry on " + this.options.url +":", { "attempt": attempt }) },
+        success: (response) => { Logger.debug("Request response from " + this.options.url + ":", response) },
+        error: (reason) => { Logger.error("Request error from " + this.options.url + ":", reason) },
+        retry: (attempt) => { Logger.debug("Request retry on " + this.options.url + ":", { "attempt": attempt }) },
         storageMode: StorageMode.NetworkFirst,
         cacheKey: "",
-        databaseName: "MithrilStorage",
         timeout: 60000,
         retryAttempts: 3,
         retryDelay: 1000
@@ -215,10 +212,8 @@ export class Request {
 
     // Sets the storage mode for the request
     // storageMode: The storage mode
-    // databaseName: The database name (default: MithrilStorage)
-    public withStorageMode(storageMode: StorageMode, databaseName = "MithrilStorage"): this {
+    public withStorageMode(storageMode: StorageMode): this {
         this.options.storageMode = storageMode;
-        this.options.databaseName = databaseName;
         return this;
     }
 
@@ -268,7 +263,7 @@ export class Request {
     // success or error functions if they exist.
     // Returns the parsed response.
     public async send(): Promise<any> {
-        const { authenticationProvider, method, url, data, headers, credentials, serializer, parser, success, error, storageMode, cacheKey, databaseName, timeout, retryAttempts, retryDelay, retry, cancellationToken } = this.options;
+        const { authenticationProvider, method, url, data, headers, credentials, serializer, parser, success, error, storageMode, cacheKey, timeout, retryAttempts, retryDelay, retry, cancellationToken } = this.options;
         const abortController = new AbortController();
         this.abortController = abortController;
 
@@ -278,7 +273,7 @@ export class Request {
 
         const sendRequest = async (): Promise<any> => {
             if (storageMode === StorageMode.StorageFirst || storageMode === StorageMode.StorageAndUpdate) {
-                const cachedValue = await Request.getValueFromDB(cacheKey, databaseName);
+                const cachedValue = await Cache.get(cacheKey);
                 if (cachedValue !== undefined) {
                     success(cachedValue);
                     if (storageMode === StorageMode.StorageFirst) {
@@ -289,7 +284,7 @@ export class Request {
 
             if (!navigator.onLine) {
                 if (storageMode === StorageMode.NetworkFirst) {
-                    const cachedValue = await Request.getValueFromDB(cacheKey, databaseName);
+                    const cachedValue = await Cache.get(cacheKey);
                     if (cachedValue !== undefined) {
                         success(cachedValue);
                         return cachedValue;
@@ -322,7 +317,7 @@ export class Request {
                     success(parsedResponse);
 
                     if (storageMode !== StorageMode.NetworkOnly) {
-                        Request.saveValueToDB(parsedResponse, cacheKey, databaseName);
+                        await Cache.set(cacheKey, parsedResponse);
                     }
 
                     return parsedResponse;
@@ -357,31 +352,6 @@ export class Request {
             }, timeout);
         });
         throw new Error('Request timeout');
-    }
-
-    // Saves a value to the database/cache
-    // data: The data to save
-    // dataKey: The key to save the data under
-    // databaseName: The database name
-    // returns: A promise that resolves when the data is saved
-    private static async saveValueToDB(data: string, dataKey: string, databaseName: string): Promise<void> {
-        if (data === undefined) {
-            return;
-        }
-        const connection = new DatabaseConnection(databaseName, ["cache", "cacheExpirations"], 1);
-        const database = await connection.openDatabase();
-        await database.add("cache", data, dataKey);
-        await database.add("cacheExpirations", Date.now(), dataKey);
-    }
-
-    // Returns a value from the database/cache
-    // dataKey: The key to get the data from
-    // databaseName: The database name
-    // returns: The value from the database
-    private static async getValueFromDB(dataKey: string, databaseName: string): Promise<any> {
-        const connection = new DatabaseConnection(databaseName, ["cache", "cacheExpirations"], 1);
-        const database = await connection.openDatabase();
-        return await database.getByKey("cache", dataKey);
     }
 }
 

@@ -1,5 +1,5 @@
 import { Framework, DatabaseConnection, Request, StorageMode, BrowserUtils, Downloader } from "./Framework/Framework";
-import { Logger, LogEvent, LogLevel, LogSink } from "./Framework/Logging/Logging";
+import { Logger, LogEvent, LogLevel, LogSink } from "./Framework/Logging";
 import MithrilPlugin from "./Component/VueExtensions/MithrilPlugin";
 
 import Vue from 'vue';

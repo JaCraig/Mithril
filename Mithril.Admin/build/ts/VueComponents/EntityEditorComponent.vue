@@ -31,10 +31,10 @@
     import Vue from "vue";
     import Listing from "../../../../Mithril.Web.Common/build/ts/Component/Listing.vue";
     import Form from "../../../../Mithril.Web.Common/build/ts/Component/Form.vue";
-    import { Request, StorageMode, CancellationToken } from "../../../../Mithril.Web.Common/build/ts/Framework/AJAX/Request";
+    import { Request, StorageMode, CancellationToken } from "../../../../Mithril.Web.Common/build/ts/Framework/Request";
     import FilterEvent from "../../../../Mithril.Web.Common/build/ts/Component/DataTypes/FilterEvent";
-    import debounce from "../../../../Mithril.Web.Common/build/ts/Framework/Browser/Debounce";
-    import { Logger } from "../../../../Mithril.Web.Common/build/ts/Framework/Logging/Logging";
+    import debounce from "../../../../Mithril.Web.Common/build/ts/Framework/Utils/Debounce";
+    import { Logger } from "../../../../Mithril.Web.Common/build/ts/Framework/Logging";
 
     export default Vue.defineComponent({
         name: "data-editor-component",

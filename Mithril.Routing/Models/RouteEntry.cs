@@ -47,6 +47,7 @@ namespace Mithril.Routing.Models
         /// Gets or sets the input path.
         /// </summary>
         /// <value>The input path.</value>
+        [Required]
         [MaxLength(1024)]
         public string? InputPath { get; set; }
 
@@ -54,6 +55,7 @@ namespace Mithril.Routing.Models
         /// Gets or sets the output path.
         /// </summary>
         /// <value>The output path.</value>
+        [Required]
         [MaxLength(1024)]
         public string? OutputPath { get; set; }
 

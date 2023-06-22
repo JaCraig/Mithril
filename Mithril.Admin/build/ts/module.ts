@@ -4,7 +4,7 @@ import SettingsEditorComponent from "./VueComponents/SettingsEditorComponent.vue
 import EntityEditorComponent from "./VueComponents/EntityEditorComponent.vue";
 import AdminApplication from "./VueComponents/AdminApplication.vue";
 import MithrilPlugin from "../../../Mithril.Web.Common/build/ts/Component/VueExtensions/MithrilPlugin";
-import { Logger } from "../../../Mithril.Web.Common/build/ts/Framework/Logging/Logging";
+import { Logger } from "../../../Mithril.Web.Common/build/ts/Framework/Logging";
 
 class AdminInitializer {
     constructor() {

@@ -65,7 +65,7 @@
 
 <script lang="ts">
     import "../Framework/Extensions/String";
-    import debounce from "../Framework/Browser/Debounce";
+    import debounce from "../Framework/Utils/Debounce";
     import Vue from 'vue';
     import PropertySchema from "./DataTypes/PropertySchema";
     import FilterEvent from "./DataTypes/FilterEvent";

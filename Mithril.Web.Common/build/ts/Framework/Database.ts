@@ -1,3 +1,5 @@
+import { Logger } from "./Logging";
+
 // Database connection handler
 export class DatabaseConnection {
     // The database connection
@@ -27,7 +29,7 @@ export class DatabaseConnection {
         };
 
         request.onerror = (ev: any) => {
-            console.error('Failed to open the database:', ev.target.error);
+            Logger.error('Failed to open the database:', ev.target.error);
         };
     }
 
@@ -42,6 +44,7 @@ export class DatabaseConnection {
             };
 
             request.onerror = (ev: any) => {
+                Logger.error('Failed to open the database:', ev.target.error);
                 reject(new Error('Failed to open the database:' + ev.target.error));
             };
         });
@@ -62,6 +65,7 @@ export class DatabaseConnection {
             };
 
             request.onerror = (ev: any) => {
+                Logger.error('Failed to add an object to the database: ', ev.target.error);
                 reject(new Error('Failed to add an object to the database: ' + ev.target.error));
             };
         });
@@ -81,6 +85,7 @@ export class DatabaseConnection {
             };
 
             request.onerror = (ev: any) => {
+                Logger.error('Failed to remove an object from the database: ', ev.target.error);
                 reject(new Error('Failed to remove an object from the database: ' + ev.target.error));
             };
         });
@@ -100,6 +105,7 @@ export class DatabaseConnection {
             };
 
             request.onerror = (ev: any) => {
+                Logger.error('Failed to retrieve an object from the database: ', ev.target.error);
                 reject(new Error('Failed to retrieve an object from the database: ' + ev.target.error));
             };
         });
@@ -119,6 +125,7 @@ export class DatabaseConnection {
             };
 
             request.onerror = (ev: any) => {
+                Logger.error('Failed to retrieve an object from the database: ', ev.target.error);
                 reject(new Error('Failed to retrieve keys from the database: ' + ev.target.error));
             };
         });
@@ -138,6 +145,7 @@ export class DatabaseConnection {
             };
 
             request.onerror = (ev: any) => {
+                Logger.error('Failed to retrieve an object from the database: ', ev.target.error);
                 reject(new Error('Failed to retrieve an object from the database: ' + ev.target.error));
             };
         });
@@ -157,6 +165,7 @@ export class DatabaseConnection {
             };
 
             request.onerror = (ev: any) => {
+                Logger.error('Failed to retrieve an object from the database: ', ev.target.error);
                 reject(new Error('Failed to retrieve objects from the database: ' + ev.target.error));
             };
         });

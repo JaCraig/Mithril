@@ -4,7 +4,10 @@
             {{ internalSchema.displayName }}
             <span class="error clear-background" v-if="internalSchema.metadata.required">*</span>
             <i class="clear-background active no-border small" v-if="internalSchema.metadata.hint"><span class="fas fa-info-circle"></span>{{ internalSchema.metadata.hint }}</i>
+            <span class="error clear-background" v-if="errorMessage">{{errorMessage}}</span>
+            <span class="success clear-background fas fa-check-circle" v-if="!errorMessage && willValidate()"></span>
         </label>
+        <div v-if="internalSchema.metadata.subtitle">{{internalSchema.metadata.subtitle}}</div>
         <input :id="getFieldID()"
                :type="internalSchema.metadata.inputType"
                v-model="internalModel"
@@ -55,13 +58,13 @@
 </template>
 
 <script lang="ts">
-    import { Request } from '../../Framework/AJAX/Request';
-    import { StorageMode } from "../../Framework/AJAX/Request";
+    import { Request, StorageMode } from '../../Framework/Request';
     import "../../Framework/Extensions/String";
-    import debounce from "../../Framework/Browser/Debounce";
+    import debounce from "../../Framework/Utils/Debounce";
     import Vue from 'vue';
     import moment from 'moment';
     import PropertySchema from '../DataTypes/PropertySchema';
+    import { InputElementValidationRule } from '../../Framework/Validation';
 
     export default Vue.defineComponent({
         name: "form-field-input",
@@ -69,7 +72,8 @@
             return {
                 internalModel: this.formatValue(this.model),
                 internalSchema: this.schema,
-                dataListQuery: `query($queryType: String!, $queryFilter: String!) { dropDown(type: $queryType, filter: $queryFilter) { key, value } }`
+                dataListQuery: `query($queryType: String!, $queryFilter: String!) { dropDown(type: $queryType, filter: $queryFilter) { key, value } }`,
+                errorMessage: ""
             };
         },
         props: {
@@ -85,6 +89,14 @@
             }
         },
         methods: {
+            willValidate: function() {
+                return this.internalSchema.metadata.required || this.internalSchema.metadata.maxlength || this.internalSchema.metadata.minlength || this.internalSchema.metadata.pattern || this.internalSchema.metadata.min || this.internalSchema.metadata.max;
+            },
+            revalidate: async function () {
+                let result = await new InputElementValidationRule().validate(document.getElementById(this.getFieldID()) as HTMLInputElement);
+                this.errorMessage = result.errorMessage;
+                return result.isValid;
+            },
             convertToDate: function (value: string) {
                 if (this.schema.metadata.isUTC) {
                     return moment.utc(value || new Date()).local();
@@ -112,6 +124,7 @@
             changed: function (newValue: any) {
                 let that = this;
                 this.updateDataList();
+                this.revalidate();
                 //if(that.schema.datalistUrl) {
                 //    if(that.timer !== 0) {
                 //        clearTimeout(that.timer);
@@ -173,13 +186,24 @@
                     return;
                 }
                 this.internalModel = newModel;
+                this.$nextTick(function () {
+                    this.revalidate();
+                });
             },
             schema: function (newSchema, oldSchema) {
                 if (oldSchema === newSchema) {
                     return;
                 }
                 this.internalSchema = newSchema;
+                this.$nextTick(function () {
+                    this.revalidate();
+                });
             }
+        },
+        mounted: function() {
+            this.$nextTick(function () {
+                this.revalidate();
+            });
         }
     });
 </script>

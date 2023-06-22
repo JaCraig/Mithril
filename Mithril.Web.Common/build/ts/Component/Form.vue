@@ -4,10 +4,10 @@
     }
 </style>
 <template>
-    <form :action="action" class="stacked" @reset.stop.prevent="reset" @submit="submit" method="post" v-cloak :enctype="encoding">
-        <form-validator ref="validation">
-            <slot name="validationHeader">The following errors were found</slot>
-        </form-validator>
+    <form :action="action" class="stacked" @reset.stop.prevent="reset" @submit="submit" method="post" v-cloak :enctype="encoding" :id="formID">
+        <div class="panel error" v-if="!valid">
+            <header>Oops, some form elements have problems</header>
+        </div>
         <form-field-complex :schema="internalSchema" :model="internalModel" @changed="setModelValue" @click="buttonClicked" @error="error"
                             @exception="exception">
         </form-field-complex>
@@ -29,24 +29,25 @@
 </template>
 
 <script lang="ts">
-    import { Request } from '../Framework/AJAX/Request';
+    import { Request } from '../Framework/Request';
     import Vue from 'vue';
-    import FormValidator from './FormValidator.vue';
     import FormFieldComplex from './FormComponents/Complex.vue';
     import PropertySchema from "./DataTypes/PropertySchema";
-    import { Logger } from '../Framework/Logging/Logging';
+    import { Logger } from '../Framework/Logging';
+    import { Validation } from '../Framework/Validation';
 
     export default Vue.defineComponent({
         name: "mithril-form",
         components: {
-            "form-field-complex": FormFieldComplex,
-            "form-validator": FormValidator
+            "form-field-complex": FormFieldComplex
         },
         data: function () {
             return {
                 submitting: false,
                 internalModel: JSON.parse(JSON.stringify(this.model)),
-                internalSchema: { fields: this.schema }
+                internalSchema: { fields: this.schema },
+                formID: "mithril-form-" + Math.floor(Math.random() * 1000000000),
+                valid: false
             };
         },
         props: {
@@ -76,8 +77,9 @@
             }
         },
         methods: {
-            revalidate: function () {
-                return this.$refs.validation.revalidate();
+            revalidate: async function () {
+                this.valid = await Validation.validateForm(document.getElementById(this.formID) as HTMLFormElement)
+                return this.valid;
             },
             setModelValue: function (newValue: any, field: any) {
                 this.internalModel = newValue;
@@ -128,7 +130,7 @@
             },
             getIDSuffix: function () {
                 return "";
-            },
+            }
         },
         watch: {
             schema: function (newSchema: Array<PropertySchema>, oldSchema: Array<PropertySchema>) {
