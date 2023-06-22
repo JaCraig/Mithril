@@ -13,6 +13,8 @@ export interface LogEvent {
     exception?: Error;
     // The properties of the log event
     properties: { [key: string]: any };
+    // The data of the log event
+    args: any;
 }
 
 // Log event enricher interface
@@ -51,7 +53,7 @@ export class DefaultFormatter implements OutputFormatter {
     // {Exception}: The exception of the log event
     // {PropertyName}: The properties of the log event (where PropertyName is the name of the property)
     constructor(outputFormat?: string) {
-        this.outputFormat = outputFormat ?? "{Timestamp}: [{Level}]: {Message}{Exception}";
+        this.outputFormat = outputFormat ?? "[{Timestamp}]\t[{Level}]\t{Message}{Exception}";
     }
 
     // The output format to use when formatting log events (defaults to "{Timestamp}: [{Level}]: {Message}{Exception}")
@@ -102,19 +104,35 @@ export class MinimumLevelLogFilter implements LogFilter {
 
 // Console sink implementation that writes log events to the console
 export class ConsoleSink implements LogSink {
+
+    private styles = {
+        "Verbose": "color: white;",
+        "Debug": "color: white",
+        "Information": "",
+        "Warning": "font-weight: bold;",
+        "Error": "font-weight: bold;",
+        "Fatal": "font-weight: bold;"
+    };
     // Writes a log event to the console
     // event: The log event to write
-    write(event: LogEvent): void {
-        if (event.level === "Error" || event.level === "Fatal") {
-            console.error(event.message, event.exception, event.properties || "");
+    public write(event: LogEvent): void {
+        let displayInlineArgs = (event.args && (typeof event.args != "object"));
+        let displayTableArgs = (event.args && (typeof event.args == "object"));
+        if (event.level === "Fatal") {
+            console.error("%c" + event.message, this.styles.Fatal, event.exception, displayInlineArgs ? event.args:"");
+        } else if (event.level === "Error") {
+            console.error("%c" + event.message, this.styles.Error, event.exception, displayInlineArgs ? event.args : "");
         } else if (event.level === "Warning") {
-            console.warn(event.message, event.properties || "");
+            console.warn("%c" + event.message, this.styles.Warning, displayInlineArgs ? event.args : "");
         } else if (event.level === "Information") {
-            console.info(event.message, event.properties || "");
+            console.info("%c" + event.message, this.styles.Information, displayInlineArgs ? event.args : "");
         } else if (event.level === "Debug") {
-            console.debug(event.message, event.properties || "");
+            console.debug("%c" + event.message, this.styles.Debug, displayInlineArgs ? event.args : "");
         } else {
-            console.log(event.message, event.properties || "");
+            console.log("%c" + event.message, this.styles.Verbose, displayInlineArgs ? event.args : "");
+        }
+        if (displayTableArgs) {
+            console.table(event.args);
         }
     }
 }
@@ -251,12 +269,14 @@ export class LoggerConfiguration {
     // properties: The properties of the log event
     // exception: The exception of the log event
     public write(level: LogLevel, message: string, properties?: { [key: string]: any }, exception?: Error): void {
+        let objectType = typeof properties;
         let currentEvent: LogEvent = {
             level: level,
             message: message,
-            properties: properties,
+            properties: {},
             exception: exception,
-            timestamp: new Date()
+            timestamp: new Date(),
+            args: properties
         };
         this.pipelines.forEach(pipeline => pipeline.process(currentEvent));
     }
@@ -267,6 +287,49 @@ export interface LogSink {
     // Writes a log event to the sink
     // event: The log event to write
     write(event: LogEvent): void;
+}
+
+// Enriches a log event with the current URL
+export class UrlEnricher implements LogEventEnricher {
+    // Enriches a log event with the current URL
+    // event: The log event to enrich
+    public enrich(event: LogEvent): void {
+        event.properties ??= {};
+        event.properties.url = window.location.href;
+    }
+}
+
+// User agent enricher that enriches log events with the user agent
+export class UserAgentEnricher implements LogEventEnricher {
+    // Enriches a log event with the user agent
+    // event: The log event to enrich
+    public enrich(event: LogEvent): void {
+        event.properties ??= {};
+        event.properties.userAgent = navigator.userAgent;
+    }
+}
+
+// Enricher that enriches log events with the caller
+export class CallerEnricher implements LogEventEnricher {
+    // Enriches a log event with the caller
+    // event: The log event to enrich
+    public enrich(event: LogEvent): void {
+        event.properties ??= {};
+        let callerUrl = this.matchAll(new Error().stack.toString(), /at([\s\w\d\.$]+)[\(]?((http|https|ftp)[^\)\n]+)[\)]?/gi).map(match => match[2].trim());
+        event.properties.caller = callerUrl[callerUrl.length - 1];
+    }
+
+    // Matches all occurrences of a regular expression in a string
+    private matchAll(str: string, regexp: RegExp) {
+        const flags = regexp.global ? regexp.flags : regexp.flags + "g";
+        const re = new RegExp(regexp, flags);
+        let matches = [];
+        let match;
+        while (match = re.exec(str)) {
+            matches.push(match);
+        }
+        return matches;
+    }
 }
 
 

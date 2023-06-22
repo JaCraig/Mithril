@@ -9,14 +9,19 @@ import { Hotkeys } from "./Hotkey/Hotkeys";
 import { Router } from "./Router/Router";
 import { PageHistory } from "./History/PageHistory";
 import { Downloader } from "./IO/Downloader";
-import { ConsoleSink, Logger } from "./Logging/Logging";
+import { CallerEnricher, ConsoleSink, DefaultFormatter, Logger, UrlEnricher } from "./Logging/Logging";
 
 // Starts up and generally manages the framework
 class Framework {
     // constructor
     constructor() {
         this.validation = new FormValidation();
-        Logger.configure().minimumLevel("Debug").writeTo(new ConsoleSink());
+        Logger.configure()
+            .minimumLevel("Debug")
+            .enrichWith(new CallerEnricher())
+            .enrichWith(new UrlEnricher())
+            .formatUsing(new DefaultFormatter("[{Timestamp}]\t[{Level}]\t[{caller}]\t\t{Message}{Exception}"))
+            .writeTo(new ConsoleSink());
         this.localStorage = new LocalStorage();
         this.sessionStorage = new SessionStorage();
         this.hotkeys = new Hotkeys();
