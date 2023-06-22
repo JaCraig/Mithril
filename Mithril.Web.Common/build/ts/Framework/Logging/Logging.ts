@@ -108,9 +108,9 @@ export class ConsoleSink implements LogSink {
         "Verbose": "color: white;",
         "Debug": "color: green",
         "Information": "color: blue",
-        "Warning": "font-weight: bold; color: yellow",
-        "Error": "font-weight: bold; color: red",
-        "Fatal": "font-weight: bold; color: palevioletred"
+        "Warning": "color: yellow",
+        "Error": "color: red",
+        "Fatal": "color: palevioletred"
     };
     private consoleMethods = {
         "Verbose": (message: string, style: string, args: any) => { console.log(message, style, args); },

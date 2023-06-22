@@ -62,6 +62,7 @@
     <Folder Include="build\ts\Framework\Interfaces\" />
     <Folder Include="build\ts\Framework\IO\" />
     <Folder Include="build\ts\Framework\Logging\" />
+    <Folder Include="build\ts\Framework\Cache\" />
     <Folder Include="build\ts\Framework\Router\" />
     <Folder Include="build\ts\Framework\Router\DataTypes\" />
     <Folder Include="build\ts\Framework\Router\Interfaces\" />
@@ -86,6 +87,7 @@
     <TypeScriptCompile Include="build\ts\Framework\AJAX\Request.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Browser\BrowserUtils.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Browser\Debounce.ts" />
+    <TypeScriptCompile Include="build\ts\Framework\Cache\Cache.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Database\Database.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Extensions\HTMLElement.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Extensions\NodeList.ts" />
