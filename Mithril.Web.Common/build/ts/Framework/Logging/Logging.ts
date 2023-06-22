@@ -104,33 +104,28 @@ export class MinimumLevelLogFilter implements LogFilter {
 
 // Console sink implementation that writes log events to the console
 export class ConsoleSink implements LogSink {
-
     private styles = {
         "Verbose": "color: white;",
-        "Debug": "color: white",
-        "Information": "",
-        "Warning": "font-weight: bold;",
-        "Error": "font-weight: bold;",
-        "Fatal": "font-weight: bold;"
+        "Debug": "color: green",
+        "Information": "color: blue",
+        "Warning": "font-weight: bold; color: yellow",
+        "Error": "font-weight: bold; color: red",
+        "Fatal": "font-weight: bold; color: palevioletred"
     };
+    private consoleMethods = {
+        "Verbose": (message: string, style: string, args: any) => { console.log(message, style, args); },
+        "Debug": (message: string, style: string, args: any) => { console.debug(message, style, args); },
+        "Information": (message: string, style: string, args: any) => { console.info(message, style, args); },
+        "Warning": (message: string, style: string, args: any) => { console.warn(message, style, args); },
+        "Error": (message: string, style: string, args: any) => { console.error(message, style, args); },
+        "Fatal": (message: string, style: string, args: any) => { console.error(message, style, args); }
+    }
     // Writes a log event to the console
     // event: The log event to write
     public write(event: LogEvent): void {
         let displayInlineArgs = (event.args && (typeof event.args != "object"));
         let displayTableArgs = (event.args && (typeof event.args == "object"));
-        if (event.level === "Fatal") {
-            console.error("%c" + event.message, this.styles.Fatal, event.exception, displayInlineArgs ? event.args:"");
-        } else if (event.level === "Error") {
-            console.error("%c" + event.message, this.styles.Error, event.exception, displayInlineArgs ? event.args : "");
-        } else if (event.level === "Warning") {
-            console.warn("%c" + event.message, this.styles.Warning, displayInlineArgs ? event.args : "");
-        } else if (event.level === "Information") {
-            console.info("%c" + event.message, this.styles.Information, displayInlineArgs ? event.args : "");
-        } else if (event.level === "Debug") {
-            console.debug("%c" + event.message, this.styles.Debug, displayInlineArgs ? event.args : "");
-        } else {
-            console.log("%c" + event.message, this.styles.Verbose, displayInlineArgs ? event.args : "");
-        }
+        this.consoleMethods[event.level]("%c" + event.message, this.styles[event.level], displayInlineArgs ? event.args : "");
         if (displayTableArgs) {
             console.table(event.args);
         }
@@ -331,7 +326,6 @@ export class CallerEnricher implements LogEventEnricher {
         return matches;
     }
 }
-
 
 // Logger class that is used to write log events
 export class Logger {
