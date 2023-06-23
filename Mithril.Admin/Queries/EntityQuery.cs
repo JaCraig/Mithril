@@ -13,6 +13,7 @@ namespace Mithril.Admin.Queries
 {
     /// <summary>
     /// Entity query
+    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="QueryBaseClass&lt;IEntity&gt;"/>
     public class EntityQuery : QueryBaseClass<ExpandoObject>
@@ -61,7 +62,7 @@ namespace Mithril.Admin.Queries
             var EntityType = arguments.GetValue<string>("entityType") ?? "";
             var ID = arguments.GetValue<long>("id");
             IEntityEditor? EntityEditor = EditorService.Editors.OfType<IEntityEditor>().FirstOrDefault(x => x.EntityType == EntityType);
-            return EntityEditor is null || !EntityEditor.CanView(user)
+            return EntityEditor?.CanView(user) != true
                 ? Task.FromResult<ExpandoObject?>(null)
                 : Task.FromResult(EntityEditor.Load(ID, null, user).ConvertToExpando());
         }

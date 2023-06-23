@@ -2,7 +2,7 @@
     <div>
         <label :for="getFieldID()" v-if="internalSchema.displayName">
             {{ internalSchema.displayName }}
-            <span class="error clear-background" v-if="internalSchema.metadata.required">*</span>
+            <span class="error clear-background" v-if="internalSchema.metadata.required && errorMessage">*</span>
             <i class="clear-background active no-border small" v-if="internalSchema.metadata.hint"><span class="fas fa-info-circle"></span>{{ internalSchema.metadata.hint }}</i>
             <span class="error clear-background" v-if="errorMessage">{{errorMessage}}</span>
             <span class="success clear-background fas fa-check-circle" v-if="!errorMessage && willValidate()"></span>

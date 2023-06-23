@@ -36,7 +36,6 @@
     <Content Include="build\ts\Component\FormComponents\Text.vue" />
     <Content Include="build\ts\Component\FormComponents\TextArea.vue" />
     <Content Include="build\ts\Component\FormComponents\Upload.vue" />
-    <Content Include="build\ts\Component\FormValidator.vue" />
     <Content Include="build\ts\Component\Listing.vue" />
     <Content Include="build\ts\Component\SideMenu.vue">
       <SubType>Code</SubType>

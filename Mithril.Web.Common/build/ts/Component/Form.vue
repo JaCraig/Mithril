@@ -7,6 +7,9 @@
     <form :action="action" class="stacked" @reset.stop.prevent="reset" @submit="submit" method="post" v-cloak :enctype="encoding" :id="formID">
         <div class="panel error" v-if="!valid">
             <header>Oops, some form elements have problems</header>
+            <div class="body">
+                We're sorry but some of the fields are having issues.
+            </div>
         </div>
         <form-field-complex :schema="internalSchema" :model="internalModel" @changed="setModelValue" @click="buttonClicked" @error="error"
                             @exception="exception">
@@ -155,6 +158,11 @@
                     });
                 }
             },
+        },
+        mounted: function () {
+            this.$nextTick(function () {
+                this.revalidate();
+            });
         }
     });
 </script>

@@ -4,7 +4,7 @@
             <span v-if="internalSchema.displayName">
                 {{ internalSchema.displayName }}
             </span>
-            <span class="error clear-background" v-if="internalSchema.metadata.required">*</span>
+            <span class="error clear-background" v-if="internalSchema.metadata.required && errorMessage">*</span>
             <span class="error clear-background" v-if="errorMessage">{{errorMessage}}</span>
             <span class="success clear-background fas fa-check-circle" v-if="!errorMessage && willValidate()"></span>
             <div v-if="internalSchema.metadata.subtitle">{{internalSchema.metadata.subtitle}}</div>

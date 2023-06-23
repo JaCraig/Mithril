@@ -4,14 +4,14 @@
         Upload
         <label :for="getFieldID()" v-if="!schema.label" :class="schema.labelClasses">
             {{ $filters.capitalize(schema.model) }}
-            <span class="error clear-background" v-if="schema.required">*</span>
+            <span class="error clear-background" v-if="schema.required && errorMessage">*</span>
             <i class="clear-background active no-border small" v-if="schema.hint"><span class="fas fa-info-circle"></span>{{ schema.hint }}</i>
             <span class="error clear-background" v-if="errorMessage">{{errorMessage}}</span>
             <span class="success clear-background fas fa-check-circle" v-if="!errorMessage && willValidate()"></span>
         </label>
         <label :for="getFieldID()" v-if="schema.label" :class="schema.labelClasses">
             {{ schema.label }}
-            <span class="error clear-background" v-if="schema.required">*</span>
+            <span class="error clear-background" v-if="schema.required && errorMessage">*</span>
             <i class="clear-background active no-border small" v-if="schema.hint"><span class="fas fa-info-circle"></span>{{ schema.hint }}</i>
             <span class="error clear-background" v-if="errorMessage">{{errorMessage}}</span>
             <span class="success clear-background fas fa-check-circle" v-if="!errorMessage && willValidate()"></span>

@@ -4,7 +4,7 @@
         Radio
         <div v-if="!schema.label" :class="schema.labelClasses">
             {{ $filters.capitalize(schema.model) }}
-            <span class="error clear-background" v-if="schema.required">*</span>
+            <span class="error clear-background" v-if="schema.required && errorMessage">*</span>
             <span class="error clear-background" v-if="errorMessage">{{errorMessage}}</span>
             <span class="success clear-background fas fa-check-circle" v-if="!errorMessage && willValidate()"></span>
         </div>

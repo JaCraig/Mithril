@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mithril.API.Abstractions\Mithril.API.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.Content.Abstractions\Mithril.Content.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj" />
   </ItemGroup>

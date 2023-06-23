@@ -13,6 +13,7 @@ namespace Mithril.Admin.Queries
 {
     /// <summary>
     /// Entity listing query
+    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="QueryBaseClass&lt;ExpandoObject&gt;"/>
     public class EntitiesQuery : QueryBaseClass<List<ExpandoObject>>
