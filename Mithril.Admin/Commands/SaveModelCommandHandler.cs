@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Microsoft.FeatureManagement;
+using Mithril.Admin.Abstractions.Commands;
+using Mithril.Admin.Abstractions.Events;
 using Mithril.Admin.Abstractions.Interfaces;
 using Mithril.Admin.Abstractions.Services;
 using Mithril.Admin.Commands.ViewModels;
 using Mithril.API.Abstractions.Commands;
+using Mithril.API.Abstractions.Commands.BaseClasses;
 using Mithril.API.Abstractions.Commands.Interfaces;
-using Mithril.Core.Abstractions.Modules.Interfaces;
 using Mithril.Data.Abstractions.ExtensionMethods;
 using System.Security.Claims;
 
@@ -15,55 +18,32 @@ namespace Mithril.Admin.Commands
     /// Save model command handler
     /// TODO: Add tests
     /// </summary>
-    /// <seealso cref="ICommandHandler&lt;SaveModelCommandVM&gt;"/>
-    public class SaveModelCommandHandler : ICommandHandler<SaveModelCommandVM>
+    /// <seealso cref="CommandHandlerBaseClass&lt;SaveModelCommand, SaveModelCommandVM&gt;"/>
+    public class SaveModelCommandHandler : CommandHandlerBaseClass<SaveModelCommand, SaveModelCommandVM>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveModelCommandHandler"/> class.
         /// </summary>
         /// <param name="editorService">The editor service.</param>
         /// <param name="logger">The logger.</param>
-        public SaveModelCommandHandler(IEditorService editorService, ILogger<SaveModelCommandHandler>? logger)
+        /// <param name="featureManager">The feature manager.</param>
+        public SaveModelCommandHandler(IEditorService editorService, ILogger<SaveModelCommandHandler>? logger, IFeatureManager featureManager)
+            : base(logger, featureManager)
         {
             EditorService = editorService;
-            Logger = logger;
         }
 
         /// <summary>
         /// Gets the command type accepted.
         /// </summary>
         /// <value>The command type accepted.</value>
-        public string CommandName { get; } = "SaveModelCommand";
-
-        /// <summary>
-        /// Gets the content type accepted by command handler.
-        /// </summary>
-        /// <value>The content type accepted by command handler.</value>
-        public string[] ContentTypeAccepts { get; } = new string[] { "application/json", "text/json", "application/*+json" };
-
-        /// <summary>
-        /// Gets the features associated with this command.
-        /// </summary>
-        /// <value>The features associated with this command.</value>
-        public IFeature[] Features { get; } = Array.Empty<IFeature>();
+        public override string CommandName { get; } = "SaveModelCommand";
 
         /// <summary>
         /// Gets the tags (Used by OpenAPI, etc).
         /// </summary>
         /// <value>The tags (Used by OpenAPI, etc).</value>
-        public string[] Tags { get; } = new string[] { "Data" };
-
-        /// <summary>
-        /// Gets the version (not guaranteed to be used in all query providers, but defaults to "v1").
-        /// </summary>
-        /// <value>The version.</value>
-        public string? Version { get; } = "v1";
-
-        /// <summary>
-        /// Gets the type of the view model it accepts.
-        /// </summary>
-        /// <value>The type of the view model it accepts.</value>
-        public Type ViewModelType { get; } = typeof(SaveModelCommandVM);
+        public override string[] Tags { get; } = new string[] { "Data" };
 
         /// <summary>
         /// Gets the editor service.
@@ -72,27 +52,12 @@ namespace Mithril.Admin.Commands
         private IEditorService EditorService { get; }
 
         /// <summary>
-        /// Gets the logger.
-        /// </summary>
-        /// <value>The logger.</value>
-        private ILogger<SaveModelCommandHandler>? Logger { get; }
-
-        /// <summary>
-        /// Determines whether this instance can handle the specified command.
-        /// </summary>
-        /// <param name="command">The command.</param>
-        /// <returns>
-        /// <c>true</c> if this instance can handle the specified command; otherwise, <c>false</c>.
-        /// </returns>
-        public bool CanHandle(ICommand command) => false;
-
-        /// <summary>
         /// Creates the specified value.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="user">The user.</param>
         /// <returns>A command value converted from the view model.</returns>
-        public async ValueTask<CommandCreationResult?> CreateAsync(SaveModelCommandVM? value, ClaimsPrincipal user)
+        public override async ValueTask<CommandCreationResult?> CreateAsync(SaveModelCommandVM? value, ClaimsPrincipal user)
         {
             if (EditorService is null || value?.Data is null)
             {
@@ -114,14 +79,18 @@ namespace Mithril.Admin.Commands
                 return new CommandCreationResult(null, ResultText: "Error, unable to save.", ReturnCode: StatusCodes.Status500InternalServerError);
             }
             Logger?.LogInformation("Saving model data of type {entityType} and ID={id} sent by {user} succeeded.", value.EntityType, value.ID, user.GetName());
-            return new CommandCreationResult(null);
+            return new CommandCreationResult(new SaveModelCommand(value.Data, value.EntityType, value.ID));
         }
 
         /// <summary>
-        /// Handles the Command.
+        /// Handles the command.
         /// </summary>
-        /// <param name="arg">The argument.</param>
-        /// <returns>Any events that are spawned by the command.</returns>
-        public Task<IEvent[]> HandleCommandAsync(params ICommand[] arg) => Task.FromResult(Array.Empty<IEvent>());
+        /// <param name="args">The arguments.</param>
+        /// <returns>The events generated by the command.</returns>
+        protected override Task<IEvent[]> HandleCommandAsync(SaveModelCommand?[]? args)
+        {
+            args ??= Array.Empty<SaveModelCommand>();
+            return Task.FromResult<IEvent[]>(args.Select(Command => new ModelSavedEvent(Command?.Data ?? "{}", Command?.EntityType, Command?.EntityID ?? 0)).ToArray());
+        }
     }
 }

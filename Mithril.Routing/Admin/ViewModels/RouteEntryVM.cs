@@ -3,6 +3,7 @@ using Mithril.Admin.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Routing.Models;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace Mithril.Routing.Admin.ViewModels
 {
@@ -51,8 +52,16 @@ namespace Mithril.Routing.Admin.ViewModels
         /// Saves the changes asynchronously.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <param name="dataService"></param>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="currentUser">The current user.</param>
         /// <returns>The async task.</returns>
-        public override Task<RouteEntry?> SaveAsync(long id, IDataService dataService) => Task.FromResult<RouteEntry?>(null);
+        public override async Task<RouteEntry?> SaveAsync(long id, IDataService dataService, ClaimsPrincipal? currentUser)
+        {
+            RouteEntry Route = RouteEntry.Load(id, dataService) ?? new RouteEntry(InputPath ?? "", OutputPath ?? "");
+            Route.InputPath = InputPath ?? "";
+            Route.OutputPath = OutputPath ?? "";
+            await Route.SaveAsync(dataService, currentUser).ConfigureAwait(false);
+            return Route;
+        }
     }
 }

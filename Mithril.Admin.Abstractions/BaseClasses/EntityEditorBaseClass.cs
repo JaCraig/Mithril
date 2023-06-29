@@ -136,7 +136,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
             TEntity? ModelValue = entity.ConvertExpando<TEntity>();
             if (ModelValue is null)
                 return false;
-            TModel? Model = await ModelValue.SaveAsync(id, DataService).ConfigureAwait(false);
+            TModel? Model = await ModelValue.SaveAsync(id, DataService, currentUser).ConfigureAwait(false);
             if (Model is null) return false;
             //if (Model is IIndexedModel indexedModel)
             //{

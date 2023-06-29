@@ -2,6 +2,7 @@
 using Mithril.Admin.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
+using System.Security.Claims;
 
 namespace Mithril.Admin.Abstractions.BaseClasses
 {
@@ -9,7 +10,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
     /// Entity base class
     /// </summary>
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
-    /// <seealso cref="IEntity&lt;TEntity&gt;" />
+    /// <seealso cref="IEntity&lt;TEntity&gt;"/>
     public abstract class EntityBaseClass<TEntity> : IEntity<TEntity>
         where TEntity : IModel
     {
@@ -50,10 +51,9 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// Saves the changes asynchronously.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <param name="dataService"></param>
-        /// <returns>
-        /// The async task.
-        /// </returns>
-        public abstract Task<TEntity?> SaveAsync(long id, IDataService dataService);
+        /// <param name="dataService">The data service.</param>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>The async task.</returns>
+        public abstract Task<TEntity?> SaveAsync(long id, IDataService dataService, ClaimsPrincipal? currentUser);
     }
 }

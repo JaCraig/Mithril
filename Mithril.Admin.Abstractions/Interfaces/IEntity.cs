@@ -1,5 +1,6 @@
 ﻿using Mithril.Admin.Abstractions.DataEditor.Attributes;
 using Mithril.Data.Abstractions.Interfaces;
+using System.Security.Claims;
 
 namespace Mithril.Admin.Abstractions.Interfaces
 {
@@ -35,9 +36,9 @@ namespace Mithril.Admin.Abstractions.Interfaces
         /// Saves the changes asynchronously.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns>
-        /// The async task.
-        /// </returns>
-        Task<TModel?> SaveAsync(long id, Data.Abstractions.Services.IDataService dataService);
+        /// <param name="dataService">The data service.</param>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>The async task.</returns>
+        Task<TModel?> SaveAsync(long id, Data.Abstractions.Services.IDataService dataService, ClaimsPrincipal? currentUser);
     }
 }

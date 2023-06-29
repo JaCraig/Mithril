@@ -1,47 +1,56 @@
 ﻿using Mithril.API.Abstractions.Commands.BaseClasses;
-using Mithril.Communication.Abstractions.Interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 
-namespace Mithril.Communication.Abstractions.Events
+namespace Mithril.Admin.Abstractions.Commands
 {
     /// <summary>
-    /// Message sent event
+    /// Save model command
+    /// TODO: Add tests
     /// </summary>
-    /// <seealso cref="EventBaseClass&lt;MessageSentEvent&gt;"/>
-    public class MessageSentEvent : EventBaseClass<MessageSentEvent>
+    /// <seealso cref="CommandBaseClass&lt;SaveModelCommand&gt;"/>
+    public class SaveModelCommand : CommandBaseClass<SaveModelCommand>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MessageSentEvent"/> class.
+        /// Initializes a new instance of the <see cref="SaveModelCommand"/> class.
         /// </summary>
-        public MessageSentEvent()
+        public SaveModelCommand()
         { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MessageSentEvent"/> class.
+        /// Initializes a new instance of the <see cref="SaveModelCommand"/> class.
         /// </summary>
-        /// <param name="message">The message.</param>
-        /// <param name="status">The status.</param>
-        public MessageSentEvent(IMessage? message, string? status)
+        /// <param name="data">The data.</param>
+        /// <param name="entityType">Type of the entity.</param>
+        /// <param name="id">The identifier.</param>
+        public SaveModelCommand(ExpandoObject? data, string? entityType, long id)
         {
-            if ((status?.Length ?? 0) > 128)
-                throw new ArgumentException(nameof(status) + "must be less than 128 characters.", nameof(status));
-            Message = message;
-            Status = status;
+            if ((entityType?.Length ?? 0) > 64)
+                throw new ArgumentException(nameof(entityType) + " cannot be longer than 64 characters.", nameof(entityType));
+            Data = System.Text.Json.JsonSerializer.Serialize(data ?? new ExpandoObject());
+            EntityType = entityType;
+            EntityID = id;
         }
 
         /// <summary>
-        /// Gets or sets the message.
+        /// Gets or sets the data.
         /// </summary>
-        /// <value>The message.</value>
-        public virtual IMessage? Message { get; set; }
+        /// <value>The data.</value>
+        [MaxLength]
+        public string? Data { get; set; }
 
         /// <summary>
-        /// Gets or sets the status.
+        /// Gets or sets the identifier.
         /// </summary>
-        /// <value>The status.</value>
-        [MaxLength(128)]
-        public string? Status { get; set; }
+        /// <value>The identifier.</value>
+        public long EntityID { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type of the entity.
+        /// </summary>
+        /// <value>The type of the entity.</value>
+        [MaxLength(64)]
+        public string? EntityType { get; set; }
 
         /// <summary>
         /// Implements the operator !=.
@@ -49,7 +58,7 @@ namespace Mithril.Communication.Abstractions.Events
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(MessageSentEvent left, MessageSentEvent right)
+        public static bool operator !=(SaveModelCommand left, SaveModelCommand right)
         {
             return !(left == right);
         }
@@ -60,7 +69,7 @@ namespace Mithril.Communication.Abstractions.Events
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(MessageSentEvent left, MessageSentEvent right)
+        public static bool operator <(SaveModelCommand left, SaveModelCommand right)
         {
             return left is null ? right is null : left.CompareTo(right) < 0;
         }
@@ -71,7 +80,7 @@ namespace Mithril.Communication.Abstractions.Events
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(MessageSentEvent left, MessageSentEvent right)
+        public static bool operator <=(SaveModelCommand left, SaveModelCommand right)
         {
             return left is null ? right is null : left.CompareTo(right) <= 0;
         }
@@ -82,7 +91,7 @@ namespace Mithril.Communication.Abstractions.Events
         /// <param name="first">The first.</param>
         /// <param name="second">The second.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator ==(MessageSentEvent first, MessageSentEvent second)
+        public static bool operator ==(SaveModelCommand first, SaveModelCommand second)
         {
             return ReferenceEquals(first, second) || (first is not null && second is not null && first.CompareTo(second) == 0);
         }
@@ -93,7 +102,7 @@ namespace Mithril.Communication.Abstractions.Events
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(MessageSentEvent left, MessageSentEvent right)
+        public static bool operator >(SaveModelCommand left, SaveModelCommand right)
         {
             return left is null ? right is null : left.CompareTo(right) > 0;
         }
@@ -104,7 +113,7 @@ namespace Mithril.Communication.Abstractions.Events
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(MessageSentEvent left, MessageSentEvent right)
+        public static bool operator >=(SaveModelCommand left, SaveModelCommand right)
         {
             return left is null ? right is null : left.CompareTo(right) >= 0;
         }
@@ -114,7 +123,7 @@ namespace Mithril.Communication.Abstractions.Events
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public override int CompareTo(MessageSentEvent? other) => base.CompareTo(other);
+        public override int CompareTo(SaveModelCommand? other) => base.CompareTo(other);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -133,13 +142,7 @@ namespace Mithril.Communication.Abstractions.Events
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(MessageSentEvent other) => base.Equals(other);
-
-        /// <summary>
-        /// Gets the data within the event.
-        /// </summary>
-        /// <returns>The data from the event.</returns>
-        public override ExpandoObject GetData() => new();
+        public bool Equals(SaveModelCommand other) => base.Equals(other);
 
         /// <summary>
         /// Returns a hash code for this instance.
@@ -149,11 +152,5 @@ namespace Mithril.Communication.Abstractions.Events
         /// structures like a hash table.
         /// </returns>
         public override int GetHashCode() => base.GetHashCode();
-
-        /// <summary>
-        /// Gets the schema.
-        /// </summary>
-        /// <returns>The data schema.</returns>
-        public override string GetSchema() => "";
     }
 }
