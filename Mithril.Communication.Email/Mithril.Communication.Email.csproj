@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SimpleMail" Version="3.0.0" />
+    <PackageReference Include="SimpleMail" Version="3.0.3" />
   </ItemGroup>
 
   <ItemGroup>

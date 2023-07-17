@@ -13,11 +13,11 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BigBook" Version="5.0.2" />
-    <PackageReference Include="Canister.IoC" Version="5.0.1" />
-    <PackageReference Include="FileCurator" Version="4.0.1" />
-    <PackageReference Include="Microsoft.FeatureManagement.AspNetCore" Version="2.5.1" />
-    <PackageReference Include="Valkyrie" Version="4.0.1" />
+    <PackageReference Include="BigBook" Version="5.0.6" />
+    <PackageReference Include="Canister.IoC" Version="5.1.4" />
+    <PackageReference Include="FileCurator" Version="4.0.4" />
+    <PackageReference Include="Microsoft.FeatureManagement.AspNetCore" Version="2.6.1" />
+    <PackageReference Include="Valkyrie" Version="4.0.4" />
   </ItemGroup>
 
   <ItemGroup>

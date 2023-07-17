@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FileCurator" Version="4.0.1" />
+    <PackageReference Include="FileCurator" Version="4.0.4" />
   </ItemGroup>
 
 </Project>
