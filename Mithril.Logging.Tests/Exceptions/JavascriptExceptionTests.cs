@@ -8,7 +8,7 @@ namespace Mithril.Logging.Tests.Exceptions
         public JavascriptExceptionTests()
         {
             TestObject = new JavascriptException();
-            ObjectType = typeof(JavascriptException);
+            DiscoverInheritedMethods = false;
         }
     }
 }

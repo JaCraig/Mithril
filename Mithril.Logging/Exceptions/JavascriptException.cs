@@ -1,4 +1,6 @@
-﻿namespace Mithril.Logging.Exceptions
+﻿using System.Runtime.Serialization;
+
+namespace Mithril.Logging.Exceptions
 {
     /// <summary>
     /// Javascript exception
@@ -11,7 +13,7 @@
         /// </summary>
         /// <param name="message">The message that describes the error.</param>
         public JavascriptException(string message)
-            : base(message)
+            : base(message ?? "Javascript exception")
         {
         }
 
@@ -19,6 +21,7 @@
         /// Initializes a new instance of the <see cref="JavascriptException"/> class.
         /// </summary>
         public JavascriptException()
+            : this("Javascript exception")
         {
         }
 
@@ -30,7 +33,7 @@
         /// The exception that is the cause of the current exception, or a null reference ( <see
         /// langword="Nothing"/> in Visual Basic) if no inner exception is specified.
         /// </param>
-        public JavascriptException(string message, Exception innerException) : base(message, innerException)
+        public JavascriptException(string message, Exception innerException) : base(message ?? "Javascript exception", innerException)
         {
         }
 
@@ -45,7 +48,8 @@
         /// The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains
         /// contextual information about the source or destination.
         /// </param>
-        protected JavascriptException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) : base(info, context)
+        protected JavascriptException(SerializationInfo info, StreamingContext context)
+            : base(info ?? new SerializationInfo(typeof(JavascriptException), new FormatterConverter()), context)
         {
         }
     }
