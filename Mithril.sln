@@ -165,7 +165,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Background.Abstract
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Admin.Abstractions", "Mithril.Admin.Abstractions\Mithril.Admin.Abstractions.csproj", "{AEC66A8F-42CF-4342-BB57-3B290ADFA977}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Admin", "Mithril.Admin\Mithril.Admin.csproj", "{B68354DE-78EE-4896-8CA6-AED81666A896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Admin", "Mithril.Admin\Mithril.Admin.csproj", "{B68354DE-78EE-4896-8CA6-AED81666A896}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B5E67B0-2352-42CF-9F7E-2A1AB3FA0561}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
