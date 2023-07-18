@@ -10,7 +10,7 @@
       ],
       "dest": "api",
       "properties": {
-        "TargetFramework": "net6.0"
+        "TargetFramework": "net7.0"
       },
       "includePrivateMembers": false,
       "disableGitFeatures": false,
