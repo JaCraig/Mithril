@@ -22,3 +22,6 @@ updates:
     commit-message:
       prefix: "chore"
     groups:
+      dependencies:
+        patterns: 
+          - "*"
