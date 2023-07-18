@@ -1,0 +1,1101 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Attachment
+ | Mithril API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Attachment
+ | Mithril API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon.png" alt="Mithril" class="logomark">
+              <span class="brand-title">Mithril</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon.png" alt="Mithril" class="logomark">
+                          <span class="brand-title">Mithril</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="Mithril.Communication.Abstractions.Attachment">
+
+
+
+  <h1 id="Mithril_Communication_Abstractions_Attachment" data-uid="Mithril.Communication.Abstractions.Attachment" class="text-break">Class Attachment
+</h1>
+  <div class="markdown level0 summary"><p>Message file attachments</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a>&gt;</div>
+    <div class="level2"><span class="xref">Attachment</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a>&gt;</div>
+    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a>&gt;&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a>&gt;&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Active">ModelBase&lt;Attachment&gt;.Active</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Creator">ModelBase&lt;Attachment&gt;.Creator</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DateCreated">ModelBase&lt;Attachment&gt;.DateCreated</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DateModified">ModelBase&lt;Attachment&gt;.DateModified</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_ID">ModelBase&lt;Attachment&gt;.ID</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Modifier">ModelBase&lt;Attachment&gt;.Modifier</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_TenantID">ModelBase&lt;Attachment&gt;.TenantID</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_All_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;Attachment&gt;.All(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_AllActive_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;Attachment&gt;.AllActive(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_AllInactive_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;Attachment&gt;.AllInactive(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Load_System_Int64_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;Attachment&gt;.Load(long, IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Query_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;Attachment&gt;.Query(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_CanBeModifiedBy_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;Attachment&gt;.CanBeModifiedBy(ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_CanBeViewedBy_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;Attachment&gt;.CanBeViewedBy(ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_CompareTo_System_Object_">ModelBase&lt;Attachment&gt;.CompareTo(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DeleteAsync_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_System_Boolean_">ModelBase&lt;Attachment&gt;.DeleteAsync(IDataService, ClaimsPrincipal, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_Interfaces_IModel_">ModelBase&lt;Attachment&gt;.Equals(IModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_Interfaces_IModel__0__">ModelBase&lt;Attachment&gt;.Equals(IModel&lt;Attachment&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_BaseClasses_ModelBase__0__">ModelBase&lt;Attachment&gt;.Equals(ModelBase&lt;Attachment&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SaveAsync_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;Attachment&gt;.SaveAsync(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObject_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;Attachment&gt;.SetupObject(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObject_Mithril_Data_Abstractions_Services_IDataService_Mithril_Data_Abstractions_Interfaces_IUser_">ModelBase&lt;Attachment&gt;.SetupObject(IDataService, IUser)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObjectAndReturn_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;Attachment&gt;.SetupObjectAndReturn(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Communication.html">Communication</a>.<a class="xref" href="Mithril.Communication.Abstractions.html">Abstractions</a></h6>
+  <h6><strong>Assembly</strong>: Mithril.Communication.Abstractions.dll</h6>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Attachment : ModelBase&lt;Attachment&gt;, IModel&lt;Attachment&gt;, IModel, IEquatable&lt;IModel&gt;, IEquatable&lt;IModel&lt;Attachment&gt;&gt;, IComparable, IComparable&lt;Attachment&gt;, IEquatable&lt;ModelBase&lt;Attachment&gt;&gt;</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_Content.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.Content%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L16">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_Content_" data-uid="Mithril.Communication.Abstractions.Attachment.Content*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_Content" data-uid="Mithril.Communication.Abstractions.Attachment.Content">Content</h4>
+  <div class="markdown level1 summary"><p>Gets the content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] Content { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
+        <td><p>The content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_Content_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_FileHash.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.FileHash%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L29">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_FileHash_" data-uid="Mithril.Communication.Abstractions.Attachment.FileHash*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_FileHash" data-uid="Mithril.Communication.Abstractions.Attachment.FileHash">FileHash</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the file hash.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(512)]
+[Required]
+public string? FileHash { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The file hash.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_FileHash_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_FileName.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.FileName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L37">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_FileName_" data-uid="Mithril.Communication.Abstractions.Attachment.FileName*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_FileName" data-uid="Mithril.Communication.Abstractions.Attachment.FileName">FileName</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the name of the file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(128)]
+public string? FileName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The name of the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_FileName_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_Location.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.Location%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L44">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_Location_" data-uid="Mithril.Communication.Abstractions.Attachment.Location*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_Location" data-uid="Mithril.Communication.Abstractions.Attachment.Location">Location</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the location on disk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(1028)]
+public string? Location { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The location on disk.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_Location_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_MimeType.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.MimeType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L51">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_MimeType_" data-uid="Mithril.Communication.Abstractions.Attachment.MimeType*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_MimeType" data-uid="Mithril.Communication.Abstractions.Attachment.MimeType">MimeType</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the type of the MIME.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(64)]
+public string? MimeType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The type of the MIME.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_MimeType_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_Size.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.Size%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L58">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_Size_" data-uid="Mithril.Communication.Abstractions.Attachment.Size*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_Size" data-uid="Mithril.Communication.Abstractions.Attachment.Size">Size</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long Size { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><p>The size.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_Size_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_CompareTo_Mithril_Communication_Abstractions_Attachment_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.CompareTo(Mithril.Communication.Abstractions.Attachment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L137">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_CompareTo_" data-uid="Mithril.Communication.Abstractions.Attachment.CompareTo*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_CompareTo_Mithril_Communication_Abstractions_Attachment_" data-uid="Mithril.Communication.Abstractions.Attachment.CompareTo(Mithril.Communication.Abstractions.Attachment)">CompareTo(Attachment?)</h4>
+  <div class="markdown level1 summary"><p>Compares the object to another object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int CompareTo(Attachment? other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>Object to compare to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>0 if they are equal, -1 if this is smaller, 1 if it is larger</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">ModelBase&lt;Attachment&gt;.CompareTo(Attachment)</a></div>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_CompareTo_Mithril_Communication_Abstractions_Attachment__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_Equals_Mithril_Communication_Abstractions_Attachment_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.Equals(Mithril.Communication.Abstractions.Attachment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L162">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_Equals_" data-uid="Mithril.Communication.Abstractions.Attachment.Equals*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_Equals_Mithril_Communication_Abstractions_Attachment_" data-uid="Mithril.Communication.Abstractions.Attachment.Equals(Mithril.Communication.Abstractions.Attachment)">Equals(Attachment)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(Attachment other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the current object is equal to the <code class="paramref">other</code>
+parameter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_Equals_Mithril_Communication_Abstractions_Attachment__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L149">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_Equals_" data-uid="Mithril.Communication.Abstractions.Attachment.Equals*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_Equals_System_Object_" data-uid="Mithril.Communication.Abstractions.Attachment.Equals(System.Object)">Equals(object?)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, is equal to this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> to compare with this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><code>true</code> if the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> is equal to this instance; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ModelBase&lt;Attachment&gt;.Equals(object)</a></div>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_Equals_System_Object__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_GetHashCode.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L174">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_GetHashCode_" data-uid="Mithril.Communication.Abstractions.Attachment.GetHashCode*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_GetHashCode" data-uid="Mithril.Communication.Abstractions.Attachment.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>A hash code for this instance, suitable for use in hashing algorithms and data
+structures like a hash table.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Mithril.Data.Abstractions.BaseClasses.ModelBase&lt;Mithril.Communication.Abstractions.Attachment&gt;.GetHashCode()</span></div>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_GetHashCode_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_ToString.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L183">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_ToString_" data-uid="Mithril.Communication.Abstractions.Attachment.ToString*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_ToString" data-uid="Mithril.Communication.Abstractions.Attachment.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_ToString_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <h3 id="operators">Operators
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_op_Equality_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.op_Equality(Mithril.Communication.Abstractions.Attachment%2CMithril.Communication.Abstractions.Attachment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L99">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_op_Equality_" data-uid="Mithril.Communication.Abstractions.Attachment.op_Equality*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_op_Equality_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_" data-uid="Mithril.Communication.Abstractions.Attachment.op_Equality(Mithril.Communication.Abstractions.Attachment,Mithril.Communication.Abstractions.Attachment)">operator ==(Attachment, Attachment)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator ==.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Attachment first, Attachment second)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_op_Equality_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_op_GreaterThan_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.op_GreaterThan(Mithril.Communication.Abstractions.Attachment%2CMithril.Communication.Abstractions.Attachment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L116">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_op_GreaterThan_" data-uid="Mithril.Communication.Abstractions.Attachment.op_GreaterThan*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_op_GreaterThan_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_" data-uid="Mithril.Communication.Abstractions.Attachment.op_GreaterThan(Mithril.Communication.Abstractions.Attachment,Mithril.Communication.Abstractions.Attachment)">operator &gt;(Attachment, Attachment)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &gt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;(Attachment left, Attachment right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_op_GreaterThan_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_op_GreaterThanOrEqual_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.op_GreaterThanOrEqual(Mithril.Communication.Abstractions.Attachment%2CMithril.Communication.Abstractions.Attachment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L127">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_op_GreaterThanOrEqual_" data-uid="Mithril.Communication.Abstractions.Attachment.op_GreaterThanOrEqual*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_op_GreaterThanOrEqual_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_" data-uid="Mithril.Communication.Abstractions.Attachment.op_GreaterThanOrEqual(Mithril.Communication.Abstractions.Attachment,Mithril.Communication.Abstractions.Attachment)">operator &gt;=(Attachment, Attachment)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &gt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;=(Attachment left, Attachment right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_op_GreaterThanOrEqual_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_op_Inequality_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.op_Inequality(Mithril.Communication.Abstractions.Attachment%2CMithril.Communication.Abstractions.Attachment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L66">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_op_Inequality_" data-uid="Mithril.Communication.Abstractions.Attachment.op_Inequality*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_op_Inequality_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_" data-uid="Mithril.Communication.Abstractions.Attachment.op_Inequality(Mithril.Communication.Abstractions.Attachment,Mithril.Communication.Abstractions.Attachment)">operator !=(Attachment, Attachment)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator !=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Attachment left, Attachment right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_op_Inequality_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_op_LessThan_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.op_LessThan(Mithril.Communication.Abstractions.Attachment%2CMithril.Communication.Abstractions.Attachment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L77">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_op_LessThan_" data-uid="Mithril.Communication.Abstractions.Attachment.op_LessThan*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_op_LessThan_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_" data-uid="Mithril.Communication.Abstractions.Attachment.op_LessThan(Mithril.Communication.Abstractions.Attachment,Mithril.Communication.Abstractions.Attachment)">operator &lt;(Attachment, Attachment)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &lt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;(Attachment left, Attachment right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_op_LessThan_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Attachment_op_LessThanOrEqual_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Attachment.op_LessThanOrEqual(Mithril.Communication.Abstractions.Attachment%2CMithril.Communication.Abstractions.Attachment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Communication.Abstractions/Attachment.cs/#L88">View Source</a>
+  </span>
+  <a id="Mithril_Communication_Abstractions_Attachment_op_LessThanOrEqual_" data-uid="Mithril.Communication.Abstractions.Attachment.op_LessThanOrEqual*"></a>
+  <h4 id="Mithril_Communication_Abstractions_Attachment_op_LessThanOrEqual_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment_" data-uid="Mithril.Communication.Abstractions.Attachment.op_LessThanOrEqual(Mithril.Communication.Abstractions.Attachment,Mithril.Communication.Abstractions.Attachment)">operator &lt;=(Attachment, Attachment)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &lt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;=(Attachment left, Attachment right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Communication_Abstractions_Attachment_op_LessThanOrEqual_Mithril_Communication_Abstractions_Attachment_Mithril_Communication_Abstractions_Attachment__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel&lt;TClass&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando__1___0_">ExpandoObjectExtensions.ConvertToExpando&lt;TEntity&gt;(TEntity?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

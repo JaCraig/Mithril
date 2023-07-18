@@ -1,0 +1,6461 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/runner/work/Mithril/Mithril/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.AspNetCore.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.AspNetCore.Builder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Attributes.ApiAllowAnonymousAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Attributes.ApiAllowAnonymousAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Attributes.ApiAuthorizeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Attributes.ApiAuthorizeAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Attributes.ApiDepricationReasonAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Attributes.ApiDepricationReasonAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Attributes.ApiDescriptionAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Attributes.ApiDescriptionAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Attributes.ApiIgnoreAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Attributes.ApiIgnoreAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Attributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Attributes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.BaseClasses.CommandBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.BaseClasses.CommandBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.BaseClasses.CommandHandlerBaseClass-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.BaseClasses.CommandHandlerBaseClass-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.BaseClasses.EventBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.BaseClasses.EventBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.BaseClasses.EventHandlerBaseClass-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.BaseClasses.EventHandlerBaseClass-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.CommandCreationResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.CommandCreationResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.Enums.EventStateTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.Enums.EventStateTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.Enums.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.EventResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.EventResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.ICommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.ICommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.ICommandHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.ICommandHandler-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.ICommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.ICommandHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.IEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.IEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.IEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.IEventHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.Mappings.ICommandMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.Mappings.ICommandMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.Mappings.IEventMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.Mappings.IEventMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Configuration.APIOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Configuration.APIOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.ExtensionMethods.StringExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.ExtensionMethods.StringExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.ExtensionMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.ExtensionMethods.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Modules.APIModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Modules.APIModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Modules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Modules.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.Argument-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.Argument-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.Arguments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.Arguments.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.BaseClasses.QueryBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.BaseClasses.QueryBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.Interfaces.IArgument.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.Interfaces.IArgument.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.Interfaces.IQuery-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.Interfaces.IQuery-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.Interfaces.IQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.Interfaces.IQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.ViewModels.DropDownVM-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.ViewModels.DropDownVM-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.ViewModels.PagedDataVM-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.ViewModels.PagedDataVM-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Query.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Query.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Services.ICommandService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Services.ICommandService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Services.IDropDownQueryService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Services.IDropDownQueryService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Services.IEventService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Services.IEventService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Services.IQueryService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Services.IQueryService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.BackgroundTasks.CommandProcessorTask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.BackgroundTasks.CommandProcessorTask.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.BackgroundTasks.EventProcessorTask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.BackgroundTasks.EventProcessorTask.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.BackgroundTasks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.BackgroundTasks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.CommandModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.CommandModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.Endpoint.CommandEndpoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.Endpoint.CommandEndpoint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.Endpoint.ReturnedResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.Endpoint.ReturnedResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.Endpoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.Endpoint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.Services.CommandService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.Services.CommandService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.Services.EventService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.Services.EventService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.Utils.CommandEndpointBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.Utils.CommandEndpointBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.Utils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.Authorization.GraphQLUserContextBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.Authorization.GraphQLUserContextBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.Authorization.GraphQLUserContextDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.Authorization.GraphQLUserContextDictionary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.Authorization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.Authorization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphQLModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphQLModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.Builder.GraphTypeManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.Builder.GraphTypeManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.Builder.TypeCacheFor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.Builder.TypeCacheFor-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.Builder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.CompositeQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.CompositeQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.FieldTypeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.FieldTypeExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.IArgumentExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.IArgumentExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.MemberInfoExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.MemberInfoExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.ParameterInfoExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.ParameterInfoExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.TypeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.TypeExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.ExtensionMethods.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.GenericGraphType-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.GenericGraphType-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.IGenericGraphType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.IGenericGraphType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.JsonGraphType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.JsonGraphType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.GraphTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.GraphTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.ObjectGraphs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.ObjectGraphs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.Queries.DropDownQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.Queries.DropDownQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.Queries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.Queries.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.Services.DropDownQueryService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.Services.DropDownQueryService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.Services.QueryService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.Services.QueryService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.GraphQL.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.GraphQL.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Swagger.SchemaFilters.EnumNameSchemaFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Swagger.SchemaFilters.EnumNameSchemaFilter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Swagger.SchemaFilters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Swagger.SchemaFilters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Swagger.SwaggerModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Swagger.SwaggerModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Swagger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Swagger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.MetadataBuilderBaseClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.MetadataBuilderBaseClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Commands.SaveModelCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Commands.SaveModelCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Components.DataEditorComponent-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Components.DataEditorComponent-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Components.SettingsEditorComponent-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Components.SettingsEditorComponent-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Components.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Components.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.DateAndTimeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.DateAndTimeAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.DisplayAsTextAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.DisplayAsTextAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.DoNotListAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.DoNotListAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.HintAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.HintAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.InputTypeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.InputTypeAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.OrderAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.OrderAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.PasswordAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.PasswordAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.PatternAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.PatternAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.PlaceholderAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.PlaceholderAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.QueryAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.QueryAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.ReadOnlyAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.ReadOnlyAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.SelectAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.SelectAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.StepAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.StepAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.SubtitleAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.SubtitleAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.TextAreaAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.TextAreaAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.UploadAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.UploadAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.EntityMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.EntityMetadata.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.PropertyMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.PropertyMetadata.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Events.ModelSavedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Events.ModelSavedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Events.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.ExtensionMethods.PropertyInfoExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.ExtensionMethods.PropertyInfoExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.ExtensionMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.ExtensionMethods.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Interfaces.IEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Interfaces.IEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Interfaces.IEntity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Interfaces.IEntity-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Interfaces.IEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Interfaces.IEntity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Interfaces.IEntityEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Interfaces.IEntityEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Interfaces.IMetadataBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Interfaces.IMetadataBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Mappings.ModelSavedEventMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Mappings.ModelSavedEventMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Mappings.SaveModelCommandMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Mappings.SaveModelCommandMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Services.IEditorService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Services.IEditorService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Services.IEntityMetadataService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Services.IEntityMetadataService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.AdminModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.AdminModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Commands.SaveModelCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Commands.SaveModelCommandHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Commands.ViewModels.SaveModelCommandVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Commands.ViewModels.SaveModelCommandVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Commands.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Commands.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Controllers.AdminController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Controllers.AdminController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Controllers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Queries.EditorListingQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Queries.EditorListingQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Queries.EntitiesQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Queries.EntitiesQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Queries.EntityQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Queries.EntityQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Queries.ViewModels.EditorVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Queries.ViewModels.EditorVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Queries.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Queries.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Queries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Queries.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.EditorService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.EditorService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.EntityMetadataService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.EntityMetadataService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.CanList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.CanList.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasHint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasHint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasMax.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasMax.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasMin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasMin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasPattern.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasPattern.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasPlaceholder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasPlaceholder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasReadOnly.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasReadOnly.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasStep.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasStep.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasSubtitle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.HasSubtitle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsCheckbox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsCheckbox.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsDefaultInput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsDefaultInput.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsEnumRadioList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsEnumRadioList.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsSelect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsSelect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsText.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsText.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsTextArea.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsTextArea.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsUpload.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsUpload.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.StandardValidation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.StandardValidation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.BaseClasses.MetaDataCollectorBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.BaseClasses.MetaDataCollectorBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.BaseClasses.MetricsCollectorBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.BaseClasses.MetricsCollectorBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.Configuration.APMOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.Configuration.APMOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.DefaultMetaDataCollector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.DefaultMetaDataCollector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.DefaultMetricsCollector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.DefaultMetricsCollector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.Features.APMFeature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.Features.APMFeature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.Features.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.Features.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.Interfaces.IEventListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.Interfaces.IEventListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.Interfaces.IMetaDataCollector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.Interfaces.IMetaDataCollector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.Interfaces.IMetricsCollector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.Interfaces.IMetricsCollector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.Interfaces.IMetricsReporter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.Interfaces.IMetricsReporter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.MetaDataEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.MetaDataEntry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.MetricsEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.MetricsEntry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.Services.IMetricsCollectorService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.Services.IMetricsCollectorService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.TraceInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.TraceInformation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Abstractions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Abstractions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.BackgroundTasks.MetricsReporterBackgroundTask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.BackgroundTasks.MetricsReporterBackgroundTask.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.BackgroundTasks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.BackgroundTasks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.DefaultApmModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.DefaultApmModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Middleware.ApmMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Middleware.ApmMiddleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Middleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Middleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Models.Mappings.RequestMetaDataMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Models.Mappings.RequestMetaDataMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Models.Mappings.RequestMetricMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Models.Mappings.RequestMetricMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Models.Mappings.RequestTraceMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Models.Mappings.RequestTraceMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Models.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Models.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Models.RequestMetaData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Models.RequestMetaData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Models.RequestMetric.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Models.RequestMetric.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Models.RequestTrace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Models.RequestTrace.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Queries.RequestTraceQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Queries.RequestTraceQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Queries.ViewModels.RequestMetaDataVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Queries.ViewModels.RequestMetaDataVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Queries.ViewModels.RequestMetricVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Queries.ViewModels.RequestMetricVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Queries.ViewModels.RequestTraceVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Queries.ViewModels.RequestTraceVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Queries.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Queries.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Queries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Queries.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Reporter.MetricsReporter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Reporter.MetricsReporter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Reporter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Reporter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Services.MetricsCollectorService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Services.MetricsCollectorService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Abstractions.Frequencies.RunEvery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Abstractions.Frequencies.RunEvery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Abstractions.Frequencies.RunOnce.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Abstractions.Frequencies.RunOnce.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Abstractions.Frequencies.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Abstractions.Frequencies.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Abstractions.Interfaces.IBackgroundTask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Abstractions.Interfaces.IBackgroundTask.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Abstractions.Interfaces.IFrequency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Abstractions.Interfaces.IFrequency.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Abstractions.Interfaces.IScheduledTask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Abstractions.Interfaces.IScheduledTask.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Abstractions.Services.BackgroundTaskServiceBaseClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Abstractions.Services.BackgroundTaskServiceBaseClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Abstractions.Services.IBackgroundTaskService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Abstractions.Services.IBackgroundTaskService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Default.BackgroundModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Default.BackgroundModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Default.HostedServices.BackgroundTasksHostedService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Default.HostedServices.BackgroundTasksHostedService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Default.HostedServices.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Default.HostedServices.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Default.Services.BackgroundTaskService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Default.Services.BackgroundTaskService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Default.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Default.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Background.Default.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Background.Default.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Caching.InMemory.BackgroundTasks.MemoryCompactionScheduledTask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Caching.InMemory.BackgroundTasks.MemoryCompactionScheduledTask.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Caching.InMemory.BackgroundTasks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Caching.InMemory.BackgroundTasks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Caching.InMemory.Commands.ClearCacheCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Caching.InMemory.Commands.ClearCacheCommandHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Caching.InMemory.Commands.ViewModels.ClearCacheCommandVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Caching.InMemory.Commands.ViewModels.ClearCacheCommandVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Caching.InMemory.Commands.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Caching.InMemory.Commands.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Caching.InMemory.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Caching.InMemory.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Caching.InMemory.InMemoryCachingModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Caching.InMemory.InMemoryCachingModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Caching.InMemory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Caching.InMemory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Attachment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Attachment.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.AttachmentMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.AttachmentMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.BaseClasses.ChannelBaseClass-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.BaseClasses.ChannelBaseClass-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Commands.SendMessageCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Commands.SendMessageCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Events.MessageSentEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Events.MessageSentEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Events.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Interfaces.IChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Interfaces.IChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Interfaces.IMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Interfaces.IMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Interfaces.IMessageTemplate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Interfaces.IMessageTemplate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Mappings.IMessageMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Mappings.IMessageMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Mappings.MessageSentEventMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Mappings.MessageSentEventMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Mappings.SendMessageCommandMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Mappings.SendMessageCommandMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.MessageResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.MessageResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Services.ICommunicationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Services.ICommunicationService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Commands.MessageSentDefaultEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Commands.MessageSentDefaultEventHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Commands.SendMessageCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Commands.SendMessageCommandHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Commands.ViewModels.AttachmentVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Commands.ViewModels.AttachmentVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Commands.ViewModels.SendMessageCommandVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Commands.ViewModels.SendMessageCommandVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Commands.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Commands.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.CommunicationModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.CommunicationModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Channel.EmailChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Channel.EmailChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Channel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Channel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.EmailModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.EmailModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Features.EmailFeature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Features.EmailFeature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Features.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Features.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.HealthChecks.SMTPHealthCheck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.HealthChecks.SMTPHealthCheck.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.HealthChecks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.HealthChecks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Models.EmailMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Models.EmailMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Models.EmailSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Models.EmailSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Models.Mappings.EmailMessageMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Models.Mappings.EmailMessageMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Models.Mappings.EmailSettingsMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Models.Mappings.EmailSettingsMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Models.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Models.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Utils.EmailSender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Utils.EmailSender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.Utils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Email.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Email.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Models.Mappings.MessageTemplateMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Models.Mappings.MessageTemplateMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Models.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Models.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Models.MessageTemplate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Models.MessageTemplate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Services.CommunicationService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Services.CommunicationService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.Abstractions.BaseClasses.ComponentDefinitionBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.Abstractions.BaseClasses.ComponentDefinitionBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.Abstractions.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.Abstractions.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.Abstractions.Interfaces.IComponentDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.Abstractions.Interfaces.IComponentDefinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.Abstractions.Services.IComponentService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.Abstractions.Services.IComponentService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.ContentModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.ContentModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.Forms.Class1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.Forms.Class1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.Forms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.Forms.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.Services.ComponentService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.Services.ComponentService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Content.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Content.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Controllers.HomeController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Controllers.HomeController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Controllers.MyFeatureFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Controllers.MyFeatureFlags.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Controllers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.BaseClasses.GenericResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.BaseClasses.GenericResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.BaseClasses.HostedServiceBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.BaseClasses.HostedServiceBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Configuration.Compression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Configuration.Compression.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Configuration.Mime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Configuration.Mime.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Configuration.MithrilConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Configuration.MithrilConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Configuration.Security.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Configuration.Security.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Configuration.StaticFiles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Configuration.StaticFiles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Extensions.IConfigurationExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Extensions.IConfigurationExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Extensions.IFeatureManagerExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Extensions.IFeatureManagerExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Extensions.IServiceProviderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Extensions.IServiceProviderExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Extensions.StringExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Extensions.StringExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.BaseClasses.FeatureBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.BaseClasses.FeatureBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.Features.ContentFeature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.Features.ContentFeature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.Features.GenericFeature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.Features.GenericFeature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.Features.IndexingFeature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.Features.IndexingFeature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.Features.MediaFeature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.Features.MediaFeature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.Features.WorkflowFeature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.Features.WorkflowFeature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.Features.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.Features.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.Interfaces.IFeature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.Interfaces.IFeature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.Interfaces.IModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.Interfaces.IModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Modules.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Modules.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Mvc.Attributes.IPFilterAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Mvc.Attributes.IPFilterAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Mvc.Attributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Mvc.Attributes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Mvc.Context.HttpContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Mvc.Context.HttpContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Mvc.Context.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Mvc.Context.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Services.IIPFilterService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Services.IIPFilterService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Services.Options.IPFilterOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Services.Options.IPFilterOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Services.Options.IPFilterPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Services.Options.IPFilterPolicy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Services.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Services.Options.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Application.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Application.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Extensions.GenericExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Extensions.GenericExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Extensions.IEndpointRouteBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Extensions.IEndpointRouteBuilderExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Extensions.StaticHttpContextExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Extensions.StaticHttpContextExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Middleware.CSPMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Middleware.CSPMiddleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Middleware.IPFilterMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Middleware.IPFilterMiddleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Middleware.XFrameOptionsMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Middleware.XFrameOptionsMiddleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Middleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Middleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Modules.MithrilModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Modules.MithrilModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Modules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Modules.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Services.IPFilterService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Services.IPFilterService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.BaseClasses.LookUpEnumBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.BaseClasses.LookUpEnumBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.BaseClasses.ModelBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.BaseClasses.TypedModelBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.BaseClasses.TypedModelBase-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Databases.DefaultDatabase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Databases.DefaultDatabase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Databases.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Databases.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Enums.ContactInfoType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Enums.ContactInfoType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Enums.LookUpTypeEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Enums.LookUpTypeEnum.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Enums.UserClaimTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Enums.UserClaimTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Enums.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.ExtensionMethods.ClaimsPrincipalExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.ExtensionMethods.ClaimsPrincipalExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.ExtensionMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.ExtensionMethods.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Interfaces.IIndexedModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Interfaces.IIndexedModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Interfaces.ILookUp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Interfaces.ILookUp.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Interfaces.ILookUpType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Interfaces.ILookUpType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Interfaces.IModel-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Interfaces.IModel-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Interfaces.IModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Interfaces.IModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Interfaces.ITypedModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Interfaces.ITypedModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Interfaces.IUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Interfaces.IUser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Interfaces.IUserClaim.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Interfaces.IUserClaim.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Services.IDataService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Services.IDataService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Apm.QueryListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Apm.QueryListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Apm.QueryMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Apm.QueryMetrics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Apm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Apm.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.DataModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.DataModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.HealthCheck.SqlConnectionHealthCheck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.HealthCheck.SqlConnectionHealthCheck.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.HealthCheck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.HealthCheck.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Inflatable.Models.Contact.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Inflatable.Models.Contact.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.Contact.ContactInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.Contact.ContactInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.Contact.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.Contact.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.General.LookUp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.General.LookUp.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.General.LookUpType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.General.LookUpType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.General.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.General.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.Mappings.IIndexedModelMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.Mappings.IIndexedModelMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.Mappings.IModelMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.Mappings.IModelMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.Mappings.ITypedModelMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.Mappings.ITypedModelMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Services.DataService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Services.DataService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Commands.ToggleFeatureCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Commands.ToggleFeatureCommandHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Commands.ViewModels.ToggleFeatureCommandVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Commands.ViewModels.ToggleFeatureCommandVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Commands.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Commands.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.FeatureModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.FeatureModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Models.Feature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Models.Feature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Models.FeatureToggledEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Models.FeatureToggledEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Models.Mappings.FeatureMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Models.Mappings.FeatureMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Models.Mappings.FeatureToggledEventMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Models.Mappings.FeatureToggledEventMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Models.Mappings.ToggleFeatureCommandMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Models.Mappings.ToggleFeatureCommandMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Models.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Models.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Models.ToggleFeatureCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Models.ToggleFeatureCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Queries.FeatureListVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Queries.FeatureListVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Queries.FeatureVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Queries.FeatureVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Queries.FeaturesQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Queries.FeaturesQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Queries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Queries.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Services.DatabaseSessionManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Services.DatabaseSessionManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Abstractions.BaseClasses.MediaDirectoryBaseClass-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Abstractions.BaseClasses.MediaDirectoryBaseClass-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Abstractions.BaseClasses.MediaFileBaseClass-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Abstractions.BaseClasses.MediaFileBaseClass-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Abstractions.BaseClasses.MediaFileSystemBaseClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Abstractions.BaseClasses.MediaFileSystemBaseClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Abstractions.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Abstractions.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Abstractions.Interfaces.IPathConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Abstractions.Interfaces.IPathConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Abstractions.Services.IFileSystemService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Abstractions.Services.IFileSystemService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.FileSystemModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.FileSystemModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.HealthChecks.DiskSpaceHealthCheck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.HealthChecks.DiskSpaceHealthCheck.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.HealthChecks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.HealthChecks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.LocalFileSystem.LocalPathConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.LocalFileSystem.LocalPathConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.LocalFileSystem.LocalSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.LocalFileSystem.LocalSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.LocalFileSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.LocalFileSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Services.FileSystemService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Services.FileSystemService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Abstractions.BaseClasses.ResponseFormatterBaseClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Abstractions.BaseClasses.ResponseFormatterBaseClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Abstractions.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Abstractions.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Abstractions.Configuration.MithrilHealthCheckOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Abstractions.Configuration.MithrilHealthCheckOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Abstractions.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Abstractions.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Abstractions.Interfaces.IResponseFormatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Abstractions.Interfaces.IResponseFormatter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Abstractions.Services.IResponseFormatterService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Abstractions.Services.IResponseFormatterService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Formatters.DefaultJsonFormatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Formatters.DefaultJsonFormatter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Formatters.DefaultTextFormatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Formatters.DefaultTextFormatter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Formatters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Formatters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.HealthCheckModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.HealthCheckModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.HealthChecks.SystemStatusHealthCheck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.HealthChecks.SystemStatusHealthCheck.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.HealthChecks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.HealthChecks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Services.ResponseFormatterService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Services.ResponseFormatterService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.HealthChecks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.HealthChecks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Commands.CSPLogCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Commands.CSPLogCommandHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Commands.LogCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Commands.LogCommandHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Commands.ViewModels.CSPLogCommandVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Commands.ViewModels.CSPLogCommandVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Commands.ViewModels.CspReport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Commands.ViewModels.CspReport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Commands.ViewModels.LogCommandVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Commands.ViewModels.LogCommandVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Commands.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Commands.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Exceptions.JavascriptException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Exceptions.JavascriptException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Exceptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Features.LoggingFeature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Features.LoggingFeature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Features.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Features.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.LoggingModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.LoggingModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Models.LogCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Models.LogCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Models.Mappings.LogCommandMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Models.Mappings.LogCommandMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Models.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Models.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Serilog.Middleware.LoggingMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Serilog.Middleware.LoggingMiddleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Serilog.Middleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Serilog.Middleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Serilog.SerilogModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Serilog.SerilogModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.Serilog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.Serilog.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Logging.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Models.ErrorViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Models.ErrorViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Models.TestModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Models.TestModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Models.TestQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Models.TestQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Models.TestVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Models.TestVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Models.TestVM2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Models.TestVM2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Mvc.Abstractions.Enums.Orientation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Mvc.Abstractions.Enums.Orientation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Mvc.Abstractions.Enums.RenderFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Mvc.Abstractions.Enums.RenderFormat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Mvc.Abstractions.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Mvc.Abstractions.Enums.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Mvc.Abstractions.RenderOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Mvc.Abstractions.RenderOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Mvc.Abstractions.Services.IViewRendererService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Mvc.Abstractions.Services.IViewRendererService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Mvc.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Mvc.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Mvc.Abstractions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Mvc.Abstractions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Mvc.MvcModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Mvc.MvcModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Mvc.Services.ViewRendererService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Mvc.Services.ViewRendererService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Mvc.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Mvc.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Mvc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Mvc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Abstractions.Interfaces.IMenuBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Abstractions.Interfaces.IMenuBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Abstractions.Services.IMenuService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Abstractions.Services.IMenuService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Features.NavigationFeature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Features.NavigationFeature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Features.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Features.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Models.Mappings.MenuItemMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Models.Mappings.MenuItemMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Models.Mappings.MenuMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Models.Mappings.MenuMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Models.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Models.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Models.Menu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Models.Menu.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Models.MenuItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Models.MenuItem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.NavigationModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.NavigationModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Queries.MenuItemVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Queries.MenuItemVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Queries.MenuQuery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Queries.MenuQuery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Queries.MenuVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Queries.MenuVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Queries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Queries.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Services.MenuBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Services.MenuBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Services.MenuService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Services.MenuService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Program.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Abstractions.Interfaces.IRoute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Abstractions.Interfaces.IRoute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Abstractions.Services.IRouteService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Abstractions.Services.IRouteService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Admin.RouteEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Admin.RouteEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Admin.ViewModels.RouteEntryVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Admin.ViewModels.RouteEntryVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Admin.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Admin.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Admin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Admin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Models.Mappings.RouteEntryMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Models.Mappings.RouteEntryMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Models.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Models.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Models.RouteEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Models.RouteEntry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.RoutingModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.RoutingModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Services.RouteService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Services.RouteService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Transformers.RouteTransformer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Transformers.RouteTransformer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Transformers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Transformers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.Enums.PermissionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.Enums.PermissionType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.Enums.SystemPermissions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.Enums.SystemPermissions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.Enums.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.Interfaces.IPermission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.Interfaces.IPermission.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.Interfaces.ITenant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.Interfaces.ITenant.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.Services.ISecurityService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.Services.ISecurityService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.SystemAccounts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.SystemAccounts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.AuthenticationModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.AuthenticationModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.Mappings.IPermissionMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.Mappings.IPermissionMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.Mappings.ITenantMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.Mappings.ITenantMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.Mappings.IUserClaimMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.Mappings.IUserClaimMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.Mappings.IUserMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.Mappings.IUserMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.Mappings.PermissionMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.Mappings.PermissionMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.Mappings.TenantMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.Mappings.TenantMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.Mappings.UserClaimMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.Mappings.UserClaimMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.Mappings.UserMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.Mappings.UserMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.Permission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.Permission.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.Tenant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.Tenant.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.User.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.UserClaim.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.UserClaim.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Services.SecurityService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Services.SecurityService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Services.UserClaimsTransformer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Services.UserClaimsTransformer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Windows.WindowsAuthenticationModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Windows.WindowsAuthenticationModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Windows.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Windows.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Tests.Helpers.TestBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Tests.Helpers.TestBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Tests.Helpers.TestBaseClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Tests.Helpers.TestBaseClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Tests.Helpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Tests.Helpers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Theme.Default.DefaultTheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Theme.Default.DefaultTheme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Theme.Default.DefaultThemeModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Theme.Default.DefaultThemeModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Theme.Default.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Theme.Default.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.BaseClasses.ThemeBaseClass-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.BaseClasses.ThemeBaseClass-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.BaseClasses.ThemedRazorPage-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.BaseClasses.ThemedRazorPage-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.Enums.ResourceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.Enums.ResourceType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.Enums.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.Interfaces.IResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.Interfaces.IResource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.Interfaces.ITheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.Interfaces.ITheme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.Services.IResourceService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.Services.IResourceService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.Services.IThemeService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.Services.IThemeService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.TagHelpers.LinkTagHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.TagHelpers.LinkTagHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.TagHelpers.MetaTagHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.TagHelpers.MetaTagHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.TagHelpers.ScriptTagHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.TagHelpers.ScriptTagHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.TagHelpers.StyleTagHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.TagHelpers.StyleTagHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Abstractions.TagHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Abstractions.TagHelpers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Admin.DropDowns.ThemeList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Admin.DropDowns.ThemeList.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Admin.DropDowns.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Admin.DropDowns.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Admin.ThemeEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Admin.ThemeEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Admin.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Admin.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Admin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Admin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Commands.SetThemeCommandHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Commands.SetThemeCommandHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Commands.ThemeChangedEventDefaultHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Commands.ThemeChangedEventDefaultHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Commands.ViewModels.SetThemeCommandVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Commands.ViewModels.SetThemeCommandVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Commands.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Commands.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Commands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Commands.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.LocationExpanders.CompositeViewLocationExpanderProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.LocationExpanders.CompositeViewLocationExpanderProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.LocationExpanders.DefaultViewLocationExpanderProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.LocationExpanders.DefaultViewLocationExpanderProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.LocationExpanders.Interfaces.IViewLocationExpanderProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.LocationExpanders.Interfaces.IViewLocationExpanderProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.LocationExpanders.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.LocationExpanders.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.LocationExpanders.ModuleViewLocationExpanderProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.LocationExpanders.ModuleViewLocationExpanderProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.LocationExpanders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.LocationExpanders.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Models.Mappings.SetThemeCommandMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Models.Mappings.SetThemeCommandMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Models.Mappings.ThemeChangedEventMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Models.Mappings.ThemeChangedEventMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Models.Mappings.ThemeMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Models.Mappings.ThemeMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Models.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Models.Mappings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Models.SetThemeCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Models.SetThemeCommand.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Models.Theme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Models.Theme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Models.ThemeChangedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Models.ThemeChangedEvent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Resources.LinkResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Resources.LinkResource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Resources.MetaResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Resources.MetaResource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Resources.ScriptContentResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Resources.ScriptContentResource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Resources.ScriptFileResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Resources.ScriptFileResource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Resources.StyleResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Resources.StyleResource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Resources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Resources.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Services.ResourceService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Services.ResourceService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Services.ThemeService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Services.ThemeService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.ThemesModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.ThemesModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Themes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Themes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

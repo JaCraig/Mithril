@@ -1,0 +1,974 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Interface IModule
+ | Mithril API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Interface IModule
+ | Mithril API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon.png" alt="Mithril" class="logomark">
+              <span class="brand-title">Mithril</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon.png" alt="Mithril" class="logomark">
+                          <span class="brand-title">Mithril</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule">
+
+
+
+  <h1 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule" class="text-break">Interface IModule
+</h1>
+  <div class="markdown level0 summary"><p>Module interface. Defines a module and initializes it.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Core.html">Core</a>.<a class="xref" href="Mithril.Core.Abstractions.html">Abstractions</a>.<a class="xref" href="Mithril.Core.Abstractions.Modules.html">Modules</a>.<a class="xref" href="Mithril.Core.Abstractions.Modules.Interfaces.html">Interfaces</a></h6>
+  <h6><strong>Assembly</strong>: Mithril.Core.Abstractions.dll</h6>
+  <h5 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IModule</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_Category.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.Category%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L21">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Category_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Category*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Category" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Category">Category</h4>
+  <div class="markdown level1 summary"><p>Gets the type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Category { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_ContentPath.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.ContentPath%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L27">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ContentPath_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ContentPath*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ContentPath" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ContentPath">ContentPath</h4>
+  <div class="markdown level1 summary"><p>The content path</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ContentPath { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The content path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_Features.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.Features%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L33">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Features_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Features*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Features" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Features">Features</h4>
+  <div class="markdown level1 summary"><p>Gets the features.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IFeature[] Features { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Core.Abstractions.Modules.Interfaces.IFeature.html">IFeature</a>[]</td>
+        <td><p>The features.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_ID.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.ID%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L39">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ID_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ID*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ID" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ID">ID</h4>
+  <div class="markdown level1 summary"><p>Gets the identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ID { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_LastModified.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.LastModified%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L45">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_LastModified_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.LastModified*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_LastModified" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.LastModified">LastModified</h4>
+  <div class="markdown level1 summary"><p>Gets the last modified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DateTime LastModified { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td><p>The last modified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_Name.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L51">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Name_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Name*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Name" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Gets the name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Name { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_Order.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.Order%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L57">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Order_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Order*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Order" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Order">Order</h4>
+  <div class="markdown level1 summary"><p>Gets the order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int Order { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The order.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_Tags.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.Tags%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L63">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Tags_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Tags*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Tags" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Tags">Tags</h4>
+  <div class="markdown level1 summary"><p>Gets the tags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string[] Tags { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><p>The tags.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_Version.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.Version%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L69">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Version_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Version*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_Version" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.Version">Version</h4>
+  <div class="markdown level1 summary"><p>Gets the version.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Version { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The version.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureApplication_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureApplication(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Hosting.IHostEnvironment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L78">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureApplication_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureApplication*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureApplication_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureApplication(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">ConfigureApplication(IApplicationBuilder?, IConfiguration?, IHostEnvironment?)</h4>
+  <div class="markdown level1 summary"><p>Configures the application.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a></td>
+        <td><span class="parametername">app</span></td>
+        <td><p>The application.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></td>
+        <td><span class="parametername">configuration</span></td>
+        <td><p>The configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></td>
+        <td><span class="parametername">environment</span></td>
+        <td><p>The environment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a></td>
+        <td><p>Application builder</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureHostSettings_Microsoft_Extensions_Hosting_IHostBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureHostSettings(Microsoft.Extensions.Hosting.IHostBuilder%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Hosting.IHostEnvironment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L87">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureHostSettings_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureHostSettings*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureHostSettings_Microsoft_Extensions_Hosting_IHostBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureHostSettings(Microsoft.Extensions.Hosting.IHostBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">ConfigureHostSettings(IHostBuilder?, IConfiguration?, IHostEnvironment?)</h4>
+  <div class="markdown level1 summary"><p>Configures the host settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IHostBuilder? ConfigureHostSettings(IHostBuilder? host, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostbuilder">IHostBuilder</a></td>
+        <td><span class="parametername">host</span></td>
+        <td><p>The host.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></td>
+        <td><span class="parametername">configuration</span></td>
+        <td><p>The configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></td>
+        <td><span class="parametername">environment</span></td>
+        <td><p>The environment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostbuilder">IHostBuilder</a></td>
+        <td><p>Host builder</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureLoggingSettings_Microsoft_Extensions_Logging_ILoggingBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureLoggingSettings(Microsoft.Extensions.Logging.ILoggingBuilder%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Hosting.IHostEnvironment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L96">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureLoggingSettings_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureLoggingSettings*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureLoggingSettings_Microsoft_Extensions_Logging_ILoggingBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureLoggingSettings(Microsoft.Extensions.Logging.ILoggingBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">ConfigureLoggingSettings(ILoggingBuilder?, IConfiguration?, IHostEnvironment?)</h4>
+  <div class="markdown level1 summary"><p>Configures the logging settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILoggingBuilder? ConfigureLoggingSettings(ILoggingBuilder? logging, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggingbuilder">ILoggingBuilder</a></td>
+        <td><span class="parametername">logging</span></td>
+        <td><p>The logging.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></td>
+        <td><span class="parametername">configuration</span></td>
+        <td><p>The configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></td>
+        <td><span class="parametername">environment</span></td>
+        <td><p>The environment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggingbuilder">ILoggingBuilder</a></td>
+        <td><p>Logging builder</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureMVC_Microsoft_Extensions_DependencyInjection_IMvcBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureMVC(Microsoft.Extensions.DependencyInjection.IMvcBuilder%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Hosting.IHostEnvironment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L105">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureMVC_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureMVC*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureMVC_Microsoft_Extensions_DependencyInjection_IMvcBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureMVC(Microsoft.Extensions.DependencyInjection.IMvcBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">ConfigureMVC(IMvcBuilder?, IConfiguration?, IHostEnvironment?)</h4>
+  <div class="markdown level1 summary"><p>Configures the MVC.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMvcBuilder? ConfigureMVC(IMvcBuilder? mvcBuilder, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.imvcbuilder">IMvcBuilder</a></td>
+        <td><span class="parametername">mvcBuilder</span></td>
+        <td><p>The MVC builder.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></td>
+        <td><span class="parametername">configuration</span></td>
+        <td><p>The configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></td>
+        <td><span class="parametername">environment</span></td>
+        <td><p>The environment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.imvcbuilder">IMvcBuilder</a></td>
+        <td><p>MVC Builder</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureRoutes_Microsoft_AspNetCore_Routing_IEndpointRouteBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureRoutes(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Hosting.IHostEnvironment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L114">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureRoutes_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureRoutes*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureRoutes_Microsoft_AspNetCore_Routing_IEndpointRouteBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureRoutes(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">ConfigureRoutes(IEndpointRouteBuilder?, IConfiguration?, IHostEnvironment?)</h4>
+  <div class="markdown level1 summary"><p>Configures the routes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEndpointRouteBuilder? ConfigureRoutes(IEndpointRouteBuilder? endpoints, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.routing.iendpointroutebuilder">IEndpointRouteBuilder</a></td>
+        <td><span class="parametername">endpoints</span></td>
+        <td><p>The endpoints.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></td>
+        <td><span class="parametername">configuration</span></td>
+        <td><p>The configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></td>
+        <td><span class="parametername">environment</span></td>
+        <td><p>The environment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.routing.iendpointroutebuilder">IEndpointRouteBuilder</a></td>
+        <td><p>Endpoint route builder</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Hosting.IHostEnvironment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L123">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureServices_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureServices*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">ConfigureServices(IServiceCollection?, IConfiguration?, IHostEnvironment?)</h4>
+  <div class="markdown level1 summary"><p>Configures the services for the module.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></td>
+        <td><span class="parametername">services</span></td>
+        <td><p>The services collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></td>
+        <td><span class="parametername">configuration</span></td>
+        <td><p>The configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></td>
+        <td><span class="parametername">environment</span></td>
+        <td><p>The environment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></td>
+        <td><p>Services</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureWebHostSettings_Microsoft_AspNetCore_Hosting_IWebHostBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureWebHostSettings(Microsoft.AspNetCore.Hosting.IWebHostBuilder%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Hosting.IHostEnvironment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L132">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureWebHostSettings_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureWebHostSettings*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_ConfigureWebHostSettings_Microsoft_AspNetCore_Hosting_IWebHostBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.ConfigureWebHostSettings(Microsoft.AspNetCore.Hosting.IWebHostBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">ConfigureWebHostSettings(IWebHostBuilder?, IConfiguration?, IHostEnvironment?)</h4>
+  <div class="markdown level1 summary"><p>Configures the web host settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWebHostBuilder? ConfigureWebHostSettings(IWebHostBuilder? webHost, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder">IWebHostBuilder</a></td>
+        <td><span class="parametername">webHost</span></td>
+        <td><p>The web host.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></td>
+        <td><span class="parametername">configuration</span></td>
+        <td><p>The configuration.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></td>
+        <td><span class="parametername">environment</span></td>
+        <td><p>The environment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder">IWebHostBuilder</a></td>
+        <td><p>Web host builder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_InitializeDataAsync_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.InitializeDataAsync(Mithril.Data.Abstractions.Services.IDataService%2CSystem.IServiceProvider)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L140">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_InitializeDataAsync_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.InitializeDataAsync*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_InitializeDataAsync_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.InitializeDataAsync(Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider)">InitializeDataAsync(IDataService?, IServiceProvider?)</h4>
+  <div class="markdown level1 summary"><p>Initializes the data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></td>
+        <td><span class="parametername">dataService</span></td>
+        <td><p>The data service.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a></td>
+        <td><span class="parametername">services</span></td>
+        <td><p>The services for the application.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>The async task.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_OnStarted.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.OnStarted%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L145">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_OnStarted_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.OnStarted*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_OnStarted" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.OnStarted">OnStarted()</h4>
+  <div class="markdown level1 summary"><p>Called when the application is [started].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void OnStarted()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_OnStopped.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.OnStopped%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L150">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_OnStopped_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.OnStopped*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_OnStopped" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.OnStopped">OnStopped()</h4>
+  <div class="markdown level1 summary"><p>Called when the application is [stopped].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void OnStopped()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Modules_Interfaces_IModule_OnStopping.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Modules.Interfaces.IModule.OnStopping%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Core.Abstractions/Modules/Interfaces/IModule.cs/#L155">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_OnStopping_" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.OnStopping*"></a>
+  <h4 id="Mithril_Core_Abstractions_Modules_Interfaces_IModule_OnStopping" data-uid="Mithril.Core.Abstractions.Modules.Interfaces.IModule.OnStopping">OnStopping()</h4>
+  <div class="markdown level1 summary"><p>Called when the application is [stopping].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void OnStopping()</code></pre>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando__1___0_">ExpandoObjectExtensions.ConvertToExpando&lt;TEntity&gt;(TEntity?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
+  </div>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

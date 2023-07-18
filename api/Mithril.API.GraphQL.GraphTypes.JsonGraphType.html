@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class JsonGraphType
+ | Mithril API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class JsonGraphType
+ | Mithril API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon.png" alt="Mithril" class="logomark">
+              <span class="brand-title">Mithril</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon.png" alt="Mithril" class="logomark">
+                          <span class="brand-title">Mithril</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_API_GraphQL_GraphTypes_JsonGraphType.md&amp;value=---%0Auid%3A%20Mithril.API.GraphQL.GraphTypes.JsonGraphType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="Mithril.API.GraphQL.GraphTypes.JsonGraphType">
+
+
+
+  <h1 id="Mithril_API_GraphQL_GraphTypes_JsonGraphType" data-uid="Mithril.API.GraphQL.GraphTypes.JsonGraphType" class="text-break">Class JsonGraphType
+</h1>
+  <div class="markdown level0 summary"><p>The Json scalar graph type represents a JSON document. (Copy of what should be built in to
+the library and will be taken out once merged into main on GraphQL.Net)</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">MetadataProvider</span></div>
+    <div class="level2"><span class="xref">GraphType</span></div>
+    <div class="level3"><span class="xref">ScalarGraphType</span></div>
+    <div class="level4"><span class="xref">JsonGraphType</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">IGraphType</span></div>
+    <div><span class="xref">IProvideMetadata</span></div>
+    <div><span class="xref">IProvideDescription</span></div>
+    <div><span class="xref">IProvideDeprecationReason</span></div>
+    <div><span class="xref">INamedType</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ScalarGraphType.Serialize(object)</a>
+    </div>
+    <div>
+      <span class="xref">ScalarGraphType.ParseDoubleAccordingSpec&lt;TValueNode&gt;(TValueNode)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ScalarGraphType.IsValidDefault(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ScalarGraphType.ToAST(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ScalarGraphType.ThrowASTConversionError(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ScalarGraphType.ThrowLiteralConversionError(GraphQLValue, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ScalarGraphType.ThrowValueConversionError(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ScalarGraphType.ThrowSerializationError(object)</a>
+    </div>
+    <div>
+      <span class="xref">ScalarGraphType.Initialize(ISchema)</span>
+    </div>
+    <div>
+      <span class="xref">GraphType.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">GraphType.Equals(IGraphType)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">GraphType.Equals(object)</a>
+    </div>
+    <div>
+      <span class="xref">GraphType.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">GraphType.Name</span>
+    </div>
+    <div>
+      <span class="xref">GraphType.Description</span>
+    </div>
+    <div>
+      <span class="xref">GraphType.DeprecationReason</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MetadataProvider.GetMetadata&lt;TType&gt;(string, TType)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MetadataProvider.GetMetadata&lt;TType&gt;(string, Func&lt;TType&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MetadataProvider.HasMetadata(string)</a>
+    </div>
+    <div>
+      <span class="xref">MetadataProvider.CopyMetadataTo(IProvideMetadata)</span>
+    </div>
+    <div>
+      <span class="xref">MetadataProvider.Metadata</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.API.html">API</a>.<a class="xref" href="Mithril.API.GraphQL.html">GraphQL</a>.<a class="xref" href="Mithril.API.GraphQL.GraphTypes.html">GraphTypes</a></h6>
+  <h6><strong>Assembly</strong>: Mithril.API.GraphQL.dll</h6>
+  <h5 id="Mithril_API_GraphQL_GraphTypes_JsonGraphType_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class JsonGraphType : ScalarGraphType, IGraphType, IProvideMetadata, IProvideDescription, IProvideDeprecationReason, INamedType</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_API_GraphQL_GraphTypes_JsonGraphType_CanParseLiteral_GraphQLParser_AST_GraphQLValue_.md&amp;value=---%0Auid%3A%20Mithril.API.GraphQL.GraphTypes.JsonGraphType.CanParseLiteral(GraphQLParser.AST.GraphQLValue)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.API.GraphQL/GraphTypes/JsonGraphType.cs/#L27">View Source</a>
+  </span>
+  <a id="Mithril_API_GraphQL_GraphTypes_JsonGraphType_CanParseLiteral_" data-uid="Mithril.API.GraphQL.GraphTypes.JsonGraphType.CanParseLiteral*"></a>
+  <h4 id="Mithril_API_GraphQL_GraphTypes_JsonGraphType_CanParseLiteral_GraphQLParser_AST_GraphQLValue_" data-uid="Mithril.API.GraphQL.GraphTypes.JsonGraphType.CanParseLiteral(GraphQLParser.AST.GraphQLValue)">CanParseLiteral(GraphQLValue)</h4>
+  <div class="markdown level1 summary"><p>Checks for literal input coercion possibility. It takes an abstract syntax tree (AST)
+element from a schema definition or query and checks if it can be converted into an
+appropriate internal value. In other words it checks if a scalar can be converted from
+its client-side representation as an argument to its server-side representation.
+<br><br> This method can be overridden to validate input values without directly
+getting those values, i.e. without boxing. <br><br> This method must return <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> when passed a <span class="xref">GraphQLParser.AST.GraphQLNullValue</span> node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanParseLiteral(GraphQLValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GraphQLValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>AST value node. Must not be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, but may be <span class="xref">GraphQLParser.AST.GraphQLNullValue</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">GraphQL.Types.ScalarGraphType.CanParseLiteral(GraphQLParser.AST.GraphQLValue)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_API_GraphQL_GraphTypes_JsonGraphType_CanParseValue_System_Object_.md&amp;value=---%0Auid%3A%20Mithril.API.GraphQL.GraphTypes.JsonGraphType.CanParseValue(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.API.GraphQL/GraphTypes/JsonGraphType.cs/#L42">View Source</a>
+  </span>
+  <a id="Mithril_API_GraphQL_GraphTypes_JsonGraphType_CanParseValue_" data-uid="Mithril.API.GraphQL.GraphTypes.JsonGraphType.CanParseValue*"></a>
+  <h4 id="Mithril_API_GraphQL_GraphTypes_JsonGraphType_CanParseValue_System_Object_" data-uid="Mithril.API.GraphQL.GraphTypes.JsonGraphType.CanParseValue(System.Object)">CanParseValue(object?)</h4>
+  <div class="markdown level1 summary"><p>Checks for value input coercion possibility. Argument values can not only provided via
+GraphQL syntax inside a query, but also via variable. It checks if a scalar can be
+converted from its client-side representation as a variable to its server-side
+representation. <br><br> Parsing for arguments and variables are handled separately
+because while arguments must always be expressed in GraphQL query syntax, variable
+format is transport-specific (usually JSON). <br><br> This method can be overridden to
+validate input values without directly getting those values, i.e. without boxing.
+<br><br> This method must return <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> when passed a <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanParseValue(object? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Runtime object from variables. May be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ScalarGraphType.CanParseValue(object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_API_GraphQL_GraphTypes_JsonGraphType_ParseLiteral_GraphQLParser_AST_GraphQLValue_.md&amp;value=---%0Auid%3A%20Mithril.API.GraphQL.GraphTypes.JsonGraphType.ParseLiteral(GraphQLParser.AST.GraphQLValue)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.API.GraphQL/GraphTypes/JsonGraphType.cs/#L57">View Source</a>
+  </span>
+  <a id="Mithril_API_GraphQL_GraphTypes_JsonGraphType_ParseLiteral_" data-uid="Mithril.API.GraphQL.GraphTypes.JsonGraphType.ParseLiteral*"></a>
+  <h4 id="Mithril_API_GraphQL_GraphTypes_JsonGraphType_ParseLiteral_GraphQLParser_AST_GraphQLValue_" data-uid="Mithril.API.GraphQL.GraphTypes.JsonGraphType.ParseLiteral(GraphQLParser.AST.GraphQLValue)">ParseLiteral(GraphQLValue)</h4>
+  <div class="markdown level1 summary"><p>Literal input coercion. It takes an abstract syntax tree (AST) element from a schema
+definition or query and converts it into an appropriate internal value. In other words
+it transforms a scalar from its client-side representation as an argument to its
+server-side representation. Input coercion may not only return primitive values like
+String but rather complex ones when appropriate. <br><br> This method must handle a
+value of <span class="xref">GraphQLParser.AST.GraphQLNullValue</span>. <br><br> This method
+SHOULD be overridden by descendants.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object? ParseLiteral(GraphQLValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GraphQLValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>AST value node. Must not be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, but may be <span class="xref">GraphQLParser.AST.GraphQLNullValue</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><p>Internal scalar representation. Returning <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> is valid.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">GraphQL.Types.ScalarGraphType.ParseLiteral(GraphQLParser.AST.GraphQLValue)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_API_GraphQL_GraphTypes_JsonGraphType_ParseValue_System_Object_.md&amp;value=---%0Auid%3A%20Mithril.API.GraphQL.GraphTypes.JsonGraphType.ParseValue(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.API.GraphQL/GraphTypes/JsonGraphType.cs/#L74">View Source</a>
+  </span>
+  <a id="Mithril_API_GraphQL_GraphTypes_JsonGraphType_ParseValue_" data-uid="Mithril.API.GraphQL.GraphTypes.JsonGraphType.ParseValue*"></a>
+  <h4 id="Mithril_API_GraphQL_GraphTypes_JsonGraphType_ParseValue_System_Object_" data-uid="Mithril.API.GraphQL.GraphTypes.JsonGraphType.ParseValue(System.Object)">ParseValue(object?)</h4>
+  <div class="markdown level1 summary"><p>Value input coercion. Argument values can not only provided via GraphQL syntax inside a
+query, but also via variable. It transforms a scalar from its client-side representation
+as a variable to its server-side representation. <br><br> Parsing for arguments and
+variables are handled separately because while arguments must always be expressed in
+GraphQL query syntax, variable format is transport-specific (usually JSON). <br><br>
+This method must handle a value of <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object? ParseValue(object? value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Runtime object from variables. May be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><p>Internal scalar representation. Returning <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> is valid.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ScalarGraphType.ParseValue(object)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">GraphQL.Types.IGraphType</span>
+  </div>
+  <div>
+      <span class="xref">GraphQL.Types.IProvideMetadata</span>
+  </div>
+  <div>
+      <span class="xref">GraphQL.Types.IProvideDescription</span>
+  </div>
+  <div>
+      <span class="xref">GraphQL.Types.IProvideDeprecationReason</span>
+  </div>
+  <div>
+      <span class="xref">GraphQL.Types.INamedType</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando__1___0_">ExpandoObjectExtensions.ConvertToExpando&lt;TEntity&gt;(TEntity?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
+  </div>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

@@ -1,0 +1,662 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Interface ISecurityService
+ | Mithril API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Interface ISecurityService
+ | Mithril API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon.png" alt="Mithril" class="logomark">
+              <span class="brand-title">Mithril</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon.png" alt="Mithril" class="logomark">
+                          <span class="brand-title">Mithril</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="Mithril.Security.Abstractions.Services.ISecurityService">
+
+
+
+  <h1 id="Mithril_Security_Abstractions_Services_ISecurityService" data-uid="Mithril.Security.Abstractions.Services.ISecurityService" class="text-break">Interface ISecurityService
+</h1>
+  <div class="markdown level0 summary"><p>Permission service</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Security.html">Security</a>.<a class="xref" href="Mithril.Security.Abstractions.html">Abstractions</a>.<a class="xref" href="Mithril.Security.Abstractions.Services.html">Services</a></h6>
+  <h6><strong>Assembly</strong>: Mithril.Security.Abstractions.dll</h6>
+  <h5 id="Mithril_Security_Abstractions_Services_ISecurityService_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ISecurityService</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadAllTenants.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadAllTenants%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L17">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadAllTenants_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadAllTenants*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadAllTenants" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadAllTenants">LoadAllTenants()</h4>
+  <div class="markdown level1 summary"><p>Loads all tenants.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;ITenant&gt; LoadAllTenants()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Mithril.Security.Abstractions.Interfaces.ITenant.html">ITenant</a>&gt;</td>
+        <td><p>All tenants.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadAllUsers.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadAllUsers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L23">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadAllUsers_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadAllUsers*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadAllUsers" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadAllUsers">LoadAllUsers()</h4>
+  <div class="markdown level1 summary"><p>Loads all users.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;IUser&gt; LoadAllUsers()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a>&gt;</td>
+        <td><p>All users.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadAnonymousUserAccount.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadAnonymousUserAccount%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L29">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadAnonymousUserAccount_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadAnonymousUserAccount*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadAnonymousUserAccount" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadAnonymousUserAccount">LoadAnonymousUserAccount()</h4>
+  <div class="markdown level1 summary"><p>Loads the anonymous user account.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IUser? LoadAnonymousUserAccount()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></td>
+        <td><p>The anonymous user account.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadClaim_Mithril_Data_Abstractions_Enums_UserClaimTypes_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadClaim(Mithril.Data.Abstractions.Enums.UserClaimTypes%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L37">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadClaim_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadClaim*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadClaim_Mithril_Data_Abstractions_Enums_UserClaimTypes_System_String_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadClaim(Mithril.Data.Abstractions.Enums.UserClaimTypes,System.String)">LoadClaim(UserClaimTypes, string)</h4>
+  <div class="markdown level1 summary"><p>Loads the user claim specified by the identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IUserClaim? LoadClaim(UserClaimTypes type, string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Enums.UserClaimTypes.html">UserClaimTypes</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a></td>
+        <td><p>The user claim specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadClaim_System_Int64_.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadClaim(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L44">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadClaim_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadClaim*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadClaim_System_Int64_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadClaim(System.Int64)">LoadClaim(long)</h4>
+  <div class="markdown level1 summary"><p>Loads the user claim specified by the identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IUserClaim? LoadClaim(long id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>The identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a></td>
+        <td><p>The user claim specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadCurrentUser.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadCurrentUser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L50">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadCurrentUser_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadCurrentUser*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadCurrentUser" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadCurrentUser">LoadCurrentUser()</h4>
+  <div class="markdown level1 summary"><p>Loads the current user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IUser? LoadCurrentUser()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></td>
+        <td><p>The current user.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadOrCreateClaimAsync_Mithril_Data_Abstractions_Enums_UserClaimTypes_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadOrCreateClaimAsync(Mithril.Data.Abstractions.Enums.UserClaimTypes%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L58">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadOrCreateClaimAsync_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadOrCreateClaimAsync*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadOrCreateClaimAsync_Mithril_Data_Abstractions_Enums_UserClaimTypes_System_String_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadOrCreateClaimAsync(Mithril.Data.Abstractions.Enums.UserClaimTypes,System.String)">LoadOrCreateClaimAsync(UserClaimTypes, string)</h4>
+  <div class="markdown level1 summary"><p>Loads or creates the user claim asynchronously based on the type and value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IUserClaim&gt; LoadOrCreateClaimAsync(UserClaimTypes type, string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Enums.UserClaimTypes.html">UserClaimTypes</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a>&gt;</td>
+        <td><p>The user claim specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadOrCreatePermissionAsync_System_String_Mithril_Security_Abstractions_Enums_PermissionType_Mithril_Data_Abstractions_Interfaces_IUserClaim___.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadOrCreatePermissionAsync(System.String%2CMithril.Security.Abstractions.Enums.PermissionType%2CMithril.Data.Abstractions.Interfaces.IUserClaim%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L67">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadOrCreatePermissionAsync_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadOrCreatePermissionAsync*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadOrCreatePermissionAsync_System_String_Mithril_Security_Abstractions_Enums_PermissionType_Mithril_Data_Abstractions_Interfaces_IUserClaim___" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadOrCreatePermissionAsync(System.String,Mithril.Security.Abstractions.Enums.PermissionType,Mithril.Data.Abstractions.Interfaces.IUserClaim[])">LoadOrCreatePermissionAsync(string, PermissionType, params IUserClaim[])</h4>
+  <div class="markdown level1 summary"><p>Loads or creates the permission asynchronously based on the display name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IPermission&gt; LoadOrCreatePermissionAsync(string displayName, PermissionType operand, params IUserClaim[] claims)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">displayName</span></td>
+        <td><p>The display name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Abstractions.Enums.PermissionType.html">PermissionType</a></td>
+        <td><span class="parametername">operand</span></td>
+        <td><p>The operand.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a>[]</td>
+        <td><span class="parametername">claims</span></td>
+        <td><p>The claims.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Mithril.Security.Abstractions.Interfaces.IPermission.html">IPermission</a>&gt;</td>
+        <td><p>The permission specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadPermission_Mithril_Security_Abstractions_Enums_SystemPermissions_.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadPermission(Mithril.Security.Abstractions.Enums.SystemPermissions)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L81">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadPermission_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadPermission*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadPermission_Mithril_Security_Abstractions_Enums_SystemPermissions_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadPermission(Mithril.Security.Abstractions.Enums.SystemPermissions)">LoadPermission(SystemPermissions)</h4>
+  <div class="markdown level1 summary"><p>Loads the permission specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IPermission? LoadPermission(SystemPermissions permission)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Abstractions.Enums.SystemPermissions.html">SystemPermissions</a></td>
+        <td><span class="parametername">permission</span></td>
+        <td><p>The permission.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Abstractions.Interfaces.IPermission.html">IPermission</a></td>
+        <td><p>The permission specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadPermission_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadPermission(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L74">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadPermission_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadPermission*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadPermission_System_String_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadPermission(System.String)">LoadPermission(string)</h4>
+  <div class="markdown level1 summary"><p>Loads the permission specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IPermission? LoadPermission(string displayName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">displayName</span></td>
+        <td><p>The display name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Abstractions.Interfaces.IPermission.html">IPermission</a></td>
+        <td><p>The permission specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadSystemAccount.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadSystemAccount%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L87">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadSystemAccount_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadSystemAccount*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadSystemAccount" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadSystemAccount">LoadSystemAccount()</h4>
+  <div class="markdown level1 summary"><p>Loads the system account.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IUser? LoadSystemAccount()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></td>
+        <td><p>The system account.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Services_ISecurityService_LoadSystemTenant.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Services.ISecurityService.LoadSystemTenant%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security.Abstractions/Services/ISecurityService.cs/#L93">View Source</a>
+  </span>
+  <a id="Mithril_Security_Abstractions_Services_ISecurityService_LoadSystemTenant_" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadSystemTenant*"></a>
+  <h4 id="Mithril_Security_Abstractions_Services_ISecurityService_LoadSystemTenant" data-uid="Mithril.Security.Abstractions.Services.ISecurityService.LoadSystemTenant">LoadSystemTenant()</h4>
+  <div class="markdown level1 summary"><p>Loads the system tenant.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ITenant? LoadSystemTenant()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Abstractions.Interfaces.ITenant.html">ITenant</a></td>
+        <td><p>The system tenant.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando__1___0_">ExpandoObjectExtensions.ConvertToExpando&lt;TEntity&gt;(TEntity?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
+  </div>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

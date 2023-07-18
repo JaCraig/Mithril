@@ -1,0 +1,1217 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class MenuItem
+ | Mithril API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class MenuItem
+ | Mithril API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon.png" alt="Mithril" class="logomark">
+              <span class="brand-title">Mithril</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon.png" alt="Mithril" class="logomark">
+                          <span class="brand-title">Mithril</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="Mithril.Navigation.Models.MenuItem">
+
+
+
+  <h1 id="Mithril_Navigation_Models_MenuItem" data-uid="Mithril.Navigation.Models.MenuItem" class="text-break">Class MenuItem
+</h1>
+  <div class="markdown level0 summary"><p>Menu item</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a>&gt;</div>
+    <div class="level2"><span class="xref">MenuItem</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a>&gt;</div>
+    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a>&gt;&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a>&gt;&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Active">ModelBase&lt;MenuItem&gt;.Active</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Creator">ModelBase&lt;MenuItem&gt;.Creator</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DateCreated">ModelBase&lt;MenuItem&gt;.DateCreated</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DateModified">ModelBase&lt;MenuItem&gt;.DateModified</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_ID">ModelBase&lt;MenuItem&gt;.ID</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Modifier">ModelBase&lt;MenuItem&gt;.Modifier</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_TenantID">ModelBase&lt;MenuItem&gt;.TenantID</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_All_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;MenuItem&gt;.All(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_AllActive_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;MenuItem&gt;.AllActive(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_AllInactive_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;MenuItem&gt;.AllInactive(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Load_System_Int64_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;MenuItem&gt;.Load(long, IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Query_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;MenuItem&gt;.Query(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_CanBeModifiedBy_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;MenuItem&gt;.CanBeModifiedBy(ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_CompareTo_System_Object_">ModelBase&lt;MenuItem&gt;.CompareTo(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DeleteAsync_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_System_Boolean_">ModelBase&lt;MenuItem&gt;.DeleteAsync(IDataService, ClaimsPrincipal, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_Interfaces_IModel_">ModelBase&lt;MenuItem&gt;.Equals(IModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_Interfaces_IModel__0__">ModelBase&lt;MenuItem&gt;.Equals(IModel&lt;MenuItem&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_BaseClasses_ModelBase__0__">ModelBase&lt;MenuItem&gt;.Equals(ModelBase&lt;MenuItem&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SaveAsync_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;MenuItem&gt;.SaveAsync(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObject_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;MenuItem&gt;.SetupObject(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObject_Mithril_Data_Abstractions_Services_IDataService_Mithril_Data_Abstractions_Interfaces_IUser_">ModelBase&lt;MenuItem&gt;.SetupObject(IDataService, IUser)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObjectAndReturn_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;MenuItem&gt;.SetupObjectAndReturn(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Navigation.html">Navigation</a>.<a class="xref" href="Mithril.Navigation.Models.html">Models</a></h6>
+  <h6><strong>Assembly</strong>: Mithril.Navigation.dll</h6>
+  <h5 id="Mithril_Navigation_Models_MenuItem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MenuItem : ModelBase&lt;MenuItem&gt;, IModel&lt;MenuItem&gt;, IModel, IEquatable&lt;IModel&gt;, IEquatable&lt;IModel&lt;MenuItem&gt;&gt;, IComparable, IComparable&lt;MenuItem&gt;, IEquatable&lt;ModelBase&lt;MenuItem&gt;&gt;, IEquatable&lt;MenuItem&gt;</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_Description.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.Description%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L19">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_Description_" data-uid="Mithril.Navigation.Models.MenuItem.Description*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_Description" data-uid="Mithril.Navigation.Models.MenuItem.Description">Description</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the description.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(1024)]
+public string? Description { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The description.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_Description_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_Display.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.Display%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L26">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_Display_" data-uid="Mithril.Navigation.Models.MenuItem.Display*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_Display" data-uid="Mithril.Navigation.Models.MenuItem.Display">Display</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the display name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+[MaxLength(128)]
+[MinLength(1)]
+public string? Display { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The display name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_Display_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_Icon.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.Icon%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L35">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_Icon_" data-uid="Mithril.Navigation.Models.MenuItem.Icon*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_Icon" data-uid="Mithril.Navigation.Models.MenuItem.Icon">Icon</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the icon.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(64)]
+public string? Icon { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The icon.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_Icon_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_Order.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.Order%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L42">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_Order_" data-uid="Mithril.Navigation.Models.MenuItem.Order*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_Order" data-uid="Mithril.Navigation.Models.MenuItem.Order">Order</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Compare(0, ComparisonType.GreaterThanOrEqual, &quot;&quot;)]
+public int Order { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The order.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_Order_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_Parent.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.Parent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L49">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_Parent_" data-uid="Mithril.Navigation.Models.MenuItem.Parent*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_Parent" data-uid="Mithril.Navigation.Models.MenuItem.Parent">Parent</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the parent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+public virtual Menu? Parent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.Menu.html">Menu</a></td>
+        <td><p>The parent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_Parent_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_Permissions.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.Permissions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L56">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_Permissions_" data-uid="Mithril.Navigation.Models.MenuItem.Permissions*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_Permissions" data-uid="Mithril.Navigation.Models.MenuItem.Permissions">Permissions</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the permissions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IPermission? Permissions { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Abstractions.Interfaces.IPermission.html">IPermission</a></td>
+        <td><p>The permissions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_Permissions_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_Url.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.Url%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L62">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_Url_" data-uid="Mithril.Navigation.Models.MenuItem.Url*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_Url" data-uid="Mithril.Navigation.Models.MenuItem.Url">Url</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the URL.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(1024)]
+public string? Url { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The URL.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_Url_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_CanBeViewedBy_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.CanBeViewedBy(System.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L141">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_CanBeViewedBy_" data-uid="Mithril.Navigation.Models.MenuItem.CanBeViewedBy*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_CanBeViewedBy_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Navigation.Models.MenuItem.CanBeViewedBy(System.Security.Claims.ClaimsPrincipal)">CanBeViewedBy(ClaimsPrincipal?)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this instance [can be viewed by] the specified user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanBeViewedBy(ClaimsPrincipal? user)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The user.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><code>true</code> if this instance [can be viewed by] the specified user; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ModelBase&lt;MenuItem&gt;.CanBeViewedBy(ClaimsPrincipal)</a></div>
+  <h5 id="Mithril_Navigation_Models_MenuItem_CanBeViewedBy_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_CompareTo_Mithril_Navigation_Models_MenuItem_.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.CompareTo(Mithril.Navigation.Models.MenuItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L151">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_CompareTo_" data-uid="Mithril.Navigation.Models.MenuItem.CompareTo*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_CompareTo_Mithril_Navigation_Models_MenuItem_" data-uid="Mithril.Navigation.Models.MenuItem.CompareTo(Mithril.Navigation.Models.MenuItem)">CompareTo(MenuItem?)</h4>
+  <div class="markdown level1 summary"><p>Compares the object to another object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int CompareTo(MenuItem? other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>Object to compare to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>0 if they are equal, -1 if this is smaller, 1 if it is larger</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">ModelBase&lt;MenuItem&gt;.CompareTo(MenuItem)</a></div>
+  <h5 id="Mithril_Navigation_Models_MenuItem_CompareTo_Mithril_Navigation_Models_MenuItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_Equals_Mithril_Navigation_Models_MenuItem_.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.Equals(Mithril.Navigation.Models.MenuItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L164">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_Equals_" data-uid="Mithril.Navigation.Models.MenuItem.Equals*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_Equals_Mithril_Navigation_Models_MenuItem_" data-uid="Mithril.Navigation.Models.MenuItem.Equals(Mithril.Navigation.Models.MenuItem)">Equals(MenuItem?)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(MenuItem? other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the current object is equal to the <code class="paramref">other</code>
+parameter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_Equals_Mithril_Navigation_Models_MenuItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L176">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_Equals_" data-uid="Mithril.Navigation.Models.MenuItem.Equals*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_Equals_System_Object_" data-uid="Mithril.Navigation.Models.MenuItem.Equals(System.Object)">Equals(object?)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, is equal to this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> to compare with this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><code>true</code> if the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> is equal to this instance; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ModelBase&lt;MenuItem&gt;.Equals(object)</a></div>
+  <h5 id="Mithril_Navigation_Models_MenuItem_Equals_System_Object__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_GetHashCode.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L188">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_GetHashCode_" data-uid="Mithril.Navigation.Models.MenuItem.GetHashCode*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_GetHashCode" data-uid="Mithril.Navigation.Models.MenuItem.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>A hash code for this instance, suitable for use in hashing algorithms and data
+structures like a hash table.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Mithril.Data.Abstractions.BaseClasses.ModelBase&lt;Mithril.Navigation.Models.MenuItem&gt;.GetHashCode()</span></div>
+  <h5 id="Mithril_Navigation_Models_MenuItem_GetHashCode_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_ToString.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L197">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_ToString_" data-uid="Mithril.Navigation.Models.MenuItem.ToString*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_ToString" data-uid="Mithril.Navigation.Models.MenuItem.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
+  <h5 id="Mithril_Navigation_Models_MenuItem_ToString_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <h3 id="operators">Operators
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_op_Equality_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.op_Equality(Mithril.Navigation.Models.MenuItem%2CMithril.Navigation.Models.MenuItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L104">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_op_Equality_" data-uid="Mithril.Navigation.Models.MenuItem.op_Equality*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_op_Equality_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_" data-uid="Mithril.Navigation.Models.MenuItem.op_Equality(Mithril.Navigation.Models.MenuItem,Mithril.Navigation.Models.MenuItem)">operator ==(MenuItem, MenuItem)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator ==.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(MenuItem first, MenuItem second)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_op_Equality_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_op_GreaterThan_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.op_GreaterThan(Mithril.Navigation.Models.MenuItem%2CMithril.Navigation.Models.MenuItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L118">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_op_GreaterThan_" data-uid="Mithril.Navigation.Models.MenuItem.op_GreaterThan*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_op_GreaterThan_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_" data-uid="Mithril.Navigation.Models.MenuItem.op_GreaterThan(Mithril.Navigation.Models.MenuItem,Mithril.Navigation.Models.MenuItem)">operator &gt;(MenuItem, MenuItem)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &gt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;(MenuItem left, MenuItem right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_op_GreaterThan_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_op_GreaterThanOrEqual_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.op_GreaterThanOrEqual(Mithril.Navigation.Models.MenuItem%2CMithril.Navigation.Models.MenuItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L129">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_op_GreaterThanOrEqual_" data-uid="Mithril.Navigation.Models.MenuItem.op_GreaterThanOrEqual*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_op_GreaterThanOrEqual_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_" data-uid="Mithril.Navigation.Models.MenuItem.op_GreaterThanOrEqual(Mithril.Navigation.Models.MenuItem,Mithril.Navigation.Models.MenuItem)">operator &gt;=(MenuItem, MenuItem)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &gt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;=(MenuItem left, MenuItem right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_op_GreaterThanOrEqual_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_op_Inequality_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.op_Inequality(Mithril.Navigation.Models.MenuItem%2CMithril.Navigation.Models.MenuItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L71">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_op_Inequality_" data-uid="Mithril.Navigation.Models.MenuItem.op_Inequality*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_op_Inequality_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_" data-uid="Mithril.Navigation.Models.MenuItem.op_Inequality(Mithril.Navigation.Models.MenuItem,Mithril.Navigation.Models.MenuItem)">operator !=(MenuItem, MenuItem)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator !=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(MenuItem left, MenuItem right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_op_Inequality_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_op_LessThan_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.op_LessThan(Mithril.Navigation.Models.MenuItem%2CMithril.Navigation.Models.MenuItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L82">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_op_LessThan_" data-uid="Mithril.Navigation.Models.MenuItem.op_LessThan*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_op_LessThan_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_" data-uid="Mithril.Navigation.Models.MenuItem.op_LessThan(Mithril.Navigation.Models.MenuItem,Mithril.Navigation.Models.MenuItem)">operator &lt;(MenuItem, MenuItem)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &lt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;(MenuItem left, MenuItem right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_op_LessThan_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Navigation_Models_MenuItem_op_LessThanOrEqual_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_.md&amp;value=---%0Auid%3A%20Mithril.Navigation.Models.MenuItem.op_LessThanOrEqual(Mithril.Navigation.Models.MenuItem%2CMithril.Navigation.Models.MenuItem)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Navigation/Models/MenuItem.cs/#L93">View Source</a>
+  </span>
+  <a id="Mithril_Navigation_Models_MenuItem_op_LessThanOrEqual_" data-uid="Mithril.Navigation.Models.MenuItem.op_LessThanOrEqual*"></a>
+  <h4 id="Mithril_Navigation_Models_MenuItem_op_LessThanOrEqual_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem_" data-uid="Mithril.Navigation.Models.MenuItem.op_LessThanOrEqual(Mithril.Navigation.Models.MenuItem,Mithril.Navigation.Models.MenuItem)">operator &lt;=(MenuItem, MenuItem)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &lt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;=(MenuItem left, MenuItem right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Navigation.Models.MenuItem.html">MenuItem</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Navigation_Models_MenuItem_op_LessThanOrEqual_Mithril_Navigation_Models_MenuItem_Mithril_Navigation_Models_MenuItem__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel&lt;TClass&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando__1___0_">ExpandoObjectExtensions.ConvertToExpando&lt;TEntity&gt;(TEntity?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

@@ -1,0 +1,2023 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class User
+ | Mithril API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class User
+ | Mithril API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon.png" alt="Mithril" class="logomark">
+              <span class="brand-title">Mithril</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon.png" alt="Mithril" class="logomark">
+                          <span class="brand-title">Mithril</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="Mithril.Security.Models.User">
+
+
+
+  <h1 id="Mithril_Security_Models_User" data-uid="Mithril.Security.Models.User" class="text-break">Class User
+</h1>
+  <div class="markdown level0 summary"><p>User model</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Security.Models.User.html">User</a>&gt;</div>
+    <div class="level2"><span class="xref">User</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Security.Models.User.html">User</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Security.Models.User.html">User</a>&gt;&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Mithril.Security.Models.User.html">User</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Security.Models.User.html">User</a>&gt;&gt;</div>
+    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Security.Models.User.html">User</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Active">ModelBase&lt;User&gt;.Active</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Creator">ModelBase&lt;User&gt;.Creator</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DateCreated">ModelBase&lt;User&gt;.DateCreated</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DateModified">ModelBase&lt;User&gt;.DateModified</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_ID">ModelBase&lt;User&gt;.ID</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Modifier">ModelBase&lt;User&gt;.Modifier</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_TenantID">ModelBase&lt;User&gt;.TenantID</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_All_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;User&gt;.All(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_AllActive_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;User&gt;.AllActive(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_AllInactive_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;User&gt;.AllInactive(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Load_System_Int64_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;User&gt;.Load(long, IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Query_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;User&gt;.Query(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_CanBeModifiedBy_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;User&gt;.CanBeModifiedBy(ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_CanBeViewedBy_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;User&gt;.CanBeViewedBy(ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_CompareTo_System_Object_">ModelBase&lt;User&gt;.CompareTo(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DeleteAsync_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_System_Boolean_">ModelBase&lt;User&gt;.DeleteAsync(IDataService, ClaimsPrincipal, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_Interfaces_IModel_">ModelBase&lt;User&gt;.Equals(IModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_Interfaces_IModel__0__">ModelBase&lt;User&gt;.Equals(IModel&lt;User&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_BaseClasses_ModelBase__0__">ModelBase&lt;User&gt;.Equals(ModelBase&lt;User&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SaveAsync_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;User&gt;.SaveAsync(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObject_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;User&gt;.SetupObject(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObject_Mithril_Data_Abstractions_Services_IDataService_Mithril_Data_Abstractions_Interfaces_IUser_">ModelBase&lt;User&gt;.SetupObject(IDataService, IUser)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObjectAndReturn_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;User&gt;.SetupObjectAndReturn(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Security.html">Security</a>.<a class="xref" href="Mithril.Security.Models.html">Models</a></h6>
+  <h6><strong>Assembly</strong>: Mithril.Security.dll</h6>
+  <h5 id="Mithril_Security_Models_User_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class User : ModelBase&lt;User&gt;, IModel&lt;User&gt;, IEquatable&lt;IModel&lt;User&gt;&gt;, IComparable, IComparable&lt;User&gt;, IEquatable&lt;ModelBase&lt;User&gt;&gt;, IUser, IModel, IEquatable&lt;IModel&gt;, IEquatable&lt;IUser&gt;, IEquatable&lt;User&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User__ctor.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L26">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User__ctor_" data-uid="Mithril.Security.Models.User.#ctor*"></a>
+  <h4 id="Mithril_Security_Models_User__ctor" data-uid="Mithril.Security.Models.User.#ctor">User()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Security.Models.User.html">User</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public User()</code></pre>
+  </div>
+  <h5 id="Mithril_Security_Models_User__ctor_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User__ctor_System_String_System_String_System_String_Mithril_Security_Abstractions_Interfaces_ITenant_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.%23ctor(System.String%2CSystem.String%2CSystem.String%2CMithril.Security.Abstractions.Interfaces.ITenant)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L39">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User__ctor_" data-uid="Mithril.Security.Models.User.#ctor*"></a>
+  <h4 id="Mithril_Security_Models_User__ctor_System_String_System_String_System_String_Mithril_Security_Abstractions_Interfaces_ITenant_" data-uid="Mithril.Security.Models.User.#ctor(System.String,System.String,System.String,Mithril.Security.Abstractions.Interfaces.ITenant)">User(string, string, string, ITenant?)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Security.Models.User.html">User</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public User(string userName, string firstName, string lastName, ITenant? tenant)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">userName</span></td>
+        <td><p>Name of the user.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">firstName</span></td>
+        <td><p>The first name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">lastName</span></td>
+        <td><p>The last name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Abstractions.Interfaces.ITenant.html">ITenant</a></td>
+        <td><span class="parametername">tenant</span></td>
+        <td><p>The tenant.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>userName or firstName or lastName</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>firstName or lastName</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User__ctor_System_String_System_String_System_String_Mithril_Security_Abstractions_Interfaces_ITenant__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_Claims.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.Claims%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L61">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_Claims_" data-uid="Mithril.Security.Models.User.Claims*"></a>
+  <h4 id="Mithril_Security_Models_User_Claims" data-uid="Mithril.Security.Models.User.Claims">Claims</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the claims.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IList&lt;IUserClaim&gt; Claims { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a>&gt;</td>
+        <td><p>The claims.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_Claims_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_ContactInformation.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.ContactInformation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L67">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_ContactInformation_" data-uid="Mithril.Security.Models.User.ContactInformation*"></a>
+  <h4 id="Mithril_Security_Models_User_ContactInformation" data-uid="Mithril.Security.Models.User.ContactInformation">ContactInformation</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the contact information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IList&lt;ContactInfo&gt; ContactInformation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Mithril.Data.Models.Contact.ContactInfo.html">ContactInfo</a>&gt;</td>
+        <td><p>The contact information.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_ContactInformation_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_FirstName.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.FirstName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L73">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_FirstName_" data-uid="Mithril.Security.Models.User.FirstName*"></a>
+  <h4 id="Mithril_Security_Models_User_FirstName" data-uid="Mithril.Security.Models.User.FirstName">FirstName</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the first name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+[MaxLength(100)]
+[MinLength(1)]
+public string? FirstName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The first name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_FirstName_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_FullName.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.FullName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L82">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_FullName_" data-uid="Mithril.Security.Models.User.FullName*"></a>
+  <h4 id="Mithril_Security_Models_User_FullName" data-uid="Mithril.Security.Models.User.FullName">FullName</h4>
+  <div class="markdown level1 summary"><p>Gets the full name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FullName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The full name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_FullName_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_Initials.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.Initials%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L93">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_Initials_" data-uid="Mithril.Security.Models.User.Initials*"></a>
+  <h4 id="Mithril_Security_Models_User_Initials" data-uid="Mithril.Security.Models.User.Initials">Initials</h4>
+  <div class="markdown level1 summary"><p>Gets the initials.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Initials { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The initials.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_Initials_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_LastName.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.LastName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L101">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_LastName_" data-uid="Mithril.Security.Models.User.LastName*"></a>
+  <h4 id="Mithril_Security_Models_User_LastName" data-uid="Mithril.Security.Models.User.LastName">LastName</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the last name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+[MaxLength(100)]
+[MinLength(1)]
+public string? LastName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The last name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_LastName_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_MiddleName.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.MiddleName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L110">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_MiddleName_" data-uid="Mithril.Security.Models.User.MiddleName*"></a>
+  <h4 id="Mithril_Security_Models_User_MiddleName" data-uid="Mithril.Security.Models.User.MiddleName">MiddleName</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the name of the middle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(100)]
+public string? MiddleName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The name of the middle.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_MiddleName_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_NickName.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.NickName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L117">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_NickName_" data-uid="Mithril.Security.Models.User.NickName*"></a>
+  <h4 id="Mithril_Security_Models_User_NickName" data-uid="Mithril.Security.Models.User.NickName">NickName</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the nick name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(100)]
+public string? NickName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The nick name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_NickName_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_Prefix.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.Prefix%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L124">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_Prefix_" data-uid="Mithril.Security.Models.User.Prefix*"></a>
+  <h4 id="Mithril_Security_Models_User_Prefix" data-uid="Mithril.Security.Models.User.Prefix">Prefix</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the prefix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(30)]
+public string? Prefix { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The prefix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_Prefix_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_ShortName.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.ShortName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L131">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_ShortName_" data-uid="Mithril.Security.Models.User.ShortName*"></a>
+  <h4 id="Mithril_Security_Models_User_ShortName" data-uid="Mithril.Security.Models.User.ShortName">ShortName</h4>
+  <div class="markdown level1 summary"><p>Gets the short name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ShortName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The short name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_ShortName_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_Suffix.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.Suffix%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L141">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_Suffix_" data-uid="Mithril.Security.Models.User.Suffix*"></a>
+  <h4 id="Mithril_Security_Models_User_Suffix" data-uid="Mithril.Security.Models.User.Suffix">Suffix</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the suffix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(30)]
+public string? Suffix { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The suffix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_Suffix_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_Title.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.Title%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L148">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_Title_" data-uid="Mithril.Security.Models.User.Title*"></a>
+  <h4 id="Mithril_Security_Models_User_Title" data-uid="Mithril.Security.Models.User.Title">Title</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the title.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(100)]
+public string? Title { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The title.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_Title_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_UserName.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.UserName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L155">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_UserName_" data-uid="Mithril.Security.Models.User.UserName*"></a>
+  <h4 id="Mithril_Security_Models_User_UserName" data-uid="Mithril.Security.Models.User.UserName">UserName</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the name of the user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? UserName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The name of the user.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_UserName_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_AddClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L250">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_AddClaim_" data-uid="Mithril.Security.Models.User.AddClaim*"></a>
+  <h4 id="Mithril_Security_Models_User_AddClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_" data-uid="Mithril.Security.Models.User.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)">AddClaim(IUserClaim)</h4>
+  <div class="markdown level1 summary"><p>Adds the claim.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public User AddClaim(IUserClaim claim)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a></td>
+        <td><span class="parametername">claim</span></td>
+        <td><p>The claim.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><p>This.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_AddClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_CanAccess_System_String_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.CanAccess(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L265">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_CanAccess_" data-uid="Mithril.Security.Models.User.CanAccess*"></a>
+  <h4 id="Mithril_Security_Models_User_CanAccess_System_String_System_String_" data-uid="Mithril.Security.Models.User.CanAccess(System.String,System.String)">CanAccess(string, string?)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this instance can access the specified type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanAccess(string type, string? name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><code>true</code> if this instance can access the specified type; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_CanAccess_System_String_System_String__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_CompareTo_Mithril_Security_Models_User_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.CompareTo(Mithril.Security.Models.User)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L276">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_CompareTo_" data-uid="Mithril.Security.Models.User.CompareTo*"></a>
+  <h4 id="Mithril_Security_Models_User_CompareTo_Mithril_Security_Models_User_" data-uid="Mithril.Security.Models.User.CompareTo(Mithril.Security.Models.User)">CompareTo(User?)</h4>
+  <div class="markdown level1 summary"><p>Compares the object to another object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int CompareTo(User? other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>Object to compare to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>0 if they are equal, -1 if this is smaller, 1 if it is larger</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Mithril.Security.Models.User.html">ModelBase&lt;User&gt;.CompareTo(User)</a></div>
+  <h5 id="Mithril_Security_Models_User_CompareTo_Mithril_Security_Models_User__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_CreateOrUpdateContactInfoAsync_Mithril_Data_Abstractions_Enums_ContactInfoType_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_System_String___.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.CreateOrUpdateContactInfoAsync(Mithril.Data.Abstractions.Enums.ContactInfoType%2CMithril.Data.Abstractions.Services.IDataService%2CSystem.Security.Claims.ClaimsPrincipal%2CSystem.String%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L286">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_CreateOrUpdateContactInfoAsync_" data-uid="Mithril.Security.Models.User.CreateOrUpdateContactInfoAsync*"></a>
+  <h4 id="Mithril_Security_Models_User_CreateOrUpdateContactInfoAsync_Mithril_Data_Abstractions_Enums_ContactInfoType_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_System_String___" data-uid="Mithril.Security.Models.User.CreateOrUpdateContactInfoAsync(Mithril.Data.Abstractions.Enums.ContactInfoType,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal,System.String[])">CreateOrUpdateContactInfoAsync(ContactInfoType, IDataService?, ClaimsPrincipal?, params string[])</h4>
+  <div class="markdown level1 summary"><p>Creates the contact info object or updates it asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task CreateOrUpdateContactInfoAsync(ContactInfoType type, IDataService? dataService, ClaimsPrincipal? user, params string[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Enums.ContactInfoType.html">ContactInfoType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The display name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></td>
+        <td><span class="parametername">dataService</span></td>
+        <td><p>The data service.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The user.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>The async task</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_CreateOrUpdateContactInfoAsync_Mithril_Data_Abstractions_Enums_ContactInfoType_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_System_String____seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_Equals_Mithril_Data_Abstractions_Interfaces_IUser_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.Equals(Mithril.Data.Abstractions.Interfaces.IUser)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L325">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_Equals_" data-uid="Mithril.Security.Models.User.Equals*"></a>
+  <h4 id="Mithril_Security_Models_User_Equals_Mithril_Data_Abstractions_Interfaces_IUser_" data-uid="Mithril.Security.Models.User.Equals(Mithril.Data.Abstractions.Interfaces.IUser)">Equals(IUser?)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(IUser? other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the current object is equal to the <code class="paramref">other</code>
+parameter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_Equals_Mithril_Data_Abstractions_Interfaces_IUser__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_Equals_Mithril_Security_Models_User_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.Equals(Mithril.Security.Models.User)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L335">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_Equals_" data-uid="Mithril.Security.Models.User.Equals*"></a>
+  <h4 id="Mithril_Security_Models_User_Equals_Mithril_Security_Models_User_" data-uid="Mithril.Security.Models.User.Equals(Mithril.Security.Models.User)">Equals(User?)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(User? other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the current object is equal to the <code class="paramref">other</code>
+parameter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_Equals_Mithril_Security_Models_User__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L344">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_Equals_" data-uid="Mithril.Security.Models.User.Equals*"></a>
+  <h4 id="Mithril_Security_Models_User_Equals_System_Object_" data-uid="Mithril.Security.Models.User.Equals(System.Object)">Equals(object?)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, is equal to this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> to compare with this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><code>true</code> if the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> is equal to this instance; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ModelBase&lt;User&gt;.Equals(object)</a></div>
+  <h5 id="Mithril_Security_Models_User_Equals_System_Object__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_Equals_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.Equals(System.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L351">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_Equals_" data-uid="Mithril.Security.Models.User.Equals*"></a>
+  <h4 id="Mithril_Security_Models_User_Equals_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Security.Models.User.Equals(System.Security.Claims.ClaimsPrincipal)">Equals(ClaimsPrincipal?)</h4>
+  <div class="markdown level1 summary"><p>Determines if this user object is equal to the user specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(ClaimsPrincipal? user)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The user.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if they are the same, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_Equals_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_GetClaims_Mithril_Data_Abstractions_Enums_UserClaimTypes_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.GetClaims(Mithril.Data.Abstractions.Enums.UserClaimTypes)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L358">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_GetClaims_" data-uid="Mithril.Security.Models.User.GetClaims*"></a>
+  <h4 id="Mithril_Security_Models_User_GetClaims_Mithril_Data_Abstractions_Enums_UserClaimTypes_" data-uid="Mithril.Security.Models.User.GetClaims(Mithril.Data.Abstractions.Enums.UserClaimTypes)">GetClaims(UserClaimTypes)</h4>
+  <div class="markdown level1 summary"><p>Gets the claims of the type specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;IUserClaim&gt; GetClaims(UserClaimTypes type)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Enums.UserClaimTypes.html">UserClaimTypes</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>The type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a>&gt;</td>
+        <td><p>The list of user claims specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_GetClaims_Mithril_Data_Abstractions_Enums_UserClaimTypes__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_GetContactInfo_Mithril_Data_Abstractions_Enums_ContactInfoType___.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.GetContactInfo(Mithril.Data.Abstractions.Enums.ContactInfoType%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L369">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_GetContactInfo_" data-uid="Mithril.Security.Models.User.GetContactInfo*"></a>
+  <h4 id="Mithril_Security_Models_User_GetContactInfo_Mithril_Data_Abstractions_Enums_ContactInfoType___" data-uid="Mithril.Security.Models.User.GetContactInfo(Mithril.Data.Abstractions.Enums.ContactInfoType[])">GetContactInfo(params ContactInfoType[])</h4>
+  <div class="markdown level1 summary"><p>Gets the contact information requested.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;ContactInfo&gt; GetContactInfo(params ContactInfoType[] types)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Enums.ContactInfoType.html">ContactInfoType</a>[]</td>
+        <td><span class="parametername">types</span></td>
+        <td><p>The display name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Mithril.Data.Models.Contact.ContactInfo.html">ContactInfo</a>&gt;</td>
+        <td><p>The contact info specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_GetContactInfo_Mithril_Data_Abstractions_Enums_ContactInfoType____seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_GetHashCode.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L382">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_GetHashCode_" data-uid="Mithril.Security.Models.User.GetHashCode*"></a>
+  <h4 id="Mithril_Security_Models_User_GetHashCode" data-uid="Mithril.Security.Models.User.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>A hash code for this instance, suitable for use in hashing algorithms and data
+structures like a hash table.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Mithril.Data.Abstractions.BaseClasses.ModelBase&lt;Mithril.Security.Models.User&gt;.GetHashCode()</span></div>
+  <h5 id="Mithril_Security_Models_User_GetHashCode_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_Load_System_String_Mithril_Data_Abstractions_Services_IDataService_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.Load(System.String%2CMithril.Data.Abstractions.Services.IDataService)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L163">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_Load_" data-uid="Mithril.Security.Models.User.Load*"></a>
+  <h4 id="Mithril_Security_Models_User_Load_System_String_Mithril_Data_Abstractions_Services_IDataService_" data-uid="Mithril.Security.Models.User.Load(System.String,Mithril.Data.Abstractions.Services.IDataService)">Load(string, IDataService?)</h4>
+  <div class="markdown level1 summary"><p>Loads the specified user name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static User? Load(string userName, IDataService? dataService)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">userName</span></td>
+        <td><p>Name of the user.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></td>
+        <td><span class="parametername">dataService</span></td>
+        <td><p>The data service.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><p>The user specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_Load_System_String_Mithril_Data_Abstractions_Services_IDataService__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_LoadCurrentUser_Mithril_Data_Abstractions_Services_IDataService_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.LoadCurrentUser(Mithril.Data.Abstractions.Services.IDataService)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L170">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_LoadCurrentUser_" data-uid="Mithril.Security.Models.User.LoadCurrentUser*"></a>
+  <h4 id="Mithril_Security_Models_User_LoadCurrentUser_Mithril_Data_Abstractions_Services_IDataService_" data-uid="Mithril.Security.Models.User.LoadCurrentUser(Mithril.Data.Abstractions.Services.IDataService)">LoadCurrentUser(IDataService?)</h4>
+  <div class="markdown level1 summary"><p>Loads the current user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static User? LoadCurrentUser(IDataService? dataService)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></td>
+        <td><span class="parametername">dataService</span></td>
+        <td><p>The data service.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><p>The current user.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_LoadCurrentUser_Mithril_Data_Abstractions_Services_IDataService__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_ToString.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L388">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_ToString_" data-uid="Mithril.Security.Models.User.ToString*"></a>
+  <h4 id="Mithril_Security_Models_User_ToString" data-uid="Mithril.Security.Models.User.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
+  <h5 id="Mithril_Security_Models_User_ToString_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <h3 id="operators">Operators
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_op_Equality_Mithril_Security_Models_User_Mithril_Security_Models_User_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.op_Equality(Mithril.Security.Models.User%2CMithril.Security.Models.User)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L215">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_op_Equality_" data-uid="Mithril.Security.Models.User.op_Equality*"></a>
+  <h4 id="Mithril_Security_Models_User_op_Equality_Mithril_Security_Models_User_Mithril_Security_Models_User_" data-uid="Mithril.Security.Models.User.op_Equality(Mithril.Security.Models.User,Mithril.Security.Models.User)">operator ==(User?, User?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator ==.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(User? first, User? second)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_op_Equality_Mithril_Security_Models_User_Mithril_Security_Models_User__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_op_GreaterThan_Mithril_Security_Models_User_Mithril_Security_Models_User_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.op_GreaterThan(Mithril.Security.Models.User%2CMithril.Security.Models.User)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L229">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_op_GreaterThan_" data-uid="Mithril.Security.Models.User.op_GreaterThan*"></a>
+  <h4 id="Mithril_Security_Models_User_op_GreaterThan_Mithril_Security_Models_User_Mithril_Security_Models_User_" data-uid="Mithril.Security.Models.User.op_GreaterThan(Mithril.Security.Models.User,Mithril.Security.Models.User)">operator &gt;(User?, User?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &gt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;(User? left, User? right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_op_GreaterThan_Mithril_Security_Models_User_Mithril_Security_Models_User__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_op_GreaterThanOrEqual_Mithril_Security_Models_User_Mithril_Security_Models_User_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.op_GreaterThanOrEqual(Mithril.Security.Models.User%2CMithril.Security.Models.User)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L240">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_op_GreaterThanOrEqual_" data-uid="Mithril.Security.Models.User.op_GreaterThanOrEqual*"></a>
+  <h4 id="Mithril_Security_Models_User_op_GreaterThanOrEqual_Mithril_Security_Models_User_Mithril_Security_Models_User_" data-uid="Mithril.Security.Models.User.op_GreaterThanOrEqual(Mithril.Security.Models.User,Mithril.Security.Models.User)">operator &gt;=(User?, User?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &gt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;=(User? left, User? right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_op_GreaterThanOrEqual_Mithril_Security_Models_User_Mithril_Security_Models_User__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_op_Inequality_Mithril_Security_Models_User_Mithril_Security_Models_User_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.op_Inequality(Mithril.Security.Models.User%2CMithril.Security.Models.User)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L182">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_op_Inequality_" data-uid="Mithril.Security.Models.User.op_Inequality*"></a>
+  <h4 id="Mithril_Security_Models_User_op_Inequality_Mithril_Security_Models_User_Mithril_Security_Models_User_" data-uid="Mithril.Security.Models.User.op_Inequality(Mithril.Security.Models.User,Mithril.Security.Models.User)">operator !=(User?, User?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator !=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(User? left, User? right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_op_Inequality_Mithril_Security_Models_User_Mithril_Security_Models_User__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_op_LessThan_Mithril_Security_Models_User_Mithril_Security_Models_User_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.op_LessThan(Mithril.Security.Models.User%2CMithril.Security.Models.User)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L193">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_op_LessThan_" data-uid="Mithril.Security.Models.User.op_LessThan*"></a>
+  <h4 id="Mithril_Security_Models_User_op_LessThan_Mithril_Security_Models_User_Mithril_Security_Models_User_" data-uid="Mithril.Security.Models.User.op_LessThan(Mithril.Security.Models.User,Mithril.Security.Models.User)">operator &lt;(User?, User?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &lt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;(User? left, User? right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_op_LessThan_Mithril_Security_Models_User_Mithril_Security_Models_User__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Models_User_op_LessThanOrEqual_Mithril_Security_Models_User_Mithril_Security_Models_User_.md&amp;value=---%0Auid%3A%20Mithril.Security.Models.User.op_LessThanOrEqual(Mithril.Security.Models.User%2CMithril.Security.Models.User)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Security/Models/User.cs/#L204">View Source</a>
+  </span>
+  <a id="Mithril_Security_Models_User_op_LessThanOrEqual_" data-uid="Mithril.Security.Models.User.op_LessThanOrEqual*"></a>
+  <h4 id="Mithril_Security_Models_User_op_LessThanOrEqual_Mithril_Security_Models_User_Mithril_Security_Models_User_" data-uid="Mithril.Security.Models.User.op_LessThanOrEqual(Mithril.Security.Models.User,Mithril.Security.Models.User)">operator &lt;=(User?, User?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &lt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;=(User? left, User? right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Security.Models.User.html">User</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Security_Models_User_op_LessThanOrEqual_Mithril_Security_Models_User_Mithril_Security_Models_User__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel&lt;TClass&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando__1___0_">ExpandoObjectExtensions.ConvertToExpando&lt;TEntity&gt;(TEntity?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></div>
+  </div>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>

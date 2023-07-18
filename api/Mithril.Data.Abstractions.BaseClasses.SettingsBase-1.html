@@ -1,0 +1,1001 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class SettingsBase&lt;TClass&gt;
+ | Mithril API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class SettingsBase&lt;TClass&gt;
+ | Mithril API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="../index.html">
+              <img src="../images/icon.png" alt="Mithril" class="logomark">
+              <span class="brand-title">Mithril</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="../index.html">
+                          <img src="../images/icon.png" alt="Mithril" class="logomark">
+                          <span class="brand-title">Mithril</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1">
+
+
+
+  <h1 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1" class="text-break">Class SettingsBase&lt;TClass&gt;
+</h1>
+  <div class="markdown level0 summary"><p>Settings base class</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+    <div class="level2"><span class="xref">SettingsBase&lt;TClass&gt;</span></div>
+      <div class="level3"><a class="xref" href="Mithril.Communication.Email.Models.EmailSettings.html">EmailSettings</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;TClass&gt;</div>
+    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;TClass&gt;&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;TClass&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Active">ModelBase&lt;TClass&gt;.Active</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Creator">ModelBase&lt;TClass&gt;.Creator</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DateCreated">ModelBase&lt;TClass&gt;.DateCreated</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DateModified">ModelBase&lt;TClass&gt;.DateModified</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_ID">ModelBase&lt;TClass&gt;.ID</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Modifier">ModelBase&lt;TClass&gt;.Modifier</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_TenantID">ModelBase&lt;TClass&gt;.TenantID</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_All_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;TClass&gt;.All(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_AllActive_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;TClass&gt;.AllActive(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_AllInactive_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;TClass&gt;.AllInactive(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Load_System_Int64_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;TClass&gt;.Load(long, IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Query_Mithril_Data_Abstractions_Services_IDataService_">ModelBase&lt;TClass&gt;.Query(IDataService)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_CanBeModifiedBy_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;TClass&gt;.CanBeModifiedBy(ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_CanBeViewedBy_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;TClass&gt;.CanBeViewedBy(ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_CompareTo_System_Object_">ModelBase&lt;TClass&gt;.CompareTo(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_DeleteAsync_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_System_Boolean_">ModelBase&lt;TClass&gt;.DeleteAsync(IDataService, ClaimsPrincipal, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_Interfaces_IModel_">ModelBase&lt;TClass&gt;.Equals(IModel)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_Interfaces_IModel__0__">ModelBase&lt;TClass&gt;.Equals(IModel&lt;TClass&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Equals_Mithril_Data_Abstractions_BaseClasses_ModelBase__0__">ModelBase&lt;TClass&gt;.Equals(ModelBase&lt;TClass&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SaveAsync_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;TClass&gt;.SaveAsync(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObject_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;TClass&gt;.SetupObject(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObject_Mithril_Data_Abstractions_Services_IDataService_Mithril_Data_Abstractions_Interfaces_IUser_">ModelBase&lt;TClass&gt;.SetupObject(IDataService, IUser)</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_SetupObjectAndReturn_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_">ModelBase&lt;TClass&gt;.SetupObjectAndReturn(IDataService, ClaimsPrincipal)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Data.html">Data</a>.<a class="xref" href="Mithril.Data.Abstractions.html">Abstractions</a>.<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.html">BaseClasses</a></h6>
+  <h6><strong>Assembly</strong>: Mithril.Data.Abstractions.dll</h6>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class SettingsBase&lt;TClass&gt; : ModelBase&lt;TClass&gt;, IModel&lt;TClass&gt;, IModel, IEquatable&lt;IModel&gt;, IEquatable&lt;IModel&lt;TClass&gt;&gt;, IComparable, IComparable&lt;TClass&gt;, IEquatable&lt;ModelBase&lt;TClass&gt;&gt;, IEquatable&lt;SettingsBase&lt;TClass&gt;&gt; where TClass : SettingsBase&lt;TClass&gt;, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TClass</span></td>
+        <td><p>The type of the class.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1__ctor.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L18">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1__ctor_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.#ctor*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1__ctor" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.#ctor">SettingsBase()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase&lt;TClass&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SettingsBase()</code></pre>
+  </div>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1__ctor_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_CompareTo__0_.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.CompareTo(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L114">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_CompareTo_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.CompareTo*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_CompareTo__0_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.CompareTo(`0)">CompareTo(TClass?)</h4>
+  <div class="markdown level1 summary"><p>Compares to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int CompareTo(TClass? other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TClass</span></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The other.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>0 if they are equal, -1 if this is smaller, 1 if it is larger</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase{-0}.html#Mithril.Data.Abstractions.BaseClasses.ModelBase{`0}.CompareTo(`0)">ModelBase&lt;TClass&gt;.CompareTo(TClass)</a></div>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_CompareTo__0__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.Equals(Mithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L140">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.Equals*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.Equals(Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0})">Equals(SettingsBase&lt;TClass&gt;?)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(SettingsBase&lt;TClass&gt;? other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the current object is equal to the <code class="paramref">other</code>
+parameter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_Mithril_Data_Abstractions_Interfaces_ITypedModel_.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.Equals(Mithril.Data.Abstractions.Interfaces.ITypedModel)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L127">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.Equals*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_Mithril_Data_Abstractions_Interfaces_ITypedModel_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.Equals(Mithril.Data.Abstractions.Interfaces.ITypedModel)">Equals(ITypedModel?)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(ITypedModel? other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.ITypedModel.html">ITypedModel</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the current object is equal to the <code class="paramref">other</code>
+parameter; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_Mithril_Data_Abstractions_Interfaces_ITypedModel__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L152">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.Equals*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_System_Object_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.Equals(System.Object)">Equals(object?)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, is equal to this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> to compare with this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><code>true</code> if the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> is equal to this instance; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase{-0}.html#Mithril.Data.Abstractions.BaseClasses.ModelBase{`0}.Equals(System.Object)">ModelBase&lt;TClass&gt;.Equals(object)</a></div>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_Equals_System_Object__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_GetHashCode.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L164">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_GetHashCode_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.GetHashCode*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_GetHashCode" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>A hash code for this instance, suitable for use in hashing algorithms and data
+structures like a hash table.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase{-0}.html#Mithril.Data.Abstractions.BaseClasses.ModelBase{`0}.GetHashCode">ModelBase&lt;TClass&gt;.GetHashCode()</a></div>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_GetHashCode_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_LoadOrCreateAsync_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.LoadOrCreateAsync(Mithril.Data.Abstractions.Services.IDataService%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L28">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_LoadOrCreateAsync_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.LoadOrCreateAsync*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_LoadOrCreateAsync_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.LoadOrCreateAsync(Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)">LoadOrCreateAsync(IDataService?, ClaimsPrincipal?)</h4>
+  <div class="markdown level1 summary"><p>Loads or creates the settings asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;TClass&gt; LoadOrCreateAsync(IDataService? dataService, ClaimsPrincipal? user)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></td>
+        <td><span class="parametername">dataService</span></td>
+        <td><p>The data service.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The user.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TClass&gt;</td>
+        <td><p>The settings</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_LoadOrCreateAsync_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <h3 id="operators">Operators
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_Equality_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.op_Equality(Mithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D%2CMithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L79">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_Equality_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_Equality*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_Equality_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_Equality(Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0},Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0})">operator ==(SettingsBase&lt;TClass&gt;?, SettingsBase&lt;TClass&gt;?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator ==.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(SettingsBase&lt;TClass&gt;? first, SettingsBase&lt;TClass&gt;? second)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_Equality_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_GreaterThan_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.op_GreaterThan(Mithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D%2CMithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L93">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_GreaterThan_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_GreaterThan*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_GreaterThan_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_GreaterThan(Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0},Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0})">operator &gt;(SettingsBase&lt;TClass&gt;?, SettingsBase&lt;TClass&gt;?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &gt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;(SettingsBase&lt;TClass&gt;? left, SettingsBase&lt;TClass&gt;? right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_GreaterThan_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_GreaterThanOrEqual_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.op_GreaterThanOrEqual(Mithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D%2CMithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L104">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_GreaterThanOrEqual_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_GreaterThanOrEqual*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_GreaterThanOrEqual_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_GreaterThanOrEqual(Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0},Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0})">operator &gt;=(SettingsBase&lt;TClass&gt;?, SettingsBase&lt;TClass&gt;?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &gt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;=(SettingsBase&lt;TClass&gt;? left, SettingsBase&lt;TClass&gt;? right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_GreaterThanOrEqual_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_Inequality_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.op_Inequality(Mithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D%2CMithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L46">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_Inequality_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_Inequality*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_Inequality_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_Inequality(Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0},Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0})">operator !=(SettingsBase&lt;TClass&gt;?, SettingsBase&lt;TClass&gt;?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator !=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(SettingsBase&lt;TClass&gt;? left, SettingsBase&lt;TClass&gt;? right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_Inequality_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_LessThan_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.op_LessThan(Mithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D%2CMithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L57">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_LessThan_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_LessThan*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_LessThan_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_LessThan(Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0},Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0})">operator &lt;(SettingsBase&lt;TClass&gt;?, SettingsBase&lt;TClass&gt;?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &lt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;(SettingsBase&lt;TClass&gt;? left, SettingsBase&lt;TClass&gt;? right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_LessThan_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_LessThanOrEqual_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__.md&amp;value=---%0Auid%3A%20Mithril.Data.Abstractions.BaseClasses.SettingsBase%601.op_LessThanOrEqual(Mithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D%2CMithril.Data.Abstractions.BaseClasses.SettingsBase%7B%600%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Data.Abstractions/BaseClasses/SettingsBase.cs/#L68">View Source</a>
+  </span>
+  <a id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_LessThanOrEqual_" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_LessThanOrEqual*"></a>
+  <h4 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_LessThanOrEqual_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__" data-uid="Mithril.Data.Abstractions.BaseClasses.SettingsBase`1.op_LessThanOrEqual(Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0},Mithril.Data.Abstractions.BaseClasses.SettingsBase{`0})">operator &lt;=(SettingsBase&lt;TClass&gt;?, SettingsBase&lt;TClass&gt;?)</h4>
+  <div class="markdown level1 summary"><p>Implements the operator &lt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;=(SettingsBase&lt;TClass&gt;? left, SettingsBase&lt;TClass&gt;? right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.SettingsBase-1.html">SettingsBase</a>&lt;TClass&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>The result of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Data_Abstractions_BaseClasses_SettingsBase_1_op_LessThanOrEqual_Mithril_Data_Abstractions_BaseClasses_SettingsBase__0__Mithril_Data_Abstractions_BaseClasses_SettingsBase__0___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel&lt;TClass&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando__1___0_">ExpandoObjectExtensions.ConvertToExpando&lt;TEntity&gt;(TEntity?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
+  </div>
+
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+</html>
