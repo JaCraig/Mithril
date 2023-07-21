@@ -29,13 +29,13 @@ jobs:
         dotnet-version: ${{ matrix.dotnet-version }}
       
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore 'Mithril.Build.sln'
       
     - name: Build
-      run: dotnet build --no-restore --configuration $BUILD_CONFIG
+      run: dotnet build 'Mithril.Build.sln' --no-restore --configuration $BUILD_CONFIG
       
     - name: Test
-      run: dotnet test /p:Configuration=$BUILD_CONFIG --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
+      run: dotnet test 'Mithril.Build.sln' /p:Configuration=$BUILD_CONFIG --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
     
     - name: Upload test results
       uses: actions/upload-artifact@v3
