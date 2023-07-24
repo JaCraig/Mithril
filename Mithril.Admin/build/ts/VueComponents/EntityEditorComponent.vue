@@ -91,9 +91,24 @@
                     });
                 await that.currentRequest.send();
             }, 100),
-            saveEntity: function (entity: any) {
+            saveEntity: function (event: any, entity: any) {
+                let that = this;
+                event.preventDefault();
                 this.currentEntity = null;
-                this.mode = "listing";
+                Logger.debug(entity);
+
+                Request.post("/api/command/v1/SaveModelCommand", {
+                    "data": entity,
+                    "entityType": that.schema.dataType,
+                    id: entity.iD
+                })
+                    .onSuccess(results => {
+                        Logger.debug("Entity saved successfully", results.data);
+                        that.mode = "listing";
+                        that.loadData();
+                    }).send();
+
+                return false;
             }
         },
         props: {

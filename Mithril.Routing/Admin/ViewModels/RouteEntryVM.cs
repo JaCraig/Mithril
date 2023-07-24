@@ -60,6 +60,7 @@ namespace Mithril.Routing.Admin.ViewModels
             RouteEntry Route = RouteEntry.Load(id, dataService) ?? new RouteEntry(InputPath ?? "", OutputPath ?? "");
             Route.InputPath = InputPath ?? "";
             Route.OutputPath = OutputPath ?? "";
+            Route.Active = Route.ID <= 0 || Active;
             await Route.SaveAsync(dataService, currentUser).ConfigureAwait(false);
             return Route;
         }

@@ -113,9 +113,11 @@
                     event.preventDefault();
                     return false;
                 }
-                Logger.debug("Submitting form to location: ", { "location": that.ajaxAction });
                 that.submitting = true;
                 if (that.ajaxAction) {
+
+                    Logger.debug("Submitting form to location: ", { "location": that.ajaxAction });
+
                     Request.post(that.ajaxAction, that.internalModel)
                         .onSuccess(function (x: any) {
                             that.submitting = false;
@@ -129,7 +131,9 @@
                     event.preventDefault();
                     return false;
                 }
-                return true;
+                this.$emit("submit", event, that.internalModel); //{ event: event, model: that.internalModel });
+                event.preventDefault();
+                return false;
             },
             getIDSuffix: function () {
                 return "";
