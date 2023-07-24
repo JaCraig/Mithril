@@ -16,7 +16,7 @@
        "name": "dotnet-format",
        "command": "dotnet",
        "group": "pre-commit",
-       "args": ["format", "--include" , "${staged}"],
+       "args": ["format", "Mithril.Build.sln", "--include" , "${staged}"],
        "include": ["**/*.cs"]
     },
     {
