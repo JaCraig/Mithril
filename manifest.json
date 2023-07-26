@@ -1033,6 +1033,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-1.yml",
       "output": {
         ".html": {
@@ -1147,6 +1157,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.HintAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.IgnoreAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.IgnoreAttribute.html"
         }
       },
       "version": ""
@@ -1747,6 +1767,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsEnumRadioList.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsList.html"
         }
       },
       "version": ""
@@ -5577,6 +5607,76 @@
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Security.Abstractions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.DropDowns.UserClaimDropDown.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.DropDowns.UserClaimDropDown.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.DropDowns.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.DropDowns.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.PermissionEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.PermissionEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.ViewModels.ClaimDropDownVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.ViewModels.ClaimDropDownVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.ViewModels.PermissionVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.ViewModels.PermissionVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.html"
         }
       },
       "version": ""

@@ -732,6 +732,57 @@ references:
   isSpec: "True"
   fullName: Mithril.Admin.Abstractions.BaseClasses.MetadataBuilderBaseClass.Order
   nameWithType: MetadataBuilderBaseClass.Order
+- uid: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass
+  name: SettingsBaseClass
+  href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.html
+  commentId: T:Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass
+  fullName: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass
+  nameWithType: SettingsBaseClass
+- uid: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.#ctor
+  name: SettingsBaseClass()
+  href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.html#Mithril_Admin_Abstractions_BaseClasses_SettingsBaseClass__ctor
+  commentId: M:Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.#ctor
+  name.vb: New()
+  fullName: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.SettingsBaseClass()
+  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.New()
+  nameWithType: SettingsBaseClass.SettingsBaseClass()
+  nameWithType.vb: SettingsBaseClass.New()
+- uid: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.#ctor*
+  name: SettingsBaseClass
+  href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.html#Mithril_Admin_Abstractions_BaseClasses_SettingsBaseClass__ctor_
+  commentId: Overload:Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.SettingsBaseClass
+  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.New
+  nameWithType: SettingsBaseClass.SettingsBaseClass
+  nameWithType.vb: SettingsBaseClass.New
+- uid: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.Active
+  name: Active
+  href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.html#Mithril_Admin_Abstractions_BaseClasses_SettingsBaseClass_Active
+  commentId: P:Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.Active
+  fullName: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.Active
+  nameWithType: SettingsBaseClass.Active
+- uid: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.Active*
+  name: Active
+  href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.html#Mithril_Admin_Abstractions_BaseClasses_SettingsBaseClass_Active_
+  commentId: Overload:Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.Active
+  isSpec: "True"
+  fullName: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.Active
+  nameWithType: SettingsBaseClass.Active
+- uid: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.ID
+  name: ID
+  href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.html#Mithril_Admin_Abstractions_BaseClasses_SettingsBaseClass_ID
+  commentId: P:Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.ID
+  fullName: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.ID
+  nameWithType: SettingsBaseClass.ID
+- uid: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.ID*
+  name: ID
+  href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.html#Mithril_Admin_Abstractions_BaseClasses_SettingsBaseClass_ID_
+  commentId: Overload:Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.ID
+  isSpec: "True"
+  fullName: Mithril.Admin.Abstractions.BaseClasses.SettingsBaseClass.ID
+  nameWithType: SettingsBaseClass.ID
 - uid: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass`1
   name: SettingsEditorBaseClass<TEntity>
   href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-1.html
@@ -1419,6 +1470,12 @@ references:
   isSpec: "True"
   fullName: Mithril.Admin.Abstractions.DataEditor.Attributes.HintAttribute.Value
   nameWithType: HintAttribute.Value
+- uid: Mithril.Admin.Abstractions.DataEditor.Attributes.IgnoreAttribute
+  name: IgnoreAttribute
+  href: api/Mithril.Admin.Abstractions.DataEditor.Attributes.IgnoreAttribute.html
+  commentId: T:Mithril.Admin.Abstractions.DataEditor.Attributes.IgnoreAttribute
+  fullName: Mithril.Admin.Abstractions.DataEditor.Attributes.IgnoreAttribute
+  nameWithType: IgnoreAttribute
 - uid: Mithril.Admin.Abstractions.DataEditor.Attributes.InputTypeAttribute
   name: InputTypeAttribute
   href: api/Mithril.Admin.Abstractions.DataEditor.Attributes.InputTypeAttribute.html
@@ -3708,6 +3765,28 @@ references:
   isSpec: "True"
   fullName: Mithril.Admin.Services.MetadataBuilders.IsEnumRadioList.ExtractMetadata
   nameWithType: IsEnumRadioList.ExtractMetadata
+- uid: Mithril.Admin.Services.MetadataBuilders.IsList
+  name: IsList
+  href: api/Mithril.Admin.Services.MetadataBuilders.IsList.html
+  commentId: T:Mithril.Admin.Services.MetadataBuilders.IsList
+  fullName: Mithril.Admin.Services.MetadataBuilders.IsList
+  nameWithType: IsList
+- uid: Mithril.Admin.Services.MetadataBuilders.IsList.ExtractMetadata(Mithril.Admin.Abstractions.DataEditor.PropertyMetadata,Mithril.Admin.Abstractions.Services.IEntityMetadataService)
+  name: ExtractMetadata(PropertyMetadata?, IEntityMetadataService)
+  href: api/Mithril.Admin.Services.MetadataBuilders.IsList.html#Mithril_Admin_Services_MetadataBuilders_IsList_ExtractMetadata_Mithril_Admin_Abstractions_DataEditor_PropertyMetadata_Mithril_Admin_Abstractions_Services_IEntityMetadataService_
+  commentId: M:Mithril.Admin.Services.MetadataBuilders.IsList.ExtractMetadata(Mithril.Admin.Abstractions.DataEditor.PropertyMetadata,Mithril.Admin.Abstractions.Services.IEntityMetadataService)
+  name.vb: ExtractMetadata(PropertyMetadata, IEntityMetadataService)
+  fullName: Mithril.Admin.Services.MetadataBuilders.IsList.ExtractMetadata(Mithril.Admin.Abstractions.DataEditor.PropertyMetadata?, Mithril.Admin.Abstractions.Services.IEntityMetadataService)
+  fullName.vb: Mithril.Admin.Services.MetadataBuilders.IsList.ExtractMetadata(Mithril.Admin.Abstractions.DataEditor.PropertyMetadata, Mithril.Admin.Abstractions.Services.IEntityMetadataService)
+  nameWithType: IsList.ExtractMetadata(PropertyMetadata?, IEntityMetadataService)
+  nameWithType.vb: IsList.ExtractMetadata(PropertyMetadata, IEntityMetadataService)
+- uid: Mithril.Admin.Services.MetadataBuilders.IsList.ExtractMetadata*
+  name: ExtractMetadata
+  href: api/Mithril.Admin.Services.MetadataBuilders.IsList.html#Mithril_Admin_Services_MetadataBuilders_IsList_ExtractMetadata_
+  commentId: Overload:Mithril.Admin.Services.MetadataBuilders.IsList.ExtractMetadata
+  isSpec: "True"
+  fullName: Mithril.Admin.Services.MetadataBuilders.IsList.ExtractMetadata
+  nameWithType: IsList.ExtractMetadata
 - uid: Mithril.Admin.Services.MetadataBuilders.IsSelect
   name: IsSelect
   href: api/Mithril.Admin.Services.MetadataBuilders.IsSelect.html
@@ -6130,6 +6209,23 @@ references:
   fullName.vb: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass(Of TModel).GetDataAsync
   nameWithType: DropDownBaseClass<TModel>.GetDataAsync
   nameWithType.vb: DropDownBaseClass(Of TModel).GetDataAsync
+- uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetKey(`0)
+  name: GetKey(TModel)
+  href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass-1.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_1_GetKey__0_
+  commentId: M:Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetKey(`0)
+  fullName: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass<TModel>.GetKey(TModel)
+  fullName.vb: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass(Of TModel).GetKey(TModel)
+  nameWithType: DropDownBaseClass<TModel>.GetKey(TModel)
+  nameWithType.vb: DropDownBaseClass(Of TModel).GetKey(TModel)
+- uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetKey*
+  name: GetKey
+  href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass-1.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_1_GetKey_
+  commentId: Overload:Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetKey
+  isSpec: "True"
+  fullName: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass<TModel>.GetKey
+  fullName.vb: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass(Of TModel).GetKey
+  nameWithType: DropDownBaseClass<TModel>.GetKey
+  nameWithType.vb: DropDownBaseClass(Of TModel).GetKey
 - uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetValues(System.String,System.Int32)
   name: GetValues(string, int)
   href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass-1.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_1_GetValues_System_String_System_Int32_
@@ -27730,6 +27826,252 @@ references:
   isSpec: "True"
   fullName: Mithril.Security.Abstractions.SystemAccounts.SystemClaimsPrincipal
   nameWithType: SystemAccounts.SystemClaimsPrincipal
+- uid: Mithril.Security.Admin
+  name: Mithril.Security.Admin
+  href: api/Mithril.Security.Admin.html
+  commentId: N:Mithril.Security.Admin
+  fullName: Mithril.Security.Admin
+  nameWithType: Mithril.Security.Admin
+- uid: Mithril.Security.Admin.DropDowns
+  name: Mithril.Security.Admin.DropDowns
+  href: api/Mithril.Security.Admin.DropDowns.html
+  commentId: N:Mithril.Security.Admin.DropDowns
+  fullName: Mithril.Security.Admin.DropDowns
+  nameWithType: Mithril.Security.Admin.DropDowns
+- uid: Mithril.Security.Admin.DropDowns.UserClaimDropDown
+  name: UserClaimDropDown
+  href: api/Mithril.Security.Admin.DropDowns.UserClaimDropDown.html
+  commentId: T:Mithril.Security.Admin.DropDowns.UserClaimDropDown
+  fullName: Mithril.Security.Admin.DropDowns.UserClaimDropDown
+  nameWithType: UserClaimDropDown
+- uid: Mithril.Security.Admin.DropDowns.UserClaimDropDown.FilterQuery(System.Linq.IQueryable{Mithril.Security.Models.UserClaim},System.String)
+  name: FilterQuery(IQueryable<UserClaim>, string)
+  href: api/Mithril.Security.Admin.DropDowns.UserClaimDropDown.html#Mithril_Security_Admin_DropDowns_UserClaimDropDown_FilterQuery_System_Linq_IQueryable_Mithril_Security_Models_UserClaim__System_String_
+  commentId: M:Mithril.Security.Admin.DropDowns.UserClaimDropDown.FilterQuery(System.Linq.IQueryable{Mithril.Security.Models.UserClaim},System.String)
+  name.vb: FilterQuery(IQueryable(Of UserClaim), String)
+  fullName: Mithril.Security.Admin.DropDowns.UserClaimDropDown.FilterQuery(System.Linq.IQueryable<Mithril.Security.Models.UserClaim>, string)
+  fullName.vb: Mithril.Security.Admin.DropDowns.UserClaimDropDown.FilterQuery(System.Linq.IQueryable(Of Mithril.Security.Models.UserClaim), String)
+  nameWithType: UserClaimDropDown.FilterQuery(IQueryable<UserClaim>, string)
+  nameWithType.vb: UserClaimDropDown.FilterQuery(IQueryable(Of UserClaim), String)
+- uid: Mithril.Security.Admin.DropDowns.UserClaimDropDown.FilterQuery*
+  name: FilterQuery
+  href: api/Mithril.Security.Admin.DropDowns.UserClaimDropDown.html#Mithril_Security_Admin_DropDowns_UserClaimDropDown_FilterQuery_
+  commentId: Overload:Mithril.Security.Admin.DropDowns.UserClaimDropDown.FilterQuery
+  isSpec: "True"
+  fullName: Mithril.Security.Admin.DropDowns.UserClaimDropDown.FilterQuery
+  nameWithType: UserClaimDropDown.FilterQuery
+- uid: Mithril.Security.Admin.PermissionEditor
+  name: PermissionEditor
+  href: api/Mithril.Security.Admin.PermissionEditor.html
+  commentId: T:Mithril.Security.Admin.PermissionEditor
+  fullName: Mithril.Security.Admin.PermissionEditor
+  nameWithType: PermissionEditor
+- uid: Mithril.Security.Admin.PermissionEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
+  name: PermissionEditor(IDataService, IEntityMetadataService, string?)
+  href: api/Mithril.Security.Admin.PermissionEditor.html#Mithril_Security_Admin_PermissionEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
+  commentId: M:Mithril.Security.Admin.PermissionEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, String)
+  fullName: Mithril.Security.Admin.PermissionEditor.PermissionEditor(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, string?)
+  fullName.vb: Mithril.Security.Admin.PermissionEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
+  nameWithType: PermissionEditor.PermissionEditor(IDataService, IEntityMetadataService, string?)
+  nameWithType.vb: PermissionEditor.New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Security.Admin.PermissionEditor.#ctor*
+  name: PermissionEditor
+  href: api/Mithril.Security.Admin.PermissionEditor.html#Mithril_Security_Admin_PermissionEditor__ctor_
+  commentId: Overload:Mithril.Security.Admin.PermissionEditor.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Security.Admin.PermissionEditor.PermissionEditor
+  fullName.vb: Mithril.Security.Admin.PermissionEditor.New
+  nameWithType: PermissionEditor.PermissionEditor
+  nameWithType.vb: PermissionEditor.New
+- uid: Mithril.Security.Admin.PermissionEditor.Convert(Mithril.Security.Models.Permission,System.Boolean)
+  name: Convert(Permission, bool)
+  href: api/Mithril.Security.Admin.PermissionEditor.html#Mithril_Security_Admin_PermissionEditor_Convert_Mithril_Security_Models_Permission_System_Boolean_
+  commentId: M:Mithril.Security.Admin.PermissionEditor.Convert(Mithril.Security.Models.Permission,System.Boolean)
+  name.vb: Convert(Permission, Boolean)
+  fullName: Mithril.Security.Admin.PermissionEditor.Convert(Mithril.Security.Models.Permission, bool)
+  fullName.vb: Mithril.Security.Admin.PermissionEditor.Convert(Mithril.Security.Models.Permission, Boolean)
+  nameWithType: PermissionEditor.Convert(Permission, bool)
+  nameWithType.vb: PermissionEditor.Convert(Permission, Boolean)
+- uid: Mithril.Security.Admin.PermissionEditor.Convert*
+  name: Convert
+  href: api/Mithril.Security.Admin.PermissionEditor.html#Mithril_Security_Admin_PermissionEditor_Convert_
+  commentId: Overload:Mithril.Security.Admin.PermissionEditor.Convert
+  isSpec: "True"
+  fullName: Mithril.Security.Admin.PermissionEditor.Convert
+  nameWithType: PermissionEditor.Convert
+- uid: Mithril.Security.Admin.PermissionEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Security.Models.Permission},System.String)
+  name: FilterQueryBySearchQuery(IQueryable<Permission>?, string)
+  href: api/Mithril.Security.Admin.PermissionEditor.html#Mithril_Security_Admin_PermissionEditor_FilterQueryBySearchQuery_System_Linq_IQueryable_Mithril_Security_Models_Permission__System_String_
+  commentId: M:Mithril.Security.Admin.PermissionEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Security.Models.Permission},System.String)
+  name.vb: FilterQueryBySearchQuery(IQueryable(Of Permission), String)
+  fullName: Mithril.Security.Admin.PermissionEditor.FilterQueryBySearchQuery(System.Linq.IQueryable<Mithril.Security.Models.Permission>?, string)
+  fullName.vb: Mithril.Security.Admin.PermissionEditor.FilterQueryBySearchQuery(System.Linq.IQueryable(Of Mithril.Security.Models.Permission), String)
+  nameWithType: PermissionEditor.FilterQueryBySearchQuery(IQueryable<Permission>?, string)
+  nameWithType.vb: PermissionEditor.FilterQueryBySearchQuery(IQueryable(Of Permission), String)
+- uid: Mithril.Security.Admin.PermissionEditor.FilterQueryBySearchQuery*
+  name: FilterQueryBySearchQuery
+  href: api/Mithril.Security.Admin.PermissionEditor.html#Mithril_Security_Admin_PermissionEditor_FilterQueryBySearchQuery_
+  commentId: Overload:Mithril.Security.Admin.PermissionEditor.FilterQueryBySearchQuery
+  isSpec: "True"
+  fullName: Mithril.Security.Admin.PermissionEditor.FilterQueryBySearchQuery
+  nameWithType: PermissionEditor.FilterQueryBySearchQuery
+- uid: Mithril.Security.Admin.PermissionEditor.Icon
+  name: Icon
+  href: api/Mithril.Security.Admin.PermissionEditor.html#Mithril_Security_Admin_PermissionEditor_Icon
+  commentId: P:Mithril.Security.Admin.PermissionEditor.Icon
+  fullName: Mithril.Security.Admin.PermissionEditor.Icon
+  nameWithType: PermissionEditor.Icon
+- uid: Mithril.Security.Admin.PermissionEditor.Icon*
+  name: Icon
+  href: api/Mithril.Security.Admin.PermissionEditor.html#Mithril_Security_Admin_PermissionEditor_Icon_
+  commentId: Overload:Mithril.Security.Admin.PermissionEditor.Icon
+  isSpec: "True"
+  fullName: Mithril.Security.Admin.PermissionEditor.Icon
+  nameWithType: PermissionEditor.Icon
+- uid: Mithril.Security.Admin.ViewModels
+  name: Mithril.Security.Admin.ViewModels
+  href: api/Mithril.Security.Admin.ViewModels.html
+  commentId: N:Mithril.Security.Admin.ViewModels
+  fullName: Mithril.Security.Admin.ViewModels
+  nameWithType: Mithril.Security.Admin.ViewModels
+- uid: Mithril.Security.Admin.ViewModels.ClaimDropDownVM
+  name: ClaimDropDownVM
+  href: api/Mithril.Security.Admin.ViewModels.ClaimDropDownVM.html
+  commentId: T:Mithril.Security.Admin.ViewModels.ClaimDropDownVM
+  fullName: Mithril.Security.Admin.ViewModels.ClaimDropDownVM
+  nameWithType: ClaimDropDownVM
+- uid: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.#ctor
+  name: ClaimDropDownVM()
+  href: api/Mithril.Security.Admin.ViewModels.ClaimDropDownVM.html#Mithril_Security_Admin_ViewModels_ClaimDropDownVM__ctor
+  commentId: M:Mithril.Security.Admin.ViewModels.ClaimDropDownVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.ClaimDropDownVM()
+  fullName.vb: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.New()
+  nameWithType: ClaimDropDownVM.ClaimDropDownVM()
+  nameWithType.vb: ClaimDropDownVM.New()
+- uid: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.#ctor(Mithril.Data.Abstractions.Interfaces.IUserClaim)
+  name: ClaimDropDownVM(IUserClaim)
+  href: api/Mithril.Security.Admin.ViewModels.ClaimDropDownVM.html#Mithril_Security_Admin_ViewModels_ClaimDropDownVM__ctor_Mithril_Data_Abstractions_Interfaces_IUserClaim_
+  commentId: M:Mithril.Security.Admin.ViewModels.ClaimDropDownVM.#ctor(Mithril.Data.Abstractions.Interfaces.IUserClaim)
+  name.vb: New(IUserClaim)
+  fullName: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.ClaimDropDownVM(Mithril.Data.Abstractions.Interfaces.IUserClaim)
+  fullName.vb: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.New(Mithril.Data.Abstractions.Interfaces.IUserClaim)
+  nameWithType: ClaimDropDownVM.ClaimDropDownVM(IUserClaim)
+  nameWithType.vb: ClaimDropDownVM.New(IUserClaim)
+- uid: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.#ctor*
+  name: ClaimDropDownVM
+  href: api/Mithril.Security.Admin.ViewModels.ClaimDropDownVM.html#Mithril_Security_Admin_ViewModels_ClaimDropDownVM__ctor_
+  commentId: Overload:Mithril.Security.Admin.ViewModels.ClaimDropDownVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.ClaimDropDownVM
+  fullName.vb: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.New
+  nameWithType: ClaimDropDownVM.ClaimDropDownVM
+  nameWithType.vb: ClaimDropDownVM.New
+- uid: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.Claim
+  name: Claim
+  href: api/Mithril.Security.Admin.ViewModels.ClaimDropDownVM.html#Mithril_Security_Admin_ViewModels_ClaimDropDownVM_Claim
+  commentId: P:Mithril.Security.Admin.ViewModels.ClaimDropDownVM.Claim
+  fullName: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.Claim
+  nameWithType: ClaimDropDownVM.Claim
+- uid: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.Claim*
+  name: Claim
+  href: api/Mithril.Security.Admin.ViewModels.ClaimDropDownVM.html#Mithril_Security_Admin_ViewModels_ClaimDropDownVM_Claim_
+  commentId: Overload:Mithril.Security.Admin.ViewModels.ClaimDropDownVM.Claim
+  isSpec: "True"
+  fullName: Mithril.Security.Admin.ViewModels.ClaimDropDownVM.Claim
+  nameWithType: ClaimDropDownVM.Claim
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM
+  name: PermissionVM
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html
+  commentId: T:Mithril.Security.Admin.ViewModels.PermissionVM
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM
+  nameWithType: PermissionVM
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.#ctor
+  name: PermissionVM()
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM__ctor
+  commentId: M:Mithril.Security.Admin.ViewModels.PermissionVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.PermissionVM()
+  fullName.vb: Mithril.Security.Admin.ViewModels.PermissionVM.New()
+  nameWithType: PermissionVM.PermissionVM()
+  nameWithType.vb: PermissionVM.New()
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.#ctor(Mithril.Security.Models.Permission)
+  name: PermissionVM(Permission)
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM__ctor_Mithril_Security_Models_Permission_
+  commentId: M:Mithril.Security.Admin.ViewModels.PermissionVM.#ctor(Mithril.Security.Models.Permission)
+  name.vb: New(Permission)
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.PermissionVM(Mithril.Security.Models.Permission)
+  fullName.vb: Mithril.Security.Admin.ViewModels.PermissionVM.New(Mithril.Security.Models.Permission)
+  nameWithType: PermissionVM.PermissionVM(Permission)
+  nameWithType.vb: PermissionVM.New(Permission)
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.#ctor*
+  name: PermissionVM
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM__ctor_
+  commentId: Overload:Mithril.Security.Admin.ViewModels.PermissionVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.PermissionVM
+  fullName.vb: Mithril.Security.Admin.ViewModels.PermissionVM.New
+  nameWithType: PermissionVM.PermissionVM
+  nameWithType.vb: PermissionVM.New
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.Claims
+  name: Claims
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM_Claims
+  commentId: P:Mithril.Security.Admin.ViewModels.PermissionVM.Claims
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.Claims
+  nameWithType: PermissionVM.Claims
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.Claims*
+  name: Claims
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM_Claims_
+  commentId: Overload:Mithril.Security.Admin.ViewModels.PermissionVM.Claims
+  isSpec: "True"
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.Claims
+  nameWithType: PermissionVM.Claims
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.DisplayName
+  name: DisplayName
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM_DisplayName
+  commentId: P:Mithril.Security.Admin.ViewModels.PermissionVM.DisplayName
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.DisplayName
+  nameWithType: PermissionVM.DisplayName
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.DisplayName*
+  name: DisplayName
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM_DisplayName_
+  commentId: Overload:Mithril.Security.Admin.ViewModels.PermissionVM.DisplayName
+  isSpec: "True"
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.DisplayName
+  nameWithType: PermissionVM.DisplayName
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.Operand
+  name: Operand
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM_Operand
+  commentId: P:Mithril.Security.Admin.ViewModels.PermissionVM.Operand
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.Operand
+  nameWithType: PermissionVM.Operand
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.Operand*
+  name: Operand
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM_Operand_
+  commentId: Overload:Mithril.Security.Admin.ViewModels.PermissionVM.Operand
+  isSpec: "True"
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.Operand
+  nameWithType: PermissionVM.Operand
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService, ClaimsPrincipal?)
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: PermissionVM.SaveAsync(long, IDataService, ClaimsPrincipal?)
+  nameWithType.vb: PermissionVM.SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync*
+  name: SaveAsync
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM_SaveAsync_
+  commentId: Overload:Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync
+  isSpec: "True"
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync
+  nameWithType: PermissionVM.SaveAsync
 - uid: Mithril.Security.AuthenticationModule
   name: AuthenticationModule
   href: api/Mithril.Security.AuthenticationModule.html
@@ -28044,11 +28386,14 @@ references:
   nameWithType: Permission.Permission
   nameWithType.vb: Permission.New
 - uid: Mithril.Security.Models.Permission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  name: AddClaim(IUserClaim)
+  name: AddClaim(IUserClaim?)
   href: api/Mithril.Security.Models.Permission.html#Mithril_Security_Models_Permission_AddClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_
   commentId: M:Mithril.Security.Models.Permission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  fullName: Mithril.Security.Models.Permission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  nameWithType: Permission.AddClaim(IUserClaim)
+  name.vb: AddClaim(IUserClaim)
+  fullName: Mithril.Security.Models.Permission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim?)
+  fullName.vb: Mithril.Security.Models.Permission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
+  nameWithType: Permission.AddClaim(IUserClaim?)
+  nameWithType.vb: Permission.AddClaim(IUserClaim)
 - uid: Mithril.Security.Models.Permission.AddClaim*
   name: AddClaim
   href: api/Mithril.Security.Models.Permission.html#Mithril_Security_Models_Permission_AddClaim_
@@ -30862,15 +31207,15 @@ references:
   fullName.vb: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.New()
   nameWithType: ThemeSettingsVM.ThemeSettingsVM()
   nameWithType.vb: ThemeSettingsVM.New()
-- uid: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.#ctor(Mithril.Themes.Abstractions.Services.IThemeService)
-  name: ThemeSettingsVM(IThemeService?)
-  href: api/Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.html#Mithril_Themes_Admin_ViewModels_ThemeSettingsVM__ctor_Mithril_Themes_Abstractions_Services_IThemeService_
-  commentId: M:Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.#ctor(Mithril.Themes.Abstractions.Services.IThemeService)
-  name.vb: New(IThemeService)
-  fullName: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.ThemeSettingsVM(Mithril.Themes.Abstractions.Services.IThemeService?)
-  fullName.vb: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.New(Mithril.Themes.Abstractions.Services.IThemeService)
-  nameWithType: ThemeSettingsVM.ThemeSettingsVM(IThemeService?)
-  nameWithType.vb: ThemeSettingsVM.New(IThemeService)
+- uid: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.#ctor(Mithril.Themes.Abstractions.Services.IThemeService,Mithril.Data.Abstractions.Services.IDataService)
+  name: ThemeSettingsVM(IThemeService?, IDataService)
+  href: api/Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.html#Mithril_Themes_Admin_ViewModels_ThemeSettingsVM__ctor_Mithril_Themes_Abstractions_Services_IThemeService_Mithril_Data_Abstractions_Services_IDataService_
+  commentId: M:Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.#ctor(Mithril.Themes.Abstractions.Services.IThemeService,Mithril.Data.Abstractions.Services.IDataService)
+  name.vb: New(IThemeService, IDataService)
+  fullName: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.ThemeSettingsVM(Mithril.Themes.Abstractions.Services.IThemeService?, Mithril.Data.Abstractions.Services.IDataService)
+  fullName.vb: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.New(Mithril.Themes.Abstractions.Services.IThemeService, Mithril.Data.Abstractions.Services.IDataService)
+  nameWithType: ThemeSettingsVM.ThemeSettingsVM(IThemeService?, IDataService)
+  nameWithType.vb: ThemeSettingsVM.New(IThemeService, IDataService)
 - uid: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.#ctor*
   name: ThemeSettingsVM
   href: api/Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.html#Mithril_Themes_Admin_ViewModels_ThemeSettingsVM__ctor_
@@ -30881,19 +31226,6 @@ references:
   fullName.vb: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.New
   nameWithType: ThemeSettingsVM.ThemeSettingsVM
   nameWithType.vb: ThemeSettingsVM.New
-- uid: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.Active
-  name: Active
-  href: api/Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.html#Mithril_Themes_Admin_ViewModels_ThemeSettingsVM_Active
-  commentId: P:Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.Active
-  fullName: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.Active
-  nameWithType: ThemeSettingsVM.Active
-- uid: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.Active*
-  name: Active
-  href: api/Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.html#Mithril_Themes_Admin_ViewModels_ThemeSettingsVM_Active_
-  commentId: Overload:Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.Active
-  isSpec: "True"
-  fullName: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.Active
-  nameWithType: ThemeSettingsVM.Active
 - uid: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.CurrentTheme
   name: CurrentTheme
   href: api/Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.html#Mithril_Themes_Admin_ViewModels_ThemeSettingsVM_CurrentTheme
@@ -30907,19 +31239,6 @@ references:
   isSpec: "True"
   fullName: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.CurrentTheme
   nameWithType: ThemeSettingsVM.CurrentTheme
-- uid: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.ID
-  name: ID
-  href: api/Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.html#Mithril_Themes_Admin_ViewModels_ThemeSettingsVM_ID
-  commentId: P:Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.ID
-  fullName: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.ID
-  nameWithType: ThemeSettingsVM.ID
-- uid: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.ID*
-  name: ID
-  href: api/Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.html#Mithril_Themes_Admin_ViewModels_ThemeSettingsVM_ID_
-  commentId: Overload:Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.ID
-  isSpec: "True"
-  fullName: Mithril.Themes.Admin.ViewModels.ThemeSettingsVM.ID
-  nameWithType: ThemeSettingsVM.ID
 - uid: Mithril.Themes.Commands
   name: Mithril.Themes.Commands
   href: api/Mithril.Themes.Commands.html
