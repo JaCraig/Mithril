@@ -36,8 +36,8 @@ namespace Mithril.Security.Models
                 throw new ArgumentNullException(nameof(claims));
             if (string.IsNullOrEmpty(displayName))
                 throw new ArgumentNullException(nameof(displayName));
-            if (displayName.Length > 100)
-                throw new ArgumentException(nameof(displayName) + " is too long. Max of 100 characters allowed.");
+            if (displayName.Length > 128)
+                throw new ArgumentException(nameof(displayName) + " is too long. Max of 128 characters allowed.");
             DisplayName = displayName;
             Operand = operand;
             Claims = claims.Where(x => x != null).ToList();
@@ -168,7 +168,7 @@ namespace Mithril.Security.Models
         /// </summary>
         /// <param name="claim">The claim.</param>
         /// <returns>This.</returns>
-        public IPermission AddClaim(IUserClaim claim)
+        public IPermission AddClaim(IUserClaim? claim)
         {
             Claims ??= new List<IUserClaim>();
             if (claim is null || Claims.Contains(claim))

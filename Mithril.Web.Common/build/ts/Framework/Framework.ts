@@ -1,4 +1,3 @@
-import { FormValidation } from "./Validation/FormValidation";
 import { LocalStorage } from "./WebStorage/LocalStorage";
 import { SessionStorage } from "./WebStorage/SessionStorage";
 import { Request, StorageMode } from "./Request";
@@ -15,7 +14,6 @@ import { CallerEnricher, ConsoleSink, DefaultFormatter, Logger, UrlEnricher } fr
 class Framework {
     // constructor
     constructor() {
-        this.validation = new FormValidation();
         Logger.configure()
             .minimumLevel("Debug")
             .enrichWith(new CallerEnricher())
@@ -29,7 +27,6 @@ class Framework {
         this.history = new PageHistory();
 
         window.addEventListener("keydown", x => this.hotkeys.press(x));
-        window.addEventListener("load", x => this.validation.initialize(), false);
         window.onerror = (msg, url, ln, col, error) => {
             Logger.error(msg.toString(), { "url": url, "line": ln, "column": col, "stack": error?.stack || "" }, error);
         };
@@ -40,9 +37,6 @@ class Framework {
 
     // The router object
     public router: Router;
-
-    // The form validation object
-    public validation: FormValidation;
 
     // The page history object
     public history: PageHistory;

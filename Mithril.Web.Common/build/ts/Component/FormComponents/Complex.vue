@@ -1,7 +1,7 @@
 
 <template>
     <div>
-        <div v-for="(item) in internalSchema.fields" v-bind:key="generateGuid(item)">
+        <div v-for="(item) in internalSchema.fields" v-bind:key="generateGuid(item)" v-if="internalModel">
             <component :is="'form-field-' + item.propertyType"
                        :schema="item"
                        :model="internalModel[item.propertyName]"
@@ -38,7 +38,7 @@
             'form-field-input': FormFieldInput,
             'form-field-select': FormFieldSelect,
             'form-field-checkbox': FormFieldCheckbox,
-            'form-field-radio-list': FormFieldRadio,
+            'form-field-radio': FormFieldRadio,
             'form-field-text-area': FormFieldTextarea,
             'form-field-text': FormFieldText,
             'form-field-upload': FormFieldUpload,
@@ -64,19 +64,31 @@
             }
         },
         methods: {
+            // When an error occurs, emit the error event
+            // errorCode: contains the error code
             error: function(errorCode: any){
                 this.$emit("error", errorCode);
             },
+            // When an exception occurs, emit the exception event
+            // errorCode: contains the error code
             exception: function(errorCode: any){
                 this.$emit("exception", errorCode);
             },
+            // When a field is changed, emit the changed event
+            // newValue: contains the new value of the field
+            // field: contains the field object
             setModelValue: function(newValue: any, field: any) {
                 this.internalModel[field.propertyName] = newValue;
                 this.$emit("changed", this.internalModel, this.schema);
             },
+            // button clicked event
+            // event: contains the event object
+            // field: contains the field object
             buttonClicked: function(event: any, field: any) {
                 this.$emit("click", event, field);
             },
+            // generate a guid
+            // item: contains the object
             generateGuid: function (item: any) {
                 let Key = item.key;
                 if(Key) {
@@ -92,12 +104,18 @@
             },
         },
         watch: {
+            // watch for changes in the model
+            // newModel: contains the new model
+            // oldModel: contains the old model
             model: function(newModel, oldModel) {
                 if (oldModel === newModel) {
                     return;
                 }
                 this.internalModel = newModel;
             },
+            // watch for changes in the schema
+            // newSchema: contains the new schema
+            // oldSchema: contains the old schema
             schema: function (newSchema, oldSchema) {
                 if (oldSchema === newSchema) {
                     return;

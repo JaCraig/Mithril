@@ -46,7 +46,7 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <returns>The drop down data.</returns>
         public Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string filter)
         {
-            return Task.FromResult<IEnumerable<DropDownVM<long>>>(GetValues(filter).Select(x => new DropDownVM<long>(x.ID, x.ToString())).OrderBy(x => x.Value));
+            return Task.FromResult<IEnumerable<DropDownVM<long>>>(GetValues(filter).Select(x => new DropDownVM<long>(GetKey(x), x.ToString())).OrderBy(x => x.Value));
         }
 
         /// <summary>
@@ -72,5 +72,15 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <param name="value">The value.</param>
         /// <returns>The filtered query</returns>
         protected abstract IQueryable<TModel> FilterQuery(IQueryable<TModel> query, string value);
+
+        /// <summary>
+        /// Gets the key for the dropdown.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns>The key.</returns>
+        protected virtual long GetKey(TModel model)
+        {
+            return model.ID;
+        }
     }
 }

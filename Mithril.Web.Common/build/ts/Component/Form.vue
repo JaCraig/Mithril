@@ -21,13 +21,24 @@
             </div>
         </div>
 
-        <pre v-if="debug">
-            {{ internalModel }}
-        </pre>
-
-        <pre v-if="debug">
-            {{ internalSchema }}
-        </pre>
+        <div v-if="debug" class="flex row no-wrap">
+            <div class="panel">
+                <header>Form Schema</header>
+                <div class="body">
+                    <pre>
+                        {{internalSchema}}
+                    </pre>
+                </div>
+            </div>
+            <div class="panel">
+                <header>Form Model</header>
+                <div class="body">
+                    <pre>
+                        {{internalModel}}
+                    </pre>
+                </div>
+            </div>
+        </div>
     </form>
 </template>
 
@@ -80,25 +91,37 @@
             }
         },
         methods: {
+            // revalidate the input field
             revalidate: async function () {
-                this.valid = await Validation.validateForm(document.getElementById(this.formID) as HTMLFormElement)
+                this.valid = await Validation.validateForm(document.getElementById(this.formID) as HTMLFormElement);
                 return this.valid;
             },
+            // set the model value and revalidate
+            // newValue: the new value to set
+            // field: the field to set
             setModelValue: function (newValue: any, field: any) {
                 this.internalModel = newValue;
                 this.revalidate();
                 this.$emit("changed", this.internalModel);
             },
+            // emit an error event
+            // errorCode: the error code to emit
             error: function (errorCode: any) {
                 this.$emit("error", errorCode);
             },
+            // emit an exception event
+            // errorCode: the error code to emit
             exception: function (errorCode: any) {
                 this.$emit("exception", errorCode);
             },
+            // emit a click event on a button click
+            // event: the event that was clicked
+            // field: the field that was clicked
             buttonClicked: function (event: any, field: any) {
                 this.revalidate();
                 this.$emit("click", event, field);
             },
+            // reset the form to the original state and revalidate
             reset: function () {
                 let that = this;
                 Logger.debug("Resetting form to state:", that.model);
@@ -107,6 +130,8 @@
                     that.revalidate();
                 }, 100);
             },
+            // submit the form to the server
+            // event: the event that was submitted
             submit: function (event: any) {
                 let that = this;
                 if (!that.revalidate() || that.submitting) {
@@ -135,11 +160,15 @@
                 event.preventDefault();
                 return false;
             },
+            // get the ID suffix for the form
             getIDSuffix: function () {
                 return "";
             }
         },
         watch: {
+            // watch for changes to the schema
+            // newSchema: the new schema
+            // oldSchema: the old schema
             schema: function (newSchema: Array<PropertySchema>, oldSchema: Array<PropertySchema>) {
                 if (oldSchema === newSchema) {
                     return;
@@ -151,6 +180,9 @@
                     });
                 }
             },
+            // watch for changes to the model
+            // newModel: the new model
+            // oldModel: the old model
             model: function (newModel: Object, oldModel: Object) {
                 if (oldModel === newModel) {
                     return;
@@ -163,6 +195,7 @@
                 }
             },
         },
+        // mounted event handler for the component (revalidate the form)
         mounted: function () {
             this.$nextTick(function () {
                 this.revalidate();

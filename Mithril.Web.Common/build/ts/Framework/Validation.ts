@@ -29,6 +29,9 @@ export class InputElementValidationRule implements IValidationRule {
     // Returns a promise that resolves to true if the value is valid, or false if it is not.
     validate(value: any, ...params: any[]): Promise<IValidationResult> {
         let inputElement = value as HTMLInputElement;
+        if (inputElement == null) {
+            return new Promise<IValidationResult>((resolve, reject) => { resolve({ isValid: true, errorMessage: "" }) });
+        }
         return new Promise<IValidationResult>((resolve, reject) => {
             if (inputElement.checkValidity()) {
                 resolve({ isValid: true, errorMessage: inputElement.validationMessage });
@@ -54,6 +57,9 @@ export class SelectElementValidationRule implements IValidationRule {
     // Returns a promise that resolves to true if the value is valid, or false if it is not.
     validate(value: any, ...params: any[]): Promise<IValidationResult> {
         let inputElement = value as HTMLSelectElement;
+        if (inputElement == null) {
+            return new Promise<IValidationResult>((resolve, reject) => { resolve({ isValid: true, errorMessage: "" }) });
+        }
         return new Promise<IValidationResult>((resolve, reject) => {
             if (inputElement.checkValidity()) {
                 resolve({ isValid: true, errorMessage: inputElement.validationMessage });
@@ -79,6 +85,9 @@ export class TextAreaElementValidationRule implements IValidationRule {
     // Returns a promise that resolves to true if the value is valid, or false if it is not.
     validate(value: any, ...params: any[]): Promise<IValidationResult> {
         let inputElement = value as HTMLTextAreaElement;
+        if (inputElement == null) {
+            return new Promise<IValidationResult>((resolve, reject) => { resolve({ isValid: true, errorMessage: "" }) });
+        }
         return new Promise<IValidationResult>((resolve, reject) => {
             if (inputElement.checkValidity()) {
                 resolve({ isValid: true, errorMessage: inputElement.validationMessage });
@@ -100,6 +109,9 @@ export class RequiredValidationRule implements IValidationRule {
     // params: Any additional parameters to pass to the validation method
     // Returns a promise that resolves to true if the value is valid, or false if it is not.
     validate(value: any, ...params: any[]): Promise<IValidationResult> {
+        if (value == null) {
+            return new Promise<IValidationResult>((resolve, reject) => { resolve({ isValid: true, errorMessage: "" }) });
+        }
         return new Promise<IValidationResult>((resolve, reject) => {
             resolve({ isValid: value != null && value != undefined && value != "", errorMessage: "This field is required" });
         });

@@ -65,6 +65,7 @@
     import moment from 'moment';
     import PropertySchema from '../DataTypes/PropertySchema';
     import { InputElementValidationRule } from '../../Framework/Validation';
+    import { Logger } from "../../Framework/Logging";
 
     export default Vue.defineComponent({
         name: "form-field-input",
@@ -89,20 +90,30 @@
             }
         },
         methods: {
+            // determines if the field should be validated
             willValidate: function() {
                 return this.internalSchema.metadata.required || this.internalSchema.metadata.maxlength || this.internalSchema.metadata.minlength || this.internalSchema.metadata.pattern || this.internalSchema.metadata.min || this.internalSchema.metadata.max;
             },
+            // revalidates the field
             revalidate: async function () {
-                let result = await new InputElementValidationRule().validate(document.getElementById(this.getFieldID()) as HTMLInputElement);
+                let item = document.getElementById(this.getFieldID()) as HTMLInputElement;
+                if (item == null) {
+                    return;
+                }
+                let result = await new InputElementValidationRule().validate(item);
                 this.errorMessage = result.errorMessage;
                 return result.isValid;
             },
+            // converts the value to a date
+            // value: the value to convert
             convertToDate: function (value: string) {
                 if (this.schema.metadata.isUTC) {
                     return moment.utc(value || new Date()).local();
                 }
                 return moment(value || new Date());
             },
+            // formats the value to the correct format
+            // value: the value to format
             formatValue: function (value: string) {
                 if (!value) {
                     return value;
@@ -118,69 +129,59 @@
                 }
                 return value;
             },
+            // gets the field id
             getFieldID: function () {
                 return this.internalSchema.propertyName.slugify() + this.internalSchema.key;
             },
+            // Called when the model changes
+            // newValue: the new value
+            // emits a changed event
             changed: function (newValue: any) {
                 let that = this;
                 this.updateDataList();
                 this.revalidate();
-                //if(that.schema.datalistUrl) {
-                //    if(that.timer !== 0) {
-                //        clearTimeout(that.timer);
-                //    }
-                //    that.timer = setTimeout(function() {
-                //    Request.post(that.schema.datalistUrl,{ value: newValue, queryCount: ++that.count })
-                //            .onSuccess(function(ev:any){
-                //                if(!ev){
-                //                    return;
-                //                }else if(ev.queryCount && ev.queryCount == that.count) {
-                //                    that.schema.datalist = ev.value;
-                //                } else if(!ev.queryCount) {
-                //                    that.schema.datalist = ev;
-                //                }
-                //            })
-                //            .onError(function (x) {
-                //                that.$emit("error", x);
-                //            })
-                //            .send();
-                //    }, 100);
-                //}
                 this.$emit("changed", newValue, this.schema);
             },
+            // Gets the datalist id
             getList: function () {
                 if (this.schema.metadata.datalist) {
                     return this.getFieldID() + "-list";
                 }
                 return null;
             },
-            updateDataList: function () {
+            // Updates the datalist for the field
+            updateDataList: debounce(async function() {
                 if (!this.internalSchema.queryType) {
                     return;
                 }
                 let that = this;
 
-                debounce(() => {
-
-                    Request.post('/api/query', {
-                        query: that.datalistQuery,
-                        variables: {
-                            queryType: that.internalSchema.queryType,
-                            queryFilter: that.internalModel
-                        }
+                Request.post('/api/query', {
+                    query: that.datalistQuery,
+                    variables: {
+                        queryType: that.internalSchema.metadata.queryType,
+                        queryFilter: that.internalModel
+                    }
+                })
+                    .onSuccess((data: any) => {
+                        Logger.debug("Select: " + that.internalSchema.metadata.queryType + " loaded successfully.", data.data.dropDown);
+                        that.internalSchema.metadata.datalist = data.data.dropDown;
                     })
-                        .onSuccess((data: any) => {
-                            that.internalSchema.metadata.datalist = data.data.dropDown;
-                        })
-                        .withStorageMode(StorageMode.StorageAndUpdate)
-                        .send();
-                }, 300);
-            }
+                    .onError((error: any) => {
+                        Logger.error("Select: " + that.internalSchema.metadata.queryType + " failed to load.", error);
+                    })
+                    .withStorageMode(StorageMode.StorageAndUpdate)
+                    .send();
+            }, 300),
         },
+        // created method, updates the datalist values
         created: function () {
             this.updateDataList();
         },
         watch: {
+            // watches the model and updates the internal model
+            // newModel: the new model
+            // oldModel: the old model
             model: function (newModel, oldModel) {
                 if (oldModel === newModel) {
                     return;
@@ -190,6 +191,9 @@
                     this.revalidate();
                 });
             },
+            // watches the schema and updates the internal schema
+            // newSchema: the new schema
+            // oldSchema: the old schema
             schema: function (newSchema, oldSchema) {
                 if (oldSchema === newSchema) {
                     return;
@@ -200,6 +204,7 @@
                 });
             }
         },
+        // mounted method, revalidates the field
         mounted: function() {
             this.$nextTick(function () {
                 this.revalidate();

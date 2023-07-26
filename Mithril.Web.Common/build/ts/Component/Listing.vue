@@ -98,24 +98,30 @@
             }
         },
         methods: {
+            // filter data event is being raised
             filterData: debounce(function (event: Event) {
                 let that = this;
                 that.$emit("filter", event, new FilterEvent(that.filter, that.pageSize, that.page, that.sortField, that.sortAscending));
             }, 300),
+            // entity selected event is being raised
+            // entity: the entity that was selected
             entitySelected: function (entity: any) {
                 this.$emit("entity-selected", entity);
             }
         },
-        created: function () {
-
-        },
         watch: {
+            // model changed
+            // newModel: the new model
+            // oldModel: the old model
             model: function (newModel: Object, oldModel: Object) {
                 if (oldModel === newModel) {
                     return;
                 }
                 this.internalModel = newModel;
             },
+            // schema changed
+            // newSchema: the new schema
+            // oldSchema: the old schema
             schema: function (newSchema: Array<PropertySchema>, oldSchema: Array<PropertySchema>) {
                 if (oldSchema === newSchema) {
                     return;

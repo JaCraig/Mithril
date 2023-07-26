@@ -36,7 +36,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// Gets or sets a value indicating whether this <see cref="IEntity"/> is active.
         /// </summary>
         /// <value><c>true</c> if active; otherwise, <c>false</c>.</value>
-        [DoNotList]
+        [Order(int.MaxValue)]
         public bool Active { get; set; } = true;
 
         /// <summary>

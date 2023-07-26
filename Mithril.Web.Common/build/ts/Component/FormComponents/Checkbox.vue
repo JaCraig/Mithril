@@ -49,23 +49,36 @@ import { InputElementValidationRule } from '../../Framework/Validation';
             }
         },
         methods: {
+            // determines if the field will be validated
             willValidate: function() {
                 return this.internalSchema.metadata.required;
             },
+            // revalidate the input field
             revalidate: async function () {
-                let result = await new InputElementValidationRule().validate(document.getElementById(this.getFieldID()) as HTMLInputElement);
+                let item = document.getElementById(this.getFieldID()) as HTMLInputElement;
+                if (item == null) {
+                    return;
+                }
+                let result = await new InputElementValidationRule().validate(item);
                 this.errorMessage = result.errorMessage;
                 return result.isValid;
             },
+            // gets the field id
             getFieldID: function () {
                 return this.internalSchema.propertyName.slugify() + this.internalSchema.key;
             },
+            // called when the value changes
+            // newValue: the new value
+            // emits the changed event
             changed: function(newValue: any) {
                 this.revalidate();
                 this.$emit("changed", newValue, this.schema);
             },
         },
         watch: {
+            // watches the model for changes
+            // newModel: the new model
+            // oldModel: the old model
             model: function(newModel, oldModel) {
                 if (oldModel === newModel) {
                     return;
@@ -75,6 +88,9 @@ import { InputElementValidationRule } from '../../Framework/Validation';
                     this.revalidate();
                 });
             },
+            // watches the schema for changes
+            // newSchema: the new schema
+            // oldSchema: the old schema
             schema: function (newSchema, oldSchema) {
                 if (oldSchema === newSchema) {
                    return;            
@@ -85,6 +101,7 @@ import { InputElementValidationRule } from '../../Framework/Validation';
                 });
             }
         },
+        // mounted event handler, revalidates the field
         mounted: function() {
             this.$nextTick(function () {
                 this.revalidate();

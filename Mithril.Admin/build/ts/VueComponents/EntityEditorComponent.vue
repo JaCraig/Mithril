@@ -8,7 +8,7 @@
         <header>
             {{name}}
             <a @click="editEntity({ iD: 0 })" :title="'Add New ' + name" v-if="mode=='listing'"><span class="fas fa-plus right"></span></a>
-            <a @click="saveEntity(null)" title="Show Listing" v-if="mode=='editor'"><span class="fas fa-list right"></span></a>
+            <a @click="openListing" title="Show Listing" v-if="mode=='editor'"><span class="fas fa-list right"></span></a>
         </header>
         <div class="body">
             <div v-if="mode=='listing'">
@@ -21,7 +21,7 @@
                 <header>Editor Schema</header>
                 <pre>
 {{schema}}
-            </pre>
+                </pre>
             </div>
         </div>
     </div>
@@ -51,22 +51,41 @@
                     entities(entityType: $entityType, pageSize: $pageSize, page: $page, sortField: $sortField, sortAscending: $sortAscending, filter: $filter)
                 }`,
                 currentFilter: new FilterEvent("", 10, 0, "", false),
-                currentRequest: null
+                currentRequest: null,
+                entityQuery: `query($entityType: String, $id: Long) {
+                    entity(entityType: $entityType, id: $id)
+                }`,
             };
         },
         methods: {
-            editEntity: function (entity: any) {
-                if (entity == null) {
-                    return;
-                }
-                this.currentEntity = entity;
-                this.mode = "editor";
+            // edits an entity
+            // entity: the entity to edit
+            editEntity: async function (entity: any) {
+                let that = this;
+                Logger.debug("Editing entity", entity);
+                let currentRequest = Request.post("/api/query", {
+                        query: that.entityQuery,
+                        variables: {
+                            entityType: that.schema.dataType,
+                            id: entity.iD
+                        }
+                    })
+                    .onSuccess(results => {
+                        Logger.debug("Entity loaded successfully", results.data.entity);
+                        that.currentEntity = results.data.entity;
+                        this.mode = "editor";
+                    });
+                await currentRequest.send();
             },
+            // filter event handler
+            // event: the event that triggered the filter
+            // filter: the filter event
             filter: function (event: Event, filter: FilterEvent) {
                 //Load data based on the filter string
                 this.currentFilter = filter;
                 this.loadData();
             },
+            // loads the data
             loadData: debounce(async function () {
                 let that = this;
                 if (that.currentRequest != null) {
@@ -91,11 +110,23 @@
                     });
                 await that.currentRequest.send();
             }, 100),
+            // opens the listing
+            openListing: function () {
+                Logger.debug("Opening listing");
+                this.mode = "listing";
+                this.loadData();
+            },
+            // saves an entity
+            // event: the event that triggered the save
+            // entity: the entity to save
             saveEntity: function (event: any, entity: any) {
                 let that = this;
                 event.preventDefault();
+                if (entity == null) {
+                    return;
+                }
                 this.currentEntity = null;
-                Logger.debug(entity);
+                Logger.debug("Saving entity:", entity);
 
                 Request.post("/api/command/v1/SaveModelCommand", {
                     "data": entity,
@@ -106,7 +137,9 @@
                         Logger.debug("Entity saved successfully", results.data);
                         that.mode = "listing";
                         that.loadData();
-                    }).send();
+                    })
+                    .onError(error => Logger.error("Error saving entity", error))
+                    .send();
 
                 return false;
             }
@@ -125,8 +158,17 @@
                 default: true
             }
         },
+        // create event (load data)
         created: function () {
+            this.openListing();
             this.loadData();
+        },
+        watch: {
+            // watch for changes to the schema
+            schema: function () {
+                this.openListing();
+                this.loadData();
+            }
         }
     });
 </script>

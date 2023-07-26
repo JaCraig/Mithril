@@ -1,7 +1,10 @@
-﻿using Mithril.Admin.Abstractions.DataEditor.Attributes;
+﻿using Mithril.Admin.Abstractions.BaseClasses;
+using Mithril.Admin.Abstractions.DataEditor.Attributes;
 using Mithril.Admin.Abstractions.Interfaces;
+using Mithril.Data.Abstractions.Services;
 using Mithril.Themes.Abstractions.Services;
 using Mithril.Themes.Admin.DropDowns;
+using Mithril.Themes.Models;
 
 namespace Mithril.Themes.Admin.ViewModels
 {
@@ -10,7 +13,7 @@ namespace Mithril.Themes.Admin.ViewModels
     /// TODO: Add tests
     /// </summary>
     /// <seealso cref="IEntity" />
-    public class ThemeSettingsVM : IEntity
+    public class ThemeSettingsVM : SettingsBaseClass
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ThemeSettingsVM"/> class.
@@ -19,23 +22,16 @@ namespace Mithril.Themes.Admin.ViewModels
         { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ThemeSettingsVM"/> class.
+        /// Initializes a new instance of the <see cref="ThemeSettingsVM" /> class.
         /// </summary>
         /// <param name="themes">The themes.</param>
-        public ThemeSettingsVM(IThemeService? themes)
+        /// <param name="dataService">The data service.</param>
+        public ThemeSettingsVM(IThemeService? themes, IDataService dataService)
         {
             if (themes is null)
                 return;
-            CurrentTheme = themes.LoadTheme()?.Name ?? "";
+            CurrentTheme = Theme.Load(themes.LoadTheme()?.Name ?? "", dataService)?.ID ?? 0;
         }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="T:Mithril.Admin.Abstractions.Interfaces.IEntity" /> is active.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if active; otherwise, <c>false</c>.
-        /// </value>
-        public bool Active { get; set; }
 
         /// <summary>
         /// Gets or sets the current theme.
@@ -44,14 +40,6 @@ namespace Mithril.Themes.Admin.ViewModels
         /// The current theme.
         /// </value>
         [Select(typeof(ThemeList))]
-        public string? CurrentTheme { get; set; }
-
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public long ID { get; set; }
+        public long CurrentTheme { get; set; }
     }
 }

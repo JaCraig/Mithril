@@ -63,7 +63,6 @@
     <Folder Include="build\ts\Framework\Router\Interfaces\" />
     <Folder Include="build\ts\Framework\Utils\" />
     <Folder Include="build\ts\Framework\WebStorage\" />
-    <Folder Include="build\ts\Framework\Validation\" />
     <Folder Include="build\ts\Framework\Types\" />
     <Folder Include="build\ts\Framework\WebStorage\Interfaces\" />
     <Folder Include="build\ts\Component\" />
@@ -111,7 +110,6 @@
     <TypeScriptCompile Include="build\ts\Framework\Types\StringDictionary.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Utils\SortFuncs.ts" />
     <TypeScriptCompile Include="build\ts\Framework\Validation.ts" />
-    <TypeScriptCompile Include="build\ts\Framework\Validation\FormValidation.ts" />
     <TypeScriptCompile Include="build\ts\Framework\WebStorage\Interfaces\IStorage.ts" />
     <TypeScriptCompile Include="build\ts\Framework\WebStorage\LocalStorage.ts" />
     <TypeScriptCompile Include="build\ts\Framework\WebStorage\SessionStorage.ts" />

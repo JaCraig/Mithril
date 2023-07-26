@@ -4,6 +4,7 @@ using Mithril.Admin.Abstractions.Services;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Themes.Abstractions.Services;
 using Mithril.Themes.Admin.ViewModels;
+using Mithril.Themes.Models;
 using System.Dynamic;
 using System.Security.Claims;
 
@@ -47,7 +48,7 @@ namespace Mithril.Themes.Admin
         /// <param name="model">The model.</param>
         /// <param name="currentUser"></param>
         /// <returns>The entity specified.</returns>
-        public override IEntity? Load(long id, ExpandoObject? model, ClaimsPrincipal? currentUser) => new ThemeSettingsVM(ThemeService);
+        public override IEntity? Load(long id, ExpandoObject? model, ClaimsPrincipal? currentUser) => new ThemeSettingsVM(ThemeService, DataService);
 
         /// <summary>
         /// Saves the entity asynchronous.
@@ -60,7 +61,7 @@ namespace Mithril.Themes.Admin
         {
             if (entity is null)
                 return false;
-            Abstractions.Interfaces.ITheme? DesiredTheme = ThemeService.LoadTheme(entity.CurrentTheme);
+            Abstractions.Interfaces.ITheme? DesiredTheme = ThemeService.LoadTheme(Theme.Load(entity.CurrentTheme, DataService)?.Name ?? "");
             await ThemeService.SetDefaultThemeAsync(DesiredTheme, currentUser).ConfigureAwait(false);
             return true;
         }

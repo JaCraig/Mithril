@@ -3,35 +3,27 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        & .left-nav
+        & .left-nav {
+            width: 200px;
+            height: calc(100vh - 1px);
+            border-bottom: 0;
+            border-left: 0;
+            border-top: 0;
+            margin: 0;
+            overflow-y: auto;
+            & ul {
+                padding: 0;
+                list-style: none;
+            }
+        }
 
-    {
-        width: 200px;
-        height: calc(100vh - 1px);
-        border-bottom: 0;
-        border-left: 0;
-        border-top: 0;
-        margin: 0;
-        overflow-y: auto;
-        & ul
-
-    {
-        padding: 0 5px;
-        list-style: none;
-    }
-
-    }
-
-    & .editor-content {
-        flex-grow: 1;
-        overflow-y: auto;
-        & pre
-
-    {
-        width: 100%;
-    }
-
-    }
+        & .editor-content {
+            flex-grow: 1;
+            overflow-y: auto;
+            & pre {
+                width: 100%;
+            }
+        }
     }
 </style>
 <template>
@@ -39,9 +31,9 @@
         <div class="left-nav panel">
             <section v-for="category in groupedEditors" :key="category.category">
                 <header>{{$filters.capitalize(category.category)}}</header>
-                <ul>
+                <ul class="menu">
                     <li v-for="(editor, editorIndex) in category.editors" :key="editor.name">
-                        <a href="#!" @click.stop.prevent="editorSelected(editor)" :title="editor.description"><span :class="editor.icon"></span>{{editor.name}}</a>
+                        <a href="#!" @click.stop.prevent="editorSelected(editor)" :title="editor.description" :class="{ 'selected': currentEditor == editor }"><span :class="editor.icon"></span>{{editor.name}}</a>
                     </li>
                 </ul>
             </section>
@@ -51,7 +43,8 @@
                        :schema="currentEditor.componentDefinition.schema"
                        :name="currentEditor.name"
                        :debug="debug"
-                       @error="error" v-if="currentEditor">
+                       @error="error" v-if="currentEditor"
+                       @close="close">
             </component>
             <div v-if="debug && currentEditor" class="panel debug">
                 <header>Selected Editor Info</header>
@@ -106,12 +99,19 @@
             };
         },
         methods: {
+            // close the current editor
+            close: function () {
+                this.editorSelected(null);
+            },
+            // editor selected
+            // editor: the editor that was selected
             editorSelected: function (editor: any) {
                 if (this.debug) {
-                    Logger.debug("Switching to editor:", editor.name);
+                    Logger.debug("Switching to editor:", editor?.name ?? "");
                 }
                 this.currentEditor = editor;
             },
+            // Loads the editors from the server
             loadEditors: function () {
                 if (this.debug) {
                     Logger.debug("Loading Editors");
@@ -148,6 +148,7 @@
                 default: true
             }
         },
+        // created event (loads the editors)
         created: function () {
             this.loadEditors();
         }

@@ -21,6 +21,12 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         }
 
         /// <summary>
+        /// Gets the helper.
+        /// </summary>
+        /// <value>The helper.</value>
+        private readonly SQLHelper _Helper;
+
+        /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
@@ -31,12 +37,6 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// </summary>
         /// <value>The helper.</value>
         protected SQLHelper Helper => _Helper.Copy();
-
-        /// <summary>
-        /// Gets the helper.
-        /// </summary>
-        /// <value>The helper.</value>
-        private readonly SQLHelper _Helper;
 
         /// <summary>
         /// Determines whether this instance can run the specified data type.

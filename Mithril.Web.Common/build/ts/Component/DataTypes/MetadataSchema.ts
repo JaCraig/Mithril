@@ -1,7 +1,11 @@
 import KeyValuePair from "./KeyValuePair";
+import PropertySchema from "./PropertySchema";
 
 // Basic schema describing metadata
 export default class Metadata {
+    // Subfields (for objects)
+    public fields: Array<PropertySchema> | undefined;
+
     // Input type
     public inputType: string | undefined;
 
