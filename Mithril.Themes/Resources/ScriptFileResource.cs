@@ -12,7 +12,7 @@ namespace Mithril.Themes.Resources
     public class ScriptFileResource : IResource, IEquatable<ScriptFileResource>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ScriptFileResource"/> class.
+        /// Initializes a new instance of the <see cref="ScriptFileResource" /> class.
         /// </summary>
         /// <param name="source">The source.</param>
         /// <param name="async">The asynchronous.</param>
@@ -22,6 +22,9 @@ namespace Mithril.Themes.Resources
         /// <param name="xMLSpace">The xml space.</param>
         /// <param name="order">The order.</param>
         /// <param name="location">The location.</param>
+        /// <param name="integrity">The integrity.</param>
+        /// <param name="crossOrigin">The cross origin.</param>
+        /// <param name="referrerPolicy">The referrer policy.</param>
         public ScriptFileResource(string? source, string? async, string? charset, string? defer, string? type, string? xMLSpace, int order, string? location, string? integrity, string? crossOrigin, string? referrerPolicy)
         {
             Source = source?.Replace("~/", "/") ?? "";

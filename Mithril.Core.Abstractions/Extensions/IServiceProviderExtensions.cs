@@ -14,8 +14,9 @@ namespace Mithril.Core.Abstractions.Extensions
         /// <param name="services">The service provider.</param>
         /// <returns>True if it exists, false otherwise.</returns>
         public static bool Exists<TClass>(this IServiceProvider? services)
+            where TClass : class
         {
-            return services is not null && services.GetService<TClass>() != null;
+            return services?.GetService<TClass>() != null;
         }
     }
 }

@@ -10,7 +10,6 @@ namespace Mithril.Admin.Services.MetadataBuilders
 {
     /// <summary>
     /// Determines if the property has a step value.
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="MetadataBuilderBaseClass" />
     public class HasStep : MetadataBuilderBaseClass

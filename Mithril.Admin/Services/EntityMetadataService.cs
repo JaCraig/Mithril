@@ -8,7 +8,6 @@ namespace Mithril.Admin.Services
 {
     /// <summary>
     /// Entity metadata service
-    /// TODO: Add Tests
     /// </summary>
     /// <seealso cref="IEntityMetadataService"/>
     public class EntityMetadataService : IEntityMetadataService

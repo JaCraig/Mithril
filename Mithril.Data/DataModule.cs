@@ -58,7 +58,7 @@ namespace Mithril.Data
         public override async Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)
         {
             await SetupLookUpTypesAsync(dataService).ConfigureAwait(false);
-            await SetupLookUpsAsync(dataService, ContactInfoType.GetContactInfoTypes(), LookUpTypeEnum.ContactInfoType).ConfigureAwait(false);
+            await SetupLookUpsAsync(dataService, ContactInfoType.GetEnums(), LookUpTypeEnum.ContactInfoType).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -5,7 +5,6 @@ namespace Mithril.Admin.Queries.ViewModels
 {
     /// <summary>
     /// Editor VM
-    /// TODO: Add tests
     /// </summary>
     public class EditorVM
     {
@@ -13,7 +12,7 @@ namespace Mithril.Admin.Queries.ViewModels
         /// Initializes a new instance of the <see cref="EditorVM" /> class.
         /// </summary>
         /// <param name="model">The model.</param>
-        public EditorVM(IEditor model)
+        public EditorVM(IEditor? model)
         {
             if (model is null)
                 return;

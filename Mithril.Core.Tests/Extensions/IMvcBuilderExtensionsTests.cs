@@ -26,10 +26,7 @@ namespace Mithril.Core.Tests.Extensions
         public void AddCspMediaType_AddsCspMediaTypeToSupportedMediaTypes_WhenInputFormatterIsSystemTextJsonInputFormatter()
         {
             var Services = new ServiceCollection();
-            var MvcBuilder = Services.AddControllers(options =>
-            {
-                options.InputFormatters.Add(new SystemTextJsonInputFormatter(new JsonOptions(), null!));
-            });
+            var MvcBuilder = Services.AddControllers(options => options.InputFormatters.Add(new SystemTextJsonInputFormatter(new JsonOptions(), null!)));
 
             MvcBuilder.AddCspMediaType();
 
@@ -46,10 +43,7 @@ namespace Mithril.Core.Tests.Extensions
         public void AddCspMediaType_DoesNotAddCspMediaTypeToSupportedMediaTypes_WhenInputFormatterIsNotSystemTextJsonInputFormatter()
         {
             var Services = new ServiceCollection();
-            var MvcBuilder = Services.AddControllers(options =>
-            {
-                options.InputFormatters.Clear();
-            });
+            var MvcBuilder = Services.AddControllers(options => options.InputFormatters.Clear());
 
             MvcBuilder.AddCspMediaType();
 
@@ -65,10 +59,7 @@ namespace Mithril.Core.Tests.Extensions
         public void AddCspMediaType_ReturnsTheIMvcBuilderInstance()
         {
             var Services = new ServiceCollection();
-            var MvcBuilder = Services.AddControllers(options =>
-            {
-                options.InputFormatters.Add(new SystemTextJsonInputFormatter(new JsonOptions(), null!));
-            });
+            var MvcBuilder = Services.AddControllers(options => options.InputFormatters.Add(new SystemTextJsonInputFormatter(new JsonOptions(), null!)));
 
             var Result = MvcBuilder.AddCspMediaType();
 

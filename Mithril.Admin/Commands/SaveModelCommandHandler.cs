@@ -16,7 +16,6 @@ namespace Mithril.Admin.Commands
 {
     /// <summary>
     /// Save model command handler
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="CommandHandlerBaseClass&lt;SaveModelCommand, SaveModelCommandVM&gt;"/>
     public class SaveModelCommandHandler : CommandHandlerBaseClass<SaveModelCommand, SaveModelCommandVM>
@@ -27,7 +26,7 @@ namespace Mithril.Admin.Commands
         /// <param name="editorService">The editor service.</param>
         /// <param name="logger">The logger.</param>
         /// <param name="featureManager">The feature manager.</param>
-        public SaveModelCommandHandler(IEditorService editorService, ILogger<SaveModelCommandHandler>? logger, IFeatureManager featureManager)
+        public SaveModelCommandHandler(IEditorService? editorService, ILogger<SaveModelCommandHandler>? logger, IFeatureManager? featureManager)
             : base(logger, featureManager)
         {
             EditorService = editorService;
@@ -49,7 +48,7 @@ namespace Mithril.Admin.Commands
         /// Gets the editor service.
         /// </summary>
         /// <value>The editor service.</value>
-        private IEditorService EditorService { get; }
+        private IEditorService? EditorService { get; }
 
         /// <summary>
         /// Creates the specified value.
@@ -57,7 +56,7 @@ namespace Mithril.Admin.Commands
         /// <param name="value">The value.</param>
         /// <param name="user">The user.</param>
         /// <returns>A command value converted from the view model.</returns>
-        public override async ValueTask<CommandCreationResult?> CreateAsync(SaveModelCommandVM? value, ClaimsPrincipal user)
+        public override async ValueTask<CommandCreationResult?> CreateAsync(SaveModelCommandVM? value, ClaimsPrincipal? user)
         {
             if (EditorService is null || value?.Data is null)
             {
@@ -90,7 +89,7 @@ namespace Mithril.Admin.Commands
         protected override Task<IEvent[]> HandleCommandAsync(SaveModelCommand?[]? args)
         {
             args ??= Array.Empty<SaveModelCommand>();
-            return Task.FromResult<IEvent[]>(args.Select(Command => new ModelSavedEvent(Command?.Data ?? "{}", Command?.EntityType, Command?.EntityID ?? 0)).ToArray());
+            return Task.FromResult<IEvent[]>(args.Select(command => new ModelSavedEvent(command?.Data ?? "{}", command?.EntityType, command?.EntityID ?? 0)).ToArray());
         }
     }
 }

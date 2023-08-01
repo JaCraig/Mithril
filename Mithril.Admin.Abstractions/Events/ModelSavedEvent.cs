@@ -6,7 +6,6 @@ namespace Mithril.Admin.Abstractions.Events
 {
     /// <summary>
     /// Model saved event
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="EventBaseClass&lt;ModelSavedEvent&gt;"/>
     public class ModelSavedEvent : EventBaseClass<ModelSavedEvent>
@@ -163,9 +162,16 @@ namespace Mithril.Admin.Abstractions.Events
         /// <returns>The data from the event.</returns>
         public override ExpandoObject GetData()
         {
-            return string.IsNullOrEmpty(Data)
-                ? new ExpandoObject()
-                : System.Text.Json.JsonSerializer.Deserialize<ExpandoObject>(Data ?? "{}") ?? new ExpandoObject();
+            try
+            {
+                return string.IsNullOrEmpty(Data)
+                    ? new ExpandoObject()
+                    : System.Text.Json.JsonSerializer.Deserialize<ExpandoObject>(Data ?? "{}") ?? new ExpandoObject();
+            }
+            catch (Exception)
+            {
+                return new ExpandoObject();
+            }
         }
 
         /// <summary>

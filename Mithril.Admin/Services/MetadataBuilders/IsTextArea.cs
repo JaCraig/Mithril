@@ -9,7 +9,6 @@ namespace Mithril.Admin.Services.MetadataBuilders
 {
     /// <summary>
     /// Determines if the property is a TextArea object.
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="MetadataBuilderBaseClass" />
     public class IsTextArea : MetadataBuilderBaseClass

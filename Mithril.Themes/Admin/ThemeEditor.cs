@@ -12,7 +12,6 @@ namespace Mithril.Themes.Admin
 {
     /// <summary>
     /// Theme editor
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="SettingsEditorBaseClass&lt;ThemeSettingsVM&gt;"/>
     public class ThemeEditor : SettingsEditorBaseClass<ThemeSettingsVM>
@@ -23,7 +22,7 @@ namespace Mithril.Themes.Admin
         /// <param name="themeService">The theme service.</param>
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
-        public ThemeEditor(IThemeService themeService, IDataService dataService, IEntityMetadataService entityMetadataService)
+        public ThemeEditor(IThemeService? themeService, IDataService? dataService, IEntityMetadataService? entityMetadataService)
             : base(dataService, entityMetadataService)
         {
             ThemeService = themeService;
@@ -39,7 +38,7 @@ namespace Mithril.Themes.Admin
         /// Gets the theme service.
         /// </summary>
         /// <value>The theme service.</value>
-        private IThemeService ThemeService { get; }
+        private IThemeService? ThemeService { get; }
 
         /// <summary>
         /// Loads the specified identifier.
@@ -59,7 +58,7 @@ namespace Mithril.Themes.Admin
         /// <returns></returns>
         protected override async Task<bool> SaveEntityAsync(long id, ThemeSettingsVM? entity, ClaimsPrincipal? currentUser)
         {
-            if (entity is null)
+            if (entity is null || ThemeService is null)
                 return false;
             Abstractions.Interfaces.ITheme? DesiredTheme = ThemeService.LoadTheme(Theme.Load(entity.CurrentTheme, DataService)?.Name ?? "");
             await ThemeService.SetDefaultThemeAsync(DesiredTheme, currentUser).ConfigureAwait(false);

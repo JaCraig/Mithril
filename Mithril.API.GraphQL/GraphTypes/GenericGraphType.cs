@@ -53,36 +53,36 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// <summary>
         /// The map generic
         /// </summary>
-        private readonly MethodInfo? AddBasicFieldGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddBasicField), StringComparison.OrdinalIgnoreCase));
+        private readonly MethodInfo? _AddBasicFieldGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddBasicField), StringComparison.OrdinalIgnoreCase));
 
         /// <summary>
         /// The add class field generic
         /// </summary>
-        private readonly MethodInfo? AddClassFieldGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddClassField), StringComparison.OrdinalIgnoreCase));
+        private readonly MethodInfo? _AddClassFieldGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddClassField), StringComparison.OrdinalIgnoreCase));
 
         /// <summary>
         /// The add method basic generic
         /// </summary>
-        private readonly MethodInfo? AddMethodBasicGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddBasicMethod), StringComparison.OrdinalIgnoreCase));
+        private readonly MethodInfo? _AddMethodBasicGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddBasicMethod), StringComparison.OrdinalIgnoreCase));
 
         /// <summary>
         /// The add method generic
         /// </summary>
-        private readonly MethodInfo? AddMethodClassGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddMethodClass), StringComparison.OrdinalIgnoreCase));
+        private readonly MethodInfo? _AddMethodClassGeneric = Array.Find(typeof(GenericGraphType<TClass>).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance), x => string.Equals(x.Name, nameof(GenericGraphType<TClass>.AddMethodClass), StringComparison.OrdinalIgnoreCase));
 
         /// <summary>
         /// The initialized
         /// </summary>
-        private bool Initialized = false;
+        private bool _Initialized = false;
 
         /// <summary>
         /// Automatically wires up known properties of the view model.
         /// </summary>
         public void AutoWire(GraphTypeManager graphTypeManager)
         {
-            if (graphTypeManager is null || Initialized)
+            if (graphTypeManager is null || _Initialized)
                 return;
-            Initialized = true;
+            _Initialized = true;
             foreach (var Property in TypeCacheFor<TClass>.Properties)
             {
                 var GraphType = Property.PropertyType.FindGraphType();
@@ -90,11 +90,11 @@ namespace Mithril.API.GraphQL.GraphTypes
                     continue;
                 if (Property.PropertyType.IsBuiltInType())
                 {
-                    AddBasicFieldGeneric?.MakeGenericMethod(Property.PropertyType).Invoke(this, new[] { Property });
+                    _AddBasicFieldGeneric?.MakeGenericMethod(Property.PropertyType).Invoke(this, new[] { Property });
                 }
                 else
                 {
-                    AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Property, graphTypeManager.GetGraphType(Property.PropertyType) });
+                    _AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Property, graphTypeManager.GetGraphType(Property.PropertyType) });
                 }
             }
             foreach (var Method in TypeCacheFor<TClass>.Methods)
@@ -104,11 +104,11 @@ namespace Mithril.API.GraphQL.GraphTypes
                     continue;
                 if (Method.ReturnType.IsBuiltInType())
                 {
-                    AddMethodBasicGeneric?.MakeGenericMethod(Method.ReturnType).Invoke(this, new object[] { Method });
+                    _AddMethodBasicGeneric?.MakeGenericMethod(Method.ReturnType).Invoke(this, new object[] { Method });
                 }
                 else
                 {
-                    AddMethodClassGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Method, graphTypeManager.GetGraphType(Method.ReturnType) });
+                    _AddMethodClassGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Method, graphTypeManager.GetGraphType(Method.ReturnType) });
                 }
             }
         }
@@ -122,8 +122,8 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// <returns>The parameter</returns>
         private static TReturn? GetParameter<TReturn>(IResolveFieldContext<TClass> context, string name)
         {
-            if (context.Arguments?.TryGetValue(name, out var param) == true)
-                return param.Value.To<TReturn>();
+            if (context.Arguments?.TryGetValue(name, out var Param) == true)
+                return Param.Value.To<TReturn>();
             return default;
         }
 
@@ -166,7 +166,7 @@ namespace Mithril.API.GraphQL.GraphTypes
             if (GenericGetParameter is null)
                 return;
 
-            var Arguments = method.GetParameters().Select(Param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(Param.ParameterType), ObjectInstance, Expression.Constant(Param.Name?.ToCamelCase() ?? "")));
+            var Arguments = method.GetParameters().Select(param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(param.ParameterType), ObjectInstance, Expression.Constant(param.Name?.ToCamelCase() ?? "")));
             var PropertyGet = Expression.Call(Expression.Property(ObjectInstance, SourceProperty), method, Arguments);
 
             Field<TReturn>(method.GetName(), nullable: method.ReturnType.IsNullable())
@@ -228,7 +228,7 @@ namespace Mithril.API.GraphQL.GraphTypes
             if (GenericGetParameter is null)
                 return;
 
-            var Arguments = method.GetParameters().Select(Param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(Param.ParameterType), ObjectInstance, Expression.Constant(Param.Name?.ToCamelCase() ?? "")));
+            var Arguments = method.GetParameters().Select(param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(param.ParameterType), ObjectInstance, Expression.Constant(param.Name?.ToCamelCase() ?? "")));
 
             var PropertyGet = Expression.Call(Expression.Property(ObjectInstance, SourceProperty), method, Arguments);
 
@@ -263,9 +263,9 @@ namespace Mithril.API.GraphQL.GraphTypes
                 {
                     var GenericTypes = type.GetGenericArguments();
                     Output.Append(type.Name, 0, type.Name.IndexOf("`", StringComparison.Ordinal));
-                    for (int x = 0, GenericTypesLength = GenericTypes.Length; x < GenericTypesLength; x++)
+                    for (int X = 0, GenericTypesLength = GenericTypes.Length; X < GenericTypesLength; X++)
                     {
-                        Output.Append(GetName(GenericTypes[x]));
+                        Output.Append(GetName(GenericTypes[X]));
                     }
                 }
                 else

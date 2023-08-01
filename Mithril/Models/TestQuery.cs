@@ -52,7 +52,7 @@ namespace Mithril.Models
             if (!IsFeatureEnabled())
                 return Task.FromResult<TestVM?>(null);
             var List = new List<TestVM2>();
-            arguments.GetValue<int>("Count").Times(x => List.Add(new TestVM2() { A = arguments.GetValue<string>("Name") }));
+            arguments.GetValue<int>("Count").Times(_ => List.Add(new TestVM2() { A = arguments.GetValue<string>("Name") }));
             return Task.FromResult<TestVM?>(new TestVM { A = List });
         }
     }
@@ -73,25 +73,22 @@ namespace Mithril.Models
         /// <summary>
         /// Examples the method.
         /// </summary>
-        /// <param name="A">a.</param>
-        /// <param name="B">The b.</param>
+        /// <param name="a">a.</param>
+        /// <param name="b">The b.</param>
         /// <returns></returns>
-        public TestVM2 ExampleMethod(string A = "A", int B = 2)
+        public TestVM2 ExampleMethod(string a = "A", int b = 2)
         {
-            return new TestVM2 { A = A, B = B };
+            return new TestVM2 { A = a, B = b };
         }
 
         /// <summary>
         /// Examples the method2.
         /// </summary>
-        /// <param name="A">a.</param>
-        /// <param name="B">The b.</param>
+        /// <param name="a">a.</param>
+        /// <param name="b">The b.</param>
         /// <returns></returns>
         [ApiDepricationReason("Because it is old or something")]
-        public string ExampleMethod2(string A, int B)
-        {
-            return A + B;
-        }
+        public string ExampleMethod2(string a, int b) => a + b;
     }
 
     /// <summary>

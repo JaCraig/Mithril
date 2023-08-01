@@ -11,7 +11,7 @@ namespace Mithril.Themes.Abstractions.BaseClasses
         where TTheme : ThemeBaseClass<TTheme>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ThemeBaseClass"/> class.
+        /// Initializes a new instance of the <see cref="ThemeBaseClass{TTheme}"/> class.
         /// </summary>
         protected ThemeBaseClass()
         { }

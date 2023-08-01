@@ -1,22 +1,16 @@
 
 <template>
     <div>
-        Complex List
-        <h2 v-if="internalSchema.label" :class="internalSchema.labelClasses">
-            {{ $filters.capitalize(schema.label) }}
+        <h2 v-if="internalSchema.displayName">
+            {{ $filters.capitalize(internalSchema.displayName) }}
         </h2>
-        <table class="form-table" :class="internalSchema.tableClasses">
+        <table class="form-table">
             <thead>
                 <tr>
-                    <th v-for="(item) in internalSchema.fields" v-bind:key="generateGuid(item)">
-                        <span v-if="item.label">
-                            {{ $filters.capitalize(item.label) }}
-                        </span>
-                        <span v-else>
-                            {{ $filters.capitalize(item.model) }}
-                        </span>
-                        <span v-if="getSchema(item).hint"
-                            :data-tooltip="getSchema(item).hint"
+                    <th v-for="(item) in internalSchema.metadata.fields" v-bind:key="generateGuid(item)">
+                        {{ $filters.capitalize(item.displayName) }}
+                        <span v-if="item.metadata.hint"
+                            :data-tooltip="item.metadata.hint"
                             data-tooltip-size="extra-large">
                             <span class="fas fa-info-circle no-border small"></span>
                         </span>
@@ -28,10 +22,9 @@
                 <tr v-for="(item, index) in internalModel"  v-bind:key="generateGuid(item)">
                     <td v-for="(field) in internalSchema.metadata.fields"  v-bind:key="generateGuid(field)">
                         <component :is="getFieldType(field)"
-                                    :schema="getSchema(field)"
+                                    :schema="field"
                                     :model="getModelValue(field,item)"
                                     :label="false"
-                                    :id-suffix="getIDSuffix(field,index)"
                                     @changed="newValue => setModelValue(field,item,newValue)"
                                     @click="buttonClicked"
                                     @error="error"
@@ -80,7 +73,8 @@
         data: function() {
             return {
                 internalModel: this.model,
-                internalSchema: this.schema
+                internalSchema: this.schema,
+                defaultItem: this.getDefaultValue(this.schema)
             };
         },
         props: {
@@ -96,71 +90,82 @@
             }
         },
         methods: {
+            // Gets the default value for an item in the list based on the schema
+            // schema: The schema to get the default value for
             getDefaultValue(schema: any) {
                 if (schema == null) {
                     return {};
                 }
                 let DefaultItem: any = {};
-                for(let x = 0; x < schema.fields.length; ++x) {
-                    let field = schema.fields[x];
-                    if(field.type.indexOf("complex") == -1) {
-                        if (field.inputType === "date"
-                            || field.inputType === "datetime-local" 
-                            || field.inputType === "datetime"
-                            || field.inputType === "month") {
+                for (let x = 0; x < schema.metadata.fields.length; ++x) {
+                    let field = schema.metadata.fields[x];
+                    if (field.propertyType.indexOf("complex") == -1) {
+                        if (field.metadata.inputType === "date"
+                            || field.metadata.inputType === "datetime-local"
+                            || field.metadata.inputType === "datetime"
+                            || field.metadata.inputType === "month") {
 
-                                let tempDate = moment(new Date());
-                                if (field.isUTC) {
-                                    tempDate = moment.utc(new Date()).local();
-                                }
+                            let tempDate = moment(new Date());
+                            if (field.isUTC) {
+                                tempDate = moment.utc(new Date()).local();
+                            }
 
-                                if (field.inputType === "date") {
-                                    DefaultItem[field.model]= tempDate.format('YYYY-MM-DD');
-                                }
-                                else if (field.inputType === "datetime-local" || field.inputType === "datetime") {
-                                    DefaultItem[field.model]= tempDate.format('YYYY-MM-DDTHH:mm');
-                                }
-                                else if (field.inputType === "month") {
-                                    DefaultItem[field.model]= tempDate.format('YYYY-MM');
-                                }
+                            if (field.inputType === "date") {
+                                DefaultItem[field.propertyName] = tempDate.format('YYYY-MM-DD');
+                            }
+                            else if (field.inputType === "datetime-local" || field.inputType === "datetime") {
+                                DefaultItem[field.propertyName] = tempDate.format('YYYY-MM-DDTHH:mm');
+                            }
+                            else if (field.inputType === "month") {
+                                DefaultItem[field.propertyName] = tempDate.format('YYYY-MM');
+                            }
                         } else {
-                            DefaultItem[field.model] = "";
+                            DefaultItem[field.propertyName] = "";
                         }
-                    } else if(field.type.indexOf("complex-list") > -1||field.type.indexOf("complex-repeater") > -1) {
-                        DefaultItem[field.model] = [];
+                    } else if (field.propertyType.indexOf("complex-list") > -1 || field.propertyType.indexOf("complex-repeater") > -1) {
+                        DefaultItem[field.propertyName] = [];
                     } else {
-                        DefaultItem[field.model] = this.getDefaultValue(field);
+                        DefaultItem[field.propertyName] = this.getDefaultValue(field);
                     }
                 }
                 return DefaultItem;
             },
+            // Gets the field type for a given field
+            // field: The field to get the type for
             getFieldType: function(field: any) {
-                if(field.type.indexOf("form-field-")==0) {
-                    return field.type;
-                }
-                return "form-field-" + field.type;
+                return "form-field-" + field.propertyType;
             },
+            // Gets the model value for a given field and item
+            // field: The field to get the value for
+            // item: The item to get the value for
             getModelValue: function(field: any, item: any) {
-                return item[field.model];
+                return item[field.propertyName];
             },
+            // Sets the model value for a given field and item
+            // Emits the changed event
+            // field: The field to set the value for
+            // item: The item to set the value for
+            // newValue: The new value to set
             setModelValue: function(field: any, item: any, newValue: any) {
-                item[field.model] = newValue;
+                item[field.propertyName] = newValue;
                 this.$emit("changed", this.internalModel, this.schema);
             },
+            // Emits the error event
             error: function(errorCode: any){
                 this.$emit("error", errorCode);
             },
+            // Emits the exception event
             exception: function(errorCode: any){
                 this.$emit("exception", errorCode);
             },
+            // Emits the click event when a button is clicked
             buttonClicked: function(event: any, field: any) {
                 this.$emit("click", event, field);
             },
-            getSchema: function(field: any) {
-                return field;
-            },
+            // Removes an item from the list
+            // item: The item to remove
             removeItem: function(item: any) {
-                if (this.schema.confirmRemoval && !confirm("Are you sure you want to remove this item?")) {
+                if (this.internalSchema.confirmRemoval && !confirm("Are you sure you want to remove this item?")) {
                     return;
                 }
                 if (!this.internalModel) {
@@ -168,21 +173,18 @@
                 }
                 let Index = this.internalModel.indexOf(item);
                 this.internalModel.splice(Index, 1);
-                this.$emit("changed", this.internalModel, this.schema);
+                this.$emit("changed", this.internalModel, this.internalSchema);
             },
-            addItem: function(item: any) {
+            // Adds an item to the list using the default value
+            // Emits the changed event
+            addItem: function() {
                 if (!this.internalModel) {
                     this.internalModel = [];
                 }
                 this.internalModel = this.internalModel.concat(Object.assign({}, this.defaultItem));
                 this.$emit("changed", this.internalModel, this.schema);
             },
-            getIDSuffix: function(field: any, index: any) {
-                if(this.idSuffix === undefined) {
-                    return index;
-                }
-                return this.idSuffix + index;
-            },
+            // Generates a guid for an item
             generateGuid: function (item: any) {
                 let Key = item.key;
                 if(Key) {
@@ -198,12 +200,24 @@
             },
         },
         watch: {
+            // Watches for changes to the model and updates the internal model
+            // newModel: The new model value
+            // oldModel: The old model value
             model: function(newModel, oldModel) {
                 if (oldModel === newModel) {
                     return;
                 }
                 this.internalModel = newModel;
             },
+            // Watches for changes to the schema and updates the internal schema
+            // newSchema: The new schema value
+            // oldSchema: The old schema value
+            schema: function(newSchema, oldSchema) {
+                if (oldSchema === newSchema) {
+                    return;
+                }
+                this.internalSchema = newSchema;
+            }
         }
     });
 

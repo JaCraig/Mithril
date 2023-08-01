@@ -5,7 +5,6 @@ namespace Mithril.Themes.Admin.DropDowns
 {
     /// <summary>
     /// Theme list
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="DropDownBaseClass&lt;Theme&gt;" />
     public class ThemeList : DropDownBaseClass<Theme>

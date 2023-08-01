@@ -23,11 +23,11 @@ namespace Mithril.Core.Tests.Extensions
         {
             var Obj = new object();
             const bool Predicate = false;
-            Func<object, object> Method = _ => new object();
+            static object Method(object _) => new();
 
-            var result = Obj.When(Predicate, Method);
+            var Result = Obj.When(Predicate, Method);
 
-            Assert.Equal(Obj, result);
+            Assert.Equal(Obj, Result);
         }
 
         /// <summary>
@@ -38,11 +38,11 @@ namespace Mithril.Core.Tests.Extensions
         {
             var Obj = new object();
             const bool Predicate = true;
-            Func<object, object> Method = _ => new object();
+            static object Method(object _) => new();
 
-            var result = Obj.When(Predicate, Method);
+            var Result = Obj.When(Predicate, Method);
 
-            Assert.NotEqual(Obj, result);
+            Assert.NotEqual(Obj, Result);
         }
     }
 }

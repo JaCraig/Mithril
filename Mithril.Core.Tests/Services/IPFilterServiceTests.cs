@@ -33,7 +33,7 @@ namespace Mithril.Core.Tests.Services
             IOptions<IPFilterOptions> MockPolicy = Substitute.For<IOptions<IPFilterOptions>>();
             ILogger<IPFilterService> MockLogger = Substitute.For<ILogger<IPFilterService>>();
             HttpContext MockHttpContext = Substitute.For<HttpContext>();
-            MockHttpContext.Connection.RemoteIpAddress.Returns((IPAddress)null);
+            MockHttpContext.Connection.RemoteIpAddress.Returns((IPAddress?)null);
 
             var FilterOptions = new IPFilterOptions();
             FilterOptions.AddDefaultPolicy();

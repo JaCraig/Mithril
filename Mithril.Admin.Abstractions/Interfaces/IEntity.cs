@@ -39,6 +39,6 @@ namespace Mithril.Admin.Abstractions.Interfaces
         /// <param name="dataService">The data service.</param>
         /// <param name="currentUser">The current user.</param>
         /// <returns>The async task.</returns>
-        Task<TModel?> SaveAsync(long id, Data.Abstractions.Services.IDataService dataService, ClaimsPrincipal? currentUser);
+        Task<TModel?> SaveAsync(long id, Data.Abstractions.Services.IDataService? dataService, ClaimsPrincipal? currentUser);
     }
 }

@@ -6,7 +6,6 @@ namespace Mithril.Admin.Services.MetadataBuilders
 {
     /// <summary>
     /// Is Checkbox
-    /// TODO: Add Tests
     /// </summary>
     /// <seealso cref="MetadataBuilderBaseClass"/>
     public class IsCheckbox : MetadataBuilderBaseClass

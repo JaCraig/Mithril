@@ -55,7 +55,7 @@ namespace Mithril.Routing.Admin.ViewModels
         /// <param name="dataService">The data service.</param>
         /// <param name="currentUser">The current user.</param>
         /// <returns>The async task.</returns>
-        public override async Task<RouteEntry?> SaveAsync(long id, IDataService dataService, ClaimsPrincipal? currentUser)
+        public override async Task<RouteEntry?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser)
         {
             RouteEntry Route = RouteEntry.Load(id, dataService) ?? new RouteEntry(InputPath ?? "", OutputPath ?? "");
             Route.InputPath = InputPath ?? "";

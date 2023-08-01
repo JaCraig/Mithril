@@ -5,7 +5,6 @@ namespace Mithril.Admin.Services
 {
     /// <summary>
     /// Editor service
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="IEditorService" />
     public class EditorService : IEditorService

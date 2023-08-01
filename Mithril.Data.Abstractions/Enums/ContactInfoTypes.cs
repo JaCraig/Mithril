@@ -1,13 +1,11 @@
-﻿using BigBook.Patterns.BaseClasses;
-using Mithril.Data.Abstractions.BaseClasses;
-using System.Globalization;
+﻿using Mithril.Data.Abstractions.BaseClasses;
 
 namespace Mithril.Data.Abstractions.Enums
 {
     /// <summary>
     /// ContactInfo types
     /// </summary>
-    /// <seealso cref="StringEnumBaseClass{ContactInfoTypes}"/>
+    /// <seealso cref="LookUpEnumBaseClass{ContactInfoTypes}"/>
     public class ContactInfoType : LookUpEnumBaseClass<ContactInfoType>
     {
         /// <summary>
@@ -87,44 +85,5 @@ namespace Mithril.Data.Abstractions.Enums
         /// </summary>
         /// <value>The web site.</value>
         public static ContactInfoType WebSite { get; } = new ContactInfoType("Web Site", "fa-globe");
-
-        /// <summary>
-        /// The name mapping
-        /// </summary>
-        /// <value>The name mapping.</value>
-        private static Dictionary<string, ContactInfoType> NameMapping { get; } = new Dictionary<string, ContactInfoType>
-        {
-            [Extension.ToString().ToUpper(CultureInfo.InvariantCulture)] = Extension,
-            [Email.ToString().ToUpper(CultureInfo.InvariantCulture)] = Email,
-            [Phone.ToString().ToUpper(CultureInfo.InvariantCulture)] = Phone,
-            [WebSite.ToString().ToUpper(CultureInfo.InvariantCulture)] = WebSite,
-            [GitHub.ToString().ToUpper(CultureInfo.InvariantCulture)] = GitHub,
-            [Twitter.ToString().ToUpper(CultureInfo.InvariantCulture)] = Twitter,
-            [LinkedIn.ToString().ToUpper(CultureInfo.InvariantCulture)] = LinkedIn,
-            [Facebook.ToString().ToUpper(CultureInfo.InvariantCulture)] = Facebook,
-            [CellPhone.ToString().ToUpper(CultureInfo.InvariantCulture)] = CellPhone,
-            [Fax.ToString().ToUpper(CultureInfo.InvariantCulture)] = Fax,
-        };
-
-        /// <summary>
-        /// Gets the type of the contact information.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        /// <returns>The contact info type specified.</returns>
-        public static ContactInfoType? GetContactInfoType(string name)
-        {
-            if (string.IsNullOrEmpty(name)) return null;
-            var KeyName = name.ToUpper(CultureInfo.InvariantCulture).Replace("-", "", StringComparison.OrdinalIgnoreCase);
-            return NameMapping.ContainsKey(KeyName) ? NameMapping[KeyName] : new ContactInfoType(name);
-        }
-
-        /// <summary>
-        /// Gets the enum types.
-        /// </summary>
-        /// <returns>The various enum types.</returns>
-        public static IEnumerable<ContactInfoType> GetContactInfoTypes()
-        {
-            return NameMapping.Values;
-        }
     }
 }

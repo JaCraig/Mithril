@@ -32,9 +32,9 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <param name="dataType">Type of the data.</param>
         /// <param name="user">The user.</param>
         /// <returns>
-        /// <c>true</c> if this instance can run the specified data type; otherwise, <c>false</c>.
+        ///   <c>true</c> if this instance can run the specified data type; otherwise, <c>false</c>.
         /// </returns>
-        public virtual bool CanRun(string dataType, ClaimsPrincipal user)
+        public virtual bool CanRun(string? dataType, ClaimsPrincipal? user)
         {
             return string.Equals(dataType, Name, StringComparison.OrdinalIgnoreCase);
         }
@@ -43,8 +43,10 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// Gets the data.
         /// </summary>
         /// <param name="filter">The filter.</param>
-        /// <returns>The drop down data.</returns>
-        public Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string filter)
+        /// <returns>
+        /// The drop down data.
+        /// </returns>
+        public Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string? filter)
         {
             return Task.FromResult<IEnumerable<DropDownVM<long>>>(GetValues(filter).Select(x => new DropDownVM<long>(GetKey(x), x.ToString())).OrderBy(x => x.Value));
         }
@@ -55,7 +57,7 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <param name="value">The value.</param>
         /// <param name="count">The count.</param>
         /// <returns>The values</returns>
-        public IEnumerable<TModel> GetValues(string value, int count = -1)
+        public IEnumerable<TModel> GetValues(string? value, int count = -1)
         {
             var Query = DbContext<TModel>.CreateQuery();
             if (count > 0)

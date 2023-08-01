@@ -13,7 +13,6 @@ namespace Mithril.Admin.Queries
 {
     /// <summary>
     /// Entity query
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="QueryBaseClass&lt;IEntity&gt;"/>
     public class EntityQuery : QueryBaseClass<ExpandoObject>
@@ -24,7 +23,7 @@ namespace Mithril.Admin.Queries
         /// <param name="logger">The logger.</param>
         /// <param name="featureManager">The feature manager.</param>
         /// <param name="editorService">The editor service.</param>
-        public EntityQuery(ILogger<EntityQuery>? logger, IFeatureManager? featureManager, IEditorService editorService) : base(logger, featureManager)
+        public EntityQuery(ILogger<EntityQuery>? logger, IFeatureManager? featureManager, IEditorService? editorService) : base(logger, featureManager)
         {
             EditorService = editorService;
         }
@@ -49,7 +48,7 @@ namespace Mithril.Admin.Queries
         /// Gets the editor service.
         /// </summary>
         /// <value>The editor service.</value>
-        private IEditorService EditorService { get; }
+        private IEditorService? EditorService { get; }
 
         /// <summary>
         /// Used to resolve the data asked for by the query.
@@ -59,9 +58,9 @@ namespace Mithril.Admin.Queries
         /// <returns>The data specified.</returns>
         public override Task<ExpandoObject?> ResolveAsync(ClaimsPrincipal? user, Arguments arguments)
         {
-            var EntityType = arguments.GetValue<string>("entityType") ?? "";
-            var ID = arguments.GetValue<long>("id");
-            IEntityEditor? EntityEditor = EditorService.Editors.OfType<IEntityEditor>().FirstOrDefault(x => x.EntityType == EntityType);
+            var EntityType = arguments?.GetValue<string>("entityType") ?? "";
+            var ID = arguments?.GetValue<long>("id") ?? 0;
+            IEntityEditor? EntityEditor = EditorService?.Editors.OfType<IEntityEditor>().FirstOrDefault(x => x.EntityType == EntityType);
             return EntityEditor?.CanView(user) != true
                 ? Task.FromResult<ExpandoObject?>(null)
                 : Task.FromResult(EntityEditor.Load(ID, null, user).ConvertToExpando());

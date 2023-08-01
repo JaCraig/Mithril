@@ -50,7 +50,7 @@ namespace Mithril.Communication.Commands
             Channels = channels;
             CommunicationService = communicationService;
             MithrilConfig = mithrilConfig?.Value;
-            HashAlgorithm = HashAlgorithm.Create("SHA256");
+            HashAlgorithm = SHA256.Create();
         }
 
         /// <summary>
@@ -133,17 +133,17 @@ namespace Mithril.Communication.Commands
             List<IEvent> ReturnValues = new List<IEvent>();
             for (var x = 0; x < args.Length; ++x)
             {
-                var arg = args[x];
-                if (arg is null)
+                var Arg = args[x];
+                if (Arg is null)
                     continue;
-                var Channel = Channels.FirstOrDefault(Channel => Channel.CanHandle(arg.Message));
+                var Channel = Channels.FirstOrDefault(channel => channel.CanHandle(Arg.Message));
                 MessageResult? Result = null;
                 if (Channel is not null)
-                    Result = await Channel.SendMessageAsync(arg.Message).ConfigureAwait(false);
+                    Result = await Channel.SendMessageAsync(Arg.Message).ConfigureAwait(false);
                 Result ??= new MessageResult(
-                    $"Channel that can handle {arg.Message?.GetType().Name ?? "NULL"} not found",
-                    new ArgumentOutOfRangeException(nameof(args), $"Channel that can handle {arg.Message?.GetType().Name ?? "NULL"} not found"));
-                ReturnValues.Add(new MessageSentEvent(arg.Message, Result.Message));
+                    $"Channel that can handle {Arg.Message?.GetType().Name ?? "NULL"} not found",
+                    new ArgumentOutOfRangeException(nameof(args), $"Channel that can handle {Arg.Message?.GetType().Name ?? "NULL"} not found"));
+                ReturnValues.Add(new MessageSentEvent(Arg.Message, Result.Message));
             }
             return ReturnValues.ToArray();
         }

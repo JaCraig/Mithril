@@ -10,7 +10,6 @@ namespace Mithril.Admin
 {
     /// <summary>
     /// Admin module
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="ModuleBaseClass&lt;AdminModule&gt;"/>
     public class AdminModule : ModuleBaseClass<AdminModule>

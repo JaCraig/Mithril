@@ -4,7 +4,6 @@ namespace Mithril.Admin.Abstractions.ExtensionMethods
 {
     /// <summary>
     /// PropertyInfo extension methods
-    /// TODO: Add tests
     /// </summary>
     public static class PropertyInfoExtensions
     {

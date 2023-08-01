@@ -2,7 +2,6 @@
 {
     /// <summary>
     /// Step attribute
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="Attribute" />
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]

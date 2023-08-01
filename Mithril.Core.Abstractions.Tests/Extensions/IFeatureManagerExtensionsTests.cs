@@ -28,9 +28,9 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
             IFeatureManager MockFeatureManager = Substitute.For<IFeatureManager>();
             MockFeatureManager.IsEnabledAsync(MockFeature.Name).Returns(true);
 
-            var result = MockFeatureManager.AreFeaturesEnabled(MockFeature);
+            var Result = MockFeatureManager.AreFeaturesEnabled(MockFeature);
 
-            Assert.True(result);
+            Assert.True(Result);
         }
 
         /// <summary>
@@ -43,9 +43,9 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
             IFeatureManager MockFeatureManager = Substitute.For<IFeatureManager>();
             MockFeatureManager.IsEnabledAsync(MockFeature.Name).Returns(false);
 
-            var result = MockFeatureManager.AreFeaturesEnabled(MockFeature);
+            var Result = MockFeatureManager.AreFeaturesEnabled(MockFeature);
 
-            Assert.False(result);
+            Assert.False(Result);
         }
     }
 }

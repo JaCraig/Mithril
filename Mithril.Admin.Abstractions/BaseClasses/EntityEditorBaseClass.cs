@@ -17,7 +17,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
     /// </summary>
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
     /// <typeparam name="TModel">The type of the model.</typeparam>
-    /// <seealso cref="IEntityEditor&lt;TEntity&gt;"/>
+    /// <seealso cref="EntityEditorBaseClass&lt;TEntity&gt;" />
     public abstract class EntityEditorBaseClass<TEntity, TModel> : EntityEditorBaseClass<TEntity>
         where TEntity : IEntity<TModel>, new()
         where TModel : ModelBase<TModel>, new()
@@ -28,7 +28,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
         /// <param name="dataType">Type of the data.</param>
-        protected EntityEditorBaseClass(IDataService dataService, IEntityMetadataService entityMetadataService, string? dataType = null)
+        protected EntityEditorBaseClass(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null)
             : base(dataService, entityMetadataService, dataType ?? typeof(TEntity).Name)
         {
         }
@@ -37,7 +37,10 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// Activates the entity specified asynchronously.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns>True if it succeeds, false otherwise.</returns>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>
+        /// True if it succeeds, false otherwise.
+        /// </returns>
         public override async Task<bool> ActivateAsync(long id, ClaimsPrincipal? currentUser)
         {
             if (!CanView(currentUser))
@@ -67,7 +70,10 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// Deletes the entity asynchronously.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns>True if it succeeds, false otherwise.</returns>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>
+        /// True if it succeeds, false otherwise.
+        /// </returns>
         /// <exception cref="System.NotImplementedException"></exception>
         public override async Task<bool> DeleteEntityAsync(long id, ClaimsPrincipal? currentUser)
         {
@@ -89,7 +95,10 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="model">The model.</param>
-        /// <returns></returns>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>
+        /// The entity specified.
+        /// </returns>
         public override IEntity? Load(long id, ExpandoObject? model, ClaimsPrincipal? currentUser) => !CanView(currentUser) ? null : model is null ? Convert(LoadModel(id)) : model.ConvertExpando<TEntity>();
 
         /// <summary>
@@ -100,7 +109,10 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// <param name="sortField">The sort field.</param>
         /// <param name="sortAscending">if set to <c>true</c> [sort ascending].</param>
         /// <param name="searchQuery">The search query.</param>
-        /// <returns>The entities specified.</returns>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>
+        /// The entities specified.
+        /// </returns>
         public override Task<IEnumerable<IEntity>> LoadPageAsync(int page, int pageSize, string sortField, bool sortAscending, string searchQuery, ClaimsPrincipal? currentUser)
         {
             if (!CanView(currentUser))
@@ -126,7 +138,10 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="entity">The entity.</param>
-        /// <returns>True if it succeeds, false otherwise.</returns>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>
+        /// True if it succeeds, false otherwise.
+        /// </returns>
         public override async Task<bool> SaveEntityAsync(long id, ExpandoObject entity, ClaimsPrincipal? currentUser)
         {
             if (!CanView(currentUser))
@@ -137,7 +152,8 @@ namespace Mithril.Admin.Abstractions.BaseClasses
             if (ModelValue is null)
                 return false;
             TModel? Model = await ModelValue.SaveAsync(id, DataService, currentUser).ConfigureAwait(false);
-            if (Model is null) return false;
+            if (Model is null)
+                return false;
             //if (Model is IIndexedModel indexedModel)
             //{
             //    if (!Model.Active)
@@ -152,7 +168,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// Gets the total active items.
         /// </summary>
         /// <returns>The total.</returns>
-        public override Task<int> TotalActiveAsync(ClaimsPrincipal? currentUser) => !CanView(currentUser) ? Task.FromResult(0) : Task.FromResult(DataService.Query<TModel>()?.Where(x => x.Active).Count() ?? 0);
+        public override Task<int> TotalActiveAsync(ClaimsPrincipal? currentUser) => !CanView(currentUser) ? Task.FromResult(0) : Task.FromResult(DataService?.Query<TModel>()?.Where(x => x.Active).Count() ?? 0);
 
         /// <summary>
         /// Converts the model into the appropriate view model.
@@ -196,7 +212,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
     /// Entity editor base class
     /// </summary>
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
-    /// <seealso cref="IEntityEditor&lt;TEntity&gt;"/>
+    /// <seealso cref="EntityEditorBaseClass&lt;TEntity&gt;" />
     public abstract class EntityEditorBaseClass<TEntity> : IEntityEditor
         where TEntity : IEntity, new()
     {
@@ -206,7 +222,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
         /// <param name="dataType">Type of the data.</param>
-        protected EntityEditorBaseClass(IDataService dataService, IEntityMetadataService entityMetadataService, string? dataType = null)
+        protected EntityEditorBaseClass(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null)
         {
             if (string.IsNullOrEmpty(dataType))
                 dataType = typeof(TEntity).Name;
@@ -254,13 +270,16 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        protected IDataService DataService { get; }
+        protected IDataService? DataService { get; }
 
         /// <summary>
         /// Activates the entity specified asynchronously.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns>True if it succeeds, false otherwise.</returns>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>
+        /// True if it succeeds, false otherwise.
+        /// </returns>
         public abstract Task<bool> ActivateAsync(long id, ClaimsPrincipal? currentUser);
 
         /// <summary>
@@ -268,15 +287,18 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// </summary>
         /// <param name="user">The user.</param>
         /// <returns>
-        /// <c>true</c> if this instance can be viewed by the specified user; otherwise, <c>false</c>.
+        ///   <c>true</c> if this instance can be viewed by the specified user; otherwise, <c>false</c>.
         /// </returns>
-        public virtual bool CanView(ClaimsPrincipal user) => user.HasClaim(UserClaimTypes.Role, "Admin");
+        public virtual bool CanView(ClaimsPrincipal? user) => user?.HasClaim(UserClaimTypes.Role, "Admin") ?? false;
 
         /// <summary>
         /// Deletes the entity asynchronously.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns>True if it succeeds, false otherwise.</returns>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>
+        /// True if it succeeds, false otherwise.
+        /// </returns>
         /// <exception cref="System.NotImplementedException"></exception>
         public abstract Task<bool> DeleteEntityAsync(long id, ClaimsPrincipal? currentUser);
 
@@ -285,7 +307,10 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="model">The model.</param>
-        /// <returns>The entity specified.</returns>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>
+        /// The entity specified.
+        /// </returns>
         public abstract IEntity? Load(long id, ExpandoObject? model, ClaimsPrincipal? currentUser);
 
         /// <summary>
@@ -296,7 +321,10 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// <param name="sortField">The sort field.</param>
         /// <param name="sortAscending">if set to <c>true</c> [sort ascending].</param>
         /// <param name="searchQuery">The search query.</param>
-        /// <returns>The entities specified.</returns>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>
+        /// The entities specified.
+        /// </returns>
         public abstract Task<IEnumerable<IEntity>> LoadPageAsync(int page, int pageSize, string sortField, bool sortAscending, string searchQuery, ClaimsPrincipal? currentUser);
 
         /// <summary>
@@ -304,13 +332,19 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="entity">The entity.</param>
-        /// <returns>True if it succeeds, false otherwise.</returns>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>
+        /// True if it succeeds, false otherwise.
+        /// </returns>
         public abstract Task<bool> SaveEntityAsync(long id, ExpandoObject entity, ClaimsPrincipal? currentUser);
 
         /// <summary>
         /// Gets the total active items.
         /// </summary>
-        /// <returns>The total.</returns>
+        /// <param name="currentUser">The current user.</param>
+        /// <returns>
+        /// The total.
+        /// </returns>
         public abstract Task<int> TotalActiveAsync(ClaimsPrincipal? currentUser);
     }
 }

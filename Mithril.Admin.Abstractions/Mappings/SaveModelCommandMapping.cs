@@ -6,7 +6,6 @@ namespace Mithril.Admin.Abstractions.Mappings
 {
     /// <summary>
     /// Save model command mapping
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="MappingBaseClass&lt;SaveModelCommand, DefaultDatabase&gt;"/>
     public class SaveModelCommandMapping : MappingBaseClass<SaveModelCommand, DefaultDatabase>

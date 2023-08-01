@@ -10,7 +10,7 @@ namespace Mithril.FileSystem.LocalFileSystem
     /// Local path converter
     /// </summary>
     /// <seealso cref="IPathConverter"/>
-    public class LocalPathConverter : IPathConverter
+    public partial class LocalPathConverter : IPathConverter
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="LocalPathConverter"/> class.
@@ -37,7 +37,7 @@ namespace Mithril.FileSystem.LocalFileSystem
         /// Gets the can handle.
         /// </summary>
         /// <value>The can handle.</value>
-        private static Regex CanHandle { get; } = new Regex(@"^\w:", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static Regex CanHandle { get; } = CanHandleRegex();
 
         /// <summary>
         /// Determines whether this instance can convert the specified path.
@@ -90,5 +90,12 @@ namespace Mithril.FileSystem.LocalFileSystem
         {
             return GetUrl(file?.FullName ?? "");
         }
+
+        /// <summary>
+        /// Determines whether this instance [can handle regex].
+        /// </summary>
+        /// <returns></returns>
+        [GeneratedRegex("^\\w:", RegexOptions.IgnoreCase | RegexOptions.Compiled, "en-US")]
+        private static partial Regex CanHandleRegex();
     }
 }

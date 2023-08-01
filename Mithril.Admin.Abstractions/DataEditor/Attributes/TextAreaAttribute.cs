@@ -2,7 +2,6 @@
 {
     /// <summary>
     /// Determines if the system should treat this as a text area
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="System.Attribute" />
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]

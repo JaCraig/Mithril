@@ -10,7 +10,6 @@ namespace Mithril.Themes.Admin.ViewModels
 {
     /// <summary>
     /// Theme settings VM
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="IEntity" />
     public class ThemeSettingsVM : SettingsBaseClass
@@ -26,7 +25,7 @@ namespace Mithril.Themes.Admin.ViewModels
         /// </summary>
         /// <param name="themes">The themes.</param>
         /// <param name="dataService">The data service.</param>
-        public ThemeSettingsVM(IThemeService? themes, IDataService dataService)
+        public ThemeSettingsVM(IThemeService? themes, IDataService? dataService)
         {
             if (themes is null)
                 return;

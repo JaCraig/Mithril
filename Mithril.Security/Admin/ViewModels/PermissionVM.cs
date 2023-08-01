@@ -12,7 +12,6 @@ namespace Mithril.Security.Admin.ViewModels
 {
     /// <summary>
     /// Permission VM class
-    /// TODO: Add tests.
     /// </summary>
     /// <seealso cref="EntityBaseClass&lt;Permission&gt;" />
     public class PermissionVM : EntityBaseClass<Permission>
@@ -71,7 +70,7 @@ namespace Mithril.Security.Admin.ViewModels
         /// <param name="dataService">The data service.</param>
         /// <param name="currentUser">The current user.</param>
         /// <returns>The async task.</returns>
-        public override async Task<Permission?> SaveAsync(long id, IDataService dataService, ClaimsPrincipal? currentUser)
+        public override async Task<Permission?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser)
         {
             Permission? Permission = Permission.Load(id, dataService);
             if (Permission is null)

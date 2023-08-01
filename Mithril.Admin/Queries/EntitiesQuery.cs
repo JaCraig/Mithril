@@ -13,7 +13,6 @@ namespace Mithril.Admin.Queries
 {
     /// <summary>
     /// Entity listing query
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="QueryBaseClass&lt;ExpandoObject&gt;"/>
     public class EntitiesQuery : QueryBaseClass<List<ExpandoObject>>
@@ -24,7 +23,7 @@ namespace Mithril.Admin.Queries
         /// <param name="logger">The logger.</param>
         /// <param name="featureManager">The feature manager.</param>
         /// <param name="editorService">The editor service.</param>
-        public EntitiesQuery(ILogger<EntitiesQuery>? logger, IFeatureManager? featureManager, IEditorService editorService) : base(logger, featureManager)
+        public EntitiesQuery(ILogger<EntitiesQuery>? logger, IFeatureManager? featureManager, IEditorService? editorService) : base(logger, featureManager)
         {
             EditorService = editorService;
         }
@@ -53,7 +52,7 @@ namespace Mithril.Admin.Queries
         /// Gets the editor service.
         /// </summary>
         /// <value>The editor service.</value>
-        private IEditorService EditorService { get; }
+        private IEditorService? EditorService { get; }
 
         /// <summary>
         /// Used to resolve the data asked for by the query.
@@ -63,13 +62,13 @@ namespace Mithril.Admin.Queries
         /// <returns>The data specified.</returns>
         public override async Task<List<ExpandoObject>?> ResolveAsync(ClaimsPrincipal? user, Arguments arguments)
         {
-            var EntityType = arguments.GetValue<string>("entityType") ?? "";
-            var PageSize = arguments.GetValue<int>("pageSize");
-            var Page = arguments.GetValue<int>("page");
-            var SortField = arguments.GetValue<string>("sortField") ?? "";
-            var SortAscending = arguments.GetValue<bool>("sortAscending");
-            var Filter = arguments.GetValue<string>("filter") ?? "";
-            IEntityEditor? EntityEditor = EditorService.Editors.OfType<IEntityEditor>().FirstOrDefault(x => x.EntityType == EntityType);
+            var EntityType = arguments?.GetValue<string>("entityType") ?? "";
+            var PageSize = arguments?.GetValue<int>("pageSize") ?? 0;
+            var Page = arguments?.GetValue<int>("page") ?? 0;
+            var SortField = arguments?.GetValue<string>("sortField") ?? "";
+            var SortAscending = arguments?.GetValue<bool>("sortAscending") ?? false;
+            var Filter = arguments?.GetValue<string>("filter") ?? "";
+            IEntityEditor? EntityEditor = EditorService?.Editors.OfType<IEntityEditor>().FirstOrDefault(x => x.EntityType == EntityType);
             return EntityEditor?.CanView(user) != true
                 ? new List<ExpandoObject>()
                 : (await EntityEditor.LoadPageAsync(Page, PageSize, SortField, SortAscending, Filter, user).ConfigureAwait(false)).Select(x => x.ConvertToExpando() ?? new ExpandoObject()).ToList();

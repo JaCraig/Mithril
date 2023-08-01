@@ -22,11 +22,11 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
         [Fact]
         public void When_ServiceDoesNotExist_ExistsReturnsFalse()
         {
-            var services = new ServiceCollection();
+            var Services = new ServiceCollection();
 
-            ServiceProvider provider = services.BuildServiceProvider();
+            ServiceProvider Provider = Services.BuildServiceProvider();
 
-            Assert.False(provider.Exists<ITestService>());
+            Assert.False(Provider.Exists<ITestService>());
         }
 
         /// <summary>
@@ -35,12 +35,12 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
         [Fact]
         public void When_ServiceExists_ExistsReturnsTrue()
         {
-            var services = new ServiceCollection();
-            services.AddSingleton<ITestService, TestService>();
+            var Services = new ServiceCollection();
+            Services.AddSingleton<ITestService, TestService>();
 
-            ServiceProvider provider = services.BuildServiceProvider();
+            ServiceProvider Provider = Services.BuildServiceProvider();
 
-            Assert.True(provider.Exists<ITestService>());
+            Assert.True(Provider.Exists<ITestService>());
         }
 
         /// <summary>

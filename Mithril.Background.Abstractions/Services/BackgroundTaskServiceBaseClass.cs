@@ -55,7 +55,7 @@ namespace Mithril.Background.Abstractions.Services
         /// <summary>
         /// Enqueues the specified task.
         /// </summary>
-        /// <param name="task">The task.</param>
+        /// <param name="tasks"></param>
         /// <returns>
         /// This.
         /// </returns>
@@ -98,7 +98,7 @@ namespace Mithril.Background.Abstractions.Services
         /// <param name="state">The state.</param>
         private void CheckScheduledTasks(object? state)
         {
-            foreach (var Task in ScheduledTasks.Where(Task => Task.Frequencies.Any(Frequency => Frequency.CanRun(Task.LastRunTime, DateTime.Now))))
+            foreach (var Task in ScheduledTasks.Where(task => task.Frequencies.Any(frequency => frequency.CanRun(task.LastRunTime, DateTime.Now))))
             {
                 Task.LastRunTime = DateTime.Now;
                 Enqueue(Task);

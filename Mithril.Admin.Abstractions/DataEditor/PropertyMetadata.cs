@@ -7,12 +7,11 @@ namespace Mithril.Admin.Abstractions.DataEditor
 {
     /// <summary>
     /// Property metadata
-    /// TODO: Add tests
     /// </summary>
     public class PropertyMetadata
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PropertyMetadata"/> class.
+        /// Initializes a new instance of the <see cref="PropertyMetadata" /> class.
         /// </summary>
         /// <param name="property">The property.</param>
         public PropertyMetadata(PropertyInfo? property)
@@ -27,7 +26,7 @@ namespace Mithril.Admin.Abstractions.DataEditor
         /// </summary>
         /// <value>The name.</value>
         [JsonPropertyName("displayName")]
-        public string DisplayName { get; set; }
+        public string? DisplayName { get; set; }
 
         /// <summary>
         /// Gets or sets the metadata.
@@ -48,13 +47,13 @@ namespace Mithril.Admin.Abstractions.DataEditor
         /// </summary>
         /// <value>The name of the property.</value>
         [JsonPropertyName("propertyName")]
-        public string PropertyName { get; set; }
+        public string? PropertyName { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the property.
         /// </summary>
         /// <value>The type of the property.</value>
         [JsonPropertyName("propertyType")]
-        public string PropertyType { get; set; }
+        public string? PropertyType { get; set; }
     }
 }

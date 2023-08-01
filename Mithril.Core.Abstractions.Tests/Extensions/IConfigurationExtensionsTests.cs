@@ -22,16 +22,16 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
         [Fact]
         public void When_ConfigSectionDoesNotExist_GetConfigReturnsNull()
         {
-            IConfigurationRoot config = new ConfigurationBuilder()
+            IConfigurationRoot Config = new ConfigurationBuilder()
                 .AddInMemoryCollection(new Dictionary<string, string?>
                 {
                     {"TestSection:TestKey", "TestValue"}
                 })
                 .Build();
 
-            Dictionary<string, string>? section = config.GetConfig<Dictionary<string, string>>("TestSection2");
+            Dictionary<string, string>? Section = Config.GetConfig<Dictionary<string, string>>("TestSection2");
 
-            Assert.Null(section);
+            Assert.Null(Section);
         }
 
         /// <summary>
@@ -40,17 +40,17 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
         [Fact]
         public void When_ConfigSectionExists_GetConfigReturnsSection()
         {
-            IConfigurationRoot config = new ConfigurationBuilder()
+            IConfigurationRoot Config = new ConfigurationBuilder()
                 .AddInMemoryCollection(new Dictionary<string, string?>
                 {
                     {"TestSection:TestKey", "TestValue"}
                 })
                 .Build();
 
-            Dictionary<string, string>? section = config.GetConfig<Dictionary<string, string>>("TestSection");
+            Dictionary<string, string>? Section = Config.GetConfig<Dictionary<string, string>>("TestSection");
 
-            Assert.NotNull(section);
-            Assert.Equal("TestValue", section["TestKey"]);
+            Assert.NotNull(Section);
+            Assert.Equal("TestValue", Section["TestKey"]);
         }
 
         /// <summary>
@@ -59,16 +59,16 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
         [Fact]
         public void When_SystemConfigDoesNotExist_GetSystemConfigReturnsNull()
         {
-            IConfigurationRoot config = new ConfigurationBuilder()
+            IConfigurationRoot Config = new ConfigurationBuilder()
                 .AddInMemoryCollection(new Dictionary<string, string?>
                 {
                     {"Mithril2:ApplicationName", "TestValue"}
                 })
                 .Build();
 
-            Abstractions.Configuration.MithrilConfig? section = config.GetSystemConfig();
+            Abstractions.Configuration.MithrilConfig? Section = Config.GetSystemConfig();
 
-            Assert.Null(section);
+            Assert.Null(Section);
         }
 
         /// <summary>
@@ -77,17 +77,17 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
         [Fact]
         public void When_SystemConfigExists_GetSystemConfigReturnsSection()
         {
-            IConfigurationRoot config = new ConfigurationBuilder()
+            IConfigurationRoot Config = new ConfigurationBuilder()
                 .AddInMemoryCollection(new Dictionary<string, string?>
                 {
                     {"Mithril:ApplicationName", "TestValue"}
                 })
                 .Build();
 
-            Abstractions.Configuration.MithrilConfig? section = config.GetSystemConfig();
+            Abstractions.Configuration.MithrilConfig? Section = Config.GetSystemConfig();
 
-            Assert.NotNull(section);
-            Assert.Equal("TestValue", section.ApplicationName);
+            Assert.NotNull(Section);
+            Assert.Equal("TestValue", Section.ApplicationName);
         }
     }
 }

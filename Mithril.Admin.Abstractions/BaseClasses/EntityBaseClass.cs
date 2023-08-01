@@ -54,6 +54,6 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// <param name="dataService">The data service.</param>
         /// <param name="currentUser">The current user.</param>
         /// <returns>The async task.</returns>
-        public abstract Task<TEntity?> SaveAsync(long id, IDataService dataService, ClaimsPrincipal? currentUser);
+        public abstract Task<TEntity?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser);
     }
 }

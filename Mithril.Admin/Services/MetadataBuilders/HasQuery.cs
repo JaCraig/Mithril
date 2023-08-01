@@ -17,7 +17,7 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// <summary>
         /// Initializes a new instance of the <see cref="HasQuery" /> class.
         /// </summary>
-        /// <param name="queryService">The query service.</param>
+        /// <param name="dropDownQueries">The drop down queries.</param>
         public HasQuery(IEnumerable<IDropDownQuery> dropDownQueries)
         {
             DropDownQueries = dropDownQueries.ToDictionary(x => x.GetType());

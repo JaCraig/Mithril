@@ -35,8 +35,11 @@ namespace Mithril.Themes.Abstractions.Services
         /// <param name="httpEquiv">The HTTP equiv.</param>
         /// <param name="content">The content.</param>
         /// <param name="charset">The charset.</param>
+        /// <param name="property">The property.</param>
         /// <param name="tagOrder">The tag order.</param>
-        /// <returns>True if it is successfully added, false otherwise.</returns>
+        /// <returns>
+        /// True if it is successfully added, false otherwise.
+        /// </returns>
         bool AddMetaResource(string? name, string? scheme, string? httpEquiv, string? content, string? charset, string? property, int tagOrder);
 
         /// <summary>
@@ -92,7 +95,10 @@ namespace Mithril.Themes.Abstractions.Services
         /// <param name="media">The media.</param>
         /// <param name="type">The type.</param>
         /// <param name="tagOrder">The tag order.</param>
-        /// <returns>True if it is successfully added, false otherwise.</returns>
+        /// <param name="location">The location.</param>
+        /// <returns>
+        /// True if it is successfully added, false otherwise.
+        /// </returns>
         bool AddStyleResource(string? content, string? media, string? type, int tagOrder, string? location);
 
         /// <summary>

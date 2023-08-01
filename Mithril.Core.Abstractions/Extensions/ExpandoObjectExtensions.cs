@@ -6,7 +6,6 @@ namespace Mithril.Core.Abstractions.Extensions
 {
     /// <summary>
     /// ExpandoObject extension methods
-    /// TODO: Add tests
     /// </summary>
     public static class ExpandoObjectExtensions
     {

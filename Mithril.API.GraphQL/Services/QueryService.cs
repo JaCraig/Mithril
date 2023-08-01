@@ -5,7 +5,6 @@ namespace Mithril.API.GraphQL.Services
 {
     /// <summary>
     /// Query service
-    /// TODO: Add tests.
     /// </summary>
     /// <seealso cref="IQueryService"/>
     public class QueryService : IQueryService

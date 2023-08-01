@@ -35,9 +35,9 @@ namespace Mithril.Background.Abstractions.Tests.Frequencies
             DateTime LastRunTime = DateTime.Now;
             DateTime CurrentTime = DateTime.Now;
 
-            var canRun = RunEvery.CanRun(LastRunTime, CurrentTime);
+            var CanRun = RunEvery.CanRun(LastRunTime, CurrentTime);
 
-            Assert.False(canRun);
+            Assert.False(CanRun);
         }
 
         /// <summary>
@@ -56,9 +56,9 @@ namespace Mithril.Background.Abstractions.Tests.Frequencies
             DateTime LastRunTime = DateTime.Now.Subtract(timeSpan);
             DateTime CurrentTime = DateTime.Now;
 
-            var canRun = RunEvery.CanRun(LastRunTime, CurrentTime);
+            var CanRun = RunEvery.CanRun(LastRunTime, CurrentTime);
 
-            Assert.True(canRun);
+            Assert.True(CanRun);
         }
     }
 }

@@ -6,7 +6,6 @@ namespace Mithril.API.GraphQL.Services
 {
     /// <summary>
     /// Drop down query service
-    /// TODO: Add tests.
     /// </summary>
     /// <seealso cref="IDropDownQueryService"/>
     public class DropDownQueryService : IDropDownQueryService

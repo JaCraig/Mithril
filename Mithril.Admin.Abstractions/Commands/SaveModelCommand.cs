@@ -6,7 +6,6 @@ namespace Mithril.Admin.Abstractions.Commands
 {
     /// <summary>
     /// Save model command
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="CommandBaseClass&lt;SaveModelCommand&gt;"/>
     public class SaveModelCommand : CommandBaseClass<SaveModelCommand>

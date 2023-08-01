@@ -2,7 +2,6 @@
 {
     /// <summary>
     /// Paged data view model
-    /// TODO: Add tests
     /// </summary>
     /// <typeparam name="TData">The type of the data.</typeparam>
     public class PagedDataVM<TData>

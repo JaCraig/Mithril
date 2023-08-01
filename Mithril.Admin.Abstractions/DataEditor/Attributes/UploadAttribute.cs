@@ -2,7 +2,6 @@
 {
     /// <summary>
     /// Determines if the system should treat this as an upload
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="Attribute" />
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]

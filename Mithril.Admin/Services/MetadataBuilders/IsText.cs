@@ -8,7 +8,6 @@ namespace Mithril.Admin.Services.MetadataBuilders
 {
     /// <summary>
     /// Is Text
-    /// TODO: Add Tests
     /// </summary>
     /// <seealso cref="MetadataBuilderBaseClass"/>
     public class IsText : MetadataBuilderBaseClass

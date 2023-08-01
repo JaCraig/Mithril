@@ -6,7 +6,6 @@ namespace Mithril.Admin.Abstractions.Mappings
 {
     /// <summary>
     /// Model saved event mapping
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="MappingBaseClass&lt;ModelSavedEvent, DefaultDatabase&gt;"/>
     public class ModelSavedEventMapping : MappingBaseClass<ModelSavedEvent, DefaultDatabase>

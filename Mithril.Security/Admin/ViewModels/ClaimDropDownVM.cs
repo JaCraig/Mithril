@@ -6,7 +6,6 @@ namespace Mithril.Security.Admin.ViewModels
 {
     /// <summary>
     /// Claim Drop Down VM
-    /// TODO: Add tests.
     /// </summary>
     public class ClaimDropDownVM
     {

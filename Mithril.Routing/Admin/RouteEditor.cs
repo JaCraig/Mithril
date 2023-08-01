@@ -47,7 +47,7 @@ namespace Mithril.Routing.Admin
         {
             return string.IsNullOrEmpty(searchQuery)
                 ? query
-                : (query?.Where(Route => Route.InputPath.Contains(searchQuery) || Route.OutputPath.Contains(searchQuery)));
+                : (query?.Where(route => route.InputPath.Contains(searchQuery) || route.OutputPath.Contains(searchQuery)));
         }
     }
 }

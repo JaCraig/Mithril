@@ -8,7 +8,6 @@ namespace Mithril.Admin.Services.MetadataBuilders
 {
     /// <summary>
     /// Determines if the property is a list.
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="MetadataBuilderBaseClass" />
     public class IsList : MetadataBuilderBaseClass

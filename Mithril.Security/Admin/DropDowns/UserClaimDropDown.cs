@@ -5,7 +5,6 @@ namespace Mithril.Security.Admin.DropDowns
 {
     /// <summary>
     /// UserClaim drop down
-    /// TODO: Add tests.
     /// </summary>
     /// <seealso cref="DropDownBaseClass&lt;UserClaim&gt;" />
     public class UserClaimDropDown : DropDownBaseClass<UserClaim>

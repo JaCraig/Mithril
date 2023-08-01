@@ -2,7 +2,6 @@
 {
     /// <summary>
     /// Determines if the system should treat this as a select
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="QueryAttribute" />
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]

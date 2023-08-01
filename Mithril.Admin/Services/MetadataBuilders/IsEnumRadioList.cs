@@ -33,7 +33,6 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// <summary>
         /// Generates the options.
         /// </summary>
-        /// <param name="_">The .</param>
         /// <param name="property">The property.</param>
         /// <returns></returns>
         private static List<Option> GenerateOptions(PropertyInfo? property)

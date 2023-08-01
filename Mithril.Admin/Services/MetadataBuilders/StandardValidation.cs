@@ -9,7 +9,6 @@ namespace Mithril.Admin.Services.MetadataBuilders
 {
     /// <summary>
     /// Extracts standard validation metadata
-    /// TODO: Add tests.
     /// </summary>
     /// <seealso cref="IMetadataBuilder"/>
     public class StandardValidation : MetadataBuilderBaseClass
@@ -18,8 +17,11 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// Extracts metadata and adds it to the PropertyMetadata object.
         /// </summary>
         /// <param name="propertyMetadata">The property metadata.</param>
-        /// <returns>The resulting property metadata.</returns>
-        public override PropertyMetadata? ExtractMetadata(PropertyMetadata? propertyMetadata, IEntityMetadataService metadataService)
+        /// <param name="metadataService">The metadata service.</param>
+        /// <returns>
+        /// The resulting property metadata.
+        /// </returns>
+        public override PropertyMetadata? ExtractMetadata(PropertyMetadata? propertyMetadata, IEntityMetadataService? metadataService)
         {
             if (propertyMetadata is null)
                 return propertyMetadata;

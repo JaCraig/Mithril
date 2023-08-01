@@ -7,7 +7,6 @@ namespace Mithril.Admin.Abstractions.DataEditor
 {
     /// <summary>
     /// Entity metadata
-    /// TODO: Add Tests
     /// </summary>
     public class EntityMetadata
     {

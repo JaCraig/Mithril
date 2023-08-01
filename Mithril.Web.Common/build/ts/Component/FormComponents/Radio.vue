@@ -1,7 +1,7 @@
 
 <template>
     <div>
-        <label :for="getFieldID()" v-if="internalSchema.displayName">
+        <label :for="getFieldID()" v-if="showLabel && internalSchema.displayName">
             {{ internalSchema.displayName }}
             <span class="error clear-background" v-if="internalSchema.metadata.required && errorMessage">*</span>
             <i class="clear-background active no-border small" v-if="internalSchema.metadata.hint"><span class="fas fa-info-circle"></span>{{ internalSchema.metadata.hint }}</i>
@@ -56,6 +56,11 @@
                 type: PropertySchema,
                 required: true,
                 default: () => new PropertySchema()
+            },
+            showLabel: {
+                type: Boolean,
+                required: false,
+                default: true
             }
         },
         methods: {

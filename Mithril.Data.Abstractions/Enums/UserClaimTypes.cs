@@ -1,19 +1,18 @@
-﻿using BigBook.Patterns.BaseClasses;
-using System.Globalization;
+﻿using Mithril.Data.Abstractions.BaseClasses;
 
 namespace Mithril.Data.Abstractions.Enums
 {
     /// <summary>
     /// Claim types that are available
     /// </summary>
-    /// <seealso cref="StringEnumBaseClass{UserClaimTypes}"/>
-    public class UserClaimTypes : StringEnumBaseClass<UserClaimTypes>
+    /// <seealso cref="LookUpEnumBaseClass{UserClaimTypes}"/>
+    public class UserClaimTypes : LookUpEnumBaseClass<UserClaimTypes>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserClaimTypes"/> class.
         /// </summary>
         public UserClaimTypes()
-            : base("")
+            : this("")
         {
         }
 
@@ -22,7 +21,7 @@ namespace Mithril.Data.Abstractions.Enums
         /// </summary>
         /// <param name="name">The name.</param>
         public UserClaimTypes(string name)
-            : base(name)
+            : base(name, "fa-lock")
         {
         }
 
@@ -115,45 +114,5 @@ namespace Mithril.Data.Abstractions.Enums
         /// </summary>
         /// <value>The claim corresponding to the user name.</value>
         public static UserClaimTypes UserName { get; } = new UserClaimTypes("UserName");
-
-        /// <summary>
-        /// The name mapping
-        /// </summary>
-        private static Dictionary<string, UserClaimTypes> NameMapping { get; } = new Dictionary<string, UserClaimTypes>
-        {
-            [UserName.ToString().ToUpper(CultureInfo.InvariantCulture)] = UserName,
-            [StaffType.ToString().ToUpper(CultureInfo.InvariantCulture)] = StaffType,
-            [SectionHeadFor.ToString().ToUpper(CultureInfo.InvariantCulture)] = SectionHeadFor,
-            [SectionHead.ToString().ToUpper(CultureInfo.InvariantCulture)] = SectionHead,
-            [Section.ToString().ToUpper(CultureInfo.InvariantCulture)] = Section,
-            [SecretaryFor.ToString().ToUpper(CultureInfo.InvariantCulture)] = SecretaryFor,
-            [Secretary.ToString().ToUpper(CultureInfo.InvariantCulture)] = Secretary,
-            [Role.ToString().ToUpper(CultureInfo.InvariantCulture)] = Role,
-            [Office.ToString().ToUpper(CultureInfo.InvariantCulture)] = Office,
-            [ManagerFor.ToString().ToUpper(CultureInfo.InvariantCulture)] = ManagerFor,
-            [Manager.ToString().ToUpper(CultureInfo.InvariantCulture)] = Manager,
-            [Group.ToString().ToUpper(CultureInfo.InvariantCulture)] = Group,
-            [Committee.ToString().ToUpper(CultureInfo.InvariantCulture)] = Committee,
-            [AttorneyLevel.ToString().ToUpper(CultureInfo.InvariantCulture)] = AttorneyLevel,
-            [ADGroup.ToString().ToUpper(CultureInfo.InvariantCulture)] = ADGroup
-        };
-
-        /// <summary>
-        /// Gets the type of the contact information.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        /// <returns>The contact info type specified.</returns>
-        public static UserClaimTypes? GetUserClaimType(string name)
-        {
-            if (string.IsNullOrEmpty(name)) return null;
-            var KeyName = name.ToUpper(CultureInfo.InvariantCulture).Replace("-", "", StringComparison.OrdinalIgnoreCase);
-            return NameMapping.ContainsKey(KeyName) ? NameMapping[KeyName] : new UserClaimTypes(name);
-        }
-
-        /// <summary>
-        /// Gets the enum types.
-        /// </summary>
-        /// <returns>The various enum types.</returns>
-        public static IEnumerable<UserClaimTypes> GetUserClaimTypes() => NameMapping.Values;
     }
 }

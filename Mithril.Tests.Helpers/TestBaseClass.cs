@@ -46,9 +46,9 @@ namespace Mithril.Tests.Helpers
             if (TestObject is null)
                 return Task.CompletedTask;
             var ExceptionHandlers = new ExceptionHandler();
-            for (var x = 0; x < ExceptionsToIgnore.Length; ++x)
+            for (var X = 0; X < ExceptionsToIgnore.Length; ++X)
             {
-                Type ExceptionToIgnore = ExceptionsToIgnore[x];
+                Type ExceptionToIgnore = ExceptionsToIgnore[X];
                 IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, new object?[] { null });
             }
 
@@ -71,11 +71,16 @@ namespace Mithril.Tests.Helpers
         /// </summary>
         protected TestBaseClass()
         {
-            lock (LockObject)
+            lock (_LockObject)
             {
                 _ = Mech.Default;
             }
         }
+
+        /// <summary>
+        /// The lock object
+        /// </summary>
+        private static readonly object _LockObject = new();
 
         /// <summary>
         /// Gets the ignore method.
@@ -111,11 +116,6 @@ namespace Mithril.Tests.Helpers
         protected abstract Type? ObjectType { get; set; }
 
         /// <summary>
-        /// The lock object
-        /// </summary>
-        private static readonly object LockObject = new();
-
-        /// <summary>
         /// Attempts to break the object.
         /// </summary>
         /// <returns>The async task.</returns>
@@ -125,9 +125,9 @@ namespace Mithril.Tests.Helpers
             if (ObjectType is null)
                 return Task.CompletedTask;
             var ExceptionHandlers = new ExceptionHandler();
-            for (var x = 0; x < ExceptionsToIgnore.Length; ++x)
+            for (var X = 0; X < ExceptionsToIgnore.Length; ++X)
             {
-                Type ExceptionToIgnore = ExceptionsToIgnore[x];
+                Type ExceptionToIgnore = ExceptionsToIgnore[X];
                 IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, new object?[] { null });
             }
 

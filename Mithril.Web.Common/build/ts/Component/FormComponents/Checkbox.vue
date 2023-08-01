@@ -1,7 +1,7 @@
 <template>
     <div>
         <label :for="getFieldID()">
-            <span v-if="internalSchema.displayName">
+            <span v-if="showLabel && internalSchema.displayName">
                 {{ internalSchema.displayName }}
             </span>
             <span class="error clear-background" v-if="internalSchema.metadata.required && errorMessage">*</span>
@@ -46,6 +46,11 @@ import { InputElementValidationRule } from '../../Framework/Validation';
                 type: PropertySchema,
                 required: true,
                 default: () => new PropertySchema()
+            },
+            showLabel: {
+                type: Boolean,
+                required: false,
+                default: true
             }
         },
         methods: {

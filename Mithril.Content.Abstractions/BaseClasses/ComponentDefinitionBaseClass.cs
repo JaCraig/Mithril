@@ -88,7 +88,7 @@ namespace Mithril.Content.Abstractions.BaseClasses
         /// <value>
         /// The type of the component.
         /// </value>
-        private string ComponentType { get; set; }
+        private string ComponentType { get; }
 
         /// <summary>
         /// Fixes the name.

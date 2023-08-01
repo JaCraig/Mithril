@@ -9,7 +9,6 @@ namespace Mithril.Admin.Services.MetadataBuilders
 {
     /// <summary>
     /// Can list
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="MetadataBuilderBaseClass" />
     public class CanList : MetadataBuilderBaseClass

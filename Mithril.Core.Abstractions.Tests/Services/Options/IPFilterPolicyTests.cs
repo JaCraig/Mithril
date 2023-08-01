@@ -24,11 +24,11 @@ namespace Mithril.Core.Abstractions.Tests.Services.Options
         [Fact]
         public void When_IPIsAllowed_Then_ReturnTrue()
         {
-            var ip = "10.0.0.1";
+            const string Ip = "10.0.0.1";
             var TestObject = new IPFilterPolicy("Default");
-            TestObject.SetWhiteList(ip);
-            var result = TestObject.IsAllowed(ip);
-            Assert.True(result);
+            TestObject.SetWhiteList(Ip);
+            var Result = TestObject.IsAllowed(Ip);
+            Assert.True(Result);
         }
 
         /// <summary>
@@ -37,11 +37,11 @@ namespace Mithril.Core.Abstractions.Tests.Services.Options
         [Fact]
         public void When_IPIsNotAllowed_Then_ReturnFalse()
         {
-            var ip = "10.0.0.1";
+            const string Ip = "10.0.0.1";
             var TestObject = new IPFilterPolicy("Default");
-            TestObject.SetBlackList(ip);
-            var result = TestObject.IsAllowed(ip);
-            Assert.False(result);
+            TestObject.SetBlackList(Ip);
+            var Result = TestObject.IsAllowed(Ip);
+            Assert.False(Result);
         }
     }
 }

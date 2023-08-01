@@ -46,7 +46,7 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <returns>
         /// <c>true</c> if this instance can run the specified data type; otherwise, <c>false</c>.
         /// </returns>
-        public virtual bool CanRun(string dataType, ClaimsPrincipal user)
+        public virtual bool CanRun(string? dataType, ClaimsPrincipal? user)
         {
             return string.Equals(dataType, Name, StringComparison.OrdinalIgnoreCase);
         }
@@ -56,6 +56,6 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// </summary>
         /// <param name="filter">The filter.</param>
         /// <returns>The drop down data.</returns>
-        public abstract Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string filter);
+        public abstract Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string? filter);
     }
 }

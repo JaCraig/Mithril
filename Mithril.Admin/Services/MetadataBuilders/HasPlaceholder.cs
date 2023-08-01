@@ -10,7 +10,6 @@ namespace Mithril.Admin.Services.MetadataBuilders
 {
     /// <summary>
     /// Determines if the property has a placeholder value.
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="MetadataBuilderBaseClass" />
     public class HasPlaceholder : MetadataBuilderBaseClass

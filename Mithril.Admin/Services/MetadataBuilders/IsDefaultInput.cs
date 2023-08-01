@@ -9,7 +9,6 @@ namespace Mithril.Admin.Services.MetadataBuilders
 {
     /// <summary>
     /// Is Default Input type
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="MetadataBuilderBaseClass"/>
     public class IsDefaultInput : MetadataBuilderBaseClass

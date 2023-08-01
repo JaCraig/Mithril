@@ -154,16 +154,16 @@
             <summary>
             Examples the method.
             </summary>
-            <param name="A">a.</param>
-            <param name="B">The b.</param>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
             <returns></returns>
         </member>
         <member name="M:Mithril.Models.TestVM.ExampleMethod2(System.String,System.Int32)">
             <summary>
             Examples the method2.
             </summary>
-            <param name="A">a.</param>
-            <param name="B">The b.</param>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
             <returns></returns>
         </member>
         <member name="T:Mithril.Models.TestVM2">

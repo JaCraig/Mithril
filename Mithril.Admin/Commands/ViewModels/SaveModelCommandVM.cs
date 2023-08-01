@@ -4,7 +4,6 @@ namespace Mithril.Admin.Commands.ViewModels
 {
     /// <summary>
     /// Save model command VM
-    /// TODO: Add tests
     /// </summary>
     public class SaveModelCommandVM
     {

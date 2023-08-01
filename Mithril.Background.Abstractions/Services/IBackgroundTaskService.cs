@@ -10,8 +10,10 @@ namespace Mithril.Background.Abstractions.Services
         /// <summary>
         /// Enqueues the specified task.
         /// </summary>
-        /// <param name="task">The task.</param>
-        /// <returns>This.</returns>
+        /// <param name="tasks">The tasks.</param>
+        /// <returns>
+        /// This.
+        /// </returns>
         IBackgroundTaskService Enqueue(params IBackgroundTask[] tasks);
 
         /// <summary>

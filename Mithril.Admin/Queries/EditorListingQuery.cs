@@ -10,9 +10,7 @@ namespace Mithril.Admin.Queries
 {
     /// <summary>
     /// Editor listing query
-    /// TODO: Add tests
     /// </summary>
-    /// <seealso cref="QueryBaseClass&lt;IEnumerable&lt;EditorVM&gt;&gt;" />
     public class EditorListingQuery : QueryBaseClass<IEnumerable<EditorVM>>
     {
         /// <summary>
@@ -21,7 +19,7 @@ namespace Mithril.Admin.Queries
         /// <param name="logger">The logger.</param>
         /// <param name="featureManager">The feature manager.</param>
         /// <param name="editorService">The editor service.</param>
-        public EditorListingQuery(ILogger<EditorListingQuery>? logger, IFeatureManager? featureManager, IEditorService editorService) : base(logger, featureManager)
+        public EditorListingQuery(ILogger<EditorListingQuery>? logger, IFeatureManager? featureManager, IEditorService? editorService) : base(logger, featureManager)
         {
             EditorService = editorService;
         }
@@ -40,7 +38,7 @@ namespace Mithril.Admin.Queries
         /// <value>
         /// The editor service.
         /// </value>
-        private IEditorService EditorService { get; }
+        private IEditorService? EditorService { get; }
 
         /// <summary>
         /// Used to resolve the data asked for by the query.
@@ -52,7 +50,7 @@ namespace Mithril.Admin.Queries
         /// </returns>
         public override Task<IEnumerable<EditorVM>?> ResolveAsync(ClaimsPrincipal? user, Arguments arguments)
         {
-            return Task.FromResult<IEnumerable<EditorVM>?>(EditorService.Editors.Where(x => x.CanView(user)).Select(x => new EditorVM(x)));
+            return Task.FromResult<IEnumerable<EditorVM>?>(EditorService?.Editors.Where(x => x.CanView(user)).Select(x => new EditorVM(x)) ?? Array.Empty<EditorVM>());
         }
     }
 }

@@ -9,7 +9,6 @@ namespace Mithril.Security.Admin
 {
     /// <summary>
     /// Permission editor service
-    /// TODO: Add tests.
     /// </summary>
     /// <seealso cref="EntityEditorBaseClass&lt;PermissionVM, Permission&gt;" />
     public class PermissionEditor : EntityEditorBaseClass<PermissionVM, Permission>
@@ -20,7 +19,7 @@ namespace Mithril.Security.Admin
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
         /// <param name="dataType">Type of the data.</param>
-        public PermissionEditor(IDataService dataService, IEntityMetadataService entityMetadataService, string? dataType = null) : base(dataService, entityMetadataService, dataType)
+        public PermissionEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null) : base(dataService, entityMetadataService, dataType)
         {
         }
 
@@ -48,7 +47,7 @@ namespace Mithril.Security.Admin
         {
             return string.IsNullOrEmpty(searchQuery)
                 ? query
-                : (query?.Where(Permission => Permission.DisplayName.Contains(searchQuery)));
+                : (query?.Where(permission => permission.DisplayName.Contains(searchQuery)));
         }
     }
 }

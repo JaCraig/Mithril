@@ -13,7 +13,8 @@ namespace Mithril.Admin.Abstractions.BaseClasses
     /// Settings editor base class
     /// </summary>
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
-    /// <seealso cref="IEntityEditor&lt;TEntity&gt;"/>
+    /// <typeparam name="TModel">The type of the model.</typeparam>
+    /// <seealso cref="EntityEditorBaseClass&lt;TEntity, TModel&gt;" />
     public abstract class SettingsEditorBaseClass<TEntity, TModel> : EntityEditorBaseClass<TEntity, TModel>
         where TEntity : IEntity<TModel>, new()
         where TModel : ModelBase<TModel>, new()
@@ -88,7 +89,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
         /// <param name="dataType">Type of the data.</param>
-        protected SettingsEditorBaseClass(IDataService dataService, IEntityMetadataService entityMetadataService, string? dataType = null)
+        protected SettingsEditorBaseClass(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null)
             : base(dataService, entityMetadataService, dataType ?? typeof(TEntity).Name)
         {
             if (string.IsNullOrEmpty(dataType))

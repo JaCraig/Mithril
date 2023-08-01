@@ -5,7 +5,6 @@ namespace Mithril.Admin.Controllers
 {
     /// <summary>
     /// Admin controller
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="Controller"/>
     [Area("Admin")]

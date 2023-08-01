@@ -11,9 +11,7 @@ namespace Mithril.API.GraphQL.Queries
 {
     /// <summary>
     /// Simple entry point for drop down style key/value pair queries.
-    /// TODO: Add Tests
     /// </summary>
-    /// <seealso cref="QueryBaseClass&lt;IEnumerable&lt;DropDownVM&lt;long&gt;&gt;&gt;"/>
     public class DropDownQuery : QueryBaseClass<IEnumerable<DropDownVM<long>>>
     {
         /// <summary>
@@ -22,7 +20,7 @@ namespace Mithril.API.GraphQL.Queries
         /// <param name="logger">The logger.</param>
         /// <param name="featureManager">The feature manager.</param>
         /// <param name="dropDownQueryService">The drop down query service.</param>
-        public DropDownQuery(ILogger<DropDownQuery>? logger, IFeatureManager? featureManager, IDropDownQueryService dropDownQueryService)
+        public DropDownQuery(ILogger<DropDownQuery>? logger, IFeatureManager? featureManager, IDropDownQueryService? dropDownQueryService)
             : base(logger, featureManager)
         {
             DropDownQueryService = dropDownQueryService;
@@ -48,7 +46,7 @@ namespace Mithril.API.GraphQL.Queries
         /// Gets the drop down query service.
         /// </summary>
         /// <value>The drop down query service.</value>
-        private IDropDownQueryService DropDownQueryService { get; }
+        private IDropDownQueryService? DropDownQueryService { get; }
 
         /// <summary>
         /// Used to resolve the data asked for by the query.
@@ -58,9 +56,9 @@ namespace Mithril.API.GraphQL.Queries
         /// <returns>The data specified.</returns>
         public override async Task<IEnumerable<DropDownVM<long>>?> ResolveAsync(ClaimsPrincipal? user, Arguments arguments)
         {
-            var QueryType = arguments.GetValue<string>("type");
-            var QueryFilter = arguments.GetValue<string>("filter");
-            IDropDownQuery? DropDownQuery = DropDownQueryService.FindDropDownQuery(QueryType, user);
+            var QueryType = arguments?.GetValue<string>("type") ?? "";
+            var QueryFilter = arguments?.GetValue<string>("filter") ?? "";
+            IDropDownQuery? DropDownQuery = DropDownQueryService?.FindDropDownQuery(QueryType, user);
             return DropDownQuery is null
                 ? new List<DropDownVM<long>>()
                 : await DropDownQuery.GetDataAsync(QueryFilter).ConfigureAwait(false);

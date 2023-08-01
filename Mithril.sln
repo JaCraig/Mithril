@@ -172,6 +172,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Admin.Tests", "Mithril.Admin.Tests\Mithril.Admin.Tests.csproj", "{36257553-55E3-489C-9D24-BE03D8C2E259}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mithril.Admin.Abstractions.Tests", "Mithril.Admin.Abstractions.Tests\Mithril.Admin.Abstractions.Tests.csproj", "{44BB8A90-FDB9-475B-8C00-F3792069CE9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -474,6 +478,14 @@ Global
 		{B68354DE-78EE-4896-8CA6-AED81666A896}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B68354DE-78EE-4896-8CA6-AED81666A896}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B68354DE-78EE-4896-8CA6-AED81666A896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36257553-55E3-489C-9D24-BE03D8C2E259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36257553-55E3-489C-9D24-BE03D8C2E259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36257553-55E3-489C-9D24-BE03D8C2E259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36257553-55E3-489C-9D24-BE03D8C2E259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44BB8A90-FDB9-475B-8C00-F3792069CE9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44BB8A90-FDB9-475B-8C00-F3792069CE9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44BB8A90-FDB9-475B-8C00-F3792069CE9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44BB8A90-FDB9-475B-8C00-F3792069CE9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -557,6 +569,8 @@ Global
 		{7DF11FA6-2072-4ACC-B666-BF3F904B8A16} = {2F251ADC-5F62-4892-AD6E-EA191C741A18}
 		{AEC66A8F-42CF-4342-BB57-3B290ADFA977} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
 		{B68354DE-78EE-4896-8CA6-AED81666A896} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
+		{36257553-55E3-489C-9D24-BE03D8C2E259} = {20C64160-C469-46C8-9971-17C2435420AD}
+		{44BB8A90-FDB9-475B-8C00-F3792069CE9F} = {2F251ADC-5F62-4892-AD6E-EA191C741A18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}

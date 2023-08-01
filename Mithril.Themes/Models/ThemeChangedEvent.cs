@@ -17,10 +17,9 @@ namespace Mithril.Themes.Models
         { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ThemeChangedEvent"/> class.
+        /// Initializes a new instance of the <see cref="ThemeChangedEvent" /> class.
         /// </summary>
         /// <param name="name">The name.</param>
-        /// <param name="active">if set to <c>true</c> [active].</param>
         public ThemeChangedEvent(string name)
         {
             ThemeName = name;
