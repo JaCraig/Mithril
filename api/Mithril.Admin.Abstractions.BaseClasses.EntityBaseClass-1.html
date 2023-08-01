@@ -309,13 +309,13 @@ public bool Active { get; set; }</code></pre>
     <a href="https://github.com/JaCraig/Mithril/blob/main/Mithril.Admin.Abstractions/BaseClasses/EntityBaseClass.cs/#L57">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityBaseClass_1_SaveAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass`1.SaveAsync*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityBaseClass_1_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass`1.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)">SaveAsync(long, IDataService, ClaimsPrincipal?)</h4>
+  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityBaseClass_1_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass`1.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)">SaveAsync(long, IDataService?, ClaimsPrincipal?)</h4>
   <div class="markdown level1 summary"><p>Saves the changes asynchronously.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract Task&lt;TEntity?&gt; SaveAsync(long id, IDataService dataService, ClaimsPrincipal? currentUser)</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;TEntity?&gt; SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
