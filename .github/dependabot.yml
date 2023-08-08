@@ -6,7 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "nuget" # See documentation for possible values
-    directory: "/src" # Location of package manifests
+    directory: "/src/.." # Location of package manifests
     schedule:
       interval: "daily"
     commit-message:
@@ -17,7 +17,7 @@ updates:
           - "*"
 
   - package-ecosystem: "nuget" # See documentation for possible values
-    directory: "/test" # Location of package manifests
+    directory: "/test/.." # Location of package manifests
     schedule:
       interval: "daily"
     commit-message:
