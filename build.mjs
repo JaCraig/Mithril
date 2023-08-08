@@ -8,7 +8,7 @@ import pkg from './package.json' assert { type: "json"};
 const external = Object.keys(pkg.dependencies);
 
 // Base directory
-const baseDir = process.cwd();
+const baseDir = process.cwd()+"\\src\\";
 
 // Watch mode
 const watchMode = process.argv.includes('--watch') ? {} : null;

@@ -1,2 +1,2 @@
 # Code
-[!code-csharp[](../../Mithril/Program.cs)]
+[!code-csharp[](../../src/Mithril/Program.cs)]

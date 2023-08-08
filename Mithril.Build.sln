@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril", "Mithril\Mithril.csproj", "{6EFBC026-91E2-4CD9-8CEA-EA8334801488}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril", "src\Mithril\Mithril.csproj", "{6EFBC026-91E2-4CD9-8CEA-EA8334801488}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Core", "Mithril.Core\Mithril.Core.csproj", "{A352EDA5-CD4B-4B1D-8BFE-63748ABE7906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Core", "src\Mithril.Core\Mithril.Core.csproj", "{A352EDA5-CD4B-4B1D-8BFE-63748ABE7906}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Core.Abstractions", "Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj", "{BD6A5DD3-2C76-4700-BC24-D9969FD95AE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Core.Abstractions", "src\Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj", "{BD6A5DD3-2C76-4700-BC24-D9969FD95AE2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{E11DBDB8-9874-4DA1-86A7-7DEE0544A00B}"
 EndProject
@@ -15,160 +15,166 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstractions", "Abstraction
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{5025FB1E-08E0-4D28-8172-4AFBAB469673}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Logging.Serilog", "Mithril.Logging.Serilog\Mithril.Logging.Serilog.csproj", "{98B7B946-452B-447E-9BB1-95099FE4D9A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Logging.Serilog", "src\Mithril.Logging.Serilog\Mithril.Logging.Serilog.csproj", "{98B7B946-452B-447E-9BB1-95099FE4D9A7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{52F18E23-D377-4DA9-ADE9-D4E3649B26B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Core.Tests", "Mithril.Core.Tests\Mithril.Core.Tests.csproj", "{6F24491D-535D-42EF-B295-FFC350A5CA6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Core.Tests", "test\Mithril.Core.Tests\Mithril.Core.Tests.csproj", "{6F24491D-535D-42EF-B295-FFC350A5CA6B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Tests.Helpers", "Mithril.Tests.Helpers\Mithril.Tests.Helpers.csproj", "{153C094E-DE9E-49BE-B708-B8A2A4ECF36C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Tests.Helpers", "test\Mithril.Tests.Helpers\Mithril.Tests.Helpers.csproj", "{153C094E-DE9E-49BE-B708-B8A2A4ECF36C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{20C64160-C469-46C8-9971-17C2435420AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Logging.Serilog.Tests", "Mithril.Logging.Serilog.Tests\Mithril.Logging.Serilog.Tests.csproj", "{9B8F5534-87B7-4B42-ADB0-58EB14EA6F2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Logging.Serilog.Tests", "test\Mithril.Logging.Serilog.Tests\Mithril.Logging.Serilog.Tests.csproj", "{9B8F5534-87B7-4B42-ADB0-58EB14EA6F2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Windows", "Mithril.Security.Windows\Mithril.Security.Windows.csproj", "{24CA2AB9-CA0F-422A-B6BE-482A22BC95CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Windows", "src\Mithril.Security.Windows\Mithril.Security.Windows.csproj", "{24CA2AB9-CA0F-422A-B6BE-482A22BC95CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security", "Mithril.Security\Mithril.Security.csproj", "{81B4C1D4-EC17-4CE2-8208-CFAF42EAF7A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security", "src\Mithril.Security\Mithril.Security.csproj", "{81B4C1D4-EC17-4CE2-8208-CFAF42EAF7A2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.GraphQL", "Mithril.API.GraphQL\Mithril.API.GraphQL.csproj", "{32C1ABD3-1CF2-4648-A270-645BB42827E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.GraphQL", "src\Mithril.API.GraphQL\Mithril.API.GraphQL.csproj", "{32C1ABD3-1CF2-4648-A270-645BB42827E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Data.Abstractions", "Mithril.Data.Abstractions\Mithril.Data.Abstractions.csproj", "{54120EFC-6D63-4305-A7BC-5ABBFBEB0355}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Data.Abstractions", "src\Mithril.Data.Abstractions\Mithril.Data.Abstractions.csproj", "{54120EFC-6D63-4305-A7BC-5ABBFBEB0355}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Abstractions", "Mithril.Security.Abstractions\Mithril.Security.Abstractions.csproj", "{17592880-2740-42D1-BF2B-2E3D1C72252E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Abstractions", "src\Mithril.Security.Abstractions\Mithril.Security.Abstractions.csproj", "{17592880-2740-42D1-BF2B-2E3D1C72252E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Data", "Mithril.Data\Mithril.Data.csproj", "{7D8E66F5-1877-4590-B4BD-8C71BFA88C50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Data", "src\Mithril.Data\Mithril.Data.csproj", "{7D8E66F5-1877-4590-B4BD-8C71BFA88C50}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Abstractions", "Mithril.API.Abstractions\Mithril.API.Abstractions.csproj", "{C429D9BC-0F05-4D5B-BC8F-E86F4D46979D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Abstractions", "src\Mithril.API.Abstractions\Mithril.API.Abstractions.csproj", "{C429D9BC-0F05-4D5B-BC8F-E86F4D46979D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Commands", "Mithril.API.Commands\Mithril.API.Commands.csproj", "{EA98FF43-E601-428F-8412-F1B06979E083}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Commands", "src\Mithril.API.Commands\Mithril.API.Commands.csproj", "{EA98FF43-E601-428F-8412-F1B06979E083}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Swagger", "Mithril.API.Swagger\Mithril.API.Swagger.csproj", "{E2A6146D-FEA8-498B-9362-AFD72AF82411}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Swagger", "src\Mithril.API.Swagger\Mithril.API.Swagger.csproj", "{E2A6146D-FEA8-498B-9362-AFD72AF82411}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Logging", "Mithril.Logging\Mithril.Logging.csproj", "{99836741-94FF-424B-AC0F-02F182A528CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Logging", "src\Mithril.Logging\Mithril.Logging.csproj", "{99836741-94FF-424B-AC0F-02F182A528CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstractions", "Abstractions", "{2F251ADC-5F62-4892-AD6E-EA191C741A18}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Abstractions.Tests", "Mithril.API.Abstractions.Tests\Mithril.API.Abstractions.Tests.csproj", "{76E3C27E-D42B-423C-986A-AE7C426028C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Abstractions.Tests", "test\Mithril.API.Abstractions.Tests\Mithril.API.Abstractions.Tests.csproj", "{76E3C27E-D42B-423C-986A-AE7C426028C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Core.Abstractions.Tests", "Mithril.Core.Abstractions.Tests\Mithril.Core.Abstractions.Tests.csproj", "{9F911A16-02CE-4045-8C3A-1BE7F51C95BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Core.Abstractions.Tests", "test\Mithril.Core.Abstractions.Tests\Mithril.Core.Abstractions.Tests.csproj", "{9F911A16-02CE-4045-8C3A-1BE7F51C95BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Logging.Tests", "Mithril.Logging.Tests\Mithril.Logging.Tests.csproj", "{B0A9A003-1FBF-42DA-A9BB-BD28D5F16778}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Logging.Tests", "test\Mithril.Logging.Tests\Mithril.Logging.Tests.csproj", "{B0A9A003-1FBF-42DA-A9BB-BD28D5F16778}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.GraphQL.Tests", "Mithril.API.GraphQL.Tests\Mithril.API.GraphQL.Tests.csproj", "{738EF5E5-39DE-4F0D-87F3-BA7BC4FC26D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.GraphQL.Tests", "test\Mithril.API.GraphQL.Tests\Mithril.API.GraphQL.Tests.csproj", "{738EF5E5-39DE-4F0D-87F3-BA7BC4FC26D6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Commands.Tests", "Mithril.API.Commands.Tests\Mithril.API.Commands.Tests.csproj", "{BD108CD2-B2DF-4E30-90AA-3C843EC5285D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Commands.Tests", "test\Mithril.API.Commands.Tests\Mithril.API.Commands.Tests.csproj", "{BD108CD2-B2DF-4E30-90AA-3C843EC5285D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Features", "Mithril.Features\Mithril.Features.csproj", "{3BACD676-717A-4E35-A695-B1D56D3B7D63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Features", "src\Mithril.Features\Mithril.Features.csproj", "{3BACD676-717A-4E35-A695-B1D56D3B7D63}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Features.Tests", "Mithril.Features.Tests\Mithril.Features.Tests.csproj", "{306ADA33-F4CC-4047-AB6B-B0A52C80805D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Features.Tests", "test\Mithril.Features.Tests\Mithril.Features.Tests.csproj", "{306ADA33-F4CC-4047-AB6B-B0A52C80805D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Tests", "Mithril.Security.Tests\Mithril.Security.Tests.csproj", "{4EB4203D-B9B2-4BCC-BD52-D2DFADAB2325}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Tests", "test\Mithril.Security.Tests\Mithril.Security.Tests.csproj", "{4EB4203D-B9B2-4BCC-BD52-D2DFADAB2325}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Windows.Tests", "Mithril.Security.Windows.Tests\Mithril.Security.Windows.Tests.csproj", "{4A0A9A6D-0265-4FD1-9458-BA2236BF434A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Windows.Tests", "test\Mithril.Security.Windows.Tests\Mithril.Security.Windows.Tests.csproj", "{4A0A9A6D-0265-4FD1-9458-BA2236BF434A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Swagger.Tests", "Mithril.API.Swagger.Tests\Mithril.API.Swagger.Tests.csproj", "{45DAF526-4981-4ACE-8F73-C1C5E3A33E52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.API.Swagger.Tests", "test\Mithril.API.Swagger.Tests\Mithril.API.Swagger.Tests.csproj", "{45DAF526-4981-4ACE-8F73-C1C5E3A33E52}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Data.Abstractions.Tests", "Mithril.Data.Abstractions.Tests\Mithril.Data.Abstractions.Tests.csproj", "{716D8F6E-01CD-4776-95FB-6085144A588A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Data.Abstractions.Tests", "test\Mithril.Data.Abstractions.Tests\Mithril.Data.Abstractions.Tests.csproj", "{716D8F6E-01CD-4776-95FB-6085144A588A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Abstractions.Tests", "Mithril.Security.Abstractions.Tests\Mithril.Security.Abstractions.Tests.csproj", "{7210B5B2-AEB9-46A2-B6DD-8A6BDC0078E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Security.Abstractions.Tests", "test\Mithril.Security.Abstractions.Tests\Mithril.Security.Abstractions.Tests.csproj", "{7210B5B2-AEB9-46A2-B6DD-8A6BDC0078E6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Data.Tests", "Mithril.Data.Tests\Mithril.Data.Tests.csproj", "{EF072E95-EF6C-444A-B9F1-91A0E1138132}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Data.Tests", "test\Mithril.Data.Tests\Mithril.Data.Tests.csproj", "{EF072E95-EF6C-444A-B9F1-91A0E1138132}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks", "Mithril.HealthChecks\Mithril.HealthChecks.csproj", "{6AE92229-5A0B-4E18-8BC0-620283F236BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks", "src\Mithril.HealthChecks\Mithril.HealthChecks.csproj", "{6AE92229-5A0B-4E18-8BC0-620283F236BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks.Abstractions", "Mithril.HealthChecks.Abstractions\Mithril.HealthChecks.Abstractions.csproj", "{E8EC1DD3-D95F-4ED5-ACA7-FCAFA08A5A27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks.Abstractions", "src\Mithril.HealthChecks.Abstractions\Mithril.HealthChecks.Abstractions.csproj", "{E8EC1DD3-D95F-4ED5-ACA7-FCAFA08A5A27}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks.Tests", "Mithril.HealthChecks.Tests\Mithril.HealthChecks.Tests.csproj", "{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.HealthChecks.Tests", "test\Mithril.HealthChecks.Tests\Mithril.HealthChecks.Tests.csproj", "{B5FAF976-C8A1-411B-9DA5-65DFC52BD1DC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Caching.InMemory", "Mithril.Caching.InMemory\Mithril.Caching.InMemory.csproj", "{77A383C5-0642-4A96-AFD8-79C2A1D6087E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Caching.InMemory", "src\Mithril.Caching.InMemory\Mithril.Caching.InMemory.csproj", "{77A383C5-0642-4A96-AFD8-79C2A1D6087E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Caching.InMemory.Tests", "Mithril.Caching.InMemory.Tests\Mithril.Caching.InMemory.Tests.csproj", "{169EAED2-734B-40DC-9744-13DF0448854F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Caching.InMemory.Tests", "test\Mithril.Caching.InMemory.Tests\Mithril.Caching.InMemory.Tests.csproj", "{169EAED2-734B-40DC-9744-13DF0448854F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.FileSystem.Abstractions", "Mithril.FileSystem.Abstractions\Mithril.FileSystem.Abstractions.csproj", "{9B16EAE6-F6D5-4C66-B3E0-8C7567EFEFA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.FileSystem.Abstractions", "src\Mithril.FileSystem.Abstractions\Mithril.FileSystem.Abstractions.csproj", "{9B16EAE6-F6D5-4C66-B3E0-8C7567EFEFA3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.FileSystem", "Mithril.FileSystem\Mithril.FileSystem.csproj", "{6DCC8FF2-4BCF-499C-8A11-558F7DFD208B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.FileSystem", "src\Mithril.FileSystem\Mithril.FileSystem.csproj", "{6DCC8FF2-4BCF-499C-8A11-558F7DFD208B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.FileSystem.Tests", "Mithril.FileSystem.Tests\Mithril.FileSystem.Tests.csproj", "{3B541BBD-4702-45C7-8904-AF7BED024632}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.FileSystem.Tests", "test\Mithril.FileSystem.Tests\Mithril.FileSystem.Tests.csproj", "{3B541BBD-4702-45C7-8904-AF7BED024632}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Abstractions", "Mithril.Communication.Abstractions\Mithril.Communication.Abstractions.csproj", "{839B85BE-0F29-4190-9DE9-AE4CDD3DB805}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Abstractions", "src\Mithril.Communication.Abstractions\Mithril.Communication.Abstractions.csproj", "{839B85BE-0F29-4190-9DE9-AE4CDD3DB805}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication", "Mithril.Communication\Mithril.Communication.csproj", "{7348C9FD-B8A3-4A54-B7BC-64FFD70B55AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication", "src\Mithril.Communication\Mithril.Communication.csproj", "{7348C9FD-B8A3-4A54-B7BC-64FFD70B55AA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Email", "Mithril.Communication.Email\Mithril.Communication.Email.csproj", "{C101CF40-5033-492E-AAE9-F65425A11160}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Email", "src\Mithril.Communication.Email\Mithril.Communication.Email.csproj", "{C101CF40-5033-492E-AAE9-F65425A11160}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc.Abstractions", "Mithril.Mvc.Abstractions\Mithril.Mvc.Abstractions.csproj", "{D6F63078-0049-4967-9DC2-2D7ED6F1E813}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc.Abstractions", "src\Mithril.Mvc.Abstractions\Mithril.Mvc.Abstractions.csproj", "{D6F63078-0049-4967-9DC2-2D7ED6F1E813}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc", "Mithril.Mvc\Mithril.Mvc.csproj", "{1131BD52-EB05-4E29-9545-ADEC32C2358E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc", "src\Mithril.Mvc\Mithril.Mvc.csproj", "{1131BD52-EB05-4E29-9545-ADEC32C2358E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Abstractions.Tests", "Mithril.Communication.Abstractions.Tests\Mithril.Communication.Abstractions.Tests.csproj", "{B9558B1B-0A95-4150-9314-293B5293A87B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Abstractions.Tests", "test\Mithril.Communication.Abstractions.Tests\Mithril.Communication.Abstractions.Tests.csproj", "{B9558B1B-0A95-4150-9314-293B5293A87B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc.Abstractions.Tests", "Mithril.Mvc.Abstractions.Tests\Mithril.Mvc.Abstractions.Tests.csproj", "{4DFE5F75-1A2B-4BC0-A023-B73B283A1B8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc.Abstractions.Tests", "test\Mithril.Mvc.Abstractions.Tests\Mithril.Mvc.Abstractions.Tests.csproj", "{4DFE5F75-1A2B-4BC0-A023-B73B283A1B8D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Tests", "Mithril.Communication.Tests\Mithril.Communication.Tests.csproj", "{2709F014-3158-43D6-B3FC-1CCD7D648991}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Tests", "test\Mithril.Communication.Tests\Mithril.Communication.Tests.csproj", "{2709F014-3158-43D6-B3FC-1CCD7D648991}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Email.Tests", "Mithril.Communication.Email.Tests\Mithril.Communication.Email.Tests.csproj", "{4D2A852C-E015-448B-AB51-CC4E9A08AD3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Communication.Email.Tests", "test\Mithril.Communication.Email.Tests\Mithril.Communication.Email.Tests.csproj", "{4D2A852C-E015-448B-AB51-CC4E9A08AD3F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc.Tests", "Mithril.Mvc.Tests\Mithril.Mvc.Tests.csproj", "{5920B631-0C38-44F1-829A-2A9E41529480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Mvc.Tests", "test\Mithril.Mvc.Tests\Mithril.Mvc.Tests.csproj", "{5920B631-0C38-44F1-829A-2A9E41529480}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Abstractions", "Mithril.Apm.Abstractions\Mithril.Apm.Abstractions.csproj", "{0A1372CB-A53B-4B09-A5B3-7D65B1233F91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Abstractions", "src\Mithril.Apm.Abstractions\Mithril.Apm.Abstractions.csproj", "{0A1372CB-A53B-4B09-A5B3-7D65B1233F91}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Default", "Mithril.Apm.Default\Mithril.Apm.Default.csproj", "{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Default", "src\Mithril.Apm.Default\Mithril.Apm.Default.csproj", "{2316D8B6-6860-4AB0-9F06-C413DF0A1B32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Abstractions.Tests", "Mithril.Apm.Abstractions.Tests\Mithril.Apm.Abstractions.Tests.csproj", "{6F177D53-B500-4D1D-8841-8E8E65C0B1BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Abstractions.Tests", "test\Mithril.Apm.Abstractions.Tests\Mithril.Apm.Abstractions.Tests.csproj", "{6F177D53-B500-4D1D-8841-8E8E65C0B1BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Default.Tests", "Mithril.Apm.Default.Tests\Mithril.Apm.Default.Tests.csproj", "{3E56FB7A-E2BF-4F3D-A899-61083F10FEDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Apm.Default.Tests", "test\Mithril.Apm.Default.Tests\Mithril.Apm.Default.Tests.csproj", "{3E56FB7A-E2BF-4F3D-A899-61083F10FEDC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Routing.Abstractions", "Mithril.Routing.Abstractions\Mithril.Routing.Abstractions.csproj", "{27A0FB0A-697F-4EF5-BE06-5EC28BAF16F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Routing.Abstractions", "src\Mithril.Routing.Abstractions\Mithril.Routing.Abstractions.csproj", "{27A0FB0A-697F-4EF5-BE06-5EC28BAF16F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Routing", "Mithril.Routing\Mithril.Routing.csproj", "{17FB975A-E99A-48E3-BCCA-42F6441C75C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Routing", "src\Mithril.Routing\Mithril.Routing.csproj", "{17FB975A-E99A-48E3-BCCA-42F6441C75C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Routing.Tests", "Mithril.Routing.Tests\Mithril.Routing.Tests.csproj", "{B71A614E-67DF-475B-8097-87D91FBE489D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Routing.Tests", "test\Mithril.Routing.Tests\Mithril.Routing.Tests.csproj", "{B71A614E-67DF-475B-8097-87D91FBE489D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{47D96B65-40DB-4C44-BCF8-050F96EC868F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes", "Mithril.Themes\Mithril.Themes.csproj", "{77F5CEAC-F991-4773-809B-3FB53F53D53C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes", "src\Mithril.Themes\Mithril.Themes.csproj", "{77F5CEAC-F991-4773-809B-3FB53F53D53C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes.Abstractions", "Mithril.Themes.Abstractions\Mithril.Themes.Abstractions.csproj", "{B9C935DD-12C4-47A9-8451-BC366FAB8B02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes.Abstractions", "src\Mithril.Themes.Abstractions\Mithril.Themes.Abstractions.csproj", "{B9C935DD-12C4-47A9-8451-BC366FAB8B02}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Theme.Default", "Mithril.Theme.Default\Mithril.Theme.Default.csproj", "{7B2C72F2-E487-4937-AFB5-8A315B55E034}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Theme.Default", "src\Mithril.Theme.Default\Mithril.Theme.Default.csproj", "{7B2C72F2-E487-4937-AFB5-8A315B55E034}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes.Tests", "Mithril.Themes.Tests\Mithril.Themes.Tests.csproj", "{2F42C949-38D8-4B7A-B5CD-9FAFA59DDB71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes.Tests", "test\Mithril.Themes.Tests\Mithril.Themes.Tests.csproj", "{2F42C949-38D8-4B7A-B5CD-9FAFA59DDB71}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes.Abstractions.Tests", "Mithril.Themes.Abstractions.Tests\Mithril.Themes.Abstractions.Tests.csproj", "{927C9F2E-E726-49A5-A640-204D8BB18286}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Themes.Abstractions.Tests", "test\Mithril.Themes.Abstractions.Tests\Mithril.Themes.Abstractions.Tests.csproj", "{927C9F2E-E726-49A5-A640-204D8BB18286}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{A09A261A-D720-4AD7-9A0F-F715BAB019CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content.Abstractions", "Mithril.Content.Abstractions\Mithril.Content.Abstractions.csproj", "{DA25C7CB-D750-428C-8138-9BD4E6862F5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content.Abstractions", "src\Mithril.Content.Abstractions\Mithril.Content.Abstractions.csproj", "{DA25C7CB-D750-428C-8138-9BD4E6862F5C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content", "Mithril.Content\Mithril.Content.csproj", "{215BDBCB-7DDE-4AC7-BB34-21203C13FE18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content", "src\Mithril.Content\Mithril.Content.csproj", "{215BDBCB-7DDE-4AC7-BB34-21203C13FE18}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content.Tests", "Mithril.Content.Tests\Mithril.Content.Tests.csproj", "{F194F4A2-7A92-40F0-8595-1B81BFD4B595}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content.Tests", "test\Mithril.Content.Tests\Mithril.Content.Tests.csproj", "{F194F4A2-7A92-40F0-8595-1B81BFD4B595}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content.Forms", "Mithril.Content.Forms\Mithril.Content.Forms.csproj", "{0A8F3A2B-E08A-4888-9B5E-52B25B86BF46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Content.Forms", "src\Mithril.Content.Forms\Mithril.Content.Forms.csproj", "{0A8F3A2B-E08A-4888-9B5E-52B25B86BF46}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Navigation", "Mithril.Navigation\Mithril.Navigation.csproj", "{B9E70080-81B0-48A6-9F65-C30663A9E4B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Navigation", "src\Mithril.Navigation\Mithril.Navigation.csproj", "{B9E70080-81B0-48A6-9F65-C30663A9E4B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Navigation.Abstractions", "Mithril.Navigation.Abstractions\Mithril.Navigation.Abstractions.csproj", "{70A17D7E-E9D0-43C7-8FBD-6A00FAC5F693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Navigation.Abstractions", "src\Mithril.Navigation.Abstractions\Mithril.Navigation.Abstractions.csproj", "{70A17D7E-E9D0-43C7-8FBD-6A00FAC5F693}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Navigation.Tests", "Mithril.Navigation.Tests\Mithril.Navigation.Tests.csproj", "{4B28473B-EC81-470B-8D0D-46D55CCB52A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Navigation.Tests", "test\Mithril.Navigation.Tests\Mithril.Navigation.Tests.csproj", "{4B28473B-EC81-470B-8D0D-46D55CCB52A3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Background.Abstractions", "Mithril.Background.Abstractions\Mithril.Background.Abstractions.csproj", "{885418D3-318E-4033-88AD-BB5571E16D5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Background.Abstractions", "src\Mithril.Background.Abstractions\Mithril.Background.Abstractions.csproj", "{885418D3-318E-4033-88AD-BB5571E16D5B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Background.Default", "Mithril.Background.Default\Mithril.Background.Default.csproj", "{DA90559D-DD79-4041-B9F1-888415D5F124}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Background.Default", "src\Mithril.Background.Default\Mithril.Background.Default.csproj", "{DA90559D-DD79-4041-B9F1-888415D5F124}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Background.Default.Tests", "Mithril.Background.Default.Tests\Mithril.Background.Default.Tests.csproj", "{712F8E77-64D1-4FFD-908A-EF8B32142A12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Background.Default.Tests", "test\Mithril.Background.Default.Tests\Mithril.Background.Default.Tests.csproj", "{712F8E77-64D1-4FFD-908A-EF8B32142A12}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Background.Abstractions.Tests", "Mithril.Background.Abstractions.Tests\Mithril.Background.Abstractions.Tests.csproj", "{7DF11FA6-2072-4ACC-B666-BF3F904B8A16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Background.Abstractions.Tests", "test\Mithril.Background.Abstractions.Tests\Mithril.Background.Abstractions.Tests.csproj", "{7DF11FA6-2072-4ACC-B666-BF3F904B8A16}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Admin.Abstractions", "Mithril.Admin.Abstractions\Mithril.Admin.Abstractions.csproj", "{AEC66A8F-42CF-4342-BB57-3B290ADFA977}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Admin.Abstractions", "src\Mithril.Admin.Abstractions\Mithril.Admin.Abstractions.csproj", "{AEC66A8F-42CF-4342-BB57-3B290ADFA977}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Admin", "Mithril.Admin\Mithril.Admin.csproj", "{B68354DE-78EE-4896-8CA6-AED81666A896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Admin", "src\Mithril.Admin\Mithril.Admin.csproj", "{B68354DE-78EE-4896-8CA6-AED81666A896}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{500B8706-5C70-4D0D-9EB7-E9B981BC0AC5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B5E67B0-2352-42CF-9F7E-2A1AB3FA0561}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Admin.Tests", "test\Mithril.Admin.Tests\Mithril.Admin.Tests.csproj", "{36257553-55E3-489C-9D24-BE03D8C2E259}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.Admin.Abstractions.Tests", "test\Mithril.Admin.Abstractions.Tests\Mithril.Admin.Abstractions.Tests.csproj", "{44BB8A90-FDB9-475B-8C00-F3792069CE9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mithril.FileSystem.Abstractions.Tests", "test\Mithril.FileSystem.Abstractions.Tests\Mithril.FileSystem.Abstractions.Tests.csproj", "{A07D63F2-7E9F-4EB8-B5BD-31E2E7595090}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -468,6 +474,18 @@ Global
 		{B68354DE-78EE-4896-8CA6-AED81666A896}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B68354DE-78EE-4896-8CA6-AED81666A896}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B68354DE-78EE-4896-8CA6-AED81666A896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36257553-55E3-489C-9D24-BE03D8C2E259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36257553-55E3-489C-9D24-BE03D8C2E259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36257553-55E3-489C-9D24-BE03D8C2E259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36257553-55E3-489C-9D24-BE03D8C2E259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44BB8A90-FDB9-475B-8C00-F3792069CE9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44BB8A90-FDB9-475B-8C00-F3792069CE9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44BB8A90-FDB9-475B-8C00-F3792069CE9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44BB8A90-FDB9-475B-8C00-F3792069CE9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A07D63F2-7E9F-4EB8-B5BD-31E2E7595090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07D63F2-7E9F-4EB8-B5BD-31E2E7595090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07D63F2-7E9F-4EB8-B5BD-31E2E7595090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07D63F2-7E9F-4EB8-B5BD-31E2E7595090}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -550,6 +568,9 @@ Global
 		{7DF11FA6-2072-4ACC-B666-BF3F904B8A16} = {2F251ADC-5F62-4892-AD6E-EA191C741A18}
 		{AEC66A8F-42CF-4342-BB57-3B290ADFA977} = {DFF726A6-A69B-4FB6-9E88-908610C57F2D}
 		{B68354DE-78EE-4896-8CA6-AED81666A896} = {5025FB1E-08E0-4D28-8172-4AFBAB469673}
+		{36257553-55E3-489C-9D24-BE03D8C2E259} = {20C64160-C469-46C8-9971-17C2435420AD}
+		{44BB8A90-FDB9-475B-8C00-F3792069CE9F} = {2F251ADC-5F62-4892-AD6E-EA191C741A18}
+		{A07D63F2-7E9F-4EB8-B5BD-31E2E7595090} = {2F251ADC-5F62-4892-AD6E-EA191C741A18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CCA3986-D0CE-4F7C-BB82-C805EFC11ECE}
