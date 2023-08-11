@@ -18,7 +18,7 @@
                 </component>
             </div>
         </div>
-        <a class="fas fa-plus-circle" @click.stop.prevent="addItem">Add More</a>
+        <a @click.stop.prevent="addItem"><span class="fas fa-plus-circle"></span>Add More</a>
     </div>
 </template>
 
