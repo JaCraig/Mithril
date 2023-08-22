@@ -53,7 +53,7 @@
 	</PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BigBook" Version="5.0.11" />
+    <PackageReference Include="BigBook" Version="5.0.12" />
     <PackageReference Include="Canister.IoC" Version="5.1.6" />
     <PackageReference Include="FileCurator" Version="4.0.11" />
     <PackageReference Include="Microsoft.FeatureManagement.AspNetCore" Version="2.6.1" />
