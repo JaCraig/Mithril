@@ -1163,6 +1163,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.HtmlAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.HtmlAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Admin.Abstractions.DataEditor.Attributes.IgnoreAttribute.yml",
       "output": {
         ".html": {
@@ -1767,6 +1777,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsEnumRadioList.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsHtml.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Admin.Services.MetadataBuilders.IsHtml.html"
         }
       },
       "version": ""
@@ -2737,6 +2757,46 @@
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Communication.Abstractions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Admin.MessageTemplateEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Admin.MessageTemplateEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Admin.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Admin.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Admin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Admin.html"
         }
       },
       "version": ""

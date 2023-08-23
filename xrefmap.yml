@@ -4531,13 +4531,13 @@ references:
   nameWithType: EntityBaseClass<TEntity>.EntityBaseClass()
   nameWithType.vb: EntityBaseClass(Of TEntity).New()
 - uid: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass`1.#ctor(`0)
-  name: EntityBaseClass(TEntity)
+  name: EntityBaseClass(TEntity?)
   href: api/Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityBaseClass_1__ctor__0_
   commentId: M:Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass`1.#ctor(`0)
   name.vb: New(TEntity)
-  fullName: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass<TEntity>.EntityBaseClass(TEntity)
+  fullName: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass<TEntity>.EntityBaseClass(TEntity?)
   fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass(Of TEntity).New(TEntity)
-  nameWithType: EntityBaseClass<TEntity>.EntityBaseClass(TEntity)
+  nameWithType: EntityBaseClass<TEntity>.EntityBaseClass(TEntity?)
   nameWithType.vb: EntityBaseClass(Of TEntity).New(TEntity)
 - uid: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass`1.#ctor*
   name: EntityBaseClass
@@ -5908,6 +5908,12 @@ references:
   isSpec: "True"
   fullName: Mithril.Admin.Abstractions.DataEditor.Attributes.HintAttribute.Value
   nameWithType: HintAttribute.Value
+- uid: Mithril.Admin.Abstractions.DataEditor.Attributes.HtmlAttribute
+  name: HtmlAttribute
+  href: api/Mithril.Admin.Abstractions.DataEditor.Attributes.HtmlAttribute.html
+  commentId: T:Mithril.Admin.Abstractions.DataEditor.Attributes.HtmlAttribute
+  fullName: Mithril.Admin.Abstractions.DataEditor.Attributes.HtmlAttribute
+  nameWithType: HtmlAttribute
 - uid: Mithril.Admin.Abstractions.DataEditor.Attributes.IgnoreAttribute
   name: IgnoreAttribute
   href: api/Mithril.Admin.Abstractions.DataEditor.Attributes.IgnoreAttribute.html
@@ -8203,6 +8209,28 @@ references:
   isSpec: "True"
   fullName: Mithril.Admin.Services.MetadataBuilders.IsEnumRadioList.ExtractMetadata
   nameWithType: IsEnumRadioList.ExtractMetadata
+- uid: Mithril.Admin.Services.MetadataBuilders.IsHtml
+  name: IsHtml
+  href: api/Mithril.Admin.Services.MetadataBuilders.IsHtml.html
+  commentId: T:Mithril.Admin.Services.MetadataBuilders.IsHtml
+  fullName: Mithril.Admin.Services.MetadataBuilders.IsHtml
+  nameWithType: IsHtml
+- uid: Mithril.Admin.Services.MetadataBuilders.IsHtml.ExtractMetadata(Mithril.Admin.Abstractions.DataEditor.PropertyMetadata,Mithril.Admin.Abstractions.Services.IEntityMetadataService)
+  name: ExtractMetadata(PropertyMetadata?, IEntityMetadataService)
+  href: api/Mithril.Admin.Services.MetadataBuilders.IsHtml.html#Mithril_Admin_Services_MetadataBuilders_IsHtml_ExtractMetadata_Mithril_Admin_Abstractions_DataEditor_PropertyMetadata_Mithril_Admin_Abstractions_Services_IEntityMetadataService_
+  commentId: M:Mithril.Admin.Services.MetadataBuilders.IsHtml.ExtractMetadata(Mithril.Admin.Abstractions.DataEditor.PropertyMetadata,Mithril.Admin.Abstractions.Services.IEntityMetadataService)
+  name.vb: ExtractMetadata(PropertyMetadata, IEntityMetadataService)
+  fullName: Mithril.Admin.Services.MetadataBuilders.IsHtml.ExtractMetadata(Mithril.Admin.Abstractions.DataEditor.PropertyMetadata?, Mithril.Admin.Abstractions.Services.IEntityMetadataService)
+  fullName.vb: Mithril.Admin.Services.MetadataBuilders.IsHtml.ExtractMetadata(Mithril.Admin.Abstractions.DataEditor.PropertyMetadata, Mithril.Admin.Abstractions.Services.IEntityMetadataService)
+  nameWithType: IsHtml.ExtractMetadata(PropertyMetadata?, IEntityMetadataService)
+  nameWithType.vb: IsHtml.ExtractMetadata(PropertyMetadata, IEntityMetadataService)
+- uid: Mithril.Admin.Services.MetadataBuilders.IsHtml.ExtractMetadata*
+  name: ExtractMetadata
+  href: api/Mithril.Admin.Services.MetadataBuilders.IsHtml.html#Mithril_Admin_Services_MetadataBuilders_IsHtml_ExtractMetadata_
+  commentId: Overload:Mithril.Admin.Services.MetadataBuilders.IsHtml.ExtractMetadata
+  isSpec: "True"
+  fullName: Mithril.Admin.Services.MetadataBuilders.IsHtml.ExtractMetadata
+  nameWithType: IsHtml.ExtractMetadata
 - uid: Mithril.Admin.Services.MetadataBuilders.IsList
   name: IsList
   href: api/Mithril.Admin.Services.MetadataBuilders.IsList.html
@@ -12751,6 +12779,164 @@ references:
   isSpec: "True"
   fullName: Mithril.Communication.Abstractions.Services.ICommunicationService.SendMessageAsync
   nameWithType: ICommunicationService.SendMessageAsync
+- uid: Mithril.Communication.Admin
+  name: Mithril.Communication.Admin
+  href: api/Mithril.Communication.Admin.html
+  commentId: N:Mithril.Communication.Admin
+  fullName: Mithril.Communication.Admin
+  nameWithType: Mithril.Communication.Admin
+- uid: Mithril.Communication.Admin.MessageTemplateEditor
+  name: MessageTemplateEditor
+  href: api/Mithril.Communication.Admin.MessageTemplateEditor.html
+  commentId: T:Mithril.Communication.Admin.MessageTemplateEditor
+  fullName: Mithril.Communication.Admin.MessageTemplateEditor
+  nameWithType: MessageTemplateEditor
+- uid: Mithril.Communication.Admin.MessageTemplateEditor.#ctor(Microsoft.Extensions.Hosting.IHostEnvironment,Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
+  name: MessageTemplateEditor(IHostEnvironment?, IDataService?, IEntityMetadataService?, string?)
+  href: api/Mithril.Communication.Admin.MessageTemplateEditor.html#Mithril_Communication_Admin_MessageTemplateEditor__ctor_Microsoft_Extensions_Hosting_IHostEnvironment_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
+  commentId: M:Mithril.Communication.Admin.MessageTemplateEditor.#ctor(Microsoft.Extensions.Hosting.IHostEnvironment,Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
+  name.vb: New(IHostEnvironment, IDataService, IEntityMetadataService, String)
+  fullName: Mithril.Communication.Admin.MessageTemplateEditor.MessageTemplateEditor(Microsoft.Extensions.Hosting.IHostEnvironment?, Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
+  fullName.vb: Mithril.Communication.Admin.MessageTemplateEditor.New(Microsoft.Extensions.Hosting.IHostEnvironment, Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
+  nameWithType: MessageTemplateEditor.MessageTemplateEditor(IHostEnvironment?, IDataService?, IEntityMetadataService?, string?)
+  nameWithType.vb: MessageTemplateEditor.New(IHostEnvironment, IDataService, IEntityMetadataService, String)
+- uid: Mithril.Communication.Admin.MessageTemplateEditor.#ctor*
+  name: MessageTemplateEditor
+  href: api/Mithril.Communication.Admin.MessageTemplateEditor.html#Mithril_Communication_Admin_MessageTemplateEditor__ctor_
+  commentId: Overload:Mithril.Communication.Admin.MessageTemplateEditor.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Communication.Admin.MessageTemplateEditor.MessageTemplateEditor
+  fullName.vb: Mithril.Communication.Admin.MessageTemplateEditor.New
+  nameWithType: MessageTemplateEditor.MessageTemplateEditor
+  nameWithType.vb: MessageTemplateEditor.New
+- uid: Mithril.Communication.Admin.MessageTemplateEditor.Convert(Mithril.Communication.Models.MessageTemplate,System.Boolean)
+  name: Convert(MessageTemplate, bool)
+  href: api/Mithril.Communication.Admin.MessageTemplateEditor.html#Mithril_Communication_Admin_MessageTemplateEditor_Convert_Mithril_Communication_Models_MessageTemplate_System_Boolean_
+  commentId: M:Mithril.Communication.Admin.MessageTemplateEditor.Convert(Mithril.Communication.Models.MessageTemplate,System.Boolean)
+  name.vb: Convert(MessageTemplate, Boolean)
+  fullName: Mithril.Communication.Admin.MessageTemplateEditor.Convert(Mithril.Communication.Models.MessageTemplate, bool)
+  fullName.vb: Mithril.Communication.Admin.MessageTemplateEditor.Convert(Mithril.Communication.Models.MessageTemplate, Boolean)
+  nameWithType: MessageTemplateEditor.Convert(MessageTemplate, bool)
+  nameWithType.vb: MessageTemplateEditor.Convert(MessageTemplate, Boolean)
+- uid: Mithril.Communication.Admin.MessageTemplateEditor.Convert*
+  name: Convert
+  href: api/Mithril.Communication.Admin.MessageTemplateEditor.html#Mithril_Communication_Admin_MessageTemplateEditor_Convert_
+  commentId: Overload:Mithril.Communication.Admin.MessageTemplateEditor.Convert
+  isSpec: "True"
+  fullName: Mithril.Communication.Admin.MessageTemplateEditor.Convert
+  nameWithType: MessageTemplateEditor.Convert
+- uid: Mithril.Communication.Admin.MessageTemplateEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Communication.Models.MessageTemplate},System.String)
+  name: FilterQueryBySearchQuery(IQueryable<MessageTemplate>?, string)
+  href: api/Mithril.Communication.Admin.MessageTemplateEditor.html#Mithril_Communication_Admin_MessageTemplateEditor_FilterQueryBySearchQuery_System_Linq_IQueryable_Mithril_Communication_Models_MessageTemplate__System_String_
+  commentId: M:Mithril.Communication.Admin.MessageTemplateEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Communication.Models.MessageTemplate},System.String)
+  name.vb: FilterQueryBySearchQuery(IQueryable(Of MessageTemplate), String)
+  fullName: Mithril.Communication.Admin.MessageTemplateEditor.FilterQueryBySearchQuery(System.Linq.IQueryable<Mithril.Communication.Models.MessageTemplate>?, string)
+  fullName.vb: Mithril.Communication.Admin.MessageTemplateEditor.FilterQueryBySearchQuery(System.Linq.IQueryable(Of Mithril.Communication.Models.MessageTemplate), String)
+  nameWithType: MessageTemplateEditor.FilterQueryBySearchQuery(IQueryable<MessageTemplate>?, string)
+  nameWithType.vb: MessageTemplateEditor.FilterQueryBySearchQuery(IQueryable(Of MessageTemplate), String)
+- uid: Mithril.Communication.Admin.MessageTemplateEditor.FilterQueryBySearchQuery*
+  name: FilterQueryBySearchQuery
+  href: api/Mithril.Communication.Admin.MessageTemplateEditor.html#Mithril_Communication_Admin_MessageTemplateEditor_FilterQueryBySearchQuery_
+  commentId: Overload:Mithril.Communication.Admin.MessageTemplateEditor.FilterQueryBySearchQuery
+  isSpec: "True"
+  fullName: Mithril.Communication.Admin.MessageTemplateEditor.FilterQueryBySearchQuery
+  nameWithType: MessageTemplateEditor.FilterQueryBySearchQuery
+- uid: Mithril.Communication.Admin.MessageTemplateEditor.Icon
+  name: Icon
+  href: api/Mithril.Communication.Admin.MessageTemplateEditor.html#Mithril_Communication_Admin_MessageTemplateEditor_Icon
+  commentId: P:Mithril.Communication.Admin.MessageTemplateEditor.Icon
+  fullName: Mithril.Communication.Admin.MessageTemplateEditor.Icon
+  nameWithType: MessageTemplateEditor.Icon
+- uid: Mithril.Communication.Admin.MessageTemplateEditor.Icon*
+  name: Icon
+  href: api/Mithril.Communication.Admin.MessageTemplateEditor.html#Mithril_Communication_Admin_MessageTemplateEditor_Icon_
+  commentId: Overload:Mithril.Communication.Admin.MessageTemplateEditor.Icon
+  isSpec: "True"
+  fullName: Mithril.Communication.Admin.MessageTemplateEditor.Icon
+  nameWithType: MessageTemplateEditor.Icon
+- uid: Mithril.Communication.Admin.ViewModels
+  name: Mithril.Communication.Admin.ViewModels
+  href: api/Mithril.Communication.Admin.ViewModels.html
+  commentId: N:Mithril.Communication.Admin.ViewModels
+  fullName: Mithril.Communication.Admin.ViewModels
+  nameWithType: Mithril.Communication.Admin.ViewModels
+- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM
+  name: MessageTemplateVM
+  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html
+  commentId: T:Mithril.Communication.Admin.ViewModels.MessageTemplateVM
+  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM
+  nameWithType: MessageTemplateVM
+- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.#ctor
+  name: MessageTemplateVM()
+  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM__ctor
+  commentId: M:Mithril.Communication.Admin.ViewModels.MessageTemplateVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.MessageTemplateVM()
+  fullName.vb: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.New()
+  nameWithType: MessageTemplateVM.MessageTemplateVM()
+  nameWithType.vb: MessageTemplateVM.New()
+- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.#ctor(Mithril.Communication.Models.MessageTemplate,Microsoft.Extensions.Hosting.IHostEnvironment,System.Boolean)
+  name: MessageTemplateVM(MessageTemplate?, IHostEnvironment?, bool)
+  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM__ctor_Mithril_Communication_Models_MessageTemplate_Microsoft_Extensions_Hosting_IHostEnvironment_System_Boolean_
+  commentId: M:Mithril.Communication.Admin.ViewModels.MessageTemplateVM.#ctor(Mithril.Communication.Models.MessageTemplate,Microsoft.Extensions.Hosting.IHostEnvironment,System.Boolean)
+  name.vb: New(MessageTemplate, IHostEnvironment, Boolean)
+  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.MessageTemplateVM(Mithril.Communication.Models.MessageTemplate?, Microsoft.Extensions.Hosting.IHostEnvironment?, bool)
+  fullName.vb: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.New(Mithril.Communication.Models.MessageTemplate, Microsoft.Extensions.Hosting.IHostEnvironment, Boolean)
+  nameWithType: MessageTemplateVM.MessageTemplateVM(MessageTemplate?, IHostEnvironment?, bool)
+  nameWithType.vb: MessageTemplateVM.New(MessageTemplate, IHostEnvironment, Boolean)
+- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.#ctor*
+  name: MessageTemplateVM
+  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM__ctor_
+  commentId: Overload:Mithril.Communication.Admin.ViewModels.MessageTemplateVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.MessageTemplateVM
+  fullName.vb: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.New
+  nameWithType: MessageTemplateVM.MessageTemplateVM
+  nameWithType.vb: MessageTemplateVM.New
+- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.Content
+  name: Content
+  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM_Content
+  commentId: P:Mithril.Communication.Admin.ViewModels.MessageTemplateVM.Content
+  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.Content
+  nameWithType: MessageTemplateVM.Content
+- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.Content*
+  name: Content
+  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM_Content_
+  commentId: Overload:Mithril.Communication.Admin.ViewModels.MessageTemplateVM.Content
+  isSpec: "True"
+  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.Content
+  nameWithType: MessageTemplateVM.Content
+- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.DisplayName
+  name: DisplayName
+  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM_DisplayName
+  commentId: P:Mithril.Communication.Admin.ViewModels.MessageTemplateVM.DisplayName
+  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.DisplayName
+  nameWithType: MessageTemplateVM.DisplayName
+- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.DisplayName*
+  name: DisplayName
+  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM_DisplayName_
+  commentId: Overload:Mithril.Communication.Admin.ViewModels.MessageTemplateVM.DisplayName
+  isSpec: "True"
+  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.DisplayName
+  nameWithType: MessageTemplateVM.DisplayName
+- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, ClaimsPrincipal?)
+  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
+  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: MessageTemplateVM.SaveAsync(long, IDataService?, ClaimsPrincipal?)
+  nameWithType.vb: MessageTemplateVM.SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync*
+  name: SaveAsync
+  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM_SaveAsync_
+  commentId: Overload:Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync
+  isSpec: "True"
+  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync
+  nameWithType: MessageTemplateVM.SaveAsync
 - uid: Mithril.Communication.Commands
   name: Mithril.Communication.Commands
   href: api/Mithril.Communication.Commands.html
