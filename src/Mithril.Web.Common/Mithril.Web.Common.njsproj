@@ -30,6 +30,7 @@
     <Content Include="build\ts\Component\FormComponents\ComplexList.vue" />
     <Content Include="build\ts\Component\FormComponents\ComplexRepeater.vue" />
     <Content Include="build\ts\Component\FormComponents\ComplexTabs.vue" />
+    <Content Include="build\ts\Component\FormComponents\HTML.vue" />
     <Content Include="build\ts\Component\FormComponents\Input.vue" />
     <Content Include="build\ts\Component\FormComponents\Radio.vue" />
     <Content Include="build\ts\Component\FormComponents\Select.vue" />

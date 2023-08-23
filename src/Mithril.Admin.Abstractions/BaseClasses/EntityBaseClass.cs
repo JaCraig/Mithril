@@ -24,7 +24,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// Initializes a new instance of the <see cref="EntityBaseClass{TEntity}"/> class.
         /// </summary>
         /// <param name="entity">The entity.</param>
-        protected EntityBaseClass(TEntity entity)
+        protected EntityBaseClass(TEntity? entity)
         {
             if (entity is null)
                 return;

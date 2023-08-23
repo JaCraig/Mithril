@@ -17,6 +17,7 @@
 <script lang="ts">
     import Vue from 'vue';
     import FormFieldInput from './Input.vue';
+    import FormFieldHtml from './Html.vue';
     import FormFieldSelect from './Select.vue';
     import FormFieldCheckbox from './Checkbox.vue';
     import FormFieldRadio from './Radio.vue';
@@ -44,6 +45,7 @@
             'form-field-upload': FormFieldUpload,
             'form-field-buttons': FormFieldButtons,
             'form-field-complex-repeater': FormFieldRepeater,
+            'form-field-html': FormFieldHtml,
         },
         data: function() {
             return {
