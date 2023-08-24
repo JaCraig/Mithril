@@ -23,14 +23,10 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// </returns>
         public override PropertyMetadata? ExtractMetadata(PropertyMetadata? propertyMetadata, IEntityMetadataService metadataService)
         {
-            if (propertyMetadata?.Property is null)
+            if (propertyMetadata?.Property?.Attribute<HtmlAttribute>() is null)
                 return propertyMetadata;
-            if (propertyMetadata.Property.Attribute<HtmlAttribute>() is not null)
-            {
-                propertyMetadata.PropertyType = "html";
-                return propertyMetadata;
-            }
 
+            propertyMetadata.PropertyType = "html";
             return propertyMetadata;
         }
     }
