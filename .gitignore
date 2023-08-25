@@ -350,3 +350,5 @@ MigrationBackup/
 .ionide/
 
 /*/wwwroot/*
+/src/Mithril/wwwroot/files/uploads/WMCD_DOMAIN/jcraig
+/src/Mithril/wwwroot/images/uploads/WMCD_DOMAIN/jcraig
