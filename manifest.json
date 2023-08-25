@@ -3523,6 +3523,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Core.Abstractions.Mvc.Attributes.IPFilterAttribute.yml",
       "output": {
         ".html": {
@@ -4533,6 +4543,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Controllers.FileBrowserController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Controllers.FileBrowserController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Controllers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Exceptions.ImageSaveException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Exceptions.ImageSaveException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Exceptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.FileSystem.FileSystemModule.yml",
       "output": {
         ".html": {
@@ -4603,10 +4653,50 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.Services.Image.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.Services.Image.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.FileSystem.Services.yml",
       "output": {
         ".html": {
           "relative_path": "api/Mithril.FileSystem.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.ViewModels.MediaFileVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.ViewModels.MediaFileVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.FileSystem.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.FileSystem.ViewModels.html"
         }
       },
       "version": ""

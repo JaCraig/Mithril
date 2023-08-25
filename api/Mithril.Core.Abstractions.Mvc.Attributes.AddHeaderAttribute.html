@@ -5,10 +5,10 @@
     <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class HtmlAttribute
+      <title>Class AddHeaderAttribute
  | Mithril API Reference </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class HtmlAttribute
+      <meta name="title" content="Class AddHeaderAttribute
  | Mithril API Reference ">
       <meta name="generator" content="docfx ">
   
@@ -94,26 +94,54 @@
                         </div>
 
                          <div id="contribution">
-                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_DataEditor_Attributes_HtmlAttribute.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.DataEditor.Attributes.HtmlAttribute%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                          </div>
 
-                    <article class="content wrap" id="_content" data-uid="Mithril.Admin.Abstractions.DataEditor.Attributes.HtmlAttribute">
+                    <article class="content wrap" id="_content" data-uid="Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute">
 
 
 
-  <h1 id="Mithril_Admin_Abstractions_DataEditor_Attributes_HtmlAttribute" data-uid="Mithril.Admin.Abstractions.DataEditor.Attributes.HtmlAttribute" class="text-break">Class HtmlAttribute
+  <h1 id="Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute" data-uid="Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute" class="text-break">Class AddHeaderAttribute
 </h1>
-  <div class="markdown level0 summary"><p>HTML attribute</p>
+  <div class="markdown level0 summary"><p>Add Header Attribute</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.attribute">Attribute</a></div>
-    <div class="level2"><span class="xref">HtmlAttribute</span></div>
+    <div class="level2"><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute">ActionFilterAttribute</a></div>
+    <div class="level3"><span class="xref">AddHeaderAttribute</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.iactionfilter">IActionFilter</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncactionfilter">IAsyncActionFilter</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.iresultfilter">IResultFilter</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncresultfilter">IAsyncResultFilter</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.iorderedfilter">IOrderedFilter</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.ifiltermetadata">IFilterMetadata</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute.onactionexecuted">ActionFilterAttribute.OnActionExecuted(ActionExecutedContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute.onactionexecutionasync">ActionFilterAttribute.OnActionExecutionAsync(ActionExecutingContext, ActionExecutionDelegate)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute.onresultexecuting">ActionFilterAttribute.OnResultExecuting(ResultExecutingContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute.onresultexecuted">ActionFilterAttribute.OnResultExecuted(ResultExecutedContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute.onresultexecutionasync">ActionFilterAttribute.OnResultExecutionAsync(ResultExecutingContext, ResultExecutionDelegate)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute.order">ActionFilterAttribute.Order</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.attribute.equals">Attribute.Equals(object)</a>
     </div>
@@ -232,21 +260,168 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Admin.html">Admin</a>.<a class="xref" href="Mithril.Admin.Abstractions.html">Abstractions</a>.<a class="xref" href="Mithril.Admin.Abstractions.DataEditor.html">DataEditor</a>.<a class="xref" href="Mithril.Admin.Abstractions.DataEditor.Attributes.html">Attributes</a></h6>
-  <h6><strong>Assembly</strong>: Mithril.Admin.Abstractions.dll</h6>
-  <h5 id="Mithril_Admin_Abstractions_DataEditor_Attributes_HtmlAttribute_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Core.html">Core</a>.<a class="xref" href="Mithril.Core.Abstractions.html">Abstractions</a>.<a class="xref" href="Mithril.Core.Abstractions.Mvc.html">Mvc</a>.<a class="xref" href="Mithril.Core.Abstractions.Mvc.Attributes.html">Attributes</a></h6>
+  <h6><strong>Assembly</strong>: Mithril.Core.Abstractions.dll</h6>
+  <h5 id="Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-public class HtmlAttribute : Attribute</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class AddHeaderAttribute : ActionFilterAttribute, IActionFilter, IAsyncActionFilter, IResultFilter, IAsyncResultFilter, IOrderedFilter, IFilterMetadata</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute__ctor_System_String_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.%23ctor(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Core.Abstractions/Mvc/Attributes/AddHeaderAttribute.cs/#L27">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute__ctor_" data-uid="Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.#ctor*"></a>
+  <h4 id="Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute__ctor_System_String_System_String_" data-uid="Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.#ctor(System.String,System.String)">AddHeaderAttribute(string, string)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.html">AddHeaderAttribute</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AddHeaderAttribute(string key, string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute__ctor_System_String_System_String__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute">ActionFilterAttribute</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute__ctor_System_String_System_String___.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.%23ctor(System.String%2CSystem.String%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Core.Abstractions/Mvc/Attributes/AddHeaderAttribute.cs/#L16">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute__ctor_" data-uid="Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.#ctor*"></a>
+  <h4 id="Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute__ctor_System_String_System_String___" data-uid="Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.#ctor(System.String,System.String[])">AddHeaderAttribute(string, string[])</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.html">AddHeaderAttribute</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AddHeaderAttribute(string key, string[] values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute__ctor_System_String_System_String____seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute">ActionFilterAttribute</a></div>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute_OnActionExecuting_Microsoft_AspNetCore_Mvc_Filters_ActionExecutingContext_.md&amp;value=---%0Auid%3A%20Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Core.Abstractions/Mvc/Attributes/AddHeaderAttribute.cs/#L50">View Source</a>
+  </span>
+  <a id="Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute_OnActionExecuting_" data-uid="Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.OnActionExecuting*"></a>
+  <h4 id="Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute_OnActionExecuting_Microsoft_AspNetCore_Mvc_Filters_ActionExecutingContext_" data-uid="Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">OnActionExecuting(ActionExecutingContext)</h4>
+  <div class="markdown level1 summary"><p>On Action Executing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnActionExecuting(ActionExecutingContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionexecutingcontext">ActionExecutingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>Context</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute.onactionexecuting">ActionFilterAttribute.OnActionExecuting(ActionExecutingContext)</a></div>
+  <h5 id="Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute_OnActionExecuting_Microsoft_AspNetCore_Mvc_Filters_ActionExecutingContext__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute">ActionFilterAttribute</a></div>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.iactionfilter">IActionFilter</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncactionfilter">IAsyncActionFilter</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.iresultfilter">IResultFilter</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncresultfilter">IAsyncResultFilter</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.iorderedfilter">IOrderedFilter</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.ifiltermetadata">IFilterMetadata</a>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
@@ -257,7 +432,7 @@ public class HtmlAttribute : Attribute</code></pre>
   </div>
   <h3 id="seealso">See Also</h3>
   <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.attribute">Attribute</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.filters.actionfilterattribute">ActionFilterAttribute</a></div>
   </div>
 
 </article>

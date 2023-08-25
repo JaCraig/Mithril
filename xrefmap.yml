@@ -14390,13 +14390,13 @@ references:
   fullName: Mithril.Communication.Models.MessageTemplate.LoadOrCreateAsync
   nameWithType: MessageTemplate.LoadOrCreateAsync
 - uid: Mithril.Communication.Models.MessageTemplate.SetContent(Microsoft.Extensions.Hosting.IHostEnvironment,System.String)
-  name: SetContent(IHostEnvironment?, string)
+  name: SetContent(IHostEnvironment?, string?)
   href: api/Mithril.Communication.Models.MessageTemplate.html#Mithril_Communication_Models_MessageTemplate_SetContent_Microsoft_Extensions_Hosting_IHostEnvironment_System_String_
   commentId: M:Mithril.Communication.Models.MessageTemplate.SetContent(Microsoft.Extensions.Hosting.IHostEnvironment,System.String)
   name.vb: SetContent(IHostEnvironment, String)
-  fullName: Mithril.Communication.Models.MessageTemplate.SetContent(Microsoft.Extensions.Hosting.IHostEnvironment?, string)
+  fullName: Mithril.Communication.Models.MessageTemplate.SetContent(Microsoft.Extensions.Hosting.IHostEnvironment?, string?)
   fullName.vb: Mithril.Communication.Models.MessageTemplate.SetContent(Microsoft.Extensions.Hosting.IHostEnvironment, String)
-  nameWithType: MessageTemplate.SetContent(IHostEnvironment?, string)
+  nameWithType: MessageTemplate.SetContent(IHostEnvironment?, string?)
   nameWithType.vb: MessageTemplate.SetContent(IHostEnvironment, String)
 - uid: Mithril.Communication.Models.MessageTemplate.SetContent*
   name: SetContent
@@ -16887,6 +16887,53 @@ references:
   commentId: N:Mithril.Core.Abstractions.Mvc.Attributes
   fullName: Mithril.Core.Abstractions.Mvc.Attributes
   nameWithType: Mithril.Core.Abstractions.Mvc.Attributes
+- uid: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute
+  name: AddHeaderAttribute
+  href: api/Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.html
+  commentId: T:Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute
+  fullName: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute
+  nameWithType: AddHeaderAttribute
+- uid: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.#ctor(System.String,System.String)
+  name: AddHeaderAttribute(string, string)
+  href: api/Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.html#Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute__ctor_System_String_System_String_
+  commentId: M:Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.#ctor(System.String,System.String)
+  name.vb: New(String, String)
+  fullName: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.AddHeaderAttribute(string, string)
+  fullName.vb: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.New(String, String)
+  nameWithType: AddHeaderAttribute.AddHeaderAttribute(string, string)
+  nameWithType.vb: AddHeaderAttribute.New(String, String)
+- uid: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.#ctor(System.String,System.String[])
+  name: AddHeaderAttribute(string, string[])
+  href: api/Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.html#Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute__ctor_System_String_System_String___
+  commentId: M:Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.#ctor(System.String,System.String[])
+  name.vb: New(String, String())
+  fullName: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.AddHeaderAttribute(string, string[])
+  fullName.vb: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.New(String, String())
+  nameWithType: AddHeaderAttribute.AddHeaderAttribute(string, string[])
+  nameWithType.vb: AddHeaderAttribute.New(String, String())
+- uid: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.#ctor*
+  name: AddHeaderAttribute
+  href: api/Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.html#Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute__ctor_
+  commentId: Overload:Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.AddHeaderAttribute
+  fullName.vb: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.New
+  nameWithType: AddHeaderAttribute.AddHeaderAttribute
+  nameWithType.vb: AddHeaderAttribute.New
+- uid: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)
+  name: OnActionExecuting(ActionExecutingContext)
+  href: api/Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.html#Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute_OnActionExecuting_Microsoft_AspNetCore_Mvc_Filters_ActionExecutingContext_
+  commentId: M:Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)
+  fullName: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)
+  nameWithType: AddHeaderAttribute.OnActionExecuting(ActionExecutingContext)
+- uid: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.OnActionExecuting*
+  name: OnActionExecuting
+  href: api/Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.html#Mithril_Core_Abstractions_Mvc_Attributes_AddHeaderAttribute_OnActionExecuting_
+  commentId: Overload:Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.OnActionExecuting
+  isSpec: "True"
+  fullName: Mithril.Core.Abstractions.Mvc.Attributes.AddHeaderAttribute.OnActionExecuting
+  nameWithType: AddHeaderAttribute.OnActionExecuting
 - uid: Mithril.Core.Abstractions.Mvc.Attributes.IPFilterAttribute
   name: IPFilterAttribute
   href: api/Mithril.Core.Abstractions.Mvc.Attributes.IPFilterAttribute.html
@@ -23241,6 +23288,124 @@ references:
   isSpec: "True"
   fullName: Mithril.FileSystem.Abstractions.Services.IFileSystemService.GetUrl
   nameWithType: IFileSystemService.GetUrl
+- uid: Mithril.FileSystem.Controllers
+  name: Mithril.FileSystem.Controllers
+  href: api/Mithril.FileSystem.Controllers.html
+  commentId: N:Mithril.FileSystem.Controllers
+  fullName: Mithril.FileSystem.Controllers
+  nameWithType: Mithril.FileSystem.Controllers
+- uid: Mithril.FileSystem.Controllers.FileBrowserController
+  name: FileBrowserController
+  href: api/Mithril.FileSystem.Controllers.FileBrowserController.html
+  commentId: T:Mithril.FileSystem.Controllers.FileBrowserController
+  fullName: Mithril.FileSystem.Controllers.FileBrowserController
+  nameWithType: FileBrowserController
+- uid: Mithril.FileSystem.Controllers.FileBrowserController.#ctor(Mithril.FileSystem.Abstractions.Services.IFileSystemService)
+  name: FileBrowserController(IFileSystemService?)
+  href: api/Mithril.FileSystem.Controllers.FileBrowserController.html#Mithril_FileSystem_Controllers_FileBrowserController__ctor_Mithril_FileSystem_Abstractions_Services_IFileSystemService_
+  commentId: M:Mithril.FileSystem.Controllers.FileBrowserController.#ctor(Mithril.FileSystem.Abstractions.Services.IFileSystemService)
+  name.vb: New(IFileSystemService)
+  fullName: Mithril.FileSystem.Controllers.FileBrowserController.FileBrowserController(Mithril.FileSystem.Abstractions.Services.IFileSystemService?)
+  fullName.vb: Mithril.FileSystem.Controllers.FileBrowserController.New(Mithril.FileSystem.Abstractions.Services.IFileSystemService)
+  nameWithType: FileBrowserController.FileBrowserController(IFileSystemService?)
+  nameWithType.vb: FileBrowserController.New(IFileSystemService)
+- uid: Mithril.FileSystem.Controllers.FileBrowserController.#ctor*
+  name: FileBrowserController
+  href: api/Mithril.FileSystem.Controllers.FileBrowserController.html#Mithril_FileSystem_Controllers_FileBrowserController__ctor_
+  commentId: Overload:Mithril.FileSystem.Controllers.FileBrowserController.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.FileSystem.Controllers.FileBrowserController.FileBrowserController
+  fullName.vb: Mithril.FileSystem.Controllers.FileBrowserController.New
+  nameWithType: FileBrowserController.FileBrowserController
+  nameWithType.vb: FileBrowserController.New
+- uid: Mithril.FileSystem.Controllers.FileBrowserController.Browser(System.String)
+  name: Browser(string)
+  href: api/Mithril.FileSystem.Controllers.FileBrowserController.html#Mithril_FileSystem_Controllers_FileBrowserController_Browser_System_String_
+  commentId: M:Mithril.FileSystem.Controllers.FileBrowserController.Browser(System.String)
+  name.vb: Browser(String)
+  fullName: Mithril.FileSystem.Controllers.FileBrowserController.Browser(string)
+  fullName.vb: Mithril.FileSystem.Controllers.FileBrowserController.Browser(String)
+  nameWithType: FileBrowserController.Browser(string)
+  nameWithType.vb: FileBrowserController.Browser(String)
+- uid: Mithril.FileSystem.Controllers.FileBrowserController.Browser(System.String,Microsoft.AspNetCore.Http.IFormFile)
+  name: Browser(string, IFormFile)
+  href: api/Mithril.FileSystem.Controllers.FileBrowserController.html#Mithril_FileSystem_Controllers_FileBrowserController_Browser_System_String_Microsoft_AspNetCore_Http_IFormFile_
+  commentId: M:Mithril.FileSystem.Controllers.FileBrowserController.Browser(System.String,Microsoft.AspNetCore.Http.IFormFile)
+  name.vb: Browser(String, IFormFile)
+  fullName: Mithril.FileSystem.Controllers.FileBrowserController.Browser(string, Microsoft.AspNetCore.Http.IFormFile)
+  fullName.vb: Mithril.FileSystem.Controllers.FileBrowserController.Browser(String, Microsoft.AspNetCore.Http.IFormFile)
+  nameWithType: FileBrowserController.Browser(string, IFormFile)
+  nameWithType.vb: FileBrowserController.Browser(String, IFormFile)
+- uid: Mithril.FileSystem.Controllers.FileBrowserController.Browser*
+  name: Browser
+  href: api/Mithril.FileSystem.Controllers.FileBrowserController.html#Mithril_FileSystem_Controllers_FileBrowserController_Browser_
+  commentId: Overload:Mithril.FileSystem.Controllers.FileBrowserController.Browser
+  isSpec: "True"
+  fullName: Mithril.FileSystem.Controllers.FileBrowserController.Browser
+  nameWithType: FileBrowserController.Browser
+- uid: Mithril.FileSystem.Controllers.FileBrowserController.FileManager
+  name: FileManager
+  href: api/Mithril.FileSystem.Controllers.FileBrowserController.html#Mithril_FileSystem_Controllers_FileBrowserController_FileManager
+  commentId: P:Mithril.FileSystem.Controllers.FileBrowserController.FileManager
+  fullName: Mithril.FileSystem.Controllers.FileBrowserController.FileManager
+  nameWithType: FileBrowserController.FileManager
+- uid: Mithril.FileSystem.Controllers.FileBrowserController.FileManager*
+  name: FileManager
+  href: api/Mithril.FileSystem.Controllers.FileBrowserController.html#Mithril_FileSystem_Controllers_FileBrowserController_FileManager_
+  commentId: Overload:Mithril.FileSystem.Controllers.FileBrowserController.FileManager
+  isSpec: "True"
+  fullName: Mithril.FileSystem.Controllers.FileBrowserController.FileManager
+  nameWithType: FileBrowserController.FileManager
+- uid: Mithril.FileSystem.Exceptions
+  name: Mithril.FileSystem.Exceptions
+  href: api/Mithril.FileSystem.Exceptions.html
+  commentId: N:Mithril.FileSystem.Exceptions
+  fullName: Mithril.FileSystem.Exceptions
+  nameWithType: Mithril.FileSystem.Exceptions
+- uid: Mithril.FileSystem.Exceptions.ImageSaveException
+  name: ImageSaveException
+  href: api/Mithril.FileSystem.Exceptions.ImageSaveException.html
+  commentId: T:Mithril.FileSystem.Exceptions.ImageSaveException
+  fullName: Mithril.FileSystem.Exceptions.ImageSaveException
+  nameWithType: ImageSaveException
+- uid: Mithril.FileSystem.Exceptions.ImageSaveException.#ctor
+  name: ImageSaveException()
+  href: api/Mithril.FileSystem.Exceptions.ImageSaveException.html#Mithril_FileSystem_Exceptions_ImageSaveException__ctor
+  commentId: M:Mithril.FileSystem.Exceptions.ImageSaveException.#ctor
+  name.vb: New()
+  fullName: Mithril.FileSystem.Exceptions.ImageSaveException.ImageSaveException()
+  fullName.vb: Mithril.FileSystem.Exceptions.ImageSaveException.New()
+  nameWithType: ImageSaveException.ImageSaveException()
+  nameWithType.vb: ImageSaveException.New()
+- uid: Mithril.FileSystem.Exceptions.ImageSaveException.#ctor(System.String)
+  name: ImageSaveException(string)
+  href: api/Mithril.FileSystem.Exceptions.ImageSaveException.html#Mithril_FileSystem_Exceptions_ImageSaveException__ctor_System_String_
+  commentId: M:Mithril.FileSystem.Exceptions.ImageSaveException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Mithril.FileSystem.Exceptions.ImageSaveException.ImageSaveException(string)
+  fullName.vb: Mithril.FileSystem.Exceptions.ImageSaveException.New(String)
+  nameWithType: ImageSaveException.ImageSaveException(string)
+  nameWithType.vb: ImageSaveException.New(String)
+- uid: Mithril.FileSystem.Exceptions.ImageSaveException.#ctor(System.String,System.Exception)
+  name: ImageSaveException(string, Exception)
+  href: api/Mithril.FileSystem.Exceptions.ImageSaveException.html#Mithril_FileSystem_Exceptions_ImageSaveException__ctor_System_String_System_Exception_
+  commentId: M:Mithril.FileSystem.Exceptions.ImageSaveException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Mithril.FileSystem.Exceptions.ImageSaveException.ImageSaveException(string, System.Exception)
+  fullName.vb: Mithril.FileSystem.Exceptions.ImageSaveException.New(String, System.Exception)
+  nameWithType: ImageSaveException.ImageSaveException(string, Exception)
+  nameWithType.vb: ImageSaveException.New(String, Exception)
+- uid: Mithril.FileSystem.Exceptions.ImageSaveException.#ctor*
+  name: ImageSaveException
+  href: api/Mithril.FileSystem.Exceptions.ImageSaveException.html#Mithril_FileSystem_Exceptions_ImageSaveException__ctor_
+  commentId: Overload:Mithril.FileSystem.Exceptions.ImageSaveException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.FileSystem.Exceptions.ImageSaveException.ImageSaveException
+  fullName.vb: Mithril.FileSystem.Exceptions.ImageSaveException.New
+  nameWithType: ImageSaveException.ImageSaveException
+  nameWithType.vb: ImageSaveException.New
 - uid: Mithril.FileSystem.FileSystemModule
   name: FileSystemModule
   href: api/Mithril.FileSystem.FileSystemModule.html
@@ -23624,6 +23789,319 @@ references:
   isSpec: "True"
   fullName: Mithril.FileSystem.Services.FileSystemService.GetUrl
   nameWithType: FileSystemService.GetUrl
+- uid: Mithril.FileSystem.Services.Image
+  name: Image
+  href: api/Mithril.FileSystem.Services.Image.html
+  commentId: T:Mithril.FileSystem.Services.Image
+  fullName: Mithril.FileSystem.Services.Image
+  nameWithType: Image
+- uid: Mithril.FileSystem.Services.Image.#ctor(FileCurator.Interfaces.IFile)
+  name: Image(IFile?)
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image__ctor_FileCurator_Interfaces_IFile_
+  commentId: M:Mithril.FileSystem.Services.Image.#ctor(FileCurator.Interfaces.IFile)
+  name.vb: New(IFile)
+  fullName: Mithril.FileSystem.Services.Image.Image(FileCurator.Interfaces.IFile?)
+  fullName.vb: Mithril.FileSystem.Services.Image.New(FileCurator.Interfaces.IFile)
+  nameWithType: Image.Image(IFile?)
+  nameWithType.vb: Image.New(IFile)
+- uid: Mithril.FileSystem.Services.Image.#ctor*
+  name: Image
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image__ctor_
+  commentId: Overload:Mithril.FileSystem.Services.Image.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.FileSystem.Services.Image.Image
+  fullName.vb: Mithril.FileSystem.Services.Image.New
+  nameWithType: Image.Image
+  nameWithType.vb: Image.New
+- uid: Mithril.FileSystem.Services.Image.Dispose
+  name: Dispose()
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image_Dispose
+  commentId: M:Mithril.FileSystem.Services.Image.Dispose
+  fullName: Mithril.FileSystem.Services.Image.Dispose()
+  nameWithType: Image.Dispose()
+- uid: Mithril.FileSystem.Services.Image.Dispose(System.Boolean)
+  name: Dispose(bool)
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image_Dispose_System_Boolean_
+  commentId: M:Mithril.FileSystem.Services.Image.Dispose(System.Boolean)
+  name.vb: Dispose(Boolean)
+  fullName: Mithril.FileSystem.Services.Image.Dispose(bool)
+  fullName.vb: Mithril.FileSystem.Services.Image.Dispose(Boolean)
+  nameWithType: Image.Dispose(bool)
+  nameWithType.vb: Image.Dispose(Boolean)
+- uid: Mithril.FileSystem.Services.Image.Dispose*
+  name: Dispose
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image_Dispose_
+  commentId: Overload:Mithril.FileSystem.Services.Image.Dispose
+  isSpec: "True"
+  fullName: Mithril.FileSystem.Services.Image.Dispose
+  nameWithType: Image.Dispose
+- uid: Mithril.FileSystem.Services.Image.Height
+  name: Height
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image_Height
+  commentId: P:Mithril.FileSystem.Services.Image.Height
+  fullName: Mithril.FileSystem.Services.Image.Height
+  nameWithType: Image.Height
+- uid: Mithril.FileSystem.Services.Image.Height*
+  name: Height
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image_Height_
+  commentId: Overload:Mithril.FileSystem.Services.Image.Height
+  isSpec: "True"
+  fullName: Mithril.FileSystem.Services.Image.Height
+  nameWithType: Image.Height
+- uid: Mithril.FileSystem.Services.Image.Resize(System.Int32)
+  name: Resize(int)
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image_Resize_System_Int32_
+  commentId: M:Mithril.FileSystem.Services.Image.Resize(System.Int32)
+  name.vb: Resize(Integer)
+  fullName: Mithril.FileSystem.Services.Image.Resize(int)
+  fullName.vb: Mithril.FileSystem.Services.Image.Resize(Integer)
+  nameWithType: Image.Resize(int)
+  nameWithType.vb: Image.Resize(Integer)
+- uid: Mithril.FileSystem.Services.Image.Resize*
+  name: Resize
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image_Resize_
+  commentId: Overload:Mithril.FileSystem.Services.Image.Resize
+  isSpec: "True"
+  fullName: Mithril.FileSystem.Services.Image.Resize
+  nameWithType: Image.Resize
+- uid: Mithril.FileSystem.Services.Image.Save(FileCurator.Interfaces.IFile,System.Int32)
+  name: Save(IFile?, int)
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image_Save_FileCurator_Interfaces_IFile_System_Int32_
+  commentId: M:Mithril.FileSystem.Services.Image.Save(FileCurator.Interfaces.IFile,System.Int32)
+  name.vb: Save(IFile, Integer)
+  fullName: Mithril.FileSystem.Services.Image.Save(FileCurator.Interfaces.IFile?, int)
+  fullName.vb: Mithril.FileSystem.Services.Image.Save(FileCurator.Interfaces.IFile, Integer)
+  nameWithType: Image.Save(IFile?, int)
+  nameWithType.vb: Image.Save(IFile, Integer)
+- uid: Mithril.FileSystem.Services.Image.Save*
+  name: Save
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image_Save_
+  commentId: Overload:Mithril.FileSystem.Services.Image.Save
+  isSpec: "True"
+  fullName: Mithril.FileSystem.Services.Image.Save
+  nameWithType: Image.Save
+- uid: Mithril.FileSystem.Services.Image.Width
+  name: Width
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image_Width
+  commentId: P:Mithril.FileSystem.Services.Image.Width
+  fullName: Mithril.FileSystem.Services.Image.Width
+  nameWithType: Image.Width
+- uid: Mithril.FileSystem.Services.Image.Width*
+  name: Width
+  href: api/Mithril.FileSystem.Services.Image.html#Mithril_FileSystem_Services_Image_Width_
+  commentId: Overload:Mithril.FileSystem.Services.Image.Width
+  isSpec: "True"
+  fullName: Mithril.FileSystem.Services.Image.Width
+  nameWithType: Image.Width
+- uid: Mithril.FileSystem.ViewModels
+  name: Mithril.FileSystem.ViewModels
+  href: api/Mithril.FileSystem.ViewModels.html
+  commentId: N:Mithril.FileSystem.ViewModels
+  fullName: Mithril.FileSystem.ViewModels
+  nameWithType: Mithril.FileSystem.ViewModels
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM
+  name: FileBrowserDirectoryVM
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html
+  commentId: T:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM
+  nameWithType: FileBrowserDirectoryVM
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.#ctor(FileCurator.Interfaces.IDirectory,System.String,FileCurator.Interfaces.IFile,Mithril.FileSystem.Abstractions.Services.IFileSystemService)
+  name: FileBrowserDirectoryVM(IDirectory?, string?, IFile?, IFileSystemService?)
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM__ctor_FileCurator_Interfaces_IDirectory_System_String_FileCurator_Interfaces_IFile_Mithril_FileSystem_Abstractions_Services_IFileSystemService_
+  commentId: M:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.#ctor(FileCurator.Interfaces.IDirectory,System.String,FileCurator.Interfaces.IFile,Mithril.FileSystem.Abstractions.Services.IFileSystemService)
+  name.vb: New(IDirectory, String, IFile, IFileSystemService)
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.FileBrowserDirectoryVM(FileCurator.Interfaces.IDirectory?, string?, FileCurator.Interfaces.IFile?, Mithril.FileSystem.Abstractions.Services.IFileSystemService?)
+  fullName.vb: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.New(FileCurator.Interfaces.IDirectory, String, FileCurator.Interfaces.IFile, Mithril.FileSystem.Abstractions.Services.IFileSystemService)
+  nameWithType: FileBrowserDirectoryVM.FileBrowserDirectoryVM(IDirectory?, string?, IFile?, IFileSystemService?)
+  nameWithType.vb: FileBrowserDirectoryVM.New(IDirectory, String, IFile, IFileSystemService)
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.#ctor*
+  name: FileBrowserDirectoryVM
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM__ctor_
+  commentId: Overload:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.FileBrowserDirectoryVM
+  fullName.vb: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.New
+  nameWithType: FileBrowserDirectoryVM.FileBrowserDirectoryVM
+  nameWithType.vb: FileBrowserDirectoryVM.New
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Files
+  name: Files
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM_Files
+  commentId: P:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Files
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Files
+  nameWithType: FileBrowserDirectoryVM.Files
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Files*
+  name: Files
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM_Files_
+  commentId: Overload:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Files
+  isSpec: "True"
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Files
+  nameWithType: FileBrowserDirectoryVM.Files
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Name
+  name: Name
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM_Name
+  commentId: P:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Name
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Name
+  nameWithType: FileBrowserDirectoryVM.Name
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Name*
+  name: Name
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM_Name_
+  commentId: Overload:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Name
+  isSpec: "True"
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Name
+  nameWithType: FileBrowserDirectoryVM.Name
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SelectedFile
+  name: SelectedFile
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM_SelectedFile
+  commentId: P:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SelectedFile
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SelectedFile
+  nameWithType: FileBrowserDirectoryVM.SelectedFile
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SelectedFile*
+  name: SelectedFile
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM_SelectedFile_
+  commentId: Overload:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SelectedFile
+  isSpec: "True"
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SelectedFile
+  nameWithType: FileBrowserDirectoryVM.SelectedFile
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SubDirectories
+  name: SubDirectories
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM_SubDirectories
+  commentId: P:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SubDirectories
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SubDirectories
+  nameWithType: FileBrowserDirectoryVM.SubDirectories
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SubDirectories*
+  name: SubDirectories
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM_SubDirectories_
+  commentId: Overload:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SubDirectories
+  isSpec: "True"
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.SubDirectories
+  nameWithType: FileBrowserDirectoryVM.SubDirectories
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Type
+  name: Type
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM_Type
+  commentId: P:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Type
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Type
+  nameWithType: FileBrowserDirectoryVM.Type
+- uid: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Type*
+  name: Type
+  href: api/Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.html#Mithril_FileSystem_ViewModels_FileBrowserDirectoryVM_Type_
+  commentId: Overload:Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Type
+  isSpec: "True"
+  fullName: Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM.Type
+  nameWithType: FileBrowserDirectoryVM.Type
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM
+  name: MediaFileVM
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html
+  commentId: T:Mithril.FileSystem.ViewModels.MediaFileVM
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM
+  nameWithType: MediaFileVM
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.#ctor
+  name: MediaFileVM()
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM__ctor
+  commentId: M:Mithril.FileSystem.ViewModels.MediaFileVM.#ctor
+  name.vb: New()
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.MediaFileVM()
+  fullName.vb: Mithril.FileSystem.ViewModels.MediaFileVM.New()
+  nameWithType: MediaFileVM.MediaFileVM()
+  nameWithType.vb: MediaFileVM.New()
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.#ctor(FileCurator.Interfaces.IFile,System.String,Mithril.FileSystem.Abstractions.Services.IFileSystemService)
+  name: MediaFileVM(IFile?, string?, IFileSystemService?)
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM__ctor_FileCurator_Interfaces_IFile_System_String_Mithril_FileSystem_Abstractions_Services_IFileSystemService_
+  commentId: M:Mithril.FileSystem.ViewModels.MediaFileVM.#ctor(FileCurator.Interfaces.IFile,System.String,Mithril.FileSystem.Abstractions.Services.IFileSystemService)
+  name.vb: New(IFile, String, IFileSystemService)
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.MediaFileVM(FileCurator.Interfaces.IFile?, string?, Mithril.FileSystem.Abstractions.Services.IFileSystemService?)
+  fullName.vb: Mithril.FileSystem.ViewModels.MediaFileVM.New(FileCurator.Interfaces.IFile, String, Mithril.FileSystem.Abstractions.Services.IFileSystemService)
+  nameWithType: MediaFileVM.MediaFileVM(IFile?, string?, IFileSystemService?)
+  nameWithType.vb: MediaFileVM.New(IFile, String, IFileSystemService)
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.#ctor*
+  name: MediaFileVM
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM__ctor_
+  commentId: Overload:Mithril.FileSystem.ViewModels.MediaFileVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.MediaFileVM
+  fullName.vb: Mithril.FileSystem.ViewModels.MediaFileVM.New
+  nameWithType: MediaFileVM.MediaFileVM
+  nameWithType.vb: MediaFileVM.New
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.DateModified
+  name: DateModified
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_DateModified
+  commentId: P:Mithril.FileSystem.ViewModels.MediaFileVM.DateModified
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.DateModified
+  nameWithType: MediaFileVM.DateModified
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.DateModified*
+  name: DateModified
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_DateModified_
+  commentId: Overload:Mithril.FileSystem.ViewModels.MediaFileVM.DateModified
+  isSpec: "True"
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.DateModified
+  nameWithType: MediaFileVM.DateModified
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.DeleteURL
+  name: DeleteURL
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_DeleteURL
+  commentId: P:Mithril.FileSystem.ViewModels.MediaFileVM.DeleteURL
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.DeleteURL
+  nameWithType: MediaFileVM.DeleteURL
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.DeleteURL*
+  name: DeleteURL
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_DeleteURL_
+  commentId: Overload:Mithril.FileSystem.ViewModels.MediaFileVM.DeleteURL
+  isSpec: "True"
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.DeleteURL
+  nameWithType: MediaFileVM.DeleteURL
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.Icon
+  name: Icon
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_Icon
+  commentId: P:Mithril.FileSystem.ViewModels.MediaFileVM.Icon
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.Icon
+  nameWithType: MediaFileVM.Icon
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.Icon*
+  name: Icon
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_Icon_
+  commentId: Overload:Mithril.FileSystem.ViewModels.MediaFileVM.Icon
+  isSpec: "True"
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.Icon
+  nameWithType: MediaFileVM.Icon
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.ImageURL
+  name: ImageURL
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_ImageURL
+  commentId: P:Mithril.FileSystem.ViewModels.MediaFileVM.ImageURL
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.ImageURL
+  nameWithType: MediaFileVM.ImageURL
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.ImageURL*
+  name: ImageURL
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_ImageURL_
+  commentId: Overload:Mithril.FileSystem.ViewModels.MediaFileVM.ImageURL
+  isSpec: "True"
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.ImageURL
+  nameWithType: MediaFileVM.ImageURL
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.Name
+  name: Name
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_Name
+  commentId: P:Mithril.FileSystem.ViewModels.MediaFileVM.Name
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.Name
+  nameWithType: MediaFileVM.Name
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.Name*
+  name: Name
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_Name_
+  commentId: Overload:Mithril.FileSystem.ViewModels.MediaFileVM.Name
+  isSpec: "True"
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.Name
+  nameWithType: MediaFileVM.Name
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.URL
+  name: URL
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_URL
+  commentId: P:Mithril.FileSystem.ViewModels.MediaFileVM.URL
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.URL
+  nameWithType: MediaFileVM.URL
+- uid: Mithril.FileSystem.ViewModels.MediaFileVM.URL*
+  name: URL
+  href: api/Mithril.FileSystem.ViewModels.MediaFileVM.html#Mithril_FileSystem_ViewModels_MediaFileVM_URL_
+  commentId: Overload:Mithril.FileSystem.ViewModels.MediaFileVM.URL
+  isSpec: "True"
+  fullName: Mithril.FileSystem.ViewModels.MediaFileVM.URL
+  nameWithType: MediaFileVM.URL
 - uid: Mithril.HealthChecks
   name: Mithril.HealthChecks
   href: api/Mithril.HealthChecks.html
