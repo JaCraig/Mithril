@@ -23,7 +23,8 @@ namespace Mithril.Core.Abstractions.Extensions
             var TempValues = new Dictionary<string, object?>();
             foreach (var Key in Values.Keys)
             {
-                TempValues.Add(Key.ToPascalCase(), Values[Key]);
+                var Value = Values[Key];
+                TempValues.Add(Key.ToPascalCase(), Value);
             }
             dynamic TempValue = new Dynamo(TempValues);
             return (TEntity)TempValue;
@@ -32,10 +33,11 @@ namespace Mithril.Core.Abstractions.Extensions
         /// <summary>
         /// Converts the object to an expando.
         /// </summary>
-        /// <typeparam name="TEntity">The type of the entity.</typeparam>
         /// <param name="value">The value.</param>
-        /// <returns>The resulting object</returns>
-        public static ExpandoObject? ConvertToExpando<TEntity>(this TEntity? value)
+        /// <returns>
+        /// The resulting object
+        /// </returns>
+        public static ExpandoObject? ConvertToExpando(this object? value)
         {
             if (value is null)
                 return null;
@@ -44,7 +46,55 @@ namespace Mithril.Core.Abstractions.Extensions
 
             foreach (PropertyInfo Property in value.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
             {
-                ReturnValueDictionary[Property.Name.ToString(StringCase.CamelCase)] = Property.GetValue(value);
+                var PropertyValue = Property.GetValue(value);
+                var PropertyType = PropertyValue?.GetType();
+                if (PropertyValue is ExpandoObject PropertyValueExpando)
+                {
+                    PropertyValue = PropertyValueExpando.ConvertToExpando();
+                }
+                else if (PropertyValue is IEnumerable<object?> PropertyValueEnumerable)
+                {
+                    var TempList = new List<object?>();
+                    foreach (var Item in PropertyValueEnumerable)
+                    {
+                        TempList.Add(Item.ConvertToExpando());
+                    }
+                    PropertyValue = TempList;
+                }
+                else if ((PropertyType?.IsClass ?? false) && PropertyType != typeof(string))
+                {
+                    PropertyValue = PropertyValue.ConvertToExpando();
+                }
+                ReturnValueDictionary[Property.Name.ToString(StringCase.CamelCase)] = PropertyValue;
+            }
+
+            return ReturnValue;
+        }
+
+        /// <summary>
+        /// Converts to expando.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>The resulting object</returns>
+        public static ExpandoObject? ConvertToExpando(this IDictionary<string, object?>? value)
+        {
+            if (value is null)
+                return null;
+            var ReturnValue = new ExpandoObject();
+            var ReturnValueDictionary = ReturnValue as IDictionary<string, object?>;
+
+            foreach (var Key in value.Keys)
+            {
+                var PropertyValue = value[Key];
+                if (PropertyValue is ExpandoObject PropertyValueExpando)
+                {
+                    PropertyValue = PropertyValueExpando.ConvertToExpando();
+                }
+                else
+                {
+                    PropertyValue = PropertyValue.ConvertToExpando();
+                }
+                ReturnValueDictionary[Key.ToString(StringCase.CamelCase)] = PropertyValue;
             }
 
             return ReturnValue;

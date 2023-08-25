@@ -41,7 +41,7 @@
             'form-field-select': FormFieldSelect,
             'form-field-checkbox': FormFieldCheckbox,
             'form-field-radio': FormFieldRadio,
-            'form-field-text-area': FormFieldTextarea,
+            'form-field-textarea': FormFieldTextarea,
             'form-field-text': FormFieldText,
             'form-field-upload': FormFieldUpload,
             'form-field-buttons': FormFieldButtons,
