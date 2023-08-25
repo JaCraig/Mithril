@@ -1,15 +1,17 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Mithril.Admin.Abstractions.BaseClasses;
 using Mithril.Admin.Abstractions.DataEditor.Attributes;
 using Mithril.Communication.Models;
+using Mithril.Core.Abstractions.Mvc.Context;
 using Mithril.Data.Abstractions.Services;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
 namespace Mithril.Communication.Admin.ViewModels
 {
     /// <summary>
     /// Message template VM
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="EntityBaseClass&lt;MessageTemplate&gt;" />
     public class MessageTemplateVM : EntityBaseClass<MessageTemplate>
@@ -55,6 +57,8 @@ namespace Mithril.Communication.Admin.ViewModels
         /// The display name.
         /// </value>
         [Order(1)]
+        [Required]
+        [MaxLength(128)]
         public string? DisplayName { get; set; }
 
         /// <summary>
@@ -66,9 +70,14 @@ namespace Mithril.Communication.Admin.ViewModels
         /// <returns>
         /// The async task.
         /// </returns>
-        public override Task<MessageTemplate?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser)
+        public override async Task<MessageTemplate?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser)
         {
-            return Task.FromResult<MessageTemplate?>(null);
+            if (string.IsNullOrEmpty(DisplayName))
+                return null;
+            var Template = MessageTemplate.Load(id, dataService) ?? new MessageTemplate(DisplayName);
+            Template.SetContent(HttpContext.Current?.RequestServices.GetService<IHostEnvironment>(), Content);
+            await Template.SaveAsync(dataService, currentUser).ConfigureAwait(false);
+            return Template;
         }
     }
 }

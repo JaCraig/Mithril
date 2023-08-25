@@ -5,7 +5,6 @@ namespace Mithril.FileSystem.ViewModels
 {
     /// <summary>
     /// Media file VM
-    /// TODO: Add tests
     /// </summary>
     public class MediaFileVM
     {
@@ -22,7 +21,7 @@ namespace Mithril.FileSystem.ViewModels
         /// <param name="file">The file.</param>
         /// <param name="type">The type.</param>
         /// <param name="fileSystemService">The file system service.</param>
-        public MediaFileVM(IFile file, string type, IFileSystemService fileSystemService)
+        public MediaFileVM(IFile? file, string? type, IFileSystemService? fileSystemService)
         {
             if (file is null || fileSystemService is null)
                 return;

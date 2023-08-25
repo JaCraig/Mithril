@@ -5,7 +5,6 @@ namespace Mithril.FileSystem.Services
 {
     /// <summary>
     /// Image class
-    /// TODO: Add tests
     /// </summary>
     public class Image : IDisposable
     {
@@ -13,7 +12,7 @@ namespace Mithril.FileSystem.Services
         /// Initializes a new instance of the <see cref="Image"/> class.
         /// </summary>
         /// <param name="fileInfo">The file information.</param>
-        public Image(FileCurator.Interfaces.IFile fileInfo)
+        public Image(FileCurator.Interfaces.IFile? fileInfo)
         {
             if (fileInfo?.Exists != true)
                 return;

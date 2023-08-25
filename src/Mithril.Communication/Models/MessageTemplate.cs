@@ -213,11 +213,11 @@ namespace Mithril.Communication.Models
         /// </summary>
         /// <param name="hostingEnvironment">The hosting environment.</param>
         /// <param name="content">The content.</param>
-        public IMessageTemplate SetContent(IHostEnvironment? hostingEnvironment, string content)
+        public IMessageTemplate SetContent(IHostEnvironment? hostingEnvironment, string? content)
         {
             if (string.IsNullOrEmpty(DisplayName) || hostingEnvironment is null)
                 return this;
-            new FileCurator.FileInfo($"{hostingEnvironment.ContentRootPath}/Views/MessageTemplates/{FixDisplayName()}.cshtml").Write(content);
+            new FileCurator.FileInfo($"{hostingEnvironment.ContentRootPath}/Views/MessageTemplates/{FixDisplayName()}.cshtml").Write(content ?? "");
             return this;
         }
 

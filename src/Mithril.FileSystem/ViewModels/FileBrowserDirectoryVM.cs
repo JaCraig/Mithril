@@ -5,19 +5,18 @@ using Mithril.FileSystem.Abstractions.Services;
 namespace Mithril.FileSystem.ViewModels
 {
     /// <summary>
-    /// Directory VM
-    /// TODO: Add tests
+    /// File browser directory VM
     /// </summary>
     public class FileBrowserDirectoryVM
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DirectoryVM"/> class.
+        /// Initializes a new instance of the <see cref="FileBrowserDirectoryVM"/> class.
         /// </summary>
         /// <param name="directory">The directory.</param>
         /// <param name="type">The type.</param>
         /// <param name="selectedFile">The selected file.</param>
         /// <param name="fileSystemService">The file system service.</param>
-        public FileBrowserDirectoryVM(IDirectory directory, string type, IFile? selectedFile, IFileSystemService fileSystemService)
+        public FileBrowserDirectoryVM(IDirectory? directory, string? type, IFile? selectedFile, IFileSystemService? fileSystemService)
         {
             Type = type;
             SubDirectories = directory?.EnumerateDirectories()?.ForEach(x => new FileBrowserDirectoryVM(x, type, selectedFile, fileSystemService))?.ToArray() ?? Array.Empty<FileBrowserDirectoryVM>();
@@ -36,7 +35,7 @@ namespace Mithril.FileSystem.ViewModels
         /// Gets or sets the name.
         /// </summary>
         /// <value>The name.</value>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets the selected file.
@@ -54,6 +53,6 @@ namespace Mithril.FileSystem.ViewModels
         /// Gets or sets the type.
         /// </summary>
         /// <value>The type.</value>
-        public string Type { get; set; }
+        public string? Type { get; set; }
     }
 }

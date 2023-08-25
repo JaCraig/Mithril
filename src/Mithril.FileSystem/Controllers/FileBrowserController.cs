@@ -14,7 +14,6 @@ namespace Mithril.FileSystem.Controllers
 {
     /// <summary>
     /// File browser controller
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="Controller" />
     [Area("Services")]
@@ -28,7 +27,7 @@ namespace Mithril.FileSystem.Controllers
         /// Initializes a new instance of the <see cref="FileBrowserController"/> class.
         /// </summary>
         /// <param name="fileManager">The file manager.</param>
-        public FileBrowserController(IFileSystemService fileManager)
+        public FileBrowserController(IFileSystemService? fileManager)
         {
             FileManager = fileManager;
         }
@@ -37,7 +36,7 @@ namespace Mithril.FileSystem.Controllers
         /// Gets the file manager.
         /// </summary>
         /// <value>The file manager.</value>
-        public IFileSystemService FileManager { get; }
+        public IFileSystemService? FileManager { get; }
 
         /// <summary>
         /// Returns the file browser based on the file type.
@@ -48,8 +47,8 @@ namespace Mithril.FileSystem.Controllers
         public IActionResult Browser(string type)
         {
             type = type.Keep(StringFilter.Alpha);
-            IDirectory? Directory = FileManager.Directory($"mithril://{type}s/uploads/{User.GetName()}");
-            _ = Directory.Create();
+            IDirectory? Directory = FileManager?.Directory($"mithril://{type}s/uploads/{User.GetName()}");
+            _ = Directory?.Create();
             return View(new FileBrowserDirectoryVM(Directory, type, null, FileManager));
         }
 
@@ -78,8 +77,10 @@ namespace Mithril.FileSystem.Controllers
             var FileName = file?.FileName;
             FileName = $"mithril://{type}s/uploads/{User.GetName()}/{DateTime.UtcNow.ToString("hhmmss", CultureInfo.InvariantCulture)}-{FileName}";
 
-            IFile? FinalFile = FileManager.File(FileName);
-            IDirectory? RootDirectory = FileManager.Directory($"mithril://{type}s/uploads/{User.GetName()}/");
+            IFile? FinalFile = FileManager?.File(FileName);
+            IDirectory? RootDirectory = FileManager?.Directory($"mithril://{type}s/uploads/{User.GetName()}/");
+            if (RootDirectory is null || FinalFile is null)
+                return BadRequest();
             if (!FinalFile.FullName.Contains(RootDirectory.FullName, StringComparison.OrdinalIgnoreCase))
                 return BadRequest();
 
@@ -88,8 +89,8 @@ namespace Mithril.FileSystem.Controllers
             if (string.Equals(type, "image", StringComparison.OrdinalIgnoreCase))
                 MipMap(FinalFile);
 
-            IDirectory? Directory = FileManager.Directory($"mithril://{type}s/uploads/{User.GetName()}/");
-            _ = Directory.Create();
+            IDirectory? Directory = FileManager?.Directory($"mithril://{type}s/uploads/{User.GetName()}/");
+            _ = Directory?.Create();
             return View(new FileBrowserDirectoryVM(Directory, type, FinalFile, FileManager));
         }
 
@@ -118,7 +119,7 @@ namespace Mithril.FileSystem.Controllers
                 return;
             _ = TempImage.Resize(size);
             var FileName = $"{finalFile.Directory?.FullName}/{TempImage.Width}-{finalFile.Name}";
-            _ = TempImage.Save(FileManager.File(FileName), 100);
+            _ = TempImage.Save(FileManager?.File(FileName), 100);
         }
     }
 }

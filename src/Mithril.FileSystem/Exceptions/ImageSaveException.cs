@@ -2,7 +2,6 @@
 {
     /// <summary>
     /// Image save exception
-    /// TODO: Add tests
     /// </summary>
     public class ImageSaveException : Exception
     {

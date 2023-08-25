@@ -10,7 +10,6 @@ namespace Mithril.Communication.Admin
 {
     /// <summary>
     /// Message template editor
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="EntityEditorBaseClass&lt;MessageTemplateVM, MessageTemplate&gt;" />
     public class MessageTemplateEditor : EntityEditorBaseClass<MessageTemplateVM, MessageTemplate>

@@ -4,7 +4,6 @@ namespace Mithril.Core.Abstractions.Mvc.Attributes
 {
     /// <summary>
     /// Add Header Attribute
-    /// TODO: Add tests
     /// </summary>
     /// <seealso cref="ActionFilterAttribute" />
     public sealed class AddHeaderAttribute : ActionFilterAttribute
