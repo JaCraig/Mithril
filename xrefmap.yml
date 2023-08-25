@@ -9101,6 +9101,323 @@ references:
   commentId: N:Mithril.Apm.Default
   fullName: Mithril.Apm.Default
   nameWithType: Mithril.Apm.Default
+- uid: Mithril.Apm.Default.Admin
+  name: Mithril.Apm.Default.Admin
+  href: api/Mithril.Apm.Default.Admin.html
+  commentId: N:Mithril.Apm.Default.Admin
+  fullName: Mithril.Apm.Default.Admin
+  nameWithType: Mithril.Apm.Default.Admin
+- uid: Mithril.Apm.Default.Admin.RequestTraceEditor
+  name: RequestTraceEditor
+  href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html
+  commentId: T:Mithril.Apm.Default.Admin.RequestTraceEditor
+  fullName: Mithril.Apm.Default.Admin.RequestTraceEditor
+  nameWithType: RequestTraceEditor
+- uid: Mithril.Apm.Default.Admin.RequestTraceEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
+  name: RequestTraceEditor(IDataService?, IEntityMetadataService?, string?)
+  href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html#Mithril_Apm_Default_Admin_RequestTraceEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
+  commentId: M:Mithril.Apm.Default.Admin.RequestTraceEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, String)
+  fullName: Mithril.Apm.Default.Admin.RequestTraceEditor.RequestTraceEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
+  fullName.vb: Mithril.Apm.Default.Admin.RequestTraceEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
+  nameWithType: RequestTraceEditor.RequestTraceEditor(IDataService?, IEntityMetadataService?, string?)
+  nameWithType.vb: RequestTraceEditor.New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Apm.Default.Admin.RequestTraceEditor.#ctor*
+  name: RequestTraceEditor
+  href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html#Mithril_Apm_Default_Admin_RequestTraceEditor__ctor_
+  commentId: Overload:Mithril.Apm.Default.Admin.RequestTraceEditor.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Apm.Default.Admin.RequestTraceEditor.RequestTraceEditor
+  fullName.vb: Mithril.Apm.Default.Admin.RequestTraceEditor.New
+  nameWithType: RequestTraceEditor.RequestTraceEditor
+  nameWithType.vb: RequestTraceEditor.New
+- uid: Mithril.Apm.Default.Admin.RequestTraceEditor.Convert(Mithril.Apm.Default.Models.RequestTrace,System.Boolean)
+  name: Convert(RequestTrace, bool)
+  href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html#Mithril_Apm_Default_Admin_RequestTraceEditor_Convert_Mithril_Apm_Default_Models_RequestTrace_System_Boolean_
+  commentId: M:Mithril.Apm.Default.Admin.RequestTraceEditor.Convert(Mithril.Apm.Default.Models.RequestTrace,System.Boolean)
+  name.vb: Convert(RequestTrace, Boolean)
+  fullName: Mithril.Apm.Default.Admin.RequestTraceEditor.Convert(Mithril.Apm.Default.Models.RequestTrace, bool)
+  fullName.vb: Mithril.Apm.Default.Admin.RequestTraceEditor.Convert(Mithril.Apm.Default.Models.RequestTrace, Boolean)
+  nameWithType: RequestTraceEditor.Convert(RequestTrace, bool)
+  nameWithType.vb: RequestTraceEditor.Convert(RequestTrace, Boolean)
+- uid: Mithril.Apm.Default.Admin.RequestTraceEditor.Convert*
+  name: Convert
+  href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html#Mithril_Apm_Default_Admin_RequestTraceEditor_Convert_
+  commentId: Overload:Mithril.Apm.Default.Admin.RequestTraceEditor.Convert
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.RequestTraceEditor.Convert
+  nameWithType: RequestTraceEditor.Convert
+- uid: Mithril.Apm.Default.Admin.RequestTraceEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Apm.Default.Models.RequestTrace},System.String)
+  name: FilterQueryBySearchQuery(IQueryable<RequestTrace>?, string)
+  href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html#Mithril_Apm_Default_Admin_RequestTraceEditor_FilterQueryBySearchQuery_System_Linq_IQueryable_Mithril_Apm_Default_Models_RequestTrace__System_String_
+  commentId: M:Mithril.Apm.Default.Admin.RequestTraceEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Apm.Default.Models.RequestTrace},System.String)
+  name.vb: FilterQueryBySearchQuery(IQueryable(Of RequestTrace), String)
+  fullName: Mithril.Apm.Default.Admin.RequestTraceEditor.FilterQueryBySearchQuery(System.Linq.IQueryable<Mithril.Apm.Default.Models.RequestTrace>?, string)
+  fullName.vb: Mithril.Apm.Default.Admin.RequestTraceEditor.FilterQueryBySearchQuery(System.Linq.IQueryable(Of Mithril.Apm.Default.Models.RequestTrace), String)
+  nameWithType: RequestTraceEditor.FilterQueryBySearchQuery(IQueryable<RequestTrace>?, string)
+  nameWithType.vb: RequestTraceEditor.FilterQueryBySearchQuery(IQueryable(Of RequestTrace), String)
+- uid: Mithril.Apm.Default.Admin.RequestTraceEditor.FilterQueryBySearchQuery*
+  name: FilterQueryBySearchQuery
+  href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html#Mithril_Apm_Default_Admin_RequestTraceEditor_FilterQueryBySearchQuery_
+  commentId: Overload:Mithril.Apm.Default.Admin.RequestTraceEditor.FilterQueryBySearchQuery
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.RequestTraceEditor.FilterQueryBySearchQuery
+  nameWithType: RequestTraceEditor.FilterQueryBySearchQuery
+- uid: Mithril.Apm.Default.Admin.RequestTraceEditor.Icon
+  name: Icon
+  href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html#Mithril_Apm_Default_Admin_RequestTraceEditor_Icon
+  commentId: P:Mithril.Apm.Default.Admin.RequestTraceEditor.Icon
+  fullName: Mithril.Apm.Default.Admin.RequestTraceEditor.Icon
+  nameWithType: RequestTraceEditor.Icon
+- uid: Mithril.Apm.Default.Admin.RequestTraceEditor.Icon*
+  name: Icon
+  href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html#Mithril_Apm_Default_Admin_RequestTraceEditor_Icon_
+  commentId: Overload:Mithril.Apm.Default.Admin.RequestTraceEditor.Icon
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.RequestTraceEditor.Icon
+  nameWithType: RequestTraceEditor.Icon
+- uid: Mithril.Apm.Default.Admin.ViewModels
+  name: Mithril.Apm.Default.Admin.ViewModels
+  href: api/Mithril.Apm.Default.Admin.ViewModels.html
+  commentId: N:Mithril.Apm.Default.Admin.ViewModels
+  fullName: Mithril.Apm.Default.Admin.ViewModels
+  nameWithType: Mithril.Apm.Default.Admin.ViewModels
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM
+  name: RequestMetaDataVM
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.html
+  commentId: T:Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM
+  nameWithType: RequestMetaDataVM
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.#ctor
+  name: RequestMetaDataVM()
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetaDataVM__ctor
+  commentId: M:Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.RequestMetaDataVM()
+  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.New()
+  nameWithType: RequestMetaDataVM.RequestMetaDataVM()
+  nameWithType.vb: RequestMetaDataVM.New()
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.#ctor(Mithril.Apm.Default.Models.RequestMetaData)
+  name: RequestMetaDataVM(RequestMetaData?)
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetaDataVM__ctor_Mithril_Apm_Default_Models_RequestMetaData_
+  commentId: M:Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.#ctor(Mithril.Apm.Default.Models.RequestMetaData)
+  name.vb: New(RequestMetaData)
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.RequestMetaDataVM(Mithril.Apm.Default.Models.RequestMetaData?)
+  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.New(Mithril.Apm.Default.Models.RequestMetaData)
+  nameWithType: RequestMetaDataVM.RequestMetaDataVM(RequestMetaData?)
+  nameWithType.vb: RequestMetaDataVM.New(RequestMetaData)
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.#ctor*
+  name: RequestMetaDataVM
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetaDataVM__ctor_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.RequestMetaDataVM
+  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.New
+  nameWithType: RequestMetaDataVM.RequestMetaDataVM
+  nameWithType.vb: RequestMetaDataVM.New
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.DisplayName
+  name: DisplayName
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetaDataVM_DisplayName
+  commentId: P:Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.DisplayName
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.DisplayName
+  nameWithType: RequestMetaDataVM.DisplayName
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.DisplayName*
+  name: DisplayName
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetaDataVM_DisplayName_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.DisplayName
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.DisplayName
+  nameWithType: RequestMetaDataVM.DisplayName
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.MetaData
+  name: MetaData
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetaDataVM_MetaData
+  commentId: P:Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.MetaData
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.MetaData
+  nameWithType: RequestMetaDataVM.MetaData
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.MetaData*
+  name: MetaData
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetaDataVM_MetaData_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.MetaData
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.MetaData
+  nameWithType: RequestMetaDataVM.MetaData
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM
+  name: RequestMetricVM
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.html
+  commentId: T:Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM
+  nameWithType: RequestMetricVM
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.#ctor
+  name: RequestMetricVM()
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetricVM__ctor
+  commentId: M:Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.RequestMetricVM()
+  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.New()
+  nameWithType: RequestMetricVM.RequestMetricVM()
+  nameWithType.vb: RequestMetricVM.New()
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.#ctor(Mithril.Apm.Default.Models.RequestMetric)
+  name: RequestMetricVM(RequestMetric?)
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetricVM__ctor_Mithril_Apm_Default_Models_RequestMetric_
+  commentId: M:Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.#ctor(Mithril.Apm.Default.Models.RequestMetric)
+  name.vb: New(RequestMetric)
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.RequestMetricVM(Mithril.Apm.Default.Models.RequestMetric?)
+  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.New(Mithril.Apm.Default.Models.RequestMetric)
+  nameWithType: RequestMetricVM.RequestMetricVM(RequestMetric?)
+  nameWithType.vb: RequestMetricVM.New(RequestMetric)
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.#ctor*
+  name: RequestMetricVM
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetricVM__ctor_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.RequestMetricVM
+  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.New
+  nameWithType: RequestMetricVM.RequestMetricVM
+  nameWithType.vb: RequestMetricVM.New
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.DisplayName
+  name: DisplayName
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetricVM_DisplayName
+  commentId: P:Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.DisplayName
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.DisplayName
+  nameWithType: RequestMetricVM.DisplayName
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.DisplayName*
+  name: DisplayName
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetricVM_DisplayName_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.DisplayName
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.DisplayName
+  nameWithType: RequestMetricVM.DisplayName
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.MetaData
+  name: MetaData
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetricVM_MetaData
+  commentId: P:Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.MetaData
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.MetaData
+  nameWithType: RequestMetricVM.MetaData
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.MetaData*
+  name: MetaData
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetricVM_MetaData_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.MetaData
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.MetaData
+  nameWithType: RequestMetricVM.MetaData
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.Metric
+  name: Metric
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetricVM_Metric
+  commentId: P:Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.Metric
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.Metric
+  nameWithType: RequestMetricVM.Metric
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.Metric*
+  name: Metric
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestMetricVM_Metric_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.Metric
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.Metric
+  nameWithType: RequestMetricVM.Metric
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM
+  name: RequestTraceVM
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html
+  commentId: T:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM
+  nameWithType: RequestTraceVM
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.#ctor
+  name: RequestTraceVM()
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM__ctor
+  commentId: M:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.RequestTraceVM()
+  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.New()
+  nameWithType: RequestTraceVM.RequestTraceVM()
+  nameWithType.vb: RequestTraceVM.New()
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.#ctor(Mithril.Apm.Default.Models.RequestTrace,System.Boolean)
+  name: RequestTraceVM(RequestTrace?, bool)
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM__ctor_Mithril_Apm_Default_Models_RequestTrace_System_Boolean_
+  commentId: M:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.#ctor(Mithril.Apm.Default.Models.RequestTrace,System.Boolean)
+  name.vb: New(RequestTrace, Boolean)
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.RequestTraceVM(Mithril.Apm.Default.Models.RequestTrace?, bool)
+  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.New(Mithril.Apm.Default.Models.RequestTrace, Boolean)
+  nameWithType: RequestTraceVM.RequestTraceVM(RequestTrace?, bool)
+  nameWithType.vb: RequestTraceVM.New(RequestTrace, Boolean)
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.#ctor*
+  name: RequestTraceVM
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM__ctor_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.RequestTraceVM
+  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.New
+  nameWithType: RequestTraceVM.RequestTraceVM
+  nameWithType.vb: RequestTraceVM.New
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.DateCreated
+  name: DateCreated
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_DateCreated
+  commentId: P:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.DateCreated
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.DateCreated
+  nameWithType: RequestTraceVM.DateCreated
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.DateCreated*
+  name: DateCreated
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_DateCreated_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.DateCreated
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.DateCreated
+  nameWithType: RequestTraceVM.DateCreated
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.MetaData
+  name: MetaData
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_MetaData
+  commentId: P:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.MetaData
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.MetaData
+  nameWithType: RequestTraceVM.MetaData
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.MetaData*
+  name: MetaData
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_MetaData_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.MetaData
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.MetaData
+  nameWithType: RequestTraceVM.MetaData
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.Metrics
+  name: Metrics
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_Metrics
+  commentId: P:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.Metrics
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.Metrics
+  nameWithType: RequestTraceVM.Metrics
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.Metrics*
+  name: Metrics
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_Metrics_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.Metrics
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.Metrics
+  nameWithType: RequestTraceVM.Metrics
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, ClaimsPrincipal?)
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: RequestTraceVM.SaveAsync(long, IDataService?, ClaimsPrincipal?)
+  nameWithType.vb: RequestTraceVM.SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync*
+  name: SaveAsync
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_SaveAsync_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync
+  nameWithType: RequestTraceVM.SaveAsync
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.TraceIdentifier
+  name: TraceIdentifier
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_TraceIdentifier
+  commentId: P:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.TraceIdentifier
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.TraceIdentifier
+  nameWithType: RequestTraceVM.TraceIdentifier
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.TraceIdentifier*
+  name: TraceIdentifier
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_TraceIdentifier_
+  commentId: Overload:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.TraceIdentifier
+  isSpec: "True"
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.TraceIdentifier
+  nameWithType: RequestTraceVM.TraceIdentifier
 - uid: Mithril.Apm.Default.BackgroundTasks
   name: Mithril.Apm.Default.BackgroundTasks
   href: api/Mithril.Apm.Default.BackgroundTasks.html
@@ -15510,6 +15827,24 @@ references:
   fullName.vb: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertExpando(Of TEntity)(System.Dynamic.ExpandoObject)
   nameWithType: ExpandoObjectExtensions.ConvertExpando<TEntity>(ExpandoObject?)
   nameWithType.vb: ExpandoObjectExtensions.ConvertExpando(Of TEntity)(ExpandoObject)
+- uid: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando(System.Collections.Generic.IDictionary{System.String,System.Object})
+  name: ConvertToExpando(IDictionary<string, object?>?)
+  href: api/Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando_System_Collections_Generic_IDictionary_System_String_System_Object__
+  commentId: M:Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando(System.Collections.Generic.IDictionary{System.String,System.Object})
+  name.vb: ConvertToExpando(IDictionary(Of String, Object))
+  fullName: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando(System.Collections.Generic.IDictionary<string, object?>?)
+  fullName.vb: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando(System.Collections.Generic.IDictionary(Of String, Object))
+  nameWithType: ExpandoObjectExtensions.ConvertToExpando(IDictionary<string, object?>?)
+  nameWithType.vb: ExpandoObjectExtensions.ConvertToExpando(IDictionary(Of String, Object))
+- uid: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando(System.Object)
+  name: ConvertToExpando(object?)
+  href: api/Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando_System_Object_
+  commentId: M:Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando(System.Object)
+  name.vb: ConvertToExpando(Object)
+  fullName: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando(object?)
+  fullName.vb: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando(Object)
+  nameWithType: ExpandoObjectExtensions.ConvertToExpando(object?)
+  nameWithType.vb: ExpandoObjectExtensions.ConvertToExpando(Object)
 - uid: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando*
   name: ConvertToExpando
   href: api/Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando_
@@ -15517,15 +15852,6 @@ references:
   isSpec: "True"
   fullName: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando
   nameWithType: ExpandoObjectExtensions.ConvertToExpando
-- uid: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando``1(``0)
-  name: ConvertToExpando<TEntity>(TEntity?)
-  href: api/Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando__1___0_
-  commentId: M:Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando``1(``0)
-  name.vb: ConvertToExpando(Of TEntity)(TEntity)
-  fullName: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando<TEntity>(TEntity?)
-  fullName.vb: Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.ConvertToExpando(Of TEntity)(TEntity)
-  nameWithType: ExpandoObjectExtensions.ConvertToExpando<TEntity>(TEntity?)
-  nameWithType.vb: ExpandoObjectExtensions.ConvertToExpando(Of TEntity)(TEntity)
 - uid: Mithril.Core.Abstractions.Extensions.IConfigurationExtensions
   name: IConfigurationExtensions
   href: api/Mithril.Core.Abstractions.Extensions.IConfigurationExtensions.html

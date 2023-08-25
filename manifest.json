@@ -2083,6 +2083,66 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Admin.RequestTraceEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Admin.RequestTraceEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Admin.ViewModels.RequestMetaDataVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Admin.ViewModels.RequestMetricVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Admin.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Admin.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Apm.Default.Admin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Apm.Default.Admin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Apm.Default.BackgroundTasks.MetricsReporterBackgroundTask.yml",
       "output": {
         ".html": {
