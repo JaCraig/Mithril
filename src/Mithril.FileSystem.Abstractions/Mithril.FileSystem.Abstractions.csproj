@@ -49,7 +49,7 @@
 	</PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FileCurator" Version="4.0.12" />
+    <PackageReference Include="FileCurator" Version="4.0.13" />
 	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 	  <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.3">
 		  <PrivateAssets>all</PrivateAssets>
