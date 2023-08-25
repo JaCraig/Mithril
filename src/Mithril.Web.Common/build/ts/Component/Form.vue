@@ -32,7 +32,7 @@
             </div>
             <div class="panel">
                 <header>Form Model</header>
-                <div class="body">
+                <div class="body" style="word-wrap: break-word;">
                     <pre>
                         {{internalModel}}
                     </pre>

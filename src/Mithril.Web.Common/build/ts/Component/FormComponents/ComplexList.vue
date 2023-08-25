@@ -57,6 +57,8 @@
     import FormFieldText from './Text.vue';
     import FormFieldUpload from './Upload.vue';
     import FormFieldButtons from './Buttons.vue';
+    import FormFieldMarkdown from './Markdown.vue';
+    import FormFieldHtml from './Html.vue';
 
     export default Vue.defineComponent({
         name: "form-field-complex-list",
@@ -69,6 +71,8 @@
             'form-field-text': FormFieldText,
             'form-field-upload': FormFieldUpload,
             'form-field-buttons': FormFieldButtons,
+            'form-field-markdown': FormFieldMarkdown,
+            'form-field-html': FormFieldHtml
         },
         data: function() {
             return {

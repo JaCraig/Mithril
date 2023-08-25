@@ -1,0 +1,60 @@
+﻿@model Mithril.FileSystem.ViewModels.FileBrowserDirectoryVM
+@using BigBook;
+@{
+    ViewData["Title"] = "Browser Page";
+}
+
+<div class="flex row wrap">
+    <div class="panel flex-item primary align-self-start">
+        <header class="text-center">@Model.Name.ToString(StringCase.TitleCase) Files</header>
+        <div class="body">
+            <ul class="unstyled flex row wrap">
+                @foreach (var Item in Model.Files.OrderBy(x => x.DateModified))
+                {
+                    if (!string.IsNullOrEmpty(Item.ImageURL))
+                    {
+                        <li class="flex-item">
+                            <a href="@Item.URL">
+                                <figure style="margin: 10px">
+                                    <img src="@Item.ImageURL" alt="@Item.Name" width="200" />
+                                    <figcaption class="text-center">@Item.Name</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="flex-item">
+                            <div width="200">
+                                <a href="@Item.URL" style="padding: 10px">
+                                    <div class="@Item.Icon" style="font-size: 200px"></div>
+                                    @Item.Name
+                                </a>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="fixed-footer">
+    <form method="post" enctype="multipart/form-data">
+        <div class="input-group">
+            <input type="file" name="file" id="file" />
+            <input type="submit" value="Upload" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script defer src="/FileSystem/js/module.umd.min.js">
+        
+    </script>
+}
+
+<style>
+    .pointer {
+        cursor: pointer;
+    }
+</style>

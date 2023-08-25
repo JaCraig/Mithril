@@ -16,7 +16,7 @@
     "moment": "^2.29.4",
     "showdown": "^2.1.0"
   },
-  "globals": { "vue": "Vue", "moment": "moment" },
+  "globals": { "vue": "Vue", "moment": "moment", "showdown": "showdown" },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
     "typescript": "^5.0.2",

@@ -64,7 +64,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="build\ts\NewFolder\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

@@ -4,6 +4,7 @@
         flex-direction: row;
         flex-wrap: nowrap;
         & .left-nav {
+            min-width: 200px;
             width: 200px;
             height: calc(100vh - 1px);
             border-bottom: 0;

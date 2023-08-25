@@ -1,76 +1,48 @@
 <style type="text/less" scoped>
-    textarea {
-        min-height:500px;
+    .editor {
+        padding-bottom: 10px;
     }
 
-    nav.menu h1,
-    nav.menu h2,
-    nav.menu h3,
-    nav.menu h4,
-    nav.menu h5,
-    nav.menu h6 {
-        margin: 0 1em;
+    div[role=presentation].tox-form__group {
+        height: 500px;
     }
 </style>
 <template>
-    <div class="flex row">
-        <div class="flex-item flex justify-space-between column wrap" id="editorRawInput">
-            <nav class="menu pill flex-item">
-                <ul>
-                    <li class="item has-children">
-                        <a href="#!">Header</a>
-                        <ul>
-                            <li><h1><a href="#!" @click.stop.prevent="tag('#')">Header 1</a></h1></li>
-                            <li><h2><a href="#!" @click.stop.prevent="tag('##')">Header 2</a></h2></li>
-                            <li><h3><a href="#!" @click.stop.prevent="tag('###')">Header 3</a></h3></li>
-                            <li><h4><a href="#!" @click.stop.prevent="tag('####')">Header 4</a></h4></li>
-                            <li><h5><a href="#!" @click.stop.prevent="tag('#####')">Header 5</a></h5></li>
-                            <li><h6><a href="#!" @click.stop.prevent="tag('######')">Header 6</a></h6></li>
-                        </ul>
-                    </li>
-                    <li class="item has-children">
-                        <a href="#!">Format</a>
-                        <ul>
-                            <li><strong><a href="#!" @click.stop.prevent="symmetricTag('**')">Bold</a></strong></li>
-                            <li><em><a href="#!" @click.stop.prevent="symmetricTag('*')">Italics</a></em></li>
-                            <li><del><a href="#!" @click.stop.prevent="symmetricTag('~~')">Strikethrough</a></del></li>
-                            <li><u><a href="#!" @click.stop.prevent="symmetricTag('__')">Underline</a></u></li>
-                            <li><a href="#!" @click.stop.prevent="tag('>')">Quote</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#!" @click.stop.prevent="tag('\n\n-------\n\n')">HR</a></li>
-                    <li class="item has-children">
-                        <a href="#!">List</a>
-                        <ul>
-                            <li><a href="#!" @click.stop.prevent="tag('1. ')" class="fa-list-ol">Ordered</a></li>
-                            <li><a href="#!" @click.stop.prevent="tag('* ')" class="fa-list-ul">Unordered</a></li>
-                        </ul>
-                    </li>
-                    <li class="item has-children">
-                        <a href="#!">File</a>
-                        <ul>
-                            <li><a href="#!" @click.stop.prevent="showFrame('image')" class="fa-image"></a></li>
-                            <li><a href="#!" @click.stop.prevent="showFrame('file')" class="fa-link"></a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <textarea v-model="internalModel" id="editorInput" name="editorInput" class="flex-item" @keyup="keyup"></textarea><br />
-        </div>
-        <div class="flex-item" id="editorCompiledInput" v-if="displayPreview">
-            <h1>{{ currentTitle }}</h1>
-            <div v-html="compiledMarkdown"></div>
-        </div>
-        <div class="iframe-holder z-depth-2" v-if="displayFrame">
-            <iframe :src="iframeSrc"></iframe>
+    <div>
+        <label :for="getFieldID()" v-if="showLabel && internalSchema.displayName">
+            {{ internalSchema.displayName }}
+            <span class="error clear-background" v-if="internalSchema.metadata.required && errorMessage">*</span>
+            <i class="clear-background active no-border small" v-if="internalSchema.metadata.hint"><span class="fas fa-info-circle"></span>{{ internalSchema.metadata.hint }}</i>
+            <span class="error clear-background" v-if="errorMessage">{{errorMessage}}</span>
+            <span class="success clear-background fas fa-check-circle" v-if="!errorMessage && willValidate()"></span>
+        </label>
+        <div v-if="internalSchema.metadata.subtitle">{{internalSchema.metadata.subtitle}}</div>
+        <div class="editor">
+            <textarea :id="getFieldID()"
+                        v-model="internalModel"
+                        :disabled="internalSchema.metadata.disabled"
+                        :height="internalSchema.metadata.height"
+                        :maxlength="internalSchema.metadata.maxlength"
+                        :minlength="internalSchema.metadata.minlength"
+                        :name="getFieldID()"
+                        :placeholder="internalSchema.metadata.placeholder"
+                        :title="internalSchema.metadata.placeholder"
+                        :readonly="internalSchema.metadata.readonly"
+                        :class="internalSchema.inputClasses"
+                        :required="internalSchema.metadata.required"
+                        :width="internalSchema.metadata.width"
+                        :rows="internalSchema.metadata.rows || 3"
+                        :data-error-message-value-missing="internalSchema.metadata.errorMessageValueMissing"
+                        :data-error-message-too-long="internalSchema.metadata.errorMessageTooLong"
+                        :data-error-message-too-short="internalSchema.metadata.errorMessageTooShort">
+            </textarea>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-    import Vue from 'vue';
-    import showdown from 'showdown';
-    import moment from 'moment';
+    import Vue from 'vue'
+    declare var tinymce: any;
     import "../../Framework/Extensions/String";
     import { BrowserUtils } from '../../Framework/Browser/BrowserUtils';
     import { Request, StorageMode } from '../../Framework/Request';
@@ -85,7 +57,8 @@
             return {
                 internalModel: this.model,
                 internalSchema: this.schema,
-                errorMessage: ""
+                errorMessage: "",
+                currentCallback: null
             };
         },
         props: {
@@ -129,73 +102,38 @@
             getFieldID: function () {
                 return this.internalSchema.propertyName.slugify() + this.internalSchema.key;
             },
-            showFrame: function (type: string) {
-                this.displayFrame = true;
-                if (type === "image") {
-                    this.iframeSrc = this.iframeImageSrc;
-                } else {
-                    this.iframeSrc = this.iframeFileSrc;
-                }
-            },
-            markdown: function (content: string) {
-                if (!content) {
-                    return content;
-                }
-                var converter = new showdown.Converter({ tables: true, strikethrough: true, emoji: true, underline: true, ghMentions: true, ghMentionsLink: BrowserUtils.domain + "People/{u}" });
-                return converter.makeHtml(content);
-            },
-            keyup: function () {
-                this.$emit("keyup", {
-                    content: this.currentContent
+            imageFilePicker: function (callback: any, value: any, meta: any) {
+                this.currentCallback = callback;
+                tinymce.activeEditor.windowManager.open({
+                    body: {
+                        type: 'panel',
+                        items: [{
+                            type: 'htmlpanel',
+                            html: '<iframe id="media-browser" src="/services/filebrowser/'+meta.filetype+'" style="width: 100%; height: 565px; border: 0;"></iframe>',
+                            flex: 1
+                        }]
+                    },
+                    title: meta.filetype.charAt(0).toUpperCase() + meta.filetype.substr(1).toLowerCase() + ' Picker',
+                    size: 'large',
+                    //buttons: [{
+                    //    type: 'cancel',
+                    //    text: 'Close',
+                    //    onclick: 'close'
+                    //}],
                 });
             },
-            cancel: function () {
-                this.$emit("cancel");
+            processEditOperation: function (operation: any) {
+                this.text = tinymce.get(this.getFieldID()).getContent();
+                this.changed(this.text);
             },
-            tag: function (tag: string) {
-                let editor = <HTMLTextAreaElement>document.getElementById('editorInput');
-                if (!editor) {
-                    return;
-                }
-                let start = editor.selectionStart;
-                let end = editor.selectionEnd;
-                let tagText = tag + this.currentContent.substring(start, end);
-                this.currentContent = this.currentContent.substring(0, start) + tagText + this.currentContent.substring(end, this.currentContent.length);
-                editor.focus();
+            // Called when the model changes
+            // newValue: the new value
+            // emits a changed event
+            changed: function (newValue: any) {
+                let that = this;
+                this.revalidate();
+                this.$emit("changed", newValue, this.schema);
             },
-            symmetricTag: function (tag: string) {
-                let editor = <HTMLTextAreaElement>document.getElementById('editorInput');
-                if (!editor) {
-                    return;
-                }
-                let start = editor.selectionStart;
-                let end = editor.selectionEnd;
-                let tagText = tag + this.currentContent.substring(start, end) + tag;
-                this.currentContent = this.currentContent.substring(0, start) + tagText + this.currentContent.substring(end, this.currentContent.length);
-                editor.focus();
-            },
-            linkTag: function (href: string) {
-                let editor = <HTMLTextAreaElement>document.getElementById('editorInput');
-                if (!editor) {
-                    return;
-                }
-                let start = editor.selectionStart;
-                let end = editor.selectionEnd;
-                let tagText = "[" + this.currentContent.substring(start, end) + "](" + href + ")";
-                this.currentContent = this.currentContent.substring(0, start) + tagText + this.currentContent.substring(end, this.currentContent.length);
-                editor.focus();
-            },
-            imageTag: function (href: string) {
-                let editor = <HTMLTextAreaElement>document.getElementById('editorInput');
-                if (!editor) {
-                    return;
-                }
-                let start = editor.selectionStart;
-                let end = editor.selectionEnd;
-                let tagText = "![" + this.currentContent.substring(start, end) + "](" + href + ")";
-                this.currentContent = this.currentContent.substring(0, start) + tagText + this.currentContent.substring(end, this.currentContent.length);
-                editor.focus();
-            }
         },
         watch: {
             // watches the model and updates the internal model
@@ -223,25 +161,71 @@
                 });
             }
         },
-        // mounted is called when the component is loaded
-        // this is where we setup the validation rules and the event listeners
+        unmounted: function () {
+            tinymce.remove();
+        },
         mounted: function () {
             let that = this;
             window.addEventListener('message', function (message) {
-                if (typeof message.data !== 'string') return;
+                if (typeof message.data !== 'string'|| !that.currentCallback) {
+                    return;
+                }
 
                 let command = JSON.parse(message.data);
-                that.displayFrame = false;
                 if (command.href) {
-                    if (that.iframeSrc == that.iframeImageSrc) {
-                        that.imageTag(command.href);
-                    } else {
-                        that.linkTag(command.href);
-                    }
+                    that.currentCallback(command.href, { title: command.href });
                 }
+                that.currentCallback = null;
+                tinymce.activeEditor.windowManager.close();
             });
-            this.$nextTick(function () {
-                this.revalidate();
+            let tempID = this.getFieldID();
+            tinymce.init({
+                selector: '#' + tempID,
+                height: '500px',
+                skin: 'oxide-dark',
+                plugins: [
+                  'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+                  'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+                  'media', 'table', 'emoticons', 'template'
+                ],
+                menu: {
+                    file: { title: 'File', items: 'newdocument restoredraft | preview | export print | deleteallconversations' },
+                    edit: { title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall | searchreplace' },
+                    view: { title: 'View', items: 'code | visualaid visualchars visualblocks | spellchecker | preview fullscreen | showcomments' },
+                    insert: { title: 'Insert', items: 'image link media addcomment pageembed template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor tableofcontents | insertdatetime' },
+                    format: { title: 'Format', items: 'bold italic underline strikethrough superscript subscript codeformat | styles blocks fontfamily fontsize align lineheight | forecolor backcolor | language | removeformat' },
+                    tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | a11ycheck code wordcount' },
+                    table: { title: 'Table', items: 'inserttable | cell row column | advtablesort | tableprops deletetable' }
+                },
+                textpattern_patterns: [
+                    { start: '*', end: '*', format: 'italic' },
+                    { start: '**', end: '**', format: 'bold' },
+                    { start: '#', format: 'h1' },
+                    { start: '##', format: 'h2' },
+                    { start: '###', format: 'h3' },
+                    { start: '####', format: 'h4' },
+                    { start: '#####', format: 'h5' },
+                    { start: '######', format: 'h6' },
+                    { start: '1. ', cmd: 'InsertOrderedList' },
+                    { start: '* ', cmd: 'InsertUnorderedList' },
+                    { start: '- ', cmd: 'InsertUnorderedList' }
+                ],
+                relative_urls: false,
+                a11y_advanced_options: true,
+                file_picker_callback: function (callback: any, value: any, meta: any) {
+                    that.imageFilePicker(callback, value, meta);
+                },
+                setup: function (ed: any) {
+                    Logger.debug('TinyMCE setup');
+                    ed.on('change', function (e: any) {
+                        that.innerModel = ed.getContent();
+                        that.changed(that.innerModel);
+                    });
+                    ed.on('KeyUp', function (e: any) {
+                        that.innerModel = ed.getContent();
+                        that.changed(that.innerModel);
+                    });
+                }
             });
         },
     });

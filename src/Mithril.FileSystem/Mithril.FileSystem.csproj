@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
 	  <TargetFramework>net7.0</TargetFramework>
@@ -33,6 +33,8 @@
 	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
 	  <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+	  <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+	  <StaticWebAssetBasePath>FileSystem</StaticWebAssetBasePath>
   </PropertyGroup>
 	<ItemGroup>
 		<None Include="..\..\Icon.png">
@@ -52,11 +54,17 @@
     <ProjectReference Include="..\Mithril.Core.Abstractions\Mithril.Core.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.FileSystem.Abstractions\Mithril.FileSystem.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.HealthChecks.Abstractions\Mithril.HealthChecks.Abstractions.csproj" />
+    <ProjectReference Include="..\Mithril.Themes.Abstractions\Mithril.Themes.Abstractions.csproj" />
 	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 	  <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.3">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
+	  <PackageReference Include="SkiaSharp" Version="2.88.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
