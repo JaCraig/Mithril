@@ -27,14 +27,14 @@ namespace Mithril.Security.Models
         /// <param name="type">The type.</param>
         /// <param name="value">The value.</param>
         /// <param name="users">The users.</param>
-        public UserClaim(UserClaimTypes type, string value, params IUser[] users)
+        public UserClaim(UserClaimTypes? type, string value, params IUser[] users)
             : this()
         {
             if (string.IsNullOrEmpty(value))
                 throw new ArgumentNullException(nameof(value));
             Value = value;
             users ??= Array.Empty<IUser>();
-            Type = (string)type;
+            Type = ((string)type) ?? "";
             Users = users.Where(x => x != null).ToList();
         }
 

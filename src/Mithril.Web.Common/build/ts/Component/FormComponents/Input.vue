@@ -156,13 +156,13 @@
             },
             // Updates the datalist for the field
             updateDataList: debounce(async function() {
-                if (!this.internalSchema.queryType) {
+                if (!this.internalSchema.metadata.queryType) {
                     return;
                 }
                 let that = this;
 
                 Request.post('/api/query', {
-                    query: that.datalistQuery,
+                    query: that.dataListQuery,
                     variables: {
                         queryType: that.internalSchema.metadata.queryType,
                         queryFilter: that.internalModel

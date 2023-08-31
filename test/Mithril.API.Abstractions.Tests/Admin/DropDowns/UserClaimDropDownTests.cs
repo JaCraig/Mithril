@@ -1,8 +1,7 @@
-﻿using Mithril.Security.Admin.DropDowns;
+﻿using Mithril.API.Abstractions.Admin.DropDowns;
 using Mithril.Tests.Helpers;
-using Xunit;
 
-namespace Mithril.Security.Tests.Admin.DropDowns
+namespace Mithril.API.Abstractions.Tests.Admin.DropDowns
 {
     /// <summary>
     /// User claim drop down tests

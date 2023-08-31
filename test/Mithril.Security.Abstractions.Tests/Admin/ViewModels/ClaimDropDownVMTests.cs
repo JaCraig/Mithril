@@ -1,4 +1,4 @@
-﻿using Mithril.Security.Admin.ViewModels;
+﻿using Mithril.Security.Abstractions.Admin.ViewModels;
 using Mithril.Tests.Helpers;
 
 namespace Mithril.Security.Tests.Admin.ViewModels

@@ -3,6 +3,7 @@ using Mithril.Admin.Abstractions.BaseClasses;
 using Mithril.Admin.Abstractions.DataEditor.Attributes;
 using Mithril.Data.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
+using Mithril.Security.Abstractions.Admin.ViewModels;
 using Mithril.Security.Abstractions.Enums;
 using Mithril.Security.Models;
 using System.ComponentModel.DataAnnotations;

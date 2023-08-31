@@ -1,8 +1,8 @@
 ﻿using Mithril.Admin.Abstractions.DataEditor.Attributes;
+using Mithril.API.Abstractions.Admin.DropDowns;
 using Mithril.Data.Abstractions.Interfaces;
-using Mithril.Security.Admin.DropDowns;
 
-namespace Mithril.Security.Admin.ViewModels
+namespace Mithril.Security.Abstractions.Admin.ViewModels
 {
     /// <summary>
     /// Claim Drop Down VM
