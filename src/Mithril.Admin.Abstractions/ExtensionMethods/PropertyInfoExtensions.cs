@@ -16,11 +16,6 @@ namespace Mithril.Admin.Abstractions.ExtensionMethods
         ///   <c>true</c> if the specified property has attribute; otherwise, <c>false</c>.
         /// </returns>
         public static bool HasAttribute<TAttribute>(this PropertyInfo? property)
-            where TAttribute : Attribute
-        {
-            if (property is null)
-                return false;
-            return property.GetCustomAttribute<TAttribute>() is not null;
-        }
+            where TAttribute : Attribute => property is not null && property.GetCustomAttribute<TAttribute>() is not null;
     }
 }

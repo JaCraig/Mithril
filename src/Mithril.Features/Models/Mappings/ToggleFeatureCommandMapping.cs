@@ -14,8 +14,8 @@ namespace Mithril.Features.Models.Mappings
         /// </summary>
         public ToggleFeatureCommandMapping()
         {
-            Reference(x => x.FeatureName);
-            Reference(x => x.FeatureStatus);
+            _ = Reference(x => x.FeatureName);
+            _ = Reference(x => x.FeatureStatus);
         }
     }
 }

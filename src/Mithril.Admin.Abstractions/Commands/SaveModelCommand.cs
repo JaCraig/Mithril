@@ -57,10 +57,7 @@ namespace Mithril.Admin.Abstractions.Commands
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(SaveModelCommand left, SaveModelCommand right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(SaveModelCommand left, SaveModelCommand right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -68,10 +65,7 @@ namespace Mithril.Admin.Abstractions.Commands
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(SaveModelCommand left, SaveModelCommand right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(SaveModelCommand left, SaveModelCommand right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -79,10 +73,7 @@ namespace Mithril.Admin.Abstractions.Commands
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(SaveModelCommand left, SaveModelCommand right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(SaveModelCommand left, SaveModelCommand right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -90,10 +81,7 @@ namespace Mithril.Admin.Abstractions.Commands
         /// <param name="first">The first.</param>
         /// <param name="second">The second.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator ==(SaveModelCommand first, SaveModelCommand second)
-        {
-            return ReferenceEquals(first, second) || (first is not null && second is not null && first.CompareTo(second) == 0);
-        }
+        public static bool operator ==(SaveModelCommand first, SaveModelCommand second) => ReferenceEquals(first, second) || (first is not null && second is not null && first.CompareTo(second) == 0);
 
         /// <summary>
         /// Implements the operator &gt;.
@@ -101,10 +89,7 @@ namespace Mithril.Admin.Abstractions.Commands
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(SaveModelCommand left, SaveModelCommand right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(SaveModelCommand left, SaveModelCommand right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -112,10 +97,7 @@ namespace Mithril.Admin.Abstractions.Commands
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(SaveModelCommand left, SaveModelCommand right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(SaveModelCommand left, SaveModelCommand right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Compares the object to another object

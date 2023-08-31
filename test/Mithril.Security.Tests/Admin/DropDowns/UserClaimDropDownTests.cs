@@ -1,5 +1,6 @@
 ﻿using Mithril.Security.Admin.DropDowns;
 using Mithril.Tests.Helpers;
+using Xunit;
 
 namespace Mithril.Security.Tests.Admin.DropDowns
 {
@@ -15,6 +16,12 @@ namespace Mithril.Security.Tests.Admin.DropDowns
         public UserClaimDropDownTests()
         {
             TestObject = new UserClaimDropDown();
+        }
+
+        [Fact]
+        public void UserClaimDropDown_Constructor()
+        {
+            Assert.NotNull(new UserClaimDropDown());
         }
     }
 }

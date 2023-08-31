@@ -14,7 +14,7 @@ namespace Mithril.Themes.Models.Mappings
         /// </summary>
         public SetThemeCommandMapping()
         {
-            Reference(x => x.ThemeName);
+            _ = Reference(x => x.ThemeName);
         }
     }
 }

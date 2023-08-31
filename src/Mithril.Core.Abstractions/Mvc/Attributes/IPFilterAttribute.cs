@@ -34,8 +34,8 @@ namespace Mithril.Core.Abstractions.Mvc.Attributes
         {
             if (context is null)
                 return;
-            var IPFilterService = context.HttpContext.RequestServices.GetService<IIPFilterService>();
-            var Logger = context.HttpContext.RequestServices.GetService<ILogger<IPFilterAttribute>>();
+            IIPFilterService? IPFilterService = context.HttpContext.RequestServices.GetService<IIPFilterService>();
+            ILogger<IPFilterAttribute>? Logger = context.HttpContext.RequestServices.GetService<ILogger<IPFilterAttribute>>();
             if (IPFilterService is null || Logger is null)
                 return;
 

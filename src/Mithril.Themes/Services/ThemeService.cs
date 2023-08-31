@@ -22,10 +22,10 @@ namespace Mithril.Themes.Services
         {
             DataService = dataService;
             Themes = themes.ToDictionary(x => x.Name);
-            var DefaultTheme = Theme.Query(dataService)?.Where(x => x.IsDefault && x.Active).FirstOrDefault();
-            if (!Themes.TryGetValue(DefaultTheme?.Name ?? "Default", out var TempTheme))
+            Theme? DefaultTheme = Theme.Query(dataService)?.Where(x => x.IsDefault && x.Active).FirstOrDefault();
+            if (!Themes.TryGetValue(DefaultTheme?.Name ?? "Default", out ITheme? TempTheme))
                 TempTheme = themes.FirstOrDefault();
-            AsyncHelper.RunSync(() => SetDefaultThemeAsync(TempTheme, null));
+            _ = AsyncHelper.RunSync(() => SetDefaultThemeAsync(TempTheme, null));
         }
 
         /// <summary>
@@ -44,10 +44,7 @@ namespace Mithril.Themes.Services
         /// Gets the themes.
         /// </summary>
         /// <returns>The themes available.</returns>
-        public IEnumerable<ITheme> GetAvailableThemes()
-        {
-            return Themes.Values;
-        }
+        public IEnumerable<ITheme> GetAvailableThemes() => Themes.Values;
 
         /// <summary>
         /// Loads the theme based on the name.
@@ -56,7 +53,7 @@ namespace Mithril.Themes.Services
         /// <returns>The theme associated with the name.</returns>
         public ITheme? LoadTheme(string? themeName = "Default")
         {
-            Themes.TryGetValue(themeName ?? "", out var theme);
+            _ = Themes.TryGetValue(themeName ?? "", out ITheme? theme);
             return theme;
         }
 
@@ -70,7 +67,7 @@ namespace Mithril.Themes.Services
         {
             if (theme is null)
                 return this;
-            SetThemeAlias("Default", theme);
+            _ = SetThemeAlias("Default", theme);
             var Command = new SetThemeCommand(theme.Name);
             await Command.SaveAsync(DataService, user).ConfigureAwait(false);
             return this;

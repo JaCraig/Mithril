@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Microsoft.Data.SqlClient;
 
 namespace Mithril.Data.HealthCheck
 {
@@ -39,12 +39,12 @@ namespace Mithril.Data.HealthCheck
         /// </returns>
         public async Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)
         {
-            var ConnectionStrings = Configuration?.GetSection("ConnectionStrings");
+            IConfigurationSection? ConnectionStrings = Configuration?.GetSection("ConnectionStrings");
             if (ConnectionStrings is null)
                 return HealthCheckResult.Unhealthy("No connections to database defined");
-            foreach (var ConnectionString in ConnectionStrings.GetChildren().AsEnumerable())
+            foreach (IConfigurationSection? ConnectionString in ConnectionStrings.GetChildren().AsEnumerable())
             {
-                var Result = await CheckHealthAsync(ConnectionString.Value, cancellationToken).ConfigureAwait(false);
+                CheckHealthResult Result = await CheckHealthAsync(ConnectionString.Value, cancellationToken).ConfigureAwait(false);
                 if (Result.Exception is not null)
                     return HealthCheckResult.Unhealthy($"Issue connecting to {ConnectionString.Value}", Result.Exception);
             }
@@ -66,10 +66,10 @@ namespace Mithril.Data.HealthCheck
             {
                 await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
 
-                var command = connection.CreateCommand();
+                SqlCommand command = connection.CreateCommand();
                 command.CommandText = "SELECT 1";
 
-                await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+                _ = await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception exception)
             {

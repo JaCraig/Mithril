@@ -61,7 +61,7 @@ namespace Mithril.Background.Abstractions.Services
         /// </returns>
         public IBackgroundTaskService Enqueue(params IBackgroundTask[] tasks)
         {
-            foreach (var Task in tasks)
+            foreach (IBackgroundTask Task in tasks)
             {
                 Tasks.Enqueue(Task);
             }
@@ -98,10 +98,10 @@ namespace Mithril.Background.Abstractions.Services
         /// <param name="state">The state.</param>
         private void CheckScheduledTasks(object? state)
         {
-            foreach (var Task in ScheduledTasks.Where(task => task.Frequencies.Any(frequency => frequency.CanRun(task.LastRunTime, DateTime.Now))))
+            foreach (IScheduledTask? Task in ScheduledTasks.Where(task => task.Frequencies.Any(frequency => frequency.CanRun(task.LastRunTime, DateTime.Now))))
             {
                 Task.LastRunTime = DateTime.Now;
-                Enqueue(Task);
+                _ = Enqueue(Task);
             }
         }
     }

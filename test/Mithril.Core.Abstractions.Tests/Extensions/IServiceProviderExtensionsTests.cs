@@ -36,7 +36,7 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
         public void When_ServiceExists_ExistsReturnsTrue()
         {
             var Services = new ServiceCollection();
-            Services.AddSingleton<ITestService, TestService>();
+            _ = Services.AddSingleton<ITestService, TestService>();
 
             ServiceProvider Provider = Services.BuildServiceProvider();
 

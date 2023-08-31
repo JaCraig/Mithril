@@ -57,7 +57,7 @@ namespace Mithril.Themes.LocationExpanders
             var result = new List<string>();
             if (context.ViewName.Equals("_Layout", StringComparison.Ordinal))
             {
-                var CurrentTheme = ThemeManager?.LoadTheme();
+                Abstractions.Interfaces.ITheme? CurrentTheme = ThemeManager?.LoadTheme();
                 if (CurrentTheme is not null)
                 {
                     var extensionViewsPath = $"/Views/Shared/_{CurrentTheme.Name}Layout" + RazorViewEngine.ViewExtension;

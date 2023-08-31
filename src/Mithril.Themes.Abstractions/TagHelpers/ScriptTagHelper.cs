@@ -56,12 +56,12 @@ namespace Mithril.Themes.Abstractions.TagHelpers
             var ReferrerPolicy = GetValue(context, "referrerpolicy");
             if (!string.IsNullOrEmpty(Src))
             {
-                Resources?.AddScriptFileResource(Src, Async, Charset, Defer, Type, XMLSpace, TagOrder, Location, Integrity, CrossOrigin, ReferrerPolicy);
+                _ = (Resources?.AddScriptFileResource(Src, Async, Charset, Defer, Type, XMLSpace, TagOrder, Location, Integrity, CrossOrigin, ReferrerPolicy));
             }
             else
             {
                 var Content = (await output.GetChildContentAsync().ConfigureAwait(false)).GetContent();
-                Resources?.AddScriptContentResource(Content, Async, Charset, Defer, Type, XMLSpace, TagOrder, Location, Integrity, CrossOrigin, ReferrerPolicy);
+                _ = (Resources?.AddScriptContentResource(Content, Async, Charset, Defer, Type, XMLSpace, TagOrder, Location, Integrity, CrossOrigin, ReferrerPolicy));
             }
             output.SuppressOutput();
         }
@@ -74,11 +74,9 @@ namespace Mithril.Themes.Abstractions.TagHelpers
         /// <returns>The value.</returns>
         private static string? GetValue(TagHelperContext context, string name)
         {
-            if (name == "defer")
-            {
-                return context.AllAttributes.ContainsName(name) ? "true" : "";
-            }
-            return context.AllAttributes.ContainsName(name) ? context.AllAttributes[name].Value.ToString() : "";
+            return name == "defer"
+                ? context.AllAttributes.ContainsName(name) ? "true" : ""
+                : context.AllAttributes.ContainsName(name) ? context.AllAttributes[name].Value.ToString() : "";
         }
     }
 }

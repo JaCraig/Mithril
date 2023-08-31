@@ -16,8 +16,8 @@ namespace Mithril.Security.Models.Mappings
         public IPermissionMapping()
             : base(merge: true)
         {
-            Reference(x => x.DisplayName).WithMaxLength(128);
-            Reference(x => x.Operand);
+            _ = Reference(x => x.DisplayName).WithMaxLength(128);
+            _ = Reference(x => x.Operand);
         }
     }
 }

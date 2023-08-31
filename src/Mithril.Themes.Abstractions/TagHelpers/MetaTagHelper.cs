@@ -50,7 +50,7 @@ namespace Mithril.Themes.Abstractions.TagHelpers
             var TagOrder = context.AllAttributes.ContainsName("order")
                 ? int.Parse(context.AllAttributes["order"].Value.ToString() ?? "0", CultureInfo.InvariantCulture)
                 : (Resources?.NextOrderValue(ResourceType) ?? 0);
-            Resources?.AddMetaResource(Name, Scheme, HttpEquiv, Content, Charset, Property, TagOrder);
+            _ = (Resources?.AddMetaResource(Name, Scheme, HttpEquiv, Content, Charset, Property, TagOrder));
             output.SuppressOutput();
             return Task.CompletedTask;
         }
@@ -61,9 +61,6 @@ namespace Mithril.Themes.Abstractions.TagHelpers
         /// <param name="context">The context.</param>
         /// <param name="name">The name.</param>
         /// <returns>The value.</returns>
-        private static string? GetValue(TagHelperContext context, string name)
-        {
-            return context.AllAttributes.ContainsName(name) ? context.AllAttributes[name].Value.ToString() : "";
-        }
+        private static string? GetValue(TagHelperContext context, string name) => context.AllAttributes.ContainsName(name) ? context.AllAttributes[name].Value.ToString() : "";
     }
 }

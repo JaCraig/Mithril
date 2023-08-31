@@ -21,10 +21,8 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         {
             if (memberInfo is null)
                 return "";
-            var DescriptionAttribute = memberInfo.GetCustomAttribute<ApiDepricationReasonAttribute>();
-            if (DescriptionAttribute is null)
-                return null;
-            return DescriptionAttribute.DepricationReason;
+            ApiDepricationReasonAttribute? DescriptionAttribute = memberInfo.GetCustomAttribute<ApiDepricationReasonAttribute>();
+            return DescriptionAttribute?.DepricationReason;
         }
 
         /// <summary>
@@ -36,7 +34,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         {
             if (memberInfo is null)
                 return "";
-            var DescriptionAttribute = memberInfo.GetCustomAttribute<ApiDescriptionAttribute>();
+            ApiDescriptionAttribute? DescriptionAttribute = memberInfo.GetCustomAttribute<ApiDescriptionAttribute>();
             return string.IsNullOrEmpty(DescriptionAttribute?.Description) ?
                         $"Returns {memberInfo.Name.SplitCamelCase().ToLowerInvariant()} information." :
                         DescriptionAttribute.Description;
@@ -51,7 +49,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         {
             if (memberInfo is null)
                 return "";
-            var DescriptionAttribute = memberInfo.GetCustomAttribute<ApiDescriptionAttribute>();
+            ApiDescriptionAttribute? DescriptionAttribute = memberInfo.GetCustomAttribute<ApiDescriptionAttribute>();
             return string.IsNullOrEmpty(DescriptionAttribute?.Description) ?
                         $"Returns {memberInfo.Name.SplitCamelCase().ToLowerInvariant()} information of type {memberInfo.PropertyType.Name}." :
                         DescriptionAttribute.Description;
@@ -66,7 +64,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         {
             if (memberInfo is null)
                 return "";
-            var DescriptionAttribute = memberInfo.GetCustomAttribute<ApiDescriptionAttribute>();
+            ApiDescriptionAttribute? DescriptionAttribute = memberInfo.GetCustomAttribute<ApiDescriptionAttribute>();
             if (string.IsNullOrEmpty(DescriptionAttribute?.Description))
             {
                 var Result = $"Returns {memberInfo.Name.SplitCamelCase().ToLowerInvariant()} information of type {memberInfo.ReturnType.Name}";
@@ -86,7 +84,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         {
             if (memberInfo is null)
                 return "";
-            var DescriptionAttribute = memberInfo.GetCustomAttribute<ApiDescriptionAttribute>();
+            ApiDescriptionAttribute? DescriptionAttribute = memberInfo.GetCustomAttribute<ApiDescriptionAttribute>();
             return string.IsNullOrEmpty(DescriptionAttribute?.Description) ?
                         $"{memberInfo.Name.SplitCamelCase().ToString(StringCase.FirstCharacterUpperCase)} object type." :
                         DescriptionAttribute.Description;
@@ -99,9 +97,9 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         /// <returns>The name of the MemberInfo</returns>
         public static string GetName(this MemberInfo memberInfo)
         {
-            if (memberInfo is null)
-                return "";
-            return new string(new char[] { memberInfo.Name[0] }).ToLower() + memberInfo.Name.Right(memberInfo.Name.Length - 1);
+            return memberInfo is null
+                ? ""
+                : new string(new char[] { memberInfo.Name[0] }).ToLower() + memberInfo.Name.Right(memberInfo.Name.Length - 1);
         }
     }
 }

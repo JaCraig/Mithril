@@ -50,7 +50,6 @@ namespace Mithril.API.GraphQL.Tests.GraphTypes.Builder
         /// </summary>
         /// <param name="x">The x.</param>
         /// <returns></returns>
-        public int Something(int x)
-        { return x; }
+        public int Something(int x) => x;
     }
 }

@@ -16,7 +16,7 @@ namespace Mithril.Security.Models.Mappings
         public IUserMapping()
             : base(merge: true)
         {
-            Reference(x => x.UserName).WithMaxLength(100).IsUnique();
+            _ = Reference(x => x.UserName).WithMaxLength(100).IsUnique();
         }
     }
 }

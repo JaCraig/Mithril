@@ -14,15 +14,15 @@ namespace Mithril.Security.Models.Mappings
         /// </summary>
         public UserMapping()
         {
-            ManyToMany(x => x.Claims);
-            ManyToOne(x => x.ContactInformation).CascadeChanges();
-            Reference(x => x.FirstName).WithMaxLength(100);
-            Reference(x => x.LastName).WithMaxLength(100);
-            Reference(x => x.Title).WithMaxLength(100);
-            Reference(x => x.MiddleName).WithMaxLength(100);
-            Reference(x => x.NickName).WithMaxLength(100);
-            Reference(x => x.Prefix).WithMaxLength(30);
-            Reference(x => x.Suffix).WithMaxLength(30);
+            _ = ManyToMany(x => x.Claims);
+            _ = ManyToOne(x => x.ContactInformation).CascadeChanges();
+            _ = Reference(x => x.FirstName).WithMaxLength(100);
+            _ = Reference(x => x.LastName).WithMaxLength(100);
+            _ = Reference(x => x.Title).WithMaxLength(100);
+            _ = Reference(x => x.MiddleName).WithMaxLength(100);
+            _ = Reference(x => x.NickName).WithMaxLength(100);
+            _ = Reference(x => x.Prefix).WithMaxLength(30);
+            _ = Reference(x => x.Suffix).WithMaxLength(30);
         }
     }
 }

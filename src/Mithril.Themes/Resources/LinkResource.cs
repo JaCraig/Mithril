@@ -147,10 +147,7 @@ namespace Mithril.Themes.Resources
         /// <param name="resource1">The resource1.</param>
         /// <param name="resource2">The resource2.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(LinkResource? resource1, LinkResource? resource2)
-        {
-            return !(resource1 == resource2);
-        }
+        public static bool operator !=(LinkResource? resource1, LinkResource? resource2) => !(resource1 == resource2);
 
         /// <summary>
         /// Implements the operator ==.
@@ -158,10 +155,7 @@ namespace Mithril.Themes.Resources
         /// <param name="resource1">The resource1.</param>
         /// <param name="resource2">The resource2.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator ==(LinkResource? resource1, LinkResource? resource2)
-        {
-            return EqualityComparer<LinkResource>.Default.Equals(resource1, resource2);
-        }
+        public static bool operator ==(LinkResource? resource1, LinkResource? resource2) => EqualityComparer<LinkResource>.Default.Equals(resource1, resource2);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -170,10 +164,7 @@ namespace Mithril.Themes.Resources
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return Equals(obj as LinkResource);
-        }
+        public override bool Equals(object? obj) => Equals(obj as LinkResource);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -196,10 +187,7 @@ namespace Mithril.Themes.Resources
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return 924162744 + EqualityComparer<string>.Default.GetHashCode(Source);
-        }
+        public override int GetHashCode() => 924162744 + EqualityComparer<string>.Default.GetHashCode(Source);
 
         /// <summary>
         /// Gets the content of the resource as an IHtmlContent item.

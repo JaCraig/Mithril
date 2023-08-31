@@ -47,9 +47,9 @@ namespace Mithril.Data.Services
         public Task<int> DeleteAsync<TData>(ClaimsPrincipal? user, params TData[] data)
             where TData : class, IModel
         {
-            if (data is null || data.Length == 0)
-                return Task.FromResult(0);
-            return DbContext?.Delete(data.Where(x => x.CanBeModifiedBy(user ?? SystemAccounts.SystemClaimsPrincipal)).ToArray()).ExecuteAsync() ?? Task.FromResult(0);
+            return data is null || data.Length == 0
+                ? Task.FromResult(0)
+                : DbContext?.Delete(data.Where(x => x.CanBeModifiedBy(user ?? SystemAccounts.SystemClaimsPrincipal)).ToArray()).ExecuteAsync() ?? Task.FromResult(0);
         }
 
         /// <summary>
@@ -58,10 +58,7 @@ namespace Mithril.Data.Services
         /// <typeparam name="TData">The type of the data.</typeparam>
         /// <returns>The IQueryable object.</returns>
         public IQueryable<TData>? Query<TData>()
-            where TData : class
-        {
-            return DbContext<TData>.CreateQuery();
-        }
+            where TData : class => DbContext<TData>.CreateQuery();
 
         /// <summary>
         /// Runs a scalar query and returns data of the specific type.
@@ -75,10 +72,7 @@ namespace Mithril.Data.Services
         /// The resulting data.
         /// </returns>
         public Task<TData> QueryScalarAsync<TData>(string query, CommandType commandType, string connection, params object[] parameters)
-            where TData : class
-        {
-            return DbContext<TData>.ExecuteScalarAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
-        }
+            where TData : class => DbContext<TData>.ExecuteScalarAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
 
         /// <summary>
         /// Runs a query and returns data of the specific type.
@@ -92,10 +86,7 @@ namespace Mithril.Data.Services
         /// The resulting data.
         /// </returns>
         public Task<IEnumerable<TData>> QueryAsync<TData>(string query, CommandType commandType, string connection, params object[] parameters)
-            where TData : class
-        {
-            return DbContext<TData>.ExecuteAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
-        }
+            where TData : class => DbContext<TData>.ExecuteAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
 
         /// <summary>
         /// Runs a dynamic query and returns the results.
@@ -105,10 +96,7 @@ namespace Mithril.Data.Services
         /// <param name="connection">The connection.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The data resulting from the query.</returns>
-        public Task<IEnumerable<dynamic>> QueryDynamicAsync(string query, CommandType commandType, string connection, params object[] parameters)
-        {
-            return DbContext.ExecuteAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
-        }
+        public Task<IEnumerable<dynamic>> QueryDynamicAsync(string query, CommandType commandType, string connection, params object[] parameters) => DbContext.ExecuteAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
 
         /// <summary>
         /// Saves the objects asynchronously.
@@ -136,7 +124,7 @@ namespace Mithril.Data.Services
         private IEnumerable<TData> FilterData<TData>(ClaimsPrincipal? user, params TData?[] data)
             where TData : class, IModel
         {
-            foreach (var Item in data)
+            foreach (TData? Item in data)
             {
                 if (Item?.CanBeModifiedBy(user) != true)
                     continue;

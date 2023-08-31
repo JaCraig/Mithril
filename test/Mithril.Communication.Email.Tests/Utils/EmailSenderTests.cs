@@ -32,37 +32,25 @@ namespace Mithril.Communication.Email.Tests.Utils
 
         protected class AsyncEnumerable : IAsyncEnumerable<string>
         {
-            public IAsyncEnumerator<string> GetAsyncEnumerator(CancellationToken cancellationToken = default)
-            {
-                return new AsyncEnumerator();
-            }
+            public IAsyncEnumerator<string> GetAsyncEnumerator(CancellationToken cancellationToken = default) => new AsyncEnumerator();
         }
 
         protected class AsyncEnumerator : IAsyncEnumerator<string>
         {
             public string Current { get; } = "";
 
-            public ValueTask DisposeAsync()
-            { return ValueTask.CompletedTask; }
+            public ValueTask DisposeAsync() => ValueTask.CompletedTask;
 
-            public ValueTask<bool> MoveNextAsync()
-            { return ValueTask.FromResult(false); }
+            public ValueTask<bool> MoveNextAsync() => ValueTask.FromResult(false);
         }
 
         protected class DummyFeatures : IFeatureManager
         {
-            public IAsyncEnumerable<string> GetFeatureNamesAsync()
-            {
-                return new AsyncEnumerable();
-            }
+            public IAsyncEnumerable<string> GetFeatureNamesAsync() => new AsyncEnumerable();
 
-            public Task<bool> IsEnabledAsync(string feature)
-            { return Task.FromResult(false); }
+            public Task<bool> IsEnabledAsync(string feature) => Task.FromResult(false);
 
-            public Task<bool> IsEnabledAsync<TContext>(string feature, TContext context)
-            {
-                return Task.FromResult(false);
-            }
+            public Task<bool> IsEnabledAsync<TContext>(string feature, TContext context) => Task.FromResult(false);
         }
     }
 }

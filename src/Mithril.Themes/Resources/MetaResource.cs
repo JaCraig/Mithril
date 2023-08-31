@@ -86,10 +86,7 @@ namespace Mithril.Themes.Resources
         /// <param name="resource1">The resource1.</param>
         /// <param name="resource2">The resource2.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(MetaResource? resource1, MetaResource? resource2)
-        {
-            return !(resource1 == resource2);
-        }
+        public static bool operator !=(MetaResource? resource1, MetaResource? resource2) => !(resource1 == resource2);
 
         /// <summary>
         /// Implements the operator ==.
@@ -97,10 +94,7 @@ namespace Mithril.Themes.Resources
         /// <param name="resource1">The resource1.</param>
         /// <param name="resource2">The resource2.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator ==(MetaResource? resource1, MetaResource? resource2)
-        {
-            return EqualityComparer<MetaResource>.Default.Equals(resource1, resource2);
-        }
+        public static bool operator ==(MetaResource? resource1, MetaResource? resource2) => EqualityComparer<MetaResource>.Default.Equals(resource1, resource2);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -109,10 +103,7 @@ namespace Mithril.Themes.Resources
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return Equals(obj as MetaResource);
-        }
+        public override bool Equals(object? obj) => Equals(obj as MetaResource);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.

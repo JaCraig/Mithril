@@ -42,7 +42,7 @@ namespace Mithril.Communication.Email.HealthChecks
         {
             if (!FeatureManager.AreFeaturesEnabled(EmailFeature.Instance))
                 return HealthCheckResult.Healthy();
-            var Settings = await EmailSettings.LoadOrCreateAsync(DataService, null).ConfigureAwait(false);
+            EmailSettings Settings = await EmailSettings.LoadOrCreateAsync(DataService, null).ConfigureAwait(false);
             try
             {
                 using var Client = new SmtpClient();

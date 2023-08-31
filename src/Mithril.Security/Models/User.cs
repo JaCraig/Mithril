@@ -179,10 +179,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(User? left, User? right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(User? left, User? right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -190,10 +187,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(User? left, User? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(User? left, User? right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -201,10 +195,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(User? left, User? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(User? left, User? right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -226,10 +217,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(User? left, User? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(User? left, User? right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -237,10 +225,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(User? left, User? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(User? left, User? right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Adds the claim.
@@ -309,7 +294,7 @@ namespace Mithril.Security.Models
             }
             for (; x < Contacts.Length; ++x)
             {
-                ContactInformation.Remove(Contacts[x]);
+                _ = ContactInformation.Remove(Contacts[x]);
                 await Contacts[x].DeleteAsync(dataService, HttpContext.Current?.User, false).ConfigureAwait(false);
             }
         }

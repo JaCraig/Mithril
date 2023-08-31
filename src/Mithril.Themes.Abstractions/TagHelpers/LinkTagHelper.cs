@@ -57,7 +57,7 @@ namespace Mithril.Themes.Abstractions.TagHelpers
                 var Rev = GetValue(context, "rev");
                 var Target = GetValue(context, "target");
                 var Location = GetValue(context, "location");
-                Resources?.AddLinkResource(Href, Rel, Type, CrossOrigin, Hreflang, Media, Sizes, Charset, Rev, Target, TagOrder, Location);
+                _ = (Resources?.AddLinkResource(Href, Rel, Type, CrossOrigin, Hreflang, Media, Sizes, Charset, Rev, Target, TagOrder, Location));
             }
             output.SuppressOutput();
             return Task.CompletedTask;
@@ -69,9 +69,6 @@ namespace Mithril.Themes.Abstractions.TagHelpers
         /// <param name="context">The context.</param>
         /// <param name="name">The name.</param>
         /// <returns>The value.</returns>
-        private static string? GetValue(TagHelperContext context, string name)
-        {
-            return context.AllAttributes.ContainsName(name) ? context.AllAttributes[name].Value.ToString() : "";
-        }
+        private static string? GetValue(TagHelperContext context, string name) => context.AllAttributes.ContainsName(name) ? context.AllAttributes[name].Value.ToString() : "";
     }
 }

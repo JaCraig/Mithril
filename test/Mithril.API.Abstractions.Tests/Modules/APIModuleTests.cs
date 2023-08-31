@@ -30,7 +30,7 @@ namespace Mithril.API.Abstractions.Tests.Modules
             IHostEnvironment MockHostingEnvironment = Substitute.For<IHostEnvironment>();
             var TestObject = new APIModule();
             var Services = new ServiceCollection();
-            TestObject.ConfigureServices(Services, MockConfiguration, MockHostingEnvironment);
+            _ = TestObject.ConfigureServices(Services, MockConfiguration, MockHostingEnvironment);
             IOptions<APIOptions>? Result = Services.BuildServiceProvider().GetService<IOptions<APIOptions>>();
             Assert.NotNull(Result);
         }

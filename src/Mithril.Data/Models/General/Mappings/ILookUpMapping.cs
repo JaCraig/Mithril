@@ -2,7 +2,7 @@
 using Mithril.Data.Abstractions.Databases;
 using Mithril.Data.Abstractions.Interfaces;
 
-namespace Mithril.Data.Inflatable.Models.General.Mappings
+namespace Mithril.Data.Models.General.Mappings
 {
     /// <summary>
     /// ILookUp mapping
@@ -16,9 +16,9 @@ namespace Mithril.Data.Inflatable.Models.General.Mappings
         public ILookUpMapping()
             : base(merge: true)
         {
-            Reference(x => x.DisplayName).WithDefaultValue(() => "");
-            Reference(x => x.Icon).WithDefaultValue(() => "fa-info-circle");
-            ManyToOne(x => x.Type);
+            _ = Reference(x => x.DisplayName).WithDefaultValue(() => "");
+            _ = Reference(x => x.Icon).WithDefaultValue(() => "fa-info-circle");
+            _ = ManyToOne(x => x.Type);
         }
     }
 }

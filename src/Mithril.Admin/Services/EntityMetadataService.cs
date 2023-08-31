@@ -52,7 +52,7 @@ namespace Mithril.Admin.Services
             if (Entities.TryGetValue(entityType, out EntityMetadata? ReturnValue))
                 return ReturnValue;
             ReturnValue = new EntityMetadata(entityType);
-            Entities.AddOrUpdate(entityType, ReturnValue, (__, _) => ReturnValue);
+            _ = Entities.AddOrUpdate(entityType, ReturnValue, (__, _) => ReturnValue);
             foreach (PropertyMetadata Property in ReturnValue.Properties)
             {
                 foreach (IMetadataBuilder MetadataBuilder in MetadataBuilders)
@@ -70,9 +70,6 @@ namespace Mithril.Admin.Services
         /// <returns>
         /// The metadata for the entity type.
         /// </returns>
-        public EntityMetadata? ExtractMetadata(PropertyInfo? property)
-        {
-            return ExtractMetadata(property?.PropertyType);
-        }
+        public EntityMetadata? ExtractMetadata(PropertyInfo? property) => ExtractMetadata(property?.PropertyType);
     }
 }

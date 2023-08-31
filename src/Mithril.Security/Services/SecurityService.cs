@@ -184,7 +184,7 @@ namespace Mithril.Security.Services
                     if (TempTenant is null)
                         return null;
                     TempUser = new User("system_account", "System", "Account", TempTenant);
-                    TempUser.AddClaim(AdminRole);
+                    _ = TempUser.AddClaim(AdminRole);
                     TempTenant.Users.Add(TempUser);
                     AsyncHelper.RunSync(() => DataService?.SaveAsync(SystemAccounts?.SystemClaimsPrincipal, TempTenant) ?? Task.CompletedTask);
                     TempUser = User.Load("system_account", DataService);

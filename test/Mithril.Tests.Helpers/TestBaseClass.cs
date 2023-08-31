@@ -49,7 +49,7 @@ namespace Mithril.Tests.Helpers
             for (var X = 0; X < ExceptionsToIgnore.Length; ++X)
             {
                 Type ExceptionToIgnore = ExceptionsToIgnore[X];
-                IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, new object?[] { null });
+                _ = (IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, new object?[] { null }));
             }
 
             return Mech.BreakAsync(TestObject, new Options
@@ -128,7 +128,7 @@ namespace Mithril.Tests.Helpers
             for (var X = 0; X < ExceptionsToIgnore.Length; ++X)
             {
                 Type ExceptionToIgnore = ExceptionsToIgnore[X];
-                IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, new object?[] { null });
+                _ = (IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, new object?[] { null }));
             }
 
             return Mech.BreakAsync(ObjectType, new Options

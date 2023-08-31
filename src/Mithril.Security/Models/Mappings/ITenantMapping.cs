@@ -16,8 +16,8 @@ namespace Mithril.Security.Models.Mappings
         public ITenantMapping()
             : base(merge: true)
         {
-            Reference(x => x.DisplayName).WithMaxLength(100);
-            ManyToOne(x => x.Users).CascadeChanges();
+            _ = Reference(x => x.DisplayName).WithMaxLength(100);
+            _ = ManyToOne(x => x.Users).CascadeChanges();
         }
     }
 }

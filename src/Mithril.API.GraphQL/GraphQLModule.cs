@@ -71,7 +71,7 @@ namespace Mithril.API.GraphQL
             APIOptions? APIConfig = configuration.GetConfig<APIOptions>("Mithril:API");
             GraphQLEndpointConventionBuilder? EndpointBuilder = endpoints?.MapGraphQL(APIConfig?.QueryEndpoint ?? "/api/query");
             if (!string.IsNullOrEmpty(Settings?.Security?.DefaultCorsPolicy))
-                EndpointBuilder?.RequireCors(Settings.Security.DefaultCorsPolicy);
+                _ = (EndpointBuilder?.RequireCors(Settings.Security.DefaultCorsPolicy));
             return endpoints;
         }
 
@@ -84,11 +84,11 @@ namespace Mithril.API.GraphQL
         /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            services?.AddSingleton<CompositeSchema>();
-            services?.AddSingleton<GraphTypeManager>();
-            services?.AddGraphQL(config =>
+            _ = (services?.AddSingleton<CompositeSchema>());
+            _ = (services?.AddSingleton<GraphTypeManager>());
+            _ = (services?.AddGraphQL(config =>
             {
-                config.ConfigureExecutionOptions((options) =>
+                _ = (config.ConfigureExecutionOptions((options) =>
                 {
                     options.EnableMetrics = false;
                     options.UnhandledExceptionDelegate = ctx =>
@@ -99,12 +99,12 @@ namespace Mithril.API.GraphQL
                 })
                 ?.AddSystemTextJson()
                 ?.AddUserContextBuilder((context) => new GraphQLUserContextDictionary(context.User))
-                ?.AddAuthorizationRule();
-            });
-            services?.AddAllSingleton<IQuery>()
+                ?.AddAuthorizationRule());
+            }));
+            _ = (services?.AddAllSingleton<IQuery>()
                 ?.AddAllSingleton<IDropDownQuery>()
                 ?.AddSingleton<IQueryService, QueryService>()
-                ?.AddSingleton<IDropDownQueryService, DropDownQueryService>();
+                ?.AddSingleton<IDropDownQueryService, DropDownQueryService>());
             return services;
         }
     }

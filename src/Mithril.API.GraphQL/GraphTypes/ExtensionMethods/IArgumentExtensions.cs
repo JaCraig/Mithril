@@ -17,10 +17,10 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         {
             if (argument is null)
                 return null;
-            var GraphType = argument.ArgumentType.FindGraphType();
-            if (GraphType is null)
-                return null;
-            return new QueryArgument(GraphType) { Name = argument.Name ?? "", Description = argument.Description, DefaultValue = argument.DefaultValue };
+            Type? GraphType = argument.ArgumentType.FindGraphType();
+            return GraphType is null
+                ? null
+                : new QueryArgument(GraphType) { Name = argument.Name ?? "", Description = argument.Description, DefaultValue = argument.DefaultValue };
         }
     }
 }

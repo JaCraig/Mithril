@@ -72,7 +72,7 @@ namespace Mithril.Security.Models
             {
                 ReturnValue = new Tenant(displayName);
                 if (context is not null)
-                    await context.SaveAsync(user, ReturnValue).ConfigureAwait(false);
+                    _ = await context.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }
@@ -83,10 +83,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(Tenant? left, Tenant? right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(Tenant? left, Tenant? right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -94,10 +91,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(Tenant? left, Tenant? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(Tenant? left, Tenant? right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -105,10 +99,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(Tenant? left, Tenant? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(Tenant? left, Tenant? right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -130,10 +121,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(Tenant? left, Tenant? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(Tenant? left, Tenant? right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -141,10 +129,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(Tenant? left, Tenant? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(Tenant? left, Tenant? right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Compares the object to another object
@@ -211,12 +196,12 @@ namespace Mithril.Security.Models
                 for (int i = 0, claimsLength = claims.Length; i < claimsLength; i++)
                 {
                     IUserClaim? Role = claims[i];
-                    ReturnValue.AddClaim(Role);
+                    _ = ReturnValue.AddClaim(Role);
                 }
                 Users ??= new List<IUser>();
                 Users.Add(ReturnValue);
                 if (dataService is not null)
-                    await dataService.SaveAsync(user, this).ConfigureAwait(false);
+                    _ = await dataService.SaveAsync(user, this).ConfigureAwait(false);
             }
             return ReturnValue;
         }

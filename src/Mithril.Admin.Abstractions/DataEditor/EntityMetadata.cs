@@ -56,10 +56,7 @@ namespace Mithril.Admin.Abstractions.DataEditor
         /// </summary>
         /// <param name="propertyInfos">The property infos.</param>
         /// <returns>The filtered properties.</returns>
-        private static PropertyInfo[] FilterProperties(PropertyInfo[] propertyInfos)
-        {
-            return propertyInfos.Where(x => x.GetCustomAttribute<JsonIgnoreAttribute>() is null && x.GetCustomAttribute<IgnoreAttribute>() is null).ToArray();
-        }
+        private static PropertyInfo[] FilterProperties(PropertyInfo[] propertyInfos) => propertyInfos.Where(x => x.GetCustomAttribute<JsonIgnoreAttribute>() is null && x.GetCustomAttribute<IgnoreAttribute>() is null).ToArray();
 
         /// <summary>
         /// Gets the properties.
@@ -68,7 +65,7 @@ namespace Mithril.Admin.Abstractions.DataEditor
         /// <returns>The properties on the object type.</returns>
         private static PropertyInfo[] GetProperties(Type type)
         {
-            var EntityIEnumerableType = type.GetIEnumerableElementType();
+            Type EntityIEnumerableType = type.GetIEnumerableElementType();
             return OrderProperties(FilterProperties(EntityIEnumerableType == type
                 ? type.GetProperties(BindingFlags.Public | BindingFlags.Instance)
                 : EntityIEnumerableType.GetProperties(BindingFlags.Public | BindingFlags.Instance)));
@@ -91,9 +88,6 @@ namespace Mithril.Admin.Abstractions.DataEditor
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>Splits the camel case names</returns>
-        private static string SplitCamelCase(string? input)
-        {
-            return input?.AddSpaces() ?? "";
-        }
+        private static string SplitCamelCase(string? input) => input?.AddSpaces() ?? "";
     }
 }

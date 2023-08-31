@@ -10,6 +10,11 @@ namespace Mithril.API.Abstractions.Query
     public class Argument<TValue> : IArgument
     {
         /// <summary>
+        /// To string
+        /// </summary>
+        private string _ToString = "";
+
+        /// <summary>
         /// Gets the type of the argument.
         /// </summary>
         /// <value>The type of the argument.</value>
@@ -34,21 +39,16 @@ namespace Mithril.API.Abstractions.Query
         public string? Name { get; set; }
 
         /// <summary>
-        /// To string
-        /// </summary>
-        private string _ToString = "";
-
-        /// <summary>
         /// Converts to string.
         /// </summary>
-        /// <returns>A <see cref="System.String"/> that represents this instance.</returns>
+        /// <returns>A <see cref="string"/> that represents this instance.</returns>
         public override string ToString()
         {
             if (!string.IsNullOrEmpty(_ToString))
                 return _ToString;
             _ToString = Name ?? "";
             if (DefaultValue is not null)
-                _ToString += " = " + DefaultValue.ToString();
+                _ToString += " = " + DefaultValue;
             return _ToString;
         }
     }

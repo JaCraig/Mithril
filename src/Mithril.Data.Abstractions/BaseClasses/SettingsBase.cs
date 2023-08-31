@@ -27,12 +27,12 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <returns>The settings</returns>
         public static async Task<TClass> LoadOrCreateAsync(IDataService? dataService, ClaimsPrincipal? user)
         {
-            var ReturnValue = dataService?.Query<TClass>()?.FirstOrDefault();
+            TClass? ReturnValue = dataService?.Query<TClass>()?.FirstOrDefault();
             if (ReturnValue is null)
             {
                 ReturnValue = new TClass();
                 if (dataService is not null)
-                    await dataService.SaveAsync(user, ReturnValue).ConfigureAwait(false);
+                    _ = await dataService.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }
@@ -43,10 +43,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(SettingsBase<TClass>? left, SettingsBase<TClass>? right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(SettingsBase<TClass>? left, SettingsBase<TClass>? right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -54,10 +51,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(SettingsBase<TClass>? left, SettingsBase<TClass>? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(SettingsBase<TClass>? left, SettingsBase<TClass>? right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -65,10 +59,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(SettingsBase<TClass>? left, SettingsBase<TClass>? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(SettingsBase<TClass>? left, SettingsBase<TClass>? right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -90,10 +81,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(SettingsBase<TClass>? left, SettingsBase<TClass>? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(SettingsBase<TClass>? left, SettingsBase<TClass>? right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -101,20 +89,14 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(SettingsBase<TClass>? left, SettingsBase<TClass>? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(SettingsBase<TClass>? left, SettingsBase<TClass>? right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Compares to.
         /// </summary>
         /// <param name="other">The other.</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public override int CompareTo(TClass? other)
-        {
-            return base.CompareTo(other);
-        }
+        public override int CompareTo(TClass? other) => base.CompareTo(other);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -124,10 +106,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(ITypedModel? other)
-        {
-            return (other is SettingsBase<TClass> TempObject) && CompareTo(TempObject) == 0;
-        }
+        public bool Equals(ITypedModel? other) => (other is SettingsBase<TClass> TempObject) && CompareTo(TempObject) == 0;
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -137,10 +116,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(SettingsBase<TClass>? other)
-        {
-            return other is not null && CompareTo(other) == 0;
-        }
+        public bool Equals(SettingsBase<TClass>? other) => other is not null && CompareTo(other) == 0;
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -149,10 +125,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return (obj is SettingsBase<TClass> TempObject) && Equals(TempObject);
-        }
+        public override bool Equals(object? obj) => (obj is SettingsBase<TClass> TempObject) && Equals(TempObject);
 
         /// <summary>
         /// Returns a hash code for this instance.
@@ -161,9 +134,6 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => base.GetHashCode();
     }
 }

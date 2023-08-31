@@ -12,11 +12,6 @@ namespace Mithril.Core.Abstractions.Extensions
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The value in pascal case.</returns>
-        public static string ToPascalCase(this string? value)
-        {
-            if (string.IsNullOrEmpty(value))
-                return "";
-            return char.ToUpper(value[0], CultureInfo.InvariantCulture) + value.Remove(0, 1);
-        }
+        public static string ToPascalCase(this string? value) => string.IsNullOrEmpty(value) ? "" : char.ToUpper(value[0], CultureInfo.InvariantCulture) + value.Remove(0, 1);
     }
 }

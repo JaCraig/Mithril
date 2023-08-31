@@ -14,9 +14,9 @@ namespace Mithril.Apm.Default.Models.Mappings
         /// </summary>
         public RequestTraceMapping()
         {
-            Reference(x => x.TraceIdentifier);
-            ManyToOne(x => x.MetaData).CascadeChanges();
-            ManyToOne(x => x.Metrics).CascadeChanges();
+            _ = Reference(x => x.TraceIdentifier);
+            _ = ManyToOne(x => x.MetaData).CascadeChanges();
+            _ = ManyToOne(x => x.Metrics).CascadeChanges();
         }
     }
 }

@@ -50,10 +50,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <param name="class1">The class1.</param>
         /// <param name="class2">The class2.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(FeatureBaseClass<TFeature>? class1, FeatureBaseClass<TFeature>? class2)
-        {
-            return !(class1 == class2);
-        }
+        public static bool operator !=(FeatureBaseClass<TFeature>? class1, FeatureBaseClass<TFeature>? class2) => !(class1 == class2);
 
         /// <summary>
         /// Implements the operator ==.
@@ -61,10 +58,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <param name="class1">The class1.</param>
         /// <param name="class2">The class2.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator ==(FeatureBaseClass<TFeature>? class1, FeatureBaseClass<TFeature>? class2)
-        {
-            return EqualityComparer<FeatureBaseClass<TFeature>>.Default.Equals(class1, class2);
-        }
+        public static bool operator ==(FeatureBaseClass<TFeature>? class1, FeatureBaseClass<TFeature>? class2) => EqualityComparer<FeatureBaseClass<TFeature>>.Default.Equals(class1, class2);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.

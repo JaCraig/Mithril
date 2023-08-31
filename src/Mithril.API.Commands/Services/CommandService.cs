@@ -81,9 +81,9 @@ namespace Mithril.API.Commands.Services
         {
             if (!CommandHandlers.Any())
                 return;
-            int RunTime = Configuration?.MaxCommandProcessTime ?? 40000;
-            int BatchSize = Configuration?.CommandBatchSize ?? 40;
-            int Count = 0;
+            var RunTime = Configuration?.MaxCommandProcessTime ?? 40000;
+            var BatchSize = Configuration?.CommandBatchSize ?? 40;
+            var Count = 0;
             Logger?.LogInformation("Processing commands for {RunTime} ms", RunTime);
             Stopwatch.Restart();
             while (Stopwatch.ElapsedMilliseconds <= RunTime || RunTime == -1)
@@ -95,13 +95,13 @@ namespace Mithril.API.Commands.Services
                 Count += Commands.Length;
                 for (var x = 0; x < Commands.Length; ++x)
                 {
-                    var Command = Commands[x];
+                    ICommand Command = Commands[x];
                     var Handled = await HandleCommand(Command).ConfigureAwait(false);
                     Command.Active = !Handled;
                     Command.SetupObject(DataService, SecurityService?.LoadSystemAccount());
                 }
                 if (DataService is not null)
-                    await DataService.SaveAsync(null, Commands).ConfigureAwait(false);
+                    _ = await DataService.SaveAsync(null, Commands).ConfigureAwait(false);
                 Logger?.LogInformation("Processed {Count} commands.", Count);
             }
             Logger?.LogInformation("Finished processing {Count} commands.", Count);
@@ -120,15 +120,15 @@ namespace Mithril.API.Commands.Services
         /// <param name="Command">The command.</param>
         private async Task<bool> HandleCommand(ICommand Command)
         {
-            var CommandHandler = CommandHandlers.FirstOrDefault(x => x.CanHandle(Command));
+            ICommandHandler? CommandHandler = CommandHandlers.FirstOrDefault(x => x.CanHandle(Command));
             if (CommandHandler is null)
                 return true;
             try
             {
-                var Events = await CommandHandler.HandleCommandAsync(Command).ConfigureAwait(false);
+                IEvent[]? Events = await CommandHandler.HandleCommandAsync(Command).ConfigureAwait(false);
                 if (Events is null || Events.Length == 0 || DataService is null)
                     return true;
-                await DataService.SaveAsync(null, Events).ConfigureAwait(false);
+                _ = await DataService.SaveAsync(null, Events).ConfigureAwait(false);
                 return true;
             }
             catch (Exception e)

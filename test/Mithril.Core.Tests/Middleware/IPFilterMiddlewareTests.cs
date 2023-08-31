@@ -29,8 +29,8 @@ namespace Mithril.Core.Tests.Middleware
         [Fact]
         public async Task InvokeAsync_Should_Call_Next_Middleware_When_IP_Is_Allowed()
         {
-            var MockIpFilterService = GetMockIPFilterService(true);
-            var MockLogger = Substitute.For<ILogger<IPFilterMiddleware>>();
+            IIPFilterService MockIpFilterService = GetMockIPFilterService(true);
+            ILogger<IPFilterMiddleware> MockLogger = Substitute.For<ILogger<IPFilterMiddleware>>();
             var Middleware = new IPFilterMiddleware(
                 next: (_) => Task.FromResult(0),
                 iPFilterService: MockIpFilterService,
@@ -48,8 +48,8 @@ namespace Mithril.Core.Tests.Middleware
         [Fact]
         public async Task InvokeAsync_Should_Return_Forbidden_Response_When_IP_Is_Blocked()
         {
-            var MockIpFilterService = GetMockIPFilterService(false);
-            var MockLogger = Substitute.For<ILogger<IPFilterMiddleware>>();
+            IIPFilterService MockIpFilterService = GetMockIPFilterService(false);
+            ILogger<IPFilterMiddleware> MockLogger = Substitute.For<ILogger<IPFilterMiddleware>>();
             var Middleware = new IPFilterMiddleware(
                 next: (_) => Task.FromResult(0),
                 iPFilterService: MockIpFilterService,
@@ -67,8 +67,8 @@ namespace Mithril.Core.Tests.Middleware
         /// <param name="returnValue">if set to <c>true</c> [return value].</param>
         private static IIPFilterService GetMockIPFilterService(bool returnValue)
         {
-            var MockIpFilterService = Substitute.For<IIPFilterService>();
-            MockIpFilterService.CheckIPAllowed(Arg.Any<HttpContext>(), Arg.Any<string>()).Returns(returnValue);
+            IIPFilterService MockIpFilterService = Substitute.For<IIPFilterService>();
+            _ = MockIpFilterService.CheckIPAllowed(Arg.Any<HttpContext>(), Arg.Any<string>()).Returns(returnValue);
             return MockIpFilterService;
         }
     }

@@ -36,15 +36,15 @@ namespace Mithril.API.Swagger
         /// <returns>Application builder</returns>
         public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            var SystemConfig = configuration.GetSystemConfig();
-            var APIConfig = configuration.GetConfig<APIOptions>("Mithril:API");
+            Core.Abstractions.Configuration.MithrilConfig? SystemConfig = configuration.GetSystemConfig();
+            APIOptions? APIConfig = configuration.GetConfig<APIOptions>("Mithril:API");
             var EntryAssembly = Assembly.GetEntryAssembly();
             var EntryAssemblyName = EntryAssembly?.GetName().Name ?? "Mithril";
             return app?.When(environment?.IsDevelopment() ?? false, app =>
             {
-                app?.UseSwagger()
+                _ = (app?.UseSwagger()
                        .UseSwaggerUI(conf => conf.SwaggerEndpoint(APIConfig?.OpenAPIEndpoint ?? $"/swagger/v{EntryAssembly?.GetName().Version}/swagger.json",
-                                                                  SystemConfig?.ApplicationName ?? $"{EntryAssemblyName} API v{EntryAssembly?.GetName().Version}"));
+                                                                  SystemConfig?.ApplicationName ?? $"{EntryAssemblyName} API v{EntryAssembly?.GetName().Version}")));
             });
         }
 
@@ -57,11 +57,11 @@ namespace Mithril.API.Swagger
         /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            var SystemConfig = configuration.GetSystemConfig();
+            Core.Abstractions.Configuration.MithrilConfig? SystemConfig = configuration.GetSystemConfig();
             var EntryAssembly = Assembly.GetEntryAssembly();
             var EntryAssemblyName = EntryAssembly?.GetName().Name ?? "Mithril";
-            services?.AddEndpointsApiExplorer();
-            services?.AddSwaggerGen(options =>
+            _ = (services?.AddEndpointsApiExplorer());
+            _ = (services?.AddSwaggerGen(options =>
             {
                 options.SchemaFilter<EnumNameSchemaFilter>();
                 options.SwaggerDoc($"v{EntryAssembly?.GetName().Version}", new OpenApiInfo
@@ -74,7 +74,7 @@ namespace Mithril.API.Swagger
                 {
                     ScanForCommentFiles(new FileInfo(EntryAssembly?.Location ?? "").Directory?.FullName, options);
                 }
-            });
+            }));
             return services;
         }
 
@@ -88,7 +88,7 @@ namespace Mithril.API.Swagger
             if (string.IsNullOrEmpty(directory))
                 return;
             var AssemblyDirectories = new DirectoryInfo(directory);
-            foreach (var File in AssemblyDirectories.EnumerateFiles("*.xml"))
+            foreach (FileInfo File in AssemblyDirectories.EnumerateFiles("*.xml"))
             {
                 options.IncludeXmlComments(File.FullName);
             }

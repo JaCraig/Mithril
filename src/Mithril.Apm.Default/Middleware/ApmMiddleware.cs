@@ -60,13 +60,13 @@ namespace Mithril.Apm.Default.Middleware
 
             var StopTimeTicks = Stopwatch.GetTimestamp();
 
-            MetricsCollector?.AddEntry(context.TraceIdentifier, "Request", new KeyValuePair<string, decimal>("Total Transaction Time", (StopTimeTicks - StartTimeTicks) / 10000));
-            MetaDataCollector?.AddEntry(
+            _ = (MetricsCollector?.AddEntry(context.TraceIdentifier, "Request", new KeyValuePair<string, decimal>("Total Transaction Time", (StopTimeTicks - StartTimeTicks) / 10000)));
+            _ = (MetaDataCollector?.AddEntry(
                 context.TraceIdentifier,
                 new KeyValuePair<string, string>("Path", context.Request.Path),
                 new KeyValuePair<string, string>("Method", context.Request.Method),
                 new KeyValuePair<string, string>("User", context.User.GetName()),
-                new KeyValuePair<string, string>("RequestBody", await GetBody(context.Request).ConfigureAwait(false)));
+                new KeyValuePair<string, string>("RequestBody", await GetBody(context.Request).ConfigureAwait(false))));
         }
 
         /// <summary>
@@ -80,9 +80,7 @@ namespace Mithril.Apm.Default.Middleware
             httpRequest.Body.Position = 0;
             var ReturnValue = await Reader.ReadToEndAsync().ConfigureAwait(false);
             httpRequest.Body.Position = 0;
-            if (string.IsNullOrEmpty(ReturnValue))
-                return "[Empty]";
-            return ReturnValue;
+            return string.IsNullOrEmpty(ReturnValue) ? "[Empty]" : ReturnValue;
         }
     }
 }

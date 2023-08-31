@@ -15,8 +15,8 @@ namespace Mithril.API.Abstractions.Commands.Mappings
         /// </summary>
         public IEventMapping()
         {
-            Reference(x => x.RetryCount);
-            Reference(x => x.State).WithMaxLength(20);
+            _ = Reference(x => x.RetryCount);
+            _ = Reference(x => x.State).WithMaxLength(20);
         }
     }
 }

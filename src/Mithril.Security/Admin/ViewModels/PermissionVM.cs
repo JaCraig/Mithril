@@ -77,7 +77,7 @@ namespace Mithril.Security.Admin.ViewModels
                 return null;
             if (string.IsNullOrEmpty(DisplayName))
             {
-                Permission?.DeleteAsync(dataService, currentUser, false);
+                _ = (Permission?.DeleteAsync(dataService, currentUser, false));
                 return null;
             }
             Permission ??= (await Permission.LoadOrCreateAsync(DisplayName ?? "", Operand, Array.Empty<IUserClaim>(), dataService, currentUser).ConfigureAwait(false)) as Permission;

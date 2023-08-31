@@ -26,12 +26,12 @@ namespace Mithril.Admin.Services.MetadataBuilders
             if (propertyMetadata is null)
                 return propertyMetadata;
             propertyMetadata.Metadata["canList"] = false;
-            var propertyType = propertyMetadata.Property?.PropertyType;
-            if (propertyType is null)
+            Type? PropertyType = propertyMetadata.Property?.PropertyType;
+            if (PropertyType is null)
                 return propertyMetadata;
             propertyMetadata.Metadata["canList"] = propertyMetadata.Property?.GetCustomAttribute<JsonIgnoreAttribute>() is null
                     && propertyMetadata.Property?.GetCustomAttribute<DoNotListAttribute>() is null
-                    && (propertyType.IsPrimitive || propertyType.IsEnum || propertyType == typeof(string) || propertyType == typeof(DateTime));
+                    && (PropertyType.IsPrimitive || PropertyType.IsEnum || PropertyType == typeof(string) || PropertyType == typeof(DateTime));
             return propertyMetadata;
         }
     }

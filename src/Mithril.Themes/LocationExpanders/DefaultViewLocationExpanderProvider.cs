@@ -24,10 +24,7 @@ namespace Mithril.Themes.LocationExpanders
         /// <param name="viewLocations">The sequence of view locations to expand.</param>
         /// <returns>A list of expanded view locations.</returns>
         /// <inheritdoc/>
-        public virtual IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)
-        {
-            return viewLocations;
-        }
+        public virtual IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations) => viewLocations;
 
         /// <summary>
         /// Invoked by a <see cref="RazorViewEngine"/> to determine the values that would be

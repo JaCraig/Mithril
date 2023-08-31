@@ -31,7 +31,7 @@ namespace Mithril.API.GraphQL.Services
         /// <returns>The query specified.</returns>
         public IQuery? FindQuery(string? name)
         {
-            Queries.TryGetValue(name ?? "", out IQuery? query);
+            _ = Queries.TryGetValue(name ?? "", out IQuery? query);
             return query;
         }
     }

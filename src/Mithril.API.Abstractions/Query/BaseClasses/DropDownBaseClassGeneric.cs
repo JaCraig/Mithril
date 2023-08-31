@@ -34,10 +34,7 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <returns>
         ///   <c>true</c> if this instance can run the specified data type; otherwise, <c>false</c>.
         /// </returns>
-        public virtual bool CanRun(string? dataType, ClaimsPrincipal? user)
-        {
-            return string.Equals(dataType, Name, StringComparison.OrdinalIgnoreCase);
-        }
+        public virtual bool CanRun(string? dataType, ClaimsPrincipal? user) => string.Equals(dataType, Name, StringComparison.OrdinalIgnoreCase);
 
         /// <summary>
         /// Gets the data.
@@ -46,10 +43,7 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <returns>
         /// The drop down data.
         /// </returns>
-        public Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string? filter)
-        {
-            return Task.FromResult<IEnumerable<DropDownVM<long>>>(GetValues(filter).Select(x => new DropDownVM<long>(GetKey(x), x.ToString())).OrderBy(x => x.Value));
-        }
+        public Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string? filter) => Task.FromResult<IEnumerable<DropDownVM<long>>>(GetValues(filter).Select(x => new DropDownVM<long>(GetKey(x), x.ToString())).OrderBy(x => x.Value));
 
         /// <summary>
         /// Gets all values that start with the value sent in.
@@ -59,7 +53,7 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <returns>The values</returns>
         public IEnumerable<TModel> GetValues(string? value, int count = -1)
         {
-            var Query = DbContext<TModel>.CreateQuery();
+            IQueryable<TModel> Query = DbContext<TModel>.CreateQuery();
             if (count > 0)
                 Query = Query.Take(count);
             if (!string.IsNullOrEmpty(value))
@@ -80,9 +74,6 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns>The key.</returns>
-        protected virtual long GetKey(TModel model)
-        {
-            return model.ID;
-        }
+        protected virtual long GetKey(TModel model) => model.ID;
     }
 }

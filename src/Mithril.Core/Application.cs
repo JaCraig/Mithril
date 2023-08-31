@@ -151,7 +151,7 @@ namespace Mithril.Core
             {
                 Abstractions.Modules.Interfaces.IModule Module = Modules[i];
                 MVCBuilder = Module.ConfigureMVC(MVCBuilder, Configuration, Environment);
-                MVCBuilder?.AddApplicationPart(Module.GetType().Assembly);
+                _ = (MVCBuilder?.AddApplicationPart(Module.GetType().Assembly));
             }
             return services;
         }
@@ -233,7 +233,7 @@ namespace Mithril.Core
                     IEnumerable<TypeInfo> ModuleTypes = TempAssembly.DefinedTypes
                                                   .Where(x => x.Is<Abstractions.Modules.Interfaces.IModule>()
                                                            && x.HasDefaultConstructor());
-                    TempModules.Add(ModuleTypes.Create<Abstractions.Modules.Interfaces.IModule>());
+                    _ = TempModules.Add(ModuleTypes.Create<Abstractions.Modules.Interfaces.IModule>());
                 }
                 catch { }
             }

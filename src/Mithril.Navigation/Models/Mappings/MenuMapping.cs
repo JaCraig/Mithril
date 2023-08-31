@@ -14,9 +14,9 @@ namespace Mithril.Navigation.Models.Mappings
         /// </summary>
         public MenuMapping()
         {
-            Reference(x => x.Display).WithMaxLength(64);
-            ManyToOne(x => x.Items).CascadeChanges();
-            Map(x => x.Permissions).CascadeChanges();
+            _ = Reference(x => x.Display).WithMaxLength(64);
+            _ = ManyToOne(x => x.Items).CascadeChanges();
+            _ = Map(x => x.Permissions).CascadeChanges();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Mithril.Communication.Abstractions.Mappings
         /// </summary>
         public SendMessageCommandMapping()
         {
-            Map(x => x.Message).CascadeChanges();
+            _ = Map(x => x.Message).CascadeChanges();
         }
     }
 }

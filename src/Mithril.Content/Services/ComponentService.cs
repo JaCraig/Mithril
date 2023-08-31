@@ -33,9 +33,6 @@ namespace Mithril.Content.Services
         /// <returns>
         /// The component renderer
         /// </returns>
-        public IComponentDefinition? GetComponent(string componentType)
-        {
-            return Components.FirstOrDefault(x => string.Equals(x.Name, componentType, StringComparison.OrdinalIgnoreCase));
-        }
+        public IComponentDefinition? GetComponent(string componentType) => Components.FirstOrDefault(x => string.Equals(x.Name, componentType, StringComparison.OrdinalIgnoreCase));
     }
 }

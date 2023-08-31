@@ -59,9 +59,6 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// Executes the asynchronous.
         /// </summary>
         /// <returns></returns>
-        public Task ExecuteAsync()
-        {
-            return CommandService?.ProcessAsync() ?? Task.CompletedTask;
-        }
+        public Task ExecuteAsync() => CommandService?.ProcessAsync() ?? Task.CompletedTask;
     }
 }

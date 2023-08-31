@@ -16,7 +16,8 @@ namespace Mithril.HealthChecks.HealthChecks
         /// <param name="hostApplicationLifetime">The host application lifetime.</param>
         public SystemStatusHealthCheck(IHostApplicationLifetime? hostApplicationLifetime)
         {
-            if (hostApplicationLifetime is null) return;
+            if (hostApplicationLifetime is null)
+                return;
             HostApplicationLifetime = hostApplicationLifetime;
             CancellationTokenRegistration = HostApplicationLifetime.ApplicationStopping.Register(AppStopping);
         }
@@ -65,9 +66,6 @@ namespace Mithril.HealthChecks.HealthChecks
         /// <summary>
         /// Applications the stopping.
         /// </summary>
-        private void AppStopping()
-        {
-            Dispose();
-        }
+        private void AppStopping() => Dispose();
     }
 }

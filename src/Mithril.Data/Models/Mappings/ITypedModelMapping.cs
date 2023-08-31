@@ -16,7 +16,7 @@ namespace Mithril.Data.Models.Mappings
         public ITypedModelMapping()
             : base(merge: true)
         {
-            Reference(x => x.Type);
+            _ = Reference(x => x.Type);
         }
     }
 }

@@ -32,9 +32,6 @@ namespace Mithril.Navigation
         /// <returns>
         /// Services
         /// </returns>
-        public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
-        {
-            return services?.AddSingleton<IMenuService, MenuService>();
-        }
+        public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment) => services?.AddSingleton<IMenuService, MenuService>();
     }
 }

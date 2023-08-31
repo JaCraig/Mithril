@@ -31,10 +31,7 @@ namespace Mithril.Features.Services
         /// </summary>
         /// <param name="featureName">The name of the feature.</param>
         /// <returns>The state of the feature if it is present in the session, otherwise null.</returns>
-        public Task<bool?> GetAsync(string featureName)
-        {
-            return Task.FromResult(Feature.Load(featureName, DataService)?.Active);
-        }
+        public Task<bool?> GetAsync(string featureName) => Task.FromResult(Feature.Load(featureName, DataService)?.Active);
 
         /// <summary>
         /// Set the state of a feature to be used for a session.

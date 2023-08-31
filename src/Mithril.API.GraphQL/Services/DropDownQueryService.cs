@@ -33,7 +33,7 @@ namespace Mithril.API.GraphQL.Services
         /// <returns>The drop down query specified.</returns>
         public IDropDownQuery? FindDropDownQuery(string? name, ClaimsPrincipal? user)
         {
-            DropDownQueries.TryGetValue(name ?? "", out IDropDownQuery? query);
+            _ = DropDownQueries.TryGetValue(name ?? "", out IDropDownQuery? query);
             return query?.CanRun(name, user) == true ? query : null;
         }
     }

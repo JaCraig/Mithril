@@ -27,9 +27,9 @@ namespace Mithril.Admin.Tests
         public void ConfigureServicesTest()
         {
             var Services = new ServiceCollection();
-            var Configuration = new ConfigurationBuilder().Build();
-            var Environment = NSubstitute.Substitute.For<IHostEnvironment>();
-            TestObject?.ConfigureServices(Services, Configuration, Environment);
+            IConfigurationRoot Configuration = new ConfigurationBuilder().Build();
+            IHostEnvironment Environment = NSubstitute.Substitute.For<IHostEnvironment>();
+            _ = (TestObject?.ConfigureServices(Services, Configuration, Environment));
             Assert.NotNull(Services);
         }
     }

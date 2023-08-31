@@ -61,7 +61,7 @@ namespace Mithril.Themes.Admin
             if (entity is null || ThemeService is null)
                 return false;
             Abstractions.Interfaces.ITheme? DesiredTheme = ThemeService.LoadTheme(Theme.Load(entity.CurrentTheme, DataService)?.Name ?? "");
-            await ThemeService.SetDefaultThemeAsync(DesiredTheme, currentUser).ConfigureAwait(false);
+            _ = await ThemeService.SetDefaultThemeAsync(DesiredTheme, currentUser).ConfigureAwait(false);
             return true;
         }
     }

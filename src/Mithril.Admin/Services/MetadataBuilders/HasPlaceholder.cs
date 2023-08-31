@@ -37,10 +37,8 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// <returns>The Placeholder value if one exists.</returns>
         protected static string? DeterminePlaceholder(PropertyInfo? property)
         {
-            var TempAttribute = property?.Attribute<PlaceholderAttribute>();
-            if (TempAttribute is null)
-                return "";
-            return TempAttribute.Value;
+            PlaceholderAttribute? TempAttribute = property?.Attribute<PlaceholderAttribute>();
+            return TempAttribute is null ? "" : TempAttribute.Value;
         }
     }
 }

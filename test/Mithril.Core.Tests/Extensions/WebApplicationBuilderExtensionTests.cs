@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Mithril.Core.Extensions;
 using Mithril.Tests.Helpers;
 
 namespace Mithril.Core.Tests.Extensions

@@ -16,9 +16,9 @@ namespace Mithril.Security.Models.Mappings
         public IUserClaimMapping()
             : base(merge: true)
         {
-            Reference(x => x.Type).WithMaxLength(128);
-            ManyToMany(x => x.Users).OnDeleteDoNothing();
-            Reference(x => x.Value).WithMaxLength();
+            _ = Reference(x => x.Type).WithMaxLength(128);
+            _ = ManyToMany(x => x.Users).OnDeleteDoNothing();
+            _ = Reference(x => x.Value).WithMaxLength();
         }
     }
 }

@@ -105,7 +105,7 @@ namespace Mithril.Communication.Commands
         {
             if (string.IsNullOrEmpty(value?.Channel) || CommunicationService is null)
                 return new CommandCreationResult(null);
-            var Message = CommunicationService.CreateMessage(value.Channel);
+            IMessage? Message = CommunicationService.CreateMessage(value.Channel);
             if (Message is null)
                 return new CommandCreationResult(null);
             Message.BCC = value.BCC;
@@ -130,13 +130,13 @@ namespace Mithril.Communication.Commands
         {
             if (args is null || Logger is null)
                 return Array.Empty<IEvent>();
-            List<IEvent> ReturnValues = new List<IEvent>();
+            var ReturnValues = new List<IEvent>();
             for (var x = 0; x < args.Length; ++x)
             {
-                var Arg = args[x];
+                SendMessageCommand? Arg = args[x];
                 if (Arg is null)
                     continue;
-                var Channel = Channels.FirstOrDefault(channel => channel.CanHandle(Arg.Message));
+                IChannel? Channel = Channels.FirstOrDefault(channel => channel.CanHandle(Arg.Message));
                 MessageResult? Result = null;
                 if (Channel is not null)
                     Result = await Channel.SendMessageAsync(Arg.Message).ConfigureAwait(false);

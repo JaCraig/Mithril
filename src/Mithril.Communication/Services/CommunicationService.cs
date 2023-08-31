@@ -42,10 +42,7 @@ namespace Mithril.Communication.Services
         /// </summary>
         /// <param name="channel">The channel.</param>
         /// <returns>The message object.</returns>
-        public IMessage? CreateMessage(string channel)
-        {
-            return Channels.FirstOrDefault(x => string.Equals(x.Name, channel, StringComparison.OrdinalIgnoreCase))?.CreateMessage();
-        }
+        public IMessage? CreateMessage(string channel) => Channels.FirstOrDefault(x => string.Equals(x.Name, channel, StringComparison.OrdinalIgnoreCase))?.CreateMessage();
 
         /// <summary>
         /// Loads or creates a template asynchronously.
@@ -53,10 +50,7 @@ namespace Mithril.Communication.Services
         /// <param name="displayName">The display name.</param>
         /// <param name="user">The user.</param>
         /// <returns>The message template.</returns>
-        public Task<IMessageTemplate> LoadOrCreateTemplateAsync(string displayName, ClaimsPrincipal? user)
-        {
-            return MessageTemplate.LoadOrCreateAsync(displayName, DataService, user);
-        }
+        public Task<IMessageTemplate> LoadOrCreateTemplateAsync(string displayName, ClaimsPrincipal? user) => MessageTemplate.LoadOrCreateAsync(displayName, DataService, user);
 
         /// <summary>
         /// Sends the message asynchronously.

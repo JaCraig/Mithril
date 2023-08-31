@@ -67,9 +67,9 @@ namespace Mithril.Navigation.Models
         /// </returns>
         public static Menu? Load(string? display, IDataService? dataService)
         {
-            if (string.IsNullOrEmpty(display) || dataService is null)
-                return null;
-            return Query(dataService)?.Where(x => x.Display == display).FirstOrDefault();
+            return string.IsNullOrEmpty(display) || dataService is null
+                ? null
+                : (Query(dataService)?.Where(x => x.Display == display).FirstOrDefault());
         }
 
         /// <summary>
@@ -85,12 +85,12 @@ namespace Mithril.Navigation.Models
         {
             if (string.IsNullOrEmpty(display) || dataService is null)
                 return null;
-            var ReturnValue = Load(display, dataService);
+            Menu? ReturnValue = Load(display, dataService);
             if (ReturnValue is null)
             {
                 ReturnValue = new Menu(display);
                 if (dataService is not null)
-                    await dataService.SaveAsync(user, ReturnValue).ConfigureAwait(false);
+                    _ = await dataService.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }
@@ -101,10 +101,7 @@ namespace Mithril.Navigation.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(Menu left, Menu right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(Menu left, Menu right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -112,10 +109,7 @@ namespace Mithril.Navigation.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(Menu left, Menu right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(Menu left, Menu right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -123,10 +117,7 @@ namespace Mithril.Navigation.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(Menu left, Menu right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(Menu left, Menu right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -148,10 +139,7 @@ namespace Mithril.Navigation.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(Menu left, Menu right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(Menu left, Menu right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -159,10 +147,7 @@ namespace Mithril.Navigation.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(Menu left, Menu right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(Menu left, Menu right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Adds the menu item.
@@ -176,7 +161,7 @@ namespace Mithril.Navigation.Models
         public void AddOrUpdateMenuItem(string display, string description, string icon, string url, int order = 0, IPermission? permission = null)
         {
             Items ??= new List<MenuItem>();
-            var Item = Items.FirstOrDefault(x => string.Equals(x.Display, display, StringComparison.OrdinalIgnoreCase)) ?? Items.AddAndReturn(new MenuItem
+            MenuItem Item = Items.FirstOrDefault(x => string.Equals(x.Display, display, StringComparison.OrdinalIgnoreCase)) ?? Items.AddAndReturn(new MenuItem
             {
                 Display = display,
                 Description = description,
@@ -205,10 +190,7 @@ namespace Mithril.Navigation.Models
         /// <param name="url">The URL.</param>
         /// <param name="order">The order.</param>
         /// <param name="permission">The permission.</param>
-        public void AddOrUpdateMenuItem(string display, string description, string icon, Uri url, int order = 0, IPermission? permission = null)
-        {
-            AddOrUpdateMenuItem(display, description, icon, url?.ToString() ?? string.Empty, order, permission);
-        }
+        public void AddOrUpdateMenuItem(string display, string description, string icon, Uri url, int order = 0, IPermission? permission = null) => AddOrUpdateMenuItem(display, description, icon, url?.ToString() ?? string.Empty, order, permission);
 
         /// <summary>
         /// Determines whether this instance [can be viewed by] the specified user.
@@ -217,20 +199,14 @@ namespace Mithril.Navigation.Models
         /// <returns>
         /// <c>true</c> if this instance [can be viewed by] the specified user; otherwise, <c>false</c>.
         /// </returns>
-        public override bool CanBeViewedBy(ClaimsPrincipal? user)
-        {
-            return (Permissions?.HasPermission(user) ?? true) && base.CanBeViewedBy(user);
-        }
+        public override bool CanBeViewedBy(ClaimsPrincipal? user) => (Permissions?.HasPermission(user) ?? true) && base.CanBeViewedBy(user);
 
         /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public override int CompareTo(Menu? other)
-        {
-            return base.CompareTo(other);
-        }
+        public override int CompareTo(Menu? other) => base.CompareTo(other);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -239,10 +215,7 @@ namespace Mithril.Navigation.Models
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return base.Equals(obj);
-        }
+        public override bool Equals(object? obj) => base.Equals(obj);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -252,10 +225,7 @@ namespace Mithril.Navigation.Models
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(Menu other)
-        {
-            return base.Equals(other);
-        }
+        public bool Equals(Menu other) => base.Equals(other);
 
         /// <summary>
         /// Returns a hash code for this instance.
@@ -264,15 +234,12 @@ namespace Mithril.Navigation.Models
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => base.GetHashCode();
 
         /// <summary>
         /// Converts to string.
         /// </summary>
-        /// <returns>A <see cref="System.String"/> that represents this instance.</returns>
+        /// <returns>A <see cref="string"/> that represents this instance.</returns>
         public override string ToString() => Display ?? "";
     }
 }

@@ -35,8 +35,8 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
         public void ConvertExpandoTest()
         {
             var Expando = new ExpandoObject();
-            Expando.TryAdd("test", "test");
-            var Result = Expando.ConvertExpando<Dictionary<string, object?>>();
+            _ = Expando.TryAdd("test", "test");
+            Dictionary<string, object?>? Result = Expando.ConvertExpando<Dictionary<string, object?>>();
             Assert.Equal("test", Result["Test"]);
         }
 

@@ -16,10 +16,7 @@ namespace Mithril.Core.Abstractions.Extensions
         /// <param name="section">The section.</param>
         /// <returns>The config specified.</returns>
         public static TOptions? GetConfig<TOptions>(this IConfiguration? configuration, string section)
-            where TOptions : class
-        {
-            return configuration?.GetSection(section).Get<TOptions>();
-        }
+            where TOptions : class => configuration?.GetSection(section).Get<TOptions>();
 
         /// <summary>
         /// Gets the system configuration.

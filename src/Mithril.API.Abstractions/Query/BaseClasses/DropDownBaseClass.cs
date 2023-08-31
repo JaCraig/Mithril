@@ -46,10 +46,7 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <returns>
         /// <c>true</c> if this instance can run the specified data type; otherwise, <c>false</c>.
         /// </returns>
-        public virtual bool CanRun(string? dataType, ClaimsPrincipal? user)
-        {
-            return string.Equals(dataType, Name, StringComparison.OrdinalIgnoreCase);
-        }
+        public virtual bool CanRun(string? dataType, ClaimsPrincipal? user) => string.Equals(dataType, Name, StringComparison.OrdinalIgnoreCase);
 
         /// <summary>
         /// Gets the data.

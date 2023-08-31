@@ -35,7 +35,7 @@ namespace Mithril.Background.Default.Services
         public override async Task ExecuteAsync()
         {
             var CurrentTasks = new List<Task>();
-            while (Tasks.TryDequeue(out var Task))
+            while (Tasks.TryDequeue(out IBackgroundTask? Task))
             {
                 Logger?.LogInformation("Running {TaskName}", Task.Name);
                 CurrentTasks.Add(Task.ExecuteAsync());

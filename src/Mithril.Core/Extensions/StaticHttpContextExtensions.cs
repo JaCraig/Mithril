@@ -13,10 +13,7 @@ namespace Mithril.Core.Extensions
         /// Adds the HTTP context accessor.
         /// </summary>
         /// <param name="services">The services.</param>
-        public static IServiceCollection? AddStaticHttpContextAccessor(this IServiceCollection? services)
-        {
-            return services?.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-        }
+        public static IServiceCollection? AddStaticHttpContextAccessor(this IServiceCollection? services) => services?.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
         /// <summary>
         /// Uses the static HTTP context.
@@ -25,8 +22,8 @@ namespace Mithril.Core.Extensions
         /// <returns>The app builder</returns>
         public static IApplicationBuilder? UseStaticHttpContext(this IApplicationBuilder? app)
         {
-            var httpContextAccessor = app?.ApplicationServices.GetService<IHttpContextAccessor>();
-            Abstractions.Mvc.Context.HttpContext.Configure(httpContextAccessor);
+            IHttpContextAccessor? HttpContextAccessor = app?.ApplicationServices.GetService<IHttpContextAccessor>();
+            Abstractions.Mvc.Context.HttpContext.Configure(HttpContextAccessor);
             return app;
         }
     }

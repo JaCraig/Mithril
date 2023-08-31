@@ -1,3 +1,4 @@
+using Mithril.Core.Extensions;
 using Serilog;
 
 namespace Mithril
@@ -15,12 +16,12 @@ namespace Mithril
         {
             try
             {
-                WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
-                await (builder.SetupMithril()?.RunAsync() ?? Task.CompletedTask).ConfigureAwait(false);
+                WebApplicationBuilder? Builder = WebApplication.CreateBuilder(args);
+                await (Builder.SetupMithril()?.RunAsync() ?? Task.CompletedTask).ConfigureAwait(false);
             }
-            catch (Exception ex)
+            catch (Exception Ex)
             {
-                Log.Fatal(ex, "Host terminated unexpectedly");
+                Log.Fatal(Ex, "Host terminated unexpectedly");
             }
             finally
             {

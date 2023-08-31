@@ -15,8 +15,8 @@ namespace Mithril.Communication.Abstractions.Mappings
         /// </summary>
         public MessageSentEventMapping()
         {
-            Map(x => x.Message);
-            Reference(x => x.Status);
+            _ = Map(x => x.Message);
+            _ = Reference(x => x.Status);
         }
     }
 }

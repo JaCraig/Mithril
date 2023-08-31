@@ -18,19 +18,21 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// Initializes a new instance of the <see cref="CompositeQuery"/> class.
         /// </summary>
         /// <param name="queries">The queries.</param>
-        public CompositeQuery(IEnumerable<IQuery> queries)
+        public CompositeQuery(IEnumerable<IQuery?> queries)
         {
             queries ??= Array.Empty<IQuery>();
             Name = "RootQuery";
             Description = "Root query";
-            var Methods = typeof(CompositeQuery).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance);
-            var GenericAddField = Array.Find(Methods, x => x.IsGenericMethod && x.Name == nameof(AddField));
-            foreach (var Query in queries)
+            MethodInfo[] Methods = typeof(CompositeQuery).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance);
+            MethodInfo? GenericAddField = Array.Find(Methods, x => x.IsGenericMethod && x.Name == nameof(AddField));
+            foreach (IQuery? Query in queries)
             {
-                var GraphType = Query.ReturnType.FindGraphType();
+                if (Query is null)
+                    continue;
+                Type? GraphType = Query.ReturnType.FindGraphType();
                 if (GraphType is null)
                     continue;
-                GenericAddField?.MakeGenericMethod(Query.ReturnType, GraphType).Invoke(this, new object[] { Query });
+                _ = (GenericAddField?.MakeGenericMethod(Query.ReturnType, GraphType).Invoke(this, new object[] { Query }));
             }
         }
 
@@ -45,14 +47,14 @@ namespace Mithril.API.GraphQL.GraphTypes
             where TReturnType : class
             where TGraphType : class, IGraphType
         {
-            Field<TGraphType>(name: query.Name,
+            _ = Field<TGraphType>(name: query.Name,
                     description: query.Description,
                     arguments: new QueryArguments(query.Arguments?.ToArray(x => x.CreateArgument()!) ?? Array.Empty<QueryArgument>()),
                     resolve: context =>
                     {
-                        var CurrentUser = (context.UserContext as GraphQLUserContextDictionary)?.User;
+                        System.Security.Claims.ClaimsPrincipal? CurrentUser = (context.UserContext as GraphQLUserContextDictionary)?.User;
                         var Arguments = new Arguments();
-                        context.Arguments.ForEach(x => Arguments.Add(x.Key, x.Value.Value));
+                        _ = context.Arguments.ForEach(x => Arguments.Add(x.Key, x.Value.Value));
                         return AsyncHelper.RunSync(() => query.ResolveAsync(CurrentUser, Arguments));
                     },
                     deprecationReason: string.IsNullOrEmpty(query.DeprecationReason) ? null : query.DeprecationReason)

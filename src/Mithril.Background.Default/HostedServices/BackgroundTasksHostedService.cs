@@ -35,9 +35,6 @@ namespace Mithril.Background.Default.HostedServices
         /// <returns>
         /// The async task.
         /// </returns>
-        protected override Task DoWorkAsync()
-        {
-            return BackgroundTaskService?.ExecuteAsync() ?? Task.CompletedTask;
-        }
+        protected override Task DoWorkAsync() => BackgroundTaskService?.ExecuteAsync() ?? Task.CompletedTask;
     }
 }

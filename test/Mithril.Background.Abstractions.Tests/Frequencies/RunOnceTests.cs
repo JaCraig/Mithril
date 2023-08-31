@@ -24,7 +24,7 @@ namespace Mithril.Background.Abstractions.Tests.Frequencies
         public void CanRun_ReturnsFalse_WhenHasRunBefore()
         {
             var RunOnce = new RunOnce();
-            RunOnce.CanRun(DateTime.Now, DateTime.Now);
+            _ = RunOnce.CanRun(DateTime.Now, DateTime.Now);
             DateTime LastRunTime = DateTime.Now;
             DateTime CurrentTime = DateTime.Now;
 

@@ -35,7 +35,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// <inheritdoc/>
         public GenericGraphType(GraphTypeManager? graphTypeManager)
         {
-            var ObjectType = typeof(TClass);
+            Type ObjectType = typeof(TClass);
             Name = GetName(ObjectType);
             Description = ObjectType.GetDescription();
         }
@@ -83,33 +83,23 @@ namespace Mithril.API.GraphQL.GraphTypes
             if (graphTypeManager is null || _Initialized)
                 return;
             _Initialized = true;
-            foreach (var Property in TypeCacheFor<TClass>.Properties)
+            foreach (PropertyInfo Property in TypeCacheFor<TClass>.Properties)
             {
-                var GraphType = Property.PropertyType.FindGraphType();
+                Type? GraphType = Property.PropertyType.FindGraphType();
                 if (GraphType is null)
                     continue;
-                if (Property.PropertyType.IsBuiltInType())
-                {
-                    _AddBasicFieldGeneric?.MakeGenericMethod(Property.PropertyType).Invoke(this, new[] { Property });
-                }
-                else
-                {
-                    _AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Property, graphTypeManager.GetGraphType(Property.PropertyType) });
-                }
+                _ = Property.PropertyType.IsBuiltInType()
+                    ? (_AddBasicFieldGeneric?.MakeGenericMethod(Property.PropertyType).Invoke(this, new[] { Property }))
+                    : (_AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Property, graphTypeManager.GetGraphType(Property.PropertyType) }));
             }
-            foreach (var Method in TypeCacheFor<TClass>.Methods)
+            foreach (MethodInfo Method in TypeCacheFor<TClass>.Methods)
             {
-                var GraphType = Method.ReturnType.FindGraphType();
+                Type? GraphType = Method.ReturnType.FindGraphType();
                 if (GraphType is null)
                     continue;
-                if (Method.ReturnType.IsBuiltInType())
-                {
-                    _AddMethodBasicGeneric?.MakeGenericMethod(Method.ReturnType).Invoke(this, new object[] { Method });
-                }
-                else
-                {
-                    _AddMethodClassGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Method, graphTypeManager.GetGraphType(Method.ReturnType) });
-                }
+                _ = Method.ReturnType.IsBuiltInType()
+                    ? (_AddMethodBasicGeneric?.MakeGenericMethod(Method.ReturnType).Invoke(this, new object[] { Method }))
+                    : (_AddMethodClassGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Method, graphTypeManager.GetGraphType(Method.ReturnType) }));
             }
         }
 
@@ -120,12 +110,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// <param name="context">The context.</param>
         /// <param name="name">The name.</param>
         /// <returns>The parameter</returns>
-        private static TReturn? GetParameter<TReturn>(IResolveFieldContext<TClass> context, string name)
-        {
-            if (context.Arguments?.TryGetValue(name, out var Param) == true)
-                return Param.Value.To<TReturn>();
-            return default;
-        }
+        private static TReturn? GetParameter<TReturn>(IResolveFieldContext<TClass> context, string name) => context.Arguments?.TryGetValue(name, out global::GraphQL.Execution.ArgumentValue Param) == true ? Param.Value.To<TReturn>() : default;
 
         /// <summary>
         /// Adds the basic field.
@@ -137,13 +122,13 @@ namespace Mithril.API.GraphQL.GraphTypes
             if (property is null || property.DeclaringType is null)
                 return;
 
-            var ObjectInstance = Expression.Parameter(typeof(TClass), "x");
-            var PropertyGet = Expression.Property(ObjectInstance, property);
+            ParameterExpression ObjectInstance = Expression.Parameter(typeof(TClass), "x");
+            MemberExpression PropertyGet = Expression.Property(ObjectInstance, property);
 
-            Field(Expression.Lambda<Func<TClass, TProperty>>(PropertyGet, ObjectInstance), nullable: property.PropertyType.IsNullable())
+            _ = (Field(Expression.Lambda<Func<TClass, TProperty>>(PropertyGet, ObjectInstance), nullable: property.PropertyType.IsNullable())
                 .Description(property.GetDescription())
                 ?.SetSecurity(property)
-                ?.DeprecationReason(property.GetDeprecationReason());
+                ?.DeprecationReason(property.GetDeprecationReason()));
         }
 
         /// <summary>
@@ -156,25 +141,25 @@ namespace Mithril.API.GraphQL.GraphTypes
             if (method is null || method.DeclaringType is null)
                 return;
 
-            var ObjectType = typeof(IResolveFieldContext<TClass>);
-            var ObjectInstance = Expression.Parameter(ObjectType, "x");
-            var SourceProperty = ObjectType.GetProperty(nameof(IResolveFieldContext<TClass>.Source));
+            Type ObjectType = typeof(IResolveFieldContext<TClass>);
+            ParameterExpression ObjectInstance = Expression.Parameter(ObjectType, "x");
+            PropertyInfo? SourceProperty = ObjectType.GetProperty(nameof(IResolveFieldContext<TClass>.Source));
             if (SourceProperty is null)
                 return;
 
-            var GenericGetParameter = typeof(GenericGraphType<TClass>).GetMethod(nameof(GetParameter), BindingFlags.Static | BindingFlags.NonPublic);
+            MethodInfo? GenericGetParameter = typeof(GenericGraphType<TClass>).GetMethod(nameof(GetParameter), BindingFlags.Static | BindingFlags.NonPublic);
             if (GenericGetParameter is null)
                 return;
 
-            var Arguments = method.GetParameters().Select(param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(param.ParameterType), ObjectInstance, Expression.Constant(param.Name?.ToCamelCase() ?? "")));
-            var PropertyGet = Expression.Call(Expression.Property(ObjectInstance, SourceProperty), method, Arguments);
+            IEnumerable<MethodCallExpression> Arguments = method.GetParameters().Select(param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(param.ParameterType), ObjectInstance, Expression.Constant(param.Name?.ToCamelCase() ?? "")));
+            MethodCallExpression PropertyGet = Expression.Call(Expression.Property(ObjectInstance, SourceProperty), method, Arguments);
 
-            Field<TReturn>(method.GetName(), nullable: method.ReturnType.IsNullable())
+            _ = (Field<TReturn>(method.GetName(), nullable: method.ReturnType.IsNullable())
                 .Description(method.GetDescription())
                 .Resolve(Expression.Lambda<Func<IResolveFieldContext<TClass>, TReturn?>>(PropertyGet, ObjectInstance).Compile())
                 .Arguments(method.GetParameters().ToArray(x => x.ToQueryArgument()!) ?? Array.Empty<QueryArgument>())
                 ?.SetSecurity(method)
-                ?.DeprecationReason(method.GetDeprecationReason());
+                ?.DeprecationReason(method.GetDeprecationReason()));
         }
 
         /// <summary>
@@ -190,15 +175,15 @@ namespace Mithril.API.GraphQL.GraphTypes
             if (property is null || property.DeclaringType is null)
                 return;
 
-            var ObjectType = typeof(IResolveFieldContext<TClass>);
-            var ObjectInstance = Expression.Parameter(ObjectType, "x");
-            var SourceProperty = ObjectType.GetProperty(nameof(IResolveFieldContext<TClass>.Source));
+            Type ObjectType = typeof(IResolveFieldContext<TClass>);
+            ParameterExpression ObjectInstance = Expression.Parameter(ObjectType, "x");
+            PropertyInfo? SourceProperty = ObjectType.GetProperty(nameof(IResolveFieldContext<TClass>.Source));
             if (SourceProperty is null)
                 return;
 
-            var SourcePropertyGet = Expression.Property(ObjectInstance, SourceProperty);
-            var PropertyGet = Expression.Property(SourcePropertyGet, property);
-            Field<TProperty>(property.GetName(),
+            MemberExpression SourcePropertyGet = Expression.Property(ObjectInstance, SourceProperty);
+            MemberExpression PropertyGet = Expression.Property(SourcePropertyGet, property);
+            _ = Field<TProperty>(property.GetName(),
                     property.GetDescription(),
                     resolve: Expression.Lambda<Func<IResolveFieldContext<TClass>, object?>>(PropertyGet, ObjectInstance).Compile(),
                     deprecationReason: property.GetDeprecationReason())
@@ -218,21 +203,21 @@ namespace Mithril.API.GraphQL.GraphTypes
             if (method is null || method.DeclaringType is null)
                 return;
 
-            var ObjectType = typeof(IResolveFieldContext<TClass>);
-            var ObjectInstance = Expression.Parameter(ObjectType, "x");
-            var SourceProperty = ObjectType.GetProperty(nameof(IResolveFieldContext<TClass>.Source));
+            Type ObjectType = typeof(IResolveFieldContext<TClass>);
+            ParameterExpression ObjectInstance = Expression.Parameter(ObjectType, "x");
+            PropertyInfo? SourceProperty = ObjectType.GetProperty(nameof(IResolveFieldContext<TClass>.Source));
             if (SourceProperty is null)
                 return;
 
-            var GenericGetParameter = typeof(GenericGraphType<TClass>).GetMethod(nameof(GetParameter), BindingFlags.Static | BindingFlags.NonPublic);
+            MethodInfo? GenericGetParameter = typeof(GenericGraphType<TClass>).GetMethod(nameof(GetParameter), BindingFlags.Static | BindingFlags.NonPublic);
             if (GenericGetParameter is null)
                 return;
 
-            var Arguments = method.GetParameters().Select(param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(param.ParameterType), ObjectInstance, Expression.Constant(param.Name?.ToCamelCase() ?? "")));
+            IEnumerable<MethodCallExpression> Arguments = method.GetParameters().Select(param => Expression.Call(null, GenericGetParameter.MakeGenericMethod(param.ParameterType), ObjectInstance, Expression.Constant(param.Name?.ToCamelCase() ?? "")));
 
-            var PropertyGet = Expression.Call(Expression.Property(ObjectInstance, SourceProperty), method, Arguments);
+            MethodCallExpression PropertyGet = Expression.Call(Expression.Property(ObjectInstance, SourceProperty), method, Arguments);
 
-            Field<TGraphType>(method.GetName(),
+            _ = Field<TGraphType>(method.GetName(),
                     method.GetDescription(),
                     arguments: new QueryArguments(method.GetParameters().ToArray(x => x.ToQueryArgument()!)),
                     resolve: Expression.Lambda<Func<IResolveFieldContext<TClass>, object?>>(PropertyGet, ObjectInstance).Compile(),
@@ -255,22 +240,22 @@ namespace Mithril.API.GraphQL.GraphTypes
             var Output = new StringBuilder();
             if (type.Name == "Void")
             {
-                Output.Append("void");
+                _ = Output.Append("void");
             }
             else
             {
                 if (type.Name.Contains('`', StringComparison.Ordinal))
                 {
-                    var GenericTypes = type.GetGenericArguments();
-                    Output.Append(type.Name, 0, type.Name.IndexOf("`", StringComparison.Ordinal));
+                    Type[] GenericTypes = type.GetGenericArguments();
+                    _ = Output.Append(type.Name, 0, type.Name.IndexOf("`", StringComparison.Ordinal));
                     for (int X = 0, GenericTypesLength = GenericTypes.Length; X < GenericTypesLength; X++)
                     {
-                        Output.Append(GetName(GenericTypes[X]));
+                        _ = Output.Append(GetName(GenericTypes[X]));
                     }
                 }
                 else
                 {
-                    Output.Append(type.Name);
+                    _ = Output.Append(type.Name);
                 }
             }
             return Output.ToString().Replace("&", "", StringComparison.Ordinal);

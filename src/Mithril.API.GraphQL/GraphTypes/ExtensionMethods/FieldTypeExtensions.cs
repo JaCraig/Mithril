@@ -21,21 +21,21 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         {
             if (fieldBuilder is null || memberInfo is null)
                 return fieldBuilder;
-            var AnonymousAttribute = memberInfo.GetCustomAttribute<ApiAllowAnonymousAttribute>();
+            ApiAllowAnonymousAttribute? AnonymousAttribute = memberInfo.GetCustomAttribute<ApiAllowAnonymousAttribute>();
             if (AnonymousAttribute is not null)
             {
-                fieldBuilder.AllowAnonymous();
+                _ = fieldBuilder.AllowAnonymous();
                 return fieldBuilder;
             }
-            var AuthorizeAttribute = memberInfo.GetCustomAttribute<ApiAuthorizeAttribute>();
+            ApiAuthorizeAttribute? AuthorizeAttribute = memberInfo.GetCustomAttribute<ApiAuthorizeAttribute>();
             if (AuthorizeAttribute is null)
                 return fieldBuilder;
-            if (string.IsNullOrEmpty(AuthorizeAttribute.PolicyName) && string.IsNullOrEmpty(AuthorizeAttribute.Roles))
-                fieldBuilder.Authorize();
-            else if (!string.IsNullOrEmpty(AuthorizeAttribute.Roles))
-                fieldBuilder.AuthorizeWithRoles(AuthorizeAttribute.Roles ?? "");
-            else
-                fieldBuilder.AuthorizeWithPolicy(AuthorizeAttribute.PolicyName ?? "");
+            _ = string.IsNullOrEmpty(AuthorizeAttribute.PolicyName) && string.IsNullOrEmpty(AuthorizeAttribute.Roles)
+                ? fieldBuilder.Authorize()
+                : !string.IsNullOrEmpty(AuthorizeAttribute.Roles)
+                ? fieldBuilder.AuthorizeWithRoles(AuthorizeAttribute.Roles ?? "")
+                : fieldBuilder.AuthorizeWithPolicy(AuthorizeAttribute.PolicyName ?? "");
+
             return fieldBuilder;
         }
 
@@ -49,7 +49,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         /// <returns>The field builder.</returns>
         public static FieldBuilder<TClass, TReturn>? SetSecurity<TClass, TReturn>(this FieldBuilder<TClass, TReturn>? fieldBuilder, MemberInfo? memberInfo)
         {
-            fieldBuilder?.FieldType.SetSecurity(memberInfo);
+            _ = (fieldBuilder?.FieldType.SetSecurity(memberInfo));
             return fieldBuilder;
         }
     }

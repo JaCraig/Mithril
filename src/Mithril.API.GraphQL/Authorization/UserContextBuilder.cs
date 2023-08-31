@@ -35,10 +35,7 @@ namespace Mithril.API.GraphQL.Authorization
         /// default user context.
         /// </returns>
         /// <inheritdoc cref="T:GraphQL.Server.Transports.AspNetCore.IUserContextBuilder"/>
-        public ValueTask<IDictionary<string, object?>?> BuildUserContextAsync(HttpContext context, object? payload)
-        {
-            return ValueTask.FromResult((IDictionary<string, object?>?)new GraphQLUserContextDictionary(context?.User));
-        }
+        public ValueTask<IDictionary<string, object?>?> BuildUserContextAsync(HttpContext context, object? payload) => ValueTask.FromResult((IDictionary<string, object?>?)new GraphQLUserContextDictionary(context?.User));
     }
 
     /// <summary>

@@ -69,9 +69,6 @@ namespace Mithril.Apm.Default.Admin.ViewModels
         /// <returns>
         /// The async task.
         /// </returns>
-        public override Task<RequestTrace?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser)
-        {
-            return Task.FromResult<RequestTrace?>(null);
-        }
+        public override Task<RequestTrace?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser) => Task.FromResult<RequestTrace?>(null);
     }
 }

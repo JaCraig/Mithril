@@ -78,7 +78,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
                 return null;
             if (type.IsBuiltInType())
             {
-                BuiltInGraphTypes.TryGetValue(type, out var graphType);
+                _ = BuiltInGraphTypes.TryGetValue(type, out Type? graphType);
                 return graphType;
             }
             else if (type.IsExpando())
@@ -87,10 +87,8 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
             }
             else if (type.IsListType())
             {
-                var ListType = type.GetIEnumerableElementType().FindGraphType();
-                if (ListType is null)
-                    return null;
-                return typeof(ListGraphType<>).MakeGenericType(ListType);
+                Type? ListType = type.GetIEnumerableElementType().FindGraphType();
+                return ListType is null ? null : typeof(ListGraphType<>).MakeGenericType(ListType);
             }
             else if (type.IsClassType() || type.IsInterfaceType())
             {
@@ -110,7 +108,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
                 return Array.Empty<MethodInfo>();
             var Methods = new List<MethodInfo>();
             Methods.AddRange(classType.GetMethods(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public));
-            foreach (var Method in classType.GetInterfaces().SelectMany(Interface => Interface.GetMethods(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public)))
+            foreach (MethodInfo? Method in classType.GetInterfaces().SelectMany(Interface => Interface.GetMethods(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public)))
             {
                 if (Methods.Any(x => x.Name == Method.Name))
                     continue;
@@ -141,7 +139,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
                 return Array.Empty<PropertyInfo>();
             var Properties = new List<PropertyInfo>();
             Properties.AddRange(classType.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead));
-            foreach (var Property in classType.GetInterfaces().SelectMany(Interface => Interface.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead)))
+            foreach (PropertyInfo? Property in classType.GetInterfaces().SelectMany(Interface => Interface.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead)))
             {
                 if (Properties.Any(x => x.Name == Property.Name))
                     continue;
@@ -171,20 +169,14 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         /// <returns>
         /// <c>true</c> if [is class type] [the specified property type]; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsClassType(this Type? type)
-        {
-            return type?.IsClass == true && !type.IsAbstract && !type.IsInterface && !type.ContainsGenericParameters;
-        }
+        public static bool IsClassType(this Type? type) => type?.IsClass == true && !type.IsAbstract && !type.IsInterface && !type.ContainsGenericParameters;
 
         /// <summary>
         /// Determines whether the specified property type is expando.
         /// </summary>
         /// <param name="type">Type of the property.</param>
         /// <returns><c>true</c> if the specified property type is expando; otherwise, <c>false</c>.</returns>
-        public static bool IsExpando(this Type? type)
-        {
-            return type?.IsAssignableTo(typeof(ExpandoObject)) == true;
-        }
+        public static bool IsExpando(this Type? type) => type?.IsAssignableTo(typeof(ExpandoObject)) == true;
 
         /// <summary>
         /// Determines whether [is interface type] [the specified property type].
@@ -193,10 +185,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         /// <returns>
         /// <c>true</c> if [is interface type] [the specified property type]; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsInterfaceType(this Type? type)
-        {
-            return type?.IsInterface == true && !type.ContainsGenericParameters;
-        }
+        public static bool IsInterfaceType(this Type? type) => type?.IsInterface == true && !type.ContainsGenericParameters;
 
         /// <summary>
         /// Determines whether [is list type] [the specified property type].
@@ -209,7 +198,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         {
             if (type is null)
                 return false;
-            var ElementType = type.GetIEnumerableElementType();
+            Type ElementType = type.GetIEnumerableElementType();
             return ElementType != type && !ElementType.ContainsGenericParameters;
         }
 
@@ -218,10 +207,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns><c>true</c> if the specified property is nullable; otherwise, <c>false</c>.</returns>
-        public static bool IsNullable(this Type? type)
-        {
-            return type is not null && (!type.IsValueType || Nullable.GetUnderlyingType(type) is not null);
-        }
+        public static bool IsNullable(this Type? type) => type is not null && (!type.IsValueType || Nullable.GetUnderlyingType(type) is not null);
 
         /// <summary>
         /// Determines whether [is type valid for graph] [the specified type].

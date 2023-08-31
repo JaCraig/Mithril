@@ -26,9 +26,6 @@ namespace Mithril.Themes.Commands
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <returns>The result from processing the event.</returns>
-        protected override EventResult Handle(ThemeChangedEvent arg)
-        {
-            return new EventResult(arg, EventStateTypes.Completed, this);
-        }
+        protected override EventResult Handle(ThemeChangedEvent arg) => new(arg, EventStateTypes.Completed, this);
     }
 }

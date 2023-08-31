@@ -35,10 +35,7 @@ namespace Mithril.Themes.Services
         /// <param name="tagOrder">The tag order.</param>
         /// <param name="location">The location.</param>
         /// <returns>True if it is successfully added, false otherwise.</returns>
-        public bool AddLinkResource(string? href, string? rel, string? type, string? crossOrigin, string? hreflang, string? media, string? sizes, string? charset, string? rev, string? target, int tagOrder, string? location)
-        {
-            return AddResource(ResourceType.CSS, new LinkResource(href, charset, crossOrigin, hreflang, media, rel, rev, sizes, target, type, tagOrder, location));
-        }
+        public bool AddLinkResource(string? href, string? rel, string? type, string? crossOrigin, string? hreflang, string? media, string? sizes, string? charset, string? rev, string? target, int tagOrder, string? location) => AddResource(ResourceType.CSS, new LinkResource(href, charset, crossOrigin, hreflang, media, rel, rev, sizes, target, type, tagOrder, location));
 
         /// <summary>
         /// Adds the meta resource.
@@ -51,10 +48,7 @@ namespace Mithril.Themes.Services
         /// <param name="property">The property.</param>
         /// <param name="tagOrder">The tag order.</param>
         /// <returns>True if it is successfully added, false otherwise.</returns>
-        public bool AddMetaResource(string? name, string? scheme, string? httpEquiv, string? content, string? charset, string? property, int tagOrder)
-        {
-            return AddResource(ResourceType.Meta, new MetaResource(name, scheme, httpEquiv, content, charset, property, tagOrder));
-        }
+        public bool AddMetaResource(string? name, string? scheme, string? httpEquiv, string? content, string? charset, string? property, int tagOrder) => AddResource(ResourceType.Meta, new MetaResource(name, scheme, httpEquiv, content, charset, property, tagOrder));
 
         /// <summary>
         /// Adds the resource.
@@ -90,10 +84,7 @@ namespace Mithril.Themes.Services
         /// <returns>
         /// True if it is successfully added, false otherwise.
         /// </returns>
-        public bool AddScriptContentResource(string? content, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location, string? integrity, string? crossOrigin, string? referrerPolicy)
-        {
-            return AddResource(ResourceType.JavaScript, new ScriptContentResource(content, async, charset, defer, type, xMLSpace, tagOrder, location, integrity, crossOrigin, referrerPolicy));
-        }
+        public bool AddScriptContentResource(string? content, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location, string? integrity, string? crossOrigin, string? referrerPolicy) => AddResource(ResourceType.JavaScript, new ScriptContentResource(content, async, charset, defer, type, xMLSpace, tagOrder, location, integrity, crossOrigin, referrerPolicy));
 
         /// <summary>
         /// Adds the script file resource.
@@ -112,10 +103,7 @@ namespace Mithril.Themes.Services
         /// <returns>
         /// True if it is successfully added, false otherwise.
         /// </returns>
-        public bool AddScriptFileResource(string? file, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location, string? integrity, string? crossOrigin, string? referrerPolicy)
-        {
-            return AddResource(ResourceType.JavaScript, new ScriptFileResource(file, async, charset, defer, type, xMLSpace, tagOrder, location, integrity, crossOrigin, referrerPolicy));
-        }
+        public bool AddScriptFileResource(string? file, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location, string? integrity, string? crossOrigin, string? referrerPolicy) => AddResource(ResourceType.JavaScript, new ScriptFileResource(file, async, charset, defer, type, xMLSpace, tagOrder, location, integrity, crossOrigin, referrerPolicy));
 
         /// <summary>
         /// Adds the style resource.
@@ -126,20 +114,14 @@ namespace Mithril.Themes.Services
         /// <param name="tagOrder">The tag order.</param>
         /// <param name="location"></param>
         /// <returns>True if it is successfully added, false otherwise.</returns>
-        public bool AddStyleResource(string? content, string? media, string? type, int tagOrder, string? location)
-        {
-            return AddResource(ResourceType.CSS, new StyleResource(content, media, type, tagOrder, location));
-        }
+        public bool AddStyleResource(string? content, string? media, string? type, int tagOrder, string? location) => AddResource(ResourceType.CSS, new StyleResource(content, media, type, tagOrder, location));
 
         /// <summary>
         /// Nexts the order value.
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>The next order value</returns>
-        public int NextOrderValue(ResourceType type)
-        {
-            return Resources.ContainsKey(type) ? Resources[type].Count() : 0;
-        }
+        public int NextOrderValue(ResourceType type) => Resources.ContainsKey(type) ? Resources[type].Count() : 0;
 
         /// <summary>
         /// Renders the specified type.
@@ -151,12 +133,12 @@ namespace Mithril.Themes.Services
         {
             location ??= "";
             var Result = new HtmlContentBuilder();
-            Result.AppendHtml(Environment.NewLine);
-            foreach (var Resource in Resources[type]
+            _ = Result.AppendHtml(Environment.NewLine);
+            foreach (IResource? Resource in Resources[type]
                 .Where(x => string.IsNullOrEmpty(location) || string.Equals(x.Location, location, StringComparison.OrdinalIgnoreCase))
                 .OrderBy(x => x.Order))
             {
-                Result.AppendHtml(Resource.GetHtmlContent());
+                _ = Result.AppendHtml(Resource.GetHtmlContent());
             }
             return Result;
         }

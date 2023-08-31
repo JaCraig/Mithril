@@ -25,7 +25,7 @@ namespace Mithril.Admin.Services.MetadataBuilders
         {
             if (propertyMetadata?.Property.HasAttribute<UploadAttribute>() != true)
                 return propertyMetadata;
-            var UploadAttribute = propertyMetadata.Property?.Attribute<UploadAttribute>();
+            UploadAttribute? UploadAttribute = propertyMetadata.Property?.Attribute<UploadAttribute>();
             propertyMetadata.PropertyType = "upload";
             propertyMetadata.Metadata["multiple"] = UploadAttribute?.AllowMultiple ?? false;
             propertyMetadata.Metadata["accept"] = UploadAttribute?.Accept ?? "";

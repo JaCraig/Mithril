@@ -30,15 +30,9 @@ namespace Mithril.API.Commands.Tests.Services
         {
         }
 
-        public override ValueTask<CommandCreationResult?> CreateAsync(TestCommandVM? value, ClaimsPrincipal user)
-        {
-            return ValueTask.FromResult<CommandCreationResult?>(new CommandCreationResult(new TestCommand()));
-        }
+        public override ValueTask<CommandCreationResult?> CreateAsync(TestCommandVM? value, ClaimsPrincipal user) => ValueTask.FromResult<CommandCreationResult?>(new CommandCreationResult(new TestCommand()));
 
-        protected override Task<IEvent[]> HandleCommandAsync(TestCommand?[]? args)
-        {
-            return Task.FromResult(Array.Empty<IEvent>());
-        }
+        protected override Task<IEvent[]> HandleCommandAsync(TestCommand?[]? args) => Task.FromResult(Array.Empty<IEvent>());
     }
 
     internal class TestCommandVM

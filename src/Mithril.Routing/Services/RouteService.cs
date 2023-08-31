@@ -34,7 +34,7 @@ namespace Mithril.Routing.Services
         /// <returns>This.</returns>
         public async Task<IRouteService> AddRouteAsync(string inputPath, string outputPath)
         {
-            await RouteEntry.LoadOrCreateAsync(inputPath, outputPath, DataService, null).ConfigureAwait(false);
+            _ = await RouteEntry.LoadOrCreateAsync(inputPath, outputPath, DataService, null).ConfigureAwait(false);
             return this;
         }
 
@@ -43,9 +43,6 @@ namespace Mithril.Routing.Services
         /// </summary>
         /// <param name="inputPath">The input path.</param>
         /// <returns>The route specified.</returns>
-        public IRoute? GetRoute(string? inputPath)
-        {
-            return RouteEntry.Load(inputPath, DataService);
-        }
+        public IRoute? GetRoute(string? inputPath) => RouteEntry.Load(inputPath, DataService);
     }
 }

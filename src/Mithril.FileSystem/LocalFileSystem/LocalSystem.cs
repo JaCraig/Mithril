@@ -48,12 +48,10 @@ namespace Mithril.FileSystem.LocalFileSystem
         /// <param name="path">Path to the directory</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The directory object</returns>
-        public override IDirectory Directory(string? path, Credentials? credentials = null)
+        public override IDirectory? Directory(string? path, Credentials? credentials = null)
         {
             path = AbsolutePath(path);
-            if (string.IsNullOrEmpty(path))
-                return null!;
-            return new FileCurator.DirectoryInfo(path, credentials);
+            return string.IsNullOrEmpty(path) ? null : (IDirectory)new FileCurator.DirectoryInfo(path, credentials);
         }
 
         /// <summary>
@@ -62,12 +60,10 @@ namespace Mithril.FileSystem.LocalFileSystem
         /// <param name="path">Path to the file</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The file object</returns>
-        public override IFile File(string? path, Credentials? credentials = null)
+        public override IFile? File(string? path, Credentials? credentials = null)
         {
             path = AbsolutePath(path);
-            if (string.IsNullOrEmpty(path))
-                return null!;
-            return new FileCurator.FileInfo(path, credentials);
+            return string.IsNullOrEmpty(path) ? null : (IFile)new FileCurator.FileInfo(path, credentials);
         }
 
         /// <summary>
@@ -75,10 +71,7 @@ namespace Mithril.FileSystem.LocalFileSystem
         /// </summary>
         /// <param name="path">Path to convert to absolute</param>
         /// <returns>The absolute path of the path passed in</returns>
-        protected override string AbsolutePath(string? path)
-        {
-            return path?.Replace("mithril://", ContentRootPath + "/wwwroot/", StringComparison.OrdinalIgnoreCase).Replace("..", "") ?? "";
-        }
+        protected override string AbsolutePath(string? path) => path?.Replace("mithril://", ContentRootPath + "/wwwroot/", StringComparison.OrdinalIgnoreCase).Replace("..", "") ?? "";
 
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.

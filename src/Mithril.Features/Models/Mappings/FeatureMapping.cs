@@ -14,9 +14,9 @@ namespace Mithril.Features.Models.Mappings
         /// </summary>
         public FeatureMapping()
         {
-            Reference(x => x.Category);
-            Reference(x => x.Description);
-            Reference(x => x.Name);
+            _ = Reference(x => x.Category);
+            _ = Reference(x => x.Description);
+            _ = Reference(x => x.Name);
         }
     }
 }

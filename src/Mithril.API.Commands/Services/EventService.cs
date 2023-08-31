@@ -83,9 +83,9 @@ namespace Mithril.API.Commands.Services
         {
             if (!EventHandlers.Any())
                 return;
-            int RunTime = Configuration?.MaxEventProcessTime ?? 40000;
-            int BatchSize = Configuration?.EventBatchSize ?? 40;
-            int Count = 0;
+            var RunTime = Configuration?.MaxEventProcessTime ?? 40000;
+            var BatchSize = Configuration?.EventBatchSize ?? 40;
+            var Count = 0;
             Logger?.LogInformation("Processing Events for {RunTime} ms", RunTime);
             Stopwatch.Restart();
             Count = 0;
@@ -97,7 +97,7 @@ namespace Mithril.API.Commands.Services
                 if (Events.Length == 0)
                     break;
                 var Results = new List<EventResult>();
-                foreach (var Event in Events)
+                foreach (IEvent Event in Events)
                 {
                     Results.AddRange(EventHandlers.Where(x => x.Accepts(Event)).ForEachParallel(x => x.Handle(Event)));
                     SetEventState(Results, Event);
@@ -105,8 +105,8 @@ namespace Mithril.API.Commands.Services
                 }
                 if (DataService is not null)
                 {
-                    Events.ForEach(x => x.SetupObject(DataService, SecurityService?.LoadSystemAccount()));
-                    await DataService.SaveAsync(null, Events).ConfigureAwait(false);
+                    _ = Events.ForEach(x => x.SetupObject(DataService, SecurityService?.LoadSystemAccount()));
+                    _ = await DataService.SaveAsync(null, Events).ConfigureAwait(false);
                 }
                 Logger?.LogInformation("Processed {Count} events.", Count);
             }
@@ -170,7 +170,7 @@ namespace Mithril.API.Commands.Services
         {
             if (Event is null || Results.Count == 0)
                 return;
-            foreach (var Result in Results.Where(Result => Result.Exception is not null))
+            foreach (EventResult? Result in Results.Where(Result => Result.Exception is not null))
             {
                 Logger?.LogError(Result.Exception, "Error when processing event {EventID} of type {EventName} by {EventHandlerName}.", Event.ID, Event.Name, Result.EventHandler.Name);
             }

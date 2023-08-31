@@ -1,5 +1,6 @@
 ﻿using Mithril.Tests.Helpers;
 using Mithril.Themes.Admin.DropDowns;
+using Xunit;
 
 namespace Mithril.Themes.Tests.Admin.DropDowns
 {
@@ -15,6 +16,15 @@ namespace Mithril.Themes.Tests.Admin.DropDowns
         public ThemeListTests()
         {
             TestObject = new ThemeList();
+        }
+
+        /// <summary>
+        /// ThemeList constructor.
+        /// </summary>
+        [Fact]
+        public void ThemeList_Constructor()
+        {
+            Assert.NotNull(new ThemeList());
         }
     }
 }

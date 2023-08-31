@@ -55,7 +55,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
                     if (_NameMapping is not null)
                         return _NameMapping;
                     _NameMapping = new Dictionary<string, TClass>();
-                    typeof(TClass).GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+                    _ = typeof(TClass).GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
                         .Where(x => x.PropertyType == typeof(TClass))
                         .Select(x => x.GetValue(null) as TClass)
                         .Where(x => x is not null)
@@ -77,7 +77,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
             if (string.IsNullOrEmpty(name))
                 return null;
             var KeyName = name.ToUpper(CultureInfo.InvariantCulture).Replace("-", "", StringComparison.OrdinalIgnoreCase);
-            return NameMapping.ContainsKey(KeyName) ? NameMapping[KeyName] : new TClass() { Name = name };
+            return NameMapping.TryGetValue(KeyName, out TClass? ReturnValue) ? ReturnValue : new TClass() { Name = name };
         }
 
         /// <summary>

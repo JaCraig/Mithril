@@ -34,10 +34,7 @@ namespace Mithril.Apm.Default
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
         /// <returns>Application builder</returns>
-        public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
-        {
-            return app?.UseMiddleware<ApmMiddleware>();
-        }
+        public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment) => app?.UseMiddleware<ApmMiddleware>();
 
         /// <summary>
         /// Configures the services for the module.
@@ -48,15 +45,15 @@ namespace Mithril.Apm.Default
         /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            if (services is null || configuration is null)
-                return services;
-            return services.Configure<APMOptions>(configuration.GetSection("Mithril:APM"))
+            return services is null || configuration is null
+                ? services
+                : (services.Configure<APMOptions>(configuration.GetSection("Mithril:APM"))
                            ?.AddAllSingleton<IMetricsCollector>()
                            ?.AddAllSingleton<IMetaDataCollector>()
                            ?.AddSingleton<IMetricsCollectorService, MetricsCollectorService>()
                            ?.AddAllSingleton<IMetricsReporter>()
                            ?.AddAllSingleton<IEventListener>()
-                           ?.AddScoped<ApmMiddleware>();
+                           ?.AddScoped<ApmMiddleware>());
         }
 
         /// <summary>
@@ -67,9 +64,6 @@ namespace Mithril.Apm.Default
         /// <returns>
         /// The async task.
         /// </returns>
-        public override Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)
-        {
-            return dataService?.QueryDynamicAsync("DELETE FROM [RequestMetaData_];DELETE FROM [RequestMetric_];DELETE FROM [RequestTrace_];", CommandType.Text, "Default") ?? Task.CompletedTask;
-        }
+        public override Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services) => dataService?.QueryDynamicAsync("DELETE FROM [RequestMetaData_];DELETE FROM [RequestMetric_];DELETE FROM [RequestTrace_];", CommandType.Text, "Default") ?? Task.CompletedTask;
     }
 }

@@ -15,9 +15,9 @@ namespace Mithril.Admin.Abstractions.Mappings
         /// </summary>
         public ModelSavedEventMapping()
         {
-            Reference(x => x.Data);
-            Reference(x => x.EntityID);
-            Reference(x => x.EntityType);
+            _ = Reference(x => x.Data);
+            _ = Reference(x => x.EntityID);
+            _ = Reference(x => x.EntityType);
         }
     }
 }

@@ -17,9 +17,6 @@ namespace Mithril.Themes.Admin.DropDowns
         /// <returns>
         /// The filtered query
         /// </returns>
-        protected override IQueryable<Theme> FilterQuery(IQueryable<Theme> query, string value)
-        {
-            return query.Where(x => x.Name.StartsWith(value));
-        }
+        protected override IQueryable<Theme> FilterQuery(IQueryable<Theme> query, string value) => query.Where(x => x.Name.StartsWith(value));
     }
 }

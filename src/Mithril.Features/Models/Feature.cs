@@ -70,10 +70,7 @@ namespace Mithril.Features.Models
         /// <param name="name">The name.</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>The feature specified.</returns>
-        public static Feature? Load(string name, IDataService? dataService)
-        {
-            return Query(dataService)?.Where(x => x.Name == name).FirstOrDefault();
-        }
+        public static Feature? Load(string name, IDataService? dataService) => Query(dataService)?.Where(x => x.Name == name).FirstOrDefault();
 
         /// <summary>
         /// Loads a specific feature or creates it.
@@ -85,12 +82,12 @@ namespace Mithril.Features.Models
         /// <returns>The feature specified.</returns>
         public static async Task<Feature> LoadOrCreateAsync(string name, string category, IDataService? dataService, ClaimsPrincipal? user)
         {
-            var ReturnValue = Load(name, dataService);
+            Feature? ReturnValue = Load(name, dataService);
             if (ReturnValue is null)
             {
                 ReturnValue = new Feature(name, category);
                 if (dataService is not null)
-                    await dataService.SaveAsync(user, ReturnValue).ConfigureAwait(false);
+                    _ = await dataService.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }
@@ -101,10 +98,7 @@ namespace Mithril.Features.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(Feature left, Feature right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(Feature left, Feature right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -112,10 +106,7 @@ namespace Mithril.Features.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(Feature left, Feature right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(Feature left, Feature right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -123,10 +114,7 @@ namespace Mithril.Features.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(Feature left, Feature right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(Feature left, Feature right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -148,10 +136,7 @@ namespace Mithril.Features.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(Feature left, Feature right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(Feature left, Feature right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -159,20 +144,14 @@ namespace Mithril.Features.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(Feature left, Feature right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(Feature left, Feature right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public override int CompareTo(Feature? other)
-        {
-            return base.CompareTo(other);
-        }
+        public override int CompareTo(Feature? other) => base.CompareTo(other);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -181,10 +160,7 @@ namespace Mithril.Features.Models
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return base.Equals(obj);
-        }
+        public override bool Equals(object? obj) => base.Equals(obj);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -194,10 +170,7 @@ namespace Mithril.Features.Models
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(Feature other)
-        {
-            return base.Equals(other);
-        }
+        public bool Equals(Feature other) => base.Equals(other);
 
         /// <summary>
         /// Returns a hash code for this instance.
@@ -206,9 +179,6 @@ namespace Mithril.Features.Models
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => base.GetHashCode();
     }
 }

@@ -98,9 +98,6 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// Determines whether the associated features are enabled.
         /// </summary>
         /// <returns><c>true</c> if all features are enabled; otherwise, <c>false</c>.</returns>
-        protected bool IsFeatureEnabled()
-        {
-            return FeatureManager.AreFeaturesEnabled(Features);
-        }
+        protected bool IsFeatureEnabled() => FeatureManager.AreFeaturesEnabled(Features);
     }
 }

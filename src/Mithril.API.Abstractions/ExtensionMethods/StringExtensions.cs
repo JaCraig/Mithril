@@ -1,4 +1,6 @@
-﻿namespace Mithril.API.Abstractions.ExtensionMethods
+﻿using System.Text.RegularExpressions;
+
+namespace Mithril.API.Abstractions.ExtensionMethods
 {
     /// <summary>
     /// String extensions
@@ -6,15 +8,15 @@
     public static class StringExtensions
     {
         /// <summary>
+        /// The camel case regex
+        /// </summary>
+        private static readonly Regex _CamelCaseRegex = new("([A-Z])", RegexOptions.Compiled);
+
+        /// <summary>
         /// Splits the camel case.
         /// </summary>
         /// <param name="input">The input.</param>
-        /// <returns></returns>
-        public static string SplitCamelCase(this string? input)
-        {
-            if (string.IsNullOrWhiteSpace(input))
-                return "";
-            return System.Text.RegularExpressions.Regex.Replace(input, "([A-Z])", " $1", System.Text.RegularExpressions.RegexOptions.Compiled).Trim();
-        }
+        /// <returns>The split camel case string</returns>
+        public static string SplitCamelCase(this string? input) => string.IsNullOrWhiteSpace(input) ? "" : _CamelCaseRegex.Replace(input, " $1").Trim();
     }
 }

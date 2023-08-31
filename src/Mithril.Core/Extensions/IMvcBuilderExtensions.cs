@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Mithril.Core.Extensions
 {
     /// <summary>
     /// IMvcBuilder extensions

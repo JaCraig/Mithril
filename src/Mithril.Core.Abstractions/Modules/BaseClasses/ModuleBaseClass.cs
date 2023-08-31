@@ -108,10 +108,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <param name="class1">The class1.</param>
         /// <param name="class2">The class2.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(ModuleBaseClass<TModule>? class1, ModuleBaseClass<TModule>? class2)
-        {
-            return !(class1 == class2);
-        }
+        public static bool operator !=(ModuleBaseClass<TModule>? class1, ModuleBaseClass<TModule>? class2) => !(class1 == class2);
 
         /// <summary>
         /// Implements the operator ==.
@@ -119,10 +116,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// <param name="class1">The class1.</param>
         /// <param name="class2">The class2.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator ==(ModuleBaseClass<TModule>? class1, ModuleBaseClass<TModule>? class2)
-        {
-            return EqualityComparer<ModuleBaseClass<TModule>>.Default.Equals(class1, class2);
-        }
+        public static bool operator ==(ModuleBaseClass<TModule>? class1, ModuleBaseClass<TModule>? class2) => EqualityComparer<ModuleBaseClass<TModule>>.Default.Equals(class1, class2);
 
         /// <summary>
         /// Configures the application.

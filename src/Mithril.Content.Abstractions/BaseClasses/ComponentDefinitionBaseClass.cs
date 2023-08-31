@@ -95,21 +95,13 @@ namespace Mithril.Content.Abstractions.BaseClasses
         /// </summary>
         /// <param name="name">The name.</param>
         /// <returns>The fixed name</returns>
-        private static string FixName(string? name)
-        {
-            if (string.IsNullOrEmpty(name))
-                return "";
-            return SplitCamelCase(name.Split("`").FirstOrDefault()).ToLower(CultureInfo.InvariantCulture);
-        }
+        private static string FixName(string? name) => string.IsNullOrEmpty(name) ? "" : SplitCamelCase(name.Split("`").FirstOrDefault()).ToLower(CultureInfo.InvariantCulture);
 
         /// <summary>
         /// Splits the camel case.
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>Splits the camel case names</returns>
-        private static string SplitCamelCase(string? input)
-        {
-            return input.AddSpaces().Replace(" ", "-", StringComparison.Ordinal);
-        }
+        private static string SplitCamelCase(string? input) => input.AddSpaces().Replace(" ", "-", StringComparison.Ordinal);
     }
 }

@@ -31,10 +31,7 @@ namespace Mithril.Logging.Serilog
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
         /// <returns>Application builder</returns>
-        public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
-        {
-            return app?.UseMiddleware<LoggingMiddleware>();
-        }
+        public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment) => app?.UseMiddleware<LoggingMiddleware>();
 
         /// <summary>
         /// Configures the host settings.
@@ -43,10 +40,7 @@ namespace Mithril.Logging.Serilog
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
         /// <returns>Host builder</returns>
-        public override IHostBuilder? ConfigureHostSettings(IHostBuilder? host, IConfiguration? configuration, IHostEnvironment? environment)
-        {
-            return host?.UseSerilog();
-        }
+        public override IHostBuilder? ConfigureHostSettings(IHostBuilder? host, IConfiguration? configuration, IHostEnvironment? environment) => host?.UseSerilog();
 
         /// <summary>
         /// Configures the logging settings.
@@ -55,10 +49,7 @@ namespace Mithril.Logging.Serilog
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
         /// <returns>Logging builder</returns>
-        public override ILoggingBuilder? ConfigureLoggingSettings(ILoggingBuilder? logging, IConfiguration? configuration, IHostEnvironment? environment)
-        {
-            return logging?.AddSerilog();
-        }
+        public override ILoggingBuilder? ConfigureLoggingSettings(ILoggingBuilder? logging, IConfiguration? configuration, IHostEnvironment? environment) => logging?.AddSerilog();
 
         /// <summary>
         /// Configures the services for the module.
@@ -69,11 +60,11 @@ namespace Mithril.Logging.Serilog
         /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            string RootPath = environment?.ContentRootPath ?? ".";
+            var RootPath = environment?.ContentRootPath ?? ".";
             var Assembly = System.Reflection.Assembly.GetEntryAssembly();
             var AssemblyName = Assembly?.GetName().Name ?? "";
-            var SerilogConfig = configuration?.GetSection("Serilog");
-            if (SerilogConfig?.Exists() == true)
+            IConfigurationSection? SerilogConfig = configuration?.GetSection("Serilog");
+            if (SerilogConfig?.Exists() == true && configuration is not null)
             {
                 try
                 {

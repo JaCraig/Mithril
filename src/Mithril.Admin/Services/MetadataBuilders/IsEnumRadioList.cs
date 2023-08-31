@@ -46,7 +46,7 @@ namespace Mithril.Admin.Services.MetadataBuilders
                     continue;
                 var EnumName = Enum.GetName(property.PropertyType, Item);
 
-                ReturnValues.AddIfUnique(new Option { Key = (int)Item, Value = EnumName?.AddSpaces() ?? "" });
+                _ = ReturnValues.AddIfUnique(new Option { Key = (int)Item, Value = EnumName?.AddSpaces() ?? "" });
             }
             return ReturnValues;
         }

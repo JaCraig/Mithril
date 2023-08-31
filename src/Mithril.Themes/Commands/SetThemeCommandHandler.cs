@@ -95,15 +95,15 @@ namespace Mithril.Themes.Commands
         {
             if (args is null || Logger is null || ThemeService is null)
                 return Array.Empty<IEvent>();
-            List<IEvent> ReturnValues = new List<IEvent>();
+            var ReturnValues = new List<IEvent>();
             for (var x = 0; x < args.Length; ++x)
             {
-                var arg = args[x];
+                SetThemeCommand? arg = args[x];
                 if (arg is null || string.IsNullOrEmpty(arg.ThemeName))
                     continue;
-                if (!Themes.TryGetValue(arg.ThemeName, out var theme) || theme is null)
+                if (!Themes.TryGetValue(arg.ThemeName, out ITheme? theme) || theme is null)
                     continue;
-                var CurrentDefaultTheme = ThemeService.LoadTheme();
+                ITheme? CurrentDefaultTheme = ThemeService.LoadTheme();
                 var CurrentDefaultThemeModel = Theme.Load(CurrentDefaultTheme?.Name ?? "Default", DataService);
                 var TempTheme = Theme.Load(theme.Name, DataService);
                 if (TempTheme is null)

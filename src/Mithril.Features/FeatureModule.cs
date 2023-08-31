@@ -39,8 +39,8 @@ namespace Mithril.Features
         /// <returns>Services</returns>
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            services?.AddFeatureManagement()
-                .AddSessionManager<DatabaseSessionManager>();
+            _ = (services?.AddFeatureManagement()
+                .AddSessionManager<DatabaseSessionManager>());
             return services;
         }
 
@@ -53,13 +53,13 @@ namespace Mithril.Features
         {
             if (!services.Exists<IModule>())
                 return;
-            var Modules = services?.GetServices<IModule>();
+            IEnumerable<IModule>? Modules = services?.GetServices<IModule>();
             if (Modules is null)
                 return;
 
-            foreach (var Feature in Modules.SelectMany(x => x.Features).Distinct())
+            foreach (IFeature? Feature in Modules.SelectMany(x => x.Features).Distinct())
             {
-                var TempFeature = await Models.Feature.LoadOrCreateAsync(Feature.Name, Feature.Category, dataService, null).ConfigureAwait(false);
+                Models.Feature TempFeature = await Models.Feature.LoadOrCreateAsync(Feature.Name, Feature.Category, dataService, null).ConfigureAwait(false);
                 TempFeature.Category = Feature.Category;
                 TempFeature.Description = Feature.Description;
                 await TempFeature.SaveAsync(dataService, null).ConfigureAwait(false);

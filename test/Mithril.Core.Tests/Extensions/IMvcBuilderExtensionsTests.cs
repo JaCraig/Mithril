@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Mithril.Core.Extensions;
 using Mithril.Tests.Helpers;
 
 namespace Mithril.Core.Tests.Extensions
@@ -26,11 +27,11 @@ namespace Mithril.Core.Tests.Extensions
         public void AddCspMediaType_AddsCspMediaTypeToSupportedMediaTypes_WhenInputFormatterIsSystemTextJsonInputFormatter()
         {
             var Services = new ServiceCollection();
-            var MvcBuilder = Services.AddControllers(options => options.InputFormatters.Add(new SystemTextJsonInputFormatter(new JsonOptions(), null!)));
+            IMvcBuilder MvcBuilder = Services.AddControllers(options => options.InputFormatters.Add(new SystemTextJsonInputFormatter(new JsonOptions(), null!)));
 
-            MvcBuilder.AddCspMediaType();
+            _ = MvcBuilder.AddCspMediaType();
 
-            var ServiceProvider = MvcBuilder.Services.BuildServiceProvider();
+            ServiceProvider ServiceProvider = MvcBuilder.Services.BuildServiceProvider();
             var JsonInputFormatter = (SystemTextJsonInputFormatter?)ServiceProvider.GetRequiredService<IOptions<MvcOptions>>()?.Value.InputFormatters.FirstOrDefault(x => x is SystemTextJsonInputFormatter);
             Assert.Contains("application/csp-report", JsonInputFormatter?.SupportedMediaTypes ?? new MediaTypeCollection());
         }
@@ -43,11 +44,11 @@ namespace Mithril.Core.Tests.Extensions
         public void AddCspMediaType_DoesNotAddCspMediaTypeToSupportedMediaTypes_WhenInputFormatterIsNotSystemTextJsonInputFormatter()
         {
             var Services = new ServiceCollection();
-            var MvcBuilder = Services.AddControllers(options => options.InputFormatters.Clear());
+            IMvcBuilder MvcBuilder = Services.AddControllers(options => options.InputFormatters.Clear());
 
-            MvcBuilder.AddCspMediaType();
+            _ = MvcBuilder.AddCspMediaType();
 
-            var ServiceProvider = MvcBuilder.Services.BuildServiceProvider();
+            ServiceProvider ServiceProvider = MvcBuilder.Services.BuildServiceProvider();
             var JsonInputFormatter = (SystemTextJsonInputFormatter?)ServiceProvider.GetRequiredService<IOptions<MvcOptions>>()?.Value.InputFormatters.FirstOrDefault(x => x is SystemTextJsonInputFormatter);
             Assert.DoesNotContain("application/csp-report", JsonInputFormatter?.SupportedMediaTypes ?? new MediaTypeCollection());
         }
@@ -59,9 +60,9 @@ namespace Mithril.Core.Tests.Extensions
         public void AddCspMediaType_ReturnsTheIMvcBuilderInstance()
         {
             var Services = new ServiceCollection();
-            var MvcBuilder = Services.AddControllers(options => options.InputFormatters.Add(new SystemTextJsonInputFormatter(new JsonOptions(), null!)));
+            IMvcBuilder MvcBuilder = Services.AddControllers(options => options.InputFormatters.Add(new SystemTextJsonInputFormatter(new JsonOptions(), null!)));
 
-            var Result = MvcBuilder.AddCspMediaType();
+            IMvcBuilder? Result = MvcBuilder.AddCspMediaType();
 
             Assert.Same(MvcBuilder, Result);
         }

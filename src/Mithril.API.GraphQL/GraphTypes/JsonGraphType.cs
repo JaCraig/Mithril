@@ -24,7 +24,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// AST value node. Must not be <see langword="null"/>, but may be <see cref="T:GraphQLParser.AST.GraphQLNullValue"/>.
         /// </param>
         /// <returns></returns>
-        public override bool CanParseLiteral(GraphQLValue value) => value is GraphQLStringValue || value is GraphQLNullValue;
+        public override bool CanParseLiteral(GraphQLValue value) => value is GraphQLStringValue or GraphQLNullValue;
 
         /// <summary>
         /// Checks for value input coercion possibility. Argument values can not only provided via
@@ -39,7 +39,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// </summary>
         /// <param name="value">Runtime object from variables. May be <see langword="null"/>.</param>
         /// <returns></returns>
-        public override bool CanParseValue(object? value) => value is JsonDocument || value is string || value == null || value is IDictionary<string, object?>;
+        public override bool CanParseValue(object? value) => value is JsonDocument or string or null or IDictionary<string, object?>;
 
         /// <summary>
         /// Literal input coercion. It takes an abstract syntax tree (AST) element from a schema

@@ -10,17 +10,6 @@ using System.Diagnostics;
 namespace Mithril.Controllers
 {
     /// <summary>
-    /// Example feature flags controlled by config
-    /// </summary>
-    public enum MyFeatureFlags
-    {
-        /// <summary>
-        /// The example flag
-        /// </summary>
-        ExampleFlag
-    }
-
-    /// <summary>
     /// Home controller
     /// </summary>
     /// <seealso cref="Controller"/>
@@ -34,25 +23,25 @@ namespace Mithril.Controllers
         /// <param name="communicationService">The communication service.</param>
         public HomeController(ILogger<HomeController> logger, ISecurityService securityService, ICommunicationService communicationService)
         {
-            _logger = logger;
-            this.securityService = securityService;
-            this.communicationService = communicationService;
+            _Logger = logger;
+            _SecurityService = securityService;
+            _CommunicationService = communicationService;
         }
-
-        /// <summary>
-        /// The logger
-        /// </summary>
-        private readonly ILogger<HomeController> _logger;
 
         /// <summary>
         /// The communication service
         /// </summary>
-        private readonly ICommunicationService communicationService;
+        private readonly ICommunicationService _CommunicationService;
+
+        /// <summary>
+        /// The logger
+        /// </summary>
+        private readonly ILogger<HomeController> _Logger;
 
         /// <summary>
         /// The security service
         /// </summary>
-        private readonly ISecurityService securityService;
+        private readonly ISecurityService _SecurityService;
 
         /// <summary>
         /// Email test.
@@ -60,14 +49,14 @@ namespace Mithril.Controllers
         /// <returns></returns>
         public async Task<IActionResult> EmailTest()
         {
-            var Message = communicationService.CreateMessage("Email");
+            Communication.Abstractions.Interfaces.IMessage? Message = _CommunicationService.CreateMessage("Email");
             if (Message is null)
                 return RedirectToAction("Index");
             Message.Template = "Template1";
             Message.From = "ThatGuy";
             Message.To = "ThatOtherGuy";
             Message.Subject = "That Thing";
-            await communicationService.SendMessageAsync(Message, User).ConfigureAwait(false);
+            _ = await _CommunicationService.SendMessageAsync(Message, User).ConfigureAwait(false);
             return RedirectToAction("Index");
         }
 
@@ -84,7 +73,7 @@ namespace Mithril.Controllers
         /// <returns></returns>
         public IActionResult Index()
         {
-            ViewBag.UserName = securityService.LoadCurrentUser()?.FullName;
+            ViewBag.UserName = _SecurityService.LoadCurrentUser()?.FullName;
             return View();
         }
 
@@ -94,10 +83,7 @@ namespace Mithril.Controllers
         /// <param name="form">The form.</param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Index(IFormCollection form)
-        {
-            return RedirectToAction();
-        }
+        public IActionResult Index(IFormCollection form) => RedirectToAction();
 
         /// <summary>
         /// Privacies this instance.
@@ -107,5 +93,16 @@ namespace Mithril.Controllers
         [FeatureGate(MyFeatureFlags.ExampleFlag)]
         [IPFilter("AdminSection")]
         public IActionResult Privacy() => View();
+    }
+
+    /// <summary>
+    /// Example feature flags controlled by config
+    /// </summary>
+    public enum MyFeatureFlags
+    {
+        /// <summary>
+        /// The example flag
+        /// </summary>
+        ExampleFlag
     }
 }

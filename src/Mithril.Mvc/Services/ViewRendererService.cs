@@ -42,13 +42,28 @@ namespace Mithril.Mvc.Services
             IWebHostEnvironment? webHostEnvironment,
             ILogger<ViewRendererService>? logger)
         {
-            _viewEngine = viewEngine;
-            _tempDataProvider = tempDataProvider;
-            _serviceProvider = serviceProvider;
+            _ViewEngine = viewEngine;
+            _TempDataProvider = tempDataProvider;
+            _ServiceProvider = serviceProvider;
             PdfConverter = pdfConverter;
             WebHostEnvironment = webHostEnvironment;
             Logger = logger;
         }
+
+        /// <summary>
+        /// The service provider
+        /// </summary>
+        private readonly IServiceProvider? _ServiceProvider;
+
+        /// <summary>
+        /// The temporary data provider
+        /// </summary>
+        private readonly ITempDataProvider? _TempDataProvider;
+
+        /// <summary>
+        /// The view engine
+        /// </summary>
+        private readonly IRazorViewEngine? _ViewEngine;
 
         /// <summary>
         /// Gets the logger.
@@ -69,21 +84,6 @@ namespace Mithril.Mvc.Services
         public IWebHostEnvironment? WebHostEnvironment { get; }
 
         /// <summary>
-        /// The service provider
-        /// </summary>
-        private readonly IServiceProvider? _serviceProvider;
-
-        /// <summary>
-        /// The temporary data provider
-        /// </summary>
-        private readonly ITempDataProvider? _tempDataProvider;
-
-        /// <summary>
-        /// The view engine
-        /// </summary>
-        private readonly IRazorViewEngine? _viewEngine;
-
-        /// <summary>
         /// Renders the specified name.
         /// </summary>
         /// <typeparam name="TModel">The type of the model.</typeparam>
@@ -95,47 +95,45 @@ namespace Mithril.Mvc.Services
         /// <exception cref="InvalidOperationException">Couldn't find view '{name}'</exception>
         public async Task<byte[]> RenderAsync<TModel>(string? name, TModel model, RenderOptions? renderOptions = default, RenderFormat format = RenderFormat.HTML)
         {
-            if (string.IsNullOrEmpty(name) || _serviceProvider is null || _viewEngine is null || _tempDataProvider is null)
+            if (string.IsNullOrEmpty(name) || _ServiceProvider is null || _ViewEngine is null || _TempDataProvider is null)
                 return Array.Empty<byte>();
             renderOptions ??= new RenderOptions { Orientation = Orientation.Landscape };
-            using var Scope = _serviceProvider.CreateScope();
-            var actionContext = GetActionContext(Scope);
+            using IServiceScope Scope = _ServiceProvider.CreateScope();
+            ActionContext ActionContext = GetActionContext(Scope);
 
-            var viewEngineResult = _viewEngine.FindView(actionContext, name, false);
-            if (viewEngineResult?.Success != true)
+            Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult? ViewEngineResult = _ViewEngine.FindView(ActionContext, name, false);
+            if (ViewEngineResult?.Success != true)
             {
-                viewEngineResult = _viewEngine.GetView("~/Views/" + name + ".cshtml", "~/Views/" + name + ".cshtml", false);
+                ViewEngineResult = _ViewEngine.GetView("~/Views/" + name + ".cshtml", "~/Views/" + name + ".cshtml", false);
 
-                if (viewEngineResult?.Success != true)
+                if (ViewEngineResult?.Success != true)
                 {
                     throw new InvalidOperationException($"Couldn't find view '{name}'");
                 }
             }
 
-            var view = viewEngineResult.View;
-            if (view is null)
+            Microsoft.AspNetCore.Mvc.ViewEngines.IView? View = ViewEngineResult.View;
+            if (View is null)
                 return Array.Empty<byte>();
 
-            using var output = new StringWriter();
-            var viewContext = new ViewContext(
-                actionContext,
-                view,
+            using var Output = new StringWriter();
+            var ViewContext = new ViewContext(
+                ActionContext,
+                View,
                 new ViewDataDictionary<TModel>(
                     metadataProvider: new EmptyModelMetadataProvider(),
                     modelState: new ModelStateDictionary())
                 { Model = model },
                 new TempDataDictionary(
-                    actionContext.HttpContext,
-                    _tempDataProvider),
-                output,
+                    ActionContext.HttpContext,
+                    _TempDataProvider),
+                Output,
                 new HtmlHelperOptions());
 
-            await view.RenderAsync(viewContext).ConfigureAwait(false);
+            await View.RenderAsync(ViewContext).ConfigureAwait(false);
 
-            var ResultHTML = output.ToString();
-            if (format == RenderFormat.PDF)
-                return RenderPDF(ResultHTML, renderOptions);
-            return Encoding.UTF8.GetBytes(ResultHTML);
+            var ResultHTML = Output.ToString();
+            return format == RenderFormat.PDF ? RenderPDF(ResultHTML, renderOptions) : Encoding.UTF8.GetBytes(ResultHTML);
         }
 
         /// <summary>
@@ -144,11 +142,11 @@ namespace Mithril.Mvc.Services
         /// <returns></returns>
         private static ActionContext GetActionContext(IServiceScope serviceScope)
         {
-            var httpContext = new DefaultHttpContext
+            var HttpContext = new DefaultHttpContext
             {
                 RequestServices = serviceScope.ServiceProvider
             };
-            return new ActionContext(httpContext, new RouteData(), new ActionDescriptor());
+            return new ActionContext(HttpContext, new RouteData(), new ActionDescriptor());
         }
 
         /// <summary>
@@ -159,10 +157,10 @@ namespace Mithril.Mvc.Services
         /// <returns>The PDF's bytes</returns>
         private byte[] RenderPDF(string resultHTML, RenderOptions renderOptions)
         {
-            var TempOrientation = SimpleHtmlToPdf.Settings.Enums.Orientation.Landscape;
+            SimpleHtmlToPdf.Settings.Enums.Orientation TempOrientation = SimpleHtmlToPdf.Settings.Enums.Orientation.Landscape;
             if (renderOptions.Orientation == Orientation.Portrait)
                 TempOrientation = SimpleHtmlToPdf.Settings.Enums.Orientation.Portrait;
-            var doc = new HtmlToPdfDocument()
+            var Doc = new HtmlToPdfDocument()
             {
                 GlobalSettings = {
                     ColorMode = SimpleHtmlToPdf.Settings.Enums.ColorMode.Color,
@@ -178,7 +176,7 @@ namespace Mithril.Mvc.Services
                 }
             };
 
-            return PdfConverter?.Convert(doc) ?? Array.Empty<byte>();
+            return PdfConverter?.Convert(Doc) ?? Array.Empty<byte>();
         }
     }
 }

@@ -14,8 +14,8 @@ namespace Mithril.Logging.Models.Mappings
         /// </summary>
         public LogCommandMapping()
         {
-            Reference(x => x.LogLevel);
-            Reference(x => x.Message);
+            _ = Reference(x => x.LogLevel);
+            _ = Reference(x => x.Message);
         }
     }
 }

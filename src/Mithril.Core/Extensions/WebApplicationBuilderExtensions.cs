@@ -1,6 +1,6 @@
-﻿using Mithril.Core;
+﻿using Microsoft.AspNetCore.Builder;
 
-namespace Microsoft.AspNetCore.Builder
+namespace Mithril.Core.Extensions
 {
     /// <summary>
     /// Web application builder extensions
@@ -36,13 +36,13 @@ namespace Microsoft.AspNetCore.Builder
             MithrilApp.ConfigureLoggingSettings(webApplicationBuilder.Logging);
 
             // Configure MVC
-            MithrilApp.ConfigureMVC(webApplicationBuilder.Services);
+            _ = MithrilApp.ConfigureMVC(webApplicationBuilder.Services);
 
             // Configure services for mithril.
-            MithrilApp.ConfigureServices(webApplicationBuilder.Services);
+            _ = MithrilApp.ConfigureServices(webApplicationBuilder.Services);
 
             // Build the application object.
-            var Application = webApplicationBuilder.Build();
+            WebApplication Application = webApplicationBuilder.Build();
 
             // Initialize any module specific data.
             MithrilApp.InitializeData(Application.Services);

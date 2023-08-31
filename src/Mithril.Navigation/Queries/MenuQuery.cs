@@ -65,10 +65,10 @@ namespace Mithril.Navigation.Queries
         {
             if (user is null || arguments is null)
                 return Task.FromResult<MenuVM?>(null);
-            string MenuName = arguments.GetValue<string>("name") ?? "Default";
-            if (!user.TryGetTennant(out var Tennant))
-                return Task.FromResult<MenuVM?>(null);
-            return Task.FromResult<MenuVM?>(new MenuVM(LoadMenu(MenuName, Tennant), user));
+            var MenuName = arguments.GetValue<string>("name") ?? "Default";
+            return !user.TryGetTennant(out var Tennant)
+                ? Task.FromResult<MenuVM?>(null)
+                : Task.FromResult<MenuVM?>(new MenuVM(LoadMenu(MenuName, Tennant), user));
         }
 
         /// <summary>
@@ -77,9 +77,6 @@ namespace Mithril.Navigation.Queries
         /// <param name="displayName">The display name.</param>
         /// <param name="tennantID">The tennant identifier.</param>
         /// <returns>The Menu specified.</returns>
-        private Menu? LoadMenu(string displayName, long tennantID)
-        {
-            return Menu.Query(DataService)?.Where(x => x.TenantID == tennantID && x.Display == displayName).FirstOrDefault();
-        }
+        private Menu? LoadMenu(string displayName, long tennantID) => Menu.Query(DataService)?.Where(x => x.TenantID == tennantID && x.Display == displayName).FirstOrDefault();
     }
 }

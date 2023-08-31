@@ -19,7 +19,7 @@ namespace Mithril.Routing.Admin
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
         /// <param name="dataType">Type of the data.</param>
-        public RouteEditor(IDataService dataService, IEntityMetadataService entityMetadataService, string? dataType = null) : base(dataService, entityMetadataService, dataType)
+        public RouteEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null) : base(dataService, entityMetadataService, dataType)
         {
         }
 

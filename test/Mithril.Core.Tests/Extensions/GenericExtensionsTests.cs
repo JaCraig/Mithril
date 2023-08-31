@@ -23,7 +23,10 @@ namespace Mithril.Core.Tests.Extensions
         {
             var Obj = new object();
             const bool Predicate = false;
-            static object Method(object _) => new();
+            static object Method(object _)
+            {
+                return new();
+            }
 
             var Result = Obj.When(Predicate, Method);
 
@@ -38,7 +41,10 @@ namespace Mithril.Core.Tests.Extensions
         {
             var Obj = new object();
             const bool Predicate = true;
-            static object Method(object _) => new();
+            static object Method(object _)
+            {
+                return new();
+            }
 
             var Result = Obj.When(Predicate, Method);
 

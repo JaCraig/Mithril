@@ -47,9 +47,9 @@ namespace Mithril.API.Commands
         /// </returns>
         public override IMvcBuilder? ConfigureMVC(IMvcBuilder? mvcBuilder, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            if (mvcBuilder is null)
-                return mvcBuilder;
-            return mvcBuilder.AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+            return mvcBuilder is null
+                ? mvcBuilder
+                : mvcBuilder.AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
         }
 
         /// <summary>
@@ -64,14 +64,14 @@ namespace Mithril.API.Commands
             if (endpoints is null || Services is null)
                 return endpoints;
             MethodInfo? EndPointMethod = typeof(CommandEndpointBuilder).GetMethod(nameof(CommandEndpointBuilder.SetupEndPoint), BindingFlags.Static | BindingFlags.Public);
-            var TempProvider = endpoints.ServiceProvider;
-            var SystemConfig = configuration.GetConfig<APIOptions>("Mithril:API");
+            IServiceProvider TempProvider = endpoints.ServiceProvider;
+            APIOptions? SystemConfig = configuration.GetConfig<APIOptions>("Mithril:API");
             var CommandEndpoint = SystemConfig?.CommandEndpoint ?? "/api/command/";
-            foreach (var Versions in TempProvider.GetServices<ICommandHandler>().Where(x => x.GetType().GetCustomAttribute<ApiIgnoreAttribute>() is null).GroupBy(x => x.Version))
+            foreach (IGrouping<string?, ICommandHandler> Versions in TempProvider.GetServices<ICommandHandler>().Where(x => x.GetType().GetCustomAttribute<ApiIgnoreAttribute>() is null).GroupBy(x => x.Version))
             {
-                foreach (var Handler in Versions)
+                foreach (ICommandHandler? Handler in Versions)
                 {
-                    EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object?[] { endpoints, CommandEndpoint + Versions.Key + "/", Handler, configuration.GetSystemConfig(), SystemConfig });
+                    _ = (EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object?[] { endpoints, CommandEndpoint + Versions.Key + "/", Handler, configuration.GetSystemConfig(), SystemConfig }));
                 }
             }
             return endpoints;
@@ -88,11 +88,11 @@ namespace Mithril.API.Commands
         {
             Services = services?.AddSingleton<ICommandService, CommandService>()
                         .AddSingleton<IEventService, EventService>();
-            services?.AddAllTransient<IEventHandler>()
+            _ = (services?.AddAllTransient<IEventHandler>()
                 .AddAllTransient<IEvent>()
                 .AddAllTransient<ICommand>()
                 .AddAllTransient<ICommandHandler>()
-                ?.Configure<JsonOptions>(o => o.SerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+                ?.Configure<JsonOptions>(o => o.SerializerOptions.Converters.Add(new JsonStringEnumConverter())));
             return Services;
         }
     }

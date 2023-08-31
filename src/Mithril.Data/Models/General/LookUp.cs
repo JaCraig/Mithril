@@ -70,10 +70,7 @@ namespace Mithril.Data.Models.General
         /// <param name="type">The type.</param>
         /// <param name="context">The context.</param>
         /// <returns>The lookup specified.</returns>
-        public static ILookUp? Load(string displayName, LookUpTypeEnum type, IDataService? context)
-        {
-            return LookUpType.Load(type, context)?.LookUps.FirstOrDefault(x => x.DisplayName == displayName);
-        }
+        public static ILookUp? Load(string displayName, LookUpTypeEnum type, IDataService? context) => LookUpType.Load(type, context)?.LookUps.FirstOrDefault(x => x.DisplayName == displayName);
 
         /// <summary>
         /// Loads the LookUp based on the display name and look up type specified or creates it if
@@ -87,13 +84,13 @@ namespace Mithril.Data.Models.General
         /// <returns>LookUp associated with the display name</returns>
         public static async Task<ILookUp> LoadOrCreateAsync(string displayName, LookUpTypeEnum type, string icon, IDataService? dataService, ClaimsPrincipal? user)
         {
-            var Result = Load(displayName, type, dataService);
+            ILookUp? Result = Load(displayName, type, dataService);
             if (Result is null)
             {
-                var TempType = await LookUpType.LoadOrCreateAsync(type, "", dataService, user).ConfigureAwait(false);
+                LookUpType TempType = await LookUpType.LoadOrCreateAsync(type, "", dataService, user).ConfigureAwait(false);
                 Result = new LookUp(displayName, icon, TempType);
                 if (dataService is not null)
-                    await dataService.SaveAsync(user, Result).ConfigureAwait(false);
+                    _ = await dataService.SaveAsync(user, Result).ConfigureAwait(false);
             }
             return Result;
         }
@@ -104,10 +101,7 @@ namespace Mithril.Data.Models.General
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(LookUp? left, LookUp? right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(LookUp? left, LookUp? right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -115,10 +109,7 @@ namespace Mithril.Data.Models.General
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(LookUp? left, LookUp? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(LookUp? left, LookUp? right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -126,10 +117,7 @@ namespace Mithril.Data.Models.General
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(LookUp? left, LookUp? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(LookUp? left, LookUp? right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -151,10 +139,7 @@ namespace Mithril.Data.Models.General
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(LookUp? left, LookUp? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(LookUp? left, LookUp? right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -162,20 +147,14 @@ namespace Mithril.Data.Models.General
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(LookUp? left, LookUp? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(LookUp? left, LookUp? right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public override int CompareTo(LookUp? other)
-        {
-            return base.CompareTo(other);
-        }
+        public override int CompareTo(LookUp? other) => base.CompareTo(other);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -185,10 +164,7 @@ namespace Mithril.Data.Models.General
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(LookUp? other)
-        {
-            return base.Equals(other);
-        }
+        public bool Equals(LookUp? other) => base.Equals(other);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -197,10 +173,7 @@ namespace Mithril.Data.Models.General
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return base.Equals(obj);
-        }
+        public override bool Equals(object? obj) => base.Equals(obj);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -210,10 +183,7 @@ namespace Mithril.Data.Models.General
         /// <see langword="true"/> if the current object is equal to the <paramref name="other"/>
         /// parameter; otherwise, <see langword="false"/>.
         /// </returns>
-        public bool Equals(ILookUp? other)
-        {
-            return Equals(other as LookUp);
-        }
+        public bool Equals(ILookUp? other) => Equals(other as LookUp);
 
         /// <summary>
         /// Returns a hash code for this instance.
@@ -222,18 +192,12 @@ namespace Mithril.Data.Models.General
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => base.GetHashCode();
 
         /// <summary>
         /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
         /// <returns>A <see cref="string"/> that represents this instance.</returns>
-        public override string ToString()
-        {
-            return DisplayName ?? "";
-        }
+        public override string ToString() => DisplayName ?? "";
     }
 }

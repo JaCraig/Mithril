@@ -36,10 +36,8 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// <returns>The max value.</returns>
         private static decimal DetermineMaxValue(PropertyInfo? property)
         {
-            var MaxValueAttribute = property?.GetCustomAttribute<RangeAttribute>();
-            if (MaxValueAttribute is null)
-                return 100;
-            return (int)(MaxValueAttribute.Maximum ?? 100);
+            RangeAttribute? MaxValueAttribute = property?.GetCustomAttribute<RangeAttribute>();
+            return MaxValueAttribute is null ? 100 : (int)(MaxValueAttribute.Maximum ?? 100);
         }
     }
 }

@@ -28,9 +28,6 @@ namespace Mithril.Mvc
         /// <param name="configuration">The configuration.</param>
         /// <param name="environment">The environment.</param>
         /// <returns>Services</returns>
-        public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)
-        {
-            return services?.AddSingleton<IViewRendererService, ViewRendererService>();
-        }
+        public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment) => services?.AddSingleton<IViewRendererService, ViewRendererService>();
     }
 }

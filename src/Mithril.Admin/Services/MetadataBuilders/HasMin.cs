@@ -36,10 +36,8 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// <returns>The Min value.</returns>
         private static decimal DetermineMinValue(PropertyInfo? property)
         {
-            var MinValueAttribute = property?.GetCustomAttribute<RangeAttribute>();
-            if (MinValueAttribute is null)
-                return 100;
-            return (int)(MinValueAttribute.Minimum ?? 100);
+            RangeAttribute? MinValueAttribute = property?.GetCustomAttribute<RangeAttribute>();
+            return MinValueAttribute is null ? 100 : (int)(MinValueAttribute.Minimum ?? 100);
         }
     }
 }

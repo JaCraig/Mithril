@@ -2,7 +2,7 @@
 using Mithril.Data.Abstractions.Databases;
 using Mithril.Data.Abstractions.Interfaces;
 
-namespace Mithril.Data.Abstractions.Models.General.Mappings
+namespace Mithril.Data.Models.General.Mappings
 {
     /// <summary>
     /// ILookUpType mapping
@@ -16,9 +16,9 @@ namespace Mithril.Data.Abstractions.Models.General.Mappings
         public ILookUpTypeMapping()
             : base(merge: true)
         {
-            Reference(x => x.Description).WithDefaultValue(() => "");
-            Reference(x => x.DisplayName).WithDefaultValue(() => "").IsUnique();
-            ManyToOne(x => x.LookUps).CascadeChanges();
+            _ = Reference(x => x.Description).WithDefaultValue(() => "");
+            _ = Reference(x => x.DisplayName).WithDefaultValue(() => "").IsUnique();
+            _ = ManyToOne(x => x.LookUps).CascadeChanges();
         }
     }
 }

@@ -116,9 +116,6 @@ namespace Mithril.Data.Abstractions.Enums
         /// Gets the enum types.
         /// </summary>
         /// <returns>The various enum types.</returns>
-        public static IEnumerable<LookUpTypeEnum> GetLookUpTypes()
-        {
-            return NameMapping.Values;
-        }
+        public static IEnumerable<LookUpTypeEnum> GetLookUpTypes() => NameMapping.Values;
     }
 }

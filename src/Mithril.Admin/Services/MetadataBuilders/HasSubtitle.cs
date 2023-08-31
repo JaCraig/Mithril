@@ -37,10 +37,8 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// <returns>The Subtitle value if one exists.</returns>
         protected static string? DetermineSubtitle(PropertyInfo? property)
         {
-            var TempAttribute = property?.Attribute<SubtitleAttribute>();
-            if (TempAttribute is null)
-                return "";
-            return TempAttribute.Value;
+            SubtitleAttribute? TempAttribute = property?.Attribute<SubtitleAttribute>();
+            return TempAttribute is null ? "" : TempAttribute.Value;
         }
     }
 }

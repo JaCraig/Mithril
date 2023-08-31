@@ -55,7 +55,7 @@ namespace Mithril.Apm.Abstractions.BaseClasses
             {
                 for (var x = 0; x < Observers.Count; ++x)
                 {
-                    var Observer = Observers[x];
+                    IObserver<MetricsEntry> Observer = Observers[x];
                     Observer.OnNext(new MetricsEntry(this, traceId, metaData, entries));
                 }
             }
@@ -63,7 +63,7 @@ namespace Mithril.Apm.Abstractions.BaseClasses
             {
                 for (var x = 0; x < Observers.Count; ++x)
                 {
-                    var Observer = Observers[x];
+                    IObserver<MetricsEntry> Observer = Observers[x];
                     Observer.OnError(ex);
                 }
             }

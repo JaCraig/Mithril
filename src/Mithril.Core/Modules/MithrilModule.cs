@@ -115,8 +115,8 @@ namespace Mithril.Core.Modules
         {
             if (!(endpoints?.IsSetup() ?? false))
                 return endpoints;
-            endpoints?.MapAreaControllerRoute("Admin_Route", "Admin", "Admin/{controller}/{action}/{id?}");
-            endpoints?.MapDefaultControllerRoute();
+            _ = (endpoints?.MapAreaControllerRoute("Admin_Route", "Admin", "Admin/{controller}/{action}/{id?}"));
+            _ = (endpoints?.MapDefaultControllerRoute());
             return endpoints;
         }
 
@@ -134,10 +134,13 @@ namespace Mithril.Core.Modules
             //Static HTTP context accessor services
             services = services.AddStaticHttpContextAccessor();
 
+            if (services is null)
+                return services;
+
             if (configuration is null)
                 return services;
 
-            var Config = configuration.GetSystemConfig();
+            MithrilConfig? Config = configuration.GetSystemConfig();
 
             // Set up config.
             services = services.Configure<MithrilConfig>(configuration.GetSection("Mithril"));
@@ -167,12 +170,12 @@ namespace Mithril.Core.Modules
             if (!string.IsNullOrEmpty(Settings?.Security?.DefaultCorsPolicy))
             {
                 // Set up CORS
-                services.AddCors();
+                _ = services.AddCors();
             }
 
             // Set up IP filtering services.
-            services.AddSingleton<IIPFilterService, IPFilterService>();
-            services.AddOptions<IPFilterOptions>();
+            _ = services.AddSingleton<IIPFilterService, IPFilterService>();
+            _ = services.AddOptions<IPFilterOptions>();
 
             // Add mithril setup flag
             return services.AddSingleton<MithrilSetup>();
@@ -181,13 +184,13 @@ namespace Mithril.Core.Modules
         /// <summary>
         /// Setups the extension mappings.
         /// </summary>
-        /// <param name="Config">The configuration.</param>
+        /// <param name="config">The configuration.</param>
         /// <param name="provider">The provider.</param>
-        private static void SetupMimeTypes(MithrilConfig? Config, FileExtensionContentTypeProvider provider)
+        private static void SetupMimeTypes(MithrilConfig? config, FileExtensionContentTypeProvider provider)
         {
-            if (Config?.MimeTypes is null)
+            if (config?.MimeTypes is null)
                 return;
-            foreach (Mime Value in Config.MimeTypes)
+            foreach (Mime Value in config.MimeTypes)
             {
                 if (string.IsNullOrWhiteSpace(Value?.Extension) || string.IsNullOrWhiteSpace(Value?.MimeType))
                     continue;
@@ -203,23 +206,24 @@ namespace Mithril.Core.Modules
         /// <param name="environment">The environment.</param>
         private static IApplicationBuilder? SetupStaticFiles(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)
         {
-            if (app is null) return null;
+            if (app is null || environment is null)
+                return null;
 
             MithrilConfig? Config = configuration.GetSystemConfig();
 
-            var provider = new FileExtensionContentTypeProvider();
-            SetupMimeTypes(Config, provider);
+            var Provider = new FileExtensionContentTypeProvider();
+            SetupMimeTypes(Config, Provider);
             if (environment.IsDevelopment())
             {
                 return app.UseStaticFiles(new StaticFileOptions
                 {
-                    ContentTypeProvider = provider,
+                    ContentTypeProvider = Provider,
                 });
             }
             var MaxAge = Config?.StaticFiles?.CacheControlMaxAge <= 0 ? 31557600 : Config?.StaticFiles?.CacheControlMaxAge;
             return app.UseStaticFiles(new StaticFileOptions
             {
-                ContentTypeProvider = provider,
+                ContentTypeProvider = Provider,
                 OnPrepareResponse = ctx => ctx.Context.Response.Headers[HeaderNames.CacheControl] = "public,max-age=" + MaxAge
             });
         }

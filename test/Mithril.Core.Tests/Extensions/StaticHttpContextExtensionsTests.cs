@@ -24,7 +24,7 @@ namespace Mithril.Core.Tests.Extensions
         public void When_AddStaticHttpContextAccessor_ReturnsNotNullFromServices()
         {
             var Services = new ServiceCollection();
-            Services.AddStaticHttpContextAccessor();
+            _ = Services.AddStaticHttpContextAccessor();
             ServiceProvider ServiceProvider = Services.BuildServiceProvider();
             IHttpContextAccessor HttpContextAccessor = ServiceProvider.GetRequiredService<IHttpContextAccessor>();
             Assert.NotNull(HttpContextAccessor);

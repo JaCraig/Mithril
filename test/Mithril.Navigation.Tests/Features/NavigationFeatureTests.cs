@@ -1,7 +1,7 @@
 ﻿using Mithril.Navigation.Features;
 using Mithril.Tests.Helpers;
 
-namespace Mithril.Core.Abstractions.Tests.Modules.Features
+namespace Mithril.Navigation.Tests.Features
 {
     /// <summary>
     /// Navigation feature tests

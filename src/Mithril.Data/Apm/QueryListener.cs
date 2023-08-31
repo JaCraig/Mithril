@@ -173,7 +173,7 @@ namespace Mithril.Data.Apm
             var CommandText = Convert.ToString(payload[3]);
             if (CommandText?.Contains("RequestTrace_") == true)
                 return;
-            var Metrics = GetMetrics(Convert.ToInt32(payload[0]));
+            QueryMetrics? Metrics = GetMetrics(Convert.ToInt32(payload[0]));
             if (Metrics is null)
                 return;
             Metrics.DataSource = Convert.ToString(payload[1]);
@@ -188,24 +188,24 @@ namespace Mithril.Data.Apm
         /// <param name="payload">The payload.</param>
         private void EndProcessing(ReadOnlyCollection<object?> payload)
         {
-            var Metrics = RemoveMetrics(Convert.ToInt32(payload[0]));
+            QueryMetrics? Metrics = RemoveMetrics(Convert.ToInt32(payload[0]));
             if (Metrics is null)
                 return;
             Metrics.ExceptionNumber = Convert.ToInt32(payload[2]);
             var TraceId = Guid.NewGuid().ToString();
             if (Metrics.CommandText?.Contains("RequestTrace_") == true)
                 return;
-            MetaDataCollector?.AddEntry(TraceId,
+            _ = (MetaDataCollector?.AddEntry(TraceId,
                 new[] {
                     new KeyValuePair<string, string>("Database", Metrics.Database??"Default"),
                     new KeyValuePair<string, string>("Datasource", Metrics.DataSource??""),
                     new KeyValuePair<string, string>("CommandText", Metrics.CommandText??""),
-                });
-            MetricsCollector?.AddEntry(TraceId, "Database query",
+                }));
+            _ = (MetricsCollector?.AddEntry(TraceId, "Database query",
                 new[]
                 {
                     new KeyValuePair<string, decimal>("Total Query Time",(Stopwatch.GetTimestamp()- Metrics.StartTime)/10000)
-                });
+                }));
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace Mithril.Data.Apm
             {
                 lock (LockObject)
                 {
-                    TimeMetrics.Remove(id);
+                    _ = TimeMetrics.Remove(id);
                 }
             }
             return metrics;

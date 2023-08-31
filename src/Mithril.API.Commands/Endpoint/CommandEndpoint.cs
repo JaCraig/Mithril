@@ -26,7 +26,7 @@ namespace Mithril.API.Commands.Endpoint
         {
             if (commandHandler is null)
                 return Results.BadRequest(new ReturnedResult { Result = "Command was not successful." });
-            var Command = await commandHandler.CreateAsync(value, user).ConfigureAwait(false);
+            CommandCreationResult? Command = await commandHandler.CreateAsync(value, user).ConfigureAwait(false);
             LogCommand(logger, Command);
             if (Command is null || Command.Command is null || Command.ReturnCode == StatusCodes.Status400BadRequest)
             {
@@ -47,7 +47,8 @@ namespace Mithril.API.Commands.Endpoint
         /// <param name="command">The command.</param>
         private static void LogCommand(ILogger logger, CommandCreationResult? command)
         {
-            if (command is null) return;
+            if (command is null)
+                return;
 
             if (command.Exception is not null)
             {

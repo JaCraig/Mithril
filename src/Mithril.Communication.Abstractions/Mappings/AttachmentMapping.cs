@@ -1,7 +1,7 @@
 ﻿using Inflatable.BaseClasses;
 using Mithril.Data.Abstractions.Databases;
 
-namespace Mithril.Communication.Abstractions
+namespace Mithril.Communication.Abstractions.Mappings
 {
     /// <summary>
     /// Attachment mapping
@@ -14,10 +14,10 @@ namespace Mithril.Communication.Abstractions
         /// </summary>
         public AttachmentMapping()
         {
-            Reference(x => x.FileHash);
-            Reference(x => x.FileName);
-            Reference(x => x.Location);
-            Reference(x => x.Size);
+            _ = Reference(x => x.FileHash);
+            _ = Reference(x => x.FileName);
+            _ = Reference(x => x.Location);
+            _ = Reference(x => x.Size);
         }
     }
 }

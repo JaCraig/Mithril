@@ -13,7 +13,7 @@ namespace Mithril.Themes.Models.Mappings
         /// </summary>
         public ThemeChangedEventMapping()
         {
-            Reference(x => x.ThemeName);
+            _ = Reference(x => x.ThemeName);
         }
     }
 }

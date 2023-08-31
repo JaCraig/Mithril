@@ -71,13 +71,13 @@ namespace Mithril.Logging.Commands
                 return Task.FromResult(Array.Empty<IEvent>());
             for (var x = 0; x < args.Length; ++x)
             {
-                var arg = args[x];
-                if (arg is null)
+                LogCommand? Arg = args[x];
+                if (Arg is null)
                     continue;
-                if (arg.LogLevel == LogLevel.Error)
-                    Logger.LogError(new JavascriptException(arg.Message ?? ""), "An error has occurred and is being logged by the error service");
+                if (Arg.LogLevel == LogLevel.Error)
+                    Logger.LogError(new JavascriptException(Arg.Message ?? ""), "An error has occurred and is being logged by the error service");
                 else
-                    Logger.Log(arg.LogLevel, arg.Message ?? "");
+                    Logger.Log(Arg.LogLevel, Arg.Message ?? "");
             }
             return Task.FromResult(Array.Empty<IEvent>());
         }

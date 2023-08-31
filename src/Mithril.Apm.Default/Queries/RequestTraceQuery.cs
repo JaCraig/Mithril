@@ -70,8 +70,8 @@ namespace Mithril.Apm.Default.Queries
         public override Task<IEnumerable<RequestTraceVM>?> ResolveAsync(ClaimsPrincipal? arg, Arguments arguments)
         {
             arguments ??= new Arguments();
-            var Start = arguments.GetValue<DateTime>("start");
-            var End = arguments.GetValue<DateTime>("end");
+            DateTime Start = arguments.GetValue<DateTime>("start");
+            DateTime End = arguments.GetValue<DateTime>("end");
 
             return Task.FromResult(RequestTrace.Query(DataService)?.Where(x => x.DateCreated >= Start && x.DateCreated <= End).ToList().Select(x => new RequestTraceVM(x)));
         }

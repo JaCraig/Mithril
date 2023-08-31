@@ -45,7 +45,7 @@ namespace Mithril.Data
             if (services is null)
                 return services;
             var Timeout = configuration.GetConfig<MithrilHealthCheckOptions>("Mithril:HealthChecks")?.DefaultTimeout ?? 3;
-            services.Configure<HealthCheckServiceOptions>(options => options.Registrations.Add(new HealthCheckRegistration("Database", new SqlConnectionHealthCheck(configuration), null, new string[] { "Database" }, new TimeSpan(0, 0, Timeout))));
+            _ = services.Configure<HealthCheckServiceOptions>(options => options.Registrations.Add(new HealthCheckRegistration("Database", new SqlConnectionHealthCheck(configuration), null, new string[] { "Database" }, new TimeSpan(0, 0, Timeout))));
             return services.AddTransient<IDataService, DataService>();
         }
 
@@ -75,7 +75,7 @@ namespace Mithril.Data
             if (dataService is null)
                 return Task.CompletedTask;
             var Tasks = new List<Task>();
-            foreach (var TempType in lookUps)
+            foreach (TLookUpClass TempType in lookUps)
             {
                 Tasks.Add(LookUp.LoadOrCreateAsync(TempType, lookUpType, TempType?.Icon ?? "", dataService, null));
             }
@@ -91,9 +91,9 @@ namespace Mithril.Data
         {
             if (dataService is null)
                 return;
-            foreach (var TempType in LookUpTypeEnum.GetLookUpTypes())
+            foreach (LookUpTypeEnum TempType in LookUpTypeEnum.GetLookUpTypes())
             {
-                await LookUpType.LoadOrCreateAsync(TempType, TempType?.Description ?? "", dataService, null).ConfigureAwait(false);
+                _ = await LookUpType.LoadOrCreateAsync(TempType, TempType?.Description ?? "", dataService, null).ConfigureAwait(false);
             }
         }
     }

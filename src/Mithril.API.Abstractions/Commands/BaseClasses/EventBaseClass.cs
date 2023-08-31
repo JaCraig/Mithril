@@ -47,10 +47,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(EventBaseClass<TEvent> left, EventBaseClass<TEvent> right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(EventBaseClass<TEvent> left, EventBaseClass<TEvent> right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -58,10 +55,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(EventBaseClass<TEvent> left, EventBaseClass<TEvent> right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(EventBaseClass<TEvent> left, EventBaseClass<TEvent> right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -69,10 +63,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(EventBaseClass<TEvent> left, EventBaseClass<TEvent> right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(EventBaseClass<TEvent> left, EventBaseClass<TEvent> right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -94,10 +85,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(EventBaseClass<TEvent> left, EventBaseClass<TEvent> right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(EventBaseClass<TEvent> left, EventBaseClass<TEvent> right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -105,29 +93,20 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(EventBaseClass<TEvent> left, EventBaseClass<TEvent> right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(EventBaseClass<TEvent> left, EventBaseClass<TEvent> right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Determines whether this instance can run.
         /// </summary>
         /// <returns><c>true</c> if this instance can run; otherwise, <c>false</c>.</returns>
-        public virtual bool CanRun()
-        {
-            return true;
-        }
+        public virtual bool CanRun() => true;
 
         /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public int CompareTo(EventBaseClass<TEvent>? other)
-        {
-            return base.CompareTo(other as TEvent);
-        }
+        public int CompareTo(EventBaseClass<TEvent>? other) => base.CompareTo(other as TEvent);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -136,10 +115,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return base.Equals(obj);
-        }
+        public override bool Equals(object? obj) => base.Equals(obj);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -149,10 +125,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(EventBaseClass<TEvent>? other)
-        {
-            return CompareTo(other) == 0;
-        }
+        public bool Equals(EventBaseClass<TEvent>? other) => CompareTo(other) == 0;
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -162,10 +135,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(IEvent? other)
-        {
-            return CompareTo(other) == 0;
-        }
+        public bool Equals(IEvent? other) => CompareTo(other) == 0;
 
         /// <summary>
         /// Gets the data within the event.
@@ -180,10 +150,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => base.GetHashCode();
 
         /// <summary>
         /// Gets the schema.
@@ -195,9 +162,6 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
         /// <returns>A <see cref="string"/> that represents this instance.</returns>
-        public override string ToString()
-        {
-            return Name;
-        }
+        public override string ToString() => Name;
     }
 }

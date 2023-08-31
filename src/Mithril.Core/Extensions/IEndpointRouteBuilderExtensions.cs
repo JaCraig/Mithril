@@ -15,10 +15,7 @@ namespace Mithril.Core.Extensions
         /// <returns>
         /// <c>true</c> if the specified endpoint route builder is setup; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsSetup(this IEndpointRouteBuilder? endpointRouteBuilder)
-        {
-            return endpointRouteBuilder?.ServiceProvider.GetService<MithrilSetup>() is not null;
-        }
+        public static bool IsSetup(this IEndpointRouteBuilder? endpointRouteBuilder) => endpointRouteBuilder?.ServiceProvider.GetService<MithrilSetup>() is not null;
     }
 
     /// <summary>

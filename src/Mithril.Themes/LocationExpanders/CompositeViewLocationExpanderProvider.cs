@@ -26,7 +26,7 @@ namespace Mithril.Themes.LocationExpanders
         /// <returns>A list of expanded view locations.</returns>
         public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)
         {
-            foreach (var provider in DiscoverProviders(context))
+            foreach (IViewLocationExpanderProvider provider in DiscoverProviders(context))
             {
                 viewLocations = provider.ExpandViewLocations(context, viewLocations);
             }
@@ -43,7 +43,7 @@ namespace Mithril.Themes.LocationExpanders
         /// </param>
         public void PopulateValues(ViewLocationExpanderContext context)
         {
-            foreach (var provider in DiscoverProviders(context))
+            foreach (IViewLocationExpanderProvider provider in DiscoverProviders(context))
             {
                 provider.PopulateValues(context);
             }
@@ -56,9 +56,9 @@ namespace Mithril.Themes.LocationExpanders
         /// <returns>The list of providers.</returns>
         private static IEnumerable<IViewLocationExpanderProvider> DiscoverProviders(ViewLocationExpanderContext context)
         {
-            if (context is null)
-                return Array.Empty<IViewLocationExpanderProvider>();
-            return context
+            return context is null
+                ? Array.Empty<IViewLocationExpanderProvider>()
+                : context
                 .ActionContext
                 .HttpContext
                 .RequestServices

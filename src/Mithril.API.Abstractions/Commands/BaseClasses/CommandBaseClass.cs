@@ -32,10 +32,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(CommandBaseClass<TCommand> left, CommandBaseClass<TCommand> right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(CommandBaseClass<TCommand> left, CommandBaseClass<TCommand> right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -43,10 +40,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(CommandBaseClass<TCommand> left, CommandBaseClass<TCommand> right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(CommandBaseClass<TCommand> left, CommandBaseClass<TCommand> right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -54,10 +48,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(CommandBaseClass<TCommand> left, CommandBaseClass<TCommand> right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(CommandBaseClass<TCommand> left, CommandBaseClass<TCommand> right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -79,10 +70,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(CommandBaseClass<TCommand> left, CommandBaseClass<TCommand> right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(CommandBaseClass<TCommand> left, CommandBaseClass<TCommand> right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -90,20 +78,14 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(CommandBaseClass<TCommand> left, CommandBaseClass<TCommand> right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(CommandBaseClass<TCommand> left, CommandBaseClass<TCommand> right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public int CompareTo(CommandBaseClass<TCommand>? other)
-        {
-            return base.CompareTo(other as TCommand);
-        }
+        public int CompareTo(CommandBaseClass<TCommand>? other) => base.CompareTo(other as TCommand);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -112,10 +94,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return base.Equals(obj);
-        }
+        public override bool Equals(object? obj) => base.Equals(obj);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -125,10 +104,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(CommandBaseClass<TCommand>? other)
-        {
-            return CompareTo(other) == 0;
-        }
+        public bool Equals(CommandBaseClass<TCommand>? other) => CompareTo(other) == 0;
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -138,10 +114,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(ICommand? other)
-        {
-            return CompareTo(other) == 0;
-        }
+        public bool Equals(ICommand? other) => CompareTo(other) == 0;
 
         /// <summary>
         /// Returns a hash code for this instance.
@@ -150,18 +123,12 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => base.GetHashCode();
 
         /// <summary>
         /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
         /// <returns>A <see cref="string"/> that represents this instance.</returns>
-        public override string ToString()
-        {
-            return Name;
-        }
+        public override string ToString() => Name;
     }
 }

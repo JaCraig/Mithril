@@ -47,7 +47,7 @@ namespace Mithril.Core.Abstractions.Extensions
             foreach (PropertyInfo Property in value.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
             {
                 var PropertyValue = Property.GetValue(value);
-                var PropertyType = PropertyValue?.GetType();
+                Type? PropertyType = PropertyValue?.GetType();
                 if (PropertyValue is ExpandoObject PropertyValueExpando)
                 {
                     PropertyValue = PropertyValueExpando.ConvertToExpando();
@@ -86,14 +86,9 @@ namespace Mithril.Core.Abstractions.Extensions
             foreach (var Key in value.Keys)
             {
                 var PropertyValue = value[Key];
-                if (PropertyValue is ExpandoObject PropertyValueExpando)
-                {
-                    PropertyValue = PropertyValueExpando.ConvertToExpando();
-                }
-                else
-                {
-                    PropertyValue = PropertyValue.ConvertToExpando();
-                }
+                PropertyValue = PropertyValue is ExpandoObject PropertyValueExpando
+                    ? PropertyValueExpando.ConvertToExpando()
+                    : (object?)PropertyValue.ConvertToExpando();
                 ReturnValueDictionary[Key.ToString(StringCase.CamelCase)] = PropertyValue;
             }
 

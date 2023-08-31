@@ -36,24 +36,24 @@ namespace Mithril.Apm.Default.Reporter
             if (DataService is null)
                 return;
             var Requests = new List<RequestTrace>();
-            foreach (var entry in data)
+            foreach (KeyValuePair<string, TraceInformation> entry in data)
             {
                 if (entry.Value.MetaData.Count == 0 && entry.Value.Metrics.Count == 0)
                     continue;
-                var Trace = RequestTrace.Query(DataService)?.Where(x => x.TraceIdentifier == entry.Key && x.DateCreated == entry.Value.Created).FirstOrDefault() ?? new RequestTrace(entry.Key)
+                RequestTrace Trace = RequestTrace.Query(DataService)?.Where(x => x.TraceIdentifier == entry.Key && x.DateCreated == entry.Value.Created).FirstOrDefault() ?? new RequestTrace(entry.Key)
                 {
                     DateCreated = entry.Value.Created
                 };
-                foreach (var MetaData in entry.Value.MetaData)
+                foreach (MetaDataEntry MetaData in entry.Value.MetaData)
                 {
-                    foreach (var Entry in MetaData.Data)
+                    foreach (KeyValuePair<string, string> Entry in MetaData.Data)
                     {
                         Trace.AddMetaData(Entry.Key, Entry.Value);
                     }
                 }
-                foreach (var Metric in entry.Value.Metrics)
+                foreach (MetricsEntry Metric in entry.Value.Metrics)
                 {
-                    foreach (var Entry in Metric.Data)
+                    foreach (KeyValuePair<string, decimal> Entry in Metric.Data)
                     {
                         Trace.AddMetrics(Entry.Key, Metric.MetaData, Entry.Value);
                     }
@@ -61,12 +61,12 @@ namespace Mithril.Apm.Default.Reporter
                 Requests.Add(Trace);
                 if (Requests.Count >= 40)
                 {
-                    AsyncHelper.RunSync(() => DataService.SaveAsync(null, Requests.ToArray()));
+                    _ = AsyncHelper.RunSync(() => DataService.SaveAsync(null, Requests.ToArray()));
                     Requests.Clear();
                 }
             }
 
-            AsyncHelper.RunSync(() => DataService.SaveAsync(null, Requests.ToArray()));
+            _ = AsyncHelper.RunSync(() => DataService.SaveAsync(null, Requests.ToArray()));
         }
     }
 }

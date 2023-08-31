@@ -40,10 +40,7 @@ namespace Mithril.FileSystem.Services
         /// <param name="path">The path.</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The directory</returns>
-        public IDirectory? Directory(string path, Credentials? credentials = null)
-        {
-            return FileSystem?.Directory(path, credentials);
-        }
+        public IDirectory? Directory(string path, Credentials? credentials = null) => FileSystem?.Directory(path, credentials);
 
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.
@@ -60,10 +57,7 @@ namespace Mithril.FileSystem.Services
         /// <param name="path">The path.</param>
         /// <param name="credentials">The credentials.</param>
         /// <returns>The file</returns>
-        public IFile? File(string path, Credentials? credentials = null)
-        {
-            return FileSystem?.File(path, credentials);
-        }
+        public IFile? File(string path, Credentials? credentials = null) => FileSystem?.File(path, credentials);
 
         /// <summary>
         /// Translates the path from the file system to the URL
@@ -72,7 +66,7 @@ namespace Mithril.FileSystem.Services
         /// <returns>The Url.</returns>
         public Uri? GetUrl(string path)
         {
-            for (int x = 0; x < PathConverters.Length; ++x)
+            for (var x = 0; x < PathConverters.Length; ++x)
             {
                 if (PathConverters[x].CanConvert(path))
                     return PathConverters[x].GetUrl(path);
@@ -102,9 +96,6 @@ namespace Mithril.FileSystem.Services
         /// <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release
         /// only unmanaged resources.
         /// </param>
-        protected virtual void Dispose(bool managed)
-        {
-            FileSystem?.Dispose();
-        }
+        protected virtual void Dispose(bool managed) => FileSystem?.Dispose();
     }
 }

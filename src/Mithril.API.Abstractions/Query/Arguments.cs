@@ -23,7 +23,7 @@ namespace Mithril.API.Abstractions.Query
         /// <returns>The value specified.</returns>
         public TValue? GetValue<TValue>(string? key)
         {
-            TryGetValue(key, out TValue? value);
+            _ = TryGetValue(key, out TValue? value);
             return value;
         }
 

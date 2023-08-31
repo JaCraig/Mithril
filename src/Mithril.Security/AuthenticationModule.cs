@@ -56,10 +56,10 @@ namespace Mithril.Security
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? env)
         {
             // Add authorization.
-            services?.AddAuthorization(options => options.FallbackPolicy = options.DefaultPolicy);
+            _ = (services?.AddAuthorization(options => options.FallbackPolicy = options.DefaultPolicy));
 
             //Set up default authorization policies.
-            services?.Configure<AuthorizationOptions>(x => x.AddPolicy(SystemPermissions.AdminOnly, y => y.RequireAuthenticatedUser().RequireClaim("Role", "Admin")));
+            _ = (services?.Configure<AuthorizationOptions>(x => x.AddPolicy(SystemPermissions.AdminOnly, y => y.RequireAuthenticatedUser().RequireClaim("Role", "Admin"))));
 
             // Add the security services.
             return services?.AddSingleton<ISecurityService, SecurityService>()
@@ -77,10 +77,11 @@ namespace Mithril.Security
         /// <returns>The async task.</returns>
         public override Task InitializeDataAsync(IDataService? dataService, IServiceProvider? services)
         {
-            if (dataService is null) return Task.CompletedTask;
+            if (dataService is null)
+                return Task.CompletedTask;
             var UserService = new SecurityService(dataService, services?.GetService<SystemAccounts>());
-            UserService.LoadSystemAccount();
-            UserService.LoadAnonymousUserAccount();
+            _ = UserService.LoadSystemAccount();
+            _ = UserService.LoadAnonymousUserAccount();
             return Task.CompletedTask;
         }
     }

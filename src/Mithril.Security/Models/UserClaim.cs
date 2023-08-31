@@ -63,10 +63,7 @@ namespace Mithril.Security.Models
         /// <param name="value">The value.</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>User claim specified</returns>
-        public static UserClaim? Load(UserClaimTypes type, string value, IDataService? dataService)
-        {
-            return Query(dataService)?.Where(x => x.Type == type && x.Value == value).FirstOrDefault();
-        }
+        public static UserClaim? Load(UserClaimTypes type, string value, IDataService? dataService) => Query(dataService)?.Where(x => x.Type == type && x.Value == value).FirstOrDefault();
 
         /// <summary>
         /// Loads a specific claim or creates it.
@@ -78,12 +75,12 @@ namespace Mithril.Security.Models
         /// <returns>The user claim specified.</returns>
         public static async Task<IUserClaim> LoadOrCreateAsync(UserClaimTypes type, string value, IDataService? context, ClaimsPrincipal? user)
         {
-            var ReturnValue = Load(type, value, context);
+            UserClaim? ReturnValue = Load(type, value, context);
             if (ReturnValue is null)
             {
                 ReturnValue = new UserClaim(type, value);
                 if (context is not null)
-                    await context.SaveAsync(user, ReturnValue).ConfigureAwait(false);
+                    _ = await context.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }
@@ -94,10 +91,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(UserClaim? left, UserClaim? right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(UserClaim? left, UserClaim? right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -105,10 +99,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(UserClaim? left, UserClaim? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(UserClaim? left, UserClaim? right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -116,10 +107,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(UserClaim? left, UserClaim? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(UserClaim? left, UserClaim? right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -141,10 +129,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(UserClaim? left, UserClaim? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(UserClaim? left, UserClaim? right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -152,10 +137,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(UserClaim? left, UserClaim? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(UserClaim? left, UserClaim? right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Determines whether this instance can access the specified type.
@@ -174,34 +156,21 @@ namespace Mithril.Security.Models
         /// </summary>
         /// <param name="user">The user.</param>
         /// <returns><c>true</c> if this instance can access the specified user; otherwise, <c>false</c>.</returns>
-        public bool CanAccess(IUser user)
-        {
-            if (string.IsNullOrEmpty(Type) || string.IsNullOrEmpty(Value))
-                return false;
-            return user?.CanAccess(Type, Value) ?? false;
-        }
+        public bool CanAccess(IUser user) => !string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(Value) && (user?.CanAccess(Type, Value) ?? false);
 
         /// <summary>
         /// Determines whether this instance can access the specified user.
         /// </summary>
         /// <param name="user">The user.</param>
         /// <returns><c>true</c> if this instance can access the specified user; otherwise, <c>false</c>.</returns>
-        public bool CanAccess(ClaimsPrincipal? user)
-        {
-            if (string.IsNullOrEmpty(Type) || string.IsNullOrEmpty(Value))
-                return false;
-            return user?.HasClaim(Type, Value) ?? false;
-        }
+        public bool CanAccess(ClaimsPrincipal? user) => !string.IsNullOrEmpty(Type) && !string.IsNullOrEmpty(Value) && (user?.HasClaim(Type, Value) ?? false);
 
         /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public override int CompareTo(UserClaim? other)
-        {
-            return base.CompareTo(other);
-        }
+        public override int CompareTo(UserClaim? other) => base.CompareTo(other);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -211,10 +180,7 @@ namespace Mithril.Security.Models
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(UserClaim? other)
-        {
-            return base.Equals(other);
-        }
+        public bool Equals(UserClaim? other) => base.Equals(other);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -224,10 +190,7 @@ namespace Mithril.Security.Models
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(IUserClaim? other)
-        {
-            return base.Equals(other);
-        }
+        public bool Equals(IUserClaim? other) => base.Equals(other);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -236,10 +199,7 @@ namespace Mithril.Security.Models
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return base.Equals(obj);
-        }
+        public override bool Equals(object? obj) => base.Equals(obj);
 
         /// <summary>
         /// Returns a hash code for this instance.
@@ -248,18 +208,12 @@ namespace Mithril.Security.Models
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => base.GetHashCode();
 
         /// <summary>
         /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
         /// <returns>A <see cref="string"/> that represents this instance.</returns>
-        public override string ToString()
-        {
-            return Type + " : " + Value;
-        }
+        public override string ToString() => Type + " : " + Value;
     }
 }

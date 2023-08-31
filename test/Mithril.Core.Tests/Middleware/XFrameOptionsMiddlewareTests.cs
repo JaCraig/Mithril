@@ -35,7 +35,7 @@ namespace Mithril.Core.Tests.Middleware
                                configuration: MockOptions);
             var HttpContext = new DefaultHttpContext();
 
-            Middleware.InvokeAsync(HttpContext);
+            _ = Middleware.InvokeAsync(HttpContext);
 
             Assert.Equal((int)HttpStatusCode.OK, HttpContext.Response.StatusCode);
         }
@@ -52,7 +52,7 @@ namespace Mithril.Core.Tests.Middleware
                                 configuration: MockOptions);
             var HttpContext = new DefaultHttpContext();
 
-            Middleware.InvokeAsync(HttpContext);
+            _ = Middleware.InvokeAsync(HttpContext);
 
             Assert.Equal("deny", HttpContext.Response.Headers["X-Frame-Options"]);
         }
@@ -64,13 +64,13 @@ namespace Mithril.Core.Tests.Middleware
         public void InvokeAsync_Should_Set_Header_With_Configured_Value()
         {
             IOptions<MithrilConfig> MockOptions = Substitute.For<IOptions<MithrilConfig>>();
-            MockOptions.Value.Returns(new MithrilConfig { Security = new Security { XFrameOptions = "SAMEORIGIN" } });
+            _ = MockOptions.Value.Returns(new MithrilConfig { Security = new Security { XFrameOptions = "SAMEORIGIN" } });
             var Middleware = new XFrameOptionsMiddleware(
                                                next: (_) => Task.FromResult(0),
                                                                               configuration: MockOptions);
             var HttpContext = new DefaultHttpContext();
 
-            Middleware.InvokeAsync(HttpContext);
+            _ = Middleware.InvokeAsync(HttpContext);
 
             Assert.Equal("SAMEORIGIN", HttpContext.Response.Headers["X-Frame-Options"]);
         }

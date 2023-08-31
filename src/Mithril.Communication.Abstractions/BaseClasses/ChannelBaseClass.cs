@@ -50,19 +50,13 @@ namespace Mithril.Communication.Abstractions.BaseClasses
         /// <returns>
         /// <c>true</c> if this instance can handle the specified message; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanHandle(IMessage? message)
-        {
-            return message is TMessage;
-        }
+        public bool CanHandle(IMessage? message) => message is TMessage;
 
         /// <summary>
         /// Creates a message object.
         /// </summary>
         /// <returns>The message related to the channel.</returns>
-        public virtual IMessage CreateMessage()
-        {
-            return new TMessage();
-        }
+        public virtual IMessage CreateMessage() => new TMessage();
 
         /// <summary>
         /// Sends the message asynchronously.

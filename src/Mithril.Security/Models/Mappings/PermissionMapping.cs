@@ -14,7 +14,7 @@ namespace Mithril.Security.Models.Mappings
         /// </summary>
         public PermissionMapping()
         {
-            ManyToMany(x => x.Claims);
+            _ = ManyToMany(x => x.Claims);
         }
     }
 }

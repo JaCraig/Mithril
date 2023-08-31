@@ -33,11 +33,11 @@ namespace Mithril.Core.Tests.Services
             IOptions<IPFilterOptions> MockPolicy = Substitute.For<IOptions<IPFilterOptions>>();
             ILogger<IPFilterService> MockLogger = Substitute.For<ILogger<IPFilterService>>();
             HttpContext MockHttpContext = Substitute.For<HttpContext>();
-            MockHttpContext.Connection.RemoteIpAddress.Returns((IPAddress?)null);
+            _ = MockHttpContext.Connection.RemoteIpAddress.Returns((IPAddress?)null);
 
             var FilterOptions = new IPFilterOptions();
-            FilterOptions.AddDefaultPolicy();
-            MockPolicy.Value.Returns(FilterOptions);
+            _ = FilterOptions.AddDefaultPolicy();
+            _ = MockPolicy.Value.Returns(FilterOptions);
 
             var Service = new IPFilterService(MockPolicy, MockLogger);
 
@@ -53,10 +53,10 @@ namespace Mithril.Core.Tests.Services
             IOptions<IPFilterOptions> MockPolicy = Substitute.For<IOptions<IPFilterOptions>>();
             ILogger<IPFilterService> MockLogger = Substitute.For<ILogger<IPFilterService>>();
             HttpContext MockHttpContext = Substitute.For<HttpContext>();
-            MockHttpContext.Connection.RemoteIpAddress.Returns(IPAddress.Parse("10.0.0.1"));
+            _ = MockHttpContext.Connection.RemoteIpAddress.Returns(IPAddress.Parse("10.0.0.1"));
 
             var FilterOptions = new IPFilterOptions();
-            MockPolicy.Value.Returns(FilterOptions);
+            _ = MockPolicy.Value.Returns(FilterOptions);
 
             var Service = new IPFilterService(MockPolicy, MockLogger);
 
@@ -72,11 +72,11 @@ namespace Mithril.Core.Tests.Services
             IOptions<IPFilterOptions> MockPolicy = Substitute.For<IOptions<IPFilterOptions>>();
             ILogger<IPFilterService> MockLogger = Substitute.For<ILogger<IPFilterService>>();
             HttpContext MockHttpContext = Substitute.For<HttpContext>();
-            MockHttpContext.Connection.RemoteIpAddress.Returns(IPAddress.Parse("10.0.0.1"));
+            _ = MockHttpContext.Connection.RemoteIpAddress.Returns(IPAddress.Parse("10.0.0.1"));
 
             var FilterOptions = new IPFilterOptions();
-            FilterOptions.AddDefaultPolicy();
-            MockPolicy.Value.Returns(FilterOptions);
+            _ = FilterOptions.AddDefaultPolicy();
+            _ = MockPolicy.Value.Returns(FilterOptions);
 
             var Service = new IPFilterService(MockPolicy, MockLogger);
 

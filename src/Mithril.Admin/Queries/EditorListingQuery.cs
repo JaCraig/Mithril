@@ -48,9 +48,6 @@ namespace Mithril.Admin.Queries
         /// <returns>
         /// The data specified.
         /// </returns>
-        public override Task<IEnumerable<EditorVM>?> ResolveAsync(ClaimsPrincipal? user, Arguments arguments)
-        {
-            return Task.FromResult<IEnumerable<EditorVM>?>(EditorService?.Editors.Where(x => x.CanView(user)).Select(x => new EditorVM(x)) ?? Array.Empty<EditorVM>());
-        }
+        public override Task<IEnumerable<EditorVM>?> ResolveAsync(ClaimsPrincipal? user, Arguments arguments) => Task.FromResult<IEnumerable<EditorVM>?>(EditorService?.Editors.Where(x => x.CanView(user)).Select(x => new EditorVM(x)) ?? Array.Empty<EditorVM>());
     }
 }

@@ -75,15 +75,15 @@ namespace Mithril.FileSystem.ViewModels
         /// <param name="file">The file.</param>
         /// <param name="type">The type.</param>
         /// <returns>The icon to use</returns>
-        private static string GetIcon(IFile file, string type)
+        private static string GetIcon(IFile file, string? type)
         {
-            if (string.Equals(type, "IMAGE", StringComparison.OrdinalIgnoreCase))
-                return "";
-            if (string.Equals(file.Extension, ".PDF", StringComparison.OrdinalIgnoreCase))
-                return "fa-file-pdf";
-            if (string.Equals(file.Extension, ".DOCX", StringComparison.OrdinalIgnoreCase))
-                return "fa-file-word";
-            return string.Equals(file.Extension, ".PPTX", StringComparison.OrdinalIgnoreCase)
+            return string.Equals(type, "IMAGE", StringComparison.OrdinalIgnoreCase)
+                ? ""
+                : string.Equals(file.Extension, ".PDF", StringComparison.OrdinalIgnoreCase)
+                ? "fa-file-pdf"
+                : string.Equals(file.Extension, ".DOCX", StringComparison.OrdinalIgnoreCase)
+                ? "fa-file-word"
+                : string.Equals(file.Extension, ".PPTX", StringComparison.OrdinalIgnoreCase)
                 ? "fa-file-powerpoint"
                 : string.Equals(type, "MEDIA", StringComparison.OrdinalIgnoreCase) ? "fa-file-video" : "fa-file-alt";
         }
@@ -93,6 +93,6 @@ namespace Mithril.FileSystem.ViewModels
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>The image url</returns>
-        private string GetImageUrl(string type) => string.Equals(type, "IMAGE", StringComparison.OrdinalIgnoreCase) ? URL ?? "" : "";
+        private string GetImageUrl(string? type) => string.Equals(type, "IMAGE", StringComparison.OrdinalIgnoreCase) ? URL ?? "" : "";
     }
 }

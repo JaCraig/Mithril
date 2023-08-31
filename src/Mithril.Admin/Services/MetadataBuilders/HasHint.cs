@@ -37,10 +37,8 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// <returns>The hint text if one exists.</returns>
         private static string? DetermineHint(PropertyInfo? property)
         {
-            var TempAttribute = property?.Attribute<HintAttribute>();
-            if (TempAttribute is null)
-                return "";
-            return TempAttribute.Value;
+            HintAttribute? TempAttribute = property?.Attribute<HintAttribute>();
+            return TempAttribute is null ? "" : TempAttribute.Value;
         }
     }
 }

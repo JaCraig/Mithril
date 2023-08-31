@@ -51,8 +51,8 @@
         /// <returns><c>true</c> if the specified ip address is allowed; otherwise, <c>false</c>.</returns>
         public bool IsAllowed(string ipAddress)
         {
-            return !(BlackListFilters?.Any(x => ipAddress.StartsWith(x)) ?? false)
-                && (WhiteListFilters?.Any(x => ipAddress.StartsWith(x)) ?? true);
+            return !(BlackListFilters?.Any(ipAddress.StartsWith) ?? false)
+                && (WhiteListFilters?.Any(ipAddress.StartsWith) ?? true);
         }
 
         /// <summary>

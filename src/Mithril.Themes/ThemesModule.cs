@@ -53,25 +53,25 @@ namespace Mithril.Themes
         {
             if (!services.Exists<ITheme>())
                 return;
-            var AvailableThemes = services?.GetServices<ITheme>() ?? Array.Empty<ITheme>();
-            var ExistingThemes = Theme.All(dataService);
+            IEnumerable<ITheme> AvailableThemes = services?.GetServices<ITheme>() ?? Array.Empty<ITheme>();
+            IEnumerable<Theme> ExistingThemes = Theme.All(dataService);
 
             // Create missing available themes
-            foreach (var MissingItems in AvailableThemes.Where<ITheme>(x => !CheckExists(x, ExistingThemes)))
+            foreach (ITheme MissingItems in AvailableThemes.Where<ITheme>(x => !CheckExists(x, ExistingThemes)))
             {
                 var TempTheme = new Theme(MissingItems.Name);
                 await TempTheme.SaveAsync(dataService, null).ConfigureAwait(false);
             }
 
             // Inactivate missing themes
-            foreach (var OldTheme in ExistingThemes.Where(x => !CheckExists(x, AvailableThemes)))
+            foreach (Theme? OldTheme in ExistingThemes.Where(x => !CheckExists(x, AvailableThemes)))
             {
                 OldTheme.IsDefault = false;
                 await OldTheme.DeleteAsync(dataService, null).ConfigureAwait(false);
             }
 
             // Reactivate any inactive themes that exist
-            foreach (var OldTheme in ExistingThemes.Where(x => !x.Active && CheckExists(x, AvailableThemes)))
+            foreach (Theme? OldTheme in ExistingThemes.Where(x => !x.Active && CheckExists(x, AvailableThemes)))
             {
                 OldTheme.Active = true;
                 await OldTheme.SaveAsync(dataService, null).ConfigureAwait(false);

@@ -37,10 +37,8 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// <returns>The step value if one exists.</returns>
         protected static decimal? Determinestep(PropertyInfo? property)
         {
-            var TempAttribute = property?.Attribute<StepAttribute>();
-            if (TempAttribute is null)
-                return 1;
-            return TempAttribute.Value;
+            StepAttribute? TempAttribute = property?.Attribute<StepAttribute>();
+            return TempAttribute is null ? (decimal?)1 : TempAttribute.Value;
         }
     }
 }

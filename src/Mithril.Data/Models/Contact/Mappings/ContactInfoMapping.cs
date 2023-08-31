@@ -1,8 +1,7 @@
 ﻿using Inflatable.BaseClasses;
 using Mithril.Data.Abstractions.Databases;
-using Mithril.Data.Models.Contact;
 
-namespace Mithril.Data.Inflatable.Models.Contact.Mappings
+namespace Mithril.Data.Models.Contact.Mappings
 {
     /// <summary>
     /// ContactInfo mapping
@@ -16,7 +15,7 @@ namespace Mithril.Data.Inflatable.Models.Contact.Mappings
         public ContactInfoMapping()
             : base(merge: true)
         {
-            Reference(x => x.Info).WithDefaultValue(() => "");
+            _ = Reference(x => x.Info).WithDefaultValue(() => "");
         }
     }
 }

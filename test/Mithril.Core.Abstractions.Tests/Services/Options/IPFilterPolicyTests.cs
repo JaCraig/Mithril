@@ -26,7 +26,7 @@ namespace Mithril.Core.Abstractions.Tests.Services.Options
         {
             const string Ip = "10.0.0.1";
             var TestObject = new IPFilterPolicy("Default");
-            TestObject.SetWhiteList(Ip);
+            _ = TestObject.SetWhiteList(Ip);
             var Result = TestObject.IsAllowed(Ip);
             Assert.True(Result);
         }
@@ -39,7 +39,7 @@ namespace Mithril.Core.Abstractions.Tests.Services.Options
         {
             const string Ip = "10.0.0.1";
             var TestObject = new IPFilterPolicy("Default");
-            TestObject.SetBlackList(Ip);
+            _ = TestObject.SetBlackList(Ip);
             var Result = TestObject.IsAllowed(Ip);
             Assert.False(Result);
         }

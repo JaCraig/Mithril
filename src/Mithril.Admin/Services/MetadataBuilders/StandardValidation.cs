@@ -25,28 +25,15 @@ namespace Mithril.Admin.Services.MetadataBuilders
         {
             if (propertyMetadata is null)
                 return propertyMetadata;
-            if (propertyMetadata.Property?.Attributes<RequiredAttribute>()?.FirstOrDefault() is not null)
-                propertyMetadata.Metadata["required"] = true;
+            CheckRequiredAttribute(propertyMetadata);
 
-            MaxLengthAttribute? MaxLength = propertyMetadata.Property?.Attributes<MaxLengthAttribute>()?.FirstOrDefault();
-            if (MaxLength is not null)
-                propertyMetadata.Metadata["maxlength"] = MaxLength.Length;
+            CheckMaxLengthAttribute(propertyMetadata);
 
-            MinLengthAttribute? MinLength = propertyMetadata.Property?.Attributes<MinLengthAttribute>()?.FirstOrDefault();
-            if (MinLength is not null)
-                propertyMetadata.Metadata["minlength"] = MinLength.Length;
+            CheckMinLengthAttribute(propertyMetadata);
 
-            RangeAttribute? RangeAttribute = propertyMetadata.Property?.Attributes<RangeAttribute>()?.FirstOrDefault();
-            if (RangeAttribute?.Minimum is not null)
-                propertyMetadata.Metadata["minlength"] = RangeAttribute.Minimum;
-            if (RangeAttribute?.Maximum is not null)
-                propertyMetadata.Metadata["maxlength"] = RangeAttribute.Maximum;
+            CheckRangeAttribute(propertyMetadata);
 
-            StringLengthAttribute? StringLengthAttribute = propertyMetadata.Property?.Attributes<StringLengthAttribute>()?.FirstOrDefault();
-            if (StringLengthAttribute?.MinimumLength > 0)
-                propertyMetadata.Metadata["minlength"] = StringLengthAttribute.MinimumLength;
-            if (StringLengthAttribute?.MaximumLength > 0)
-                propertyMetadata.Metadata["maxlength"] = StringLengthAttribute.MaximumLength;
+            CheckStringLengthAttribute(propertyMetadata);
 
             AddValidationMessages(propertyMetadata);
 
@@ -65,6 +52,79 @@ namespace Mithril.Admin.Services.MetadataBuilders
                 propertyMetadata.Metadata["errorMessageTooShort"] = $"{propertyMetadata.DisplayName} must have a minimum length of {MinLength}.";
             if (propertyMetadata.Metadata.TryGetValue("required", out _))
                 propertyMetadata.Metadata["errorMessageValueMissing"] = $"{propertyMetadata.DisplayName} is required.";
+        }
+
+        /// <summary>
+        /// Checks the maximum length attribute.
+        /// </summary>
+        /// <param name="propertyMetadata">The property metadata.</param>
+        private static void CheckMaxLengthAttribute(PropertyMetadata? propertyMetadata)
+        {
+            if (propertyMetadata is null)
+                return;
+            MaxLengthAttribute? MaxLength = propertyMetadata.Property?.Attributes<MaxLengthAttribute>()?.FirstOrDefault();
+            if (MaxLength is null)
+                return;
+            propertyMetadata.Metadata["maxlength"] = MaxLength.Length;
+        }
+
+        /// <summary>
+        /// Checks the minimum length attribute.
+        /// </summary>
+        /// <param name="propertyMetadata">The property metadata.</param>
+        private static void CheckMinLengthAttribute(PropertyMetadata? propertyMetadata)
+        {
+            if (propertyMetadata is null)
+                return;
+            MinLengthAttribute? MinLength = propertyMetadata.Property?.Attributes<MinLengthAttribute>()?.FirstOrDefault();
+            if (MinLength is null)
+                return;
+            propertyMetadata.Metadata["minlength"] = MinLength.Length;
+        }
+
+        /// <summary>
+        /// Checks the range attribute.
+        /// </summary>
+        /// <param name="propertyMetadata">The property metadata.</param>
+        private static void CheckRangeAttribute(PropertyMetadata? propertyMetadata)
+        {
+            if (propertyMetadata is null)
+                return;
+            RangeAttribute? RangeAttribute = propertyMetadata.Property?.Attributes<RangeAttribute>()?.FirstOrDefault();
+            if (RangeAttribute is null)
+                return;
+            if (RangeAttribute.Minimum is not null)
+                propertyMetadata.Metadata["minlength"] = RangeAttribute.Minimum;
+            if (RangeAttribute.Maximum is not null)
+                propertyMetadata.Metadata["maxlength"] = RangeAttribute.Maximum;
+        }
+
+        /// <summary>
+        /// Checks the required attribute.
+        /// </summary>
+        /// <param name="propertyMetadata">The property metadata.</param>
+        private static void CheckRequiredAttribute(PropertyMetadata? propertyMetadata)
+        {
+            if (propertyMetadata is null || propertyMetadata.Property?.Attributes<RequiredAttribute>()?.FirstOrDefault() is null)
+                return;
+            propertyMetadata.Metadata["required"] = true;
+        }
+
+        /// <summary>
+        /// Checks the string length attribute.
+        /// </summary>
+        /// <param name="propertyMetadata">The property metadata.</param>
+        private static void CheckStringLengthAttribute(PropertyMetadata? propertyMetadata)
+        {
+            if (propertyMetadata is null)
+                return;
+            StringLengthAttribute? StringLengthAttribute = propertyMetadata.Property?.Attributes<StringLengthAttribute>()?.FirstOrDefault();
+            if (StringLengthAttribute is null)
+                return;
+            if (StringLengthAttribute.MinimumLength > 0)
+                propertyMetadata.Metadata["minlength"] = StringLengthAttribute.MinimumLength;
+            if (StringLengthAttribute.MaximumLength > 0)
+                propertyMetadata.Metadata["maxlength"] = StringLengthAttribute.MaximumLength;
         }
     }
 }

@@ -14,8 +14,8 @@ namespace Mithril.Routing.Models.Mappings
         /// </summary>
         public RouteEntryMapping()
         {
-            Reference(x => x.InputPath).IsUnique();
-            Reference(x => x.OutputPath);
+            _ = Reference(x => x.InputPath).IsUnique();
+            _ = Reference(x => x.OutputPath);
         }
     }
 }

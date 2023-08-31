@@ -77,7 +77,7 @@ namespace Mithril.Core.Abstractions.BaseClasses
         public Task StopAsync(CancellationToken cancellationToken)
         {
             Logger?.LogInformation("Stopping {Description}", Description);
-            InternalTimer?.Change(Timeout.Infinite, 0);
+            _ = (InternalTimer?.Change(Timeout.Infinite, 0));
             return Task.CompletedTask;
         }
 
@@ -107,9 +107,6 @@ namespace Mithril.Core.Abstractions.BaseClasses
         /// Does the work.
         /// </summary>
         /// <param name="state">The state.</param>
-        private void DoWork(object? state)
-        {
-            AsyncHelper.RunSync(DoWorkAsync);
-        }
+        private void DoWork(object? state) => AsyncHelper.RunSync(DoWorkAsync);
     }
 }

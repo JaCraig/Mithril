@@ -49,11 +49,6 @@ namespace Mithril.Navigation.Services
         /// <returns>
         /// The menu builder.
         /// </returns>
-        public IMenuBuilder? CreateMenuBuilder(string display, ClaimsPrincipal? user)
-        {
-            if (FeatureManager.AreFeaturesEnabled(NavigationFeature.Instance))
-                return null;
-            return new MenuBuilder(display, DataService, user);
-        }
+        public IMenuBuilder? CreateMenuBuilder(string display, ClaimsPrincipal? user) => FeatureManager.AreFeaturesEnabled(NavigationFeature.Instance) ? null : (IMenuBuilder)new MenuBuilder(display, DataService, user);
     }
 }

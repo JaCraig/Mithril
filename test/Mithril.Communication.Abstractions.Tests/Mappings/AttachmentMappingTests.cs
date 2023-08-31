@@ -1,4 +1,5 @@
-﻿using Mithril.Tests.Helpers;
+﻿using Mithril.Communication.Abstractions.Mappings;
+using Mithril.Tests.Helpers;
 
 namespace Mithril.Communication.Abstractions.Tests.Mappings
 {

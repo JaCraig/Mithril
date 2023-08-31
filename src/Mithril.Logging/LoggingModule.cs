@@ -39,7 +39,7 @@ namespace Mithril.Logging
         {
             return services?.Configure<MvcOptions>(options =>
             {
-                options.InputFormatters
+                _ = options.InputFormatters
                         .OfType<SystemTextJsonInputFormatter>()
                         .ForEach(x => x.SupportedMediaTypes.Add("application/csp-report"));
             });

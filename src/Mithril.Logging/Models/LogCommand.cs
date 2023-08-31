@@ -46,10 +46,7 @@ namespace Mithril.Logging.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(LogCommand left, LogCommand right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(LogCommand left, LogCommand right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -57,10 +54,7 @@ namespace Mithril.Logging.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(LogCommand left, LogCommand right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(LogCommand left, LogCommand right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -68,10 +62,7 @@ namespace Mithril.Logging.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(LogCommand left, LogCommand right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(LogCommand left, LogCommand right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -79,16 +70,7 @@ namespace Mithril.Logging.Models
         /// <param name="first">The first.</param>
         /// <param name="second">The second.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator ==(LogCommand first, LogCommand second)
-        {
-            if (ReferenceEquals(first, second))
-                return true;
-
-            if (first is null || second is null)
-                return false;
-
-            return first.CompareTo(second) == 0;
-        }
+        public static bool operator ==(LogCommand first, LogCommand second) => ReferenceEquals(first, second) || (first is not null && second is not null && first.CompareTo(second) == 0);
 
         /// <summary>
         /// Implements the operator &gt;.
@@ -96,10 +78,7 @@ namespace Mithril.Logging.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(LogCommand left, LogCommand right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(LogCommand left, LogCommand right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -107,20 +86,14 @@ namespace Mithril.Logging.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(LogCommand left, LogCommand right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(LogCommand left, LogCommand right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Compares the object to another object
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public override int CompareTo(LogCommand? other)
-        {
-            return base.CompareTo(other);
-        }
+        public override int CompareTo(LogCommand? other) => base.CompareTo(other);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -129,10 +102,7 @@ namespace Mithril.Logging.Models
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return base.Equals(obj);
-        }
+        public override bool Equals(object? obj) => base.Equals(obj);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -142,10 +112,7 @@ namespace Mithril.Logging.Models
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(LogCommand other)
-        {
-            return base.Equals(other);
-        }
+        public bool Equals(LogCommand other) => base.Equals(other);
 
         /// <summary>
         /// Returns a hash code for this instance.
@@ -154,9 +121,6 @@ namespace Mithril.Logging.Models
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => base.GetHashCode();
     }
 }

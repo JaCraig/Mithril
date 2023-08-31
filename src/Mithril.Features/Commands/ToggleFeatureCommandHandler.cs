@@ -55,9 +55,9 @@ namespace Mithril.Features.Commands
         /// <returns>A command value converted from the ExpandoObject.</returns>
         public override ValueTask<CommandCreationResult?> CreateAsync(ToggleFeatureCommandVM? value, ClaimsPrincipal user)
         {
-            if (string.IsNullOrEmpty(value?.FeatureName))
-                return ValueTask.FromResult<CommandCreationResult?>(null);
-            return ValueTask.FromResult<CommandCreationResult?>(new CommandCreationResult(new ToggleFeatureCommand(value.FeatureName, value.Active), ResultText: "Feature toggle command successfully received"));
+            return string.IsNullOrEmpty(value?.FeatureName)
+                ? ValueTask.FromResult<CommandCreationResult?>(null)
+                : ValueTask.FromResult<CommandCreationResult?>(new CommandCreationResult(new ToggleFeatureCommand(value.FeatureName, value.Active), ResultText: "Feature toggle command successfully received"));
         }
 
         /// <summary>
@@ -69,10 +69,10 @@ namespace Mithril.Features.Commands
         {
             if (args is null || Logger is null || SessionManager is null)
                 return Array.Empty<IEvent>();
-            List<IEvent> ReturnValues = new List<IEvent>();
+            var ReturnValues = new List<IEvent>();
             for (var x = 0; x < args.Length; ++x)
             {
-                var arg = args[x];
+                ToggleFeatureCommand? arg = args[x];
                 if (arg is null || string.IsNullOrEmpty(arg.FeatureName))
                     continue;
                 await SessionManager.SetAsync(arg.FeatureName, arg.FeatureStatus).ConfigureAwait(false);

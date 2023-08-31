@@ -14,13 +14,13 @@ namespace Mithril.Communication.Email.Models.Mappings
         /// </summary>
         public EmailSettingsMapping()
         {
-            Reference(x => x.LocalDomain);
-            Reference(x => x.Password);
-            Reference(x => x.Port);
-            Reference(x => x.Server);
-            Reference(x => x.SystemAddress);
-            Reference(x => x.UserName);
-            Reference(x => x.UseSSL);
+            _ = Reference(x => x.LocalDomain);
+            _ = Reference(x => x.Password);
+            _ = Reference(x => x.Port);
+            _ = Reference(x => x.Server);
+            _ = Reference(x => x.SystemAddress);
+            _ = Reference(x => x.UserName);
+            _ = Reference(x => x.UseSSL);
         }
     }
 }

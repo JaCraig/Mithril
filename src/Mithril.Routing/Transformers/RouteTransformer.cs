@@ -43,7 +43,7 @@ namespace Mithril.Routing.Transformers
                 return new ValueTask<RouteValueDictionary>(values!);
             var RequestPath = httpContext.Request.Path.Value;
 
-            var TempRoute = RouteManager?.GetRoute(RequestPath);
+            Abstractions.Interfaces.IRoute? TempRoute = RouteManager?.GetRoute(RequestPath);
 
             values["slug"] = null;
 

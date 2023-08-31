@@ -55,10 +55,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <returns>True if it accepts it, false otherwise.</returns>
-        public virtual bool Accepts(IEvent arg)
-        {
-            return arg is TEvent;
-        }
+        public virtual bool Accepts(IEvent arg) => arg is TEvent;
 
         /// <summary>
         /// Handles the event.
@@ -67,9 +64,9 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <returns>The result from processing the event.</returns>
         public EventResult Handle(IEvent arg)
         {
-            if (arg is null || !Accepts(arg))
-                return new EventResult(arg, EventStateTypes.Error, this, new ArgumentNullException(nameof(arg)));
-            return Handle((TEvent)arg);
+            return arg is null || !Accepts(arg)
+                ? new EventResult(arg, EventStateTypes.Error, this, new ArgumentNullException(nameof(arg)))
+                : Handle((TEvent)arg);
         }
 
         /// <summary>
@@ -83,9 +80,6 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// Determines whether the associated features are enabled.
         /// </summary>
         /// <returns><c>true</c> if all features are enabled; otherwise, <c>false</c>.</returns>
-        protected bool IsFeatureEnabled()
-        {
-            return FeatureManager.AreFeaturesEnabled(Features);
-        }
+        protected bool IsFeatureEnabled() => FeatureManager.AreFeaturesEnabled(Features);
     }
 }

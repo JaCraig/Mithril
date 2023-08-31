@@ -91,10 +91,7 @@ namespace Mithril.Navigation.Services
         /// <returns>
         /// The async task.
         /// </returns>
-        public Task BuildAsync()
-        {
-            return InternalMenu?.SaveAsync(DataService, User) ?? Task.CompletedTask;
-        }
+        public Task BuildAsync() => InternalMenu?.SaveAsync(DataService, User) ?? Task.CompletedTask;
 
         /// <summary>
         /// Determines whether [the menu] [has the menu item specified].
@@ -103,10 +100,7 @@ namespace Mithril.Navigation.Services
         /// <returns>
         /// <c>true</c> if it [has the menu item specified]; otherwise, <c>false</c>.
         /// </returns>
-        public bool HasMenuItem(string display)
-        {
-            return InternalMenu?.Items.Any(x => string.Equals(x.Display, display, StringComparison.OrdinalIgnoreCase)) ?? false;
-        }
+        public bool HasMenuItem(string display) => InternalMenu?.Items.Any(x => string.Equals(x.Display, display, StringComparison.OrdinalIgnoreCase)) ?? false;
 
         /// <summary>
         /// Sets the security.

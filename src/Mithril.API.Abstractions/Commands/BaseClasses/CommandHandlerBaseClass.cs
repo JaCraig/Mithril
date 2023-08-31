@@ -82,10 +82,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <returns>
         /// <c>true</c> if this instance can handle the specified command; otherwise, <c>false</c>.
         /// </returns>
-        public virtual bool CanHandle(ICommand command)
-        {
-            return command is TCommand;
-        }
+        public virtual bool CanHandle(ICommand command) => command is TCommand;
 
         /// <summary>
         /// Creates the specified value.
@@ -103,10 +100,10 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         public Task<IEvent[]> HandleCommandAsync(params ICommand[] arg)
         {
             arg ??= Array.Empty<ICommand>();
-            var Items = arg.Where(x => CanHandle(x)).OfType<TCommand>().ToArray();
-            if (Items.Length == 0)
-                return Task.FromResult(Array.Empty<IEvent>());
-            return HandleCommandAsync(Items) ?? Task.FromResult(Array.Empty<IEvent>());
+            TCommand[] Items = arg.Where(CanHandle).OfType<TCommand>().ToArray();
+            return Items.Length == 0
+                ? Task.FromResult(Array.Empty<IEvent>())
+                : HandleCommandAsync(Items) ?? Task.FromResult(Array.Empty<IEvent>());
         }
 
         /// <summary>
@@ -120,9 +117,6 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// Determines whether the associated features are enabled.
         /// </summary>
         /// <returns><c>true</c> if all features are enabled; otherwise, <c>false</c>.</returns>
-        protected bool IsFeatureEnabled()
-        {
-            return FeatureManager.AreFeaturesEnabled(Features);
-        }
+        protected bool IsFeatureEnabled() => FeatureManager.AreFeaturesEnabled(Features);
     }
 }

@@ -52,7 +52,7 @@ namespace Mithril.Models
             if (!IsFeatureEnabled())
                 return Task.FromResult<TestVM?>(null);
             var List = new List<TestVM2>();
-            arguments.GetValue<int>("Count").Times(_ => List.Add(new TestVM2() { A = arguments.GetValue<string>("Name") }));
+            _ = arguments.GetValue<int>("Count").Times(_ => List.Add(new TestVM2() { A = arguments.GetValue<string>("Name") }));
             return Task.FromResult<TestVM?>(new TestVM { A = List });
         }
     }
@@ -76,10 +76,7 @@ namespace Mithril.Models
         /// <param name="a">a.</param>
         /// <param name="b">The b.</param>
         /// <returns></returns>
-        public TestVM2 ExampleMethod(string a = "A", int b = 2)
-        {
-            return new TestVM2 { A = a, B = b };
-        }
+        public TestVM2 ExampleMethod(string a = "A", int b = 2) => new() { A = a, B = b };
 
         /// <summary>
         /// Examples the method2.

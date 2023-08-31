@@ -84,10 +84,7 @@ namespace Mithril.Caching.InMemory.Commands
         /// <returns>
         /// <c>true</c> if this instance can handle the specified command; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanHandle(ICommand command)
-        {
-            return false;
-        }
+        public bool CanHandle(ICommand command) => false;
 
         /// <summary>
         /// Creates the specified value.
@@ -109,9 +106,6 @@ namespace Mithril.Caching.InMemory.Commands
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <returns>Any events that are spawned by the command.</returns>
-        public Task<IEvent[]> HandleCommandAsync(params ICommand[] arg)
-        {
-            return Task.FromResult(Array.Empty<IEvent>());
-        }
+        public Task<IEvent[]> HandleCommandAsync(params ICommand[] arg) => Task.FromResult(Array.Empty<IEvent>());
     }
 }

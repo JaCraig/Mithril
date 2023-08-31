@@ -14,8 +14,8 @@ namespace Mithril.Apm.Default.Models.Mappings
         /// </summary>
         public RequestMetaDataMapping()
         {
-            Reference(x => x.DisplayName);
-            Reference(x => x.MetaData);
+            _ = Reference(x => x.DisplayName);
+            _ = Reference(x => x.MetaData);
         }
     }
 }

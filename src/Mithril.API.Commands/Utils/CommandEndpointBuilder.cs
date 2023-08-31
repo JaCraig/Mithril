@@ -36,7 +36,7 @@ namespace Mithril.API.Commands.Utils
                 return;
             commandEndPoint = CleanText(commandEndPoint);
             var CommandName = CleanText(commandHandler.CommandName, "/");
-            var EndPointBuilder = endpoints.MapPost(commandEndPoint + CommandName, (
+            RouteHandlerBuilder? EndPointBuilder = endpoints.MapPost(commandEndPoint + CommandName, (
                                                         [FromServices] IDataService dataService,
                                                         [FromServices] ILogger<CommandModule> logger,
                                                         ClaimsPrincipal user,
@@ -90,21 +90,21 @@ namespace Mithril.API.Commands.Utils
         {
             if (EndPointBuilder is null)
                 return;
-            var AuthorizationAttribute = HandlerType.GetCustomAttribute<ApiAuthorizeAttribute>();
+            ApiAuthorizeAttribute? AuthorizationAttribute = HandlerType.GetCustomAttribute<ApiAuthorizeAttribute>();
             var DefaultAuthorizationPolicy = config?.AuthorizationPolicy ?? "";
 
             if (AllowAnonymous(config, HandlerType))
             {
-                EndPointBuilder.AllowAnonymous();
+                _ = EndPointBuilder.AllowAnonymous();
                 return;
             }
             EndPointBuilder = EndPointBuilder.Produces(StatusCodes.Status401Unauthorized);
             if (UsePolicyForAuth(DefaultAuthorizationPolicy, AuthorizationAttribute))
             {
-                EndPointBuilder.RequireAuthorization(AuthorizationAttribute?.PolicyName ?? DefaultAuthorizationPolicy);
+                _ = EndPointBuilder.RequireAuthorization(AuthorizationAttribute?.PolicyName ?? DefaultAuthorizationPolicy);
                 return;
             }
-            EndPointBuilder.RequireAuthorization();
+            _ = EndPointBuilder.RequireAuthorization();
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Mithril.API.Commands.Utils
         {
             if (string.IsNullOrEmpty(config?.Security?.DefaultCorsPolicy) || endPointBuilder is null)
                 return;
-            endPointBuilder.RequireCors(config.Security.DefaultCorsPolicy);
+            _ = endPointBuilder.RequireCors(config.Security.DefaultCorsPolicy);
         }
 
         /// <summary>

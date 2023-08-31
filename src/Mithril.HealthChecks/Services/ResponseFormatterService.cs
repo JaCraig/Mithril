@@ -36,10 +36,8 @@ namespace Mithril.HealthChecks.Services
             if (httpContext is null)
                 return Task.CompletedTask;
             httpContext.Response.StatusCode = healthReport.Status == HealthStatus.Healthy ? 200 : 500;
-            var Formatter = Formatters.FirstOrDefault(x => x.Accepts(httpContext.Request.RouteValues["format"]?.ToString() ?? ""));
-            if (Formatter is null)
-                return Task.CompletedTask;
-            return Formatter.SendResponseAsync(httpContext, healthReport);
+            IResponseFormatter? Formatter = Formatters.FirstOrDefault(x => x.Accepts(httpContext.Request.RouteValues["format"]?.ToString() ?? ""));
+            return Formatter is null ? Task.CompletedTask : Formatter.SendResponseAsync(httpContext, healthReport);
         }
     }
 }

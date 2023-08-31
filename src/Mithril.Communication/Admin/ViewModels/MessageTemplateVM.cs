@@ -74,8 +74,8 @@ namespace Mithril.Communication.Admin.ViewModels
         {
             if (string.IsNullOrEmpty(DisplayName))
                 return null;
-            var Template = MessageTemplate.Load(id, dataService) ?? new MessageTemplate(DisplayName);
-            Template.SetContent(HttpContext.Current?.RequestServices.GetService<IHostEnvironment>(), Content);
+            MessageTemplate Template = MessageTemplate.Load(id, dataService) ?? new MessageTemplate(DisplayName);
+            _ = Template.SetContent(HttpContext.Current?.RequestServices.GetService<IHostEnvironment>(), Content);
             await Template.SaveAsync(dataService, currentUser).ConfigureAwait(false);
             return Template;
         }

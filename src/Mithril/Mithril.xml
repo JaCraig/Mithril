@@ -4,16 +4,6 @@
         <name>Mithril</name>
     </assembly>
     <members>
-        <member name="T:Mithril.Controllers.MyFeatureFlags">
-            <summary>
-            Example feature flags controlled by config
-            </summary>
-        </member>
-        <member name="F:Mithril.Controllers.MyFeatureFlags.ExampleFlag">
-            <summary>
-            The example flag
-            </summary>
-        </member>
         <member name="T:Mithril.Controllers.HomeController">
             <summary>
             Home controller
@@ -28,17 +18,17 @@
             <param name="securityService">The security service.</param>
             <param name="communicationService">The communication service.</param>
         </member>
-        <member name="F:Mithril.Controllers.HomeController._logger">
-            <summary>
-            The logger
-            </summary>
-        </member>
-        <member name="F:Mithril.Controllers.HomeController.communicationService">
+        <member name="F:Mithril.Controllers.HomeController._CommunicationService">
             <summary>
             The communication service
             </summary>
         </member>
-        <member name="F:Mithril.Controllers.HomeController.securityService">
+        <member name="F:Mithril.Controllers.HomeController._Logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="F:Mithril.Controllers.HomeController._SecurityService">
             <summary>
             The security service
             </summary>
@@ -73,6 +63,16 @@
             Privacies this instance.
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:Mithril.Controllers.MyFeatureFlags">
+            <summary>
+            Example feature flags controlled by config
+            </summary>
+        </member>
+        <member name="F:Mithril.Controllers.MyFeatureFlags.ExampleFlag">
+            <summary>
+            The example flag
+            </summary>
         </member>
         <member name="T:Mithril.Models.ErrorViewModel">
             <summary>

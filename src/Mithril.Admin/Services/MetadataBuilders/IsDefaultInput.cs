@@ -46,7 +46,7 @@ namespace Mithril.Admin.Services.MetadataBuilders
         {
             if (property is null)
                 return "text";
-            var DeclaredType = property.Attribute<InputTypeAttribute>();
+            InputTypeAttribute? DeclaredType = property.Attribute<InputTypeAttribute>();
             if (!string.IsNullOrEmpty(DeclaredType?.InputType))
                 return DeclaredType.InputType;
             if (property.PropertyType.Is<uint>())
@@ -59,15 +59,13 @@ namespace Mithril.Admin.Services.MetadataBuilders
                 return "number";
             if (property.PropertyType.Is<long>())
                 return "number";
-            if (property.PropertyType.Is<short>())
-                return "number";
-            if (property.Attribute<PasswordAttribute>() is not null)
-                return "password";
-            if (property.Attribute<DateAndTimeAttribute>() is not null)
-                return "datetime-local";
-            if (property.PropertyType.Is<DateTime>())
-                return "date";
-            return "text";
+            return property.PropertyType.Is<short>()
+                ? "number"
+                : property.Attribute<PasswordAttribute>() is not null
+                ? "password"
+                : property.Attribute<DateAndTimeAttribute>() is not null
+                ? "datetime-local"
+                : property.PropertyType.Is<DateTime>() ? "date" : "text";
         }
     }
 }

@@ -64,10 +64,7 @@ namespace Mithril.Themes.Resources
         /// <param name="resource1">The resource1.</param>
         /// <param name="resource2">The resource2.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(StyleResource? resource1, StyleResource? resource2)
-        {
-            return !(resource1 == resource2);
-        }
+        public static bool operator !=(StyleResource? resource1, StyleResource? resource2) => !(resource1 == resource2);
 
         /// <summary>
         /// Implements the operator ==.
@@ -75,10 +72,7 @@ namespace Mithril.Themes.Resources
         /// <param name="resource1">The resource1.</param>
         /// <param name="resource2">The resource2.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator ==(StyleResource? resource1, StyleResource? resource2)
-        {
-            return EqualityComparer<StyleResource>.Default.Equals(resource1, resource2);
-        }
+        public static bool operator ==(StyleResource? resource1, StyleResource? resource2) => EqualityComparer<StyleResource>.Default.Equals(resource1, resource2);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -87,10 +81,7 @@ namespace Mithril.Themes.Resources
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return Equals(obj as StyleResource);
-        }
+        public override bool Equals(object? obj) => Equals(obj as StyleResource);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -113,10 +104,7 @@ namespace Mithril.Themes.Resources
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return 1997410482 + EqualityComparer<string>.Default.GetHashCode(Content);
-        }
+        public override int GetHashCode() => 1997410482 + EqualityComparer<string>.Default.GetHashCode(Content);
 
         /// <summary>
         /// Gets the content of the resource as an IHtmlContent item.
@@ -127,7 +115,7 @@ namespace Mithril.Themes.Resources
             var Builder = new TagBuilder("style");
             MergeAttribute(Builder, "type", Type);
             MergeAttribute(Builder, "media", Media);
-            Builder.InnerHtml.AppendHtml(Content);
+            _ = Builder.InnerHtml.AppendHtml(Content);
             return Builder;
         }
 

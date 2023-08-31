@@ -60,7 +60,7 @@ namespace Mithril.Communication.Email.Channel
                 return new MessageResult("Message is empty", new ArgumentNullException(nameof(message)));
             Logger?.LogInformation("Sending email");
             var Sender = new EmailSender(FeatureManager, DataService);
-            string Body = !string.IsNullOrEmpty(message.Body)
+            var Body = !string.IsNullOrEmpty(message.Body)
                 ? message.Body
                 : await GetBodyFromTemplate(message, ViewRendererService).ConfigureAwait(false);
             Sender.To = message.To ?? "";
@@ -85,9 +85,9 @@ namespace Mithril.Communication.Email.Channel
         /// <returns>The body if a template is specified.</returns>
         private static async Task<string> GetBodyFromTemplate(IMessage message, IViewRendererService? viewRendererService)
         {
-            if (string.IsNullOrEmpty(message.Template) || viewRendererService is null)
-                return "";
-            return Encoding.UTF8.GetString(await viewRendererService.RenderAsync($"MessageTemplates/{message.Template}", message.TemplateFields).ConfigureAwait(false));
+            return string.IsNullOrEmpty(message.Template) || viewRendererService is null
+                ? ""
+                : Encoding.UTF8.GetString(await viewRendererService.RenderAsync($"MessageTemplates/{message.Template}", message.TemplateFields).ConfigureAwait(false));
         }
     }
 }

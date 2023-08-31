@@ -16,13 +16,13 @@ namespace Mithril.Data.Models.Mappings
         public IModelMapping()
             : base(merge: true)
         {
-            ID(x => x.ID).IsAutoIncremented();
-            Reference(x => x.Active).WithDefaultValue(() => true);
-            Reference(x => x.DateCreated).WithDefaultValue(() => new DateTime(1900, 1, 1));
-            Reference(x => x.DateModified).WithDefaultValue(() => new DateTime(1900, 1, 1));
-            Map(x => x.Creator);
-            Map(x => x.Modifier);
-            Reference(x => x.TenantID);
+            _ = ID(x => x.ID).IsAutoIncremented();
+            _ = Reference(x => x.Active).WithDefaultValue(() => true);
+            _ = Reference(x => x.DateCreated).WithDefaultValue(() => new DateTime(1900, 1, 1));
+            _ = Reference(x => x.DateModified).WithDefaultValue(() => new DateTime(1900, 1, 1));
+            _ = Map(x => x.Creator);
+            _ = Map(x => x.Modifier);
+            _ = Reference(x => x.TenantID);
         }
     }
 }

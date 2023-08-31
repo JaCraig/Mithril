@@ -14,7 +14,7 @@ namespace Mithril.Communication.Models.Mappings
         /// </summary>
         public MessageTemplateMapping()
         {
-            Reference(x => x.DisplayName);
+            _ = Reference(x => x.DisplayName);
         }
     }
 }

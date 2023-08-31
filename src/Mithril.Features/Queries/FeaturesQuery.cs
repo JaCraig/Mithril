@@ -45,9 +45,6 @@ namespace Mithril.Features.Queries
         /// <param name="arg">The argument.</param>
         /// <param name="arguments">The arguments.</param>
         /// <returns></returns>
-        public override Task<IEnumerable<FeatureVM>?> ResolveAsync(ClaimsPrincipal? arg, Arguments arguments)
-        {
-            return Task.FromResult<IEnumerable<FeatureVM>?>(Feature.All(DataService).Select(x => new FeatureVM(x)));
-        }
+        public override Task<IEnumerable<FeatureVM>?> ResolveAsync(ClaimsPrincipal? arg, Arguments arguments) => Task.FromResult<IEnumerable<FeatureVM>?>(Feature.All(DataService).Select(x => new FeatureVM(x)));
     }
 }

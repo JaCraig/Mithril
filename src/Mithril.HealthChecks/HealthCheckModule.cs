@@ -40,16 +40,16 @@ namespace Mithril.HealthChecks
         {
             if (endpoints is null || endpoints.ServiceProvider.GetService<IResponseFormatterService>() is null || configuration is null)
                 return endpoints;
-            var SystemConfig = configuration.GetSystemConfig();
+            MithrilConfig? SystemConfig = configuration.GetSystemConfig();
             var JsonConfig = new JsonSerializerOptions(JsonSerializerDefaults.Web);
             JsonConfig.Converters.Add(new JsonStringEnumConverter());
             var HealthCheckEndPoint = configuration.GetConfig<MithrilHealthCheckOptions>("Mithril:HealthChecks")?.CheckEndPoint ?? "/api/healthchecks";
-            var EndpointBuilder = endpoints.MapHealthChecks(HealthCheckEndPoint + ".{format}", new HealthCheckOptions
+            IEndpointConventionBuilder EndpointBuilder = endpoints.MapHealthChecks(HealthCheckEndPoint + ".{format}", new HealthCheckOptions
             {
                 Predicate = _ => true,
                 ResponseWriter = (context, result) =>
                 {
-                    var Formatter = context.RequestServices.GetService<IResponseFormatterService>();
+                    IResponseFormatterService? Formatter = context.RequestServices.GetService<IResponseFormatterService>();
                     return Formatter?.FormatResponse(context, result) ?? Task.CompletedTask;
                 }
             });
@@ -59,7 +59,7 @@ namespace Mithril.HealthChecks
                 Predicate = _ => true,
                 ResponseWriter = (context, result) =>
                 {
-                    var Formatter = context.RequestServices.GetService<IResponseFormatterService>();
+                    IResponseFormatterService? Formatter = context.RequestServices.GetService<IResponseFormatterService>();
                     return Formatter?.FormatResponse(context, result) ?? Task.CompletedTask;
                 }
             });
@@ -83,10 +83,10 @@ namespace Mithril.HealthChecks
             services = services.Configure<MithrilHealthCheckOptions>(configuration.GetSection("Mithril:HealthChecks"));
 
             var Timeout = configuration.GetConfig<MithrilHealthCheckOptions>("Mithril:HealthChecks")?.DefaultTimeout ?? 3;
-            services.AddHealthChecks()
+            _ = services.AddHealthChecks()
                 .AddCheck<SystemStatusHealthCheck>("System", null, new string[] { "System" }, new TimeSpan(0, 0, Timeout));
-            services.AddSingleton<IResponseFormatterService, ResponseFormatterService>();
-            services.AddAllTransient<IResponseFormatter>();
+            _ = services.AddSingleton<IResponseFormatterService, ResponseFormatterService>();
+            _ = services.AddAllTransient<IResponseFormatter>();
             return services;
         }
 
@@ -99,7 +99,7 @@ namespace Mithril.HealthChecks
         {
             if (SystemConfig is null || string.IsNullOrEmpty(SystemConfig.Security?.DefaultCorsPolicy))
                 return;
-            EndpointBuilder.RequireCors(SystemConfig.Security.DefaultCorsPolicy);
+            _ = EndpointBuilder.RequireCors(SystemConfig.Security.DefaultCorsPolicy);
         }
     }
 }

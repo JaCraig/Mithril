@@ -24,9 +24,7 @@ namespace Mithril.Data.Abstractions.ExtensionMethods
             if (!removeDomain)
                 return UserName;
             var UserNameParts = UserName.Split('\\', StringSplitOptions.RemoveEmptyEntries)[^1];
-            if (UserNameParts.Contains('@'))
-                return UserName.Split('@', StringSplitOptions.RemoveEmptyEntries)[0];
-            return UserNameParts;
+            return UserNameParts.Contains('@') ? UserName.Split('@', StringSplitOptions.RemoveEmptyEntries)[0] : UserNameParts;
         }
 
         /// <summary>
@@ -35,9 +33,6 @@ namespace Mithril.Data.Abstractions.ExtensionMethods
         /// <param name="claimsPrincipal">The claims principal.</param>
         /// <param name="tennantID">The tennant identifier.</param>
         /// <returns>True if it exists, false otherwise.</returns>
-        public static bool TryGetTennant(this ClaimsPrincipal? claimsPrincipal, out long tennantID)
-        {
-            return long.TryParse(claimsPrincipal?.Claims.FirstOrDefault(x => string.Equals(x.Type, "Tenant", StringComparison.OrdinalIgnoreCase))?.Value ?? "", out tennantID);
-        }
+        public static bool TryGetTennant(this ClaimsPrincipal? claimsPrincipal, out long tennantID) => long.TryParse(claimsPrincipal?.Claims.FirstOrDefault(x => string.Equals(x.Type, "Tenant", StringComparison.OrdinalIgnoreCase))?.Value ?? "", out tennantID);
     }
 }

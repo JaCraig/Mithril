@@ -94,7 +94,7 @@ namespace Mithril.Apm.Default.BackgroundTasks
             if (MetricsCollectorService is null)
                 return;
             Logger?.LogInformation("Reporting APM metrics");
-            MetricsCollectorService.BatchCollectedMetrics();
+            _ = MetricsCollectorService.BatchCollectedMetrics();
 
             if (DataService is null)
                 return;
@@ -102,11 +102,11 @@ namespace Mithril.Apm.Default.BackgroundTasks
             try
             {
                 Logger?.LogInformation("Cleaning APM metrics");
-                var MaxAge = DateTime.UtcNow.AddHours(-(Options?.MaximumAge ?? 1));
-                var OldTraces = RequestTrace.Query(DataService)?.Where(x => x.DateCreated <= MaxAge).ToList().ToArray() ?? Array.Empty<RequestTrace>();
-                await DataService.DeleteAsync(null, OldTraces).ConfigureAwait(false);
+                DateTime MaxAge = DateTime.UtcNow.AddHours(-(Options?.MaximumAge ?? 1));
+                RequestTrace[] OldTraces = RequestTrace.Query(DataService)?.Where(x => x.DateCreated <= MaxAge).ToList().ToArray() ?? Array.Empty<RequestTrace>();
+                _ = await DataService.DeleteAsync(null, OldTraces).ConfigureAwait(false);
             }
-            finally { LockObject.Release(); }
+            finally { _ = LockObject.Release(); }
         }
     }
 }

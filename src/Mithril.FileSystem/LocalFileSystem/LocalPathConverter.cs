@@ -46,10 +46,7 @@ namespace Mithril.FileSystem.LocalFileSystem
         /// <returns>
         /// <c>true</c> if this instance can convert the specified path; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanConvert(string path)
-        {
-            return (path?.StartsWith("mithril://", StringComparison.OrdinalIgnoreCase) ?? false) || CanHandle.IsMatch(path ?? "");
-        }
+        public bool CanConvert(string path) => (path?.StartsWith("mithril://", StringComparison.OrdinalIgnoreCase) ?? false) || CanHandle.IsMatch(path ?? "");
 
         /// <summary>
         /// Determines whether this instance can convert the specified path.
@@ -58,10 +55,7 @@ namespace Mithril.FileSystem.LocalFileSystem
         /// <returns>
         /// <c>true</c> if this instance can convert the specified path; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanConvert(IFile file)
-        {
-            return CanConvert(file?.FullName ?? "");
-        }
+        public bool CanConvert(IFile file) => CanConvert(file?.FullName ?? "");
 
         /// <summary>
         /// Converts the file in the path to a Uri.
@@ -72,12 +66,12 @@ namespace Mithril.FileSystem.LocalFileSystem
         {
             if (string.IsNullOrWhiteSpace(path))
                 return null;
-            var Request = HttpContext.Current?.Request;
+            Microsoft.AspNetCore.Http.HttpRequest? Request = HttpContext.Current?.Request;
             var Host = Request?.Host.ToUriComponent() ?? "";
             var PathBase = Request?.PathBase.ToUriComponent() ?? "";
             var RootDirectory = new FileCurator.DirectoryInfo("mithril://");
             var FilePath = new FileCurator.FileInfo(path).FullName.Replace(RootDirectory.FullName, "", StringComparison.OrdinalIgnoreCase).Replace("\\", "/", StringComparison.Ordinal);
-            Uri.TryCreate($"{Request?.Scheme}://{Host}{PathBase}/{FilePath}", new UriCreationOptions { DangerousDisablePathAndQueryCanonicalization = true }, out var ReturnValue);
+            _ = Uri.TryCreate($"{Request?.Scheme}://{Host}{PathBase}/{FilePath}", new UriCreationOptions { DangerousDisablePathAndQueryCanonicalization = true }, out Uri? ReturnValue);
             return ReturnValue;
         }
 
@@ -86,9 +80,6 @@ namespace Mithril.FileSystem.LocalFileSystem
         /// </summary>
         /// <param name="file">The file.</param>
         /// <returns></returns>
-        public Uri? GetUrl(IFile file)
-        {
-            return GetUrl(file?.FullName ?? "");
-        }
+        public Uri? GetUrl(IFile file) => GetUrl(file?.FullName ?? "");
     }
 }

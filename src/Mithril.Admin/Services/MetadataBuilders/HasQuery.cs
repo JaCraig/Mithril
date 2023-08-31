@@ -55,10 +55,8 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// <returns>The query filter.</returns>
         private static string GenerateQueryFilter(PropertyInfo? property)
         {
-            var DropDownType = property?.GetCustomAttribute<QueryAttribute>();
-            if (DropDownType is null)
-                return "";
-            return DropDownType.Filter ?? "";
+            QueryAttribute? DropDownType = property?.GetCustomAttribute<QueryAttribute>();
+            return DropDownType is null ? "" : DropDownType.Filter ?? "";
         }
 
         /// <summary>
@@ -71,12 +69,8 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// </returns>
         private static string GenerateQueryName(PropertyInfo? property, Dictionary<Type, IDropDownQuery> dropDownQueries)
         {
-            var DropDownType = property?.GetCustomAttribute<QueryAttribute>();
-            if (DropDownType is null)
-                return "";
-            if (!dropDownQueries.TryGetValue(DropDownType.QueryType, out var Query))
-                return "";
-            return Query.Name;
+            QueryAttribute? DropDownType = property?.GetCustomAttribute<QueryAttribute>();
+            return DropDownType is null ? "" : !dropDownQueries.TryGetValue(DropDownType.QueryType, out IDropDownQuery? Query) ? "" : Query.Name;
         }
     }
 }

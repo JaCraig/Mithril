@@ -29,8 +29,8 @@ namespace Mithril.Security.Windows
         public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? env)
         {
             //Set up authentication so things get activated in IIS.
-            services?.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
-                     .AddNegotiate();
+            _ = (services?.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
+                     .AddNegotiate());
 
             return services;
         }

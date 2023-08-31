@@ -15,13 +15,13 @@ namespace Mithril.Navigation.Models.Mappings
         public MenuItemMapping()
             : base(merge: true)
         {
-            Reference(x => x.Display).WithMaxLength(128);
-            Reference(x => x.Order);
-            ManyToOne(x => x.Parent);
-            Map(x => x.Permissions).CascadeChanges();
-            Reference(x => x.Url).WithMaxLength(1024);
-            Reference(x => x.Icon).WithMaxLength(64);
-            Reference(x => x.Description).WithMaxLength(1024);
+            _ = Reference(x => x.Display).WithMaxLength(128);
+            _ = Reference(x => x.Order);
+            _ = ManyToOne(x => x.Parent);
+            _ = Map(x => x.Permissions).CascadeChanges();
+            _ = Reference(x => x.Url).WithMaxLength(1024);
+            _ = Reference(x => x.Icon).WithMaxLength(64);
+            _ = Reference(x => x.Description).WithMaxLength(1024);
         }
     }
 }

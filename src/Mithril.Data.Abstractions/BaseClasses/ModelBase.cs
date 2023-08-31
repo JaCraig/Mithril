@@ -102,10 +102,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="first">First item</param>
         /// <param name="second">Second item</param>
         /// <returns>returns true if they are not equal, false otherwise</returns>
-        public static bool operator !=(ModelBase<TClass>? first, ModelBase<TClass>? second)
-        {
-            return !(first == second);
-        }
+        public static bool operator !=(ModelBase<TClass>? first, ModelBase<TClass>? second) => !(first == second);
 
         /// <summary>
         /// The &lt; operator
@@ -113,10 +110,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="first">First item</param>
         /// <param name="second">Second item</param>
         /// <returns>True if the first item is less than the second, false otherwise</returns>
-        public static bool operator <(ModelBase<TClass>? first, ModelBase<TClass>? second)
-        {
-            return first is null ? second is null : first.CompareTo(second) < 0;
-        }
+        public static bool operator <(ModelBase<TClass>? first, ModelBase<TClass>? second) => first is null ? second is null : first.CompareTo(second) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -124,10 +118,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="first">The first.</param>
         /// <param name="second">The second.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(ModelBase<TClass>? first, ModelBase<TClass>? second)
-        {
-            return first is null ? second is null : first.CompareTo(second) <= 0;
-        }
+        public static bool operator <=(ModelBase<TClass>? first, ModelBase<TClass>? second) => first is null ? second is null : first.CompareTo(second) <= 0;
 
         /// <summary>
         /// The == operator
@@ -149,10 +140,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="first">First item</param>
         /// <param name="second">Second item</param>
         /// <returns>True if the first item is greater than the second, false otherwise</returns>
-        public static bool operator >(ModelBase<TClass>? first, ModelBase<TClass>? second)
-        {
-            return first is null ? second is null : first.CompareTo(second) > 0;
-        }
+        public static bool operator >(ModelBase<TClass>? first, ModelBase<TClass>? second) => first is null ? second is null : first.CompareTo(second) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -160,10 +148,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// <param name="first">The first.</param>
         /// <param name="second">The second.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(ModelBase<TClass>? first, ModelBase<TClass>? second)
-        {
-            return first is null ? second is null : first.CompareTo(second) >= 0;
-        }
+        public static bool operator >=(ModelBase<TClass>? first, ModelBase<TClass>? second) => first is null ? second is null : first.CompareTo(second) >= 0;
 
         /// <summary>
         /// Queries this instance.

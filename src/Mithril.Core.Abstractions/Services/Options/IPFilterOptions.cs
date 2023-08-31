@@ -15,10 +15,7 @@
         /// Adds the default policy.
         /// </summary>
         /// <returns>The default policy.</returns>
-        public IPFilterPolicy? AddDefaultPolicy()
-        {
-            return AddPolicy("DefaultPolicy");
-        }
+        public IPFilterPolicy? AddDefaultPolicy() => AddPolicy("DefaultPolicy");
 
         /// <summary>
         /// Adds a policy with the name, or if it already exists returns it.
@@ -29,7 +26,7 @@
         {
             if (string.IsNullOrEmpty(name))
                 return null;
-            if (Policies.TryGetValue(name, out var policy))
+            if (Policies.TryGetValue(name, out IPFilterPolicy? policy))
                 return policy;
             policy = new IPFilterPolicy(name);
             Policies.Add(name, policy);

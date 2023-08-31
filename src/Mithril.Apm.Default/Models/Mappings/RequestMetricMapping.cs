@@ -14,9 +14,9 @@ namespace Mithril.Apm.Default.Models.Mappings
         /// </summary>
         public RequestMetricMapping()
         {
-            Reference(x => x.DisplayName);
-            Reference(x => x.MetaData);
-            Reference(x => x.Metric).WithMaxLength(4);
+            _ = Reference(x => x.DisplayName);
+            _ = Reference(x => x.MetaData);
+            _ = Reference(x => x.Metric).WithMaxLength(4);
         }
     }
 }

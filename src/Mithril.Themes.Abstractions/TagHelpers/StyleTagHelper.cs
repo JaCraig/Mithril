@@ -48,7 +48,7 @@ namespace Mithril.Themes.Abstractions.TagHelpers
             var Media = GetValue(context, "media");
             var Type = GetValue(context, "type");
             var Location = GetValue(context, "location");
-            Resources?.AddStyleResource(Content, Media, Type, TagOrder, Location);
+            _ = (Resources?.AddStyleResource(Content, Media, Type, TagOrder, Location));
             output.SuppressOutput();
         }
 
@@ -58,9 +58,6 @@ namespace Mithril.Themes.Abstractions.TagHelpers
         /// <param name="context">The context.</param>
         /// <param name="name">The name.</param>
         /// <returns>The value.</returns>
-        private static string? GetValue(TagHelperContext context, string name)
-        {
-            return context.AllAttributes.ContainsName(name) ? context.AllAttributes[name].Value.ToString() : "";
-        }
+        private static string? GetValue(TagHelperContext context, string name) => context.AllAttributes.ContainsName(name) ? context.AllAttributes[name].Value.ToString() : "";
     }
 }

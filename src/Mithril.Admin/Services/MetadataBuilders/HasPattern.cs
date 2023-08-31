@@ -37,10 +37,8 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// <returns>The pattern value if one exists.</returns>
         protected static string? DeterminePattern(PropertyInfo? property)
         {
-            var TempAttribute = property?.Attribute<PatternAttribute>();
-            if (TempAttribute is null)
-                return "";
-            return TempAttribute.Value;
+            PatternAttribute? TempAttribute = property?.Attribute<PatternAttribute>();
+            return TempAttribute is null ? "" : TempAttribute.Value;
         }
     }
 }

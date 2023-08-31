@@ -67,10 +67,7 @@ namespace Mithril.Security.Models
         /// <param name="displayName">The display name.</param>
         /// <param name="dataService">The data service.</param>
         /// <returns>Permission specified</returns>
-        public static Permission? Load(string displayName, IDataService? dataService)
-        {
-            return Query(dataService)?.Where(x => x.DisplayName == displayName).FirstOrDefault();
-        }
+        public static Permission? Load(string displayName, IDataService? dataService) => Query(dataService)?.Where(x => x.DisplayName == displayName).FirstOrDefault();
 
         /// <summary>
         /// Loads a specific claim or creates it.
@@ -83,13 +80,13 @@ namespace Mithril.Security.Models
         /// <returns>The user claim specified.</returns>
         public static async Task<IPermission> LoadOrCreateAsync(string displayName, PermissionType operand, IUserClaim[] claims, IDataService? context, ClaimsPrincipal? user)
         {
-            var ReturnValue = Load(displayName, context);
+            Permission? ReturnValue = Load(displayName, context);
             if (ReturnValue is null)
             {
                 claims ??= Array.Empty<IUserClaim>();
                 ReturnValue = new Permission(displayName, operand, claims);
                 if (context is not null)
-                    await context.SaveAsync(user, ReturnValue).ConfigureAwait(false);
+                    _ = await context.SaveAsync(user, ReturnValue).ConfigureAwait(false);
             }
             return ReturnValue;
         }
@@ -100,10 +97,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator !=(Permission? left, Permission? right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(Permission? left, Permission? right) => !(left == right);
 
         /// <summary>
         /// Implements the operator &lt;.
@@ -111,10 +105,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <(Permission? left, Permission? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) < 0;
-        }
+        public static bool operator <(Permission? left, Permission? right) => left is null ? right is null : left.CompareTo(right) < 0;
 
         /// <summary>
         /// Implements the operator &lt;=.
@@ -122,10 +113,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator <=(Permission? left, Permission? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) <= 0;
-        }
+        public static bool operator <=(Permission? left, Permission? right) => left is null ? right is null : left.CompareTo(right) <= 0;
 
         /// <summary>
         /// Implements the operator ==.
@@ -147,10 +135,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >(Permission? left, Permission? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) > 0;
-        }
+        public static bool operator >(Permission? left, Permission? right) => left is null ? right is null : left.CompareTo(right) > 0;
 
         /// <summary>
         /// Implements the operator &gt;=.
@@ -158,10 +143,7 @@ namespace Mithril.Security.Models
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>The result of the operator.</returns>
-        public static bool operator >=(Permission? left, Permission? right)
-        {
-            return left is null ? right is null : left.CompareTo(right) >= 0;
-        }
+        public static bool operator >=(Permission? left, Permission? right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
         /// <summary>
         /// Adds the claim.
@@ -182,10 +164,7 @@ namespace Mithril.Security.Models
         /// </summary>
         /// <param name="other">Object to compare to</param>
         /// <returns>0 if they are equal, -1 if this is smaller, 1 if it is larger</returns>
-        public override int CompareTo(Permission? other)
-        {
-            return base.CompareTo(other);
-        }
+        public override int CompareTo(Permission? other) => base.CompareTo(other);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -195,10 +174,7 @@ namespace Mithril.Security.Models
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(Permission? other)
-        {
-            return base.Equals(other);
-        }
+        public bool Equals(Permission? other) => base.Equals(other);
 
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
@@ -208,10 +184,7 @@ namespace Mithril.Security.Models
         /// true if the current object is equal to the <paramref name="other">other</paramref>
         /// parameter; otherwise, false.
         /// </returns>
-        public bool Equals(IPermission? other)
-        {
-            return base.Equals(other);
-        }
+        public bool Equals(IPermission? other) => base.Equals(other);
 
         /// <summary>
         /// Determines whether the specified <see cref="object"/>, is equal to this instance.
@@ -220,10 +193,7 @@ namespace Mithril.Security.Models
         /// <returns>
         /// <c>true</c> if the specified <see cref="object"/> is equal to this instance; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object? obj)
-        {
-            return base.Equals(obj);
-        }
+        public override bool Equals(object? obj) => base.Equals(obj);
 
         /// <summary>
         /// Returns a hash code for this instance.
@@ -232,10 +202,7 @@ namespace Mithril.Security.Models
         /// A hash code for this instance, suitable for use in hashing algorithms and data
         /// structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        public override int GetHashCode() => base.GetHashCode();
 
         /// <summary>
         /// Determines whether the specified user has permission.
@@ -275,7 +242,7 @@ namespace Mithril.Security.Models
             Claims ??= new List<IUserClaim>();
             if (claim is null || !Claims.Contains(claim))
                 return this;
-            Claims.Remove(claim);
+            _ = Claims.Remove(claim);
             return this;
         }
 
@@ -297,9 +264,6 @@ namespace Mithril.Security.Models
         /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
         /// <returns>A <see cref="string"/> that represents this instance.</returns>
-        public override string ToString()
-        {
-            return DisplayName ?? "";
-        }
+        public override string ToString() => DisplayName ?? "";
     }
 }
