@@ -13,46 +13,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.AspNetCore.Builder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Microsoft.AspNetCore.Builder.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Microsoft.Extensions.DependencyInjection.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.API.Abstractions.Attributes.ApiAllowAnonymousAttribute.yml",
       "output": {
         ".html": {
@@ -2633,16 +2593,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Mithril.Communication.Abstractions.AttachmentMapping.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mithril.Communication.Abstractions.AttachmentMapping.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Communication.Abstractions.BaseClasses.ChannelBaseClass-2.yml",
       "output": {
         ".html": {
@@ -2737,6 +2687,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Communication.Abstractions.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Communication.Abstractions.Mappings.AttachmentMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Communication.Abstractions.Mappings.AttachmentMapping.html"
         }
       },
       "version": ""
@@ -3713,10 +3673,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Extensions.IMvcBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Extensions.IMvcBuilderExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Core.Extensions.StaticHttpContextExtensions.yml",
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Core.Extensions.StaticHttpContextExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Core.Extensions.WebApplicationBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Core.Extensions.WebApplicationBuilderExtensions.html"
         }
       },
       "version": ""
@@ -4043,36 +4023,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mithril.Data.Abstractions.Models.General.Mappings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Data.Abstractions.Services.IDataService.yml",
       "output": {
         ".html": {
@@ -4153,60 +4103,30 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Mithril.Data.Inflatable.Models.Contact.Mappings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mithril.Data.Inflatable.Models.Contact.Mappings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mithril.Data.Inflatable.Models.General.Mappings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Data.Models.Contact.ContactInfo.yml",
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Data.Models.Contact.ContactInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.Contact.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.Contact.Mappings.html"
         }
       },
       "version": ""
@@ -4237,6 +4157,56 @@
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Data.Models.General.LookUpType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.General.Mappings.ILookUpMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.General.Mappings.ILookUpMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.General.Mappings.LookUpMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.General.Mappings.LookUpMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.General.Mappings.LookUpTypeMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.General.Mappings.LookUpTypeMapping.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Models.General.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Models.General.Mappings.html"
         }
       },
       "version": ""

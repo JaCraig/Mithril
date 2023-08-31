@@ -1,62 +1,6 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: Microsoft.AspNetCore.Builder
-  name: Microsoft.AspNetCore.Builder
-  href: api/Microsoft.AspNetCore.Builder.html
-  commentId: N:Microsoft.AspNetCore.Builder
-  fullName: Microsoft.AspNetCore.Builder
-  nameWithType: Microsoft.AspNetCore.Builder
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions
-  name: WebApplicationBuilderExtensions
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html
-  commentId: T:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions
-  nameWithType: WebApplicationBuilderExtensions
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.SetupMithril(Microsoft.AspNetCore.Builder.WebApplicationBuilder)
-  name: SetupMithril(WebApplicationBuilder?)
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_SetupMithril_Microsoft_AspNetCore_Builder_WebApplicationBuilder_
-  commentId: M:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.SetupMithril(Microsoft.AspNetCore.Builder.WebApplicationBuilder)
-  name.vb: SetupMithril(WebApplicationBuilder)
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.SetupMithril(Microsoft.AspNetCore.Builder.WebApplicationBuilder?)
-  fullName.vb: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.SetupMithril(Microsoft.AspNetCore.Builder.WebApplicationBuilder)
-  nameWithType: WebApplicationBuilderExtensions.SetupMithril(WebApplicationBuilder?)
-  nameWithType.vb: WebApplicationBuilderExtensions.SetupMithril(WebApplicationBuilder)
-- uid: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.SetupMithril*
-  name: SetupMithril
-  href: api/Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.html#Microsoft_AspNetCore_Builder_WebApplicationBuilderExtensions_SetupMithril_
-  commentId: Overload:Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.SetupMithril
-  isSpec: "True"
-  fullName: Microsoft.AspNetCore.Builder.WebApplicationBuilderExtensions.SetupMithril
-  nameWithType: WebApplicationBuilderExtensions.SetupMithril
-- uid: Microsoft.Extensions.DependencyInjection
-  name: Microsoft.Extensions.DependencyInjection
-  href: api/Microsoft.Extensions.DependencyInjection.html
-  commentId: N:Microsoft.Extensions.DependencyInjection
-  fullName: Microsoft.Extensions.DependencyInjection
-  nameWithType: Microsoft.Extensions.DependencyInjection
-- uid: Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions
-  name: IMvcBuilderExtensions
-  href: api/Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.html
-  commentId: T:Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions
-  fullName: Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions
-  nameWithType: IMvcBuilderExtensions
-- uid: Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.AddCspMediaType(Microsoft.Extensions.DependencyInjection.IMvcBuilder)
-  name: AddCspMediaType(IMvcBuilder?)
-  href: api/Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.html#Microsoft_Extensions_DependencyInjection_IMvcBuilderExtensions_AddCspMediaType_Microsoft_Extensions_DependencyInjection_IMvcBuilder_
-  commentId: M:Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.AddCspMediaType(Microsoft.Extensions.DependencyInjection.IMvcBuilder)
-  name.vb: AddCspMediaType(IMvcBuilder)
-  fullName: Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.AddCspMediaType(Microsoft.Extensions.DependencyInjection.IMvcBuilder?)
-  fullName.vb: Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.AddCspMediaType(Microsoft.Extensions.DependencyInjection.IMvcBuilder)
-  nameWithType: IMvcBuilderExtensions.AddCspMediaType(IMvcBuilder?)
-  nameWithType.vb: IMvcBuilderExtensions.AddCspMediaType(IMvcBuilder)
-- uid: Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.AddCspMediaType*
-  name: AddCspMediaType
-  href: api/Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.html#Microsoft_Extensions_DependencyInjection_IMvcBuilderExtensions_AddCspMediaType_
-  commentId: Overload:Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.AddCspMediaType
-  isSpec: "True"
-  fullName: Microsoft.Extensions.DependencyInjection.IMvcBuilderExtensions.AddCspMediaType
-  nameWithType: IMvcBuilderExtensions.AddCspMediaType
 - uid: Mithril
   name: Mithril
   href: api/Mithril.html
@@ -3783,13 +3727,13 @@ references:
   fullName: Mithril.API.GraphQL.GraphTypes.CompositeQuery
   nameWithType: CompositeQuery
 - uid: Mithril.API.GraphQL.GraphTypes.CompositeQuery.#ctor(System.Collections.Generic.IEnumerable{Mithril.API.Abstractions.Query.Interfaces.IQuery})
-  name: CompositeQuery(IEnumerable<IQuery>)
+  name: CompositeQuery(IEnumerable<IQuery?>)
   href: api/Mithril.API.GraphQL.GraphTypes.CompositeQuery.html#Mithril_API_GraphQL_GraphTypes_CompositeQuery__ctor_System_Collections_Generic_IEnumerable_Mithril_API_Abstractions_Query_Interfaces_IQuery__
   commentId: M:Mithril.API.GraphQL.GraphTypes.CompositeQuery.#ctor(System.Collections.Generic.IEnumerable{Mithril.API.Abstractions.Query.Interfaces.IQuery})
   name.vb: New(IEnumerable(Of IQuery))
-  fullName: Mithril.API.GraphQL.GraphTypes.CompositeQuery.CompositeQuery(System.Collections.Generic.IEnumerable<Mithril.API.Abstractions.Query.Interfaces.IQuery>)
+  fullName: Mithril.API.GraphQL.GraphTypes.CompositeQuery.CompositeQuery(System.Collections.Generic.IEnumerable<Mithril.API.Abstractions.Query.Interfaces.IQuery?>)
   fullName.vb: Mithril.API.GraphQL.GraphTypes.CompositeQuery.New(System.Collections.Generic.IEnumerable(Of Mithril.API.Abstractions.Query.Interfaces.IQuery))
-  nameWithType: CompositeQuery.CompositeQuery(IEnumerable<IQuery>)
+  nameWithType: CompositeQuery.CompositeQuery(IEnumerable<IQuery?>)
   nameWithType.vb: CompositeQuery.New(IEnumerable(Of IQuery))
 - uid: Mithril.API.GraphQL.GraphTypes.CompositeQuery.#ctor*
   name: CompositeQuery
@@ -4233,13 +4177,13 @@ references:
   fullName: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema
   nameWithType: CompositeSchema
 - uid: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.#ctor(System.Collections.Generic.IEnumerable{Mithril.API.Abstractions.Query.Interfaces.IQuery})
-  name: CompositeSchema(IEnumerable<IQuery>)
+  name: CompositeSchema(IEnumerable<IQuery?>)
   href: api/Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.html#Mithril_API_GraphQL_ObjectGraphs_CompositeSchema__ctor_System_Collections_Generic_IEnumerable_Mithril_API_Abstractions_Query_Interfaces_IQuery__
   commentId: M:Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.#ctor(System.Collections.Generic.IEnumerable{Mithril.API.Abstractions.Query.Interfaces.IQuery})
   name.vb: New(IEnumerable(Of IQuery))
-  fullName: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.CompositeSchema(System.Collections.Generic.IEnumerable<Mithril.API.Abstractions.Query.Interfaces.IQuery>)
+  fullName: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.CompositeSchema(System.Collections.Generic.IEnumerable<Mithril.API.Abstractions.Query.Interfaces.IQuery?>)
   fullName.vb: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.New(System.Collections.Generic.IEnumerable(Of Mithril.API.Abstractions.Query.Interfaces.IQuery))
-  nameWithType: CompositeSchema.CompositeSchema(IEnumerable<IQuery>)
+  nameWithType: CompositeSchema.CompositeSchema(IEnumerable<IQuery?>)
   nameWithType.vb: CompositeSchema.New(IEnumerable(Of IQuery))
 - uid: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.#ctor*
   name: CompositeSchema
@@ -12022,31 +11966,6 @@ references:
   fullName.vb: Mithril.Communication.Abstractions.Attachment.<=
   nameWithType: Attachment.operator <=
   nameWithType.vb: Attachment.<=
-- uid: Mithril.Communication.Abstractions.AttachmentMapping
-  name: AttachmentMapping
-  href: api/Mithril.Communication.Abstractions.AttachmentMapping.html
-  commentId: T:Mithril.Communication.Abstractions.AttachmentMapping
-  fullName: Mithril.Communication.Abstractions.AttachmentMapping
-  nameWithType: AttachmentMapping
-- uid: Mithril.Communication.Abstractions.AttachmentMapping.#ctor
-  name: AttachmentMapping()
-  href: api/Mithril.Communication.Abstractions.AttachmentMapping.html#Mithril_Communication_Abstractions_AttachmentMapping__ctor
-  commentId: M:Mithril.Communication.Abstractions.AttachmentMapping.#ctor
-  name.vb: New()
-  fullName: Mithril.Communication.Abstractions.AttachmentMapping.AttachmentMapping()
-  fullName.vb: Mithril.Communication.Abstractions.AttachmentMapping.New()
-  nameWithType: AttachmentMapping.AttachmentMapping()
-  nameWithType.vb: AttachmentMapping.New()
-- uid: Mithril.Communication.Abstractions.AttachmentMapping.#ctor*
-  name: AttachmentMapping
-  href: api/Mithril.Communication.Abstractions.AttachmentMapping.html#Mithril_Communication_Abstractions_AttachmentMapping__ctor_
-  commentId: Overload:Mithril.Communication.Abstractions.AttachmentMapping.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Mithril.Communication.Abstractions.AttachmentMapping.AttachmentMapping
-  fullName.vb: Mithril.Communication.Abstractions.AttachmentMapping.New
-  nameWithType: AttachmentMapping.AttachmentMapping
-  nameWithType.vb: AttachmentMapping.New
 - uid: Mithril.Communication.Abstractions.BaseClasses
   name: Mithril.Communication.Abstractions.BaseClasses
   href: api/Mithril.Communication.Abstractions.BaseClasses.html
@@ -12936,6 +12855,31 @@ references:
   commentId: N:Mithril.Communication.Abstractions.Mappings
   fullName: Mithril.Communication.Abstractions.Mappings
   nameWithType: Mithril.Communication.Abstractions.Mappings
+- uid: Mithril.Communication.Abstractions.Mappings.AttachmentMapping
+  name: AttachmentMapping
+  href: api/Mithril.Communication.Abstractions.Mappings.AttachmentMapping.html
+  commentId: T:Mithril.Communication.Abstractions.Mappings.AttachmentMapping
+  fullName: Mithril.Communication.Abstractions.Mappings.AttachmentMapping
+  nameWithType: AttachmentMapping
+- uid: Mithril.Communication.Abstractions.Mappings.AttachmentMapping.#ctor
+  name: AttachmentMapping()
+  href: api/Mithril.Communication.Abstractions.Mappings.AttachmentMapping.html#Mithril_Communication_Abstractions_Mappings_AttachmentMapping__ctor
+  commentId: M:Mithril.Communication.Abstractions.Mappings.AttachmentMapping.#ctor
+  name.vb: New()
+  fullName: Mithril.Communication.Abstractions.Mappings.AttachmentMapping.AttachmentMapping()
+  fullName.vb: Mithril.Communication.Abstractions.Mappings.AttachmentMapping.New()
+  nameWithType: AttachmentMapping.AttachmentMapping()
+  nameWithType.vb: AttachmentMapping.New()
+- uid: Mithril.Communication.Abstractions.Mappings.AttachmentMapping.#ctor*
+  name: AttachmentMapping
+  href: api/Mithril.Communication.Abstractions.Mappings.AttachmentMapping.html#Mithril_Communication_Abstractions_Mappings_AttachmentMapping__ctor_
+  commentId: Overload:Mithril.Communication.Abstractions.Mappings.AttachmentMapping.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Communication.Abstractions.Mappings.AttachmentMapping.AttachmentMapping
+  fullName.vb: Mithril.Communication.Abstractions.Mappings.AttachmentMapping.New
+  nameWithType: AttachmentMapping.AttachmentMapping
+  nameWithType.vb: AttachmentMapping.New
 - uid: Mithril.Communication.Abstractions.Mappings.IMessageMapping
   name: IMessageMapping
   href: api/Mithril.Communication.Abstractions.Mappings.IMessageMapping.html
@@ -17772,6 +17716,28 @@ references:
   isSpec: "True"
   fullName: Mithril.Core.Extensions.IEndpointRouteBuilderExtensions.IsSetup
   nameWithType: IEndpointRouteBuilderExtensions.IsSetup
+- uid: Mithril.Core.Extensions.IMvcBuilderExtensions
+  name: IMvcBuilderExtensions
+  href: api/Mithril.Core.Extensions.IMvcBuilderExtensions.html
+  commentId: T:Mithril.Core.Extensions.IMvcBuilderExtensions
+  fullName: Mithril.Core.Extensions.IMvcBuilderExtensions
+  nameWithType: IMvcBuilderExtensions
+- uid: Mithril.Core.Extensions.IMvcBuilderExtensions.AddCspMediaType(Microsoft.Extensions.DependencyInjection.IMvcBuilder)
+  name: AddCspMediaType(IMvcBuilder?)
+  href: api/Mithril.Core.Extensions.IMvcBuilderExtensions.html#Mithril_Core_Extensions_IMvcBuilderExtensions_AddCspMediaType_Microsoft_Extensions_DependencyInjection_IMvcBuilder_
+  commentId: M:Mithril.Core.Extensions.IMvcBuilderExtensions.AddCspMediaType(Microsoft.Extensions.DependencyInjection.IMvcBuilder)
+  name.vb: AddCspMediaType(IMvcBuilder)
+  fullName: Mithril.Core.Extensions.IMvcBuilderExtensions.AddCspMediaType(Microsoft.Extensions.DependencyInjection.IMvcBuilder?)
+  fullName.vb: Mithril.Core.Extensions.IMvcBuilderExtensions.AddCspMediaType(Microsoft.Extensions.DependencyInjection.IMvcBuilder)
+  nameWithType: IMvcBuilderExtensions.AddCspMediaType(IMvcBuilder?)
+  nameWithType.vb: IMvcBuilderExtensions.AddCspMediaType(IMvcBuilder)
+- uid: Mithril.Core.Extensions.IMvcBuilderExtensions.AddCspMediaType*
+  name: AddCspMediaType
+  href: api/Mithril.Core.Extensions.IMvcBuilderExtensions.html#Mithril_Core_Extensions_IMvcBuilderExtensions_AddCspMediaType_
+  commentId: Overload:Mithril.Core.Extensions.IMvcBuilderExtensions.AddCspMediaType
+  isSpec: "True"
+  fullName: Mithril.Core.Extensions.IMvcBuilderExtensions.AddCspMediaType
+  nameWithType: IMvcBuilderExtensions.AddCspMediaType
 - uid: Mithril.Core.Extensions.StaticHttpContextExtensions
   name: StaticHttpContextExtensions
   href: api/Mithril.Core.Extensions.StaticHttpContextExtensions.html
@@ -17810,6 +17776,28 @@ references:
   isSpec: "True"
   fullName: Mithril.Core.Extensions.StaticHttpContextExtensions.UseStaticHttpContext
   nameWithType: StaticHttpContextExtensions.UseStaticHttpContext
+- uid: Mithril.Core.Extensions.WebApplicationBuilderExtensions
+  name: WebApplicationBuilderExtensions
+  href: api/Mithril.Core.Extensions.WebApplicationBuilderExtensions.html
+  commentId: T:Mithril.Core.Extensions.WebApplicationBuilderExtensions
+  fullName: Mithril.Core.Extensions.WebApplicationBuilderExtensions
+  nameWithType: WebApplicationBuilderExtensions
+- uid: Mithril.Core.Extensions.WebApplicationBuilderExtensions.SetupMithril(Microsoft.AspNetCore.Builder.WebApplicationBuilder)
+  name: SetupMithril(WebApplicationBuilder?)
+  href: api/Mithril.Core.Extensions.WebApplicationBuilderExtensions.html#Mithril_Core_Extensions_WebApplicationBuilderExtensions_SetupMithril_Microsoft_AspNetCore_Builder_WebApplicationBuilder_
+  commentId: M:Mithril.Core.Extensions.WebApplicationBuilderExtensions.SetupMithril(Microsoft.AspNetCore.Builder.WebApplicationBuilder)
+  name.vb: SetupMithril(WebApplicationBuilder)
+  fullName: Mithril.Core.Extensions.WebApplicationBuilderExtensions.SetupMithril(Microsoft.AspNetCore.Builder.WebApplicationBuilder?)
+  fullName.vb: Mithril.Core.Extensions.WebApplicationBuilderExtensions.SetupMithril(Microsoft.AspNetCore.Builder.WebApplicationBuilder)
+  nameWithType: WebApplicationBuilderExtensions.SetupMithril(WebApplicationBuilder?)
+  nameWithType.vb: WebApplicationBuilderExtensions.SetupMithril(WebApplicationBuilder)
+- uid: Mithril.Core.Extensions.WebApplicationBuilderExtensions.SetupMithril*
+  name: SetupMithril
+  href: api/Mithril.Core.Extensions.WebApplicationBuilderExtensions.html#Mithril_Core_Extensions_WebApplicationBuilderExtensions_SetupMithril_
+  commentId: Overload:Mithril.Core.Extensions.WebApplicationBuilderExtensions.SetupMithril
+  isSpec: "True"
+  fullName: Mithril.Core.Extensions.WebApplicationBuilderExtensions.SetupMithril
+  nameWithType: WebApplicationBuilderExtensions.SetupMithril
 - uid: Mithril.Core.Middleware
   name: Mithril.Core.Middleware
   href: api/Mithril.Core.Middleware.html
@@ -20477,62 +20465,6 @@ references:
   isSpec: "True"
   fullName: Mithril.Data.Abstractions.Interfaces.IUserClaim.Value
   nameWithType: IUserClaim.Value
-- uid: Mithril.Data.Abstractions.Models.General.Mappings
-  name: Mithril.Data.Abstractions.Models.General.Mappings
-  href: api/Mithril.Data.Abstractions.Models.General.Mappings.html
-  commentId: N:Mithril.Data.Abstractions.Models.General.Mappings
-  fullName: Mithril.Data.Abstractions.Models.General.Mappings
-  nameWithType: Mithril.Data.Abstractions.Models.General.Mappings
-- uid: Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping
-  name: ILookUpTypeMapping
-  href: api/Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.html
-  commentId: T:Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping
-  fullName: Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping
-  nameWithType: ILookUpTypeMapping
-- uid: Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.#ctor
-  name: ILookUpTypeMapping()
-  href: api/Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.html#Mithril_Data_Abstractions_Models_General_Mappings_ILookUpTypeMapping__ctor
-  commentId: M:Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.#ctor
-  name.vb: New()
-  fullName: Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.ILookUpTypeMapping()
-  fullName.vb: Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.New()
-  nameWithType: ILookUpTypeMapping.ILookUpTypeMapping()
-  nameWithType.vb: ILookUpTypeMapping.New()
-- uid: Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.#ctor*
-  name: ILookUpTypeMapping
-  href: api/Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.html#Mithril_Data_Abstractions_Models_General_Mappings_ILookUpTypeMapping__ctor_
-  commentId: Overload:Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.ILookUpTypeMapping
-  fullName.vb: Mithril.Data.Abstractions.Models.General.Mappings.ILookUpTypeMapping.New
-  nameWithType: ILookUpTypeMapping.ILookUpTypeMapping
-  nameWithType.vb: ILookUpTypeMapping.New
-- uid: Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping
-  name: LookUpTypeMapping
-  href: api/Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.html
-  commentId: T:Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping
-  fullName: Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping
-  nameWithType: LookUpTypeMapping
-- uid: Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.#ctor
-  name: LookUpTypeMapping()
-  href: api/Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.html#Mithril_Data_Abstractions_Models_General_Mappings_LookUpTypeMapping__ctor
-  commentId: M:Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.#ctor
-  name.vb: New()
-  fullName: Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.LookUpTypeMapping()
-  fullName.vb: Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.New()
-  nameWithType: LookUpTypeMapping.LookUpTypeMapping()
-  nameWithType.vb: LookUpTypeMapping.New()
-- uid: Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.#ctor*
-  name: LookUpTypeMapping
-  href: api/Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.html#Mithril_Data_Abstractions_Models_General_Mappings_LookUpTypeMapping__ctor_
-  commentId: Overload:Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.LookUpTypeMapping
-  fullName.vb: Mithril.Data.Abstractions.Models.General.Mappings.LookUpTypeMapping.New
-  nameWithType: LookUpTypeMapping.LookUpTypeMapping
-  nameWithType.vb: LookUpTypeMapping.New
 - uid: Mithril.Data.Abstractions.Services
   name: Mithril.Data.Abstractions.Services
   href: api/Mithril.Data.Abstractions.Services.html
@@ -20960,93 +20892,6 @@ references:
   isSpec: "True"
   fullName: Mithril.Data.HealthCheck.SqlConnectionHealthCheck.CheckHealthAsync
   nameWithType: SqlConnectionHealthCheck.CheckHealthAsync
-- uid: Mithril.Data.Inflatable.Models.Contact.Mappings
-  name: Mithril.Data.Inflatable.Models.Contact.Mappings
-  href: api/Mithril.Data.Inflatable.Models.Contact.Mappings.html
-  commentId: N:Mithril.Data.Inflatable.Models.Contact.Mappings
-  fullName: Mithril.Data.Inflatable.Models.Contact.Mappings
-  nameWithType: Mithril.Data.Inflatable.Models.Contact.Mappings
-- uid: Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping
-  name: ContactInfoMapping
-  href: api/Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.html
-  commentId: T:Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping
-  fullName: Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping
-  nameWithType: ContactInfoMapping
-- uid: Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.#ctor
-  name: ContactInfoMapping()
-  href: api/Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.html#Mithril_Data_Inflatable_Models_Contact_Mappings_ContactInfoMapping__ctor
-  commentId: M:Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.#ctor
-  name.vb: New()
-  fullName: Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.ContactInfoMapping()
-  fullName.vb: Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.New()
-  nameWithType: ContactInfoMapping.ContactInfoMapping()
-  nameWithType.vb: ContactInfoMapping.New()
-- uid: Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.#ctor*
-  name: ContactInfoMapping
-  href: api/Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.html#Mithril_Data_Inflatable_Models_Contact_Mappings_ContactInfoMapping__ctor_
-  commentId: Overload:Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.ContactInfoMapping
-  fullName.vb: Mithril.Data.Inflatable.Models.Contact.Mappings.ContactInfoMapping.New
-  nameWithType: ContactInfoMapping.ContactInfoMapping
-  nameWithType.vb: ContactInfoMapping.New
-- uid: Mithril.Data.Inflatable.Models.General.Mappings
-  name: Mithril.Data.Inflatable.Models.General.Mappings
-  href: api/Mithril.Data.Inflatable.Models.General.Mappings.html
-  commentId: N:Mithril.Data.Inflatable.Models.General.Mappings
-  fullName: Mithril.Data.Inflatable.Models.General.Mappings
-  nameWithType: Mithril.Data.Inflatable.Models.General.Mappings
-- uid: Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping
-  name: ILookUpMapping
-  href: api/Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.html
-  commentId: T:Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping
-  fullName: Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping
-  nameWithType: ILookUpMapping
-- uid: Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.#ctor
-  name: ILookUpMapping()
-  href: api/Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.html#Mithril_Data_Inflatable_Models_General_Mappings_ILookUpMapping__ctor
-  commentId: M:Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.#ctor
-  name.vb: New()
-  fullName: Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.ILookUpMapping()
-  fullName.vb: Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.New()
-  nameWithType: ILookUpMapping.ILookUpMapping()
-  nameWithType.vb: ILookUpMapping.New()
-- uid: Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.#ctor*
-  name: ILookUpMapping
-  href: api/Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.html#Mithril_Data_Inflatable_Models_General_Mappings_ILookUpMapping__ctor_
-  commentId: Overload:Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.ILookUpMapping
-  fullName.vb: Mithril.Data.Inflatable.Models.General.Mappings.ILookUpMapping.New
-  nameWithType: ILookUpMapping.ILookUpMapping
-  nameWithType.vb: ILookUpMapping.New
-- uid: Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping
-  name: LookUpMapping
-  href: api/Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.html
-  commentId: T:Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping
-  fullName: Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping
-  nameWithType: LookUpMapping
-- uid: Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.#ctor
-  name: LookUpMapping()
-  href: api/Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.html#Mithril_Data_Inflatable_Models_General_Mappings_LookUpMapping__ctor
-  commentId: M:Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.#ctor
-  name.vb: New()
-  fullName: Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.LookUpMapping()
-  fullName.vb: Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.New()
-  nameWithType: LookUpMapping.LookUpMapping()
-  nameWithType.vb: LookUpMapping.New()
-- uid: Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.#ctor*
-  name: LookUpMapping
-  href: api/Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.html#Mithril_Data_Inflatable_Models_General_Mappings_LookUpMapping__ctor_
-  commentId: Overload:Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.LookUpMapping
-  fullName.vb: Mithril.Data.Inflatable.Models.General.Mappings.LookUpMapping.New
-  nameWithType: LookUpMapping.LookUpMapping
-  nameWithType.vb: LookUpMapping.New
 - uid: Mithril.Data.Models.Contact
   name: Mithril.Data.Models.Contact
   href: api/Mithril.Data.Models.Contact.html
@@ -21281,6 +21126,37 @@ references:
   fullName.vb: Mithril.Data.Models.Contact.ContactInfo.<=
   nameWithType: ContactInfo.operator <=
   nameWithType.vb: ContactInfo.<=
+- uid: Mithril.Data.Models.Contact.Mappings
+  name: Mithril.Data.Models.Contact.Mappings
+  href: api/Mithril.Data.Models.Contact.Mappings.html
+  commentId: N:Mithril.Data.Models.Contact.Mappings
+  fullName: Mithril.Data.Models.Contact.Mappings
+  nameWithType: Mithril.Data.Models.Contact.Mappings
+- uid: Mithril.Data.Models.Contact.Mappings.ContactInfoMapping
+  name: ContactInfoMapping
+  href: api/Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.html
+  commentId: T:Mithril.Data.Models.Contact.Mappings.ContactInfoMapping
+  fullName: Mithril.Data.Models.Contact.Mappings.ContactInfoMapping
+  nameWithType: ContactInfoMapping
+- uid: Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.#ctor
+  name: ContactInfoMapping()
+  href: api/Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.html#Mithril_Data_Models_Contact_Mappings_ContactInfoMapping__ctor
+  commentId: M:Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.#ctor
+  name.vb: New()
+  fullName: Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.ContactInfoMapping()
+  fullName.vb: Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.New()
+  nameWithType: ContactInfoMapping.ContactInfoMapping()
+  nameWithType.vb: ContactInfoMapping.New()
+- uid: Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.#ctor*
+  name: ContactInfoMapping
+  href: api/Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.html#Mithril_Data_Models_Contact_Mappings_ContactInfoMapping__ctor_
+  commentId: Overload:Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.ContactInfoMapping
+  fullName.vb: Mithril.Data.Models.Contact.Mappings.ContactInfoMapping.New
+  nameWithType: ContactInfoMapping.ContactInfoMapping
+  nameWithType.vb: ContactInfoMapping.New
 - uid: Mithril.Data.Models.General
   name: Mithril.Data.Models.General
   href: api/Mithril.Data.Models.General.html
@@ -21877,6 +21753,112 @@ references:
   fullName.vb: Mithril.Data.Models.General.LookUpType.<=
   nameWithType: LookUpType.operator <=
   nameWithType.vb: LookUpType.<=
+- uid: Mithril.Data.Models.General.Mappings
+  name: Mithril.Data.Models.General.Mappings
+  href: api/Mithril.Data.Models.General.Mappings.html
+  commentId: N:Mithril.Data.Models.General.Mappings
+  fullName: Mithril.Data.Models.General.Mappings
+  nameWithType: Mithril.Data.Models.General.Mappings
+- uid: Mithril.Data.Models.General.Mappings.ILookUpMapping
+  name: ILookUpMapping
+  href: api/Mithril.Data.Models.General.Mappings.ILookUpMapping.html
+  commentId: T:Mithril.Data.Models.General.Mappings.ILookUpMapping
+  fullName: Mithril.Data.Models.General.Mappings.ILookUpMapping
+  nameWithType: ILookUpMapping
+- uid: Mithril.Data.Models.General.Mappings.ILookUpMapping.#ctor
+  name: ILookUpMapping()
+  href: api/Mithril.Data.Models.General.Mappings.ILookUpMapping.html#Mithril_Data_Models_General_Mappings_ILookUpMapping__ctor
+  commentId: M:Mithril.Data.Models.General.Mappings.ILookUpMapping.#ctor
+  name.vb: New()
+  fullName: Mithril.Data.Models.General.Mappings.ILookUpMapping.ILookUpMapping()
+  fullName.vb: Mithril.Data.Models.General.Mappings.ILookUpMapping.New()
+  nameWithType: ILookUpMapping.ILookUpMapping()
+  nameWithType.vb: ILookUpMapping.New()
+- uid: Mithril.Data.Models.General.Mappings.ILookUpMapping.#ctor*
+  name: ILookUpMapping
+  href: api/Mithril.Data.Models.General.Mappings.ILookUpMapping.html#Mithril_Data_Models_General_Mappings_ILookUpMapping__ctor_
+  commentId: Overload:Mithril.Data.Models.General.Mappings.ILookUpMapping.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Data.Models.General.Mappings.ILookUpMapping.ILookUpMapping
+  fullName.vb: Mithril.Data.Models.General.Mappings.ILookUpMapping.New
+  nameWithType: ILookUpMapping.ILookUpMapping
+  nameWithType.vb: ILookUpMapping.New
+- uid: Mithril.Data.Models.General.Mappings.ILookUpTypeMapping
+  name: ILookUpTypeMapping
+  href: api/Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.html
+  commentId: T:Mithril.Data.Models.General.Mappings.ILookUpTypeMapping
+  fullName: Mithril.Data.Models.General.Mappings.ILookUpTypeMapping
+  nameWithType: ILookUpTypeMapping
+- uid: Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.#ctor
+  name: ILookUpTypeMapping()
+  href: api/Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.html#Mithril_Data_Models_General_Mappings_ILookUpTypeMapping__ctor
+  commentId: M:Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.#ctor
+  name.vb: New()
+  fullName: Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.ILookUpTypeMapping()
+  fullName.vb: Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.New()
+  nameWithType: ILookUpTypeMapping.ILookUpTypeMapping()
+  nameWithType.vb: ILookUpTypeMapping.New()
+- uid: Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.#ctor*
+  name: ILookUpTypeMapping
+  href: api/Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.html#Mithril_Data_Models_General_Mappings_ILookUpTypeMapping__ctor_
+  commentId: Overload:Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.ILookUpTypeMapping
+  fullName.vb: Mithril.Data.Models.General.Mappings.ILookUpTypeMapping.New
+  nameWithType: ILookUpTypeMapping.ILookUpTypeMapping
+  nameWithType.vb: ILookUpTypeMapping.New
+- uid: Mithril.Data.Models.General.Mappings.LookUpMapping
+  name: LookUpMapping
+  href: api/Mithril.Data.Models.General.Mappings.LookUpMapping.html
+  commentId: T:Mithril.Data.Models.General.Mappings.LookUpMapping
+  fullName: Mithril.Data.Models.General.Mappings.LookUpMapping
+  nameWithType: LookUpMapping
+- uid: Mithril.Data.Models.General.Mappings.LookUpMapping.#ctor
+  name: LookUpMapping()
+  href: api/Mithril.Data.Models.General.Mappings.LookUpMapping.html#Mithril_Data_Models_General_Mappings_LookUpMapping__ctor
+  commentId: M:Mithril.Data.Models.General.Mappings.LookUpMapping.#ctor
+  name.vb: New()
+  fullName: Mithril.Data.Models.General.Mappings.LookUpMapping.LookUpMapping()
+  fullName.vb: Mithril.Data.Models.General.Mappings.LookUpMapping.New()
+  nameWithType: LookUpMapping.LookUpMapping()
+  nameWithType.vb: LookUpMapping.New()
+- uid: Mithril.Data.Models.General.Mappings.LookUpMapping.#ctor*
+  name: LookUpMapping
+  href: api/Mithril.Data.Models.General.Mappings.LookUpMapping.html#Mithril_Data_Models_General_Mappings_LookUpMapping__ctor_
+  commentId: Overload:Mithril.Data.Models.General.Mappings.LookUpMapping.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Data.Models.General.Mappings.LookUpMapping.LookUpMapping
+  fullName.vb: Mithril.Data.Models.General.Mappings.LookUpMapping.New
+  nameWithType: LookUpMapping.LookUpMapping
+  nameWithType.vb: LookUpMapping.New
+- uid: Mithril.Data.Models.General.Mappings.LookUpTypeMapping
+  name: LookUpTypeMapping
+  href: api/Mithril.Data.Models.General.Mappings.LookUpTypeMapping.html
+  commentId: T:Mithril.Data.Models.General.Mappings.LookUpTypeMapping
+  fullName: Mithril.Data.Models.General.Mappings.LookUpTypeMapping
+  nameWithType: LookUpTypeMapping
+- uid: Mithril.Data.Models.General.Mappings.LookUpTypeMapping.#ctor
+  name: LookUpTypeMapping()
+  href: api/Mithril.Data.Models.General.Mappings.LookUpTypeMapping.html#Mithril_Data_Models_General_Mappings_LookUpTypeMapping__ctor
+  commentId: M:Mithril.Data.Models.General.Mappings.LookUpTypeMapping.#ctor
+  name.vb: New()
+  fullName: Mithril.Data.Models.General.Mappings.LookUpTypeMapping.LookUpTypeMapping()
+  fullName.vb: Mithril.Data.Models.General.Mappings.LookUpTypeMapping.New()
+  nameWithType: LookUpTypeMapping.LookUpTypeMapping()
+  nameWithType.vb: LookUpTypeMapping.New()
+- uid: Mithril.Data.Models.General.Mappings.LookUpTypeMapping.#ctor*
+  name: LookUpTypeMapping
+  href: api/Mithril.Data.Models.General.Mappings.LookUpTypeMapping.html#Mithril_Data_Models_General_Mappings_LookUpTypeMapping__ctor_
+  commentId: Overload:Mithril.Data.Models.General.Mappings.LookUpTypeMapping.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Data.Models.General.Mappings.LookUpTypeMapping.LookUpTypeMapping
+  fullName.vb: Mithril.Data.Models.General.Mappings.LookUpTypeMapping.New
+  nameWithType: LookUpTypeMapping.LookUpTypeMapping
+  nameWithType.vb: LookUpTypeMapping.New
 - uid: Mithril.Data.Models.Mappings
   name: Mithril.Data.Models.Mappings
   href: api/Mithril.Data.Models.Mappings.html
@@ -27657,13 +27639,13 @@ references:
   fullName: Mithril.Routing.Admin.RouteEditor
   nameWithType: RouteEditor
 - uid: Mithril.Routing.Admin.RouteEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: RouteEditor(IDataService, IEntityMetadataService, string?)
+  name: RouteEditor(IDataService?, IEntityMetadataService?, string?)
   href: api/Mithril.Routing.Admin.RouteEditor.html#Mithril_Routing_Admin_RouteEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
   commentId: M:Mithril.Routing.Admin.RouteEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
   name.vb: New(IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Routing.Admin.RouteEditor.RouteEditor(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, string?)
+  fullName: Mithril.Routing.Admin.RouteEditor.RouteEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
   fullName.vb: Mithril.Routing.Admin.RouteEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: RouteEditor.RouteEditor(IDataService, IEntityMetadataService, string?)
+  nameWithType: RouteEditor.RouteEditor(IDataService?, IEntityMetadataService?, string?)
   nameWithType.vb: RouteEditor.New(IDataService, IEntityMetadataService, String)
 - uid: Mithril.Routing.Admin.RouteEditor.#ctor*
   name: RouteEditor

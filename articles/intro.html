@@ -98,7 +98,8 @@
                     <article class="content wrap" id="_content" data-uid="">
 <h1 id="code">Code</h1>
 
-<pre><code class="lang-csharp">using Serilog;
+<pre><code class="lang-csharp">using Mithril.Core.Extensions;
+using Serilog;
 
 namespace Mithril
 {
@@ -115,12 +116,12 @@ namespace Mithril
         {
             try
             {
-                WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
-                await (builder.SetupMithril()?.RunAsync() ?? Task.CompletedTask).ConfigureAwait(false);
+                WebApplicationBuilder? Builder = WebApplication.CreateBuilder(args);
+                await (Builder.SetupMithril()?.RunAsync() ?? Task.CompletedTask).ConfigureAwait(false);
             }
-            catch (Exception ex)
+            catch (Exception Ex)
             {
-                Log.Fatal(ex, &quot;Host terminated unexpectedly&quot;);
+                Log.Fatal(Ex, &quot;Host terminated unexpectedly&quot;);
             }
             finally
             {
