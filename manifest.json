@@ -13,6 +13,56 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Admin.DropDowns.LookUpDropDown.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Admin.DropDowns.LookUpDropDown.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Admin.DropDowns.LookUpTypeDropDown.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Admin.DropDowns.LookUpTypeDropDown.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Admin.DropDowns.UserClaimDropDown.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Admin.DropDowns.UserClaimDropDown.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Admin.DropDowns.UserDropDown.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Admin.DropDowns.UserDropDown.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.API.Abstractions.Admin.DropDowns.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.API.Abstractions.Admin.DropDowns.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.API.Abstractions.Attributes.ApiAllowAnonymousAttribute.yml",
       "output": {
         ".html": {
@@ -5693,6 +5743,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.Admin.ViewModels.ClaimDropDownVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.Admin.ViewModels.ClaimDropDownVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Abstractions.Admin.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Abstractions.Admin.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Security.Abstractions.Enums.PermissionType.yml",
       "output": {
         ".html": {
@@ -5793,10 +5863,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Mithril.Security.Admin.DropDowns.UserClaimDropDown.yml",
+      "source_relative_path": "api/Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Mithril.Security.Admin.DropDowns.UserClaimDropDown.html"
+          "relative_path": "api/Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.DropDowns.TenantDropDown.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.DropDowns.TenantDropDown.html"
         }
       },
       "version": ""
@@ -5823,10 +5903,40 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Mithril.Security.Admin.ViewModels.ClaimDropDownVM.yml",
+      "source_relative_path": "api/Mithril.Security.Admin.TenantEditor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Mithril.Security.Admin.ViewModels.ClaimDropDownVM.html"
+          "relative_path": "api/Mithril.Security.Admin.TenantEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.UserClaimEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.UserClaimEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.UserEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.UserEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.ViewModels.ContactInformationVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.ViewModels.ContactInformationVM.html"
         }
       },
       "version": ""
@@ -5837,6 +5947,36 @@
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Security.Admin.ViewModels.PermissionVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.ViewModels.TenantVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.ViewModels.TenantVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.ViewModels.UserClaimVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.ViewModels.UserClaimVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Security.Admin.ViewModels.UserVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Security.Admin.ViewModels.UserVM.html"
         }
       },
       "version": ""
