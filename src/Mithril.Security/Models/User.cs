@@ -6,7 +6,6 @@ using Mithril.Data.Abstractions.ExtensionMethods;
 using Mithril.Data.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Data.Models.Contact;
-using Mithril.Data.Models.General;
 using Mithril.Security.Abstractions.Interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
@@ -37,6 +36,20 @@ namespace Mithril.Security.Models
         /// <exception cref="ArgumentException">userName or firstName or lastName</exception>
         /// <exception cref="ArgumentNullException">firstName or lastName</exception>
         public User(string userName, string firstName, string lastName, ITenant? tenant)
+            : this(userName, firstName, lastName, tenant?.ID)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="User"/> class.
+        /// </summary>
+        /// <param name="userName">Name of the user.</param>
+        /// <param name="firstName">The first name.</param>
+        /// <param name="lastName">The last name.</param>
+        /// <param name="tenant">The tenant.</param>
+        /// <exception cref="ArgumentException">userName or firstName or lastName</exception>
+        /// <exception cref="ArgumentNullException">firstName or lastName</exception>
+        public User(string userName, string firstName, string lastName, long? tenant)
         {
             if (!string.IsNullOrEmpty(userName) && userName.Length > 100)
                 throw new ArgumentException(nameof(userName) + " has a max length of 100 characters.");
@@ -51,7 +64,7 @@ namespace Mithril.Security.Models
             FirstName = firstName;
             LastName = lastName;
             UserName = userName;
-            TenantID = tenant?.ID ?? 0;
+            TenantID = tenant ?? 0;
         }
 
         /// <summary>
@@ -232,10 +245,10 @@ namespace Mithril.Security.Models
         /// </summary>
         /// <param name="claim">The claim.</param>
         /// <returns>This.</returns>
-        public User AddClaim(IUserClaim claim)
+        public User AddClaim(IUserClaim? claim)
         {
             Claims ??= new List<IUserClaim>();
-            if (Claims.Contains(claim))
+            if (claim is null || Claims.Contains(claim))
                 return this;
             Claims.Add(claim);
             return this;
@@ -272,31 +285,45 @@ namespace Mithril.Security.Models
         {
             if (dataService is null || type is null)
                 return;
-            ILookUp? ContactType = await LookUp.LoadOrCreateAsync(type, LookUpTypeEnum.ContactInfoType, type.Icon ?? "", dataService, user).ConfigureAwait(false);
             value ??= Array.Empty<string>();
             ContactInfo[]? Contacts = GetContactInfo(type).ToArray();
-            var x = 0;
+            var X = 0;
             if (Contacts.Length <= value.Length)
             {
-                for (; x < Contacts.Length; ++x)
+                for (; X < Contacts.Length; ++X)
                 {
-                    Contacts[x].Info = value[x];
+                    Contacts[X].Info = value[X];
                 }
-                for (; x < value.Length; ++x)
+                for (; X < value.Length; ++X)
                 {
-                    ContactInformation.Add(new ContactInfo(value[x], ContactType));
+                    ContactInformation.Add(new ContactInfo(value[X], type));
                 }
                 return;
             }
-            for (; x < value.Length; ++x)
+            for (; X < value.Length; ++X)
             {
-                Contacts[x].Info = value[x];
+                Contacts[X].Info = value[X];
             }
-            for (; x < Contacts.Length; ++x)
+            for (; X < Contacts.Length; ++X)
             {
-                _ = ContactInformation.Remove(Contacts[x]);
-                await Contacts[x].DeleteAsync(dataService, HttpContext.Current?.User, false).ConfigureAwait(false);
+                _ = ContactInformation.Remove(Contacts[X]);
+                await Contacts[X].DeleteAsync(dataService, user, false).ConfigureAwait(false);
             }
+        }
+
+        /// <summary>
+        /// Creates or updates contact information asynchronously.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="user">The user.</param>
+        /// <param name="value">The value.</param>
+        /// <returns>The async task.</returns>
+        public Task CreateOrUpdateContactInfoAsync(ILookUp? type, IDataService? dataService, ClaimsPrincipal? user, params string[] value)
+        {
+            if (dataService is null || type is null)
+                return Task.CompletedTask;
+            return CreateOrUpdateContactInfoAsync((ContactInfoType)type.DisplayName, dataService, user, value);
         }
 
         /// <summary>
@@ -355,6 +382,17 @@ namespace Mithril.Security.Models
         {
             ContactInformation ??= new List<ContactInfo>();
             return ContactInformation.Where(x => x.OfType(types.ToArray(y => (string)y))) ?? Array.Empty<ContactInfo>();
+        }
+
+        /// <summary>
+        /// Gets the contact information requested.
+        /// </summary>
+        /// <param name="types">The lookup types.</param>
+        /// <returns>The contact info specified.</returns>
+        public IEnumerable<ContactInfo> GetContactInfo(params ILookUp[] types)
+        {
+            ContactInformation ??= new List<ContactInfo>();
+            return ContactInformation.Where(x => x.OfType(types.ToArray(y => y))) ?? Array.Empty<ContactInfo>();
         }
 
         /// <summary>

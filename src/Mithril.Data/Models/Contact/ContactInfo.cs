@@ -26,6 +26,18 @@ namespace Mithril.Data.Models.Contact
         /// <exception cref="ArgumentNullException">type</exception>
         /// <exception cref="ArgumentException">type</exception>
         public ContactInfo(string info, ILookUp type)
+            : this(info, type?.DisplayName)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContactInfo"/> class.
+        /// </summary>
+        /// <param name="info">The information.</param>
+        /// <param name="type">The type.</param>
+        /// <exception cref="ArgumentNullException">info</exception>
+        /// <exception cref="ArgumentException">info</exception>
+        public ContactInfo(string info, string? type)
             : base(type)
         {
             if (string.IsNullOrEmpty(info))

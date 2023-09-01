@@ -24,6 +24,13 @@ namespace Mithril.Security.Admin.ViewModels
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ContactInformationVM"/> class.
+        /// </summary>
+        public ContactInformationVM()
+        {
+        }
+
+        /// <summary>
         /// Gets or sets the type of the contact.
         /// </summary>
         /// <value>

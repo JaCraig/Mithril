@@ -127,6 +127,7 @@ namespace Mithril.Security.Admin.ViewModels
         /// </value>
         [Select(typeof(TenantDropDown))]
         [DoNotList]
+        [Required]
         [Order(9)]
         public long Tenant { get; set; }
 
@@ -156,10 +157,61 @@ namespace Mithril.Security.Admin.ViewModels
         /// <returns>
         /// The async task.
         /// </returns>
-        public override Task<User?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser)
+        public override async Task<User?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser)
         {
-            var Model = User.Load(id, dataService) ?? new User(UserName, FirstName, LastName, null);
-            return Task.FromResult<User?>(null);
+            if (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName))
+                return null;
+            var Tenant = Models.Tenant.Load(this.Tenant, dataService);
+            var Model = User.Load(id, dataService) ?? new User(UserName, FirstName, LastName, Tenant);
+            Model.Active = Active;
+            Model.FirstName = FirstName;
+            Model.LastName = LastName;
+            Model.MiddleName = MiddleName;
+            Model.NickName = NickName;
+            Model.Prefix = Prefix;
+            Model.Suffix = Suffix;
+            Model.Title = Title;
+            Model.UserName = UserName;
+            Model.TenantID = this.Tenant;
+            SetupClaims(dataService, Model);
+            await SetupContactInformationAsync(dataService, Model, currentUser).ConfigureAwait(false);
+            await Model.SaveAsync(dataService, currentUser).ConfigureAwait(false);
+            return Model;
+        }
+
+        /// <summary>
+        /// Sets up the claims.
+        /// </summary>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="model">The model.</param>
+        private void SetupClaims(IDataService? dataService, User model)
+        {
+            model.Claims.Clear();
+            foreach (var Claim in Claims)
+            {
+                if (Claim is null)
+                    continue;
+                model.AddClaim(UserClaim.Load(Claim.Claim, dataService));
+            }
+        }
+
+        /// <summary>
+        /// Sets up the contact information asynchronously.
+        /// </summary>
+        /// <param name="dataService">The data service.</param>
+        /// <param name="model">The model.</param>
+        /// <param name="currentUser">The current user.</param>
+        private async Task SetupContactInformationAsync(IDataService? dataService, User model, ClaimsPrincipal? currentUser)
+        {
+            foreach (var ContactInfoType in ContactInformation.GroupBy(x => x.ContactType))
+            {
+                if (ContactInfoType.Key is null)
+                    continue;
+                var ContactInfoLookUp = LookUp.Load(ContactInfoType.Key ?? 0, dataService);
+                if (ContactInfoLookUp is null)
+                    continue;
+                await model.CreateOrUpdateContactInfoAsync(ContactInfoLookUp, dataService, currentUser, ContactInfoType.ToArray(x => x.Info ?? "")).ConfigureAwait(false);
+            }
         }
     }
 }
