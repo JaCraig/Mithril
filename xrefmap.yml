@@ -21016,6 +21016,15 @@ references:
   fullName.vb: Mithril.Data.Models.Contact.ContactInfo.New(String, Mithril.Data.Abstractions.Interfaces.ILookUp)
   nameWithType: ContactInfo.ContactInfo(string, ILookUp)
   nameWithType.vb: ContactInfo.New(String, ILookUp)
+- uid: Mithril.Data.Models.Contact.ContactInfo.#ctor(System.String,System.String)
+  name: ContactInfo(string, string?)
+  href: api/Mithril.Data.Models.Contact.ContactInfo.html#Mithril_Data_Models_Contact_ContactInfo__ctor_System_String_System_String_
+  commentId: M:Mithril.Data.Models.Contact.ContactInfo.#ctor(System.String,System.String)
+  name.vb: New(String, String)
+  fullName: Mithril.Data.Models.Contact.ContactInfo.ContactInfo(string, string?)
+  fullName.vb: Mithril.Data.Models.Contact.ContactInfo.New(String, String)
+  nameWithType: ContactInfo.ContactInfo(string, string?)
+  nameWithType.vb: ContactInfo.New(String, String)
 - uid: Mithril.Data.Models.Contact.ContactInfo.#ctor*
   name: ContactInfo
   href: api/Mithril.Data.Models.Contact.ContactInfo.html#Mithril_Data_Models_Contact_ContactInfo__ctor_
@@ -29307,6 +29316,15 @@ references:
   commentId: T:Mithril.Security.Admin.ViewModels.ContactInformationVM
   fullName: Mithril.Security.Admin.ViewModels.ContactInformationVM
   nameWithType: ContactInformationVM
+- uid: Mithril.Security.Admin.ViewModels.ContactInformationVM.#ctor
+  name: ContactInformationVM()
+  href: api/Mithril.Security.Admin.ViewModels.ContactInformationVM.html#Mithril_Security_Admin_ViewModels_ContactInformationVM__ctor
+  commentId: M:Mithril.Security.Admin.ViewModels.ContactInformationVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Security.Admin.ViewModels.ContactInformationVM.ContactInformationVM()
+  fullName.vb: Mithril.Security.Admin.ViewModels.ContactInformationVM.New()
+  nameWithType: ContactInformationVM.ContactInformationVM()
+  nameWithType.vb: ContactInformationVM.New()
 - uid: Mithril.Security.Admin.ViewModels.ContactInformationVM.#ctor(Mithril.Data.Models.Contact.ContactInfo,Mithril.Data.Models.General.LookUpType)
   name: ContactInformationVM(ContactInfo?, LookUpType?)
   href: api/Mithril.Security.Admin.ViewModels.ContactInformationVM.html#Mithril_Security_Admin_ViewModels_ContactInformationVM__ctor_Mithril_Data_Models_Contact_ContactInfo_Mithril_Data_Models_General_LookUpType_
@@ -30736,6 +30754,15 @@ references:
   fullName.vb: Mithril.Security.Models.User.New(String, String, String, Mithril.Security.Abstractions.Interfaces.ITenant)
   nameWithType: User.User(string, string, string, ITenant?)
   nameWithType.vb: User.New(String, String, String, ITenant)
+- uid: Mithril.Security.Models.User.#ctor(System.String,System.String,System.String,System.Nullable{System.Int64})
+  name: User(string, string, string, long?)
+  href: api/Mithril.Security.Models.User.html#Mithril_Security_Models_User__ctor_System_String_System_String_System_String_System_Nullable_System_Int64__
+  commentId: M:Mithril.Security.Models.User.#ctor(System.String,System.String,System.String,System.Nullable{System.Int64})
+  name.vb: New(String, String, String, Long?)
+  fullName: Mithril.Security.Models.User.User(string, string, string, long?)
+  fullName.vb: Mithril.Security.Models.User.New(String, String, String, Long?)
+  nameWithType: User.User(string, string, string, long?)
+  nameWithType.vb: User.New(String, String, String, Long?)
 - uid: Mithril.Security.Models.User.#ctor*
   name: User
   href: api/Mithril.Security.Models.User.html#Mithril_Security_Models_User__ctor_
@@ -30747,11 +30774,14 @@ references:
   nameWithType: User.User
   nameWithType.vb: User.New
 - uid: Mithril.Security.Models.User.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  name: AddClaim(IUserClaim)
+  name: AddClaim(IUserClaim?)
   href: api/Mithril.Security.Models.User.html#Mithril_Security_Models_User_AddClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_
   commentId: M:Mithril.Security.Models.User.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  fullName: Mithril.Security.Models.User.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  nameWithType: User.AddClaim(IUserClaim)
+  name.vb: AddClaim(IUserClaim)
+  fullName: Mithril.Security.Models.User.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim?)
+  fullName.vb: Mithril.Security.Models.User.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
+  nameWithType: User.AddClaim(IUserClaim?)
+  nameWithType.vb: User.AddClaim(IUserClaim)
 - uid: Mithril.Security.Models.User.AddClaim*
   name: AddClaim
   href: api/Mithril.Security.Models.User.html#Mithril_Security_Models_User_AddClaim_
@@ -30826,6 +30856,15 @@ references:
   fullName.vb: Mithril.Security.Models.User.CreateOrUpdateContactInfoAsync(Mithril.Data.Abstractions.Enums.ContactInfoType, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal, ParamArray String())
   nameWithType: User.CreateOrUpdateContactInfoAsync(ContactInfoType, IDataService?, ClaimsPrincipal?, params string[])
   nameWithType.vb: User.CreateOrUpdateContactInfoAsync(ContactInfoType, IDataService, ClaimsPrincipal, ParamArray String())
+- uid: Mithril.Security.Models.User.CreateOrUpdateContactInfoAsync(Mithril.Data.Abstractions.Interfaces.ILookUp,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal,System.String[])
+  name: CreateOrUpdateContactInfoAsync(ILookUp?, IDataService?, ClaimsPrincipal?, params string[])
+  href: api/Mithril.Security.Models.User.html#Mithril_Security_Models_User_CreateOrUpdateContactInfoAsync_Mithril_Data_Abstractions_Interfaces_ILookUp_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_System_String___
+  commentId: M:Mithril.Security.Models.User.CreateOrUpdateContactInfoAsync(Mithril.Data.Abstractions.Interfaces.ILookUp,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal,System.String[])
+  name.vb: CreateOrUpdateContactInfoAsync(ILookUp, IDataService, ClaimsPrincipal, ParamArray String())
+  fullName: Mithril.Security.Models.User.CreateOrUpdateContactInfoAsync(Mithril.Data.Abstractions.Interfaces.ILookUp?, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?, params string[])
+  fullName.vb: Mithril.Security.Models.User.CreateOrUpdateContactInfoAsync(Mithril.Data.Abstractions.Interfaces.ILookUp, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal, ParamArray String())
+  nameWithType: User.CreateOrUpdateContactInfoAsync(ILookUp?, IDataService?, ClaimsPrincipal?, params string[])
+  nameWithType.vb: User.CreateOrUpdateContactInfoAsync(ILookUp, IDataService, ClaimsPrincipal, ParamArray String())
 - uid: Mithril.Security.Models.User.CreateOrUpdateContactInfoAsync*
   name: CreateOrUpdateContactInfoAsync
   href: api/Mithril.Security.Models.User.html#Mithril_Security_Models_User_CreateOrUpdateContactInfoAsync_
@@ -30924,6 +30963,15 @@ references:
   fullName.vb: Mithril.Security.Models.User.GetContactInfo(ParamArray Mithril.Data.Abstractions.Enums.ContactInfoType())
   nameWithType: User.GetContactInfo(params ContactInfoType[])
   nameWithType.vb: User.GetContactInfo(ParamArray ContactInfoType())
+- uid: Mithril.Security.Models.User.GetContactInfo(Mithril.Data.Abstractions.Interfaces.ILookUp[])
+  name: GetContactInfo(params ILookUp[])
+  href: api/Mithril.Security.Models.User.html#Mithril_Security_Models_User_GetContactInfo_Mithril_Data_Abstractions_Interfaces_ILookUp___
+  commentId: M:Mithril.Security.Models.User.GetContactInfo(Mithril.Data.Abstractions.Interfaces.ILookUp[])
+  name.vb: GetContactInfo(ParamArray ILookUp())
+  fullName: Mithril.Security.Models.User.GetContactInfo(params Mithril.Data.Abstractions.Interfaces.ILookUp[])
+  fullName.vb: Mithril.Security.Models.User.GetContactInfo(ParamArray Mithril.Data.Abstractions.Interfaces.ILookUp())
+  nameWithType: User.GetContactInfo(params ILookUp[])
+  nameWithType.vb: User.GetContactInfo(ParamArray ILookUp())
 - uid: Mithril.Security.Models.User.GetContactInfo*
   name: GetContactInfo
   href: api/Mithril.Security.Models.User.html#Mithril_Security_Models_User_GetContactInfo_
