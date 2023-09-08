@@ -50,7 +50,7 @@
 
   <ItemGroup>
     <PackageReference Include="BigBook" Version="5.0.20" />
-    <PackageReference Include="Inflatable" Version="4.0.47" />
+    <PackageReference Include="Inflatable" Version="4.0.48" />
     <PackageReference Include="Valkyrie" Version="4.0.19" />
 	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 	  <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.4">
