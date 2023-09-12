@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
 	  <TargetFramework>net7.0</TargetFramework>
@@ -33,6 +33,8 @@
 	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
 	  <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+	  <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+	  <StaticWebAssetBasePath>Content/Forms</StaticWebAssetBasePath>
   </PropertyGroup>
 	<ItemGroup>
 		<None Include="..\..\Icon.png">
@@ -49,6 +51,7 @@
 	</PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mithril.Admin\Mithril.Admin.csproj" />
     <ProjectReference Include="..\Mithril.Content\Mithril.Content.csproj" />
 	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 	  <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.4">
