@@ -2,25 +2,25 @@
 using Mithril.Admin.Abstractions.Interfaces;
 using Mithril.Admin.Abstractions.Services;
 using Mithril.Data.Abstractions.Services;
-using Mithril.Security.Admin.ViewModels;
-using Mithril.Security.Models;
+using Mithril.Navigation.Admin.ViewModels;
+using Mithril.Navigation.Models;
 
-namespace Mithril.Security.Admin
+namespace Mithril.Navigation.Admin
 {
     /// <summary>
-    /// User claim editor
+    /// Menu editor
     /// </summary>
-    /// <seealso cref="EntityEditorBaseClass&lt;UserClaimVM, UserClaim&gt;" />
-    public class UserClaimEditor : EntityEditorBaseClass<UserClaimVM, UserClaim>
+    /// <seealso cref="EntityEditorBaseClass&lt;MenuVM, Menu&gt;" />
+    public class MenuEditor : EntityEditorBaseClass<MenuVM, Menu>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserClaimEditor" /> class.
+        /// Initializes a new instance of the <see cref="MenuEditor" /> class.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
         /// <param name="serviceProvider">The service provider.</param>
         /// <param name="dataType">Type of the data.</param>
-        public UserClaimEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
+        public MenuEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
             : base(dataService, entityMetadataService, serviceProvider, dataType)
         {
         }
@@ -28,37 +28,28 @@ namespace Mithril.Security.Admin
         /// <summary>
         /// Gets the icon.
         /// </summary>
-        /// <value>
-        /// The icon.
-        /// </value>
-        public override string Icon { get; } = "fas fa-id-card";
+        /// <value>The icon.</value>
+        public override string Icon { get; } = "fas fa-bars";
 
         /// <summary>
         /// Converts the model into the appropriate view model.
         /// </summary>
         /// <param name="model">The model.</param>
         /// <param name="full">if set to <c>true</c> [full].</param>
-        /// <returns>
-        /// The view model
-        /// </returns>
-        protected override IEntity Convert(UserClaim model, bool full = true)
-        {
-            return new UserClaimVM(model);
-        }
+        /// <returns>The view model</returns>
+        protected override IEntity Convert(Menu model, bool full = true) => new MenuVM(model, full);
 
         /// <summary>
         /// Filters the query by search term.
         /// </summary>
         /// <param name="query">The query.</param>
         /// <param name="searchQuery">The search query.</param>
-        /// <returns>
-        /// The resulting query.
-        /// </returns>
-        protected override IQueryable<UserClaim>? FilterQueryBySearchQuery(IQueryable<UserClaim>? query, string searchQuery)
+        /// <returns>The resulting query.</returns>
+        protected override IQueryable<Menu>? FilterQueryBySearchQuery(IQueryable<Menu>? query, string searchQuery)
         {
             return string.IsNullOrEmpty(searchQuery)
                 ? query
-                : (query?.Where(permission => permission.Type.StartsWith(searchQuery) || permission.Value.StartsWith(searchQuery)));
+                : (query?.Where(menu => menu.Display.Contains(searchQuery)));
         }
     }
 }

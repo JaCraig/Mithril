@@ -1,7 +1,7 @@
-﻿using Inflatable;
-using Mithril.API.Abstractions.Query.Interfaces;
+﻿using Mithril.API.Abstractions.Query.Interfaces;
 using Mithril.API.Abstractions.Query.ViewModels;
 using Mithril.Data.Abstractions.Interfaces;
+using Mithril.Data.Abstractions.Services;
 using System.Security.Claims;
 
 namespace Mithril.API.Abstractions.Query.BaseClasses
@@ -39,21 +39,27 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <summary>
         /// Gets the data.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
         /// <param name="filter">The filter.</param>
         /// <returns>
         /// The drop down data.
         /// </returns>
-        public Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string? filter) => Task.FromResult<IEnumerable<DropDownVM<long>>>(GetValues(filter).Select(x => new DropDownVM<long>(GetKey(x), x.ToString())).OrderBy(x => x.Value));
+        public Task<IEnumerable<DropDownVM<long>>?> GetDataAsync(IDataService? dataService, string? filter) => Task.FromResult<IEnumerable<DropDownVM<long>>?>(GetValues(dataService, filter).Select(x => new DropDownVM<long>(GetKey(x), x.ToString())).OrderBy(x => x.Value));
 
         /// <summary>
         /// Gets all values that start with the value sent in.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
         /// <param name="value">The value.</param>
         /// <param name="count">The count.</param>
-        /// <returns>The values</returns>
-        public IEnumerable<TModel> GetValues(string? value, int count = -1)
+        /// <returns>
+        /// The values
+        /// </returns>
+        public IEnumerable<TModel> GetValues(IDataService? dataService, string? value, int count = -1)
         {
-            IQueryable<TModel> Query = DbContext<TModel>.CreateQuery();
+            IQueryable<TModel>? Query = dataService?.Query<TModel>();
+            if (Query is null)
+                return Array.Empty<TModel>();
             if (count > 0)
                 Query = Query.Take(count);
             if (!string.IsNullOrEmpty(value))

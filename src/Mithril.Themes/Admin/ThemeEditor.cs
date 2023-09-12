@@ -17,13 +17,14 @@ namespace Mithril.Themes.Admin
     public class ThemeEditor : SettingsEditorBaseClass<ThemeSettingsVM>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ThemeEditor"/> class.
+        /// Initializes a new instance of the <see cref="ThemeEditor" /> class.
         /// </summary>
         /// <param name="themeService">The theme service.</param>
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
-        public ThemeEditor(IThemeService? themeService, IDataService? dataService, IEntityMetadataService? entityMetadataService)
-            : base(dataService, entityMetadataService)
+        /// <param name="serviceProvider">The service provider.</param>
+        public ThemeEditor(IThemeService? themeService, IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider)
+            : base(dataService, entityMetadataService, serviceProvider)
         {
             ThemeService = themeService;
         }

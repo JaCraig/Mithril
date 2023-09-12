@@ -5,6 +5,7 @@ using Mithril.API.Abstractions.Query.BaseClasses;
 using Mithril.API.Abstractions.Query.Interfaces;
 using Mithril.API.Abstractions.Query.ViewModels;
 using Mithril.API.Abstractions.Services;
+using Mithril.Data.Abstractions.Services;
 using System.Security.Claims;
 
 namespace Mithril.API.GraphQL.Queries
@@ -15,15 +16,17 @@ namespace Mithril.API.GraphQL.Queries
     public class DropDownQuery : QueryBaseClass<IEnumerable<DropDownVM<long>>>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DropDownQuery"/> class.
+        /// Initializes a new instance of the <see cref="DropDownQuery" /> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="featureManager">The feature manager.</param>
         /// <param name="dropDownQueryService">The drop down query service.</param>
-        public DropDownQuery(ILogger<DropDownQuery>? logger, IFeatureManager? featureManager, IDropDownQueryService? dropDownQueryService)
+        /// <param name="dataService">The data service.</param>
+        public DropDownQuery(ILogger<DropDownQuery>? logger, IFeatureManager? featureManager, IDropDownQueryService? dropDownQueryService, IDataService? dataService)
             : base(logger, featureManager)
         {
             DropDownQueryService = dropDownQueryService;
+            DataService = dataService;
         }
 
         /// <summary>
@@ -41,6 +44,14 @@ namespace Mithril.API.GraphQL.Queries
         /// </summary>
         /// <value>The name.</value>
         public override string Name => "DropDown";
+
+        /// <summary>
+        /// Gets the data service.
+        /// </summary>
+        /// <value>
+        /// The data service.
+        /// </value>
+        private IDataService? DataService { get; }
 
         /// <summary>
         /// Gets the drop down query service.
@@ -61,7 +72,7 @@ namespace Mithril.API.GraphQL.Queries
             IDropDownQuery? DropDownQuery = DropDownQueryService?.FindDropDownQuery(QueryType, user);
             return DropDownQuery is null
                 ? new List<DropDownVM<long>>()
-                : await DropDownQuery.GetDataAsync(QueryFilter).ConfigureAwait(false);
+                : await DropDownQuery.GetDataAsync(DataService, QueryFilter).ConfigureAwait(false);
         }
     }
 }

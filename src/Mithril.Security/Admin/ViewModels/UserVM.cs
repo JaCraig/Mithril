@@ -153,11 +153,12 @@ namespace Mithril.Security.Admin.ViewModels
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="dataService">The data service.</param>
+        /// <param name="serviceProvider">The service provider.</param>
         /// <param name="currentUser">The current user.</param>
         /// <returns>
         /// The async task.
         /// </returns>
-        public override async Task<User?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser)
+        public override async Task<User?> SaveAsync(long id, IDataService? dataService, IServiceProvider? serviceProvider, ClaimsPrincipal? currentUser)
         {
             if (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName))
                 return null;

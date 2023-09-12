@@ -1,4 +1,5 @@
 ﻿using Mithril.Data.Abstractions.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace Mithril.Routing.Abstractions.Interfaces
 {
@@ -11,12 +12,16 @@ namespace Mithril.Routing.Abstractions.Interfaces
         /// Gets or sets the input path.
         /// </summary>
         /// <value>The input path.</value>
+        [Required]
+        [MaxLength(1024)]
         string? InputPath { get; set; }
 
         /// <summary>
         /// Gets or sets the output path.
         /// </summary>
         /// <value>The output path.</value>
+        [Required]
+        [MaxLength(1024)]
         string? OutputPath { get; set; }
     }
 }

@@ -16,13 +16,14 @@ namespace Mithril.Security.Admin
     public class UserEditor : EntityEditorBaseClass<UserVM, User>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserEditor"/> class.
+        /// Initializes a new instance of the <see cref="UserEditor" /> class.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
+        /// <param name="serviceProvider">The service provider.</param>
         /// <param name="dataType">Type of the data.</param>
-        public UserEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null)
-            : base(dataService, entityMetadataService, dataType)
+        public UserEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
+            : base(dataService, entityMetadataService, serviceProvider, dataType)
         {
             ContactInfoType = LookUpType.Load(LookUpTypeEnum.ContactInfoType, DataService);
         }

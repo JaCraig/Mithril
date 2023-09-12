@@ -1,5 +1,6 @@
 ﻿using Mithril.API.Abstractions.Query.Interfaces;
 using Mithril.API.Abstractions.Query.ViewModels;
+using Mithril.Data.Abstractions.Services;
 using SQLHelperDB;
 using System.Security.Claims;
 
@@ -51,8 +52,11 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// <summary>
         /// Gets the data.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
         /// <param name="filter">The filter.</param>
-        /// <returns>The drop down data.</returns>
-        public abstract Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string? filter);
+        /// <returns>
+        /// The drop down data.
+        /// </returns>
+        public abstract Task<IEnumerable<DropDownVM<long>>?> GetDataAsync(IDataService? dataService, string? filter);
     }
 }

@@ -14,7 +14,7 @@ namespace Mithril.Security.Tests.Admin
         /// </summary>
         public PermissionEditorTests()
         {
-            TestObject = new PermissionEditor(null, null);
+            TestObject = new PermissionEditor(null, null, null);
             ObjectType = typeof(PermissionEditor);
         }
     }

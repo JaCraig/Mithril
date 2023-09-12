@@ -14,13 +14,14 @@ namespace Mithril.Security.Admin
     public class TenantEditor : EntityEditorBaseClass<TenantVM, Tenant>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TenantEditor"/> class.
+        /// Initializes a new instance of the <see cref="TenantEditor" /> class.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
+        /// <param name="serviceProvider">The service provider.</param>
         /// <param name="dataType">Type of the data.</param>
-        public TenantEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null)
-            : base(dataService, entityMetadataService, dataType)
+        public TenantEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
+            : base(dataService, entityMetadataService, serviceProvider, dataType)
         {
         }
 

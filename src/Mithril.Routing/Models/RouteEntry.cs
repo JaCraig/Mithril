@@ -186,6 +186,6 @@ namespace Mithril.Routing.Models
         /// Converts to string.
         /// </summary>
         /// <returns>A <see cref="string"/> that represents this instance.</returns>
-        public override string ToString() => InputPath + " -> " + OutputPath;
+        public override string ToString() => InputPath;
     }
 }

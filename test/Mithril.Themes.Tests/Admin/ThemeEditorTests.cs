@@ -14,7 +14,7 @@ namespace Mithril.Themes.Tests.Admin
         /// </summary>
         public ThemeEditorTests()
         {
-            TestObject = new ThemeEditor(null, null, null);
+            TestObject = new ThemeEditor(null, null, null, null);
             ObjectType = typeof(ThemeEditor);
         }
     }

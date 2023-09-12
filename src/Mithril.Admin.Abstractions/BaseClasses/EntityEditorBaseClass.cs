@@ -23,13 +23,14 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         where TModel : ModelBase<TModel>, new()
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EntityEditorBaseClass{TEntity}"/> class.
+        /// Initializes a new instance of the <see cref="EntityEditorBaseClass{TEntity}" /> class.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
+        /// <param name="serviceProvider">The service provider.</param>
         /// <param name="dataType">Type of the data.</param>
-        protected EntityEditorBaseClass(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null)
-            : base(dataService, entityMetadataService, dataType ?? typeof(TEntity).Name)
+        protected EntityEditorBaseClass(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
+            : base(dataService, entityMetadataService, serviceProvider, dataType ?? typeof(TEntity).Name)
         {
         }
 
@@ -151,7 +152,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
             TEntity? ModelValue = entity.ConvertExpando<TEntity>();
             if (ModelValue is null)
                 return false;
-            TModel? Model = await ModelValue.SaveAsync(id, DataService, currentUser).ConfigureAwait(false);
+            TModel? Model = await ModelValue.SaveAsync(id, DataService, ServiceProvider, currentUser).ConfigureAwait(false);
             if (Model is null)
                 return false;
             //if (Model is IIndexedModel indexedModel)
@@ -217,17 +218,19 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         where TEntity : IEntity, new()
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EntityEditorBaseClass{TEntity}"/> class.
+        /// Initializes a new instance of the <see cref="EntityEditorBaseClass{TEntity}" /> class.
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
+        /// <param name="serviceProvider">The service provider.</param>
         /// <param name="dataType">Type of the data.</param>
-        protected EntityEditorBaseClass(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null)
+        protected EntityEditorBaseClass(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
         {
             if (string.IsNullOrEmpty(dataType))
                 dataType = typeof(TEntity).Name;
             ComponentDefinition = new DataEditorComponent<TEntity>(dataType, entityMetadataService);
             DataService = dataService;
+            ServiceProvider = serviceProvider;
         }
 
         /// <summary>
@@ -271,6 +274,14 @@ namespace Mithril.Admin.Abstractions.BaseClasses
         /// </summary>
         /// <value>The data service.</value>
         protected IDataService? DataService { get; }
+
+        /// <summary>
+        /// Gets the service provider.
+        /// </summary>
+        /// <value>
+        /// The service provider.
+        /// </value>
+        protected IServiceProvider? ServiceProvider { get; }
 
         /// <summary>
         /// Activates the entity specified asynchronously.

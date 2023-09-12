@@ -14,7 +14,7 @@ namespace Mithril.API.GraphQL.Tests.Queries
         /// </summary>
         public DropDownQueryTests()
         {
-            TestObject = new DropDownQuery(null, null, null);
+            TestObject = new DropDownQuery(null, null, null, null);
         }
     }
 }

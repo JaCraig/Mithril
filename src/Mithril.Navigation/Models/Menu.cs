@@ -158,7 +158,7 @@ namespace Mithril.Navigation.Models
         /// <param name="url">The URL.</param>
         /// <param name="order">The order.</param>
         /// <param name="permission">The permission.</param>
-        public void AddOrUpdateMenuItem(string display, string description, string icon, string url, int order = 0, IPermission? permission = null)
+        public MenuItem AddOrUpdateMenuItem(string? display, string? description, string? icon, string? url, int order = 0, IPermission? permission = null)
         {
             Items ??= new List<MenuItem>();
             MenuItem Item = Items.FirstOrDefault(x => string.Equals(x.Display, display, StringComparison.OrdinalIgnoreCase)) ?? Items.AddAndReturn(new MenuItem
@@ -179,6 +179,7 @@ namespace Mithril.Navigation.Models
             Item.Parent = this;
             Item.Order = order;
             Item.Permissions = permission;
+            return Item;
         }
 
         /// <summary>

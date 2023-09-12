@@ -1,4 +1,5 @@
 ﻿using Mithril.API.Abstractions.Query.ViewModels;
+using Mithril.Data.Abstractions.Services;
 using System.Security.Claims;
 
 namespace Mithril.API.Abstractions.Query.Interfaces
@@ -27,8 +28,11 @@ namespace Mithril.API.Abstractions.Query.Interfaces
         /// <summary>
         /// Gets the data asynchronously.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
         /// <param name="filter">The filter.</param>
-        /// <returns>The drop down items.</returns>
-        Task<IEnumerable<DropDownVM<long>>> GetDataAsync(string? filter);
+        /// <returns>
+        /// The drop down items.
+        /// </returns>
+        Task<IEnumerable<DropDownVM<long>>?> GetDataAsync(IDataService? dataService, string? filter);
     }
 }

@@ -37,6 +37,7 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
             var Expando = new ExpandoObject();
             _ = Expando.TryAdd("test", "test");
             Dictionary<string, object?>? Result = Expando.ConvertExpando<Dictionary<string, object?>>();
+            Assert.NotNull(Result);
             Assert.Equal("test", Result["Test"]);
         }
 
@@ -48,7 +49,8 @@ namespace Mithril.Core.Abstractions.Tests.Extensions
         {
             var Value = new Example2();
             Value.Example.Test = "test";
-            dynamic Result = Value.ConvertToExpando();
+            dynamic? Result = Value.ConvertToExpando();
+            Assert.NotNull(Result);
             Assert.Equal("test", Result.example.test);
         }
     }

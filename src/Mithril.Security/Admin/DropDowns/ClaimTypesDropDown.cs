@@ -1,5 +1,6 @@
 ﻿using Mithril.API.Abstractions.Query.Interfaces;
 using Mithril.API.Abstractions.Query.ViewModels;
+using Mithril.Data.Abstractions.Services;
 using SQLHelperDB;
 using System.Data;
 using System.Security.Claims;
@@ -53,11 +54,12 @@ namespace Mithril.Security.Admin.DropDowns
         /// <summary>
         /// Gets the data asynchronously.
         /// </summary>
+        /// <param name="dataService">The data service.</param>
         /// <param name="filter">The filter.</param>
         /// <returns>
         /// The drop down items.
         /// </returns>
-        public async Task<IEnumerable<DropDownVM<long>>?> GetDataAsync(string? filter)
+        public async Task<IEnumerable<DropDownVM<long>>?> GetDataAsync(IDataService? dataService, string? filter)
         {
             if (Helper is null)
                 return Enumerable.Empty<DropDownVM<long>>();

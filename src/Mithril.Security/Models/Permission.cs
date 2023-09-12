@@ -237,7 +237,7 @@ namespace Mithril.Security.Models
         /// </summary>
         /// <param name="claim">The claim.</param>
         /// <returns>This.</returns>
-        public IPermission RemoveClaim(IUserClaim claim)
+        public IPermission RemoveClaim(IUserClaim? claim)
         {
             Claims ??= new List<IUserClaim>();
             if (claim is null || !Claims.Contains(claim))
@@ -252,7 +252,7 @@ namespace Mithril.Security.Models
         /// <param name="originalClaim">The original claim.</param>
         /// <param name="newClaim">The new claim.</param>
         /// <returns>This</returns>
-        public IPermission ReplaceClaim(IUserClaim originalClaim, IUserClaim newClaim)
+        public IPermission ReplaceClaim(IUserClaim? originalClaim, IUserClaim? newClaim)
         {
             Claims ??= new List<IUserClaim>();
             if (Claims.Remove(originalClaim))

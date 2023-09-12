@@ -69,9 +69,12 @@ namespace Mithril.Security.Admin.ViewModels
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="dataService">The data service.</param>
+        /// <param name="serviceProvider">The service provider.</param>
         /// <param name="currentUser">The current user.</param>
-        /// <returns>The async task.</returns>
-        public override async Task<Permission?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser)
+        /// <returns>
+        /// The async task.
+        /// </returns>
+        public override async Task<Permission?> SaveAsync(long id, IDataService? dataService, IServiceProvider? serviceProvider, ClaimsPrincipal? currentUser)
         {
             Permission? Permission = Permission.Load(id, dataService);
             if (Permission is null)

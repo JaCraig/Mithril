@@ -18,9 +18,10 @@ namespace Mithril.Apm.Default.Admin
         /// </summary>
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
+        /// <param name="serviceProvider">The service provider.</param>
         /// <param name="dataType">Type of the data.</param>
-        public RequestTraceEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null)
-            : base(dataService, entityMetadataService, dataType)
+        public RequestTraceEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
+            : base(dataService, entityMetadataService, serviceProvider, dataType)
         {
         }
 

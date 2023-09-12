@@ -1,6 +1,7 @@
 ﻿using Mithril.Admin.Abstractions.BaseClasses;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Security.Models;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
 namespace Mithril.Security.Admin.ViewModels
@@ -35,6 +36,9 @@ namespace Mithril.Security.Admin.ViewModels
         /// <value>
         /// The display name.
         /// </value>
+        [Required]
+        [MaxLength(100)]
+        [MinLength(1)]
         public string? DisplayName { get; set; }
 
         /// <summary>
@@ -42,12 +46,15 @@ namespace Mithril.Security.Admin.ViewModels
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <param name="dataService">The data service.</param>
+        /// <param name="serviceProvider">The service provider.</param>
         /// <param name="currentUser">The current user.</param>
         /// <returns>
         /// The async task.
         /// </returns>
-        public override async Task<Tenant?> SaveAsync(long id, IDataService? dataService, ClaimsPrincipal? currentUser)
+        public override async Task<Tenant?> SaveAsync(long id, IDataService? dataService, IServiceProvider? serviceProvider, ClaimsPrincipal? currentUser)
         {
+            if (string.IsNullOrEmpty(DisplayName))
+                return null;
             var Model = Tenant.Load(id, dataService) ?? new Tenant(DisplayName);
             Model.DisplayName = DisplayName;
             Model.Active = Active;

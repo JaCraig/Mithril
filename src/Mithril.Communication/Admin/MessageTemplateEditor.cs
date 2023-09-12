@@ -20,9 +20,10 @@ namespace Mithril.Communication.Admin
         /// <param name="hostEnvironment">The host environment.</param>
         /// <param name="dataService">The data service.</param>
         /// <param name="entityMetadataService">The entity metadata service.</param>
+        /// <param name="serviceProvider">The service provider.</param>
         /// <param name="dataType">Type of the data.</param>
-        public MessageTemplateEditor(IHostEnvironment? hostEnvironment, IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null)
-            : base(dataService, entityMetadataService, dataType)
+        public MessageTemplateEditor(IHostEnvironment? hostEnvironment, IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
+            : base(dataService, entityMetadataService, serviceProvider, dataType)
         {
             HostEnvironment = hostEnvironment;
         }

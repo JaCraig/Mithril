@@ -37,7 +37,7 @@ namespace Mithril.Security.Abstractions.Interfaces
         /// </summary>
         /// <param name="claim">The claim.</param>
         /// <returns>This.</returns>
-        IPermission AddClaim(IUserClaim claim);
+        IPermission AddClaim(IUserClaim? claim);
 
         /// <summary>
         /// Determines whether the specified user has permission.
@@ -58,7 +58,7 @@ namespace Mithril.Security.Abstractions.Interfaces
         /// </summary>
         /// <param name="claim">The claim.</param>
         /// <returns>This.</returns>
-        IPermission RemoveClaim(IUserClaim claim);
+        IPermission RemoveClaim(IUserClaim? claim);
 
         /// <summary>
         /// Replaces the claim.
@@ -66,6 +66,6 @@ namespace Mithril.Security.Abstractions.Interfaces
         /// <param name="originalClaim">The original claim.</param>
         /// <param name="newClaim">The new claim.</param>
         /// <returns>This</returns>
-        IPermission ReplaceClaim(IUserClaim originalClaim, IUserClaim newClaim);
+        IPermission ReplaceClaim(IUserClaim? originalClaim, IUserClaim? newClaim);
     }
 }
