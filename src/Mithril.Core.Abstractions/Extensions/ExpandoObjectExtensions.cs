@@ -1,4 +1,5 @@
 ﻿using BigBook;
+using ObjectCartographer;
 using System.Dynamic;
 using System.Reflection;
 
@@ -19,15 +20,16 @@ namespace Mithril.Core.Abstractions.Extensions
         {
             if (value is null)
                 return default;
-            IDictionary<string, object?> Values = value;
-            var TempValues = new Dictionary<string, object?>();
-            foreach (var Key in Values.Keys)
-            {
-                var Value = Values[Key];
-                TempValues.Add(Key.ToPascalCase(), Value);
-            }
-            dynamic TempValue = new Dynamo(TempValues);
-            return (TEntity)TempValue;
+            return value.To<TEntity>();
+            //IDictionary<string, object?> Values = value;
+            //var TempValues = new Dictionary<string, object?>();
+            //foreach (var Key in Values.Keys)
+            //{
+            //    var Value = Values[Key];
+            //    TempValues.Add(Key.ToPascalCase(), Value);
+            //}
+            //dynamic TempValue = new Dynamo(TempValues);
+            //return (TEntity)TempValue;
         }
 
         /// <summary>
