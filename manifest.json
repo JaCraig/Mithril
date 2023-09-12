@@ -5383,6 +5383,56 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Admin.MenuEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Admin.MenuEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Admin.ViewModels.MenuVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Admin.ViewModels.MenuVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Admin.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Admin.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Navigation.Admin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Navigation.Admin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Navigation.Features.NavigationFeature.yml",
       "output": {
         ".html": {
@@ -5563,6 +5613,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Abstractions.Admin.DropDowns.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Abstractions.Admin.DropDowns.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Routing.Abstractions.Interfaces.IRoute.yml",
       "output": {
         ".html": {
@@ -5637,6 +5707,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Routing.Admin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Routing.Models.Mappings.IRouteMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Routing.Models.Mappings.IRouteMapping.html"
         }
       },
       "version": ""

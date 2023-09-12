@@ -114,6 +114,7 @@
       <div class="level3"><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-2.html">SettingsEditorBaseClass&lt;TEntity, TModel&gt;</a></div>
       <div class="level3"><a class="xref" href="Mithril.Apm.Default.Admin.RequestTraceEditor.html">RequestTraceEditor</a></div>
       <div class="level3"><a class="xref" href="Mithril.Communication.Admin.MessageTemplateEditor.html">MessageTemplateEditor</a></div>
+      <div class="level3"><a class="xref" href="Mithril.Navigation.Admin.MenuEditor.html">MenuEditor</a></div>
       <div class="level3"><a class="xref" href="Mithril.Routing.Admin.RouteEditor.html">RouteEditor</a></div>
       <div class="level3"><a class="xref" href="Mithril.Security.Admin.PermissionEditor.html">PermissionEditor</a></div>
       <div class="level3"><a class="xref" href="Mithril.Security.Admin.TenantEditor.html">TenantEditor</a></div>
@@ -147,6 +148,9 @@
     </div>
     <div>
       <a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_DataService">EntityEditorBaseClass&lt;TEntity&gt;.DataService</a>
+    </div>
+    <div>
+      <a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_ServiceProvider">EntityEditorBaseClass&lt;TEntity&gt;.ServiceProvider</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -201,19 +205,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.%23ctor(Mithril.Data.Abstractions.Services.IDataService%2CMithril.Admin.Abstractions.Services.IEntityMetadataService%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.%23ctor(Mithril.Data.Abstractions.Services.IDataService%2CMithril.Admin.Abstractions.Services.IEntityMetadataService%2CSystem.IServiceProvider%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L31">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L32">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)">EntityEditorBaseClass(IDataService?, IEntityMetadataService?, string?)</h4>
+  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)">EntityEditorBaseClass(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass&lt;TEntity&gt;</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected EntityEditorBaseClass(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null)</code></pre>
+    <pre><code class="lang-csharp hljs">protected EntityEditorBaseClass(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -238,6 +242,12 @@
 </td>
       </tr>
       <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a></td>
+        <td><span class="parametername">serviceProvider</span></td>
+        <td><p>The service provider.</p>
+</td>
+      </tr>
+      <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">dataType</span></td>
         <td><p>Type of the data.</p>
@@ -245,7 +255,7 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String__seealso">See Also</h5>
+  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String__seealso">See Also</h5>
   <div class="seealso">
       <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
   </div>
@@ -256,7 +266,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_ActivateAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.ActivateAsync(System.Int64%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L44">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L45">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_ActivateAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.ActivateAsync*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_ActivateAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.ActivateAsync(System.Int64,System.Security.Claims.ClaimsPrincipal)">ActivateAsync(long, ClaimsPrincipal?)</h4>
@@ -318,7 +328,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_CanView_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.CanView(System.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L67">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L68">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_CanView_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.CanView*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_CanView_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.CanView(System.Security.Claims.ClaimsPrincipal)">CanView(ClaimsPrincipal?)</h4>
@@ -374,7 +384,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Convert__1_System_Boolean_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.Convert(%601%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L179">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L180">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Convert_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Convert*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Convert__1_System_Boolean_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Convert(`1,System.Boolean)">Convert(TModel, bool)</h4>
@@ -434,7 +444,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_DeleteEntityAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.DeleteEntityAsync(System.Int64%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L78">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L79">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_DeleteEntityAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.DeleteEntityAsync*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_DeleteEntityAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.DeleteEntityAsync(System.Int64,System.Security.Claims.ClaimsPrincipal)">DeleteEntityAsync(long, ClaimsPrincipal?)</h4>
@@ -511,7 +521,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_FilterQueryBySearchQuery_System_Linq_IQueryable__1__System_String_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.FilterQueryBySearchQuery(System.Linq.IQueryable%7B%601%7D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L187">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L188">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_FilterQueryBySearchQuery_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.FilterQueryBySearchQuery*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_FilterQueryBySearchQuery_System_Linq_IQueryable__1__System_String_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.FilterQueryBySearchQuery(System.Linq.IQueryable{`1},System.String)">FilterQueryBySearchQuery(IQueryable&lt;TModel&gt;?, string)</h4>
@@ -571,7 +581,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Load_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.Load(System.Int64%2CSystem.Dynamic.ExpandoObject%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L102">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L103">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Load_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Load*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Load_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Load(System.Int64,System.Dynamic.ExpandoObject,System.Security.Claims.ClaimsPrincipal)">Load(long, ExpandoObject?, ClaimsPrincipal?)</h4>
@@ -639,7 +649,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadModel_System_Int64_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.LoadModel(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L194">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L195">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadModel_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadModel*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadModel_System_Int64_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadModel(System.Int64)">LoadModel(long)</h4>
@@ -693,7 +703,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadPageAsync_System_Int32_System_Int32_System_String_System_Boolean_System_String_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.LoadPageAsync(System.Int32%2CSystem.Int32%2CSystem.String%2CSystem.Boolean%2CSystem.String%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L116">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L117">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadPageAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadPageAsync*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadPageAsync_System_Int32_System_Int32_System_String_System_Boolean_System_String_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadPageAsync(System.Int32,System.Int32,System.String,System.Boolean,System.String,System.Security.Claims.ClaimsPrincipal)">LoadPageAsync(int, int, string, bool, string, ClaimsPrincipal?)</h4>
@@ -779,7 +789,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeActiveAsync__1_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.MakeActiveAsync(%601)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L201">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L202">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeActiveAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeActiveAsync*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeActiveAsync__1_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeActiveAsync(`1)">MakeActiveAsync(TModel)</h4>
@@ -833,7 +843,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeInactiveAsync__1_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.MakeInactiveAsync(%601)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L208">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L209">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeInactiveAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeInactiveAsync*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeInactiveAsync__1_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeInactiveAsync(`1)">MakeInactiveAsync(TModel)</h4>
@@ -887,7 +897,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_SaveEntityAsync_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.SaveEntityAsync(System.Int64%2CSystem.Dynamic.ExpandoObject%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L145">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L146">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_SaveEntityAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.SaveEntityAsync*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_SaveEntityAsync_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.SaveEntityAsync(System.Int64,System.Dynamic.ExpandoObject,System.Security.Claims.ClaimsPrincipal)">SaveEntityAsync(long, ExpandoObject, ClaimsPrincipal?)</h4>
@@ -955,7 +965,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_TotalActiveAsync_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.TotalActiveAsync(System.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L171">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L172">View Source</a>
   </span>
   <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_TotalActiveAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.TotalActiveAsync*"></a>
   <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_TotalActiveAsync_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.TotalActiveAsync(System.Security.Claims.ClaimsPrincipal)">TotalActiveAsync(ClaimsPrincipal?)</h4>

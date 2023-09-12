@@ -2260,15 +2260,15 @@ references:
   isSpec: "True"
   fullName: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.CanRun
   nameWithType: DropDownBaseClass.CanRun
-- uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.GetDataAsync(System.String)
-  name: GetDataAsync(string?)
-  href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_GetDataAsync_System_String_
-  commentId: M:Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.GetDataAsync(System.String)
-  name.vb: GetDataAsync(String)
-  fullName: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.GetDataAsync(string?)
-  fullName.vb: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.GetDataAsync(String)
-  nameWithType: DropDownBaseClass.GetDataAsync(string?)
-  nameWithType.vb: DropDownBaseClass.GetDataAsync(String)
+- uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService,System.String)
+  name: GetDataAsync(IDataService?, string?)
+  href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_GetDataAsync_Mithril_Data_Abstractions_Services_IDataService_System_String_
+  commentId: M:Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService,System.String)
+  name.vb: GetDataAsync(IDataService, String)
+  fullName: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService?, string?)
+  fullName.vb: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService, String)
+  nameWithType: DropDownBaseClass.GetDataAsync(IDataService?, string?)
+  nameWithType.vb: DropDownBaseClass.GetDataAsync(IDataService, String)
 - uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.GetDataAsync*
   name: GetDataAsync
   href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_GetDataAsync_
@@ -2366,15 +2366,15 @@ references:
   fullName.vb: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass(Of TModel).FilterQuery
   nameWithType: DropDownBaseClass<TModel>.FilterQuery
   nameWithType.vb: DropDownBaseClass(Of TModel).FilterQuery
-- uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetDataAsync(System.String)
-  name: GetDataAsync(string?)
-  href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass-1.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_1_GetDataAsync_System_String_
-  commentId: M:Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetDataAsync(System.String)
-  name.vb: GetDataAsync(String)
-  fullName: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass<TModel>.GetDataAsync(string?)
-  fullName.vb: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass(Of TModel).GetDataAsync(String)
-  nameWithType: DropDownBaseClass<TModel>.GetDataAsync(string?)
-  nameWithType.vb: DropDownBaseClass(Of TModel).GetDataAsync(String)
+- uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService,System.String)
+  name: GetDataAsync(IDataService?, string?)
+  href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass-1.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_1_GetDataAsync_Mithril_Data_Abstractions_Services_IDataService_System_String_
+  commentId: M:Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService,System.String)
+  name.vb: GetDataAsync(IDataService, String)
+  fullName: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass<TModel>.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService?, string?)
+  fullName.vb: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass(Of TModel).GetDataAsync(Mithril.Data.Abstractions.Services.IDataService, String)
+  nameWithType: DropDownBaseClass<TModel>.GetDataAsync(IDataService?, string?)
+  nameWithType.vb: DropDownBaseClass(Of TModel).GetDataAsync(IDataService, String)
 - uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetDataAsync*
   name: GetDataAsync
   href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass-1.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_1_GetDataAsync_
@@ -2401,15 +2401,15 @@ references:
   fullName.vb: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass(Of TModel).GetKey
   nameWithType: DropDownBaseClass<TModel>.GetKey
   nameWithType.vb: DropDownBaseClass(Of TModel).GetKey
-- uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetValues(System.String,System.Int32)
-  name: GetValues(string?, int)
-  href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass-1.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_1_GetValues_System_String_System_Int32_
-  commentId: M:Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetValues(System.String,System.Int32)
-  name.vb: GetValues(String, Integer)
-  fullName: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass<TModel>.GetValues(string?, int)
-  fullName.vb: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass(Of TModel).GetValues(String, Integer)
-  nameWithType: DropDownBaseClass<TModel>.GetValues(string?, int)
-  nameWithType.vb: DropDownBaseClass(Of TModel).GetValues(String, Integer)
+- uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetValues(Mithril.Data.Abstractions.Services.IDataService,System.String,System.Int32)
+  name: GetValues(IDataService?, string?, int)
+  href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass-1.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_1_GetValues_Mithril_Data_Abstractions_Services_IDataService_System_String_System_Int32_
+  commentId: M:Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetValues(Mithril.Data.Abstractions.Services.IDataService,System.String,System.Int32)
+  name.vb: GetValues(IDataService, String, Integer)
+  fullName: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass<TModel>.GetValues(Mithril.Data.Abstractions.Services.IDataService?, string?, int)
+  fullName.vb: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass(Of TModel).GetValues(Mithril.Data.Abstractions.Services.IDataService, String, Integer)
+  nameWithType: DropDownBaseClass<TModel>.GetValues(IDataService?, string?, int)
+  nameWithType.vb: DropDownBaseClass(Of TModel).GetValues(IDataService, String, Integer)
 - uid: Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass`1.GetValues*
   name: GetValues
   href: api/Mithril.API.Abstractions.Query.BaseClasses.DropDownBaseClass-1.html#Mithril_API_Abstractions_Query_BaseClasses_DropDownBaseClass_1_GetValues_
@@ -2738,15 +2738,15 @@ references:
   isSpec: "True"
   fullName: Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.CanRun
   nameWithType: IDropDownQuery.CanRun
-- uid: Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.GetDataAsync(System.String)
-  name: GetDataAsync(string?)
-  href: api/Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.html#Mithril_API_Abstractions_Query_Interfaces_IDropDownQuery_GetDataAsync_System_String_
-  commentId: M:Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.GetDataAsync(System.String)
-  name.vb: GetDataAsync(String)
-  fullName: Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.GetDataAsync(string?)
-  fullName.vb: Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.GetDataAsync(String)
-  nameWithType: IDropDownQuery.GetDataAsync(string?)
-  nameWithType.vb: IDropDownQuery.GetDataAsync(String)
+- uid: Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService,System.String)
+  name: GetDataAsync(IDataService?, string?)
+  href: api/Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.html#Mithril_API_Abstractions_Query_Interfaces_IDropDownQuery_GetDataAsync_Mithril_Data_Abstractions_Services_IDataService_System_String_
+  commentId: M:Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService,System.String)
+  name.vb: GetDataAsync(IDataService, String)
+  fullName: Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService?, string?)
+  fullName.vb: Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService, String)
+  nameWithType: IDropDownQuery.GetDataAsync(IDataService?, string?)
+  nameWithType.vb: IDropDownQuery.GetDataAsync(IDataService, String)
 - uid: Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.GetDataAsync*
   name: GetDataAsync
   href: api/Mithril.API.Abstractions.Query.Interfaces.IDropDownQuery.html#Mithril_API_Abstractions_Query_Interfaces_IDropDownQuery_GetDataAsync_
@@ -4301,15 +4301,15 @@ references:
   commentId: T:Mithril.API.GraphQL.Queries.DropDownQuery
   fullName: Mithril.API.GraphQL.Queries.DropDownQuery
   nameWithType: DropDownQuery
-- uid: Mithril.API.GraphQL.Queries.DropDownQuery.#ctor(Microsoft.Extensions.Logging.ILogger{Mithril.API.GraphQL.Queries.DropDownQuery},Microsoft.FeatureManagement.IFeatureManager,Mithril.API.Abstractions.Services.IDropDownQueryService)
-  name: DropDownQuery(ILogger<DropDownQuery>?, IFeatureManager?, IDropDownQueryService?)
-  href: api/Mithril.API.GraphQL.Queries.DropDownQuery.html#Mithril_API_GraphQL_Queries_DropDownQuery__ctor_Microsoft_Extensions_Logging_ILogger_Mithril_API_GraphQL_Queries_DropDownQuery__Microsoft_FeatureManagement_IFeatureManager_Mithril_API_Abstractions_Services_IDropDownQueryService_
-  commentId: M:Mithril.API.GraphQL.Queries.DropDownQuery.#ctor(Microsoft.Extensions.Logging.ILogger{Mithril.API.GraphQL.Queries.DropDownQuery},Microsoft.FeatureManagement.IFeatureManager,Mithril.API.Abstractions.Services.IDropDownQueryService)
-  name.vb: New(ILogger(Of DropDownQuery), IFeatureManager, IDropDownQueryService)
-  fullName: Mithril.API.GraphQL.Queries.DropDownQuery.DropDownQuery(Microsoft.Extensions.Logging.ILogger<Mithril.API.GraphQL.Queries.DropDownQuery>?, Microsoft.FeatureManagement.IFeatureManager?, Mithril.API.Abstractions.Services.IDropDownQueryService?)
-  fullName.vb: Mithril.API.GraphQL.Queries.DropDownQuery.New(Microsoft.Extensions.Logging.ILogger(Of Mithril.API.GraphQL.Queries.DropDownQuery), Microsoft.FeatureManagement.IFeatureManager, Mithril.API.Abstractions.Services.IDropDownQueryService)
-  nameWithType: DropDownQuery.DropDownQuery(ILogger<DropDownQuery>?, IFeatureManager?, IDropDownQueryService?)
-  nameWithType.vb: DropDownQuery.New(ILogger(Of DropDownQuery), IFeatureManager, IDropDownQueryService)
+- uid: Mithril.API.GraphQL.Queries.DropDownQuery.#ctor(Microsoft.Extensions.Logging.ILogger{Mithril.API.GraphQL.Queries.DropDownQuery},Microsoft.FeatureManagement.IFeatureManager,Mithril.API.Abstractions.Services.IDropDownQueryService,Mithril.Data.Abstractions.Services.IDataService)
+  name: DropDownQuery(ILogger<DropDownQuery>?, IFeatureManager?, IDropDownQueryService?, IDataService?)
+  href: api/Mithril.API.GraphQL.Queries.DropDownQuery.html#Mithril_API_GraphQL_Queries_DropDownQuery__ctor_Microsoft_Extensions_Logging_ILogger_Mithril_API_GraphQL_Queries_DropDownQuery__Microsoft_FeatureManagement_IFeatureManager_Mithril_API_Abstractions_Services_IDropDownQueryService_Mithril_Data_Abstractions_Services_IDataService_
+  commentId: M:Mithril.API.GraphQL.Queries.DropDownQuery.#ctor(Microsoft.Extensions.Logging.ILogger{Mithril.API.GraphQL.Queries.DropDownQuery},Microsoft.FeatureManagement.IFeatureManager,Mithril.API.Abstractions.Services.IDropDownQueryService,Mithril.Data.Abstractions.Services.IDataService)
+  name.vb: New(ILogger(Of DropDownQuery), IFeatureManager, IDropDownQueryService, IDataService)
+  fullName: Mithril.API.GraphQL.Queries.DropDownQuery.DropDownQuery(Microsoft.Extensions.Logging.ILogger<Mithril.API.GraphQL.Queries.DropDownQuery>?, Microsoft.FeatureManagement.IFeatureManager?, Mithril.API.Abstractions.Services.IDropDownQueryService?, Mithril.Data.Abstractions.Services.IDataService?)
+  fullName.vb: Mithril.API.GraphQL.Queries.DropDownQuery.New(Microsoft.Extensions.Logging.ILogger(Of Mithril.API.GraphQL.Queries.DropDownQuery), Microsoft.FeatureManagement.IFeatureManager, Mithril.API.Abstractions.Services.IDropDownQueryService, Mithril.Data.Abstractions.Services.IDataService)
+  nameWithType: DropDownQuery.DropDownQuery(ILogger<DropDownQuery>?, IFeatureManager?, IDropDownQueryService?, IDataService?)
+  nameWithType.vb: DropDownQuery.New(ILogger(Of DropDownQuery), IFeatureManager, IDropDownQueryService, IDataService)
 - uid: Mithril.API.GraphQL.Queries.DropDownQuery.#ctor*
   name: DropDownQuery
   href: api/Mithril.API.GraphQL.Queries.DropDownQuery.html#Mithril_API_GraphQL_Queries_DropDownQuery__ctor_
@@ -4621,15 +4621,15 @@ references:
   fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass(Of TEntity).ID
   nameWithType: EntityBaseClass<TEntity>.ID
   nameWithType.vb: EntityBaseClass(Of TEntity).ID
-- uid: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass`1.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name: SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  href: api/Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityBaseClass_1_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
-  commentId: M:Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass`1.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
-  fullName: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass<TEntity>.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?)
-  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass(Of TEntity).SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
-  nameWithType: EntityBaseClass<TEntity>.SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  nameWithType.vb: EntityBaseClass(Of TEntity).SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass`1.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityBaseClass_1_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass`1.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass<TEntity>.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass(Of TEntity).SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: EntityBaseClass<TEntity>.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: EntityBaseClass(Of TEntity).SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
 - uid: Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass`1.SaveAsync*
   name: SaveAsync
   href: api/Mithril.Admin.Abstractions.BaseClasses.EntityBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityBaseClass_1_SaveAsync_
@@ -4648,15 +4648,15 @@ references:
   fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass(Of TEntity)
   nameWithType: EntityEditorBaseClass<TEntity>
   nameWithType.vb: EntityEditorBaseClass(Of TEntity)
-- uid: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`1.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: EntityEditorBaseClass(IDataService?, IEntityMetadataService?, string?)
-  href: api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
-  commentId: M:Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`1.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name.vb: New(IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass<TEntity>.EntityEditorBaseClass(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
-  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass(Of TEntity).New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: EntityEditorBaseClass<TEntity>.EntityEditorBaseClass(IDataService?, IEntityMetadataService?, string?)
-  nameWithType.vb: EntityEditorBaseClass(Of TEntity).New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`1.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: EntityEditorBaseClass(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`1.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass<TEntity>.EntityEditorBaseClass(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass(Of TEntity).New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: EntityEditorBaseClass<TEntity>.EntityEditorBaseClass(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: EntityEditorBaseClass(Of TEntity).New(IDataService, IEntityMetadataService, IServiceProvider, String)
 - uid: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`1.#ctor*
   name: EntityEditorBaseClass
   href: api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1__ctor_
@@ -4894,6 +4894,23 @@ references:
   fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass(Of TEntity).SaveEntityAsync
   nameWithType: EntityEditorBaseClass<TEntity>.SaveEntityAsync
   nameWithType.vb: EntityEditorBaseClass(Of TEntity).SaveEntityAsync
+- uid: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`1.ServiceProvider
+  name: ServiceProvider
+  href: api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_ServiceProvider
+  commentId: P:Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`1.ServiceProvider
+  fullName: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass<TEntity>.ServiceProvider
+  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass(Of TEntity).ServiceProvider
+  nameWithType: EntityEditorBaseClass<TEntity>.ServiceProvider
+  nameWithType.vb: EntityEditorBaseClass(Of TEntity).ServiceProvider
+- uid: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`1.ServiceProvider*
+  name: ServiceProvider
+  href: api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_ServiceProvider_
+  commentId: Overload:Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`1.ServiceProvider
+  isSpec: "True"
+  fullName: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass<TEntity>.ServiceProvider
+  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass(Of TEntity).ServiceProvider
+  nameWithType: EntityEditorBaseClass<TEntity>.ServiceProvider
+  nameWithType.vb: EntityEditorBaseClass(Of TEntity).ServiceProvider
 - uid: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`1.TotalActiveAsync(System.Security.Claims.ClaimsPrincipal)
   name: TotalActiveAsync(ClaimsPrincipal?)
   href: api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_TotalActiveAsync_System_Security_Claims_ClaimsPrincipal_
@@ -4921,15 +4938,15 @@ references:
   fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass(Of TEntity, TModel)
   nameWithType: EntityEditorBaseClass<TEntity, TModel>
   nameWithType.vb: EntityEditorBaseClass(Of TEntity, TModel)
-- uid: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: EntityEditorBaseClass(IDataService?, IEntityMetadataService?, string?)
-  href: api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-2.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
-  commentId: M:Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name.vb: New(IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass<TEntity, TModel>.EntityEditorBaseClass(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
-  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass(Of TEntity, TModel).New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: EntityEditorBaseClass<TEntity, TModel>.EntityEditorBaseClass(IDataService?, IEntityMetadataService?, string?)
-  nameWithType.vb: EntityEditorBaseClass(Of TEntity, TModel).New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: EntityEditorBaseClass(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-2.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass<TEntity, TModel>.EntityEditorBaseClass(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass(Of TEntity, TModel).New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: EntityEditorBaseClass<TEntity, TModel>.EntityEditorBaseClass(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: EntityEditorBaseClass(Of TEntity, TModel).New(IDataService, IEntityMetadataService, IServiceProvider, String)
 - uid: Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor*
   name: EntityEditorBaseClass
   href: api/Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-2.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_
@@ -5268,15 +5285,15 @@ references:
   fullName.vb: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass(Of TEntity)
   nameWithType: SettingsEditorBaseClass<TEntity>
   nameWithType.vb: SettingsEditorBaseClass(Of TEntity)
-- uid: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass`1.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: SettingsEditorBaseClass(IDataService?, IEntityMetadataService?, string?)
-  href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_SettingsEditorBaseClass_1__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
-  commentId: M:Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass`1.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name.vb: New(IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass<TEntity>.SettingsEditorBaseClass(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
-  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass(Of TEntity).New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: SettingsEditorBaseClass<TEntity>.SettingsEditorBaseClass(IDataService?, IEntityMetadataService?, string?)
-  nameWithType.vb: SettingsEditorBaseClass(Of TEntity).New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass`1.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: SettingsEditorBaseClass(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_SettingsEditorBaseClass_1__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass`1.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass<TEntity>.SettingsEditorBaseClass(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass(Of TEntity).New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: SettingsEditorBaseClass<TEntity>.SettingsEditorBaseClass(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: SettingsEditorBaseClass(Of TEntity).New(IDataService, IEntityMetadataService, IServiceProvider, String)
 - uid: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass`1.#ctor*
   name: SettingsEditorBaseClass
   href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_SettingsEditorBaseClass_1__ctor_
@@ -5412,15 +5429,15 @@ references:
   fullName.vb: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass(Of TEntity, TModel)
   nameWithType: SettingsEditorBaseClass<TEntity, TModel>
   nameWithType.vb: SettingsEditorBaseClass(Of TEntity, TModel)
-- uid: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: SettingsEditorBaseClass(IDataService, IEntityMetadataService, string?)
-  href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-2.html#Mithril_Admin_Abstractions_BaseClasses_SettingsEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
-  commentId: M:Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name.vb: New(IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass<TEntity, TModel>.SettingsEditorBaseClass(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, string?)
-  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass(Of TEntity, TModel).New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: SettingsEditorBaseClass<TEntity, TModel>.SettingsEditorBaseClass(IDataService, IEntityMetadataService, string?)
-  nameWithType.vb: SettingsEditorBaseClass(Of TEntity, TModel).New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: SettingsEditorBaseClass(IDataService, IEntityMetadataService, IServiceProvider?, string?)
+  href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-2.html#Mithril_Admin_Abstractions_BaseClasses_SettingsEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass<TEntity, TModel>.SettingsEditorBaseClass(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass(Of TEntity, TModel).New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: SettingsEditorBaseClass<TEntity, TModel>.SettingsEditorBaseClass(IDataService, IEntityMetadataService, IServiceProvider?, string?)
+  nameWithType.vb: SettingsEditorBaseClass(Of TEntity, TModel).New(IDataService, IEntityMetadataService, IServiceProvider, String)
 - uid: Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass`2.#ctor*
   name: SettingsEditorBaseClass
   href: api/Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-2.html#Mithril_Admin_Abstractions_BaseClasses_SettingsEditorBaseClass_2__ctor_
@@ -7073,15 +7090,15 @@ references:
   fullName.vb: Mithril.Admin.Abstractions.Interfaces.IEntity(Of TModel)
   nameWithType: IEntity<TModel>
   nameWithType.vb: IEntity(Of TModel)
-- uid: Mithril.Admin.Abstractions.Interfaces.IEntity`1.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name: SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  href: api/Mithril.Admin.Abstractions.Interfaces.IEntity-1.html#Mithril_Admin_Abstractions_Interfaces_IEntity_1_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
-  commentId: M:Mithril.Admin.Abstractions.Interfaces.IEntity`1.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
-  fullName: Mithril.Admin.Abstractions.Interfaces.IEntity<TModel>.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?)
-  fullName.vb: Mithril.Admin.Abstractions.Interfaces.IEntity(Of TModel).SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
-  nameWithType: IEntity<TModel>.SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  nameWithType.vb: IEntity(Of TModel).SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Admin.Abstractions.Interfaces.IEntity`1.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Admin.Abstractions.Interfaces.IEntity-1.html#Mithril_Admin_Abstractions_Interfaces_IEntity_1_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Admin.Abstractions.Interfaces.IEntity`1.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Admin.Abstractions.Interfaces.IEntity<TModel>.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Admin.Abstractions.Interfaces.IEntity(Of TModel).SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: IEntity<TModel>.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: IEntity(Of TModel).SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
 - uid: Mithril.Admin.Abstractions.Interfaces.IEntity`1.SaveAsync*
   name: SaveAsync
   href: api/Mithril.Admin.Abstractions.Interfaces.IEntity-1.html#Mithril_Admin_Abstractions_Interfaces_IEntity_1_SaveAsync_
@@ -9151,15 +9168,15 @@ references:
   commentId: T:Mithril.Apm.Default.Admin.RequestTraceEditor
   fullName: Mithril.Apm.Default.Admin.RequestTraceEditor
   nameWithType: RequestTraceEditor
-- uid: Mithril.Apm.Default.Admin.RequestTraceEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: RequestTraceEditor(IDataService?, IEntityMetadataService?, string?)
-  href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html#Mithril_Apm_Default_Admin_RequestTraceEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
-  commentId: M:Mithril.Apm.Default.Admin.RequestTraceEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name.vb: New(IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Apm.Default.Admin.RequestTraceEditor.RequestTraceEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
-  fullName.vb: Mithril.Apm.Default.Admin.RequestTraceEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: RequestTraceEditor.RequestTraceEditor(IDataService?, IEntityMetadataService?, string?)
-  nameWithType.vb: RequestTraceEditor.New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Apm.Default.Admin.RequestTraceEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: RequestTraceEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html#Mithril_Apm_Default_Admin_RequestTraceEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Apm.Default.Admin.RequestTraceEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Apm.Default.Admin.RequestTraceEditor.RequestTraceEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Apm.Default.Admin.RequestTraceEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: RequestTraceEditor.RequestTraceEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: RequestTraceEditor.New(IDataService, IEntityMetadataService, IServiceProvider, String)
 - uid: Mithril.Apm.Default.Admin.RequestTraceEditor.#ctor*
   name: RequestTraceEditor
   href: api/Mithril.Apm.Default.Admin.RequestTraceEditor.html#Mithril_Apm_Default_Admin_RequestTraceEditor__ctor_
@@ -9427,15 +9444,15 @@ references:
   isSpec: "True"
   fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.Metrics
   nameWithType: RequestTraceVM.Metrics
-- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name: SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
-  commentId: M:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
-  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?)
-  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
-  nameWithType: RequestTraceVM.SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  nameWithType.vb: RequestTraceVM.SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: RequestTraceVM.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: RequestTraceVM.SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
 - uid: Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.SaveAsync*
   name: SaveAsync
   href: api/Mithril.Apm.Default.Admin.ViewModels.RequestTraceVM.html#Mithril_Apm_Default_Admin_ViewModels_RequestTraceVM_SaveAsync_
@@ -13146,15 +13163,15 @@ references:
   commentId: T:Mithril.Communication.Admin.MessageTemplateEditor
   fullName: Mithril.Communication.Admin.MessageTemplateEditor
   nameWithType: MessageTemplateEditor
-- uid: Mithril.Communication.Admin.MessageTemplateEditor.#ctor(Microsoft.Extensions.Hosting.IHostEnvironment,Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: MessageTemplateEditor(IHostEnvironment?, IDataService?, IEntityMetadataService?, string?)
-  href: api/Mithril.Communication.Admin.MessageTemplateEditor.html#Mithril_Communication_Admin_MessageTemplateEditor__ctor_Microsoft_Extensions_Hosting_IHostEnvironment_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
-  commentId: M:Mithril.Communication.Admin.MessageTemplateEditor.#ctor(Microsoft.Extensions.Hosting.IHostEnvironment,Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name.vb: New(IHostEnvironment, IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Communication.Admin.MessageTemplateEditor.MessageTemplateEditor(Microsoft.Extensions.Hosting.IHostEnvironment?, Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
-  fullName.vb: Mithril.Communication.Admin.MessageTemplateEditor.New(Microsoft.Extensions.Hosting.IHostEnvironment, Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: MessageTemplateEditor.MessageTemplateEditor(IHostEnvironment?, IDataService?, IEntityMetadataService?, string?)
-  nameWithType.vb: MessageTemplateEditor.New(IHostEnvironment, IDataService, IEntityMetadataService, String)
+- uid: Mithril.Communication.Admin.MessageTemplateEditor.#ctor(Microsoft.Extensions.Hosting.IHostEnvironment,Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: MessageTemplateEditor(IHostEnvironment?, IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Communication.Admin.MessageTemplateEditor.html#Mithril_Communication_Admin_MessageTemplateEditor__ctor_Microsoft_Extensions_Hosting_IHostEnvironment_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Communication.Admin.MessageTemplateEditor.#ctor(Microsoft.Extensions.Hosting.IHostEnvironment,Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IHostEnvironment, IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Communication.Admin.MessageTemplateEditor.MessageTemplateEditor(Microsoft.Extensions.Hosting.IHostEnvironment?, Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Communication.Admin.MessageTemplateEditor.New(Microsoft.Extensions.Hosting.IHostEnvironment, Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: MessageTemplateEditor.MessageTemplateEditor(IHostEnvironment?, IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: MessageTemplateEditor.New(IHostEnvironment, IDataService, IEntityMetadataService, IServiceProvider, String)
 - uid: Mithril.Communication.Admin.MessageTemplateEditor.#ctor*
   name: MessageTemplateEditor
   href: api/Mithril.Communication.Admin.MessageTemplateEditor.html#Mithril_Communication_Admin_MessageTemplateEditor__ctor_
@@ -13276,15 +13293,15 @@ references:
   isSpec: "True"
   fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.DisplayName
   nameWithType: MessageTemplateVM.DisplayName
-- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name: SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
-  commentId: M:Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
-  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?)
-  fullName.vb: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
-  nameWithType: MessageTemplateVM.SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  nameWithType.vb: MessageTemplateVM.SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: MessageTemplateVM.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: MessageTemplateVM.SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
 - uid: Mithril.Communication.Admin.ViewModels.MessageTemplateVM.SaveAsync*
   name: SaveAsync
   href: api/Mithril.Communication.Admin.ViewModels.MessageTemplateVM.html#Mithril_Communication_Admin_ViewModels_MessageTemplateVM_SaveAsync_
@@ -26480,6 +26497,289 @@ references:
   isSpec: "True"
   fullName: Mithril.Navigation.Abstractions.Services.IMenuService.CreateMenuBuilder
   nameWithType: IMenuService.CreateMenuBuilder
+- uid: Mithril.Navigation.Admin
+  name: Mithril.Navigation.Admin
+  href: api/Mithril.Navigation.Admin.html
+  commentId: N:Mithril.Navigation.Admin
+  fullName: Mithril.Navigation.Admin
+  nameWithType: Mithril.Navigation.Admin
+- uid: Mithril.Navigation.Admin.MenuEditor
+  name: MenuEditor
+  href: api/Mithril.Navigation.Admin.MenuEditor.html
+  commentId: T:Mithril.Navigation.Admin.MenuEditor
+  fullName: Mithril.Navigation.Admin.MenuEditor
+  nameWithType: MenuEditor
+- uid: Mithril.Navigation.Admin.MenuEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: MenuEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Navigation.Admin.MenuEditor.html#Mithril_Navigation_Admin_MenuEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Navigation.Admin.MenuEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Navigation.Admin.MenuEditor.MenuEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Navigation.Admin.MenuEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: MenuEditor.MenuEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: MenuEditor.New(IDataService, IEntityMetadataService, IServiceProvider, String)
+- uid: Mithril.Navigation.Admin.MenuEditor.#ctor*
+  name: MenuEditor
+  href: api/Mithril.Navigation.Admin.MenuEditor.html#Mithril_Navigation_Admin_MenuEditor__ctor_
+  commentId: Overload:Mithril.Navigation.Admin.MenuEditor.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Navigation.Admin.MenuEditor.MenuEditor
+  fullName.vb: Mithril.Navigation.Admin.MenuEditor.New
+  nameWithType: MenuEditor.MenuEditor
+  nameWithType.vb: MenuEditor.New
+- uid: Mithril.Navigation.Admin.MenuEditor.Convert(Mithril.Navigation.Models.Menu,System.Boolean)
+  name: Convert(Menu, bool)
+  href: api/Mithril.Navigation.Admin.MenuEditor.html#Mithril_Navigation_Admin_MenuEditor_Convert_Mithril_Navigation_Models_Menu_System_Boolean_
+  commentId: M:Mithril.Navigation.Admin.MenuEditor.Convert(Mithril.Navigation.Models.Menu,System.Boolean)
+  name.vb: Convert(Menu, Boolean)
+  fullName: Mithril.Navigation.Admin.MenuEditor.Convert(Mithril.Navigation.Models.Menu, bool)
+  fullName.vb: Mithril.Navigation.Admin.MenuEditor.Convert(Mithril.Navigation.Models.Menu, Boolean)
+  nameWithType: MenuEditor.Convert(Menu, bool)
+  nameWithType.vb: MenuEditor.Convert(Menu, Boolean)
+- uid: Mithril.Navigation.Admin.MenuEditor.Convert*
+  name: Convert
+  href: api/Mithril.Navigation.Admin.MenuEditor.html#Mithril_Navigation_Admin_MenuEditor_Convert_
+  commentId: Overload:Mithril.Navigation.Admin.MenuEditor.Convert
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.MenuEditor.Convert
+  nameWithType: MenuEditor.Convert
+- uid: Mithril.Navigation.Admin.MenuEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Navigation.Models.Menu},System.String)
+  name: FilterQueryBySearchQuery(IQueryable<Menu>?, string)
+  href: api/Mithril.Navigation.Admin.MenuEditor.html#Mithril_Navigation_Admin_MenuEditor_FilterQueryBySearchQuery_System_Linq_IQueryable_Mithril_Navigation_Models_Menu__System_String_
+  commentId: M:Mithril.Navigation.Admin.MenuEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Navigation.Models.Menu},System.String)
+  name.vb: FilterQueryBySearchQuery(IQueryable(Of Menu), String)
+  fullName: Mithril.Navigation.Admin.MenuEditor.FilterQueryBySearchQuery(System.Linq.IQueryable<Mithril.Navigation.Models.Menu>?, string)
+  fullName.vb: Mithril.Navigation.Admin.MenuEditor.FilterQueryBySearchQuery(System.Linq.IQueryable(Of Mithril.Navigation.Models.Menu), String)
+  nameWithType: MenuEditor.FilterQueryBySearchQuery(IQueryable<Menu>?, string)
+  nameWithType.vb: MenuEditor.FilterQueryBySearchQuery(IQueryable(Of Menu), String)
+- uid: Mithril.Navigation.Admin.MenuEditor.FilterQueryBySearchQuery*
+  name: FilterQueryBySearchQuery
+  href: api/Mithril.Navigation.Admin.MenuEditor.html#Mithril_Navigation_Admin_MenuEditor_FilterQueryBySearchQuery_
+  commentId: Overload:Mithril.Navigation.Admin.MenuEditor.FilterQueryBySearchQuery
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.MenuEditor.FilterQueryBySearchQuery
+  nameWithType: MenuEditor.FilterQueryBySearchQuery
+- uid: Mithril.Navigation.Admin.MenuEditor.Icon
+  name: Icon
+  href: api/Mithril.Navigation.Admin.MenuEditor.html#Mithril_Navigation_Admin_MenuEditor_Icon
+  commentId: P:Mithril.Navigation.Admin.MenuEditor.Icon
+  fullName: Mithril.Navigation.Admin.MenuEditor.Icon
+  nameWithType: MenuEditor.Icon
+- uid: Mithril.Navigation.Admin.MenuEditor.Icon*
+  name: Icon
+  href: api/Mithril.Navigation.Admin.MenuEditor.html#Mithril_Navigation_Admin_MenuEditor_Icon_
+  commentId: Overload:Mithril.Navigation.Admin.MenuEditor.Icon
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.MenuEditor.Icon
+  nameWithType: MenuEditor.Icon
+- uid: Mithril.Navigation.Admin.ViewModels
+  name: Mithril.Navigation.Admin.ViewModels
+  href: api/Mithril.Navigation.Admin.ViewModels.html
+  commentId: N:Mithril.Navigation.Admin.ViewModels
+  fullName: Mithril.Navigation.Admin.ViewModels
+  nameWithType: Mithril.Navigation.Admin.ViewModels
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM
+  name: MenuItemVM
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html
+  commentId: T:Mithril.Navigation.Admin.ViewModels.MenuItemVM
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM
+  nameWithType: MenuItemVM
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.#ctor
+  name: MenuItemVM()
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM__ctor
+  commentId: M:Mithril.Navigation.Admin.ViewModels.MenuItemVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.MenuItemVM()
+  fullName.vb: Mithril.Navigation.Admin.ViewModels.MenuItemVM.New()
+  nameWithType: MenuItemVM.MenuItemVM()
+  nameWithType.vb: MenuItemVM.New()
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.#ctor(Mithril.Navigation.Models.MenuItem)
+  name: MenuItemVM(MenuItem?)
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM__ctor_Mithril_Navigation_Models_MenuItem_
+  commentId: M:Mithril.Navigation.Admin.ViewModels.MenuItemVM.#ctor(Mithril.Navigation.Models.MenuItem)
+  name.vb: New(MenuItem)
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.MenuItemVM(Mithril.Navigation.Models.MenuItem?)
+  fullName.vb: Mithril.Navigation.Admin.ViewModels.MenuItemVM.New(Mithril.Navigation.Models.MenuItem)
+  nameWithType: MenuItemVM.MenuItemVM(MenuItem?)
+  nameWithType.vb: MenuItemVM.New(MenuItem)
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.#ctor*
+  name: MenuItemVM
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM__ctor_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuItemVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.MenuItemVM
+  fullName.vb: Mithril.Navigation.Admin.ViewModels.MenuItemVM.New
+  nameWithType: MenuItemVM.MenuItemVM
+  nameWithType.vb: MenuItemVM.New
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Description
+  name: Description
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_Description
+  commentId: P:Mithril.Navigation.Admin.ViewModels.MenuItemVM.Description
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Description
+  nameWithType: MenuItemVM.Description
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Description*
+  name: Description
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_Description_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuItemVM.Description
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Description
+  nameWithType: MenuItemVM.Description
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Display
+  name: Display
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_Display
+  commentId: P:Mithril.Navigation.Admin.ViewModels.MenuItemVM.Display
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Display
+  nameWithType: MenuItemVM.Display
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Display*
+  name: Display
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_Display_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuItemVM.Display
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Display
+  nameWithType: MenuItemVM.Display
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Icon
+  name: Icon
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_Icon
+  commentId: P:Mithril.Navigation.Admin.ViewModels.MenuItemVM.Icon
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Icon
+  nameWithType: MenuItemVM.Icon
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Icon*
+  name: Icon
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_Icon_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuItemVM.Icon
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Icon
+  nameWithType: MenuItemVM.Icon
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Order
+  name: Order
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_Order
+  commentId: P:Mithril.Navigation.Admin.ViewModels.MenuItemVM.Order
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Order
+  nameWithType: MenuItemVM.Order
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Order*
+  name: Order
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_Order_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuItemVM.Order
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Order
+  nameWithType: MenuItemVM.Order
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Url
+  name: Url
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_Url
+  commentId: P:Mithril.Navigation.Admin.ViewModels.MenuItemVM.Url
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Url
+  nameWithType: MenuItemVM.Url
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Url*
+  name: Url
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_Url_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuItemVM.Url
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.Url
+  nameWithType: MenuItemVM.Url
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.WhoCanView
+  name: WhoCanView
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_WhoCanView
+  commentId: P:Mithril.Navigation.Admin.ViewModels.MenuItemVM.WhoCanView
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.WhoCanView
+  nameWithType: MenuItemVM.WhoCanView
+- uid: Mithril.Navigation.Admin.ViewModels.MenuItemVM.WhoCanView*
+  name: WhoCanView
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuItemVM.html#Mithril_Navigation_Admin_ViewModels_MenuItemVM_WhoCanView_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuItemVM.WhoCanView
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuItemVM.WhoCanView
+  nameWithType: MenuItemVM.WhoCanView
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM
+  name: MenuVM
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html
+  commentId: T:Mithril.Navigation.Admin.ViewModels.MenuVM
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM
+  nameWithType: MenuVM
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM.#ctor
+  name: MenuVM()
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html#Mithril_Navigation_Admin_ViewModels_MenuVM__ctor
+  commentId: M:Mithril.Navigation.Admin.ViewModels.MenuVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM.MenuVM()
+  fullName.vb: Mithril.Navigation.Admin.ViewModels.MenuVM.New()
+  nameWithType: MenuVM.MenuVM()
+  nameWithType.vb: MenuVM.New()
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM.#ctor(Mithril.Navigation.Models.Menu,System.Boolean)
+  name: MenuVM(Menu?, bool)
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html#Mithril_Navigation_Admin_ViewModels_MenuVM__ctor_Mithril_Navigation_Models_Menu_System_Boolean_
+  commentId: M:Mithril.Navigation.Admin.ViewModels.MenuVM.#ctor(Mithril.Navigation.Models.Menu,System.Boolean)
+  name.vb: New(Menu, Boolean)
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM.MenuVM(Mithril.Navigation.Models.Menu?, bool)
+  fullName.vb: Mithril.Navigation.Admin.ViewModels.MenuVM.New(Mithril.Navigation.Models.Menu, Boolean)
+  nameWithType: MenuVM.MenuVM(Menu?, bool)
+  nameWithType.vb: MenuVM.New(Menu, Boolean)
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM.#ctor*
+  name: MenuVM
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html#Mithril_Navigation_Admin_ViewModels_MenuVM__ctor_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM.MenuVM
+  fullName.vb: Mithril.Navigation.Admin.ViewModels.MenuVM.New
+  nameWithType: MenuVM.MenuVM
+  nameWithType.vb: MenuVM.New
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM.Display
+  name: Display
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html#Mithril_Navigation_Admin_ViewModels_MenuVM_Display
+  commentId: P:Mithril.Navigation.Admin.ViewModels.MenuVM.Display
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM.Display
+  nameWithType: MenuVM.Display
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM.Display*
+  name: Display
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html#Mithril_Navigation_Admin_ViewModels_MenuVM_Display_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuVM.Display
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM.Display
+  nameWithType: MenuVM.Display
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM.Links
+  name: Links
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html#Mithril_Navigation_Admin_ViewModels_MenuVM_Links
+  commentId: P:Mithril.Navigation.Admin.ViewModels.MenuVM.Links
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM.Links
+  nameWithType: MenuVM.Links
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM.Links*
+  name: Links
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html#Mithril_Navigation_Admin_ViewModels_MenuVM_Links_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuVM.Links
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM.Links
+  nameWithType: MenuVM.Links
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html#Mithril_Navigation_Admin_ViewModels_MenuVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Navigation.Admin.ViewModels.MenuVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Navigation.Admin.ViewModels.MenuVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: MenuVM.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: MenuVM.SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM.SaveAsync*
+  name: SaveAsync
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html#Mithril_Navigation_Admin_ViewModels_MenuVM_SaveAsync_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuVM.SaveAsync
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM.SaveAsync
+  nameWithType: MenuVM.SaveAsync
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM.WhoCanView
+  name: WhoCanView
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html#Mithril_Navigation_Admin_ViewModels_MenuVM_WhoCanView
+  commentId: P:Mithril.Navigation.Admin.ViewModels.MenuVM.WhoCanView
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM.WhoCanView
+  nameWithType: MenuVM.WhoCanView
+- uid: Mithril.Navigation.Admin.ViewModels.MenuVM.WhoCanView*
+  name: WhoCanView
+  href: api/Mithril.Navigation.Admin.ViewModels.MenuVM.html#Mithril_Navigation_Admin_ViewModels_MenuVM_WhoCanView_
+  commentId: Overload:Mithril.Navigation.Admin.ViewModels.MenuVM.WhoCanView
+  isSpec: "True"
+  fullName: Mithril.Navigation.Admin.ViewModels.MenuVM.WhoCanView
+  nameWithType: MenuVM.WhoCanView
 - uid: Mithril.Navigation.Features
   name: Mithril.Navigation.Features
   href: api/Mithril.Navigation.Features.html
@@ -26628,13 +26928,13 @@ references:
   nameWithType: Menu.Menu
   nameWithType.vb: Menu.New
 - uid: Mithril.Navigation.Models.Menu.AddOrUpdateMenuItem(System.String,System.String,System.String,System.String,System.Int32,Mithril.Security.Abstractions.Interfaces.IPermission)
-  name: AddOrUpdateMenuItem(string, string, string, string, int, IPermission?)
+  name: AddOrUpdateMenuItem(string?, string?, string?, string?, int, IPermission?)
   href: api/Mithril.Navigation.Models.Menu.html#Mithril_Navigation_Models_Menu_AddOrUpdateMenuItem_System_String_System_String_System_String_System_String_System_Int32_Mithril_Security_Abstractions_Interfaces_IPermission_
   commentId: M:Mithril.Navigation.Models.Menu.AddOrUpdateMenuItem(System.String,System.String,System.String,System.String,System.Int32,Mithril.Security.Abstractions.Interfaces.IPermission)
   name.vb: AddOrUpdateMenuItem(String, String, String, String, Integer, IPermission)
-  fullName: Mithril.Navigation.Models.Menu.AddOrUpdateMenuItem(string, string, string, string, int, Mithril.Security.Abstractions.Interfaces.IPermission?)
+  fullName: Mithril.Navigation.Models.Menu.AddOrUpdateMenuItem(string?, string?, string?, string?, int, Mithril.Security.Abstractions.Interfaces.IPermission?)
   fullName.vb: Mithril.Navigation.Models.Menu.AddOrUpdateMenuItem(String, String, String, String, Integer, Mithril.Security.Abstractions.Interfaces.IPermission)
-  nameWithType: Menu.AddOrUpdateMenuItem(string, string, string, string, int, IPermission?)
+  nameWithType: Menu.AddOrUpdateMenuItem(string?, string?, string?, string?, int, IPermission?)
   nameWithType.vb: Menu.AddOrUpdateMenuItem(String, String, String, String, Integer, IPermission)
 - uid: Mithril.Navigation.Models.Menu.AddOrUpdateMenuItem(System.String,System.String,System.String,System.Uri,System.Int32,Mithril.Security.Abstractions.Interfaces.IPermission)
   name: AddOrUpdateMenuItem(string, string, string, Uri, int, IPermission?)
@@ -27647,6 +27947,34 @@ references:
   commentId: N:Mithril.Routing
   fullName: Mithril.Routing
   nameWithType: Mithril.Routing
+- uid: Mithril.Routing.Abstractions.Admin.DropDowns
+  name: Mithril.Routing.Abstractions.Admin.DropDowns
+  href: api/Mithril.Routing.Abstractions.Admin.DropDowns.html
+  commentId: N:Mithril.Routing.Abstractions.Admin.DropDowns
+  fullName: Mithril.Routing.Abstractions.Admin.DropDowns
+  nameWithType: Mithril.Routing.Abstractions.Admin.DropDowns
+- uid: Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown
+  name: RouteDropDown
+  href: api/Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.html
+  commentId: T:Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown
+  fullName: Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown
+  nameWithType: RouteDropDown
+- uid: Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.FilterQuery(System.Linq.IQueryable{Mithril.Routing.Abstractions.Interfaces.IRoute},System.String)
+  name: FilterQuery(IQueryable<IRoute>, string)
+  href: api/Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.html#Mithril_Routing_Abstractions_Admin_DropDowns_RouteDropDown_FilterQuery_System_Linq_IQueryable_Mithril_Routing_Abstractions_Interfaces_IRoute__System_String_
+  commentId: M:Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.FilterQuery(System.Linq.IQueryable{Mithril.Routing.Abstractions.Interfaces.IRoute},System.String)
+  name.vb: FilterQuery(IQueryable(Of IRoute), String)
+  fullName: Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.FilterQuery(System.Linq.IQueryable<Mithril.Routing.Abstractions.Interfaces.IRoute>, string)
+  fullName.vb: Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.FilterQuery(System.Linq.IQueryable(Of Mithril.Routing.Abstractions.Interfaces.IRoute), String)
+  nameWithType: RouteDropDown.FilterQuery(IQueryable<IRoute>, string)
+  nameWithType.vb: RouteDropDown.FilterQuery(IQueryable(Of IRoute), String)
+- uid: Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.FilterQuery*
+  name: FilterQuery
+  href: api/Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.html#Mithril_Routing_Abstractions_Admin_DropDowns_RouteDropDown_FilterQuery_
+  commentId: Overload:Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.FilterQuery
+  isSpec: "True"
+  fullName: Mithril.Routing.Abstractions.Admin.DropDowns.RouteDropDown.FilterQuery
+  nameWithType: RouteDropDown.FilterQuery
 - uid: Mithril.Routing.Abstractions.Interfaces
   name: Mithril.Routing.Abstractions.Interfaces
   href: api/Mithril.Routing.Abstractions.Interfaces.html
@@ -27741,15 +28069,15 @@ references:
   commentId: T:Mithril.Routing.Admin.RouteEditor
   fullName: Mithril.Routing.Admin.RouteEditor
   nameWithType: RouteEditor
-- uid: Mithril.Routing.Admin.RouteEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: RouteEditor(IDataService?, IEntityMetadataService?, string?)
-  href: api/Mithril.Routing.Admin.RouteEditor.html#Mithril_Routing_Admin_RouteEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
-  commentId: M:Mithril.Routing.Admin.RouteEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name.vb: New(IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Routing.Admin.RouteEditor.RouteEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
-  fullName.vb: Mithril.Routing.Admin.RouteEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: RouteEditor.RouteEditor(IDataService?, IEntityMetadataService?, string?)
-  nameWithType.vb: RouteEditor.New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Routing.Admin.RouteEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: RouteEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Routing.Admin.RouteEditor.html#Mithril_Routing_Admin_RouteEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Routing.Admin.RouteEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Routing.Admin.RouteEditor.RouteEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Routing.Admin.RouteEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: RouteEditor.RouteEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: RouteEditor.New(IDataService, IEntityMetadataService, IServiceProvider, String)
 - uid: Mithril.Routing.Admin.RouteEditor.#ctor*
   name: RouteEditor
   href: api/Mithril.Routing.Admin.RouteEditor.html#Mithril_Routing_Admin_RouteEditor__ctor_
@@ -27871,15 +28199,15 @@ references:
   isSpec: "True"
   fullName: Mithril.Routing.Admin.ViewModels.RouteEntryVM.OutputPath
   nameWithType: RouteEntryVM.OutputPath
-- uid: Mithril.Routing.Admin.ViewModels.RouteEntryVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name: SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  href: api/Mithril.Routing.Admin.ViewModels.RouteEntryVM.html#Mithril_Routing_Admin_ViewModels_RouteEntryVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
-  commentId: M:Mithril.Routing.Admin.ViewModels.RouteEntryVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
-  fullName: Mithril.Routing.Admin.ViewModels.RouteEntryVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?)
-  fullName.vb: Mithril.Routing.Admin.ViewModels.RouteEntryVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
-  nameWithType: RouteEntryVM.SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  nameWithType.vb: RouteEntryVM.SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Routing.Admin.ViewModels.RouteEntryVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Routing.Admin.ViewModels.RouteEntryVM.html#Mithril_Routing_Admin_ViewModels_RouteEntryVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Routing.Admin.ViewModels.RouteEntryVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Routing.Admin.ViewModels.RouteEntryVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Routing.Admin.ViewModels.RouteEntryVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: RouteEntryVM.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: RouteEntryVM.SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
 - uid: Mithril.Routing.Admin.ViewModels.RouteEntryVM.SaveAsync*
   name: SaveAsync
   href: api/Mithril.Routing.Admin.ViewModels.RouteEntryVM.html#Mithril_Routing_Admin_ViewModels_RouteEntryVM_SaveAsync_
@@ -27899,6 +28227,31 @@ references:
   commentId: N:Mithril.Routing.Models.Mappings
   fullName: Mithril.Routing.Models.Mappings
   nameWithType: Mithril.Routing.Models.Mappings
+- uid: Mithril.Routing.Models.Mappings.IRouteMapping
+  name: IRouteMapping
+  href: api/Mithril.Routing.Models.Mappings.IRouteMapping.html
+  commentId: T:Mithril.Routing.Models.Mappings.IRouteMapping
+  fullName: Mithril.Routing.Models.Mappings.IRouteMapping
+  nameWithType: IRouteMapping
+- uid: Mithril.Routing.Models.Mappings.IRouteMapping.#ctor
+  name: IRouteMapping()
+  href: api/Mithril.Routing.Models.Mappings.IRouteMapping.html#Mithril_Routing_Models_Mappings_IRouteMapping__ctor
+  commentId: M:Mithril.Routing.Models.Mappings.IRouteMapping.#ctor
+  name.vb: New()
+  fullName: Mithril.Routing.Models.Mappings.IRouteMapping.IRouteMapping()
+  fullName.vb: Mithril.Routing.Models.Mappings.IRouteMapping.New()
+  nameWithType: IRouteMapping.IRouteMapping()
+  nameWithType.vb: IRouteMapping.New()
+- uid: Mithril.Routing.Models.Mappings.IRouteMapping.#ctor*
+  name: IRouteMapping
+  href: api/Mithril.Routing.Models.Mappings.IRouteMapping.html#Mithril_Routing_Models_Mappings_IRouteMapping__ctor_
+  commentId: Overload:Mithril.Routing.Models.Mappings.IRouteMapping.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Routing.Models.Mappings.IRouteMapping.IRouteMapping
+  fullName.vb: Mithril.Routing.Models.Mappings.IRouteMapping.New
+  nameWithType: IRouteMapping.IRouteMapping
+  nameWithType.vb: IRouteMapping.New
 - uid: Mithril.Routing.Models.Mappings.RouteEntryMapping
   name: RouteEntryMapping
   href: api/Mithril.Routing.Models.Mappings.RouteEntryMapping.html
@@ -28566,11 +28919,14 @@ references:
   fullName: Mithril.Security.Abstractions.Interfaces.IPermission
   nameWithType: IPermission
 - uid: Mithril.Security.Abstractions.Interfaces.IPermission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  name: AddClaim(IUserClaim)
+  name: AddClaim(IUserClaim?)
   href: api/Mithril.Security.Abstractions.Interfaces.IPermission.html#Mithril_Security_Abstractions_Interfaces_IPermission_AddClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_
   commentId: M:Mithril.Security.Abstractions.Interfaces.IPermission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  fullName: Mithril.Security.Abstractions.Interfaces.IPermission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  nameWithType: IPermission.AddClaim(IUserClaim)
+  name.vb: AddClaim(IUserClaim)
+  fullName: Mithril.Security.Abstractions.Interfaces.IPermission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim?)
+  fullName.vb: Mithril.Security.Abstractions.Interfaces.IPermission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
+  nameWithType: IPermission.AddClaim(IUserClaim?)
+  nameWithType.vb: IPermission.AddClaim(IUserClaim)
 - uid: Mithril.Security.Abstractions.Interfaces.IPermission.AddClaim*
   name: AddClaim
   href: api/Mithril.Security.Abstractions.Interfaces.IPermission.html#Mithril_Security_Abstractions_Interfaces_IPermission_AddClaim_
@@ -28643,11 +28999,14 @@ references:
   fullName: Mithril.Security.Abstractions.Interfaces.IPermission.Operand
   nameWithType: IPermission.Operand
 - uid: Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  name: RemoveClaim(IUserClaim)
+  name: RemoveClaim(IUserClaim?)
   href: api/Mithril.Security.Abstractions.Interfaces.IPermission.html#Mithril_Security_Abstractions_Interfaces_IPermission_RemoveClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_
   commentId: M:Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  fullName: Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  nameWithType: IPermission.RemoveClaim(IUserClaim)
+  name.vb: RemoveClaim(IUserClaim)
+  fullName: Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim?)
+  fullName.vb: Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
+  nameWithType: IPermission.RemoveClaim(IUserClaim?)
+  nameWithType.vb: IPermission.RemoveClaim(IUserClaim)
 - uid: Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim*
   name: RemoveClaim
   href: api/Mithril.Security.Abstractions.Interfaces.IPermission.html#Mithril_Security_Abstractions_Interfaces_IPermission_RemoveClaim_
@@ -28656,11 +29015,14 @@ references:
   fullName: Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim
   nameWithType: IPermission.RemoveClaim
 - uid: Mithril.Security.Abstractions.Interfaces.IPermission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim,Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  name: ReplaceClaim(IUserClaim, IUserClaim)
+  name: ReplaceClaim(IUserClaim?, IUserClaim?)
   href: api/Mithril.Security.Abstractions.Interfaces.IPermission.html#Mithril_Security_Abstractions_Interfaces_IPermission_ReplaceClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_
   commentId: M:Mithril.Security.Abstractions.Interfaces.IPermission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim,Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  fullName: Mithril.Security.Abstractions.Interfaces.IPermission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim, Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  nameWithType: IPermission.ReplaceClaim(IUserClaim, IUserClaim)
+  name.vb: ReplaceClaim(IUserClaim, IUserClaim)
+  fullName: Mithril.Security.Abstractions.Interfaces.IPermission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim?, Mithril.Data.Abstractions.Interfaces.IUserClaim?)
+  fullName.vb: Mithril.Security.Abstractions.Interfaces.IPermission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim, Mithril.Data.Abstractions.Interfaces.IUserClaim)
+  nameWithType: IPermission.ReplaceClaim(IUserClaim?, IUserClaim?)
+  nameWithType.vb: IPermission.ReplaceClaim(IUserClaim, IUserClaim)
 - uid: Mithril.Security.Abstractions.Interfaces.IPermission.ReplaceClaim*
   name: ReplaceClaim
   href: api/Mithril.Security.Abstractions.Interfaces.IPermission.html#Mithril_Security_Abstractions_Interfaces_IPermission_ReplaceClaim_
@@ -28973,15 +29335,15 @@ references:
   isSpec: "True"
   fullName: Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.CanRun
   nameWithType: ClaimTypesDropDown.CanRun
-- uid: Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.GetDataAsync(System.String)
-  name: GetDataAsync(string?)
-  href: api/Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.html#Mithril_Security_Admin_DropDowns_ClaimTypesDropDown_GetDataAsync_System_String_
-  commentId: M:Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.GetDataAsync(System.String)
-  name.vb: GetDataAsync(String)
-  fullName: Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.GetDataAsync(string?)
-  fullName.vb: Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.GetDataAsync(String)
-  nameWithType: ClaimTypesDropDown.GetDataAsync(string?)
-  nameWithType.vb: ClaimTypesDropDown.GetDataAsync(String)
+- uid: Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService,System.String)
+  name: GetDataAsync(IDataService?, string?)
+  href: api/Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.html#Mithril_Security_Admin_DropDowns_ClaimTypesDropDown_GetDataAsync_Mithril_Data_Abstractions_Services_IDataService_System_String_
+  commentId: M:Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService,System.String)
+  name.vb: GetDataAsync(IDataService, String)
+  fullName: Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService?, string?)
+  fullName.vb: Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.GetDataAsync(Mithril.Data.Abstractions.Services.IDataService, String)
+  nameWithType: ClaimTypesDropDown.GetDataAsync(IDataService?, string?)
+  nameWithType.vb: ClaimTypesDropDown.GetDataAsync(IDataService, String)
 - uid: Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.GetDataAsync*
   name: GetDataAsync
   href: api/Mithril.Security.Admin.DropDowns.ClaimTypesDropDown.html#Mithril_Security_Admin_DropDowns_ClaimTypesDropDown_GetDataAsync_
@@ -29030,15 +29392,15 @@ references:
   commentId: T:Mithril.Security.Admin.PermissionEditor
   fullName: Mithril.Security.Admin.PermissionEditor
   nameWithType: PermissionEditor
-- uid: Mithril.Security.Admin.PermissionEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: PermissionEditor(IDataService?, IEntityMetadataService?, string?)
-  href: api/Mithril.Security.Admin.PermissionEditor.html#Mithril_Security_Admin_PermissionEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
-  commentId: M:Mithril.Security.Admin.PermissionEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name.vb: New(IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Security.Admin.PermissionEditor.PermissionEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
-  fullName.vb: Mithril.Security.Admin.PermissionEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: PermissionEditor.PermissionEditor(IDataService?, IEntityMetadataService?, string?)
-  nameWithType.vb: PermissionEditor.New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Security.Admin.PermissionEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: PermissionEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Security.Admin.PermissionEditor.html#Mithril_Security_Admin_PermissionEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Security.Admin.PermissionEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Security.Admin.PermissionEditor.PermissionEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Security.Admin.PermissionEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: PermissionEditor.PermissionEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: PermissionEditor.New(IDataService, IEntityMetadataService, IServiceProvider, String)
 - uid: Mithril.Security.Admin.PermissionEditor.#ctor*
   name: PermissionEditor
   href: api/Mithril.Security.Admin.PermissionEditor.html#Mithril_Security_Admin_PermissionEditor__ctor_
@@ -29100,15 +29462,15 @@ references:
   commentId: T:Mithril.Security.Admin.TenantEditor
   fullName: Mithril.Security.Admin.TenantEditor
   nameWithType: TenantEditor
-- uid: Mithril.Security.Admin.TenantEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: TenantEditor(IDataService?, IEntityMetadataService?, string?)
-  href: api/Mithril.Security.Admin.TenantEditor.html#Mithril_Security_Admin_TenantEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
-  commentId: M:Mithril.Security.Admin.TenantEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name.vb: New(IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Security.Admin.TenantEditor.TenantEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
-  fullName.vb: Mithril.Security.Admin.TenantEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: TenantEditor.TenantEditor(IDataService?, IEntityMetadataService?, string?)
-  nameWithType.vb: TenantEditor.New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Security.Admin.TenantEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: TenantEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Security.Admin.TenantEditor.html#Mithril_Security_Admin_TenantEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Security.Admin.TenantEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Security.Admin.TenantEditor.TenantEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Security.Admin.TenantEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: TenantEditor.TenantEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: TenantEditor.New(IDataService, IEntityMetadataService, IServiceProvider, String)
 - uid: Mithril.Security.Admin.TenantEditor.#ctor*
   name: TenantEditor
   href: api/Mithril.Security.Admin.TenantEditor.html#Mithril_Security_Admin_TenantEditor__ctor_
@@ -29170,15 +29532,15 @@ references:
   commentId: T:Mithril.Security.Admin.UserClaimEditor
   fullName: Mithril.Security.Admin.UserClaimEditor
   nameWithType: UserClaimEditor
-- uid: Mithril.Security.Admin.UserClaimEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: UserClaimEditor(IDataService?, IEntityMetadataService?, string?)
-  href: api/Mithril.Security.Admin.UserClaimEditor.html#Mithril_Security_Admin_UserClaimEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
-  commentId: M:Mithril.Security.Admin.UserClaimEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name.vb: New(IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Security.Admin.UserClaimEditor.UserClaimEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
-  fullName.vb: Mithril.Security.Admin.UserClaimEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: UserClaimEditor.UserClaimEditor(IDataService?, IEntityMetadataService?, string?)
-  nameWithType.vb: UserClaimEditor.New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Security.Admin.UserClaimEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: UserClaimEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Security.Admin.UserClaimEditor.html#Mithril_Security_Admin_UserClaimEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Security.Admin.UserClaimEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Security.Admin.UserClaimEditor.UserClaimEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Security.Admin.UserClaimEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: UserClaimEditor.UserClaimEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: UserClaimEditor.New(IDataService, IEntityMetadataService, IServiceProvider, String)
 - uid: Mithril.Security.Admin.UserClaimEditor.#ctor*
   name: UserClaimEditor
   href: api/Mithril.Security.Admin.UserClaimEditor.html#Mithril_Security_Admin_UserClaimEditor__ctor_
@@ -29240,15 +29602,15 @@ references:
   commentId: T:Mithril.Security.Admin.UserEditor
   fullName: Mithril.Security.Admin.UserEditor
   nameWithType: UserEditor
-- uid: Mithril.Security.Admin.UserEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name: UserEditor(IDataService?, IEntityMetadataService?, string?)
-  href: api/Mithril.Security.Admin.UserEditor.html#Mithril_Security_Admin_UserEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_
-  commentId: M:Mithril.Security.Admin.UserEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)
-  name.vb: New(IDataService, IEntityMetadataService, String)
-  fullName: Mithril.Security.Admin.UserEditor.UserEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, string?)
-  fullName.vb: Mithril.Security.Admin.UserEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, String)
-  nameWithType: UserEditor.UserEditor(IDataService?, IEntityMetadataService?, string?)
-  nameWithType.vb: UserEditor.New(IDataService, IEntityMetadataService, String)
+- uid: Mithril.Security.Admin.UserEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: UserEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Security.Admin.UserEditor.html#Mithril_Security_Admin_UserEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Security.Admin.UserEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Security.Admin.UserEditor.UserEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Security.Admin.UserEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: UserEditor.UserEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: UserEditor.New(IDataService, IEntityMetadataService, IServiceProvider, String)
 - uid: Mithril.Security.Admin.UserEditor.#ctor*
   name: UserEditor
   href: api/Mithril.Security.Admin.UserEditor.html#Mithril_Security_Admin_UserEditor__ctor_
@@ -29443,15 +29805,15 @@ references:
   isSpec: "True"
   fullName: Mithril.Security.Admin.ViewModels.PermissionVM.Operand
   nameWithType: PermissionVM.Operand
-- uid: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name: SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
-  commentId: M:Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
-  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?)
-  fullName.vb: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
-  nameWithType: PermissionVM.SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  nameWithType.vb: PermissionVM.SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: PermissionVM.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: PermissionVM.SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
 - uid: Mithril.Security.Admin.ViewModels.PermissionVM.SaveAsync*
   name: SaveAsync
   href: api/Mithril.Security.Admin.ViewModels.PermissionVM.html#Mithril_Security_Admin_ViewModels_PermissionVM_SaveAsync_
@@ -29506,15 +29868,15 @@ references:
   isSpec: "True"
   fullName: Mithril.Security.Admin.ViewModels.TenantVM.DisplayName
   nameWithType: TenantVM.DisplayName
-- uid: Mithril.Security.Admin.ViewModels.TenantVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name: SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  href: api/Mithril.Security.Admin.ViewModels.TenantVM.html#Mithril_Security_Admin_ViewModels_TenantVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
-  commentId: M:Mithril.Security.Admin.ViewModels.TenantVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
-  fullName: Mithril.Security.Admin.ViewModels.TenantVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?)
-  fullName.vb: Mithril.Security.Admin.ViewModels.TenantVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
-  nameWithType: TenantVM.SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  nameWithType.vb: TenantVM.SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Security.Admin.ViewModels.TenantVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Security.Admin.ViewModels.TenantVM.html#Mithril_Security_Admin_ViewModels_TenantVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Security.Admin.ViewModels.TenantVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Security.Admin.ViewModels.TenantVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Security.Admin.ViewModels.TenantVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: TenantVM.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: TenantVM.SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
 - uid: Mithril.Security.Admin.ViewModels.TenantVM.SaveAsync*
   name: SaveAsync
   href: api/Mithril.Security.Admin.ViewModels.TenantVM.html#Mithril_Security_Admin_ViewModels_TenantVM_SaveAsync_
@@ -29569,15 +29931,15 @@ references:
   isSpec: "True"
   fullName: Mithril.Security.Admin.ViewModels.UserClaimVM.ClaimType
   nameWithType: UserClaimVM.ClaimType
-- uid: Mithril.Security.Admin.ViewModels.UserClaimVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name: SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  href: api/Mithril.Security.Admin.ViewModels.UserClaimVM.html#Mithril_Security_Admin_ViewModels_UserClaimVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
-  commentId: M:Mithril.Security.Admin.ViewModels.UserClaimVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
-  fullName: Mithril.Security.Admin.ViewModels.UserClaimVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?)
-  fullName.vb: Mithril.Security.Admin.ViewModels.UserClaimVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
-  nameWithType: UserClaimVM.SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  nameWithType.vb: UserClaimVM.SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Security.Admin.ViewModels.UserClaimVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Security.Admin.ViewModels.UserClaimVM.html#Mithril_Security_Admin_ViewModels_UserClaimVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Security.Admin.ViewModels.UserClaimVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Security.Admin.ViewModels.UserClaimVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Security.Admin.ViewModels.UserClaimVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: UserClaimVM.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: UserClaimVM.SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
 - uid: Mithril.Security.Admin.ViewModels.UserClaimVM.SaveAsync*
   name: SaveAsync
   href: api/Mithril.Security.Admin.ViewModels.UserClaimVM.html#Mithril_Security_Admin_ViewModels_UserClaimVM_SaveAsync_
@@ -29723,15 +30085,15 @@ references:
   isSpec: "True"
   fullName: Mithril.Security.Admin.ViewModels.UserVM.Prefix
   nameWithType: UserVM.Prefix
-- uid: Mithril.Security.Admin.ViewModels.UserVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name: SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  href: api/Mithril.Security.Admin.ViewModels.UserVM.html#Mithril_Security_Admin_ViewModels_UserVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_
-  commentId: M:Mithril.Security.Admin.ViewModels.UserVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)
-  name.vb: SaveAsync(Long, IDataService, ClaimsPrincipal)
-  fullName: Mithril.Security.Admin.ViewModels.UserVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.Security.Claims.ClaimsPrincipal?)
-  fullName.vb: Mithril.Security.Admin.ViewModels.UserVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.Security.Claims.ClaimsPrincipal)
-  nameWithType: UserVM.SaveAsync(long, IDataService?, ClaimsPrincipal?)
-  nameWithType.vb: UserVM.SaveAsync(Long, IDataService, ClaimsPrincipal)
+- uid: Mithril.Security.Admin.ViewModels.UserVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Security.Admin.ViewModels.UserVM.html#Mithril_Security_Admin_ViewModels_UserVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Security.Admin.ViewModels.UserVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Security.Admin.ViewModels.UserVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Security.Admin.ViewModels.UserVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: UserVM.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: UserVM.SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
 - uid: Mithril.Security.Admin.ViewModels.UserVM.SaveAsync*
   name: SaveAsync
   href: api/Mithril.Security.Admin.ViewModels.UserVM.html#Mithril_Security_Admin_ViewModels_UserVM_SaveAsync_
@@ -30280,11 +30642,14 @@ references:
   fullName: Mithril.Security.Models.Permission.Operand
   nameWithType: Permission.Operand
 - uid: Mithril.Security.Models.Permission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  name: RemoveClaim(IUserClaim)
+  name: RemoveClaim(IUserClaim?)
   href: api/Mithril.Security.Models.Permission.html#Mithril_Security_Models_Permission_RemoveClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_
   commentId: M:Mithril.Security.Models.Permission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  fullName: Mithril.Security.Models.Permission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  nameWithType: Permission.RemoveClaim(IUserClaim)
+  name.vb: RemoveClaim(IUserClaim)
+  fullName: Mithril.Security.Models.Permission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim?)
+  fullName.vb: Mithril.Security.Models.Permission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)
+  nameWithType: Permission.RemoveClaim(IUserClaim?)
+  nameWithType.vb: Permission.RemoveClaim(IUserClaim)
 - uid: Mithril.Security.Models.Permission.RemoveClaim*
   name: RemoveClaim
   href: api/Mithril.Security.Models.Permission.html#Mithril_Security_Models_Permission_RemoveClaim_
@@ -30293,11 +30658,14 @@ references:
   fullName: Mithril.Security.Models.Permission.RemoveClaim
   nameWithType: Permission.RemoveClaim
 - uid: Mithril.Security.Models.Permission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim,Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  name: ReplaceClaim(IUserClaim, IUserClaim)
+  name: ReplaceClaim(IUserClaim?, IUserClaim?)
   href: api/Mithril.Security.Models.Permission.html#Mithril_Security_Models_Permission_ReplaceClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_
   commentId: M:Mithril.Security.Models.Permission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim,Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  fullName: Mithril.Security.Models.Permission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim, Mithril.Data.Abstractions.Interfaces.IUserClaim)
-  nameWithType: Permission.ReplaceClaim(IUserClaim, IUserClaim)
+  name.vb: ReplaceClaim(IUserClaim, IUserClaim)
+  fullName: Mithril.Security.Models.Permission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim?, Mithril.Data.Abstractions.Interfaces.IUserClaim?)
+  fullName.vb: Mithril.Security.Models.Permission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim, Mithril.Data.Abstractions.Interfaces.IUserClaim)
+  nameWithType: Permission.ReplaceClaim(IUserClaim?, IUserClaim?)
+  nameWithType.vb: Permission.ReplaceClaim(IUserClaim, IUserClaim)
 - uid: Mithril.Security.Models.Permission.ReplaceClaim*
   name: ReplaceClaim
   href: api/Mithril.Security.Models.Permission.html#Mithril_Security_Models_Permission_ReplaceClaim_
@@ -32871,15 +33239,15 @@ references:
   commentId: T:Mithril.Themes.Admin.ThemeEditor
   fullName: Mithril.Themes.Admin.ThemeEditor
   nameWithType: ThemeEditor
-- uid: Mithril.Themes.Admin.ThemeEditor.#ctor(Mithril.Themes.Abstractions.Services.IThemeService,Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService)
-  name: ThemeEditor(IThemeService?, IDataService?, IEntityMetadataService?)
-  href: api/Mithril.Themes.Admin.ThemeEditor.html#Mithril_Themes_Admin_ThemeEditor__ctor_Mithril_Themes_Abstractions_Services_IThemeService_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_
-  commentId: M:Mithril.Themes.Admin.ThemeEditor.#ctor(Mithril.Themes.Abstractions.Services.IThemeService,Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService)
-  name.vb: New(IThemeService, IDataService, IEntityMetadataService)
-  fullName: Mithril.Themes.Admin.ThemeEditor.ThemeEditor(Mithril.Themes.Abstractions.Services.IThemeService?, Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?)
-  fullName.vb: Mithril.Themes.Admin.ThemeEditor.New(Mithril.Themes.Abstractions.Services.IThemeService, Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService)
-  nameWithType: ThemeEditor.ThemeEditor(IThemeService?, IDataService?, IEntityMetadataService?)
-  nameWithType.vb: ThemeEditor.New(IThemeService, IDataService, IEntityMetadataService)
+- uid: Mithril.Themes.Admin.ThemeEditor.#ctor(Mithril.Themes.Abstractions.Services.IThemeService,Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider)
+  name: ThemeEditor(IThemeService?, IDataService?, IEntityMetadataService?, IServiceProvider?)
+  href: api/Mithril.Themes.Admin.ThemeEditor.html#Mithril_Themes_Admin_ThemeEditor__ctor_Mithril_Themes_Abstractions_Services_IThemeService_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_
+  commentId: M:Mithril.Themes.Admin.ThemeEditor.#ctor(Mithril.Themes.Abstractions.Services.IThemeService,Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider)
+  name.vb: New(IThemeService, IDataService, IEntityMetadataService, IServiceProvider)
+  fullName: Mithril.Themes.Admin.ThemeEditor.ThemeEditor(Mithril.Themes.Abstractions.Services.IThemeService?, Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?)
+  fullName.vb: Mithril.Themes.Admin.ThemeEditor.New(Mithril.Themes.Abstractions.Services.IThemeService, Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider)
+  nameWithType: ThemeEditor.ThemeEditor(IThemeService?, IDataService?, IEntityMetadataService?, IServiceProvider?)
+  nameWithType.vb: ThemeEditor.New(IThemeService, IDataService, IEntityMetadataService, IServiceProvider)
 - uid: Mithril.Themes.Admin.ThemeEditor.#ctor*
   name: ThemeEditor
   href: api/Mithril.Themes.Admin.ThemeEditor.html#Mithril_Themes_Admin_ThemeEditor__ctor_

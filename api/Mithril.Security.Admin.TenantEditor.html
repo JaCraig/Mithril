@@ -175,6 +175,9 @@
       <a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_DataService">EntityEditorBaseClass&lt;TenantVM&gt;.DataService</a>
     </div>
     <div>
+      <a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_ServiceProvider">EntityEditorBaseClass&lt;TenantVM&gt;.ServiceProvider</a>
+    </div>
+    <div>
       <a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_ActivateAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_">EntityEditorBaseClass&lt;TenantVM&gt;.ActivateAsync(long, ClaimsPrincipal)</a>
     </div>
     <div>
@@ -227,19 +230,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Admin_TenantEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Security.Admin.TenantEditor.%23ctor(Mithril.Data.Abstractions.Services.IDataService%2CMithril.Admin.Abstractions.Services.IEntityMetadataService%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Admin_TenantEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Security.Admin.TenantEditor.%23ctor(Mithril.Data.Abstractions.Services.IDataService%2CMithril.Admin.Abstractions.Services.IEntityMetadataService%2CSystem.IServiceProvider%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security/Admin/TenantEditor.cs/#L22">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security/Admin/TenantEditor.cs/#L23">View Source</a>
   </span>
   <a id="Mithril_Security_Admin_TenantEditor__ctor_" data-uid="Mithril.Security.Admin.TenantEditor.#ctor*"></a>
-  <h4 id="Mithril_Security_Admin_TenantEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String_" data-uid="Mithril.Security.Admin.TenantEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.String)">TenantEditor(IDataService?, IEntityMetadataService?, string?)</h4>
+  <h4 id="Mithril_Security_Admin_TenantEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_" data-uid="Mithril.Security.Admin.TenantEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)">TenantEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Security.Admin.TenantEditor.html">TenantEditor</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TenantEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, string? dataType = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public TenantEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -264,6 +267,12 @@
 </td>
       </tr>
       <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a></td>
+        <td><span class="parametername">serviceProvider</span></td>
+        <td><p>The service provider.</p>
+</td>
+      </tr>
+      <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">dataType</span></td>
         <td><p>Type of the data.</p>
@@ -271,7 +280,7 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="Mithril_Security_Admin_TenantEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_String__seealso">See Also</h5>
+  <h5 id="Mithril_Security_Admin_TenantEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String__seealso">See Also</h5>
   <div class="seealso">
       <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-2.html">EntityEditorBaseClass</a>&lt;TEntity, TModel&gt;</div>
   </div>
@@ -282,7 +291,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Admin_TenantEditor_Icon.md&amp;value=---%0Auid%3A%20Mithril.Security.Admin.TenantEditor.Icon%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security/Admin/TenantEditor.cs/#L33">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security/Admin/TenantEditor.cs/#L34">View Source</a>
   </span>
   <a id="Mithril_Security_Admin_TenantEditor_Icon_" data-uid="Mithril.Security.Admin.TenantEditor.Icon*"></a>
   <h4 id="Mithril_Security_Admin_TenantEditor_Icon" data-uid="Mithril.Security.Admin.TenantEditor.Icon">Icon</h4>
@@ -322,7 +331,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Admin_TenantEditor_Convert_Mithril_Security_Models_Tenant_System_Boolean_.md&amp;value=---%0Auid%3A%20Mithril.Security.Admin.TenantEditor.Convert(Mithril.Security.Models.Tenant%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security/Admin/TenantEditor.cs/#L43">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security/Admin/TenantEditor.cs/#L44">View Source</a>
   </span>
   <a id="Mithril_Security_Admin_TenantEditor_Convert_" data-uid="Mithril.Security.Admin.TenantEditor.Convert*"></a>
   <h4 id="Mithril_Security_Admin_TenantEditor_Convert_Mithril_Security_Models_Tenant_System_Boolean_" data-uid="Mithril.Security.Admin.TenantEditor.Convert(Mithril.Security.Models.Tenant,System.Boolean)">Convert(Tenant, bool)</h4>
@@ -384,7 +393,7 @@
     <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Admin_TenantEditor_FilterQueryBySearchQuery_System_Linq_IQueryable_Mithril_Security_Models_Tenant__System_String_.md&amp;value=---%0Auid%3A%20Mithril.Security.Admin.TenantEditor.FilterQueryBySearchQuery(System.Linq.IQueryable%7BMithril.Security.Models.Tenant%7D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security/Admin/TenantEditor.cs/#L56">View Source</a>
+    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security/Admin/TenantEditor.cs/#L57">View Source</a>
   </span>
   <a id="Mithril_Security_Admin_TenantEditor_FilterQueryBySearchQuery_" data-uid="Mithril.Security.Admin.TenantEditor.FilterQueryBySearchQuery*"></a>
   <h4 id="Mithril_Security_Admin_TenantEditor_FilterQueryBySearchQuery_System_Linq_IQueryable_Mithril_Security_Models_Tenant__System_String_" data-uid="Mithril.Security.Admin.TenantEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Security.Models.Tenant},System.String)">FilterQueryBySearchQuery(IQueryable&lt;Tenant&gt;?, string)</h4>
