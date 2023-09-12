@@ -20684,6 +20684,263 @@ references:
   fullName.vb: Mithril.Data.Abstractions.Services.IDataService.SaveAsync(Of TData)(System.Security.Claims.ClaimsPrincipal, ParamArray TData())
   nameWithType: IDataService.SaveAsync<TData>(ClaimsPrincipal?, params TData?[])
   nameWithType.vb: IDataService.SaveAsync(Of TData)(ClaimsPrincipal, ParamArray TData())
+- uid: Mithril.Data.Admin
+  name: Mithril.Data.Admin
+  href: api/Mithril.Data.Admin.html
+  commentId: N:Mithril.Data.Admin
+  fullName: Mithril.Data.Admin
+  nameWithType: Mithril.Data.Admin
+- uid: Mithril.Data.Admin.LookUpTypeEditor
+  name: LookUpTypeEditor
+  href: api/Mithril.Data.Admin.LookUpTypeEditor.html
+  commentId: T:Mithril.Data.Admin.LookUpTypeEditor
+  fullName: Mithril.Data.Admin.LookUpTypeEditor
+  nameWithType: LookUpTypeEditor
+- uid: Mithril.Data.Admin.LookUpTypeEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: LookUpTypeEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Data.Admin.LookUpTypeEditor.html#Mithril_Data_Admin_LookUpTypeEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Data.Admin.LookUpTypeEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Data.Admin.LookUpTypeEditor.LookUpTypeEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Data.Admin.LookUpTypeEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: LookUpTypeEditor.LookUpTypeEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: LookUpTypeEditor.New(IDataService, IEntityMetadataService, IServiceProvider, String)
+- uid: Mithril.Data.Admin.LookUpTypeEditor.#ctor*
+  name: LookUpTypeEditor
+  href: api/Mithril.Data.Admin.LookUpTypeEditor.html#Mithril_Data_Admin_LookUpTypeEditor__ctor_
+  commentId: Overload:Mithril.Data.Admin.LookUpTypeEditor.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Data.Admin.LookUpTypeEditor.LookUpTypeEditor
+  fullName.vb: Mithril.Data.Admin.LookUpTypeEditor.New
+  nameWithType: LookUpTypeEditor.LookUpTypeEditor
+  nameWithType.vb: LookUpTypeEditor.New
+- uid: Mithril.Data.Admin.LookUpTypeEditor.Convert(Mithril.Data.Models.General.LookUpType,System.Boolean)
+  name: Convert(LookUpType, bool)
+  href: api/Mithril.Data.Admin.LookUpTypeEditor.html#Mithril_Data_Admin_LookUpTypeEditor_Convert_Mithril_Data_Models_General_LookUpType_System_Boolean_
+  commentId: M:Mithril.Data.Admin.LookUpTypeEditor.Convert(Mithril.Data.Models.General.LookUpType,System.Boolean)
+  name.vb: Convert(LookUpType, Boolean)
+  fullName: Mithril.Data.Admin.LookUpTypeEditor.Convert(Mithril.Data.Models.General.LookUpType, bool)
+  fullName.vb: Mithril.Data.Admin.LookUpTypeEditor.Convert(Mithril.Data.Models.General.LookUpType, Boolean)
+  nameWithType: LookUpTypeEditor.Convert(LookUpType, bool)
+  nameWithType.vb: LookUpTypeEditor.Convert(LookUpType, Boolean)
+- uid: Mithril.Data.Admin.LookUpTypeEditor.Convert*
+  name: Convert
+  href: api/Mithril.Data.Admin.LookUpTypeEditor.html#Mithril_Data_Admin_LookUpTypeEditor_Convert_
+  commentId: Overload:Mithril.Data.Admin.LookUpTypeEditor.Convert
+  isSpec: "True"
+  fullName: Mithril.Data.Admin.LookUpTypeEditor.Convert
+  nameWithType: LookUpTypeEditor.Convert
+- uid: Mithril.Data.Admin.LookUpTypeEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Data.Models.General.LookUpType},System.String)
+  name: FilterQueryBySearchQuery(IQueryable<LookUpType>?, string)
+  href: api/Mithril.Data.Admin.LookUpTypeEditor.html#Mithril_Data_Admin_LookUpTypeEditor_FilterQueryBySearchQuery_System_Linq_IQueryable_Mithril_Data_Models_General_LookUpType__System_String_
+  commentId: M:Mithril.Data.Admin.LookUpTypeEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Data.Models.General.LookUpType},System.String)
+  name.vb: FilterQueryBySearchQuery(IQueryable(Of LookUpType), String)
+  fullName: Mithril.Data.Admin.LookUpTypeEditor.FilterQueryBySearchQuery(System.Linq.IQueryable<Mithril.Data.Models.General.LookUpType>?, string)
+  fullName.vb: Mithril.Data.Admin.LookUpTypeEditor.FilterQueryBySearchQuery(System.Linq.IQueryable(Of Mithril.Data.Models.General.LookUpType), String)
+  nameWithType: LookUpTypeEditor.FilterQueryBySearchQuery(IQueryable<LookUpType>?, string)
+  nameWithType.vb: LookUpTypeEditor.FilterQueryBySearchQuery(IQueryable(Of LookUpType), String)
+- uid: Mithril.Data.Admin.LookUpTypeEditor.FilterQueryBySearchQuery*
+  name: FilterQueryBySearchQuery
+  href: api/Mithril.Data.Admin.LookUpTypeEditor.html#Mithril_Data_Admin_LookUpTypeEditor_FilterQueryBySearchQuery_
+  commentId: Overload:Mithril.Data.Admin.LookUpTypeEditor.FilterQueryBySearchQuery
+  isSpec: "True"
+  fullName: Mithril.Data.Admin.LookUpTypeEditor.FilterQueryBySearchQuery
+  nameWithType: LookUpTypeEditor.FilterQueryBySearchQuery
+- uid: Mithril.Data.Admin.LookUpTypeEditor.Icon
+  name: Icon
+  href: api/Mithril.Data.Admin.LookUpTypeEditor.html#Mithril_Data_Admin_LookUpTypeEditor_Icon
+  commentId: P:Mithril.Data.Admin.LookUpTypeEditor.Icon
+  fullName: Mithril.Data.Admin.LookUpTypeEditor.Icon
+  nameWithType: LookUpTypeEditor.Icon
+- uid: Mithril.Data.Admin.LookUpTypeEditor.Icon*
+  name: Icon
+  href: api/Mithril.Data.Admin.LookUpTypeEditor.html#Mithril_Data_Admin_LookUpTypeEditor_Icon_
+  commentId: Overload:Mithril.Data.Admin.LookUpTypeEditor.Icon
+  isSpec: "True"
+  fullName: Mithril.Data.Admin.LookUpTypeEditor.Icon
+  nameWithType: LookUpTypeEditor.Icon
+- uid: Mithril.Data.Admin.ViewModels
+  name: Mithril.Data.Admin.ViewModels
+  href: api/Mithril.Data.Admin.ViewModels.html
+  commentId: N:Mithril.Data.Admin.ViewModels
+  fullName: Mithril.Data.Admin.ViewModels
+  nameWithType: Mithril.Data.Admin.ViewModels
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM
+  name: LookUpTypeVM
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html
+  commentId: T:Mithril.Data.Admin.ViewModels.LookUpTypeVM
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM
+  nameWithType: LookUpTypeVM
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM.#ctor
+  name: LookUpTypeVM()
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html#Mithril_Data_Admin_ViewModels_LookUpTypeVM__ctor
+  commentId: M:Mithril.Data.Admin.ViewModels.LookUpTypeVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM.LookUpTypeVM()
+  fullName.vb: Mithril.Data.Admin.ViewModels.LookUpTypeVM.New()
+  nameWithType: LookUpTypeVM.LookUpTypeVM()
+  nameWithType.vb: LookUpTypeVM.New()
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM.#ctor(Mithril.Data.Models.General.LookUpType,System.Boolean)
+  name: LookUpTypeVM(LookUpType, bool)
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html#Mithril_Data_Admin_ViewModels_LookUpTypeVM__ctor_Mithril_Data_Models_General_LookUpType_System_Boolean_
+  commentId: M:Mithril.Data.Admin.ViewModels.LookUpTypeVM.#ctor(Mithril.Data.Models.General.LookUpType,System.Boolean)
+  name.vb: New(LookUpType, Boolean)
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM.LookUpTypeVM(Mithril.Data.Models.General.LookUpType, bool)
+  fullName.vb: Mithril.Data.Admin.ViewModels.LookUpTypeVM.New(Mithril.Data.Models.General.LookUpType, Boolean)
+  nameWithType: LookUpTypeVM.LookUpTypeVM(LookUpType, bool)
+  nameWithType.vb: LookUpTypeVM.New(LookUpType, Boolean)
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM.#ctor*
+  name: LookUpTypeVM
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html#Mithril_Data_Admin_ViewModels_LookUpTypeVM__ctor_
+  commentId: Overload:Mithril.Data.Admin.ViewModels.LookUpTypeVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM.LookUpTypeVM
+  fullName.vb: Mithril.Data.Admin.ViewModels.LookUpTypeVM.New
+  nameWithType: LookUpTypeVM.LookUpTypeVM
+  nameWithType.vb: LookUpTypeVM.New
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM.Description
+  name: Description
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html#Mithril_Data_Admin_ViewModels_LookUpTypeVM_Description
+  commentId: P:Mithril.Data.Admin.ViewModels.LookUpTypeVM.Description
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM.Description
+  nameWithType: LookUpTypeVM.Description
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM.Description*
+  name: Description
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html#Mithril_Data_Admin_ViewModels_LookUpTypeVM_Description_
+  commentId: Overload:Mithril.Data.Admin.ViewModels.LookUpTypeVM.Description
+  isSpec: "True"
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM.Description
+  nameWithType: LookUpTypeVM.Description
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM.DisplayName
+  name: DisplayName
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html#Mithril_Data_Admin_ViewModels_LookUpTypeVM_DisplayName
+  commentId: P:Mithril.Data.Admin.ViewModels.LookUpTypeVM.DisplayName
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM.DisplayName
+  nameWithType: LookUpTypeVM.DisplayName
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM.DisplayName*
+  name: DisplayName
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html#Mithril_Data_Admin_ViewModels_LookUpTypeVM_DisplayName_
+  commentId: Overload:Mithril.Data.Admin.ViewModels.LookUpTypeVM.DisplayName
+  isSpec: "True"
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM.DisplayName
+  nameWithType: LookUpTypeVM.DisplayName
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM.LookUps
+  name: LookUps
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html#Mithril_Data_Admin_ViewModels_LookUpTypeVM_LookUps
+  commentId: P:Mithril.Data.Admin.ViewModels.LookUpTypeVM.LookUps
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM.LookUps
+  nameWithType: LookUpTypeVM.LookUps
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM.LookUps*
+  name: LookUps
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html#Mithril_Data_Admin_ViewModels_LookUpTypeVM_LookUps_
+  commentId: Overload:Mithril.Data.Admin.ViewModels.LookUpTypeVM.LookUps
+  isSpec: "True"
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM.LookUps
+  nameWithType: LookUpTypeVM.LookUps
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html#Mithril_Data_Admin_ViewModels_LookUpTypeVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Data.Admin.ViewModels.LookUpTypeVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Data.Admin.ViewModels.LookUpTypeVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: LookUpTypeVM.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: LookUpTypeVM.SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+- uid: Mithril.Data.Admin.ViewModels.LookUpTypeVM.SaveAsync*
+  name: SaveAsync
+  href: api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html#Mithril_Data_Admin_ViewModels_LookUpTypeVM_SaveAsync_
+  commentId: Overload:Mithril.Data.Admin.ViewModels.LookUpTypeVM.SaveAsync
+  isSpec: "True"
+  fullName: Mithril.Data.Admin.ViewModels.LookUpTypeVM.SaveAsync
+  nameWithType: LookUpTypeVM.SaveAsync
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM
+  name: LookUpVM
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html
+  commentId: T:Mithril.Data.Admin.ViewModels.LookUpVM
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM
+  nameWithType: LookUpVM
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM.#ctor
+  name: LookUpVM()
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html#Mithril_Data_Admin_ViewModels_LookUpVM__ctor
+  commentId: M:Mithril.Data.Admin.ViewModels.LookUpVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM.LookUpVM()
+  fullName.vb: Mithril.Data.Admin.ViewModels.LookUpVM.New()
+  nameWithType: LookUpVM.LookUpVM()
+  nameWithType.vb: LookUpVM.New()
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM.#ctor(Mithril.Data.Abstractions.Interfaces.ILookUp)
+  name: LookUpVM(ILookUp)
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html#Mithril_Data_Admin_ViewModels_LookUpVM__ctor_Mithril_Data_Abstractions_Interfaces_ILookUp_
+  commentId: M:Mithril.Data.Admin.ViewModels.LookUpVM.#ctor(Mithril.Data.Abstractions.Interfaces.ILookUp)
+  name.vb: New(ILookUp)
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM.LookUpVM(Mithril.Data.Abstractions.Interfaces.ILookUp)
+  fullName.vb: Mithril.Data.Admin.ViewModels.LookUpVM.New(Mithril.Data.Abstractions.Interfaces.ILookUp)
+  nameWithType: LookUpVM.LookUpVM(ILookUp)
+  nameWithType.vb: LookUpVM.New(ILookUp)
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM.#ctor*
+  name: LookUpVM
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html#Mithril_Data_Admin_ViewModels_LookUpVM__ctor_
+  commentId: Overload:Mithril.Data.Admin.ViewModels.LookUpVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM.LookUpVM
+  fullName.vb: Mithril.Data.Admin.ViewModels.LookUpVM.New
+  nameWithType: LookUpVM.LookUpVM
+  nameWithType.vb: LookUpVM.New
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM.DisplayName
+  name: DisplayName
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html#Mithril_Data_Admin_ViewModels_LookUpVM_DisplayName
+  commentId: P:Mithril.Data.Admin.ViewModels.LookUpVM.DisplayName
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM.DisplayName
+  nameWithType: LookUpVM.DisplayName
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM.DisplayName*
+  name: DisplayName
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html#Mithril_Data_Admin_ViewModels_LookUpVM_DisplayName_
+  commentId: Overload:Mithril.Data.Admin.ViewModels.LookUpVM.DisplayName
+  isSpec: "True"
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM.DisplayName
+  nameWithType: LookUpVM.DisplayName
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM.ID
+  name: ID
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html#Mithril_Data_Admin_ViewModels_LookUpVM_ID
+  commentId: P:Mithril.Data.Admin.ViewModels.LookUpVM.ID
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM.ID
+  nameWithType: LookUpVM.ID
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM.ID*
+  name: ID
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html#Mithril_Data_Admin_ViewModels_LookUpVM_ID_
+  commentId: Overload:Mithril.Data.Admin.ViewModels.LookUpVM.ID
+  isSpec: "True"
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM.ID
+  nameWithType: LookUpVM.ID
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM.Icon
+  name: Icon
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html#Mithril_Data_Admin_ViewModels_LookUpVM_Icon
+  commentId: P:Mithril.Data.Admin.ViewModels.LookUpVM.Icon
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM.Icon
+  nameWithType: LookUpVM.Icon
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM.Icon*
+  name: Icon
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html#Mithril_Data_Admin_ViewModels_LookUpVM_Icon_
+  commentId: Overload:Mithril.Data.Admin.ViewModels.LookUpVM.Icon
+  isSpec: "True"
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM.Icon
+  nameWithType: LookUpVM.Icon
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM.Save(Mithril.Data.Models.General.LookUpType)
+  name: Save(LookUpType)
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html#Mithril_Data_Admin_ViewModels_LookUpVM_Save_Mithril_Data_Models_General_LookUpType_
+  commentId: M:Mithril.Data.Admin.ViewModels.LookUpVM.Save(Mithril.Data.Models.General.LookUpType)
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM.Save(Mithril.Data.Models.General.LookUpType)
+  nameWithType: LookUpVM.Save(LookUpType)
+- uid: Mithril.Data.Admin.ViewModels.LookUpVM.Save*
+  name: Save
+  href: api/Mithril.Data.Admin.ViewModels.LookUpVM.html#Mithril_Data_Admin_ViewModels_LookUpVM_Save_
+  commentId: Overload:Mithril.Data.Admin.ViewModels.LookUpVM.Save
+  isSpec: "True"
+  fullName: Mithril.Data.Admin.ViewModels.LookUpVM.Save
+  nameWithType: LookUpVM.Save
 - uid: Mithril.Data.Apm
   name: Mithril.Data.Apm
   href: api/Mithril.Data.Apm.html
@@ -21594,13 +21851,13 @@ references:
   nameWithType: LookUpType.LookUpType()
   nameWithType.vb: LookUpType.New()
 - uid: Mithril.Data.Models.General.LookUpType.#ctor(System.String,System.String)
-  name: LookUpType(string, string)
+  name: LookUpType(string, string?)
   href: api/Mithril.Data.Models.General.LookUpType.html#Mithril_Data_Models_General_LookUpType__ctor_System_String_System_String_
   commentId: M:Mithril.Data.Models.General.LookUpType.#ctor(System.String,System.String)
   name.vb: New(String, String)
-  fullName: Mithril.Data.Models.General.LookUpType.LookUpType(string, string)
+  fullName: Mithril.Data.Models.General.LookUpType.LookUpType(string, string?)
   fullName.vb: Mithril.Data.Models.General.LookUpType.New(String, String)
-  nameWithType: LookUpType.LookUpType(string, string)
+  nameWithType: LookUpType.LookUpType(string, string?)
   nameWithType.vb: LookUpType.New(String, String)
 - uid: Mithril.Data.Models.General.LookUpType.#ctor*
   name: LookUpType
@@ -22193,6 +22450,177 @@ references:
   commentId: N:Mithril.Features
   fullName: Mithril.Features
   nameWithType: Mithril.Features
+- uid: Mithril.Features.Admin
+  name: Mithril.Features.Admin
+  href: api/Mithril.Features.Admin.html
+  commentId: N:Mithril.Features.Admin
+  fullName: Mithril.Features.Admin
+  nameWithType: Mithril.Features.Admin
+- uid: Mithril.Features.Admin.FeatureEditor
+  name: FeatureEditor
+  href: api/Mithril.Features.Admin.FeatureEditor.html
+  commentId: T:Mithril.Features.Admin.FeatureEditor
+  fullName: Mithril.Features.Admin.FeatureEditor
+  nameWithType: FeatureEditor
+- uid: Mithril.Features.Admin.FeatureEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name: FeatureEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  href: api/Mithril.Features.Admin.FeatureEditor.html#Mithril_Features_Admin_FeatureEditor__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_
+  commentId: M:Mithril.Features.Admin.FeatureEditor.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)
+  name.vb: New(IDataService, IEntityMetadataService, IServiceProvider, String)
+  fullName: Mithril.Features.Admin.FeatureEditor.FeatureEditor(Mithril.Data.Abstractions.Services.IDataService?, Mithril.Admin.Abstractions.Services.IEntityMetadataService?, System.IServiceProvider?, string?)
+  fullName.vb: Mithril.Features.Admin.FeatureEditor.New(Mithril.Data.Abstractions.Services.IDataService, Mithril.Admin.Abstractions.Services.IEntityMetadataService, System.IServiceProvider, String)
+  nameWithType: FeatureEditor.FeatureEditor(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  nameWithType.vb: FeatureEditor.New(IDataService, IEntityMetadataService, IServiceProvider, String)
+- uid: Mithril.Features.Admin.FeatureEditor.#ctor*
+  name: FeatureEditor
+  href: api/Mithril.Features.Admin.FeatureEditor.html#Mithril_Features_Admin_FeatureEditor__ctor_
+  commentId: Overload:Mithril.Features.Admin.FeatureEditor.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Features.Admin.FeatureEditor.FeatureEditor
+  fullName.vb: Mithril.Features.Admin.FeatureEditor.New
+  nameWithType: FeatureEditor.FeatureEditor
+  nameWithType.vb: FeatureEditor.New
+- uid: Mithril.Features.Admin.FeatureEditor.Convert(Mithril.Features.Models.Feature,System.Boolean)
+  name: Convert(Feature, bool)
+  href: api/Mithril.Features.Admin.FeatureEditor.html#Mithril_Features_Admin_FeatureEditor_Convert_Mithril_Features_Models_Feature_System_Boolean_
+  commentId: M:Mithril.Features.Admin.FeatureEditor.Convert(Mithril.Features.Models.Feature,System.Boolean)
+  name.vb: Convert(Feature, Boolean)
+  fullName: Mithril.Features.Admin.FeatureEditor.Convert(Mithril.Features.Models.Feature, bool)
+  fullName.vb: Mithril.Features.Admin.FeatureEditor.Convert(Mithril.Features.Models.Feature, Boolean)
+  nameWithType: FeatureEditor.Convert(Feature, bool)
+  nameWithType.vb: FeatureEditor.Convert(Feature, Boolean)
+- uid: Mithril.Features.Admin.FeatureEditor.Convert*
+  name: Convert
+  href: api/Mithril.Features.Admin.FeatureEditor.html#Mithril_Features_Admin_FeatureEditor_Convert_
+  commentId: Overload:Mithril.Features.Admin.FeatureEditor.Convert
+  isSpec: "True"
+  fullName: Mithril.Features.Admin.FeatureEditor.Convert
+  nameWithType: FeatureEditor.Convert
+- uid: Mithril.Features.Admin.FeatureEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Features.Models.Feature},System.String)
+  name: FilterQueryBySearchQuery(IQueryable<Feature>?, string)
+  href: api/Mithril.Features.Admin.FeatureEditor.html#Mithril_Features_Admin_FeatureEditor_FilterQueryBySearchQuery_System_Linq_IQueryable_Mithril_Features_Models_Feature__System_String_
+  commentId: M:Mithril.Features.Admin.FeatureEditor.FilterQueryBySearchQuery(System.Linq.IQueryable{Mithril.Features.Models.Feature},System.String)
+  name.vb: FilterQueryBySearchQuery(IQueryable(Of Feature), String)
+  fullName: Mithril.Features.Admin.FeatureEditor.FilterQueryBySearchQuery(System.Linq.IQueryable<Mithril.Features.Models.Feature>?, string)
+  fullName.vb: Mithril.Features.Admin.FeatureEditor.FilterQueryBySearchQuery(System.Linq.IQueryable(Of Mithril.Features.Models.Feature), String)
+  nameWithType: FeatureEditor.FilterQueryBySearchQuery(IQueryable<Feature>?, string)
+  nameWithType.vb: FeatureEditor.FilterQueryBySearchQuery(IQueryable(Of Feature), String)
+- uid: Mithril.Features.Admin.FeatureEditor.FilterQueryBySearchQuery*
+  name: FilterQueryBySearchQuery
+  href: api/Mithril.Features.Admin.FeatureEditor.html#Mithril_Features_Admin_FeatureEditor_FilterQueryBySearchQuery_
+  commentId: Overload:Mithril.Features.Admin.FeatureEditor.FilterQueryBySearchQuery
+  isSpec: "True"
+  fullName: Mithril.Features.Admin.FeatureEditor.FilterQueryBySearchQuery
+  nameWithType: FeatureEditor.FilterQueryBySearchQuery
+- uid: Mithril.Features.Admin.FeatureEditor.Icon
+  name: Icon
+  href: api/Mithril.Features.Admin.FeatureEditor.html#Mithril_Features_Admin_FeatureEditor_Icon
+  commentId: P:Mithril.Features.Admin.FeatureEditor.Icon
+  fullName: Mithril.Features.Admin.FeatureEditor.Icon
+  nameWithType: FeatureEditor.Icon
+- uid: Mithril.Features.Admin.FeatureEditor.Icon*
+  name: Icon
+  href: api/Mithril.Features.Admin.FeatureEditor.html#Mithril_Features_Admin_FeatureEditor_Icon_
+  commentId: Overload:Mithril.Features.Admin.FeatureEditor.Icon
+  isSpec: "True"
+  fullName: Mithril.Features.Admin.FeatureEditor.Icon
+  nameWithType: FeatureEditor.Icon
+- uid: Mithril.Features.Admin.ViewModels
+  name: Mithril.Features.Admin.ViewModels
+  href: api/Mithril.Features.Admin.ViewModels.html
+  commentId: N:Mithril.Features.Admin.ViewModels
+  fullName: Mithril.Features.Admin.ViewModels
+  nameWithType: Mithril.Features.Admin.ViewModels
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM
+  name: FeatureVM
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html
+  commentId: T:Mithril.Features.Admin.ViewModels.FeatureVM
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM
+  nameWithType: FeatureVM
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM.#ctor
+  name: FeatureVM()
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html#Mithril_Features_Admin_ViewModels_FeatureVM__ctor
+  commentId: M:Mithril.Features.Admin.ViewModels.FeatureVM.#ctor
+  name.vb: New()
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM.FeatureVM()
+  fullName.vb: Mithril.Features.Admin.ViewModels.FeatureVM.New()
+  nameWithType: FeatureVM.FeatureVM()
+  nameWithType.vb: FeatureVM.New()
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM.#ctor(Mithril.Features.Models.Feature,System.Boolean)
+  name: FeatureVM(Feature, bool)
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html#Mithril_Features_Admin_ViewModels_FeatureVM__ctor_Mithril_Features_Models_Feature_System_Boolean_
+  commentId: M:Mithril.Features.Admin.ViewModels.FeatureVM.#ctor(Mithril.Features.Models.Feature,System.Boolean)
+  name.vb: New(Feature, Boolean)
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM.FeatureVM(Mithril.Features.Models.Feature, bool)
+  fullName.vb: Mithril.Features.Admin.ViewModels.FeatureVM.New(Mithril.Features.Models.Feature, Boolean)
+  nameWithType: FeatureVM.FeatureVM(Feature, bool)
+  nameWithType.vb: FeatureVM.New(Feature, Boolean)
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM.#ctor*
+  name: FeatureVM
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html#Mithril_Features_Admin_ViewModels_FeatureVM__ctor_
+  commentId: Overload:Mithril.Features.Admin.ViewModels.FeatureVM.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM.FeatureVM
+  fullName.vb: Mithril.Features.Admin.ViewModels.FeatureVM.New
+  nameWithType: FeatureVM.FeatureVM
+  nameWithType.vb: FeatureVM.New
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM.Category
+  name: Category
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html#Mithril_Features_Admin_ViewModels_FeatureVM_Category
+  commentId: P:Mithril.Features.Admin.ViewModels.FeatureVM.Category
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM.Category
+  nameWithType: FeatureVM.Category
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM.Category*
+  name: Category
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html#Mithril_Features_Admin_ViewModels_FeatureVM_Category_
+  commentId: Overload:Mithril.Features.Admin.ViewModels.FeatureVM.Category
+  isSpec: "True"
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM.Category
+  nameWithType: FeatureVM.Category
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM.Description
+  name: Description
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html#Mithril_Features_Admin_ViewModels_FeatureVM_Description
+  commentId: P:Mithril.Features.Admin.ViewModels.FeatureVM.Description
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM.Description
+  nameWithType: FeatureVM.Description
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM.Description*
+  name: Description
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html#Mithril_Features_Admin_ViewModels_FeatureVM_Description_
+  commentId: Overload:Mithril.Features.Admin.ViewModels.FeatureVM.Description
+  isSpec: "True"
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM.Description
+  nameWithType: FeatureVM.Description
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM.Name
+  name: Name
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html#Mithril_Features_Admin_ViewModels_FeatureVM_Name
+  commentId: P:Mithril.Features.Admin.ViewModels.FeatureVM.Name
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM.Name
+  nameWithType: FeatureVM.Name
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM.Name*
+  name: Name
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html#Mithril_Features_Admin_ViewModels_FeatureVM_Name_
+  commentId: Overload:Mithril.Features.Admin.ViewModels.FeatureVM.Name
+  isSpec: "True"
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM.Name
+  nameWithType: FeatureVM.Name
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name: SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html#Mithril_Features_Admin_ViewModels_FeatureVM_SaveAsync_System_Int64_Mithril_Data_Abstractions_Services_IDataService_System_IServiceProvider_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:Mithril.Features.Admin.ViewModels.FeatureVM.SaveAsync(System.Int64,Mithril.Data.Abstractions.Services.IDataService,System.IServiceProvider,System.Security.Claims.ClaimsPrincipal)
+  name.vb: SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM.SaveAsync(long, Mithril.Data.Abstractions.Services.IDataService?, System.IServiceProvider?, System.Security.Claims.ClaimsPrincipal?)
+  fullName.vb: Mithril.Features.Admin.ViewModels.FeatureVM.SaveAsync(Long, Mithril.Data.Abstractions.Services.IDataService, System.IServiceProvider, System.Security.Claims.ClaimsPrincipal)
+  nameWithType: FeatureVM.SaveAsync(long, IDataService?, IServiceProvider?, ClaimsPrincipal?)
+  nameWithType.vb: FeatureVM.SaveAsync(Long, IDataService, IServiceProvider, ClaimsPrincipal)
+- uid: Mithril.Features.Admin.ViewModels.FeatureVM.SaveAsync*
+  name: SaveAsync
+  href: api/Mithril.Features.Admin.ViewModels.FeatureVM.html#Mithril_Features_Admin_ViewModels_FeatureVM_SaveAsync_
+  commentId: Overload:Mithril.Features.Admin.ViewModels.FeatureVM.SaveAsync
+  isSpec: "True"
+  fullName: Mithril.Features.Admin.ViewModels.FeatureVM.SaveAsync
+  nameWithType: FeatureVM.SaveAsync
 - uid: Mithril.Features.Commands
   name: Mithril.Features.Commands
   href: api/Mithril.Features.Commands.html

@@ -4093,6 +4093,56 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Admin.LookUpTypeEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Admin.LookUpTypeEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Admin.ViewModels.LookUpTypeVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Admin.ViewModels.LookUpVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Admin.ViewModels.LookUpVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Admin.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Admin.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Data.Admin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Data.Admin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mithril.Data.Apm.QueryListener.yml",
       "output": {
         ".html": {
@@ -4337,6 +4387,46 @@
       "output": {
         ".html": {
           "relative_path": "api/Mithril.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Admin.FeatureEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Admin.FeatureEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Admin.ViewModels.FeatureVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Admin.ViewModels.FeatureVM.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Admin.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Admin.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mithril.Features.Admin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mithril.Features.Admin.html"
         }
       },
       "version": ""
