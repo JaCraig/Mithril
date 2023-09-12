@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Mithril.Admin.Abstractions.BaseClasses;
 using Mithril.Admin.Abstractions.DataEditor.Attributes;
+using Mithril.Data.Abstractions.Interfaces;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Navigation.Models;
 using Mithril.Security.Abstractions.Admin.ViewModels;
@@ -105,7 +106,7 @@ namespace Mithril.Navigation.Admin.ViewModels
                 if (Link is null)
                     continue;
                 var MenuItem = menuObject.AddOrUpdateMenuItem(Link.Display, Link.Description, Link.Icon, Link.Url, Link.Order);
-                if (Link.WhoCanView.Count == 0)
+                if ((Link.WhoCanView?.Count ?? 0) == 0)
                 {
                     if (MenuItem.Permissions is null)
                         continue;
@@ -113,7 +114,7 @@ namespace Mithril.Navigation.Admin.ViewModels
                     continue;
                 }
                 MenuItem.Permissions ??= (await securityService.LoadOrCreatePermissionAsync(Guid.NewGuid().ToString(), PermissionType.Any).ConfigureAwait(false));
-                foreach (var Claim in Link.WhoCanView.Select(x => securityService.LoadClaim(x.Claim)))
+                foreach (var Claim in Link.WhoCanView?.Select(x => securityService.LoadClaim(x.Claim)) ?? Enumerable.Empty<IUserClaim>())
                 {
                     MenuItem.Permissions.AddClaim(Claim);
                 }
@@ -147,7 +148,7 @@ namespace Mithril.Navigation.Admin.ViewModels
         /// <param name="currentUser">The current user.</param>
         private async Task SetupClaimsAsync(Menu menuObject, IDataService? dataService, ISecurityService? securityService, ClaimsPrincipal? currentUser)
         {
-            if (WhoCanView.Count == 0 || securityService is null)
+            if (WhoCanView is null || WhoCanView.Count == 0 || securityService is null)
                 return;
             menuObject.Permissions ??= (await securityService.LoadOrCreatePermissionAsync(Guid.NewGuid().ToString(), PermissionType.Any).ConfigureAwait(false));
             menuObject.Permissions.Claims.Clear();
