@@ -27,12 +27,11 @@ namespace Mithril.Data.Models.General
         /// <param name="description">The description.</param>
         /// <exception cref="ArgumentNullException">displayName</exception>
         /// <exception cref="ArgumentException">displayName or description</exception>
-        public LookUpType(string displayName, string description)
+        public LookUpType(string displayName, string? description)
         {
             if (string.IsNullOrEmpty(displayName))
                 throw new ArgumentNullException(nameof(displayName));
-            if (string.IsNullOrEmpty(description))
-                description = "";
+            description ??= "";
             if (displayName.Length > 64)
                 throw new ArgumentException(nameof(displayName) + " must have a length less than or equal to 64");
             if (description.Length > 500)

@@ -77,6 +77,7 @@ namespace Mithril.Communication.Admin.ViewModels
                 return null;
             MessageTemplate Template = MessageTemplate.Load(id, dataService) ?? new MessageTemplate(DisplayName);
             _ = Template.SetContent(HttpContext.Current?.RequestServices.GetService<IHostEnvironment>(), Content);
+            Template.Active = Active;
             await Template.SaveAsync(dataService, currentUser).ConfigureAwait(false);
             return Template;
         }

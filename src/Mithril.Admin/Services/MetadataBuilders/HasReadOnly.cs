@@ -22,7 +22,9 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// </returns>
         public override PropertyMetadata? ExtractMetadata(PropertyMetadata? propertyMetadata, IEntityMetadataService metadataService)
         {
-            if (propertyMetadata?.Property.HasAttribute<ReadOnlyAttribute>() != true)
+            if (propertyMetadata?.Property is null)
+                return propertyMetadata;
+            if (!propertyMetadata.Property.HasAttribute<ReadOnlyAttribute>() && propertyMetadata.Property.GetSetMethod() is not null)
                 return propertyMetadata;
             propertyMetadata.Metadata["readonly"] = true;
             return propertyMetadata;

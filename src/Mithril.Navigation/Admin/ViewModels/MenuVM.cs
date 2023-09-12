@@ -84,6 +84,7 @@ namespace Mithril.Navigation.Admin.ViewModels
             var SecurityService = serviceProvider.GetService<ISecurityService>();
             var MenuObject = Menu.Load(id, dataService) ?? new Menu(Display);
             MenuObject.Display = Display;
+            MenuObject.Active = Active;
             await SetupLinksAsync(MenuObject, dataService, SecurityService, currentUser).ConfigureAwait(false);
             await SetupClaimsAsync(MenuObject, dataService, SecurityService, currentUser).ConfigureAwait(false);
             await MenuObject.SaveAsync(dataService, currentUser).ConfigureAwait(false);
