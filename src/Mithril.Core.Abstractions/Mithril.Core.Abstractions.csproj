@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-	  <TargetFramework>net7.0</TargetFramework>
+	  <TargetFramework>net8.0</TargetFramework>
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <Nullable>enable</Nullable>
 	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -53,13 +53,13 @@
 	</PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BigBook" Version="5.0.33" />
-    <PackageReference Include="Canister.IoC" Version="5.1.15" />
-    <PackageReference Include="FileCurator" Version="4.0.34" />
+    <PackageReference Include="BigBook" Version="5.0.35" />
+    <PackageReference Include="Canister.IoC" Version="5.1.17" />
+    <PackageReference Include="FileCurator" Version="4.0.37" />
     <PackageReference Include="Microsoft.FeatureManagement.AspNetCore" Version="3.0.0" />
-    <PackageReference Include="Valkyrie" Version="4.0.34" />
-	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-	  <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.4">
+    <PackageReference Include="Valkyrie" Version="4.0.37" />
+	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+	  <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
