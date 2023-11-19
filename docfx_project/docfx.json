@@ -10,7 +10,8 @@
       ],
       "dest": "api",
       "properties": {
-        "TargetFramework": "net8.0"
+        "TargetFramework": "net8.0",
+        "LangVersion": "preview"
       },
       "includePrivateMembers": false,
       "disableGitFeatures": false,
