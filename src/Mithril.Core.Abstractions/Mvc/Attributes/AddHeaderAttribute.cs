@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Primitives;
 
 namespace Mithril.Core.Abstractions.Mvc.Attributes
 {
     /// <summary>
     /// Add Header Attribute
     /// </summary>
-    /// <seealso cref="ActionFilterAttribute" />
+    /// <seealso cref="ActionFilterAttribute"/>
     public sealed class AddHeaderAttribute : ActionFilterAttribute
     {
         /// <summary>
@@ -55,7 +56,7 @@ namespace Mithril.Core.Abstractions.Mvc.Attributes
             if (Headers.ContainsKey(Key))
                 Headers[Key] = Values;
             else
-                Headers.Append(Key, Values);
+                Headers.Append(new KeyValuePair<string, StringValues>(Key, Values));
         }
     }
 }
