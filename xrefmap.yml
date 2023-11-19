@@ -3821,13 +3821,13 @@ references:
   fullName: Mithril.API.GraphQL.GraphTypes.CompositeQuery
   nameWithType: CompositeQuery
 - uid: Mithril.API.GraphQL.GraphTypes.CompositeQuery.#ctor(System.Collections.Generic.IEnumerable{Mithril.API.Abstractions.Query.Interfaces.IQuery})
-  name: CompositeQuery(IEnumerable<IQuery?>)
+  name: CompositeQuery(IEnumerable<IQuery?>?)
   href: api/Mithril.API.GraphQL.GraphTypes.CompositeQuery.html#Mithril_API_GraphQL_GraphTypes_CompositeQuery__ctor_System_Collections_Generic_IEnumerable_Mithril_API_Abstractions_Query_Interfaces_IQuery__
   commentId: M:Mithril.API.GraphQL.GraphTypes.CompositeQuery.#ctor(System.Collections.Generic.IEnumerable{Mithril.API.Abstractions.Query.Interfaces.IQuery})
   name.vb: New(IEnumerable(Of IQuery))
-  fullName: Mithril.API.GraphQL.GraphTypes.CompositeQuery.CompositeQuery(System.Collections.Generic.IEnumerable<Mithril.API.Abstractions.Query.Interfaces.IQuery?>)
+  fullName: Mithril.API.GraphQL.GraphTypes.CompositeQuery.CompositeQuery(System.Collections.Generic.IEnumerable<Mithril.API.Abstractions.Query.Interfaces.IQuery?>?)
   fullName.vb: Mithril.API.GraphQL.GraphTypes.CompositeQuery.New(System.Collections.Generic.IEnumerable(Of Mithril.API.Abstractions.Query.Interfaces.IQuery))
-  nameWithType: CompositeQuery.CompositeQuery(IEnumerable<IQuery?>)
+  nameWithType: CompositeQuery.CompositeQuery(IEnumerable<IQuery?>?)
   nameWithType.vb: CompositeQuery.New(IEnumerable(Of IQuery))
 - uid: Mithril.API.GraphQL.GraphTypes.CompositeQuery.#ctor*
   name: CompositeQuery
@@ -4271,13 +4271,13 @@ references:
   fullName: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema
   nameWithType: CompositeSchema
 - uid: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.#ctor(System.Collections.Generic.IEnumerable{Mithril.API.Abstractions.Query.Interfaces.IQuery})
-  name: CompositeSchema(IEnumerable<IQuery?>)
+  name: CompositeSchema(IEnumerable<IQuery?>?)
   href: api/Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.html#Mithril_API_GraphQL_ObjectGraphs_CompositeSchema__ctor_System_Collections_Generic_IEnumerable_Mithril_API_Abstractions_Query_Interfaces_IQuery__
   commentId: M:Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.#ctor(System.Collections.Generic.IEnumerable{Mithril.API.Abstractions.Query.Interfaces.IQuery})
   name.vb: New(IEnumerable(Of IQuery))
-  fullName: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.CompositeSchema(System.Collections.Generic.IEnumerable<Mithril.API.Abstractions.Query.Interfaces.IQuery?>)
+  fullName: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.CompositeSchema(System.Collections.Generic.IEnumerable<Mithril.API.Abstractions.Query.Interfaces.IQuery?>?)
   fullName.vb: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.New(System.Collections.Generic.IEnumerable(Of Mithril.API.Abstractions.Query.Interfaces.IQuery))
-  nameWithType: CompositeSchema.CompositeSchema(IEnumerable<IQuery?>)
+  nameWithType: CompositeSchema.CompositeSchema(IEnumerable<IQuery?>?)
   nameWithType.vb: CompositeSchema.New(IEnumerable(Of IQuery))
 - uid: Mithril.API.GraphQL.ObjectGraphs.CompositeSchema.#ctor*
   name: CompositeSchema
@@ -25823,15 +25823,6 @@ references:
   fullName.vb: Mithril.Logging.Exceptions.JavascriptException.New()
   nameWithType: JavascriptException.JavascriptException()
   nameWithType.vb: JavascriptException.New()
-- uid: Mithril.Logging.Exceptions.JavascriptException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-  name: JavascriptException(SerializationInfo, StreamingContext)
-  href: api/Mithril.Logging.Exceptions.JavascriptException.html#Mithril_Logging_Exceptions_JavascriptException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
-  commentId: M:Mithril.Logging.Exceptions.JavascriptException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-  name.vb: New(SerializationInfo, StreamingContext)
-  fullName: Mithril.Logging.Exceptions.JavascriptException.JavascriptException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
-  fullName.vb: Mithril.Logging.Exceptions.JavascriptException.New(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
-  nameWithType: JavascriptException.JavascriptException(SerializationInfo, StreamingContext)
-  nameWithType.vb: JavascriptException.New(SerializationInfo, StreamingContext)
 - uid: Mithril.Logging.Exceptions.JavascriptException.#ctor(System.String)
   name: JavascriptException(string)
   href: api/Mithril.Logging.Exceptions.JavascriptException.html#Mithril_Logging_Exceptions_JavascriptException__ctor_System_String_
