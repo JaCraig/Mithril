@@ -15,28 +15,23 @@ namespace Mithril.Admin.Queries
     /// Entity query
     /// </summary>
     /// <seealso cref="QueryBaseClass&lt;IEntity&gt;"/>
-    public class EntityQuery : QueryBaseClass<ExpandoObject>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="EntityQuery"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    /// <param name="editorService">The editor service.</param>
+    public class EntityQuery(ILogger<EntityQuery>? logger, IFeatureManager? featureManager, IEditorService? editorService) : QueryBaseClass<ExpandoObject>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EntityQuery"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        /// <param name="editorService">The editor service.</param>
-        public EntityQuery(ILogger<EntityQuery>? logger, IFeatureManager? featureManager, IEditorService? editorService) : base(logger, featureManager)
-        {
-            EditorService = editorService;
-        }
-
         /// <summary>
         /// Gets the arguments.
         /// </summary>
         /// <value>The arguments.</value>
-        public override IArgument[] Arguments { get; } = new IArgument[]
-        {
+        public override IArgument[] Arguments { get; } =
+        [
             new Argument<string> { Description = "The type of entity to return", Name = "entityType" },
-            new Argument<long> { Description = "The entity ID", Name = "id", DefaultValue=0 }
-        };
+            new Argument<long> { Description = "The entity ID", Name = "id", DefaultValue = 0 }
+        ];
 
         /// <summary>
         /// Gets the name.
@@ -48,7 +43,7 @@ namespace Mithril.Admin.Queries
         /// Gets the editor service.
         /// </summary>
         /// <value>The editor service.</value>
-        private IEditorService? EditorService { get; }
+        private IEditorService? EditorService { get; } = editorService;
 
         /// <summary>
         /// Used to resolve the data asked for by the query.

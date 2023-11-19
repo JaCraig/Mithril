@@ -54,7 +54,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
                 {
                     if (_NameMapping is not null)
                         return _NameMapping;
-                    _NameMapping = new Dictionary<string, TClass>();
+                    _NameMapping = [];
                     _ = typeof(TClass).GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
                         .Where(x => x.PropertyType == typeof(TClass))
                         .Select(x => x.GetValue(null) as TClass)

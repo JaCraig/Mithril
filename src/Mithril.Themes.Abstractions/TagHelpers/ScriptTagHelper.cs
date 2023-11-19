@@ -9,22 +9,17 @@ namespace Mithril.Themes.Abstractions.TagHelpers
     /// Resource tag helper
     /// </summary>
     /// <seealso cref="TagHelper"/>
-    public class ScriptTagHelper : TagHelper
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="ScriptTagHelper"/> class.
+    /// </remarks>
+    /// <param name="resources">The resources.</param>
+    public class ScriptTagHelper(IResourceService? resources) : TagHelper
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ScriptTagHelper"/> class.
-        /// </summary>
-        /// <param name="resources">The resources.</param>
-        public ScriptTagHelper(IResourceService? resources)
-        {
-            Resources = resources;
-        }
-
         /// <summary>
         /// Gets the resources.
         /// </summary>
         /// <value>The resources.</value>
-        public IResourceService? Resources { get; }
+        public IResourceService? Resources { get; } = resources;
 
         /// <summary>
         /// Gets the type of the resource.

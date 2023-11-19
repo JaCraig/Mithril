@@ -90,7 +90,7 @@ namespace Mithril.API.GraphQL.GraphTypes
                     continue;
                 _ = Property.PropertyType.IsBuiltInType()
                     ? (_AddBasicFieldGeneric?.MakeGenericMethod(Property.PropertyType).Invoke(this, new[] { Property }))
-                    : (_AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Property, graphTypeManager.GetGraphType(Property.PropertyType) }));
+                    : (_AddClassFieldGeneric?.MakeGenericMethod(GraphType).Invoke(this, [Property, graphTypeManager.GetGraphType(Property.PropertyType)]));
             }
             foreach (MethodInfo Method in TypeCacheFor<TClass>.Methods)
             {
@@ -99,7 +99,7 @@ namespace Mithril.API.GraphQL.GraphTypes
                     continue;
                 _ = Method.ReturnType.IsBuiltInType()
                     ? (_AddMethodBasicGeneric?.MakeGenericMethod(Method.ReturnType).Invoke(this, new object[] { Method }))
-                    : (_AddMethodClassGeneric?.MakeGenericMethod(GraphType).Invoke(this, new object?[] { Method, graphTypeManager.GetGraphType(Method.ReturnType) }));
+                    : (_AddMethodClassGeneric?.MakeGenericMethod(GraphType).Invoke(this, [Method, graphTypeManager.GetGraphType(Method.ReturnType)]));
             }
         }
 
@@ -157,7 +157,7 @@ namespace Mithril.API.GraphQL.GraphTypes
             _ = (Field<TReturn>(method.GetName(), nullable: method.ReturnType.IsNullable())
                 .Description(method.GetDescription())
                 .Resolve(Expression.Lambda<Func<IResolveFieldContext<TClass>, TReturn?>>(PropertyGet, ObjectInstance).Compile())
-                .Arguments(method.GetParameters().ToArray(x => x.ToQueryArgument()!) ?? Array.Empty<QueryArgument>())
+                .Arguments(method.GetParameters().ToArray(x => x.ToQueryArgument()!) ?? [])
                 ?.SetSecurity(method)
                 ?.DeprecationReason(method.GetDeprecationReason()));
         }

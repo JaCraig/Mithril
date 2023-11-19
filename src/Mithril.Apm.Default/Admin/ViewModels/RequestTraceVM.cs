@@ -46,13 +46,13 @@ namespace Mithril.Apm.Default.Admin.ViewModels
         /// Gets the meta data.
         /// </summary>
         /// <value>The meta data.</value>
-        public List<RequestMetaDataVM> MetaData { get; } = new List<RequestMetaDataVM>();
+        public List<RequestMetaDataVM> MetaData { get; } = [];
 
         /// <summary>
         /// Gets the metrics.
         /// </summary>
         /// <value>The metrics.</value>
-        public List<RequestMetricVM> Metrics { get; } = new List<RequestMetricVM>();
+        public List<RequestMetricVM> Metrics { get; } = [];
 
         /// <summary>
         /// Gets the trace identifier.

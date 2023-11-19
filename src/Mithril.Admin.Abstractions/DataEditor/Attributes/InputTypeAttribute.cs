@@ -4,24 +4,19 @@
     /// Input type attribute
     /// </summary>
     /// <seealso cref="Attribute" />
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="InputTypeAttribute"/> class.
+    /// </remarks>
+    /// <param name="inputType">Type of the input.</param>
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public sealed class InputTypeAttribute : Attribute
+    public sealed class InputTypeAttribute(string inputType) : Attribute
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InputTypeAttribute"/> class.
-        /// </summary>
-        /// <param name="inputType">Type of the input.</param>
-        public InputTypeAttribute(string inputType)
-        {
-            InputType = inputType;
-        }
-
         /// <summary>
         /// Gets the type of the input.
         /// </summary>
         /// <value>
         /// The type of the input.
         /// </value>
-        public string InputType { get; }
+        public string InputType { get; } = inputType;
     }
 }

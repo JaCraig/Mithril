@@ -11,29 +11,21 @@ namespace Mithril.Navigation.Services
     /// Menu builder
     /// </summary>
     /// <seealso cref="IMenuBuilder" />
-    public class MenuBuilder : IMenuBuilder
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="MenuBuilder" /> class.
+    /// </remarks>
+    /// <param name="display">The display.</param>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="user">The user.</param>
+    public class MenuBuilder(string display, IDataService? dataService, ClaimsPrincipal? user) : IMenuBuilder
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MenuBuilder" /> class.
-        /// </summary>
-        /// <param name="display">The display.</param>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="user">The user.</param>
-        public MenuBuilder(string display, IDataService? dataService, ClaimsPrincipal? user)
-        {
-            Display = display;
-            DataService = dataService;
-            User = user;
-            InternalMenu = AsyncHelper.RunSync(() => Menu.LoadOrCreateAsync(display, dataService, user));
-        }
-
         /// <summary>
         /// Gets the display name of the menu.
         /// </summary>
         /// <value>
         /// The display name of the menu.
         /// </value>
-        public string Display { get; }
+        public string Display { get; } = display;
 
         /// <summary>
         /// Gets the permissions.
@@ -49,7 +41,7 @@ namespace Mithril.Navigation.Services
         /// <value>
         /// The data service.
         /// </value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Gets the internal menu.
@@ -57,7 +49,7 @@ namespace Mithril.Navigation.Services
         /// <value>
         /// The internal menu.
         /// </value>
-        private Menu? InternalMenu { get; }
+        private Menu? InternalMenu { get; } = AsyncHelper.RunSync(() => Menu.LoadOrCreateAsync(display, dataService, user));
 
         /// <summary>
         /// Gets the user.
@@ -65,7 +57,7 @@ namespace Mithril.Navigation.Services
         /// <value>
         /// The user.
         /// </value>
-        private ClaimsPrincipal? User { get; }
+        private ClaimsPrincipal? User { get; } = user;
 
         /// <summary>
         /// Adds a menu item.

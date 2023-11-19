@@ -4,24 +4,19 @@
     /// Determines if the system should treat this as a text area
     /// </summary>
     /// <seealso cref="System.Attribute" />
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="TextAreaAttribute"/> class.
+    /// </remarks>
+    /// <param name="rows">The rows.</param>
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class TextAreaAttribute : Attribute
+    public class TextAreaAttribute(int rows = 3) : Attribute
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TextAreaAttribute"/> class.
-        /// </summary>
-        /// <param name="rows">The rows.</param>
-        public TextAreaAttribute(int rows = 3)
-        {
-            Rows = rows;
-        }
-
         /// <summary>
         /// Gets or sets the rows.
         /// </summary>
         /// <value>
         /// The rows.
         /// </value>
-        public int Rows { get; set; }
+        public int Rows { get; set; } = rows;
     }
 }

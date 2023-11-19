@@ -7,29 +7,23 @@ namespace Mithril.Core.Middleware
     /// <summary>
     /// CSP Middleware
     /// </summary>
-    public class CSPMiddleware
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="CSPMiddleware"/> class.
+    /// </remarks>
+    /// <param name="next">The next.</param>
+    /// <param name="configuration">The configuration.</param>
+    public class CSPMiddleware(RequestDelegate? next, IOptions<MithrilConfig>? configuration)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CSPMiddleware"/> class.
-        /// </summary>
-        /// <param name="next">The next.</param>
-        /// <param name="configuration">The configuration.</param>
-        public CSPMiddleware(RequestDelegate? next, IOptions<MithrilConfig>? configuration)
-        {
-            _next = next;
-            Policy = $"{configuration?.Value?.Security?.ContentSecurityPolicy ?? "default-src 'self'"}; report-uri /api/Command/CSPLog";
-        }
-
         /// <summary>
         /// Gets the configuration.
         /// </summary>
         /// <value>The configuration.</value>
-        private string Policy { get; }
+        private string Policy { get; } = $"{configuration?.Value?.Security?.ContentSecurityPolicy ?? "default-src 'self'"}; report-uri /api/Command/CSPLog";
 
         /// <summary>
         /// The next
         /// </summary>
-        private readonly RequestDelegate? _next;
+        private readonly RequestDelegate? _next = next;
 
         /// <summary>
         /// Invokes the specified context.
@@ -40,7 +34,7 @@ namespace Mithril.Core.Middleware
         {
             if (context is null)
                 return Task.CompletedTask;
-            context.Response.Headers.Add("Content-Security-Policy", Policy);
+            context.Response.Headers.Append("Content-Security-Policy", Policy);
             return _next?.Invoke(context) ?? Task.CompletedTask;
         }
     }

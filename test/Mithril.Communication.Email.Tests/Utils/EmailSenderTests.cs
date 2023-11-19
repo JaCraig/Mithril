@@ -17,8 +17,8 @@ namespace Mithril.Communication.Email.Tests.Utils
         public EmailSenderTests()
         {
             TestObject = new EmailSender(new DummyFeatures(), null);
-            ExceptionsToIgnore = new[]
-            {
+            ExceptionsToIgnore =
+            [
                 typeof(NotImplementedException),
                 typeof(ArgumentOutOfRangeException),
                 typeof(ArgumentException),
@@ -27,7 +27,7 @@ namespace Mithril.Communication.Email.Tests.Utils
                 typeof(EndOfStreamException),
                 typeof(OutOfMemoryException),
                 typeof(SocketException)
-            };
+            ];
         }
 
         protected class AsyncEnumerable : IAsyncEnumerable<string>

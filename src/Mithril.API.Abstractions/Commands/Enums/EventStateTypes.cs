@@ -8,22 +8,17 @@ namespace Mithril.API.Abstractions.Commands.Enums
     /// Event state types
     /// </summary>
     /// <seealso cref="StringEnumBaseClass&lt;EventStateTypes&gt;"/>
-    public class EventStateTypes : LookUpEnumBaseClass<EventStateTypes>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="UserClaimTypes"/> class.
+    /// </remarks>
+    /// <param name="name">The name.</param>
+    public class EventStateTypes(string name) : LookUpEnumBaseClass<EventStateTypes>(name, "fa-user")
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserClaimTypes"/> class.
         /// </summary>
         public EventStateTypes()
             : this("")
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserClaimTypes"/> class.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        public EventStateTypes(string name)
-            : base(name, "fa-user")
         {
         }
 

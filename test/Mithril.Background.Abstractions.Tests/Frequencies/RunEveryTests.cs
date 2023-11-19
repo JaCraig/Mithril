@@ -1,6 +1,7 @@
 ﻿using Mecha.xUnit;
 using Mithril.Background.Abstractions.Frequencies;
 using Mithril.Tests.Helpers;
+using Xunit;
 
 namespace Mithril.Background.Abstractions.Tests.Frequencies
 {

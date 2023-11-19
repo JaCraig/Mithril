@@ -14,21 +14,15 @@ namespace Mithril.Features.Commands
     /// Toggle feature command handler
     /// </summary>
     /// <seealso cref="CommandHandlerBaseClass&lt;ToggleFeatureCommand, ToggleFeatureCommandVM&gt;"/>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="ToggleFeatureCommandHandler"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    /// <param name="sessionManager">The session manager.</param>
     [ApiAuthorize("Admin Only")]
-    public class ToggleFeatureCommandHandler : CommandHandlerBaseClass<ToggleFeatureCommand, ToggleFeatureCommandVM>
+    public class ToggleFeatureCommandHandler(ILogger<ToggleFeatureCommandHandler>? logger, IFeatureManager? featureManager, ISessionManager? sessionManager) : CommandHandlerBaseClass<ToggleFeatureCommand, ToggleFeatureCommandVM>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ToggleFeatureCommandHandler"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        /// <param name="sessionManager">The session manager.</param>
-        public ToggleFeatureCommandHandler(ILogger<ToggleFeatureCommandHandler>? logger, IFeatureManager? featureManager, ISessionManager? sessionManager)
-            : base(logger, featureManager)
-        {
-            SessionManager = sessionManager;
-        }
-
         /// <summary>
         /// Gets the command type accepted.
         /// </summary>
@@ -45,7 +39,7 @@ namespace Mithril.Features.Commands
         /// Gets the session manager.
         /// </summary>
         /// <value>The session manager.</value>
-        private ISessionManager? SessionManager { get; }
+        private ISessionManager? SessionManager { get; } = sessionManager;
 
         /// <summary>
         /// Creates the specified value.
@@ -68,7 +62,7 @@ namespace Mithril.Features.Commands
         protected override async Task<IEvent[]> HandleCommandAsync(ToggleFeatureCommand?[]? args)
         {
             if (args is null || Logger is null || SessionManager is null)
-                return Array.Empty<IEvent>();
+                return [];
             var ReturnValues = new List<IEvent>();
             for (var x = 0; x < args.Length; ++x)
             {

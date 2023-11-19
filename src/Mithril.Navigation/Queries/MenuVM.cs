@@ -35,6 +35,6 @@ namespace Mithril.Navigation.Queries
         /// <value>
         /// The menu items.
         /// </value>
-        public List<MenuItemVM> MenuItems { get; } = new List<MenuItemVM>();
+        public List<MenuItemVM> MenuItems { get; } = [];
     }
 }

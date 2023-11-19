@@ -10,17 +10,13 @@ namespace Mithril.Themes.Commands
     /// <summary>
     /// Theme changed event default handler
     /// </summary>
-    public class ThemeChangedEventDefaultHandler : EventHandlerBaseClass<ThemeChangedEventDefaultHandler, ThemeChangedEvent>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="ThemeChangedEventDefaultHandler" /> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    public class ThemeChangedEventDefaultHandler(ILogger<ThemeChangedEventDefaultHandler>? logger, IFeatureManager? featureManager) : EventHandlerBaseClass<ThemeChangedEventDefaultHandler, ThemeChangedEvent>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ThemeChangedEventDefaultHandler" /> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        public ThemeChangedEventDefaultHandler(ILogger<ThemeChangedEventDefaultHandler>? logger, IFeatureManager? featureManager) : base(logger, featureManager)
-        {
-        }
-
         /// <summary>
         /// Handles the specified argument.
         /// </summary>

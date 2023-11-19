@@ -4,16 +4,13 @@
     /// Determines if the system should treat this as a select
     /// </summary>
     /// <seealso cref="QueryAttribute" />
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="SelectAttribute"/> class.
+    /// </remarks>
+    /// <param name="queryType">Type of the query.</param>
+    /// <param name="filter">The filter.</param>
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public class SelectAttribute : QueryAttribute
+    public class SelectAttribute(Type queryType, string filter = "") : QueryAttribute(queryType, filter)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SelectAttribute"/> class.
-        /// </summary>
-        /// <param name="queryType">Type of the query.</param>
-        /// <param name="filter">The filter.</param>
-        public SelectAttribute(Type queryType, string filter = "") : base(queryType, filter)
-        {
-        }
     }
 }

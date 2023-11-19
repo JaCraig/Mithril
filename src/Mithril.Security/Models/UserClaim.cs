@@ -33,7 +33,7 @@ namespace Mithril.Security.Models
             if (string.IsNullOrEmpty(value))
                 throw new ArgumentNullException(nameof(value));
             Value = value;
-            users ??= Array.Empty<IUser>();
+            users ??= [];
             Type = ((string)type) ?? "";
             Users = users.Where(x => x != null).ToList();
         }

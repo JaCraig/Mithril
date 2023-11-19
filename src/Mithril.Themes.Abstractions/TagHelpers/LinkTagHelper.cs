@@ -9,22 +9,17 @@ namespace Mithril.Themes.Abstractions.TagHelpers
     /// Link tag helper
     /// </summary>
     /// <seealso cref="TagHelper"/>
-    public class LinkTagHelper : TagHelper
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="LinkTagHelper"/> class.
+    /// </remarks>
+    /// <param name="resources">The resources.</param>
+    public class LinkTagHelper(IResourceService? resources) : TagHelper
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LinkTagHelper"/> class.
-        /// </summary>
-        /// <param name="resources">The resources.</param>
-        public LinkTagHelper(IResourceService? resources)
-        {
-            Resources = resources;
-        }
-
         /// <summary>
         /// Gets the resources.
         /// </summary>
         /// <value>The resources.</value>
-        public IResourceService? Resources { get; }
+        public IResourceService? Resources { get; } = resources;
 
         /// <summary>
         /// Gets the type of the resource.

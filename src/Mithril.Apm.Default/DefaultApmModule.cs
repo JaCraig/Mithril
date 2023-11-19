@@ -25,7 +25,7 @@ namespace Mithril.Apm.Default
         /// Gets or sets the features.
         /// </summary>
         /// <value>The features.</value>
-        public override IFeature[] Features { get; protected set; } = new IFeature[] { APMFeature.Instance };
+        public override IFeature[] Features { get; protected set; } = [APMFeature.Instance];
 
         /// <summary>
         /// Configures the application.

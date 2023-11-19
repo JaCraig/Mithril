@@ -3,6 +3,7 @@ using Mithril.Core.Abstractions.Extensions;
 using Mithril.Core.Abstractions.Modules.Interfaces;
 using Mithril.Tests.Helpers;
 using NSubstitute;
+using Xunit;
 
 namespace Mithril.Core.Abstractions.Tests.Extensions
 {

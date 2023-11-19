@@ -15,18 +15,13 @@ namespace Mithril.Logging.Commands
     /// CSP log command handler
     /// </summary>
     /// <seealso cref="CommandHandlerBaseClass&lt;LogCommand, CSPLogCommandVM&gt;"/>
-    public class CSPLogCommandHandler : CommandHandlerBaseClass<LogCommand, CSPLogCommandVM>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="CSPLogCommandHandler"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    public class CSPLogCommandHandler(ILogger<CSPLogCommandHandler>? logger, IFeatureManager? featureManager) : CommandHandlerBaseClass<LogCommand, CSPLogCommandVM>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CSPLogCommandHandler"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        public CSPLogCommandHandler(ILogger<CSPLogCommandHandler>? logger, IFeatureManager? featureManager)
-            : base(logger, featureManager)
-        {
-        }
-
         /// <summary>
         /// Gets the command type accepted.
         /// </summary>

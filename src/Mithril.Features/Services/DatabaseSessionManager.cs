@@ -9,22 +9,17 @@ namespace Mithril.Features.Services
     /// Database session manager
     /// </summary>
     /// <seealso cref="ISessionManager"/>
-    public class DatabaseSessionManager : ISessionManager
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="DatabaseSessionManager"/> class.
+    /// </remarks>
+    /// <param name="dataService">The data service.</param>
+    public class DatabaseSessionManager(IDataService? dataService) : ISessionManager
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DatabaseSessionManager"/> class.
-        /// </summary>
-        /// <param name="dataService">The data service.</param>
-        public DatabaseSessionManager(IDataService? dataService)
-        {
-            DataService = dataService;
-        }
-
         /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        public IDataService? DataService { get; }
+        public IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Queries the session manager for the session's feature state, if any, for the given feature.

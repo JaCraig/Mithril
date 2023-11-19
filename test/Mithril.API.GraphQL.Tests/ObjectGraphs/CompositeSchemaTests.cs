@@ -24,36 +24,24 @@ namespace Mithril.API.GraphQL.Tests.ObjectGraphs
         /// CompositeSchema constructor.
         /// </summary>
         [Fact]
-        public void CompositeSchema_Constructor()
-        {
-            Assert.NotNull(TestObject);
-        }
+        public void CompositeSchema_Constructor() => Assert.NotNull(TestObject);
 
         /// <summary>
         /// CompositeSchema constructor with null queries.
         /// </summary>
         [Fact]
-        public void CompositeSchema_Constructor_WithNullQueries()
-        {
-            Assert.NotNull(new CompositeSchema(null));
-        }
+        public void CompositeSchema_Constructor_WithNullQueries() => Assert.NotNull(new CompositeSchema(null));
 
         /// <summary>
         /// CompositeSchema constructor with queries.
         /// </summary>
         [Fact]
-        public void CompositeSchema_Constructor_WithQueries()
-        {
-            Assert.NotNull(new CompositeSchema(new IQuery[] { }));
-        }
+        public void CompositeSchema_Constructor_WithQueries() => Assert.NotNull(new CompositeSchema(Array.Empty<IQuery>()));
 
         /// <summary>
         /// CompositeSchema constructor with queries and null.
         /// </summary>
         [Fact]
-        public void CompositeSchema_Constructor_WithQueriesAndNull()
-        {
-            Assert.NotNull(new CompositeSchema(new IQuery?[] { null }));
-        }
+        public void CompositeSchema_Constructor_WithQueriesAndNull() => Assert.NotNull(new CompositeSchema(new IQuery?[] { null }));
     }
 }

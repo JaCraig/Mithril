@@ -49,7 +49,7 @@ namespace Mithril.Tests.Helpers
             for (var X = 0; X < ExceptionsToIgnore.Length; ++X)
             {
                 Type ExceptionToIgnore = ExceptionsToIgnore[X];
-                _ = (IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, new object?[] { null }));
+                _ = (IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, [null]));
             }
 
             return Mech.BreakAsync(TestObject, new Options
@@ -92,8 +92,8 @@ namespace Mithril.Tests.Helpers
         /// Gets or sets the exceptions to ignore.
         /// </summary>
         /// <value>The exceptions to ignore.</value>
-        protected Type[] ExceptionsToIgnore { get; set; } = new[]
-        {
+        protected Type[] ExceptionsToIgnore { get; set; } =
+        [
             typeof(NotImplementedException),
             typeof(ArgumentOutOfRangeException),
             typeof(ArgumentException),
@@ -101,7 +101,7 @@ namespace Mithril.Tests.Helpers
             typeof(ObjectDisposedException),
             typeof(EndOfStreamException),
             typeof(OutOfMemoryException)
-        };
+        ];
 
         /// <summary>
         /// Gets or sets the maximum duration.
@@ -128,7 +128,7 @@ namespace Mithril.Tests.Helpers
             for (var X = 0; X < ExceptionsToIgnore.Length; ++X)
             {
                 Type ExceptionToIgnore = ExceptionsToIgnore[X];
-                _ = (IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, new object?[] { null }));
+                _ = (IgnoreMethod?.MakeGenericMethod(ExceptionToIgnore).Invoke(ExceptionHandlers, [null]));
             }
 
             return Mech.BreakAsync(ObjectType, new Options

@@ -16,27 +16,22 @@ namespace Mithril.FileSystem.Controllers
     /// File browser controller
     /// </summary>
     /// <seealso cref="Controller" />
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="FileBrowserController"/> class.
+    /// </remarks>
+    /// <param name="fileManager">The file manager.</param>
     [Area("Services")]
     [Authorize]
     [Route("/Services/[controller]")]
     [ApiExplorerSettings(IgnoreApi = true)]
     [AddHeader("X-Frame-Options", "SAMEORIGIN")]
-    public class FileBrowserController : Controller
+    public class FileBrowserController(IFileSystemService? fileManager) : Controller
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FileBrowserController"/> class.
-        /// </summary>
-        /// <param name="fileManager">The file manager.</param>
-        public FileBrowserController(IFileSystemService? fileManager)
-        {
-            FileManager = fileManager;
-        }
-
         /// <summary>
         /// Gets the file manager.
         /// </summary>
         /// <value>The file manager.</value>
-        public IFileSystemService? FileManager { get; }
+        public IFileSystemService? FileManager { get; } = fileManager;
 
         /// <summary>
         /// Returns the file browser based on the file type.
@@ -84,7 +79,7 @@ namespace Mithril.FileSystem.Controllers
             if (!FinalFile.FullName.Contains(RootDirectory.FullName, StringComparison.OrdinalIgnoreCase))
                 return BadRequest();
 
-            _ = FinalFile.Write(file?.OpenReadStream().ReadAllBinary() ?? Array.Empty<byte>());
+            _ = FinalFile.Write(file?.OpenReadStream().ReadAllBinary() ?? []);
 
             if (string.Equals(type, "image", StringComparison.OrdinalIgnoreCase))
                 MipMap(FinalFile);

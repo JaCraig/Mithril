@@ -12,26 +12,20 @@ namespace Mithril.API.Commands.BackgroundTasks
     /// </summary>
     /// <seealso cref="IHostedService"/>
     /// <seealso cref="IDisposable"/>
-    public class EventProcessorTask : IScheduledTask
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="EventProcessorTask" /> class.
+    /// </remarks>
+    /// <param name="eventService">The event service.</param>
+    /// <param name="configuration">The configuration.</param>
+    public class EventProcessorTask(IEventService? eventService, IOptions<APIOptions>? configuration) : IScheduledTask
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EventProcessorTask" /> class.
-        /// </summary>
-        /// <param name="eventService">The event service.</param>
-        /// <param name="configuration">The configuration.</param>
-        public EventProcessorTask(IEventService? eventService, IOptions<APIOptions>? configuration)
-        {
-            EventService = eventService;
-            Frequencies = new IFrequency[] { new RunEvery(TimeSpan.FromSeconds(configuration?.Value?.EventRunFrequency ?? 60)) };
-        }
-
         /// <summary>
         /// Gets the frequencies that the task is run at.
         /// </summary>
         /// <value>
         /// The frequencies the task is run at.
         /// </value>
-        public IFrequency[] Frequencies { get; }
+        public IFrequency[] Frequencies { get; } = [new RunEvery(TimeSpan.FromSeconds(configuration?.Value?.EventRunFrequency ?? 60))];
 
         /// <summary>
         /// Gets the last run time.
@@ -53,7 +47,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// Gets the Event service.
         /// </summary>
         /// <value>The Event service.</value>
-        private IEventService? EventService { get; }
+        private IEventService? EventService { get; } = eventService;
 
         /// <summary>
         /// Executes this instance.

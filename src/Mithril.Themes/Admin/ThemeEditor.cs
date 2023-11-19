@@ -14,21 +14,15 @@ namespace Mithril.Themes.Admin
     /// Theme editor
     /// </summary>
     /// <seealso cref="SettingsEditorBaseClass&lt;ThemeSettingsVM&gt;"/>
-    public class ThemeEditor : SettingsEditorBaseClass<ThemeSettingsVM>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="ThemeEditor" /> class.
+    /// </remarks>
+    /// <param name="themeService">The theme service.</param>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="entityMetadataService">The entity metadata service.</param>
+    /// <param name="serviceProvider">The service provider.</param>
+    public class ThemeEditor(IThemeService? themeService, IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider) : SettingsEditorBaseClass<ThemeSettingsVM>(dataService, entityMetadataService, serviceProvider)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ThemeEditor" /> class.
-        /// </summary>
-        /// <param name="themeService">The theme service.</param>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="entityMetadataService">The entity metadata service.</param>
-        /// <param name="serviceProvider">The service provider.</param>
-        public ThemeEditor(IThemeService? themeService, IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider)
-            : base(dataService, entityMetadataService, serviceProvider)
-        {
-            ThemeService = themeService;
-        }
-
         /// <summary>
         /// Gets the icon.
         /// </summary>
@@ -39,7 +33,7 @@ namespace Mithril.Themes.Admin
         /// Gets the theme service.
         /// </summary>
         /// <value>The theme service.</value>
-        private IThemeService? ThemeService { get; }
+        private IThemeService? ThemeService { get; } = themeService;
 
         /// <summary>
         /// Loads the specified identifier.

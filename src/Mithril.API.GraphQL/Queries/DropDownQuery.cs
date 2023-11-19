@@ -13,31 +13,24 @@ namespace Mithril.API.GraphQL.Queries
     /// <summary>
     /// Simple entry point for drop down style key/value pair queries.
     /// </summary>
-    public class DropDownQuery : QueryBaseClass<IEnumerable<DropDownVM<long>>>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="DropDownQuery" /> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    /// <param name="dropDownQueryService">The drop down query service.</param>
+    /// <param name="dataService">The data service.</param>
+    public class DropDownQuery(ILogger<DropDownQuery>? logger, IFeatureManager? featureManager, IDropDownQueryService? dropDownQueryService, IDataService? dataService) : QueryBaseClass<IEnumerable<DropDownVM<long>>>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DropDownQuery" /> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        /// <param name="dropDownQueryService">The drop down query service.</param>
-        /// <param name="dataService">The data service.</param>
-        public DropDownQuery(ILogger<DropDownQuery>? logger, IFeatureManager? featureManager, IDropDownQueryService? dropDownQueryService, IDataService? dataService)
-            : base(logger, featureManager)
-        {
-            DropDownQueryService = dropDownQueryService;
-            DataService = dataService;
-        }
-
         /// <summary>
         /// Gets the arguments.
         /// </summary>
         /// <value>The arguments.</value>
-        public override IArgument[] Arguments { get; } = new IArgument[]
-        {
-            new Argument<string>{ DefaultValue = "", Description = "The data type to query.", Name = "type"},
-            new Argument<string>{ DefaultValue = "", Description = "The filter to apply to the query.", Name = "filter"}
-        };
+        public override IArgument[] Arguments { get; } =
+        [
+            new Argument<string> { DefaultValue = "", Description = "The data type to query.", Name = "type" },
+            new Argument<string> { DefaultValue = "", Description = "The filter to apply to the query.", Name = "filter" }
+        ];
 
         /// <summary>
         /// Gets the name.
@@ -51,13 +44,13 @@ namespace Mithril.API.GraphQL.Queries
         /// <value>
         /// The data service.
         /// </value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Gets the drop down query service.
         /// </summary>
         /// <value>The drop down query service.</value>
-        private IDropDownQueryService? DropDownQueryService { get; }
+        private IDropDownQueryService? DropDownQueryService { get; } = dropDownQueryService;
 
         /// <summary>
         /// Used to resolve the data asked for by the query.

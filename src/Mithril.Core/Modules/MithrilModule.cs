@@ -32,7 +32,7 @@ namespace Mithril.Core.Modules
             : base(
                 name: "Mithril Core Module",
                 category: "Core",
-                tags: new[] { "Email", "Content", "Media", "Navigation", "Search", "Workflow" })
+                tags: ["Email", "Content", "Media", "Navigation", "Search", "Workflow"])
         {
         }
 
@@ -40,13 +40,13 @@ namespace Mithril.Core.Modules
         /// Gets the features.
         /// </summary>
         /// <value>The features.</value>
-        public override IFeature[] Features { get; protected set; } = new IFeature[]
-        {
+        public override IFeature[] Features { get; protected set; } =
+        [
             ContentFeature.Instance,
             IndexingFeature.Instance,
             MediaFeature.Instance,
             WorkflowFeature.Instance
-        };
+        ];
 
         /// <summary>
         /// Gets the order that they are initialized in.

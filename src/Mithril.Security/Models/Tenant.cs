@@ -188,7 +188,7 @@ namespace Mithril.Security.Models
         /// <returns>The user specified.</returns>
         public async Task<User> LoadOrCreateUserAsync(string userName, string firstName, string lastName, IDataService? dataService, ClaimsPrincipal? user, params IUserClaim[] claims)
         {
-            claims ??= Array.Empty<IUserClaim>();
+            claims ??= [];
             var ReturnValue = User.Load(userName, dataService);
             if (ReturnValue is null)
             {

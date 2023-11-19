@@ -15,22 +15,15 @@ namespace Mithril.Communication.Email.Channel
     /// Email channel for communication
     /// </summary>
     /// <seealso cref="ChannelBaseClass&lt;EmailChannel, EmailMessage&gt;"/>
-    public class EmailChannel : ChannelBaseClass<EmailChannel, EmailMessage>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="EmailChannel"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="viewRendererService">The view renderer service.</param>
+    public class EmailChannel(ILogger<EmailChannel>? logger, IFeatureManager? featureManager, IDataService? dataService, IViewRendererService? viewRendererService) : ChannelBaseClass<EmailChannel, EmailMessage>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EmailChannel"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="viewRendererService">The view renderer service.</param>
-        public EmailChannel(ILogger<EmailChannel>? logger, IFeatureManager? featureManager, IDataService? dataService, IViewRendererService? viewRendererService)
-            : base(logger, featureManager)
-        {
-            DataService = dataService;
-            ViewRendererService = viewRendererService;
-        }
-
         /// <summary>
         /// Gets the name.
         /// </summary>
@@ -41,13 +34,13 @@ namespace Mithril.Communication.Email.Channel
         /// Gets the data services.
         /// </summary>
         /// <value>The data services.</value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Gets the view renderer service.
         /// </summary>
         /// <value>The view renderer service.</value>
-        private IViewRendererService? ViewRendererService { get; }
+        private IViewRendererService? ViewRendererService { get; } = viewRendererService;
 
         /// <summary>
         /// Sends the message asynchronously.

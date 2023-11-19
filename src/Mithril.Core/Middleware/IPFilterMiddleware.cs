@@ -8,35 +8,28 @@ namespace Mithril.Core.Middleware
     /// <summary>
     /// IP Filter Middleware
     /// </summary>
-    public class IPFilterMiddleware
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="IPFilterMiddleware"/> class.
+    /// </remarks>
+    /// <param name="next">The next.</param>
+    /// <param name="iPFilterService">The i p filter service.</param>
+    /// <param name="logger">The logger.</param>
+    public class IPFilterMiddleware(RequestDelegate? next, IIPFilterService? iPFilterService, ILogger<IPFilterMiddleware>? logger)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IPFilterMiddleware"/> class.
-        /// </summary>
-        /// <param name="next">The next.</param>
-        /// <param name="iPFilterService">The i p filter service.</param>
-        /// <param name="logger">The logger.</param>
-        public IPFilterMiddleware(RequestDelegate? next, IIPFilterService? iPFilterService, ILogger<IPFilterMiddleware>? logger)
-        {
-            _next = next;
-            IPFilterService = iPFilterService;
-            Logger = logger;
-        }
-
         /// <summary>
         /// The next
         /// </summary>
-        private readonly RequestDelegate? _next;
+        private readonly RequestDelegate? _next = next;
 
         /// <summary>
         /// The ip filter service
         /// </summary>
-        private readonly IIPFilterService? IPFilterService;
+        private readonly IIPFilterService? IPFilterService = iPFilterService;
 
         /// <summary>
         /// The logger
         /// </summary>
-        private readonly ILogger<IPFilterMiddleware>? Logger;
+        private readonly ILogger<IPFilterMiddleware>? Logger = logger;
 
         /// <summary>
         /// Invokes the specified context.

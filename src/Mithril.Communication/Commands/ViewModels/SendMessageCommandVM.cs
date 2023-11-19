@@ -11,7 +11,7 @@ namespace Mithril.Communication.Commands.ViewModels
         /// Gets or sets the attachments.
         /// </summary>
         /// <value>The attachments.</value>
-        public List<AttachmentVM> Attachments { get; set; } = new List<AttachmentVM>();
+        public List<AttachmentVM> Attachments { get; set; } = [];
 
         /// <summary>
         /// Gets or sets the BCC.

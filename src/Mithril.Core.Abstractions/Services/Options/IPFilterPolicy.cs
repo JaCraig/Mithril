@@ -3,17 +3,12 @@
     /// <summary>
     /// IP Filter policy
     /// </summary>
-    public class IPFilterPolicy
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="IPFilterPolicy"/> class.
+    /// </remarks>
+    /// <param name="name">The name.</param>
+    public class IPFilterPolicy(string? name)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IPFilterPolicy"/> class.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        public IPFilterPolicy(string? name)
-        {
-            Name = name ?? "Default";
-        }
-
         /// <summary>
         /// Gets or sets the black list.
         /// </summary>
@@ -24,7 +19,7 @@
         /// Gets or sets the name.
         /// </summary>
         /// <value>The name.</value>
-        public string Name { get; }
+        public string Name { get; } = name ?? "Default";
 
         /// <summary>
         /// Gets or sets the white list.
@@ -63,7 +58,7 @@
         public IPFilterPolicy SetBlackList(string? blackList)
         {
             BlackList = blackList ?? "";
-            BlackListFilters = BlackList.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>();
+            BlackListFilters = BlackList.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? [];
             return this;
         }
 
@@ -75,7 +70,7 @@
         public IPFilterPolicy SetWhiteList(string? whiteList)
         {
             WhiteList = whiteList ?? "";
-            WhiteListFilters = WhiteList.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>();
+            WhiteListFilters = WhiteList.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? [];
             return this;
         }
     }

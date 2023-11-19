@@ -11,17 +11,13 @@ namespace Mithril.Communication.Commands
     /// Message sent default event handler (does nothing)
     /// </summary>
     /// <seealso cref="EventHandlerBaseClass&lt;MessageSentDefaultEventHandler, MessageSentEvent&gt;"/>
-    public class MessageSentDefaultEventHandler : EventHandlerBaseClass<MessageSentDefaultEventHandler, MessageSentEvent>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="MessageSentDefaultEventHandler"/> class.
+    /// </remarks>
+    /// <param name="logger"></param>
+    /// <param name="featureManager"></param>
+    public class MessageSentDefaultEventHandler(ILogger<MessageSentDefaultEventHandler>? logger, IFeatureManager? featureManager) : EventHandlerBaseClass<MessageSentDefaultEventHandler, MessageSentEvent>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MessageSentDefaultEventHandler"/> class.
-        /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="featureManager"></param>
-        public MessageSentDefaultEventHandler(ILogger<MessageSentDefaultEventHandler>? logger, IFeatureManager? featureManager) : base(logger, featureManager)
-        {
-        }
-
         /// <summary>
         /// Handles the specified argument.
         /// </summary>

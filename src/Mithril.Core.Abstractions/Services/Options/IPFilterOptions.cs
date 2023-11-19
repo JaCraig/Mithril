@@ -9,7 +9,7 @@
         /// Gets the policies.
         /// </summary>
         /// <value>The policies.</value>
-        private Dictionary<string, IPFilterPolicy> Policies { get; } = new Dictionary<string, IPFilterPolicy>();
+        private Dictionary<string, IPFilterPolicy> Policies { get; } = [];
 
         /// <summary>
         /// Adds the default policy.

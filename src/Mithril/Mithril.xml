@@ -9,11 +9,21 @@
             Home controller
             </summary>
             <seealso cref="T:Microsoft.AspNetCore.Mvc.Controller"/>
+            <remarks>
+            Initializes a new instance of the <see cref="T:Mithril.Controllers.HomeController"/> class.
+            </remarks>
+            <param name="logger">The logger.</param>
+            <param name="securityService">The security service.</param>
+            <param name="communicationService">The communication service.</param>
         </member>
         <member name="M:Mithril.Controllers.HomeController.#ctor(Microsoft.Extensions.Logging.ILogger{Mithril.Controllers.HomeController},Mithril.Security.Abstractions.Services.ISecurityService,Mithril.Communication.Abstractions.Services.ICommunicationService)">
             <summary>
-            Initializes a new instance of the <see cref="T:Mithril.Controllers.HomeController"/> class.
+            Home controller
             </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Controller"/>
+            <remarks>
+            Initializes a new instance of the <see cref="T:Mithril.Controllers.HomeController"/> class.
+            </remarks>
             <param name="logger">The logger.</param>
             <param name="securityService">The security service.</param>
             <param name="communicationService">The communication service.</param>
@@ -111,11 +121,20 @@
             Test query
             </summary>
             <seealso cref="T:Mithril.API.Abstractions.Query.BaseClasses.QueryBaseClass`1"/>
+            <remarks>
+            Initializes a new instance of the <see cref="T:Mithril.Models.TestQuery"/> class.
+            </remarks>
+            <param name="logger"></param>
+            <param name="featureManager"></param>
         </member>
         <member name="M:Mithril.Models.TestQuery.#ctor(Microsoft.Extensions.Logging.ILogger{Mithril.Models.TestQuery},Microsoft.FeatureManagement.IFeatureManager)">
             <summary>
-            Initializes a new instance of the <see cref="T:Mithril.Models.TestQuery"/> class.
+            Test query
             </summary>
+            <seealso cref="T:Mithril.API.Abstractions.Query.BaseClasses.QueryBaseClass`1"/>
+            <remarks>
+            Initializes a new instance of the <see cref="T:Mithril.Models.TestQuery"/> class.
+            </remarks>
             <param name="logger"></param>
             <param name="featureManager"></param>
         </member>

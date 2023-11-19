@@ -17,30 +17,22 @@ namespace Mithril.Themes.Commands
     /// Set theme command handler
     /// </summary>
     /// <seealso cref="CommandHandlerBaseClass&lt;SetThemeCommand, SetThemeCommandVM&gt;"/>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="SetThemeCommandHandler"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    /// <param name="dataService">Data service.</param>
+    /// <param name="themeService">Theme service.</param>
+    /// <param name="themes">Themes in the system.</param>
     [ApiIgnore]
-    public class SetThemeCommandHandler : CommandHandlerBaseClass<SetThemeCommand, SetThemeCommandVM>
+    public class SetThemeCommandHandler(
+        ILogger<SetThemeCommandHandler>? logger,
+        IFeatureManager? featureManager,
+        IDataService? dataService,
+        IThemeService? themeService,
+        IEnumerable<ITheme> themes) : CommandHandlerBaseClass<SetThemeCommand, SetThemeCommandVM>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SetThemeCommandHandler"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        /// <param name="dataService">Data service.</param>
-        /// <param name="themeService">Theme service.</param>
-        /// <param name="themes">Themes in the system.</param>
-        public SetThemeCommandHandler(
-            ILogger<SetThemeCommandHandler>? logger,
-            IFeatureManager? featureManager,
-            IDataService? dataService,
-            IThemeService? themeService,
-            IEnumerable<ITheme> themes)
-            : base(logger, featureManager)
-        {
-            ThemeService = themeService;
-            DataService = dataService;
-            Themes = (themes ?? Array.Empty<ITheme>()).ToDictionary(x => x.Name);
-        }
-
         /// <summary>
         /// Gets the command type accepted.
         /// </summary>
@@ -57,7 +49,7 @@ namespace Mithril.Themes.Commands
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Themes available.
@@ -65,13 +57,13 @@ namespace Mithril.Themes.Commands
         /// <value>
         /// The themes.
         /// </value>
-        private IDictionary<string, ITheme> Themes { get; }
+        private IDictionary<string, ITheme> Themes { get; } = (themes ?? Array.Empty<ITheme>()).ToDictionary(x => x.Name);
 
         /// <summary>
         /// Theme service
         /// </summary>
         /// <value>Theme service</value>
-        private IThemeService? ThemeService { get; }
+        private IThemeService? ThemeService { get; } = themeService;
 
         /// <summary>
         /// Creates the specified value.
@@ -94,7 +86,7 @@ namespace Mithril.Themes.Commands
         protected override async Task<IEvent[]> HandleCommandAsync(SetThemeCommand?[]? args)
         {
             if (args is null || Logger is null || ThemeService is null)
-                return Array.Empty<IEvent>();
+                return [];
             var ReturnValues = new List<IEvent>();
             for (var x = 0; x < args.Length; ++x)
             {

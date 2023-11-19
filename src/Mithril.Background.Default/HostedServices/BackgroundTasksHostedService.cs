@@ -8,26 +8,20 @@ namespace Mithril.Background.Default.HostedServices
     /// Background task hosted service
     /// </summary>
     /// <seealso cref="HostedServiceBaseClass&lt;BackgroundTasksHostedService&gt;" />
-    public class BackgroundTasksHostedService : HostedServiceBaseClass<BackgroundTasksHostedService>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="BackgroundTasksHostedService"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="backgroundTaskService">The background task service.</param>
+    public class BackgroundTasksHostedService(ILogger<BackgroundTasksHostedService>? logger, IBackgroundTaskService? backgroundTaskService) : HostedServiceBaseClass<BackgroundTasksHostedService>(logger, 1)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BackgroundTasksHostedService"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="backgroundTaskService">The background task service.</param>
-        public BackgroundTasksHostedService(ILogger<BackgroundTasksHostedService>? logger, IBackgroundTaskService? backgroundTaskService)
-            : base(logger, 1)
-        {
-            BackgroundTaskService = backgroundTaskService;
-        }
-
         /// <summary>
         /// Gets the background task service.
         /// </summary>
         /// <value>
         /// The background task service.
         /// </value>
-        private IBackgroundTaskService? BackgroundTaskService { get; }
+        private IBackgroundTaskService? BackgroundTaskService { get; } = backgroundTaskService;
 
         /// <summary>
         /// Called to run the service.

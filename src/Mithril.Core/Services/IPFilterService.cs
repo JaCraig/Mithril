@@ -10,30 +10,24 @@ namespace Mithril.Core.Services
     /// IP Filter service
     /// </summary>
     /// <seealso cref="IIPFilterService"/>
-    public class IPFilterService : IIPFilterService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="IPFilterService"/> class.
+    /// </remarks>
+    /// <param name="options">The options.</param>
+    /// <param name="logger">The logger.</param>
+    public class IPFilterService(IOptions<IPFilterOptions>? options, ILogger<IPFilterService>? logger) : IIPFilterService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IPFilterService"/> class.
-        /// </summary>
-        /// <param name="options">The options.</param>
-        /// <param name="logger">The logger.</param>
-        public IPFilterService(IOptions<IPFilterOptions>? options, ILogger<IPFilterService>? logger)
-        {
-            Options = options?.Value ?? new IPFilterOptions();
-            Logger = logger;
-        }
-
         /// <summary>
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        private ILogger<IPFilterService>? Logger { get; }
+        private ILogger<IPFilterService>? Logger { get; } = logger;
 
         /// <summary>
         /// Gets the options.
         /// </summary>
         /// <value>The options.</value>
-        private IPFilterOptions Options { get; }
+        private IPFilterOptions Options { get; } = options?.Value ?? new IPFilterOptions();
 
         /// <summary>
         /// Checks if the ip associated with the request is allowed.

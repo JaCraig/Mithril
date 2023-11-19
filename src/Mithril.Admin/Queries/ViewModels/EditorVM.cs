@@ -45,7 +45,7 @@ namespace Mithril.Admin.Queries.ViewModels
         /// <value>
         /// The data model.
         /// </value>
-        public Dictionary<string, string> DataModel { get; } = new Dictionary<string, string>();
+        public Dictionary<string, string> DataModel { get; } = [];
 
         /// <summary>
         /// Gets the description.

@@ -11,19 +11,14 @@ namespace Mithril.Admin.Queries
     /// <summary>
     /// Editor listing query
     /// </summary>
-    public class EditorListingQuery : QueryBaseClass<IEnumerable<EditorVM>>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="EditorListingQuery"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    /// <param name="editorService">The editor service.</param>
+    public class EditorListingQuery(ILogger<EditorListingQuery>? logger, IFeatureManager? featureManager, IEditorService? editorService) : QueryBaseClass<IEnumerable<EditorVM>>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EditorListingQuery"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        /// <param name="editorService">The editor service.</param>
-        public EditorListingQuery(ILogger<EditorListingQuery>? logger, IFeatureManager? featureManager, IEditorService? editorService) : base(logger, featureManager)
-        {
-            EditorService = editorService;
-        }
-
         /// <summary>
         /// Gets the name.
         /// </summary>
@@ -38,7 +33,7 @@ namespace Mithril.Admin.Queries
         /// <value>
         /// The editor service.
         /// </value>
-        private IEditorService? EditorService { get; }
+        private IEditorService? EditorService { get; } = editorService;
 
         /// <summary>
         /// Used to resolve the data asked for by the query.

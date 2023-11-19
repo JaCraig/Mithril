@@ -12,26 +12,20 @@ namespace Mithril.Navigation.Services
     /// Menu service
     /// </summary>
     /// <seealso cref="IMenuService" />
-    public class MenuService : IMenuService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="MenuService" /> class.
+    /// </remarks>
+    /// <param name="featureManager">The feature manager.</param>
+    /// <param name="dataService">The data service.</param>
+    public class MenuService(IFeatureManager? featureManager, IDataService? dataService) : IMenuService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MenuService" /> class.
-        /// </summary>
-        /// <param name="featureManager">The feature manager.</param>
-        /// <param name="dataService">The data service.</param>
-        public MenuService(IFeatureManager? featureManager, IDataService? dataService)
-        {
-            FeatureManager = featureManager;
-            DataService = dataService;
-        }
-
         /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>
         /// The data service.
         /// </value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Gets the feature manager.
@@ -39,7 +33,7 @@ namespace Mithril.Navigation.Services
         /// <value>
         /// The feature manager.
         /// </value>
-        private IFeatureManager? FeatureManager { get; }
+        private IFeatureManager? FeatureManager { get; } = featureManager;
 
         /// <summary>
         /// Creates a menu builder.

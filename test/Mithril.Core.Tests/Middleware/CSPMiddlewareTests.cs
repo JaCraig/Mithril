@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using Mithril.Core.Abstractions.Configuration;
 using Mithril.Core.Middleware;
 using Mithril.Tests.Helpers;
+using Xunit;
 
 namespace Mithril.Core.Tests.Middleware
 {
@@ -28,7 +29,7 @@ namespace Mithril.Core.Tests.Middleware
         public async Task InvokeAsync_Should_Add_Content_Security_Policy_Header()
         {
             var Middleware = new CSPMiddleware(
-                next: (_) => Task.FromResult(0),
+                next: (_) => Task.CompletedTask,
                 configuration: Options.Create(new MithrilConfig
                 {
                     Security = new Security
@@ -40,8 +41,8 @@ namespace Mithril.Core.Tests.Middleware
 
             await Middleware.InvokeAsync(HttpContext);
 
-            Assert.False(string.IsNullOrEmpty(HttpContext.Response.Headers["Content-Security-Policy"]));
-            Assert.Equal("script-src 'self'; object-src 'none'; base-uri 'self'; report-uri /api/Command/CSPLog", HttpContext.Response.Headers["Content-Security-Policy"]);
+            Assert.False(string.IsNullOrEmpty(HttpContext.Response.Headers.ContentSecurityPolicy));
+            Assert.Equal("script-src 'self'; object-src 'none'; base-uri 'self'; report-uri /api/Command/CSPLog", HttpContext.Response.Headers.ContentSecurityPolicy);
         }
     }
 }

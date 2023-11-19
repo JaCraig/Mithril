@@ -154,7 +154,7 @@ namespace Mithril.Data.Abstractions.BaseClasses
         /// </summary>
         /// <param name="typeNames">Type name</param>
         /// <returns>True if it is, false otherwise</returns>
-        public bool OfType(params string?[]? typeNames) => !string.IsNullOrEmpty(Type) && typeNames is not null && typeNames.Contains(Type);
+        public bool OfType(params string?[]? typeNames) => !string.IsNullOrEmpty(Type) && typeNames?.Contains(Type) == true;
 
         /// <summary>
         /// Determines if the object is of a specific type

@@ -9,54 +9,45 @@ namespace Mithril.Themes.Resources
     /// </summary>
     /// <seealso cref="IEquatable{StyleResource}"/>
     /// <seealso cref="IResource"/>
-    public class StyleResource : IResource, IEquatable<StyleResource>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="StyleResource"/> class.
+    /// </remarks>
+    /// <param name="content">The content.</param>
+    /// <param name="media">The media.</param>
+    /// <param name="type">The type.</param>
+    /// <param name="order">The order.</param>
+    /// <param name="location">The location.</param>
+    public class StyleResource(string? content, string? media, string? type, int order, string? location) : IResource, IEquatable<StyleResource>
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StyleResource"/> class.
-        /// </summary>
-        /// <param name="content">The content.</param>
-        /// <param name="media">The media.</param>
-        /// <param name="type">The type.</param>
-        /// <param name="order">The order.</param>
-        /// <param name="location">The location.</param>
-        public StyleResource(string? content, string? media, string? type, int order, string? location)
-        {
-            Content = content ?? "";
-            Order = order;
-            Media = media;
-            Type = type;
-            Location = string.IsNullOrEmpty(location) ? "Header" : location;
-        }
-
         /// <summary>
         /// Gets or sets the source.
         /// </summary>
         /// <value>The source.</value>
-        public string Content { get; set; }
+        public string Content { get; set; } = content ?? "";
 
         /// <summary>
         /// Gets the location.
         /// </summary>
         /// <value>The location.</value>
-        public string? Location { get; }
+        public string? Location { get; } = string.IsNullOrEmpty(location) ? "Header" : location;
 
         /// <summary>
         /// Gets or sets the media.
         /// </summary>
         /// <value>The media.</value>
-        public string? Media { get; set; }
+        public string? Media { get; set; } = media;
 
         /// <summary>
         /// Gets the order.
         /// </summary>
         /// <value>The order.</value>
-        public int Order { get; set; }
+        public int Order { get; set; } = order;
 
         /// <summary>
         /// Gets or sets the type.
         /// </summary>
         /// <value>The type.</value>
-        public string? Type { get; set; }
+        public string? Type { get; set; } = type;
 
         /// <summary>
         /// Implements the operator !=.

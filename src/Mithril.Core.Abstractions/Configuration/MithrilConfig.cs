@@ -27,7 +27,7 @@
         /// Gets or sets the file mappings.
         /// </summary>
         /// <value>The file mappings.</value>
-        public List<Mime>? MimeTypes { get; set; } = new List<Mime>();
+        public List<Mime>? MimeTypes { get; set; } = [];
 
         /// <summary>
         /// Gets or sets the security.

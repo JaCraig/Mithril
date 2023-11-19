@@ -20,6 +20,6 @@ namespace Mithril.Features.Queries
         /// Gets the features.
         /// </summary>
         /// <value>The features.</value>
-        public List<FeatureVM> Features { get; } = new List<FeatureVM>();
+        public List<FeatureVM> Features { get; } = [];
     }
 }

@@ -11,20 +11,15 @@ namespace Mithril.Navigation.Admin
     /// Menu editor
     /// </summary>
     /// <seealso cref="EntityEditorBaseClass&lt;MenuVM, Menu&gt;" />
-    public class MenuEditor : EntityEditorBaseClass<MenuVM, Menu>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="MenuEditor" /> class.
+    /// </remarks>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="entityMetadataService">The entity metadata service.</param>
+    /// <param name="serviceProvider">The service provider.</param>
+    /// <param name="dataType">Type of the data.</param>
+    public class MenuEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null) : EntityEditorBaseClass<MenuVM, Menu>(dataService, entityMetadataService, serviceProvider, dataType)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MenuEditor" /> class.
-        /// </summary>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="entityMetadataService">The entity metadata service.</param>
-        /// <param name="serviceProvider">The service provider.</param>
-        /// <param name="dataType">Type of the data.</param>
-        public MenuEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
-            : base(dataService, entityMetadataService, serviceProvider, dataType)
-        {
-        }
-
         /// <summary>
         /// Gets the icon.
         /// </summary>

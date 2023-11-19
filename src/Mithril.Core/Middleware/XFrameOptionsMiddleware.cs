@@ -7,29 +7,23 @@ namespace Mithril.Core.Middleware
     /// <summary>
     /// X-Frame-Options Middleware
     /// </summary>
-    public class XFrameOptionsMiddleware
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="XFrameOptionsMiddleware"/> class.
+    /// </remarks>
+    /// <param name="next">The next.</param>
+    /// <param name="configuration">The configuration.</param>
+    public class XFrameOptionsMiddleware(RequestDelegate? next, IOptions<MithrilConfig>? configuration)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="XFrameOptionsMiddleware"/> class.
-        /// </summary>
-        /// <param name="next">The next.</param>
-        /// <param name="configuration">The configuration.</param>
-        public XFrameOptionsMiddleware(RequestDelegate? next, IOptions<MithrilConfig>? configuration)
-        {
-            _next = next;
-            Options = configuration?.Value?.Security?.XFrameOptions ?? "deny";
-        }
-
         /// <summary>
         /// Gets or sets the options.
         /// </summary>
         /// <value>The options.</value>
-        private string? Options { get; }
+        private string? Options { get; } = configuration?.Value?.Security?.XFrameOptions ?? "deny";
 
         /// <summary>
         /// The next
         /// </summary>
-        private readonly RequestDelegate? _next;
+        private readonly RequestDelegate? _next = next;
 
         /// <summary>
         /// Invokes the specified context.
@@ -40,7 +34,7 @@ namespace Mithril.Core.Middleware
         {
             if (context is null)
                 return Task.CompletedTask;
-            context.Response.Headers.Add("X-Frame-Options", Options);
+            context.Response.Headers.Append("X-Frame-Options", Options);
             return _next?.Invoke(context) ?? Task.CompletedTask;
         }
     }

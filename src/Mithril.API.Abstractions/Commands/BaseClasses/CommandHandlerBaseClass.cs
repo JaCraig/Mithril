@@ -37,19 +37,19 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// Gets the content type accepted by command handler.
         /// </summary>
         /// <value>The content type accepted by command handler.</value>
-        public virtual string[] ContentTypeAccepts { get; } = new string[] { "application/json", "text/json", "application/*+json" };
+        public virtual string[] ContentTypeAccepts { get; } = ["application/json", "text/json", "application/*+json"];
 
         /// <summary>
         /// Gets the features associated with this command.
         /// </summary>
         /// <value>The features associated with this command.</value>
-        public virtual IFeature[] Features { get; } = Array.Empty<IFeature>();
+        public virtual IFeature[] Features { get; } = [];
 
         /// <summary>
         /// Gets the tags (Used by OpenAPI, etc).
         /// </summary>
         /// <value>The tags (Used by OpenAPI, etc).</value>
-        public virtual string[] Tags { get; } = Array.Empty<string>();
+        public virtual string[] Tags { get; } = [];
 
         /// <summary>
         /// Gets the version.
@@ -99,7 +99,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// <returns>Any events that are spawned by the command.</returns>
         public Task<IEvent[]> HandleCommandAsync(params ICommand[] arg)
         {
-            arg ??= Array.Empty<ICommand>();
+            arg ??= [];
             TCommand[] Items = arg.Where(CanHandle).OfType<TCommand>().ToArray();
             return Items.Length == 0
                 ? Task.FromResult(Array.Empty<IEvent>())

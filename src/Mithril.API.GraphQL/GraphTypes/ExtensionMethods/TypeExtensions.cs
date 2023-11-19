@@ -105,7 +105,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         public static MethodInfo[] GetMappableMethods(this Type classType)
         {
             if (classType is null)
-                return Array.Empty<MethodInfo>();
+                return [];
             var Methods = new List<MethodInfo>();
             Methods.AddRange(classType.GetMethods(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public));
             foreach (MethodInfo? Method in classType.GetInterfaces().SelectMany(Interface => Interface.GetMethods(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public)))
@@ -136,7 +136,7 @@ namespace Mithril.API.GraphQL.GraphTypes.ExtensionMethods
         public static PropertyInfo[] GetMappableProperties(this Type classType)
         {
             if (classType is null)
-                return Array.Empty<PropertyInfo>();
+                return [];
             var Properties = new List<PropertyInfo>();
             Properties.AddRange(classType.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead));
             foreach (PropertyInfo? Property in classType.GetInterfaces().SelectMany(Interface => Interface.GetProperties(BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.Public).Where(x => x.CanRead)))

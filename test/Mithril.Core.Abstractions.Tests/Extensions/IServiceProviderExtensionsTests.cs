@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Mithril.Core.Abstractions.Extensions;
 using Mithril.Tests.Helpers;
+using Xunit;
 
 namespace Mithril.Core.Abstractions.Tests.Extensions
 {

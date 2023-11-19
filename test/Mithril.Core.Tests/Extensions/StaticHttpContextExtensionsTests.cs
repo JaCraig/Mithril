@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Mithril.Core.Extensions;
 using Mithril.Tests.Helpers;
+using Xunit;
 
 namespace Mithril.Core.Tests.Extensions
 {

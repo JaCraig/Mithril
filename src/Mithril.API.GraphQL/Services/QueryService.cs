@@ -7,22 +7,17 @@ namespace Mithril.API.GraphQL.Services
     /// Query service
     /// </summary>
     /// <seealso cref="IQueryService"/>
-    public class QueryService : IQueryService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="QueryService"/> class.
+    /// </remarks>
+    /// <param name="queries">The queries.</param>
+    public class QueryService(IEnumerable<IQuery> queries) : IQueryService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QueryService"/> class.
-        /// </summary>
-        /// <param name="queries">The queries.</param>
-        public QueryService(IEnumerable<IQuery> queries)
-        {
-            Queries = queries.ToDictionary(x => x.Name);
-        }
-
         /// <summary>
         /// Gets the queries.
         /// </summary>
         /// <value>The queries.</value>
-        private Dictionary<string, IQuery> Queries { get; }
+        private Dictionary<string, IQuery> Queries { get; } = queries.ToDictionary(x => x.Name);
 
         /// <summary>
         /// Finds the query specified.

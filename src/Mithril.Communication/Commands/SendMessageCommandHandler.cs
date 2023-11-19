@@ -25,34 +25,24 @@ namespace Mithril.Communication.Commands
     /// Send message command handler
     /// </summary>
     /// <seealso cref="CommandHandlerBaseClass&lt;SendMessageCommand, SendMessageCommandVM&gt;"/>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="SendMessageCommandHandler"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    /// <param name="communicationService">The communication service.</param>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="mithrilConfig">The mithril configuration.</param>
+    /// <param name="channels">The channels.</param>
     [ApiIgnore]
-    public class SendMessageCommandHandler : CommandHandlerBaseClass<SendMessageCommand, SendMessageCommandVM>
+    public class SendMessageCommandHandler(
+        ILogger<SendMessageCommandHandler>? logger,
+        IFeatureManager? featureManager,
+        ICommunicationService? communicationService,
+        IDataService? dataService,
+        IOptions<MithrilConfig>? mithrilConfig,
+        IEnumerable<IChannel> channels) : CommandHandlerBaseClass<SendMessageCommand, SendMessageCommandVM>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SendMessageCommandHandler"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        /// <param name="communicationService">The communication service.</param>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="mithrilConfig">The mithril configuration.</param>
-        /// <param name="channels">The channels.</param>
-        public SendMessageCommandHandler(
-            ILogger<SendMessageCommandHandler>? logger,
-            IFeatureManager? featureManager,
-            ICommunicationService? communicationService,
-            IDataService? dataService,
-            IOptions<MithrilConfig>? mithrilConfig,
-            IEnumerable<IChannel> channels)
-            : base(logger, featureManager)
-        {
-            DataService = dataService;
-            Channels = channels;
-            CommunicationService = communicationService;
-            MithrilConfig = mithrilConfig?.Value;
-            HashAlgorithm = SHA256.Create();
-        }
-
         /// <summary>
         /// Gets the command type accepted.
         /// </summary>
@@ -69,31 +59,31 @@ namespace Mithril.Communication.Commands
         /// Gets the channels.
         /// </summary>
         /// <value>The channels.</value>
-        private IEnumerable<IChannel> Channels { get; }
+        private IEnumerable<IChannel> Channels { get; } = channels;
 
         /// <summary>
         /// Gets the communication service.
         /// </summary>
         /// <value>The communication service.</value>
-        private ICommunicationService? CommunicationService { get; }
+        private ICommunicationService? CommunicationService { get; } = communicationService;
 
         /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Gets the hash algorithm.
         /// </summary>
         /// <value>The hash algorithm.</value>
-        private HashAlgorithm? HashAlgorithm { get; }
+        private HashAlgorithm? HashAlgorithm { get; } = SHA256.Create();
 
         /// <summary>
         /// Gets the mithril configuration.
         /// </summary>
         /// <value>The mithril configuration.</value>
-        private MithrilConfig? MithrilConfig { get; }
+        private MithrilConfig? MithrilConfig { get; } = mithrilConfig?.Value;
 
         /// <summary>
         /// Creates the specified value.
@@ -110,7 +100,7 @@ namespace Mithril.Communication.Commands
                 return new CommandCreationResult(null);
             Message.BCC = value.BCC;
             Message.Application = MithrilConfig?.ApplicationName ?? Assembly.GetEntryAssembly()?.GetName().Name;
-            Message.Attachments = value.Attachments?.Select(ConvertAttachment).Where(x => x is not null).ToList() ?? new List<Attachment?>();
+            Message.Attachments = value.Attachments?.Select(ConvertAttachment).Where(x => x is not null).ToList() ?? [];
             Message.Body = value.Body;
             Message.CC = value.CC;
             Message.From = value.From;
@@ -129,7 +119,7 @@ namespace Mithril.Communication.Commands
         protected override async Task<IEvent[]> HandleCommandAsync(SendMessageCommand?[]? args)
         {
             if (args is null || Logger is null)
-                return Array.Empty<IEvent>();
+                return [];
             var ReturnValues = new List<IEvent>();
             for (var x = 0; x < args.Length; ++x)
             {

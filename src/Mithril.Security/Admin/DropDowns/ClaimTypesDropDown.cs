@@ -11,17 +11,12 @@ namespace Mithril.Security.Admin.DropDowns
     /// Claim Types Drop Down
     /// </summary>
     /// <seealso cref="IDropDownQuery" />
-    public class ClaimTypesDropDown : IDropDownQuery
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="ClaimTypesDropDown"/> class.
+    /// </remarks>
+    /// <param name="sQLHelper">The s ql helper.</param>
+    public class ClaimTypesDropDown(SQLHelper? sQLHelper) : IDropDownQuery
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ClaimTypesDropDown"/> class.
-        /// </summary>
-        /// <param name="sQLHelper">The s ql helper.</param>
-        public ClaimTypesDropDown(SQLHelper? sQLHelper)
-        {
-            Helper = sQLHelper;
-        }
-
         /// <summary>
         /// Gets the name.
         /// </summary>
@@ -36,7 +31,7 @@ namespace Mithril.Security.Admin.DropDowns
         /// <value>
         /// The helper.
         /// </value>
-        private SQLHelper? Helper { get; }
+        private SQLHelper? Helper { get; } = sQLHelper;
 
         /// <summary>
         /// Determines whether this instance can run the specified data type.

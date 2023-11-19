@@ -6,6 +6,7 @@ using Mithril.Core.Services;
 using Mithril.Tests.Helpers;
 using NSubstitute;
 using System.Net;
+using Xunit;
 
 namespace Mithril.Core.Tests.Services
 {

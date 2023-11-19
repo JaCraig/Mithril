@@ -4,13 +4,14 @@ using Mithril.Admin.Services;
 using Mithril.Admin.Services.MetadataBuilders;
 using Mithril.Tests.Helpers;
 using System.ComponentModel.DataAnnotations;
+using Xunit;
 
 namespace Mithril.Admin.Tests.Services.MetadataBuilders
 {
     /// <summary>
     /// Has min tests
     /// </summary>
-    /// <seealso cref="TestBaseClass&lt;HasMin&gt;" />
+    /// <seealso cref="TestBaseClass&lt;HasMin&gt;"/>
     public class HasMinTests : TestBaseClass<HasMin>
     {
         /// <summary>
@@ -29,7 +30,7 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
         {
             var TestObject = new HasMin();
             var TestProperty = new PropertyMetadata(typeof(TestClass).GetProperty(nameof(TestClass.TestIgnoreProperty)));
-            var Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
+            PropertyMetadata? Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
 
             Assert.False(Result?.Metadata.ContainsKey("min"));
         }
@@ -42,7 +43,7 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
         {
             var TestObject = new HasMin();
             var TestProperty = new PropertyMetadata(typeof(TestClass).GetProperty(nameof(TestClass.TestNullableIgnoreProperty)));
-            var Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
+            PropertyMetadata? Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
 
             Assert.False(Result?.Metadata.ContainsKey("min"));
         }
@@ -55,7 +56,7 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
         {
             var TestObject = new HasMin();
             var TestProperty = new PropertyMetadata(typeof(TestClass).GetProperty(nameof(TestClass.TestNullableProperty)));
-            var Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
+            PropertyMetadata? Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
 
             Assert.True(Result?.Metadata.ContainsKey("min"));
         }
@@ -68,7 +69,7 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
         {
             var TestObject = new HasMin();
             var TestProperty = new PropertyMetadata(typeof(TestClass).GetProperty(nameof(TestClass.TestProperty)));
-            var Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
+            PropertyMetadata? Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
 
             Assert.True(Result?.Metadata.ContainsKey("min"));
         }
@@ -81,7 +82,7 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
         {
             var TestObject = new HasMin();
             var TestProperty = new PropertyMetadata(typeof(TestClass).GetProperty(nameof(TestClass.TestProperty)));
-            var Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
+            PropertyMetadata? Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
 
             Assert.Equal(10m, Result?.Metadata["min"]);
         }
@@ -94,34 +95,26 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
             /// <summary>
             /// Gets or sets the test ignore property.
             /// </summary>
-            /// <value>
-            /// The test ignore property.
-            /// </value>
+            /// <value>The test ignore property.</value>
             public int TestIgnoreProperty { get; set; }
 
             /// <summary>
             /// Gets or sets the test nullable ignore property.
             /// </summary>
-            /// <value>
-            /// The test nullable ignore property.
-            /// </value>
+            /// <value>The test nullable ignore property.</value>
             public int? TestNullableIgnoreProperty { get; set; }
 
             /// <summary>
             /// Gets or sets the test nullable property.
             /// </summary>
-            /// <value>
-            /// The test nullable property.
-            /// </value>
+            /// <value>The test nullable property.</value>
             [Range(10, 100)]
             public int? TestNullableProperty { get; set; }
 
             /// <summary>
             /// Gets or sets the test property.
             /// </summary>
-            /// <value>
-            /// The test property.
-            /// </value>
+            /// <value>The test property.</value>
             [Range(10, 100)]
             public int TestProperty { get; set; }
         }

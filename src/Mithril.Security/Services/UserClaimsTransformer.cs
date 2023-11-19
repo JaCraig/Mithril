@@ -13,22 +13,17 @@ namespace Mithril.Security.Services
     /// built into ASP.Net Core instead of our own)
     /// </summary>
     /// <seealso cref="IClaimsTransformation"/>
-    public class UserClaimsTransformer : IClaimsTransformation
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="UserClaimsTransformer"/> class.
+    /// </remarks>
+    /// <param name="dataService">The data service.</param>
+    public class UserClaimsTransformer(IDataService? dataService) : IClaimsTransformation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserClaimsTransformer"/> class.
-        /// </summary>
-        /// <param name="dataService">The data service.</param>
-        public UserClaimsTransformer(IDataService? dataService)
-        {
-            DataService = dataService;
-        }
-
         /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Provides a central transformation point to change the specified principal.

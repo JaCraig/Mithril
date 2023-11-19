@@ -9,46 +9,35 @@ namespace Mithril.Themes.Resources
     /// </summary>
     /// <seealso cref="IResource"/>
     /// <seealso cref="IEquatable{MetaResource}"/>
-    public class MetaResource : IResource, IEquatable<MetaResource>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="MetaResource"/> class.
+    /// </remarks>
+    /// <param name="name">The name.</param>
+    /// <param name="scheme">The schema.</param>
+    /// <param name="httpEquiv">The HTTP equiv.</param>
+    /// <param name="content">The content.</param>
+    /// <param name="charset">The charset.</param>
+    /// <param name="property">The property.</param>
+    /// <param name="order">The order.</param>
+    public class MetaResource(string? name, string? scheme, string? httpEquiv, string? content, string? charset, string? property, int order) : IResource, IEquatable<MetaResource>
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MetaResource"/> class.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        /// <param name="scheme">The schema.</param>
-        /// <param name="httpEquiv">The HTTP equiv.</param>
-        /// <param name="content">The content.</param>
-        /// <param name="charset">The charset.</param>
-        /// <param name="property">The property.</param>
-        /// <param name="order">The order.</param>
-        public MetaResource(string? name, string? scheme, string? httpEquiv, string? content, string? charset, string? property, int order)
-        {
-            Name = name;
-            Scheme = scheme;
-            HttpEquiv = httpEquiv;
-            Content = content;
-            Charset = charset;
-            Order = order;
-            Property = property;
-        }
-
         /// <summary>
         /// Gets the charset.
         /// </summary>
         /// <value>The charset.</value>
-        public string? Charset { get; }
+        public string? Charset { get; } = charset;
 
         /// <summary>
         /// Gets the content.
         /// </summary>
         /// <value>The content.</value>
-        public string? Content { get; }
+        public string? Content { get; } = content;
 
         /// <summary>
         /// Gets the HTTP equiv.
         /// </summary>
         /// <value>The HTTP equiv.</value>
-        public string? HttpEquiv { get; }
+        public string? HttpEquiv { get; } = httpEquiv;
 
         /// <summary>
         /// Gets the location.
@@ -60,25 +49,25 @@ namespace Mithril.Themes.Resources
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public string? Name { get; }
+        public string? Name { get; } = name;
 
         /// <summary>
         /// Gets the order.
         /// </summary>
         /// <value>The order.</value>
-        public int Order { get; set; }
+        public int Order { get; set; } = order;
 
         /// <summary>
         /// Gets the property.
         /// </summary>
         /// <value>The property.</value>
-        public string? Property { get; }
+        public string? Property { get; } = property;
 
         /// <summary>
         /// Gets the schema.
         /// </summary>
         /// <value>The schema.</value>
-        public string? Scheme { get; }
+        public string? Scheme { get; } = scheme;
 
         /// <summary>
         /// Implements the operator !=.

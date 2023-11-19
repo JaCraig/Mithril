@@ -16,59 +16,50 @@ namespace Mithril.API.Commands.Services
     /// Event service
     /// </summary>
     /// <seealso cref="IEventService"/>
-    public class EventService : IEventService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="EventService"/> class.
+    /// </remarks>
+    /// <param name="eventHandlers">The event handlers.</param>
+    /// <param name="logger">The logger.</param>
+    /// <param name="configuration">The configuration.</param>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="securityService">The security service.</param>
+    public class EventService(
+        IEnumerable<IEventHandler> eventHandlers,
+        ILogger<EventService>? logger,
+        IOptions<APIOptions>? configuration,
+        IDataService? dataService,
+        ISecurityService? securityService) : IEventService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EventService"/> class.
-        /// </summary>
-        /// <param name="eventHandlers">The event handlers.</param>
-        /// <param name="logger">The logger.</param>
-        /// <param name="configuration">The configuration.</param>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="securityService">The security service.</param>
-        public EventService(
-            IEnumerable<IEventHandler> eventHandlers,
-            ILogger<EventService>? logger,
-            IOptions<APIOptions>? configuration,
-            IDataService? dataService,
-            ISecurityService? securityService)
-        {
-            EventHandlers = eventHandlers ?? Array.Empty<IEventHandler>();
-            Logger = logger;
-            DataService = dataService;
-            SecurityService = securityService;
-            Configuration = configuration?.Value;
-        }
-
         /// <summary>
         /// Gets the configuration.
         /// </summary>
         /// <value>The configuration.</value>
-        private APIOptions? Configuration { get; }
+        private APIOptions? Configuration { get; } = configuration?.Value;
 
         /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Gets the event handlers.
         /// </summary>
         /// <value>The event handlers.</value>
-        private IEnumerable<IEventHandler> EventHandlers { get; }
+        private IEnumerable<IEventHandler> EventHandlers { get; } = eventHandlers ?? Array.Empty<IEventHandler>();
 
         /// <summary>
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        private ILogger<EventService>? Logger { get; }
+        private ILogger<EventService>? Logger { get; } = logger;
 
         /// <summary>
         /// Gets the security service.
         /// </summary>
         /// <value>The security service.</value>
-        private ISecurityService? SecurityService { get; }
+        private ISecurityService? SecurityService { get; } = securityService;
 
         /// <summary>
         /// Gets the stopwatch.
@@ -159,7 +150,7 @@ namespace Mithril.API.Commands.Services
             .Take(batchSize)
             .ToList()
             .Where(x => x.CanRun())
-            .ToArray() ?? Array.Empty<IEvent>();
+            .ToArray() ?? [];
 
         /// <summary>
         /// Logs the event exceptions.

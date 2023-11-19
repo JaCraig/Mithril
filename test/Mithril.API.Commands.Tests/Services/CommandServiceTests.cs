@@ -24,12 +24,8 @@ namespace Mithril.API.Commands.Tests.Services
         { }
     }
 
-    internal class TestCommandHandler : CommandHandlerBaseClass<TestCommand, TestCommandVM>
+    internal class TestCommandHandler(ILogger? logger, IFeatureManager? featureManager) : CommandHandlerBaseClass<TestCommand, TestCommandVM>(logger, featureManager)
     {
-        public TestCommandHandler(ILogger? logger, IFeatureManager? featureManager) : base(logger, featureManager)
-        {
-        }
-
         public override ValueTask<CommandCreationResult?> CreateAsync(TestCommandVM? value, ClaimsPrincipal user) => ValueTask.FromResult<CommandCreationResult?>(new CommandCreationResult(new TestCommand()));
 
         protected override Task<IEvent[]> HandleCommandAsync(TestCommand?[]? args) => Task.FromResult(Array.Empty<IEvent>());

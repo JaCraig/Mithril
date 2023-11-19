@@ -35,7 +35,7 @@ namespace Mithril.Apm.Abstractions.BaseClasses
         /// Gets the observers.
         /// </summary>
         /// <value>The observers.</value>
-        private List<IObserver<MetricsEntry>> Observers { get; } = new List<IObserver<MetricsEntry>>();
+        private List<IObserver<MetricsEntry>> Observers { get; } = [];
 
         /// <summary>
         /// The disposed value

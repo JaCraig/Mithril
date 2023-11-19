@@ -49,7 +49,7 @@ namespace Mithril.Admin.Abstractions.DataEditor
         /// Gets the properties.
         /// </summary>
         /// <value>The properties.</value>
-        public PropertyMetadata[] Properties { get; } = Array.Empty<PropertyMetadata>();
+        public PropertyMetadata[] Properties { get; } = [];
 
         /// <summary>
         /// Filters the properties based on the JSON ignore attribute.
@@ -79,7 +79,7 @@ namespace Mithril.Admin.Abstractions.DataEditor
         private static PropertyInfo[] OrderProperties(PropertyInfo[] properties)
         {
             return properties is null
-                ? Array.Empty<PropertyInfo>()
+                ? []
                 : properties.OrderBy(x => x.GetCustomAttribute<OrderAttribute>()?.Order ?? (int.MaxValue / 2)).ThenBy(x => x.Name).ToArray();
         }
 

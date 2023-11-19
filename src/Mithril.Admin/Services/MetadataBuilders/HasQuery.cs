@@ -12,24 +12,19 @@ namespace Mithril.Admin.Services.MetadataBuilders
     /// Determines if the property has a query value.
     /// </summary>
     /// <seealso cref="MetadataBuilderBaseClass" />
-    public class HasQuery : MetadataBuilderBaseClass
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="HasQuery" /> class.
+    /// </remarks>
+    /// <param name="dropDownQueries">The drop down queries.</param>
+    public class HasQuery(IEnumerable<IDropDownQuery> dropDownQueries) : MetadataBuilderBaseClass
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HasQuery" /> class.
-        /// </summary>
-        /// <param name="dropDownQueries">The drop down queries.</param>
-        public HasQuery(IEnumerable<IDropDownQuery> dropDownQueries)
-        {
-            DropDownQueries = dropDownQueries.ToDictionary(x => x.GetType());
-        }
-
         /// <summary>
         /// Gets the drop down queries.
         /// </summary>
         /// <value>
         /// The drop down queries.
         /// </value>
-        private Dictionary<Type, IDropDownQuery> DropDownQueries { get; }
+        private Dictionary<Type, IDropDownQuery> DropDownQueries { get; } = dropDownQueries.ToDictionary(x => x.GetType());
 
         /// <summary>
         /// Extracts metadata and adds it to the PropertyMetadata object.

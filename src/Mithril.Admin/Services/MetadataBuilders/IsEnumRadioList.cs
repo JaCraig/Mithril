@@ -38,7 +38,7 @@ namespace Mithril.Admin.Services.MetadataBuilders
         private static List<Option> GenerateOptions(PropertyInfo? property)
         {
             if (property is null)
-                return new List<Option>();
+                return [];
             var ReturnValues = new List<Option>();
             foreach (var Item in property.PropertyType.GetEnumValues())
             {

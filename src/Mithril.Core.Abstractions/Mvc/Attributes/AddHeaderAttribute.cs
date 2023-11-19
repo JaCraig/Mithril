@@ -27,7 +27,7 @@ namespace Mithril.Core.Abstractions.Mvc.Attributes
         public AddHeaderAttribute(string key, string value)
         {
             Key = key;
-            Values = new string[] { value };
+            Values = [value];
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Mithril.Core.Abstractions.Mvc.Attributes
             if (Headers.ContainsKey(Key))
                 Headers[Key] = Values;
             else
-                Headers.Add(Key, Values);
+                Headers.Append(Key, Values);
         }
     }
 }

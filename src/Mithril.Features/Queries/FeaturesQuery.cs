@@ -12,26 +12,20 @@ namespace Mithril.Features.Queries
     /// <summary>
     /// Features query
     /// </summary>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="FeaturesQuery"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    /// <param name="dataService">The data service.</param>
     [ApiAuthorize("Admin Only")]
-    public class FeaturesQuery : QueryBaseClass<IEnumerable<FeatureVM>>
+    public class FeaturesQuery(ILogger<FeaturesQuery>? logger, IFeatureManager? featureManager, IDataService? dataService) : QueryBaseClass<IEnumerable<FeatureVM>>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FeaturesQuery"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        /// <param name="dataService">The data service.</param>
-        public FeaturesQuery(ILogger<FeaturesQuery>? logger, IFeatureManager? featureManager, IDataService? dataService)
-            : base(logger, featureManager)
-        {
-            DataService = dataService;
-        }
-
         /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        public IDataService? DataService { get; }
+        public IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Gets the name.

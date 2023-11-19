@@ -36,7 +36,7 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// Gets the arguments.
         /// </summary>
         /// <value>The arguments.</value>
-        public virtual IArgument[] Arguments { get; } = Array.Empty<IArgument>();
+        public virtual IArgument[] Arguments { get; } = [];
 
         /// <summary>
         /// Gets the deprecation reason.
@@ -54,7 +54,7 @@ namespace Mithril.API.Abstractions.Query.BaseClasses
         /// Gets the features associated with this command.
         /// </summary>
         /// <value>The features associated with this command.</value>
-        public virtual IFeature[] Features { get; } = Array.Empty<IFeature>();
+        public virtual IFeature[] Features { get; } = [];
 
         /// <summary>
         /// Gets the name.

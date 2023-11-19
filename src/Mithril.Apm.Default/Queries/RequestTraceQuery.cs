@@ -16,44 +16,38 @@ namespace Mithril.Apm.Default.Queries
     /// <summary>
     /// Request trace query
     /// </summary>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="RequestTraceQuery"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    /// <param name="dataService">The data service.</param>
     [ApiAuthorize("Admin Only")]
-    public class RequestTraceQuery : QueryBaseClass<IEnumerable<RequestTraceVM>>
+    public class RequestTraceQuery(ILogger<RequestTraceQuery>? logger, IFeatureManager? featureManager, IDataService? dataService) : QueryBaseClass<IEnumerable<RequestTraceVM>>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RequestTraceQuery"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        /// <param name="dataService">The data service.</param>
-        public RequestTraceQuery(ILogger<RequestTraceQuery>? logger, IFeatureManager? featureManager, IDataService? dataService)
-            : base(logger, featureManager)
-        {
-            DataService = dataService;
-        }
-
         /// <summary>
         /// The arguments
         /// </summary>
-        public override IArgument[] Arguments { get; } = new IArgument[]
-        {
-            new Argument<DateTime>{ DefaultValue = DateTime.Today.AddHours(DateTime.Now.Hour), Description = "Start date/time", Name = "start"},
-            new Argument<DateTime>{ DefaultValue = DateTime.Today.AddHours(DateTime.Now.AddHours(1).Hour), Description = "End date/time",Name = "end"}
-        };
+        public override IArgument[] Arguments { get; } =
+        [
+            new Argument<DateTime> { DefaultValue = DateTime.Today.AddHours(DateTime.Now.Hour), Description = "Start date/time", Name = "start" },
+            new Argument<DateTime> { DefaultValue = DateTime.Today.AddHours(DateTime.Now.AddHours(1).Hour), Description = "End date/time", Name = "end" }
+        ];
 
         /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        public IDataService? DataService { get; }
+        public IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Gets the features associated with this command.
         /// </summary>
         /// <value>The features associated with this command.</value>
-        public override IFeature[] Features { get; } = new IFeature[]
-        {
+        public override IFeature[] Features { get; } =
+        [
             APMFeature.Instance
-        };
+        ];
 
         /// <summary>
         /// Gets the name.
@@ -69,7 +63,7 @@ namespace Mithril.Apm.Default.Queries
         /// <returns></returns>
         public override Task<IEnumerable<RequestTraceVM>?> ResolveAsync(ClaimsPrincipal? arg, Arguments arguments)
         {
-            arguments ??= new Arguments();
+            arguments ??= [];
             DateTime Start = arguments.GetValue<DateTime>("start");
             DateTime End = arguments.GetValue<DateTime>("end");
 

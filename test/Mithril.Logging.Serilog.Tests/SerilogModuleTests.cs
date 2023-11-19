@@ -7,7 +7,7 @@ namespace Mithril.Logging.Serilog.Tests
         public SerilogModuleTests()
         {
             TestObject = new SerilogModule();
-            ExceptionsToIgnore = new Type[] { typeof(AggregateException), typeof(InvalidOperationException) };
+            ExceptionsToIgnore = [typeof(AggregateException), typeof(InvalidOperationException)];
             DiscoverInheritedMethods = true;
         }
     }

@@ -21,7 +21,7 @@ namespace Mithril.Navigation
         /// <value>
         /// The features.
         /// </value>
-        public override IFeature[] Features { get; protected set; } = new IFeature[] { NavigationFeature.Instance };
+        public override IFeature[] Features { get; protected set; } = [NavigationFeature.Instance];
 
         /// <summary>
         /// Configures the services for the module.

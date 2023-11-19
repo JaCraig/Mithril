@@ -17,7 +17,7 @@ namespace Mithril.Themes.Services
         /// Gets or sets the resources.
         /// </summary>
         /// <value>The resources.</value>
-        public ListMapping<ResourceType, IResource> Resources { get; } = new ListMapping<ResourceType, IResource>();
+        public ListMapping<ResourceType, IResource> Resources { get; } = [];
 
         /// <summary>
         /// Adds the link resource.

@@ -8,7 +8,7 @@ namespace Mithril.Core.Tests.Modules
         public MithrilModuleTests()
         {
             TestObject = new MithrilModule();
-            ExceptionsToIgnore = new Type[] { typeof(InvalidOperationException) };
+            ExceptionsToIgnore = [typeof(InvalidOperationException)];
         }
     }
 }

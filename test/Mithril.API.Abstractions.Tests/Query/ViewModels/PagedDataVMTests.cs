@@ -20,7 +20,7 @@ namespace Mithril.API.Abstractions.Tests.Query.ViewModels
         /// </summary>
         public PagedDataVMTests()
         {
-            TestObject = new PagedDataVM<ExampleClass>(0, 10, 100, 1, new List<ExampleClass>());
+            TestObject = new PagedDataVM<ExampleClass>(0, 10, 100, 1, []);
             ObjectType = typeof(PagedDataVM<ExampleClass>);
         }
     }

@@ -6,23 +6,18 @@ namespace Mithril.Data.Abstractions.Enums
     /// ContactInfo types
     /// </summary>
     /// <seealso cref="LookUpEnumBaseClass{ContactInfoTypes}"/>
-    public class ContactInfoType : LookUpEnumBaseClass<ContactInfoType>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="ContactInfoType"/> class.
+    /// </remarks>
+    /// <param name="name">The name.</param>
+    /// <param name="icon">The icon.</param>
+    public class ContactInfoType(string name, string icon = "fa-phone") : LookUpEnumBaseClass<ContactInfoType>(name, icon)
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactInfoType"/> class.
         /// </summary>
         public ContactInfoType()
             : this("")
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ContactInfoType"/> class.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        /// <param name="icon">The icon.</param>
-        public ContactInfoType(string name, string icon = "fa-phone")
-            : base(name, icon)
         {
         }
 

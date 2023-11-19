@@ -8,22 +8,17 @@ namespace Mithril.HealthChecks.Services
     /// <summary>
     /// Response formatter service
     /// </summary>
-    public class ResponseFormatterService : IResponseFormatterService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="ResponseFormatterService"/> class.
+    /// </remarks>
+    /// <param name="formatters">The formatters.</param>
+    public class ResponseFormatterService(IEnumerable<IResponseFormatter> formatters) : IResponseFormatterService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ResponseFormatterService"/> class.
-        /// </summary>
-        /// <param name="formatters">The formatters.</param>
-        public ResponseFormatterService(IEnumerable<IResponseFormatter> formatters)
-        {
-            Formatters = formatters.OrderBy(x => x.Order);
-        }
-
         /// <summary>
         /// Gets the formatters.
         /// </summary>
         /// <value>The formatters.</value>
-        public IEnumerable<IResponseFormatter> Formatters { get; }
+        public IEnumerable<IResponseFormatter> Formatters { get; } = formatters.OrderBy(x => x.Order);
 
         /// <summary>
         /// Formats the response.

@@ -32,7 +32,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         {
             Name = name ?? typeof(TModule).GetName().AddSpaces();
             Category = category ?? typeof(TModule).Namespace?.Split(".", StringSplitOptions.RemoveEmptyEntries).Skip(1).FirstOrDefault() ?? "";
-            Tags = tags ?? Array.Empty<string>();
+            Tags = tags ?? [];
             ContentPath = $"wwwroot/Content/{ID}/";
         }
 
@@ -60,7 +60,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// Gets the features.
         /// </summary>
         /// <value>The features.</value>
-        public virtual IFeature[] Features { get; protected set; } = Array.Empty<IFeature>();
+        public virtual IFeature[] Features { get; protected set; } = [];
 
         /// <summary>
         /// Gets the identifier.
@@ -94,7 +94,7 @@ namespace Mithril.Core.Abstractions.Modules.BaseClasses
         /// Gets the tags.
         /// </summary>
         /// <value>The tags.</value>
-        public string[] Tags { get; protected set; } = Array.Empty<string>();
+        public string[] Tags { get; protected set; } = [];
 
         /// <summary>
         /// Gets the version.

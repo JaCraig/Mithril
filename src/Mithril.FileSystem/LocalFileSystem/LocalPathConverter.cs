@@ -10,22 +10,17 @@ namespace Mithril.FileSystem.LocalFileSystem
     /// Local path converter
     /// </summary>
     /// <seealso cref="IPathConverter"/>
-    public class LocalPathConverter : IPathConverter
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="LocalPathConverter"/> class.
+    /// </remarks>
+    /// <param name="webHostEnvironment">The web host environment.</param>
+    public class LocalPathConverter(IWebHostEnvironment? webHostEnvironment = null) : IPathConverter
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LocalPathConverter"/> class.
-        /// </summary>
-        /// <param name="webHostEnvironment">The web host environment.</param>
-        public LocalPathConverter(IWebHostEnvironment? webHostEnvironment = null)
-        {
-            ContentRootPath = webHostEnvironment?.ContentRootPath ?? "./";
-        }
-
         /// <summary>
         /// Gets the content root path.
         /// </summary>
         /// <value>The content root path.</value>
-        public string ContentRootPath { get; }
+        public string ContentRootPath { get; } = webHostEnvironment?.ContentRootPath ?? "./";
 
         /// <summary>
         /// Gets the order.

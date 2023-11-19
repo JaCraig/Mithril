@@ -6,22 +6,17 @@ namespace Mithril.Data.Abstractions.Enums
     /// Claim types that are available
     /// </summary>
     /// <seealso cref="LookUpEnumBaseClass{UserClaimTypes}"/>
-    public class UserClaimTypes : LookUpEnumBaseClass<UserClaimTypes>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="UserClaimTypes"/> class.
+    /// </remarks>
+    /// <param name="name">The name.</param>
+    public class UserClaimTypes(string name) : LookUpEnumBaseClass<UserClaimTypes>(name, "fa-lock")
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserClaimTypes"/> class.
         /// </summary>
         public UserClaimTypes()
             : this("")
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserClaimTypes"/> class.
-        /// </summary>
-        /// <param name="name">The name.</param>
-        public UserClaimTypes(string name)
-            : base(name, "fa-lock")
         {
         }
 

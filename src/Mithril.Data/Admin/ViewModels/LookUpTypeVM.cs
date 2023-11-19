@@ -59,7 +59,7 @@ namespace Mithril.Data.Admin.ViewModels
         /// The look ups.
         /// </value>
         [Order(3)]
-        public List<LookUpVM> LookUps { get; set; } = new List<LookUpVM>();
+        public List<LookUpVM> LookUps { get; set; } = [];
 
         /// <summary>
         /// Saves the changes asynchronously.

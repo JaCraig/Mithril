@@ -42,21 +42,16 @@ namespace Mithril.API.GraphQL.Authorization
     /// GraphQL User Context Holder
     /// </summary>
     /// <seealso cref="Dictionary&lt;String, Object&gt;"/>
-    public class GraphQLUserContextDictionary : Dictionary<string, object?>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="GraphQLUserContextDictionary"/> class.
+    /// </remarks>
+    /// <param name="user">The user.</param>
+    public class GraphQLUserContextDictionary(ClaimsPrincipal? user) : Dictionary<string, object?>
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GraphQLUserContextDictionary"/> class.
-        /// </summary>
-        /// <param name="user">The user.</param>
-        public GraphQLUserContextDictionary(ClaimsPrincipal? user)
-        {
-            User = user;
-        }
-
         /// <summary>
         /// Gets the user.
         /// </summary>
         /// <value>The user.</value>
-        public ClaimsPrincipal? User { get; }
+        public ClaimsPrincipal? User { get; } = user;
     }
 }

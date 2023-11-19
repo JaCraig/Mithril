@@ -6,24 +6,19 @@ namespace Mithril.Background.Abstractions.Frequencies
     /// Run every X amount of time based on TimeSpan
     /// </summary>
     /// <seealso cref="IFrequency" />
-    public class RunEvery : IFrequency
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="RunEvery"/> class.
+    /// </remarks>
+    /// <param name="timeSpan">The time span.</param>
+    public class RunEvery(TimeSpan timeSpan) : IFrequency
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RunEvery"/> class.
-        /// </summary>
-        /// <param name="timeSpan">The time span.</param>
-        public RunEvery(TimeSpan timeSpan)
-        {
-            TimeSpan = timeSpan;
-        }
-
         /// <summary>
         /// Gets the time span.
         /// </summary>
         /// <value>
         /// The time span.
         /// </value>
-        private TimeSpan TimeSpan { get; }
+        private TimeSpan TimeSpan { get; } = timeSpan;
 
         /// <summary>
         /// Determines whether this instance can run based on the specified last run time.

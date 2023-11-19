@@ -14,59 +14,50 @@ namespace Mithril.API.Commands.Services
     /// Command service
     /// </summary>
     /// <seealso cref="ICommandService"/>
-    public class CommandService : ICommandService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="CommandService"/> class.
+    /// </remarks>
+    /// <param name="commandHandlers">The command handlers.</param>
+    /// <param name="logger">The logger.</param>
+    /// <param name="configuration">The configuration.</param>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="securityService">The security service.</param>
+    public class CommandService(
+        IEnumerable<ICommandHandler> commandHandlers,
+        ILogger<CommandService>? logger,
+        IOptions<APIOptions>? configuration,
+        IDataService? dataService,
+        ISecurityService? securityService) : ICommandService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CommandService"/> class.
-        /// </summary>
-        /// <param name="commandHandlers">The command handlers.</param>
-        /// <param name="logger">The logger.</param>
-        /// <param name="configuration">The configuration.</param>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="securityService">The security service.</param>
-        public CommandService(
-            IEnumerable<ICommandHandler> commandHandlers,
-            ILogger<CommandService>? logger,
-            IOptions<APIOptions>? configuration,
-            IDataService? dataService,
-            ISecurityService? securityService)
-        {
-            CommandHandlers = commandHandlers ?? Array.Empty<ICommandHandler>();
-            Logger = logger;
-            DataService = dataService;
-            SecurityService = securityService;
-            Configuration = configuration?.Value;
-        }
-
         /// <summary>
         /// Gets the command handlers.
         /// </summary>
         /// <value>The command handlers.</value>
-        private IEnumerable<ICommandHandler> CommandHandlers { get; }
+        private IEnumerable<ICommandHandler> CommandHandlers { get; } = commandHandlers ?? Array.Empty<ICommandHandler>();
 
         /// <summary>
         /// Gets the configuration.
         /// </summary>
         /// <value>The configuration.</value>
-        private APIOptions? Configuration { get; }
+        private APIOptions? Configuration { get; } = configuration?.Value;
 
         /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        private ILogger<CommandService>? Logger { get; }
+        private ILogger<CommandService>? Logger { get; } = logger;
 
         /// <summary>
         /// Gets the security service.
         /// </summary>
         /// <value>The security service.</value>
-        private ISecurityService? SecurityService { get; }
+        private ISecurityService? SecurityService { get; } = securityService;
 
         /// <summary>
         /// Gets the stopwatch.
@@ -112,7 +103,7 @@ namespace Mithril.API.Commands.Services
         /// Gets the next set of commands.
         /// </summary>
         /// <returns></returns>
-        private ICommand[] GetCommands(int size) => DataService?.Query<ICommand>()?.Where(x => x.Active).OrderBy(x => x.DateCreated).Take(size).ToList().ToArray() ?? Array.Empty<ICommand>();
+        private ICommand[] GetCommands(int size) => DataService?.Query<ICommand>()?.Where(x => x.Active).OrderBy(x => x.DateCreated).Take(size).ToList().ToArray() ?? [];
 
         /// <summary>
         /// Handles the command.

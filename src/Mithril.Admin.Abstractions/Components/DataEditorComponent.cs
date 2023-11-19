@@ -26,7 +26,7 @@ namespace Mithril.Admin.Abstractions.Components
         {
             DataType = dataType;
             DefaultProperties["dataType"] = $"\"{DataType}\"";
-            DefaultProperties["modelSchema"] = JsonSerializer.Serialize(entityMetadataService?.ExtractMetadata<TEntity>()?.Properties ?? Array.Empty<PropertyMetadata>());
+            DefaultProperties["modelSchema"] = JsonSerializer.Serialize(entityMetadataService?.ExtractMetadata<TEntity>()?.Properties ?? []);
         }
 
         /// <summary>

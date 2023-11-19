@@ -45,7 +45,7 @@ namespace Mithril.Security.Admin.ViewModels
         /// </summary>
         /// <value>The claims.</value>
         [Order(3)]
-        public List<ClaimDropDownVM> Claims { get; set; } = new List<ClaimDropDownVM>();
+        public List<ClaimDropDownVM> Claims { get; set; } = [];
 
         /// <summary>
         /// Gets or sets the display name.
@@ -84,7 +84,7 @@ namespace Mithril.Security.Admin.ViewModels
                 _ = (Permission?.DeleteAsync(dataService, currentUser, false));
                 return null;
             }
-            Permission ??= (await Permission.LoadOrCreateAsync(DisplayName ?? "", Operand, Array.Empty<IUserClaim>(), dataService, currentUser).ConfigureAwait(false)) as Permission;
+            Permission ??= (await Permission.LoadOrCreateAsync(DisplayName ?? "", Operand, [], dataService, currentUser).ConfigureAwait(false)) as Permission;
             if (Permission is null)
                 return null;
             Permission.DisplayName = DisplayName;

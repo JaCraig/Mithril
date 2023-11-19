@@ -8,22 +8,17 @@ namespace Mithril.API.GraphQL.Services
     /// Drop down query service
     /// </summary>
     /// <seealso cref="IDropDownQueryService"/>
-    public class DropDownQueryService : IDropDownQueryService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="DropDownQueryService"/> class.
+    /// </remarks>
+    /// <param name="dropDownQueries">The drop down queries.</param>
+    public class DropDownQueryService(IEnumerable<IDropDownQuery> dropDownQueries) : IDropDownQueryService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DropDownQueryService"/> class.
-        /// </summary>
-        /// <param name="dropDownQueries">The drop down queries.</param>
-        public DropDownQueryService(IEnumerable<IDropDownQuery> dropDownQueries)
-        {
-            DropDownQueries = dropDownQueries.ToDictionary(x => x.Name);
-        }
-
         /// <summary>
         /// Gets the drop down queries.
         /// </summary>
         /// <value>The drop down queries.</value>
-        private Dictionary<string, IDropDownQuery> DropDownQueries { get; }
+        private Dictionary<string, IDropDownQuery> DropDownQueries { get; } = dropDownQueries.ToDictionary(x => x.Name);
 
         /// <summary>
         /// Finds the drop down query.

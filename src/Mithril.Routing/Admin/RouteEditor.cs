@@ -11,19 +11,15 @@ namespace Mithril.Routing.Admin
     /// Route editor
     /// </summary>
     /// <seealso cref="EntityEditorBaseClass&lt;RouteEntryVM,RouteEntry&gt;"/>
-    public class RouteEditor : EntityEditorBaseClass<RouteEntryVM, RouteEntry>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="RouteEditor" /> class.
+    /// </remarks>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="entityMetadataService">The entity metadata service.</param>
+    /// <param name="serviceProvider">The service provider.</param>
+    /// <param name="dataType">Type of the data.</param>
+    public class RouteEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null) : EntityEditorBaseClass<RouteEntryVM, RouteEntry>(dataService, entityMetadataService, serviceProvider, dataType)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RouteEditor" /> class.
-        /// </summary>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="entityMetadataService">The entity metadata service.</param>
-        /// <param name="serviceProvider">The service provider.</param>
-        /// <param name="dataType">Type of the data.</param>
-        public RouteEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null) : base(dataService, entityMetadataService, serviceProvider, dataType)
-        {
-        }
-
         /// <summary>
         /// Gets the icon.
         /// </summary>

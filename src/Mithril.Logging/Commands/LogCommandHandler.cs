@@ -17,18 +17,13 @@ namespace Mithril.Logging.Commands
     /// Log command handler
     /// </summary>
     /// <seealso cref="CommandHandlerBaseClass&lt;LogCommand,LogCommandVM&gt;"/>
-    public class LogCommandHandler : CommandHandlerBaseClass<LogCommand, LogCommandVM>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="LogCommandHandler"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    public class LogCommandHandler(ILogger<LogCommandHandler>? logger, IFeatureManager? featureManager) : CommandHandlerBaseClass<LogCommand, LogCommandVM>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LogCommandHandler"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        public LogCommandHandler(ILogger<LogCommandHandler>? logger, IFeatureManager? featureManager)
-            : base(logger, featureManager)
-        {
-        }
-
         /// <summary>
         /// Gets the command type accepted.
         /// </summary>

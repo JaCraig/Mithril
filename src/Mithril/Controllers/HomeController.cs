@@ -13,35 +13,28 @@ namespace Mithril.Controllers
     /// Home controller
     /// </summary>
     /// <seealso cref="Controller"/>
-    public class HomeController : Controller
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="HomeController"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="securityService">The security service.</param>
+    /// <param name="communicationService">The communication service.</param>
+    public class HomeController(ILogger<HomeController> logger, ISecurityService securityService, ICommunicationService communicationService) : Controller
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HomeController"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="securityService">The security service.</param>
-        /// <param name="communicationService">The communication service.</param>
-        public HomeController(ILogger<HomeController> logger, ISecurityService securityService, ICommunicationService communicationService)
-        {
-            _Logger = logger;
-            _SecurityService = securityService;
-            _CommunicationService = communicationService;
-        }
-
         /// <summary>
         /// The communication service
         /// </summary>
-        private readonly ICommunicationService _CommunicationService;
+        private readonly ICommunicationService _CommunicationService = communicationService;
 
         /// <summary>
         /// The logger
         /// </summary>
-        private readonly ILogger<HomeController> _Logger;
+        private readonly ILogger<HomeController> _Logger = logger;
 
         /// <summary>
         /// The security service
         /// </summary>
-        private readonly ISecurityService _SecurityService;
+        private readonly ISecurityService _SecurityService = securityService;
 
         /// <summary>
         /// Email test.

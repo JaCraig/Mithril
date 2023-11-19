@@ -7,24 +7,19 @@ namespace Mithril.Content.Services
     /// Component service
     /// </summary>
     /// <seealso cref="IComponentService" />
-    public class ComponentService : IComponentService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="ComponentService"/> class.
+    /// </remarks>
+    /// <param name="componentDefinitions">The component definitions.</param>
+    public class ComponentService(IEnumerable<IComponentDefinition> componentDefinitions) : IComponentService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ComponentService"/> class.
-        /// </summary>
-        /// <param name="componentDefinitions">The component definitions.</param>
-        public ComponentService(IEnumerable<IComponentDefinition> componentDefinitions)
-        {
-            Components = componentDefinitions ?? Array.Empty<IComponentDefinition>();
-        }
-
         /// <summary>
         /// Gets the components.
         /// </summary>
         /// <value>
         /// The components.
         /// </value>
-        public IEnumerable<IComponentDefinition> Components { get; }
+        public IEnumerable<IComponentDefinition> Components { get; } = componentDefinitions ?? Array.Empty<IComponentDefinition>();
 
         /// <summary>
         /// Gets the component renderer.

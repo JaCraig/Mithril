@@ -285,7 +285,7 @@ namespace Mithril.Security.Models
         {
             if (dataService is null || type is null)
                 return;
-            value ??= Array.Empty<string>();
+            value ??= [];
             ContactInfo[]? Contacts = GetContactInfo(type).ToArray();
             var X = 0;
             if (Contacts.Length <= value.Length)

@@ -4,22 +4,17 @@
     /// Order attribute
     /// </summary>
     /// <seealso cref="Attribute"/>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="OrderAttribute"/> class.
+    /// </remarks>
+    /// <param name="order">The order.</param>
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
-    public sealed class OrderAttribute : Attribute
+    public sealed class OrderAttribute(int order) : Attribute
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OrderAttribute"/> class.
-        /// </summary>
-        /// <param name="order">The order.</param>
-        public OrderAttribute(int order)
-        {
-            Order = order;
-        }
-
         /// <summary>
         /// Gets the order.
         /// </summary>
         /// <value>The order.</value>
-        public int Order { get; }
+        public int Order { get; } = order;
     }
 }

@@ -8,22 +8,17 @@ namespace Mithril.Data.HealthCheck
     /// SQL Connection health check
     /// </summary>
     /// <seealso cref="IHealthCheck"/>
-    public class SqlConnectionHealthCheck : IHealthCheck
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="SqlConnectionHealthCheck"/> class.
+    /// </remarks>
+    /// <param name="configuration">The configuration.</param>
+    public class SqlConnectionHealthCheck(IConfiguration? configuration) : IHealthCheck
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SqlConnectionHealthCheck"/> class.
-        /// </summary>
-        /// <param name="configuration">The configuration.</param>
-        public SqlConnectionHealthCheck(IConfiguration? configuration)
-        {
-            Configuration = configuration;
-        }
-
         /// <summary>
         /// Gets the configuration.
         /// </summary>
         /// <value>The configuration.</value>
-        private IConfiguration? Configuration { get; }
+        private IConfiguration? Configuration { get; } = configuration;
 
         /// <summary>
         /// Runs the health check, returning the status of the component being checked.

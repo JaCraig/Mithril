@@ -10,17 +10,12 @@ namespace Mithril.Admin.Services
     /// Entity metadata service
     /// </summary>
     /// <seealso cref="IEntityMetadataService"/>
-    public class EntityMetadataService : IEntityMetadataService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="EntityMetadataService" /> class.
+    /// </remarks>
+    /// <param name="metadataBuilders">The metadata builders.</param>
+    public class EntityMetadataService(IEnumerable<IMetadataBuilder> metadataBuilders) : IEntityMetadataService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EntityMetadataService" /> class.
-        /// </summary>
-        /// <param name="metadataBuilders">The metadata builders.</param>
-        public EntityMetadataService(IEnumerable<IMetadataBuilder> metadataBuilders)
-        {
-            MetadataBuilders = metadataBuilders;
-        }
-
         /// <summary>
         /// Gets the entities.
         /// </summary>
@@ -31,7 +26,7 @@ namespace Mithril.Admin.Services
         /// Gets the metadata builders.
         /// </summary>
         /// <value>The metadata builders.</value>
-        private IEnumerable<IMetadataBuilder> MetadataBuilders { get; }
+        private IEnumerable<IMetadataBuilder> MetadataBuilders { get; } = metadataBuilders;
 
         /// <summary>
         /// Extracts the metadata defining this entity.

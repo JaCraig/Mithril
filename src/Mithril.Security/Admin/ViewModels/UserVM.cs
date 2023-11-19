@@ -56,7 +56,7 @@ namespace Mithril.Security.Admin.ViewModels
         /// The claims.
         /// </value>
         [Order(11)]
-        public List<ClaimDropDownVM> Claims { get; set; } = new List<ClaimDropDownVM>();
+        public List<ClaimDropDownVM> Claims { get; set; } = [];
 
         /// <summary>
         /// Gets or sets the contact information.
@@ -65,7 +65,7 @@ namespace Mithril.Security.Admin.ViewModels
         /// The contact information.
         /// </value>
         [Order(10)]
-        public List<ContactInformationVM> ContactInformation { get; set; } = new List<ContactInformationVM>();
+        public List<ContactInformationVM> ContactInformation { get; set; } = [];
 
         /// <summary>
         /// Gets or sets the first name.

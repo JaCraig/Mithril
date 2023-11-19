@@ -14,30 +14,24 @@ namespace Mithril.Navigation.Queries
     /// Menu query
     /// </summary>
     /// <seealso cref="QueryBaseClass&lt;MenuVM&gt;" />
-    public class MenuQuery : QueryBaseClass<MenuVM>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="MenuQuery"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="featureManager">The feature manager.</param>
+    /// <param name="dataService">The data service.</param>
+    public class MenuQuery(ILogger<MenuQuery>? logger, IFeatureManager? featureManager, IDataService? dataService) : QueryBaseClass<MenuVM>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MenuQuery"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="featureManager">The feature manager.</param>
-        /// <param name="dataService">The data service.</param>
-        public MenuQuery(ILogger<MenuQuery>? logger, IFeatureManager? featureManager, IDataService? dataService)
-            : base(logger, featureManager)
-        {
-            DataService = dataService;
-        }
-
         /// <summary>
         /// Gets the arguments.
         /// </summary>
         /// <value>
         /// The arguments.
         /// </value>
-        public override IArgument[] Arguments { get; } = new IArgument[]
-        {
-            new Argument<string>(){ Description="Name of the menu", Name="name"}
-        };
+        public override IArgument[] Arguments { get; } =
+        [
+            new Argument<string>() { Description = "Name of the menu", Name = "name" }
+        ];
 
         /// <summary>
         /// Gets the name.
@@ -51,7 +45,7 @@ namespace Mithril.Navigation.Queries
         /// <value>
         /// The data service.
         /// </value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Used to resolve the data asked for by the query.

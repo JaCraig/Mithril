@@ -6,21 +6,16 @@ namespace Mithril.Logging.Serilog.Middleware
     /// <summary>
     /// Logging middleware used to store info for Serilog.
     /// </summary>
-    public class LoggingMiddleware
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="LoggingMiddleware"/> class.
+    /// </remarks>
+    /// <param name="next">The next.</param>
+    public class LoggingMiddleware(RequestDelegate? next)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LoggingMiddleware"/> class.
-        /// </summary>
-        /// <param name="next">The next.</param>
-        public LoggingMiddleware(RequestDelegate? next)
-        {
-            _next = next;
-        }
-
         /// <summary>
         /// The next
         /// </summary>
-        private readonly RequestDelegate? _next;
+        private readonly RequestDelegate? _next = next;
 
         /// <summary>
         /// Invokes the specified context.

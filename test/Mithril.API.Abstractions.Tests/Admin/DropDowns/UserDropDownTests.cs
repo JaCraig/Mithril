@@ -1,12 +1,13 @@
 ﻿using Mithril.API.Abstractions.Admin.DropDowns;
 using Mithril.Tests.Helpers;
+using Xunit;
 
 namespace Mithril.API.Abstractions.Tests.Admin.DropDowns
 {
     /// <summary>
     /// User Drop Down Tests
     /// </summary>
-    /// <seealso cref="TestBaseClass&lt;UserDropDown&gt;" />
+    /// <seealso cref="TestBaseClass&lt;UserDropDown&gt;"/>
     public class UserDropDownTests : TestBaseClass<UserDropDown>
     {
         /// <summary>
@@ -21,9 +22,6 @@ namespace Mithril.API.Abstractions.Tests.Admin.DropDowns
         /// Users the claim drop down constructor.
         /// </summary>
         [Fact]
-        public void UserClaimDropDown_Constructor()
-        {
-            Assert.NotNull(new UserDropDown());
-        }
+        public void UserClaimDropDown_Constructor() => Assert.NotNull(new UserDropDown());
     }
 }

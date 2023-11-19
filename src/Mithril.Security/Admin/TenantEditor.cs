@@ -11,20 +11,15 @@ namespace Mithril.Security.Admin
     /// Tenant Editor
     /// </summary>
     /// <seealso cref="EntityEditorBaseClass&lt;TenantVM, Tenant&gt;" />
-    public class TenantEditor : EntityEditorBaseClass<TenantVM, Tenant>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="TenantEditor" /> class.
+    /// </remarks>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="entityMetadataService">The entity metadata service.</param>
+    /// <param name="serviceProvider">The service provider.</param>
+    /// <param name="dataType">Type of the data.</param>
+    public class TenantEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null) : EntityEditorBaseClass<TenantVM, Tenant>(dataService, entityMetadataService, serviceProvider, dataType)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TenantEditor" /> class.
-        /// </summary>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="entityMetadataService">The entity metadata service.</param>
-        /// <param name="serviceProvider">The service provider.</param>
-        /// <param name="dataType">Type of the data.</param>
-        public TenantEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
-            : base(dataService, entityMetadataService, serviceProvider, dataType)
-        {
-        }
-
         /// <summary>
         /// Gets the icon.
         /// </summary>

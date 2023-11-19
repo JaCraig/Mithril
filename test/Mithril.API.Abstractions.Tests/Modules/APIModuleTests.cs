@@ -6,6 +6,7 @@ using Mithril.API.Abstractions.Configuration;
 using Mithril.API.Abstractions.Modules;
 using Mithril.Tests.Helpers;
 using NSubstitute;
+using Xunit;
 
 namespace Mithril.API.Abstractions.Tests.Modules
 {

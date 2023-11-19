@@ -70,7 +70,7 @@ namespace Mithril.API.Commands.Utils
         /// <returns></returns>
         private static string CleanText(string? text, params string[] extraCharactersToRemove)
         {
-            extraCharactersToRemove ??= Array.Empty<string>();
+            extraCharactersToRemove ??= [];
             text = text?.Replace("{", "").Replace("}", "").Replace("?", "") ?? "";
             for (var x = 0; x < extraCharactersToRemove.Length; ++x)
             {
@@ -120,7 +120,7 @@ namespace Mithril.API.Commands.Utils
                 return EndPointBuilder;
             if (commandHandler.ContentTypeAccepts.Length == 0)
                 return EndPointBuilder;
-            var ExtraArgs = commandHandler.ContentTypeAccepts.Length > 1 ? commandHandler.ContentTypeAccepts[1..^1] : Array.Empty<string>();
+            var ExtraArgs = commandHandler.ContentTypeAccepts.Length > 1 ? commandHandler.ContentTypeAccepts[1..^1] : [];
             return EndPointBuilder.Accepts<TViewModel>(commandHandler.ContentTypeAccepts[0], ExtraArgs);
         }
 

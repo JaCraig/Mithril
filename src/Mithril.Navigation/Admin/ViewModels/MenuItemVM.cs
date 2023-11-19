@@ -31,7 +31,7 @@ namespace Mithril.Navigation.Admin.ViewModels
             Display = menuItem.Display;
             Icon = menuItem.Icon;
             Order = menuItem.Order;
-            WhoCanView = menuItem.Permissions?.Claims.ToList(claim => new ClaimDropDownVM(claim)) ?? new List<ClaimDropDownVM>();
+            WhoCanView = menuItem.Permissions?.Claims.ToList(claim => new ClaimDropDownVM(claim)) ?? [];
             Url = menuItem.Url;
         }
 
@@ -95,6 +95,6 @@ namespace Mithril.Navigation.Admin.ViewModels
         /// The who can view.
         /// </value>
         [Order(6)]
-        public List<ClaimDropDownVM> WhoCanView { get; set; } = new List<ClaimDropDownVM>();
+        public List<ClaimDropDownVM> WhoCanView { get; set; } = [];
     }
 }

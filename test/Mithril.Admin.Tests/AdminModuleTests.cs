@@ -2,13 +2,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mithril.Tests.Helpers;
+using Xunit;
 
 namespace Mithril.Admin.Tests
 {
     /// <summary>
     /// Admin module tests
     /// </summary>
-    /// <seealso cref="TestBaseClass&lt;AdminModule&gt;" />
+    /// <seealso cref="TestBaseClass&lt;AdminModule&gt;"/>
     public class AdminModuleTests : TestBaseClass<AdminModule>
     {
         /// <summary>

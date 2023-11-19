@@ -5,13 +5,14 @@ using Mithril.Admin.Services;
 using Mithril.Admin.Services.MetadataBuilders;
 using Mithril.Tests.Helpers;
 using System.Text.Json.Serialization;
+using Xunit;
 
 namespace Mithril.Admin.Tests.Services.MetadataBuilders
 {
     /// <summary>
     /// Can list tests
     /// </summary>
-    /// <seealso cref="TestBaseClass&lt;CanList&gt;" />
+    /// <seealso cref="TestBaseClass&lt;CanList&gt;"/>
     public class CanListTests : TestBaseClass<CanList>
     {
         /// <summary>
@@ -30,7 +31,7 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
         {
             var TestObject = new CanList();
             var TestProperty = new PropertyMetadata(typeof(TestClass).GetProperty(nameof(TestClass.TestIgnoreProperty)));
-            var Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
+            PropertyMetadata? Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
 
             Assert.False((bool?)Result?.Metadata["canList"]);
         }
@@ -43,7 +44,7 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
         {
             var TestObject = new CanList();
             var TestProperty = new PropertyMetadata(typeof(TestClass).GetProperty(nameof(TestClass.TestIgnoreProperty2)));
-            var Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
+            PropertyMetadata? Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
 
             Assert.False((bool?)Result?.Metadata["canList"]);
         }
@@ -56,7 +57,7 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
         {
             var TestObject = new CanList();
             var TestProperty = new PropertyMetadata(typeof(TestClass).GetProperty(nameof(TestClass.TestProperty)));
-            var Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
+            PropertyMetadata? Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
 
             Assert.True((bool?)Result?.Metadata["canList"]);
         }
@@ -69,27 +70,21 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
             /// <summary>
             /// Gets or sets the test ignore property.
             /// </summary>
-            /// <value>
-            /// The test ignore property.
-            /// </value>
+            /// <value>The test ignore property.</value>
             [JsonIgnore]
             public int TestIgnoreProperty { get; set; }
 
             /// <summary>
             /// Gets or sets the test ignore property2.
             /// </summary>
-            /// <value>
-            /// The test ignore property2.
-            /// </value>
+            /// <value>The test ignore property2.</value>
             [DoNotList]
             public int TestIgnoreProperty2 { get; set; }
 
             /// <summary>
             /// Gets or sets the test property.
             /// </summary>
-            /// <value>
-            /// The test property.
-            /// </value>
+            /// <value>The test property.</value>
             public int TestProperty { get; set; }
         }
     }

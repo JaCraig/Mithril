@@ -11,20 +11,15 @@ namespace Mithril.Features.Admin
     /// Feature editor class
     /// </summary>
     /// <seealso cref="EntityEditorBaseClass&lt;Feature, FeatureVM&gt;" />
-    public class FeatureEditor : EntityEditorBaseClass<FeatureVM, Feature>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="FeatureEditor" /> class.
+    /// </remarks>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="entityMetadataService">The entity metadata service.</param>
+    /// <param name="serviceProvider">The service provider.</param>
+    /// <param name="dataType">Type of the data.</param>
+    public class FeatureEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null) : EntityEditorBaseClass<FeatureVM, Feature>(dataService, entityMetadataService, serviceProvider, dataType)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FeatureEditor" /> class.
-        /// </summary>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="entityMetadataService">The entity metadata service.</param>
-        /// <param name="serviceProvider">The service provider.</param>
-        /// <param name="dataType">Type of the data.</param>
-        public FeatureEditor(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
-            : base(dataService, entityMetadataService, serviceProvider, dataType)
-        {
-        }
-
         /// <summary>
         /// Gets the icon.
         /// </summary>

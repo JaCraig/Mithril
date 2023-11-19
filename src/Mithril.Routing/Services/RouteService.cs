@@ -9,22 +9,17 @@ namespace Mithril.Routing.Services
     /// Route service
     /// </summary>
     /// <seealso cref="IRouteService"/>
-    public class RouteService : IRouteService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="RouteService"/> class.
+    /// </remarks>
+    /// <param name="dataService">The data service.</param>
+    public class RouteService(IDataService? dataService) : IRouteService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RouteService"/> class.
-        /// </summary>
-        /// <param name="dataService">The data service.</param>
-        public RouteService(IDataService? dataService)
-        {
-            DataService = dataService;
-        }
-
         /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Adds the route.

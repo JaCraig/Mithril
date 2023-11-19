@@ -9,54 +9,39 @@ namespace Mithril.Themes.Resources
     /// </summary>
     /// <seealso cref="IResource"/>
     /// <seealso cref="IEquatable{ScriptContentResource}"/>
-    public class ScriptContentResource : IResource, IEquatable<ScriptContentResource>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="ScriptContentResource" /> class.
+    /// </remarks>
+    /// <param name="content">The content.</param>
+    /// <param name="async">The asynchronous.</param>
+    /// <param name="charset">The charset.</param>
+    /// <param name="defer">The defer.</param>
+    /// <param name="type">The type.</param>
+    /// <param name="xMLSpace">The x ml space.</param>
+    /// <param name="tagOrder">The tag order.</param>
+    /// <param name="location">The position.</param>
+    /// <param name="integrity">The integrity.</param>
+    /// <param name="crossOrigin">The cross origin.</param>
+    /// <param name="referrerPolicy">The referrer policy.</param>
+    public class ScriptContentResource(string? content, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location, string? integrity, string? crossOrigin, string? referrerPolicy) : IResource, IEquatable<ScriptContentResource>
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ScriptContentResource" /> class.
-        /// </summary>
-        /// <param name="content">The content.</param>
-        /// <param name="async">The asynchronous.</param>
-        /// <param name="charset">The charset.</param>
-        /// <param name="defer">The defer.</param>
-        /// <param name="type">The type.</param>
-        /// <param name="xMLSpace">The x ml space.</param>
-        /// <param name="tagOrder">The tag order.</param>
-        /// <param name="location">The position.</param>
-        /// <param name="integrity">The integrity.</param>
-        /// <param name="crossOrigin">The cross origin.</param>
-        /// <param name="referrerPolicy">The referrer policy.</param>
-        public ScriptContentResource(string? content, string? async, string? charset, string? defer, string? type, string? xMLSpace, int tagOrder, string? location, string? integrity, string? crossOrigin, string? referrerPolicy)
-        {
-            Order = tagOrder;
-            Integrity = integrity ?? "";
-            CrossOrigin = crossOrigin ?? "";
-            ReferrerPolicy = referrerPolicy ?? "";
-            Content = content ?? "";
-            Async = async ?? "";
-            Charset = charset ?? "";
-            Defer = string.Equals(defer, "TRUE", StringComparison.OrdinalIgnoreCase);
-            Type = type ?? "";
-            XMLSpace = xMLSpace ?? "";
-            Location = string.IsNullOrEmpty(location) ? "Footer" : location;
-        }
-
         /// <summary>
         /// Gets the asynchronous.
         /// </summary>
         /// <value>The asynchronous.</value>
-        public string Async { get; }
+        public string Async { get; } = async ?? "";
 
         /// <summary>
         /// Gets the charset.
         /// </summary>
         /// <value>The charset.</value>
-        public string Charset { get; }
+        public string Charset { get; } = charset ?? "";
 
         /// <summary>
         /// Gets or sets the source.
         /// </summary>
         /// <value>The source.</value>
-        public string Content { get; set; }
+        public string Content { get; set; } = content ?? "";
 
         /// <summary>
         /// Gets the crossorigin.
@@ -64,13 +49,13 @@ namespace Mithril.Themes.Resources
         /// <value>
         /// The crossorigin.
         /// </value>
-        public string CrossOrigin { get; }
+        public string CrossOrigin { get; } = crossOrigin ?? "";
 
         /// <summary>
         /// Gets the defer.
         /// </summary>
         /// <value>The defer.</value>
-        public bool Defer { get; }
+        public bool Defer { get; } = string.Equals(defer, "TRUE", StringComparison.OrdinalIgnoreCase);
 
         /// <summary>
         /// Gets the integrity.
@@ -78,19 +63,19 @@ namespace Mithril.Themes.Resources
         /// <value>
         /// The integrity.
         /// </value>
-        public string Integrity { get; }
+        public string Integrity { get; } = integrity ?? "";
 
         /// <summary>
         /// Gets the position.
         /// </summary>
         /// <value>The position.</value>
-        public string Location { get; }
+        public string Location { get; } = string.IsNullOrEmpty(location) ? "Footer" : location;
 
         /// <summary>
         /// Gets the order.
         /// </summary>
         /// <value>The order.</value>
-        public int Order { get; set; }
+        public int Order { get; set; } = tagOrder;
 
         /// <summary>
         /// Gets the referrerpolicy.
@@ -98,19 +83,19 @@ namespace Mithril.Themes.Resources
         /// <value>
         /// The referrerpolicy.
         /// </value>
-        public string ReferrerPolicy { get; }
+        public string ReferrerPolicy { get; } = referrerPolicy ?? "";
 
         /// <summary>
         /// Gets the type.
         /// </summary>
         /// <value>The type.</value>
-        public string Type { get; }
+        public string Type { get; } = type ?? "";
 
         /// <summary>
         /// Gets the XML space.
         /// </summary>
         /// <value>The XML space.</value>
-        public string XMLSpace { get; }
+        public string XMLSpace { get; } = xMLSpace ?? "";
 
         /// <summary>
         /// Implements the operator !=.

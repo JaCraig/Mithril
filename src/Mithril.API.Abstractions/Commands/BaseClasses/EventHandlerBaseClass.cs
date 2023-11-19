@@ -30,7 +30,7 @@ namespace Mithril.API.Abstractions.Commands.BaseClasses
         /// Gets the features associated with this command.
         /// </summary>
         /// <value>The features associated with this command.</value>
-        public virtual IFeature[] Features { get; } = Array.Empty<IFeature>();
+        public virtual IFeature[] Features { get; } = [];
 
         /// <summary>
         /// Gets the name.

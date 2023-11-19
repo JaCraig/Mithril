@@ -15,51 +15,42 @@ namespace Mithril.Core
     /// <summary>
     /// Application info holder.
     /// </summary>
-    public class Application
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="Application"/> class.
+    /// </remarks>
+    /// <param name="configuration">The configuration.</param>
+    /// <param name="env">The host environment</param>
+    public class Application(IConfiguration? configuration, IHostEnvironment? env)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Application"/> class.
-        /// </summary>
-        /// <param name="configuration">The configuration.</param>
-        /// <param name="env">The host environment</param>
-        public Application(IConfiguration? configuration, IHostEnvironment? env)
-        {
-            Name = Assembly.GetEntryAssembly()?.FullName ?? "";
-            Modules = FindModules();
-            Configuration = configuration;
-            Environment = env;
-            WebRootPath = env?.ContentRootPath ?? ".";
-        }
-
         /// <summary>
         /// Gets the configuration.
         /// </summary>
         /// <value>The configuration.</value>
-        public IConfiguration? Configuration { get; }
+        public IConfiguration? Configuration { get; } = configuration;
 
         /// <summary>
         /// Gets the environment.
         /// </summary>
         /// <value>The environment.</value>
-        public IHostEnvironment? Environment { get; }
+        public IHostEnvironment? Environment { get; } = env;
 
         /// <summary>
         /// Gets the modules.
         /// </summary>
         /// <value>The modules.</value>
-        public Abstractions.Modules.Interfaces.IModule[] Modules { get; }
+        public Abstractions.Modules.Interfaces.IModule[] Modules { get; } = FindModules();
 
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public string Name { get; }
+        public string Name { get; } = Assembly.GetEntryAssembly()?.FullName ?? "";
 
         /// <summary>
         /// Gets or sets the web root path.
         /// </summary>
         /// <value>The web root path.</value>
-        private string WebRootPath { get; }
+        private string WebRootPath { get; } = env?.ContentRootPath ?? ".";
 
         /// <summary>
         /// Allows configuration of MVC related items.

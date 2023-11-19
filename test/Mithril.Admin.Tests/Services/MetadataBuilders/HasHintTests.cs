@@ -4,13 +4,14 @@ using Mithril.Admin.Abstractions.Interfaces;
 using Mithril.Admin.Services;
 using Mithril.Admin.Services.MetadataBuilders;
 using Mithril.Tests.Helpers;
+using Xunit;
 
 namespace Mithril.Admin.Tests.Services.MetadataBuilders
 {
     /// <summary>
     /// Has hint tests
     /// </summary>
-    /// <seealso cref="TestBaseClass&lt;HasHint&gt;" />
+    /// <seealso cref="TestBaseClass&lt;HasHint&gt;"/>
     public class HasHintTests : TestBaseClass<HasHint>
     {
         /// <summary>
@@ -29,7 +30,7 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
         {
             var TestObject = new HasHint();
             var TestProperty = new PropertyMetadata(typeof(TestClass).GetProperty(nameof(TestClass.TestIgnoreProperty)));
-            var Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
+            PropertyMetadata? Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
 
             Assert.False(Result?.Metadata.ContainsKey("hint"));
         }
@@ -42,7 +43,7 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
         {
             var TestObject = new HasHint();
             var TestProperty = new PropertyMetadata(typeof(TestClass).GetProperty(nameof(TestClass.TestProperty)));
-            var Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
+            PropertyMetadata? Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
 
             Assert.True(Result?.Metadata.ContainsKey("hint"));
         }
@@ -55,7 +56,7 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
         {
             var TestObject = new HasHint();
             var TestProperty = new PropertyMetadata(typeof(TestClass).GetProperty(nameof(TestClass.TestProperty)));
-            var Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
+            PropertyMetadata? Result = TestObject.ExtractMetadata(TestProperty, new EntityMetadataService(Array.Empty<IMetadataBuilder>()));
 
             Assert.Equal("Example hint", Result?.Metadata["hint"]);
         }
@@ -68,17 +69,13 @@ namespace Mithril.Admin.Tests.Services.MetadataBuilders
             /// <summary>
             /// Gets or sets the test ignore property.
             /// </summary>
-            /// <value>
-            /// The test ignore property.
-            /// </value>
+            /// <value>The test ignore property.</value>
             public string? TestIgnoreProperty { get; set; }
 
             /// <summary>
             /// Gets or sets the test property.
             /// </summary>
-            /// <value>
-            /// The test property.
-            /// </value>
+            /// <value>The test property.</value>
             [Hint("Example hint")]
             public string? TestProperty { get; set; }
         }

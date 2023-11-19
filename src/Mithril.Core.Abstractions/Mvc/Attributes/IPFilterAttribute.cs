@@ -11,23 +11,18 @@ namespace Mithril.Core.Abstractions.Mvc.Attributes
     /// IP Filter attribute
     /// </summary>
     /// <seealso cref="Attribute"/>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="IPFilterAttribute"/> class.
+    /// </remarks>
+    /// <param name="policyName">Name of the policy.</param>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
-    public class IPFilterAttribute : ActionFilterAttribute
+    public class IPFilterAttribute(string policyName) : ActionFilterAttribute
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IPFilterAttribute"/> class.
-        /// </summary>
-        /// <param name="policyName">Name of the policy.</param>
-        public IPFilterAttribute(string policyName)
-        {
-            PolicyName = policyName;
-        }
-
         /// <summary>
         /// Gets the name of the policy.
         /// </summary>
         /// <value>The name of the policy.</value>
-        private string PolicyName { get; }
+        private string PolicyName { get; } = policyName;
 
         /// <inheritdoc/>
         public override void OnActionExecuting(ActionExecutingContext context)

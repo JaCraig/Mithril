@@ -23,65 +23,55 @@ namespace Mithril.Mvc.Services
     /// View renderer service
     /// </summary>
     /// <seealso cref="IViewRendererService"/>
-    public class ViewRendererService : IViewRendererService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="ViewRendererService"/> class.
+    /// </remarks>
+    /// <param name="viewEngine">The view engine.</param>
+    /// <param name="tempDataProvider">The temporary data provider.</param>
+    /// <param name="serviceProvider">The service provider.</param>
+    /// <param name="pdfConverter">The PDF converter.</param>
+    /// <param name="webHostEnvironment">The web host environment.</param>
+    /// <param name="logger">The logger.</param>
+    public class ViewRendererService(
+        IRazorViewEngine? viewEngine,
+        ITempDataProvider? tempDataProvider,
+        IServiceProvider? serviceProvider,
+        IConverter? pdfConverter,
+        IWebHostEnvironment? webHostEnvironment,
+        ILogger<ViewRendererService>? logger) : IViewRendererService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ViewRendererService"/> class.
-        /// </summary>
-        /// <param name="viewEngine">The view engine.</param>
-        /// <param name="tempDataProvider">The temporary data provider.</param>
-        /// <param name="serviceProvider">The service provider.</param>
-        /// <param name="pdfConverter">The PDF converter.</param>
-        /// <param name="webHostEnvironment">The web host environment.</param>
-        /// <param name="logger">The logger.</param>
-        public ViewRendererService(
-            IRazorViewEngine? viewEngine,
-            ITempDataProvider? tempDataProvider,
-            IServiceProvider? serviceProvider,
-            IConverter? pdfConverter,
-            IWebHostEnvironment? webHostEnvironment,
-            ILogger<ViewRendererService>? logger)
-        {
-            _ViewEngine = viewEngine;
-            _TempDataProvider = tempDataProvider;
-            _ServiceProvider = serviceProvider;
-            PdfConverter = pdfConverter;
-            WebHostEnvironment = webHostEnvironment;
-            Logger = logger;
-        }
-
         /// <summary>
         /// The service provider
         /// </summary>
-        private readonly IServiceProvider? _ServiceProvider;
+        private readonly IServiceProvider? _ServiceProvider = serviceProvider;
 
         /// <summary>
         /// The temporary data provider
         /// </summary>
-        private readonly ITempDataProvider? _TempDataProvider;
+        private readonly ITempDataProvider? _TempDataProvider = tempDataProvider;
 
         /// <summary>
         /// The view engine
         /// </summary>
-        private readonly IRazorViewEngine? _ViewEngine;
+        private readonly IRazorViewEngine? _ViewEngine = viewEngine;
 
         /// <summary>
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        public ILogger<ViewRendererService>? Logger { get; }
+        public ILogger<ViewRendererService>? Logger { get; } = logger;
 
         /// <summary>
         /// Gets the PDF converter.
         /// </summary>
         /// <value>The PDF converter.</value>
-        public IConverter? PdfConverter { get; }
+        public IConverter? PdfConverter { get; } = pdfConverter;
 
         /// <summary>
         /// Gets the web host environment.
         /// </summary>
         /// <value>The web host environment.</value>
-        public IWebHostEnvironment? WebHostEnvironment { get; }
+        public IWebHostEnvironment? WebHostEnvironment { get; } = webHostEnvironment;
 
         /// <summary>
         /// Renders the specified name.
@@ -96,7 +86,7 @@ namespace Mithril.Mvc.Services
         public async Task<byte[]> RenderAsync<TModel>(string? name, TModel model, RenderOptions? renderOptions = default, RenderFormat format = RenderFormat.HTML)
         {
             if (string.IsNullOrEmpty(name) || _ServiceProvider is null || _ViewEngine is null || _TempDataProvider is null)
-                return Array.Empty<byte>();
+                return [];
             renderOptions ??= new RenderOptions { Orientation = Orientation.Landscape };
             using IServiceScope Scope = _ServiceProvider.CreateScope();
             ActionContext ActionContext = GetActionContext(Scope);
@@ -114,7 +104,7 @@ namespace Mithril.Mvc.Services
 
             Microsoft.AspNetCore.Mvc.ViewEngines.IView? View = ViewEngineResult.View;
             if (View is null)
-                return Array.Empty<byte>();
+                return [];
 
             using var Output = new StringWriter();
             var ViewContext = new ViewContext(
@@ -176,7 +166,7 @@ namespace Mithril.Mvc.Services
                 }
             };
 
-            return PdfConverter?.Convert(Doc) ?? Array.Empty<byte>();
+            return PdfConverter?.Convert(Doc) ?? [];
         }
     }
 }

@@ -5,6 +5,7 @@ using Mithril.Core.Middleware;
 using Mithril.Tests.Helpers;
 using NSubstitute;
 using System.Net;
+using Xunit;
 
 namespace Mithril.Core.Tests.Middleware
 {
@@ -31,7 +32,7 @@ namespace Mithril.Core.Tests.Middleware
         {
             IOptions<MithrilConfig> MockOptions = Substitute.For<IOptions<MithrilConfig>>();
             var Middleware = new XFrameOptionsMiddleware(
-                               next: (_) => Task.FromResult(0),
+                               next: (_) => Task.CompletedTask,
                                configuration: MockOptions);
             var HttpContext = new DefaultHttpContext();
 
@@ -48,13 +49,13 @@ namespace Mithril.Core.Tests.Middleware
         {
             IOptions<MithrilConfig> MockOptions = Substitute.For<IOptions<MithrilConfig>>();
             var Middleware = new XFrameOptionsMiddleware(
-                                next: (_) => Task.FromResult(0),
+                                next: (_) => Task.CompletedTask,
                                 configuration: MockOptions);
             var HttpContext = new DefaultHttpContext();
 
             _ = Middleware.InvokeAsync(HttpContext);
 
-            Assert.Equal("deny", HttpContext.Response.Headers["X-Frame-Options"]);
+            Assert.Equal("deny", HttpContext.Response.Headers.XFrameOptions);
         }
 
         /// <summary>
@@ -66,13 +67,13 @@ namespace Mithril.Core.Tests.Middleware
             IOptions<MithrilConfig> MockOptions = Substitute.For<IOptions<MithrilConfig>>();
             _ = MockOptions.Value.Returns(new MithrilConfig { Security = new Security { XFrameOptions = "SAMEORIGIN" } });
             var Middleware = new XFrameOptionsMiddleware(
-                                               next: (_) => Task.FromResult(0),
+                                               next: (_) => Task.CompletedTask,
                                                                               configuration: MockOptions);
             var HttpContext = new DefaultHttpContext();
 
             _ = Middleware.InvokeAsync(HttpContext);
 
-            Assert.Equal("SAMEORIGIN", HttpContext.Response.Headers["X-Frame-Options"]);
+            Assert.Equal("SAMEORIGIN", HttpContext.Response.Headers.XFrameOptions);
         }
     }
 }

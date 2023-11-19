@@ -12,30 +12,24 @@ namespace Mithril.Data.Services
     /// Data service
     /// </summary>
     /// <seealso cref="IDataService"/>
-    public class DataService : IDataService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="DataService"/> class.
+    /// </remarks>
+    /// <param name="dbContext">The database context.</param>
+    /// <param name="systemAccounts">The system accounts.</param>
+    public class DataService(DbContext? dbContext, SystemAccounts systemAccounts) : IDataService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DataService"/> class.
-        /// </summary>
-        /// <param name="dbContext">The database context.</param>
-        /// <param name="systemAccounts">The system accounts.</param>
-        public DataService(DbContext? dbContext, SystemAccounts systemAccounts)
-        {
-            DbContext = dbContext;
-            SystemAccounts = systemAccounts;
-        }
-
         /// <summary>
         /// Gets the database context.
         /// </summary>
         /// <value>The database context.</value>
-        private DbContext? DbContext { get; }
+        private DbContext? DbContext { get; } = dbContext;
 
         /// <summary>
         /// Gets the system accounts.
         /// </summary>
         /// <value>The system accounts.</value>
-        private SystemAccounts SystemAccounts { get; }
+        private SystemAccounts SystemAccounts { get; } = systemAccounts;
 
         /// <summary>
         /// Deletes the objects asynchronously.
@@ -72,7 +66,7 @@ namespace Mithril.Data.Services
         /// The resulting data.
         /// </returns>
         public Task<TData> QueryScalarAsync<TData>(string query, CommandType commandType, string connection, params object[] parameters)
-            where TData : class => DbContext<TData>.ExecuteScalarAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
+            where TData : class => DbContext<TData>.ExecuteScalarAsync(query, commandType, connection, parameters ?? []);
 
         /// <summary>
         /// Runs a query and returns data of the specific type.
@@ -86,7 +80,7 @@ namespace Mithril.Data.Services
         /// The resulting data.
         /// </returns>
         public Task<IEnumerable<TData>> QueryAsync<TData>(string query, CommandType commandType, string connection, params object[] parameters)
-            where TData : class => DbContext<TData>.ExecuteAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
+            where TData : class => DbContext<TData>.ExecuteAsync(query, commandType, connection, parameters ?? []);
 
         /// <summary>
         /// Runs a dynamic query and returns the results.
@@ -96,7 +90,7 @@ namespace Mithril.Data.Services
         /// <param name="connection">The connection.</param>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The data resulting from the query.</returns>
-        public Task<IEnumerable<dynamic>> QueryDynamicAsync(string query, CommandType commandType, string connection, params object[] parameters) => DbContext.ExecuteAsync(query, commandType, connection, parameters ?? Array.Empty<object>());
+        public Task<IEnumerable<dynamic>> QueryDynamicAsync(string query, CommandType commandType, string connection, params object[] parameters) => DbContext.ExecuteAsync(query, commandType, connection, parameters ?? []);
 
         /// <summary>
         /// Saves the objects asynchronously.

@@ -10,22 +10,17 @@ namespace Mithril.Apm.Default.Reporter
     /// Metrics reporter
     /// </summary>
     /// <seealso cref="IMetricsReporter"/>
-    public class MetricsReporter : IMetricsReporter
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="MetricsReporter"/> class.
+    /// </remarks>
+    /// <param name="dataService">The data service.</param>
+    public class MetricsReporter(IDataService? dataService) : IMetricsReporter
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MetricsReporter"/> class.
-        /// </summary>
-        /// <param name="dataService">The data service.</param>
-        public MetricsReporter(IDataService? dataService)
-        {
-            DataService = dataService;
-        }
-
         /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Batches the specified data for reporting.

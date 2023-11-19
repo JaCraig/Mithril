@@ -19,7 +19,7 @@ namespace Mithril.API.GraphQL.GraphTypes.Builder
         /// Gets or sets the graph types.
         /// </summary>
         /// <value>The graph types.</value>
-        private static Dictionary<Type, GraphType> GraphTypes { get; } = new Dictionary<Type, GraphType>();
+        private static Dictionary<Type, GraphType> GraphTypes { get; } = [];
 
         /// <summary>
         /// The lock
@@ -55,7 +55,7 @@ namespace Mithril.API.GraphQL.GraphTypes.Builder
 
                 var Params = Array.Empty<object?>();
                 if (objectType.IsClass || objectType.IsInterface)
-                    Params = new object?[] { this };
+                    Params = [this];
                 var Instance = FastActivator.CreateInstance(GraphTypeType, Params);
                 GraphTypes.Add(objectType, (GraphType)Instance);
 

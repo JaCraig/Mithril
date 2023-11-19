@@ -13,24 +13,15 @@ namespace Mithril.Apm.Default.BackgroundTasks
     /// Metrics reporter background task
     /// </summary>
     /// <seealso cref="IScheduledTask" />
-    public class MetricsReporterBackgroundTask : IScheduledTask
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="MetricsReporterBackgroundTask"/> class.
+    /// </remarks>
+    /// <param name="logger">The logger.</param>
+    /// <param name="metricsCollectorService">The metrics collector service.</param>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="options">The options.</param>
+    public class MetricsReporterBackgroundTask(ILogger<MetricsReporterBackgroundTask>? logger, IMetricsCollectorService? metricsCollectorService, IDataService? dataService, IOptions<APMOptions>? options) : IScheduledTask
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MetricsReporterBackgroundTask"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        /// <param name="metricsCollectorService">The metrics collector service.</param>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="options">The options.</param>
-        public MetricsReporterBackgroundTask(ILogger<MetricsReporterBackgroundTask>? logger, IMetricsCollectorService? metricsCollectorService, IDataService? dataService, IOptions<APMOptions>? options)
-        {
-            Logger = logger;
-            MetricsCollectorService = metricsCollectorService;
-            DataService = dataService;
-            Options = options?.Value;
-            Frequencies = new IFrequency[] { new RunEvery(TimeSpan.FromSeconds(options?.Value?.BatchingFrequency ?? 10)) };
-        }
-
         /// <summary>
         /// The lock object
         /// </summary>
@@ -42,7 +33,7 @@ namespace Mithril.Apm.Default.BackgroundTasks
         /// <value>
         /// The frequencies the task is run at.
         /// </value>
-        public IFrequency[] Frequencies { get; }
+        public IFrequency[] Frequencies { get; } = [new RunEvery(TimeSpan.FromSeconds(options?.Value?.BatchingFrequency ?? 10))];
 
         /// <summary>
         /// Gets the last run time.
@@ -64,7 +55,7 @@ namespace Mithril.Apm.Default.BackgroundTasks
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Gets the logger.
@@ -72,19 +63,19 @@ namespace Mithril.Apm.Default.BackgroundTasks
         /// <value>
         /// The logger.
         /// </value>
-        private ILogger<MetricsReporterBackgroundTask>? Logger { get; }
+        private ILogger<MetricsReporterBackgroundTask>? Logger { get; } = logger;
 
         /// <summary>
         /// Gets the metrics collector service.
         /// </summary>
         /// <value>The metrics collector service.</value>
-        private IMetricsCollectorService? MetricsCollectorService { get; }
+        private IMetricsCollectorService? MetricsCollectorService { get; } = metricsCollectorService;
 
         /// <summary>
         /// Gets the options.
         /// </summary>
         /// <value>The options.</value>
-        private APMOptions? Options { get; }
+        private APMOptions? Options { get; } = options?.Value;
 
         /// <summary>
         /// Executes this instance.
@@ -103,7 +94,7 @@ namespace Mithril.Apm.Default.BackgroundTasks
             {
                 Logger?.LogInformation("Cleaning APM metrics");
                 DateTime MaxAge = DateTime.UtcNow.AddHours(-(Options?.MaximumAge ?? 1));
-                RequestTrace[] OldTraces = RequestTrace.Query(DataService)?.Where(x => x.DateCreated <= MaxAge).ToList().ToArray() ?? Array.Empty<RequestTrace>();
+                RequestTrace[] OldTraces = RequestTrace.Query(DataService)?.Where(x => x.DateCreated <= MaxAge).ToList().ToArray() ?? [];
                 _ = await DataService.DeleteAsync(null, OldTraces).ConfigureAwait(false);
             }
             finally { _ = LockObject.Release(); }

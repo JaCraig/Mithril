@@ -1,5 +1,6 @@
 ﻿using Mithril.API.Abstractions.ExtensionMethods;
 using Mithril.Tests.Helpers;
+using Xunit;
 
 namespace Mithril.API.Abstractions.Tests.Extensions
 {

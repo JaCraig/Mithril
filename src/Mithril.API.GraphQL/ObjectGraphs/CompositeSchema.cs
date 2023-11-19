@@ -14,7 +14,7 @@ namespace Mithril.API.GraphQL.ObjectGraphs
         /// Initializes a new instance of the <see cref="CompositeSchema"/> class.
         /// </summary>
         /// <param name="graphQueries">The graph queries.</param>
-        public CompositeSchema(IEnumerable<IQuery?> graphQueries)
+        public CompositeSchema(IEnumerable<IQuery?>? graphQueries)
         {
             Query = new CompositeQuery(graphQueries);
             Description = "API schema";

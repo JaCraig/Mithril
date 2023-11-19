@@ -12,22 +12,16 @@ namespace Mithril.Communication.Admin
     /// Message template editor
     /// </summary>
     /// <seealso cref="EntityEditorBaseClass&lt;MessageTemplateVM, MessageTemplate&gt;" />
-    public class MessageTemplateEditor : EntityEditorBaseClass<MessageTemplateVM, MessageTemplate>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="MessageTemplateEditor" /> class.
+    /// </remarks>
+    /// <param name="hostEnvironment">The host environment.</param>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="entityMetadataService">The entity metadata service.</param>
+    /// <param name="serviceProvider">The service provider.</param>
+    /// <param name="dataType">Type of the data.</param>
+    public class MessageTemplateEditor(IHostEnvironment? hostEnvironment, IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null) : EntityEditorBaseClass<MessageTemplateVM, MessageTemplate>(dataService, entityMetadataService, serviceProvider, dataType)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MessageTemplateEditor" /> class.
-        /// </summary>
-        /// <param name="hostEnvironment">The host environment.</param>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="entityMetadataService">The entity metadata service.</param>
-        /// <param name="serviceProvider">The service provider.</param>
-        /// <param name="dataType">Type of the data.</param>
-        public MessageTemplateEditor(IHostEnvironment? hostEnvironment, IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)
-            : base(dataService, entityMetadataService, serviceProvider, dataType)
-        {
-            HostEnvironment = hostEnvironment;
-        }
-
         /// <summary>
         /// Gets the icon.
         /// </summary>
@@ -40,7 +34,7 @@ namespace Mithril.Communication.Admin
         /// <value>
         /// The host environment.
         /// </value>
-        private IHostEnvironment? HostEnvironment { get; }
+        private IHostEnvironment? HostEnvironment { get; } = hostEnvironment;
 
         /// <summary>
         /// Converts the model into the appropriate view model.

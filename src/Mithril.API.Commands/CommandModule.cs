@@ -71,7 +71,7 @@ namespace Mithril.API.Commands
             {
                 foreach (ICommandHandler? Handler in Versions)
                 {
-                    _ = (EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, new object?[] { endpoints, CommandEndpoint + Versions.Key + "/", Handler, configuration.GetSystemConfig(), SystemConfig }));
+                    _ = (EndPointMethod?.MakeGenericMethod(Handler.ViewModelType).Invoke(this, [endpoints, CommandEndpoint + Versions.Key + "/", Handler, configuration.GetSystemConfig(), SystemConfig]));
                 }
             }
             return endpoints;

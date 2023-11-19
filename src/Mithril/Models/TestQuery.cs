@@ -14,26 +14,21 @@ namespace Mithril.Models
     /// Test query
     /// </summary>
     /// <seealso cref="QueryBaseClass&lt;TestVM&gt;"/>
-    public class TestQuery : QueryBaseClass<TestVM>
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="TestQuery"/> class.
+    /// </remarks>
+    /// <param name="logger"></param>
+    /// <param name="featureManager"></param>
+    public class TestQuery(ILogger<TestQuery>? logger, IFeatureManager? featureManager) : QueryBaseClass<TestVM>(logger, featureManager)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TestQuery"/> class.
-        /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="featureManager"></param>
-        public TestQuery(ILogger<TestQuery>? logger, IFeatureManager? featureManager)
-            : base(logger, featureManager)
-        {
-        }
-
         /// <summary>
         /// Gets the arguments.
         /// </summary>
         /// <value>The arguments.</value>
-        public override IArgument[] Arguments { get; } = new IArgument[] {
+        public override IArgument[] Arguments { get; } = [
             new Argument<string> { DefaultValue = "A", Description = "Description", Name = "name" },
             new Argument<int> { DefaultValue = 1, Description = "Description", Name = "count" }
-        };
+        ];
 
         /// <summary>
         /// Gets the features associated with this command.
@@ -68,7 +63,7 @@ namespace Mithril.Models
         /// <value>a.</value>
         [ApiAuthorize("Test")]
         [ApiDescription("This will show up in the API")]
-        public List<TestVM2> A { get; set; } = new List<TestVM2>();
+        public List<TestVM2> A { get; set; } = [];
 
         /// <summary>
         /// Examples the method.

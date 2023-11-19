@@ -12,30 +12,24 @@ namespace Mithril.Communication.Services
     /// Communication service
     /// </summary>
     /// <seealso cref="ICommunicationService"/>
-    public class CommunicationService : ICommunicationService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="CommunicationService"/> class.
+    /// </remarks>
+    /// <param name="channels">The channels.</param>
+    /// <param name="dataService">The data service.</param>
+    public class CommunicationService(IEnumerable<IChannel> channels, IDataService? dataService) : ICommunicationService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CommunicationService"/> class.
-        /// </summary>
-        /// <param name="channels">The channels.</param>
-        /// <param name="dataService">The data service.</param>
-        public CommunicationService(IEnumerable<IChannel> channels, IDataService? dataService)
-        {
-            Channels = channels;
-            DataService = dataService;
-        }
-
         /// <summary>
         /// Gets the communication channels.
         /// </summary>
         /// <value>The communication channels.</value>
-        private IEnumerable<IChannel> Channels { get; }
+        private IEnumerable<IChannel> Channels { get; } = channels;
 
         /// <summary>
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Creates a message based on the channel specified.

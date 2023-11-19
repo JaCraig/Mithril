@@ -9,17 +9,12 @@ namespace Mithril.FileSystem.LocalFileSystem
     /// Local file system
     /// </summary>
     /// <seealso cref="MediaFileSystemBaseClass"/>
-    public class LocalSystem : MediaFileSystemBaseClass
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="LocalSystem"/> class.
+    /// </remarks>
+    /// <param name="hostingEnvironment">The hosting environment.</param>
+    public class LocalSystem(IWebHostEnvironment? hostingEnvironment = null) : MediaFileSystemBaseClass
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LocalSystem"/> class.
-        /// </summary>
-        /// <param name="hostingEnvironment">The hosting environment.</param>
-        public LocalSystem(IWebHostEnvironment? hostingEnvironment = null)
-        {
-            ContentRootPath = hostingEnvironment?.ContentRootPath ?? "./";
-        }
-
         /// <summary>
         /// Name of the file system
         /// </summary>
@@ -40,7 +35,7 @@ namespace Mithril.FileSystem.LocalFileSystem
         /// Gets the content root path.
         /// </summary>
         /// <value>The content root path.</value>
-        private string ContentRootPath { get; }
+        private string ContentRootPath { get; } = hostingEnvironment?.ContentRootPath ?? "./";
 
         /// <summary>
         /// Gets the directory representation for the directory

@@ -1,5 +1,6 @@
 ﻿using Mithril.API.Abstractions.Query;
 using Mithril.Tests.Helpers;
+using Xunit;
 
 namespace Mithril.API.Abstractions.Tests.Query
 {
@@ -14,7 +15,7 @@ namespace Mithril.API.Abstractions.Tests.Query
         /// </summary>
         public ArgumentsTests()
         {
-            TestObject = new Arguments();
+            TestObject = [];
         }
 
         /// <summary>

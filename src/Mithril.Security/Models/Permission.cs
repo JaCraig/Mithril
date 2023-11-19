@@ -83,7 +83,7 @@ namespace Mithril.Security.Models
             Permission? ReturnValue = Load(displayName, context);
             if (ReturnValue is null)
             {
-                claims ??= Array.Empty<IUserClaim>();
+                claims ??= [];
                 ReturnValue = new Permission(displayName, operand, claims);
                 if (context is not null)
                     _ = await context.SaveAsync(user, ReturnValue).ConfigureAwait(false);

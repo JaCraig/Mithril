@@ -13,26 +13,10 @@ namespace Mithril.Data.Apm
     /// </summary>
     /// <seealso cref="IEventListener"/>
     /// <seealso cref="EventListener"/>
-    public class QueryListener : EventListener, IEventListener
+    /// <remarks>Initializes a new instance of the <see cref="QueryListener"/> class.</remarks>
+    /// <param name="logger">The logger.</param>
+    public class QueryListener(ILogger<QueryListener>? logger) : EventListener, IEventListener
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QueryListener"/> class.
-        /// </summary>
-        /// <param name="logger">The logger.</param>
-        public QueryListener(ILogger<QueryListener>? logger)
-        {
-            Logger = logger;
-        }
-
-        /// <summary>
-        /// Finalizes an instance of the <see cref="QueryListener"/> class.
-        /// </summary>
-        ~QueryListener()
-        {
-            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-            Dispose(disposing: false);
-        }
-
         /// <summary>
         /// Gets the name.
         /// </summary>
@@ -43,7 +27,7 @@ namespace Mithril.Data.Apm
         /// Gets the logger.
         /// </summary>
         /// <value>The logger.</value>
-        private ILogger<QueryListener>? Logger { get; }
+        private ILogger<QueryListener>? Logger { get; } = logger;
 
         /// <summary>
         /// Gets or sets the meta data collector.
@@ -67,17 +51,17 @@ namespace Mithril.Data.Apm
         /// Gets the start time stamps.
         /// </summary>
         /// <value>The start time stamps.</value>
-        private Dictionary<int, QueryMetrics> TimeMetrics { get; } = new Dictionary<int, QueryMetrics>();
+        private Dictionary<int, QueryMetrics> TimeMetrics { get; } = [];
 
         /// <summary>
         /// The lock object
         /// </summary>
-        private readonly object LockObject = new();
+        private readonly object _LockObject = new();
 
         /// <summary>
         /// The disposed value
         /// </summary>
-        private bool disposedValue;
+        private bool _DisposedValue;
 
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.
@@ -114,12 +98,12 @@ namespace Mithril.Data.Apm
         /// </param>
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposedValue)
+            if (!_DisposedValue)
             {
                 if (disposing)
                 {
                 }
-                disposedValue = true;
+                _DisposedValue = true;
             }
         }
 
@@ -135,7 +119,7 @@ namespace Mithril.Data.Apm
                 return;
             }
             if (eventSource.Name == "Microsoft.Data.SqlClient.EventSource")
-                EnableEvents(eventSource, EventLevel.Informational, (EventKeywords)1);
+                EnableEvents(eventSource, EventLevel.Informational, (EventKeywords)1L);
             base.OnEventSourceCreated(eventSource);
         }
 
@@ -161,7 +145,7 @@ namespace Mithril.Data.Apm
                         break;
                 }
             }
-            catch (Exception ex) { Logger?.LogError(ex, "Error when attempting to capture SQL query metrics. Event data: {EventData}", eventData); }
+            catch (Exception Ex) { Logger?.LogError(Ex, "Error when attempting to capture SQL query metrics. Event data: {EventData}", eventData); }
         }
 
         /// <summary>
@@ -196,16 +180,15 @@ namespace Mithril.Data.Apm
             if (Metrics.CommandText?.Contains("RequestTrace_") == true)
                 return;
             _ = (MetaDataCollector?.AddEntry(TraceId,
-                new[] {
-                    new KeyValuePair<string, string>("Database", Metrics.Database??"Default"),
-                    new KeyValuePair<string, string>("Datasource", Metrics.DataSource??""),
-                    new KeyValuePair<string, string>("CommandText", Metrics.CommandText??""),
-                }));
+                [
+                    new KeyValuePair<string, string>("Database", Metrics.Database ?? "Default"),
+                    new KeyValuePair<string, string>("Datasource", Metrics.DataSource ?? ""),
+                    new KeyValuePair<string, string>("CommandText", Metrics.CommandText ?? ""),
+                ]));
             _ = (MetricsCollector?.AddEntry(TraceId, "Database query",
-                new[]
-                {
-                    new KeyValuePair<string, decimal>("Total Query Time",(Stopwatch.GetTimestamp()- Metrics.StartTime)/10000)
-                }));
+                [
+                    new KeyValuePair<string, decimal>("Total Query Time", (Stopwatch.GetTimestamp() - Metrics.StartTime) / 10000L)
+                ]));
         }
 
         /// <summary>
@@ -215,18 +198,18 @@ namespace Mithril.Data.Apm
         /// <returns>The metrics object asked for.</returns>
         private QueryMetrics? GetMetrics(int id)
         {
-            if (TimeMetrics.TryGetValue(id, out QueryMetrics? metrics))
-                return metrics;
-            lock (LockObject)
+            if (TimeMetrics.TryGetValue(id, out QueryMetrics? Metrics))
+                return Metrics;
+            lock (_LockObject)
             {
-                if (TimeMetrics.TryGetValue(id, out metrics))
-                    return metrics;
-                metrics = new QueryMetrics()
+                if (TimeMetrics.TryGetValue(id, out Metrics))
+                    return Metrics;
+                Metrics = new QueryMetrics()
                 {
                     ID = id
                 };
-                TimeMetrics.Add(id, metrics);
-                return metrics;
+                TimeMetrics.Add(id, Metrics);
+                return Metrics;
             }
         }
 
@@ -237,14 +220,23 @@ namespace Mithril.Data.Apm
         /// <returns>The query metrics object.</returns>
         private QueryMetrics? RemoveMetrics(int id)
         {
-            if (TimeMetrics.TryGetValue(id, out QueryMetrics? metrics))
+            if (TimeMetrics.TryGetValue(id, out QueryMetrics? Metrics))
             {
-                lock (LockObject)
+                lock (_LockObject)
                 {
                     _ = TimeMetrics.Remove(id);
                 }
             }
-            return metrics;
+            return Metrics;
+        }
+
+        /// <summary>
+        /// Finalizes an instance of the <see cref="QueryListener"/> class.
+        /// </summary>
+        ~QueryListener()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: false);
         }
     }
 }

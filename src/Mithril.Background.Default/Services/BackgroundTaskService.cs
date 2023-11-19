@@ -8,26 +8,20 @@ namespace Mithril.Background.Default.Services
     /// Background task service
     /// </summary>
     /// <seealso cref="BackgroundTaskServiceBaseClass" />
-    public class BackgroundTaskService : BackgroundTaskServiceBaseClass
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="BackgroundTaskService" /> class.
+    /// </remarks>
+    /// <param name="scheduledTasks">The scheduled tasks.</param>
+    /// <param name="logger">The logger.</param>
+    public class BackgroundTaskService(IEnumerable<IScheduledTask>? scheduledTasks, ILogger<BackgroundTaskService>? logger) : BackgroundTaskServiceBaseClass(scheduledTasks ?? Array.Empty<IScheduledTask>())
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BackgroundTaskService" /> class.
-        /// </summary>
-        /// <param name="scheduledTasks">The scheduled tasks.</param>
-        /// <param name="logger">The logger.</param>
-        public BackgroundTaskService(IEnumerable<IScheduledTask>? scheduledTasks, ILogger<BackgroundTaskService>? logger)
-            : base(scheduledTasks ?? Array.Empty<IScheduledTask>())
-        {
-            Logger = logger;
-        }
-
         /// <summary>
         /// Gets the logger.
         /// </summary>
         /// <value>
         /// The logger.
         /// </value>
-        private ILogger<BackgroundTaskService>? Logger { get; }
+        private ILogger<BackgroundTaskService>? Logger { get; } = logger;
 
         /// <summary>
         /// Executes any queued background tasks.

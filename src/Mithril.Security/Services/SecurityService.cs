@@ -14,19 +14,13 @@ namespace Mithril.Security.Services
     /// Security service
     /// </summary>
     /// <seealso cref="ISecurityService"/>
-    public class SecurityService : ISecurityService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="SecurityService"/> class.
+    /// </remarks>
+    /// <param name="dataService">The data service.</param>
+    /// <param name="systemAccounts">The system accounts.</param>
+    public class SecurityService(IDataService? dataService, SystemAccounts? systemAccounts) : ISecurityService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecurityService"/> class.
-        /// </summary>
-        /// <param name="dataService">The data service.</param>
-        /// <param name="systemAccounts">The system accounts.</param>
-        public SecurityService(IDataService? dataService, SystemAccounts? systemAccounts)
-        {
-            DataService = dataService;
-            SystemAccounts = systemAccounts;
-        }
-
         /// <summary>
         /// Gets or sets the anonymous user account.
         /// </summary>
@@ -37,13 +31,13 @@ namespace Mithril.Security.Services
         /// Gets the data service.
         /// </summary>
         /// <value>The data service.</value>
-        private IDataService? DataService { get; }
+        private IDataService? DataService { get; } = dataService;
 
         /// <summary>
         /// Gets the system accounts.
         /// </summary>
         /// <value>The system accounts.</value>
-        private SystemAccounts? SystemAccounts { get; }
+        private SystemAccounts? SystemAccounts { get; } = systemAccounts;
 
         /// <summary>
         /// Gets or sets the system tenant.

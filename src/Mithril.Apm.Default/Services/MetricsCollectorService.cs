@@ -100,7 +100,7 @@ namespace Mithril.Apm.Default.Services
         /// Gets or sets the trace information.
         /// </summary>
         /// <value>The trace information.</value>
-        private Dictionary<string, TraceInformation> TraceInformation { get; } = new Dictionary<string, TraceInformation>();
+        private Dictionary<string, TraceInformation> TraceInformation { get; } = [];
 
         /// <summary>
         /// The lock object

@@ -13,29 +13,23 @@ namespace Mithril.Apm.Default.Middleware
     /// APM collection middleware
     /// </summary>
     /// <seealso cref="IMiddleware"/>
-    public class ApmMiddleware : IMiddleware
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="ApmMiddleware"/> class.
+    /// </remarks>
+    /// <param name="metricsCollectorService">The metrics collector service.</param>
+    public class ApmMiddleware(IMetricsCollectorService? metricsCollectorService) : IMiddleware
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ApmMiddleware"/> class.
-        /// </summary>
-        /// <param name="metricsCollectorService">The metrics collector service.</param>
-        public ApmMiddleware(IMetricsCollectorService? metricsCollectorService)
-        {
-            MetricsCollector = metricsCollectorService?.GetMetricsCollector(nameof(DefaultMetricsCollector));
-            MetaDataCollector = metricsCollectorService?.GetMetaDataCollector(nameof(DefaultMetaDataCollector));
-        }
-
         /// <summary>
         /// Gets the trace data collector.
         /// </summary>
         /// <value>The trace data collector.</value>
-        private IMetaDataCollector? MetaDataCollector { get; }
+        private IMetaDataCollector? MetaDataCollector { get; } = metricsCollectorService?.GetMetaDataCollector(nameof(DefaultMetaDataCollector));
 
         /// <summary>
         /// Gets the metrics collector service.
         /// </summary>
         /// <value>The metrics collector service.</value>
-        private IMetricsCollector? MetricsCollector { get; }
+        private IMetricsCollector? MetricsCollector { get; } = metricsCollectorService?.GetMetricsCollector(nameof(DefaultMetricsCollector));
 
         /// <summary>
         /// Request handling method.

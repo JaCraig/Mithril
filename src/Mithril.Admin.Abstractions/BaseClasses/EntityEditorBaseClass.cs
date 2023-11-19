@@ -131,7 +131,7 @@ namespace Mithril.Admin.Abstractions.BaseClasses
                 }
             }
             Query = FilterQueryBySearchQuery(Query, searchQuery);
-            return Task.FromResult(Query?.Skip(page * pageSize).Take(pageSize).ToList().ConvertAll(x => Convert(x, false)) ?? (IEnumerable<IEntity>)Array.Empty<IEntity>());
+            return Task.FromResult(Query?.Skip(page * pageSize).Take(pageSize).ToList().ConvertAll(x => Convert(x, false)) ?? (IEnumerable<IEntity>)[]);
         }
 
         /// <summary>

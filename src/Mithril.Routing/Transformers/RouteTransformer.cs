@@ -9,22 +9,17 @@ namespace Mithril.Routing.Transformers
     /// Route transformer
     /// </summary>
     /// <seealso cref="DynamicRouteValueTransformer"/>
-    public class RouteTransformer : DynamicRouteValueTransformer
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="RouteTransformer"/> class.
+    /// </remarks>
+    /// <param name="routeManager">The route manager.</param>
+    public class RouteTransformer(IRouteService? routeManager) : DynamicRouteValueTransformer
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RouteTransformer"/> class.
-        /// </summary>
-        /// <param name="routeManager">The route manager.</param>
-        public RouteTransformer(IRouteService? routeManager)
-        {
-            RouteManager = routeManager;
-        }
-
         /// <summary>
         /// Gets the route manager.
         /// </summary>
         /// <value>The route manager.</value>
-        public IRouteService? RouteManager { get; }
+        public IRouteService? RouteManager { get; } = routeManager;
 
         /// <summary>
         /// Creates a set of transformed route values that will be used to select an action.

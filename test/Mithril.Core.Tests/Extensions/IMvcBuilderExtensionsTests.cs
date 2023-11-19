@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Mithril.Core.Extensions;
 using Mithril.Tests.Helpers;
+using Xunit;
 
 namespace Mithril.Core.Tests.Extensions
 {
@@ -33,7 +34,7 @@ namespace Mithril.Core.Tests.Extensions
 
             ServiceProvider ServiceProvider = MvcBuilder.Services.BuildServiceProvider();
             var JsonInputFormatter = (SystemTextJsonInputFormatter?)ServiceProvider.GetRequiredService<IOptions<MvcOptions>>()?.Value.InputFormatters.FirstOrDefault(x => x is SystemTextJsonInputFormatter);
-            Assert.Contains("application/csp-report", JsonInputFormatter?.SupportedMediaTypes ?? new MediaTypeCollection());
+            Assert.Contains("application/csp-report", JsonInputFormatter?.SupportedMediaTypes ?? []);
         }
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace Mithril.Core.Tests.Extensions
 
             ServiceProvider ServiceProvider = MvcBuilder.Services.BuildServiceProvider();
             var JsonInputFormatter = (SystemTextJsonInputFormatter?)ServiceProvider.GetRequiredService<IOptions<MvcOptions>>()?.Value.InputFormatters.FirstOrDefault(x => x is SystemTextJsonInputFormatter);
-            Assert.DoesNotContain("application/csp-report", JsonInputFormatter?.SupportedMediaTypes ?? new MediaTypeCollection());
+            Assert.DoesNotContain("application/csp-report", JsonInputFormatter?.SupportedMediaTypes ?? []);
         }
 
         /// <summary>

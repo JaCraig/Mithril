@@ -37,7 +37,7 @@ namespace Mithril.Navigation.Admin.ViewModels
             Display = entity.Display;
             if (!full)
                 return;
-            WhoCanView = entity.Permissions?.Claims.ToList(claim => new ClaimDropDownVM(claim)) ?? new List<ClaimDropDownVM>();
+            WhoCanView = entity.Permissions?.Claims.ToList(claim => new ClaimDropDownVM(claim)) ?? [];
             Links = entity.Items.ToList(menuItem => new MenuItemVM(menuItem));
         }
 
@@ -57,7 +57,7 @@ namespace Mithril.Navigation.Admin.ViewModels
         /// The links.
         /// </value>
         [Order(2)]
-        public List<MenuItemVM> Links { get; set; } = new List<MenuItemVM>();
+        public List<MenuItemVM> Links { get; set; } = [];
 
         /// <summary>
         /// Gets or sets the who can view.
@@ -66,7 +66,7 @@ namespace Mithril.Navigation.Admin.ViewModels
         /// The who can view.
         /// </value>
         [Order(3)]
-        public List<ClaimDropDownVM> WhoCanView { get; set; } = new List<ClaimDropDownVM>();
+        public List<ClaimDropDownVM> WhoCanView { get; set; } = [];
 
         /// <summary>
         /// Saves the changes asynchronously.

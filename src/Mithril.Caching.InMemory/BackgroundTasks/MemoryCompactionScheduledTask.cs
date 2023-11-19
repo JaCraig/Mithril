@@ -8,24 +8,19 @@ namespace Mithril.Caching.InMemory.BackgroundTasks
     /// Memory compaction scheduled task
     /// </summary>
     /// <seealso cref="IScheduledTask" />
-    public class MemoryCompactionScheduledTask : IScheduledTask
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="MemoryCompactionScheduledTask" /> class.
+    /// </remarks>
+    /// <param name="memoryCache">The memory cache.</param>
+    public class MemoryCompactionScheduledTask(Cache? memoryCache) : IScheduledTask
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MemoryCompactionScheduledTask" /> class.
-        /// </summary>
-        /// <param name="memoryCache">The memory cache.</param>
-        public MemoryCompactionScheduledTask(Cache? memoryCache)
-        {
-            MemoryCache = memoryCache;
-        }
-
         /// <summary>
         /// Gets the frequencies that the task is run at.
         /// </summary>
         /// <value>
         /// The frequencies the task is run at.
         /// </value>
-        public IFrequency[] Frequencies { get; } = new IFrequency[] { new RunEvery(TimeSpan.FromSeconds(60)) };
+        public IFrequency[] Frequencies { get; } = [new RunEvery(TimeSpan.FromSeconds(60))];
 
         /// <summary>
         /// Gets the last run time.
@@ -47,7 +42,7 @@ namespace Mithril.Caching.InMemory.BackgroundTasks
         /// Gets the memory cache.
         /// </summary>
         /// <value>The memory cache.</value>
-        private Cache? MemoryCache { get; }
+        private Cache? MemoryCache { get; } = memoryCache;
 
         /// <summary>
         /// Executes this instance.

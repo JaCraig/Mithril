@@ -12,26 +12,20 @@ namespace Mithril.API.Commands.BackgroundTasks
     /// </summary>
     /// <seealso cref="IHostedService"/>
     /// <seealso cref="IDisposable"/>
-    public class CommandProcessorTask : IScheduledTask
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="CommandProcessorTask" /> class.
+    /// </remarks>
+    /// <param name="commandService">The command service.</param>
+    /// <param name="configuration">The configuration.</param>
+    public class CommandProcessorTask(ICommandService? commandService, IOptions<APIOptions>? configuration) : IScheduledTask
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CommandProcessorTask" /> class.
-        /// </summary>
-        /// <param name="commandService">The command service.</param>
-        /// <param name="configuration">The configuration.</param>
-        public CommandProcessorTask(ICommandService? commandService, IOptions<APIOptions>? configuration)
-        {
-            CommandService = commandService;
-            Frequencies = new IFrequency[] { new RunEvery(TimeSpan.FromSeconds(configuration?.Value?.CommandRunFrequency ?? 60)) };
-        }
-
         /// <summary>
         /// Gets the frequencies.
         /// </summary>
         /// <value>
         /// The frequencies.
         /// </value>
-        public IFrequency[] Frequencies { get; }
+        public IFrequency[] Frequencies { get; } = [new RunEvery(TimeSpan.FromSeconds(configuration?.Value?.CommandRunFrequency ?? 60))];
 
         /// <summary>
         /// Gets the last run time.
@@ -53,7 +47,7 @@ namespace Mithril.API.Commands.BackgroundTasks
         /// Gets the command service.
         /// </summary>
         /// <value>The command service.</value>
-        private ICommandService? CommandService { get; }
+        private ICommandService? CommandService { get; } = commandService;
 
         /// <summary>
         /// Executes the asynchronous.

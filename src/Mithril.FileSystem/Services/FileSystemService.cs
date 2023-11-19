@@ -9,30 +9,24 @@ namespace Mithril.FileSystem.Services
     /// File system service
     /// </summary>
     /// <seealso cref="IFileSystemService"/>
-    public class FileSystemService : IFileSystemService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="FileSystemService"/> class.
+    /// </remarks>
+    /// <param name="fileSystem">The file system.</param>
+    /// <param name="pathConverters">The path converters.</param>
+    public class FileSystemService(FileCurator.FileSystem? fileSystem, IEnumerable<IPathConverter> pathConverters) : IFileSystemService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FileSystemService"/> class.
-        /// </summary>
-        /// <param name="fileSystem">The file system.</param>
-        /// <param name="pathConverters">The path converters.</param>
-        public FileSystemService(FileCurator.FileSystem? fileSystem, IEnumerable<IPathConverter> pathConverters)
-        {
-            FileSystem = fileSystem;
-            PathConverters = pathConverters?.OrderBy(x => x.Order).ToArray() ?? Array.Empty<IPathConverter>();
-        }
-
         /// <summary>
         /// Gets the file system.
         /// </summary>
         /// <value>The file system.</value>
-        private FileCurator.FileSystem? FileSystem { get; }
+        private FileCurator.FileSystem? FileSystem { get; } = fileSystem;
 
         /// <summary>
         /// Gets the path converters.
         /// </summary>
         /// <value>The path converters.</value>
-        private IPathConverter[] PathConverters { get; }
+        private IPathConverter[] PathConverters { get; } = pathConverters?.OrderBy(x => x.Order).ToArray() ?? [];
 
         /// <summary>
         /// Directories the specified path.

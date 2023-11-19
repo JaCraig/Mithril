@@ -7,23 +7,18 @@ namespace Mithril.Admin.Services
     /// Editor service
     /// </summary>
     /// <seealso cref="IEditorService" />
-    public class EditorService : IEditorService
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="EditorService"/> class.
+    /// </remarks>
+    /// <param name="editors">The editors.</param>
+    public class EditorService(IEnumerable<IEditor> editors) : IEditorService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EditorService"/> class.
-        /// </summary>
-        /// <param name="editors">The editors.</param>
-        public EditorService(IEnumerable<IEditor> editors)
-        {
-            Editors = editors ?? Array.Empty<IEditor>();
-        }
-
         /// <summary>
         /// Gets the editors.
         /// </summary>
         /// <value>
         /// The editors.
         /// </value>
-        public IEnumerable<IEditor> Editors { get; }
+        public IEnumerable<IEditor> Editors { get; } = editors ?? Array.Empty<IEditor>();
     }
 }

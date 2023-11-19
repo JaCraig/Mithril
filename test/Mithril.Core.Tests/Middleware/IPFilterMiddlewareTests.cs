@@ -5,6 +5,7 @@ using Mithril.Core.Middleware;
 using Mithril.Tests.Helpers;
 using NSubstitute;
 using System.Net;
+using Xunit;
 
 namespace Mithril.Core.Tests.Middleware
 {
@@ -32,7 +33,7 @@ namespace Mithril.Core.Tests.Middleware
             IIPFilterService MockIpFilterService = GetMockIPFilterService(true);
             ILogger<IPFilterMiddleware> MockLogger = Substitute.For<ILogger<IPFilterMiddleware>>();
             var Middleware = new IPFilterMiddleware(
-                next: (_) => Task.FromResult(0),
+                next: (_) => Task.CompletedTask,
                 iPFilterService: MockIpFilterService,
                 logger: MockLogger);
             var HttpContext = new DefaultHttpContext();
@@ -51,7 +52,7 @@ namespace Mithril.Core.Tests.Middleware
             IIPFilterService MockIpFilterService = GetMockIPFilterService(false);
             ILogger<IPFilterMiddleware> MockLogger = Substitute.For<ILogger<IPFilterMiddleware>>();
             var Middleware = new IPFilterMiddleware(
-                next: (_) => Task.FromResult(0),
+                next: (_) => Task.CompletedTask,
                 iPFilterService: MockIpFilterService,
                 logger: MockLogger);
             var HttpContext = new DefaultHttpContext();

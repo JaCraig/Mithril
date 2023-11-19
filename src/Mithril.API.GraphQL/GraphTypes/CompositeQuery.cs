@@ -18,7 +18,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         /// Initializes a new instance of the <see cref="CompositeQuery"/> class.
         /// </summary>
         /// <param name="queries">The queries.</param>
-        public CompositeQuery(IEnumerable<IQuery?> queries)
+        public CompositeQuery(IEnumerable<IQuery?>? queries)
         {
             queries ??= Array.Empty<IQuery>();
             Name = "RootQuery";
@@ -49,7 +49,7 @@ namespace Mithril.API.GraphQL.GraphTypes
         {
             _ = Field<TGraphType>(name: query.Name,
                     description: query.Description,
-                    arguments: new QueryArguments(query.Arguments?.ToArray(x => x.CreateArgument()!) ?? Array.Empty<QueryArgument>()),
+                    arguments: new QueryArguments(query.Arguments?.ToArray(x => x.CreateArgument()!) ?? []),
                     resolve: context =>
                     {
                         System.Security.Claims.ClaimsPrincipal? CurrentUser = (context.UserContext as GraphQLUserContextDictionary)?.User;
