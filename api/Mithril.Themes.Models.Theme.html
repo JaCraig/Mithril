@@ -1,129 +1,141 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Class Theme
  | Mithril API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Theme
  | Mithril API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="Mithril" class="logomark">
-              <span class="brand-title">Mithril</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Mithril">
+            Mithril
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="Mithril" class="logomark">
-                          <span class="brand-title">Mithril</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="Mithril.Themes.Models.Theme">
+        <article data-uid="Mithril.Themes.Models.Theme">
 
 
 
-  <h1 id="Mithril_Themes_Models_Theme" data-uid="Mithril.Themes.Models.Theme" class="text-break">Class Theme
-</h1>
-  <div class="markdown level0 summary"><p>Theme model</p>
+  <h1 id="Mithril_Themes_Models_Theme" data-uid="Mithril.Themes.Models.Theme" class="text-break">
+    Class Theme
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Themes.html">Themes</a>.<a class="xref" href="Mithril.Themes.Models.html">Models</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Mithril.Themes.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Theme model</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;</div>
-    <div class="level2"><span class="xref">Theme</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Theme : ModelBase&lt;Theme&gt;, IModel&lt;Theme&gt;, IModel, IEquatable&lt;IModel&gt;, IEquatable&lt;IModel&lt;Theme&gt;&gt;, IComparable, IComparable&lt;Theme&gt;, IEquatable&lt;ModelBase&lt;Theme&gt;&gt;</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;</div>
-    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;&gt;</div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;</div>
+      <div><span class="xref">Theme</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Active">ModelBase&lt;Theme&gt;.Active</a>
     </div>
@@ -205,958 +217,728 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Themes.html">Themes</a>.<a class="xref" href="Mithril.Themes.Models.html">Models</a></h6>
-  <h6><strong>Assembly</strong>: Mithril.Themes.dll</h6>
-  <h5 id="Mithril_Themes_Models_Theme_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Theme : ModelBase&lt;Theme&gt;, IModel&lt;Theme&gt;, IModel, IEquatable&lt;IModel&gt;, IEquatable&lt;IModel&lt;Theme&gt;&gt;, IComparable, IComparable&lt;Theme&gt;, IEquatable&lt;ModelBase&lt;Theme&gt;&gt;</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme__ctor.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L17">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme__ctor_" data-uid="Mithril.Themes.Models.Theme.#ctor*"></a>
-  <h4 id="Mithril_Themes_Models_Theme__ctor" data-uid="Mithril.Themes.Models.Theme.#ctor">Theme()</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a> class.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Theme()</code></pre>
-  </div>
-  <h5 id="Mithril_Themes_Models_Theme__ctor_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme__ctor_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L27">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme__ctor_" data-uid="Mithril.Themes.Models.Theme.#ctor*"></a>
-  <h4 id="Mithril_Themes_Models_Theme__ctor_System_String_" data-uid="Mithril.Themes.Models.Theme.#ctor(System.String)">Theme(string)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a> class.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Theme(string name)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>The name.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
-        <td><p>name</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>name</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme__ctor_System_String__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_IsDefault.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.IsDefault%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L40">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_IsDefault_" data-uid="Mithril.Themes.Models.Theme.IsDefault*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_IsDefault" data-uid="Mithril.Themes.Models.Theme.IsDefault">IsDefault</h4>
-  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether this instance is default.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsDefault { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><code>true</code> if this instance is default; otherwise, <code>false</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme_IsDefault_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_Name.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L46">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_Name_" data-uid="Mithril.Themes.Models.Theme.Name*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_Name" data-uid="Mithril.Themes.Models.Theme.Name">Name</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the input path.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength(64)]
-[MinLength(1)]
-[Required]
-public string? Name { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The input path.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme_Name_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_CompareTo_Mithril_Themes_Models_Theme_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.CompareTo(Mithril.Themes.Models.Theme)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L137">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_CompareTo_" data-uid="Mithril.Themes.Models.Theme.CompareTo*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_CompareTo_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.CompareTo(Mithril.Themes.Models.Theme)">CompareTo(Theme?)</h4>
-  <div class="markdown level1 summary"><p>Compares the object to another object</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override int CompareTo(Theme? other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>Object to compare to</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>0 if they are equal, -1 if this is smaller, 1 if it is larger</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Themes.Models.Theme.html">ModelBase&lt;Theme&gt;.CompareTo(Theme)</a></div>
-  <h5 id="Mithril_Themes_Models_Theme_CompareTo_Mithril_Themes_Models_Theme__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_Equals_Mithril_Themes_Models_Theme_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.Equals(Mithril.Themes.Models.Theme)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L156">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_Equals_" data-uid="Mithril.Themes.Models.Theme.Equals*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_Equals_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.Equals(Mithril.Themes.Models.Theme)">Equals(Theme)</h4>
-  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Equals(Theme other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>An object to compare with this object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true if the current object is equal to the <code class="paramref">other</code>
-parameter; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme_Equals_Mithril_Themes_Models_Theme__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L146">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_Equals_" data-uid="Mithril.Themes.Models.Theme.Equals*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_Equals_System_Object_" data-uid="Mithril.Themes.Models.Theme.Equals(System.Object)">Equals(object?)</h4>
-  <div class="markdown level1 summary"><p>Determines whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, is equal to this instance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">obj</span></td>
-        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> to compare with this instance.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><code>true</code> if the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> is equal to this instance; otherwise, <code>false</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ModelBase&lt;Theme&gt;.Equals(object)</a></div>
-  <h5 id="Mithril_Themes_Models_Theme_Equals_System_Object__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_GetHashCode.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L165">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_GetHashCode_" data-uid="Mithril.Themes.Models.Theme.GetHashCode*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_GetHashCode" data-uid="Mithril.Themes.Models.Theme.GetHashCode">GetHashCode()</h4>
-  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>A hash code for this instance, suitable for use in hashing algorithms and data
-structures like a hash table.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Mithril.Data.Abstractions.BaseClasses.ModelBase&lt;Mithril.Themes.Models.Theme&gt;.GetHashCode()</span></div>
-  <h5 id="Mithril_Themes_Models_Theme_GetHashCode_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_Load_System_String_Mithril_Data_Abstractions_Services_IDataService_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.Load(System.String%2CMithril.Data.Abstractions.Services.IDataService)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L57">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_Load_" data-uid="Mithril.Themes.Models.Theme.Load*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_Load_System_String_Mithril_Data_Abstractions_Services_IDataService_" data-uid="Mithril.Themes.Models.Theme.Load(System.String,Mithril.Data.Abstractions.Services.IDataService)">Load(string?, IDataService?)</h4>
-  <div class="markdown level1 summary"><p>Loads the theme by name.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Theme? Load(string? name, IDataService? dataService)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>The name.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></td>
-        <td><span class="parametername">dataService</span></td>
-        <td><p>The data service.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><p>The route specified.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme_Load_System_String_Mithril_Data_Abstractions_Services_IDataService__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_LoadOrCreateAsync_System_String_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.LoadOrCreateAsync(System.String%2CMithril.Data.Abstractions.Services.IDataService%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L66">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_LoadOrCreateAsync_" data-uid="Mithril.Themes.Models.Theme.LoadOrCreateAsync*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_LoadOrCreateAsync_System_String_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Themes.Models.Theme.LoadOrCreateAsync(System.String,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)">LoadOrCreateAsync(string, IDataService?, ClaimsPrincipal?)</h4>
-  <div class="markdown level1 summary"><p>Loads or creates the route.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;Theme&gt; LoadOrCreateAsync(string name, IDataService? dataService, ClaimsPrincipal? user)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>The name.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></td>
-        <td><span class="parametername">dataService</span></td>
-        <td><p>The data service.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
-        <td><span class="parametername">user</span></td>
-        <td><p>The user.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;</td>
-        <td><p>The route entry.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme_LoadOrCreateAsync_System_String_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_ToString.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L171">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_ToString_" data-uid="Mithril.Themes.Models.Theme.ToString*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_ToString" data-uid="Mithril.Themes.Models.Theme.ToString">ToString()</h4>
-  <div class="markdown level1 summary"><p>Converts to string.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
-  <h5 id="Mithril_Themes_Models_Theme_ToString_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <h3 id="operators">Operators
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_op_Equality_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.op_Equality(Mithril.Themes.Models.Theme%2CMithril.Themes.Models.Theme)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L108">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_op_Equality_" data-uid="Mithril.Themes.Models.Theme.op_Equality*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_op_Equality_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_Equality(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">operator ==(Theme, Theme)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator ==.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator ==(Theme first, Theme second)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">first</span></td>
-        <td><p>The first.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">second</span></td>
-        <td><p>The second.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme_op_Equality_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_op_GreaterThan_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.op_GreaterThan(Mithril.Themes.Models.Theme%2CMithril.Themes.Models.Theme)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L122">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_op_GreaterThan_" data-uid="Mithril.Themes.Models.Theme.op_GreaterThan*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_op_GreaterThan_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_GreaterThan(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">operator &gt;(Theme, Theme)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &gt;.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &gt;(Theme left, Theme right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme_op_GreaterThan_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_op_GreaterThanOrEqual_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.op_GreaterThanOrEqual(Mithril.Themes.Models.Theme%2CMithril.Themes.Models.Theme)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L130">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_op_GreaterThanOrEqual_" data-uid="Mithril.Themes.Models.Theme.op_GreaterThanOrEqual*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_op_GreaterThanOrEqual_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_GreaterThanOrEqual(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">operator &gt;=(Theme, Theme)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &gt;=.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &gt;=(Theme left, Theme right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme_op_GreaterThanOrEqual_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_op_Inequality_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.op_Inequality(Mithril.Themes.Models.Theme%2CMithril.Themes.Models.Theme)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L84">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_op_Inequality_" data-uid="Mithril.Themes.Models.Theme.op_Inequality*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_op_Inequality_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_Inequality(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">operator !=(Theme, Theme)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator !=.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator !=(Theme left, Theme right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme_op_Inequality_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_op_LessThan_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.op_LessThan(Mithril.Themes.Models.Theme%2CMithril.Themes.Models.Theme)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L92">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_op_LessThan_" data-uid="Mithril.Themes.Models.Theme.op_LessThan*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_op_LessThan_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_LessThan(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">operator &lt;(Theme, Theme)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &lt;.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &lt;(Theme left, Theme right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme_op_LessThan_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Themes_Models_Theme_op_LessThanOrEqual_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_.md&amp;value=---%0Auid%3A%20Mithril.Themes.Models.Theme.op_LessThanOrEqual(Mithril.Themes.Models.Theme%2CMithril.Themes.Models.Theme)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L100">View Source</a>
-  </span>
-  <a id="Mithril_Themes_Models_Theme_op_LessThanOrEqual_" data-uid="Mithril.Themes.Models.Theme.op_LessThanOrEqual*"></a>
-  <h4 id="Mithril_Themes_Models_Theme_op_LessThanOrEqual_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_LessThanOrEqual(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">operator &lt;=(Theme, Theme)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &lt;=.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &lt;=(Theme left, Theme right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Themes_Models_Theme_op_LessThanOrEqual_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel&lt;TClass&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
   <div>
       <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
   </div>
   <div>
       <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando_System_Object_">ExpandoObjectExtensions.ConvertToExpando(object?)</a>
   </div>
-  <h3 id="seealso">See Also</h3>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Mithril_Themes_Models_Theme__ctor_" data-uid="Mithril.Themes.Models.Theme.#ctor*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme__ctor" data-uid="Mithril.Themes.Models.Theme.#ctor">
+  Theme()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Theme()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme__ctor_" data-uid="Mithril.Themes.Models.Theme.#ctor*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme__ctor_System_String_" data-uid="Mithril.Themes.Models.Theme.#ctor(System.String)">
+  Theme(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Theme(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>name</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>name</p>
+</dd>
+  </dl>
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Mithril_Themes_Models_Theme_IsDefault_" data-uid="Mithril.Themes.Models.Theme.IsDefault*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_IsDefault" data-uid="Mithril.Themes.Models.Theme.IsDefault">
+  IsDefault
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether this instance is default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDefault { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if this instance is default; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_Name_" data-uid="Mithril.Themes.Models.Theme.Name*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_Name" data-uid="Mithril.Themes.Models.Theme.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the input path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(64)]
+[MinLength(1)]
+[Required]
+public string? Name { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The input path.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Mithril_Themes_Models_Theme_CompareTo_" data-uid="Mithril.Themes.Models.Theme.CompareTo*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_CompareTo_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.CompareTo(Mithril.Themes.Models.Theme)">
+  CompareTo(Theme?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Compares the object to another object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int CompareTo(Theme? other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>Object to compare to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>0 if they are equal, -1 if this is smaller, 1 if it is larger</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_Equals_" data-uid="Mithril.Themes.Models.Theme.Equals*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_Equals_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.Equals(Mithril.Themes.Models.Theme)">
+  Equals(Theme)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(Theme other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>An object to compare with this object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the current object is equal to the <code class="paramref">other</code>
+parameter; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_Equals_" data-uid="Mithril.Themes.Models.Theme.Equals*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_Equals_System_Object_" data-uid="Mithril.Themes.Models.Theme.Equals(System.Object)">
+  Equals(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, is equal to this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> to compare with this instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> is equal to this instance; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_GetHashCode_" data-uid="Mithril.Themes.Models.Theme.GetHashCode*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_GetHashCode" data-uid="Mithril.Themes.Models.Theme.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>A hash code for this instance, suitable for use in hashing algorithms and data
+structures like a hash table.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_Load_" data-uid="Mithril.Themes.Models.Theme.Load*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_Load_System_String_Mithril_Data_Abstractions_Services_IDataService_" data-uid="Mithril.Themes.Models.Theme.Load(System.String,Mithril.Data.Abstractions.Services.IDataService)">
+  Load(string?, IDataService?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads the theme by name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Theme? Load(string? name, IDataService? dataService)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name.</p>
+</dd>
+    <dt><code>dataService</code> <a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></dt>
+    <dd><p>The data service.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The route specified.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_LoadOrCreateAsync_" data-uid="Mithril.Themes.Models.Theme.LoadOrCreateAsync*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_LoadOrCreateAsync_System_String_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Themes.Models.Theme.LoadOrCreateAsync(System.String,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)">
+  LoadOrCreateAsync(string, IDataService?, ClaimsPrincipal?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads or creates the route.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;Theme&gt; LoadOrCreateAsync(string name, IDataService? dataService, ClaimsPrincipal? user)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name.</p>
+</dd>
+    <dt><code>dataService</code> <a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></dt>
+    <dd><p>The data service.</p>
+</dd>
+    <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
+    <dd><p>The user.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a>&gt;</dt>
+    <dd><p>The route entry.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_ToString_" data-uid="Mithril.Themes.Models.Theme.ToString*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_ToString" data-uid="Mithril.Themes.Models.Theme.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts to string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="Mithril_Themes_Models_Theme_op_Equality_" data-uid="Mithril.Themes.Models.Theme.op_Equality*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_op_Equality_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_Equality(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">
+  operator ==(Theme, Theme)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator ==.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Theme first, Theme second)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>first</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The first.</p>
+</dd>
+    <dt><code>second</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The second.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_op_GreaterThan_" data-uid="Mithril.Themes.Models.Theme.op_GreaterThan*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_op_GreaterThan_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_GreaterThan(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">
+  operator &gt;(Theme, Theme)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &gt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;(Theme left, Theme right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_op_GreaterThanOrEqual_" data-uid="Mithril.Themes.Models.Theme.op_GreaterThanOrEqual*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_op_GreaterThanOrEqual_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_GreaterThanOrEqual(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">
+  operator &gt;=(Theme, Theme)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &gt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;=(Theme left, Theme right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_op_Inequality_" data-uid="Mithril.Themes.Models.Theme.op_Inequality*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_op_Inequality_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_Inequality(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">
+  operator !=(Theme, Theme)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator !=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Theme left, Theme right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_op_LessThan_" data-uid="Mithril.Themes.Models.Theme.op_LessThan*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_op_LessThan_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_LessThan(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">
+  operator &lt;(Theme, Theme)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &lt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;(Theme left, Theme right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Themes_Models_Theme_op_LessThanOrEqual_" data-uid="Mithril.Themes.Models.Theme.op_LessThanOrEqual*"></a>
+
+  <h3 id="Mithril_Themes_Models_Theme_op_LessThanOrEqual_Mithril_Themes_Models_Theme_Mithril_Themes_Models_Theme_" data-uid="Mithril.Themes.Models.Theme.op_LessThanOrEqual(Mithril.Themes.Models.Theme,Mithril.Themes.Models.Theme)">
+  operator &lt;=(Theme, Theme)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &lt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;=(Theme left, Theme right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Themes.Models.Theme.html">Theme</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="seealso">See Also</h2>
   <div class="seealso">
       <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
   </div>
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Themes/Models/Theme.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

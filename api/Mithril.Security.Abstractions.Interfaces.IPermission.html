@@ -1,113 +1,121 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Interface IPermission
  | Mithril API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IPermission
  | Mithril API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Interfaces_IPermission.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Interfaces.IPermission%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="Mithril" class="logomark">
-              <span class="brand-title">Mithril</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Mithril">
+            Mithril
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="Mithril" class="logomark">
-                          <span class="brand-title">Mithril</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Interfaces_IPermission.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Interfaces.IPermission%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission">
+        <article data-uid="Mithril.Security.Abstractions.Interfaces.IPermission">
 
 
 
-  <h1 id="Mithril_Security_Abstractions_Interfaces_IPermission" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission" class="text-break">Interface IPermission
-</h1>
-  <div class="markdown level0 summary"><p>Permission interface</p>
+  <h1 id="Mithril_Security_Abstractions_Interfaces_IPermission" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission" class="text-break">
+    Interface IPermission
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Security.html">Security</a>.<a class="xref" href="Mithril.Security.Abstractions.html">Abstractions</a>.<a class="xref" href="Mithril.Security.Abstractions.Interfaces.html">Interfaces</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Mithril.Security.Abstractions.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Permission interface</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IPermission : IModel, IEquatable&lt;IModel&gt;, IEquatable&lt;IPermission&gt;</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html#Mithril_Data_Abstractions_Interfaces_IModel_Active">IModel.Active</a>
     </div>
@@ -153,435 +161,358 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals">IEquatable&lt;IPermission&gt;.Equals(IPermission)</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Security.html">Security</a>.<a class="xref" href="Mithril.Security.Abstractions.html">Abstractions</a>.<a class="xref" href="Mithril.Security.Abstractions.Interfaces.html">Interfaces</a></h6>
-  <h6><strong>Assembly</strong>: Mithril.Security.Abstractions.dll</h6>
-  <h5 id="Mithril_Security_Abstractions_Interfaces_IPermission_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IPermission : IModel, IEquatable&lt;IModel&gt;, IEquatable&lt;IPermission&gt;</code></pre>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Interfaces_IPermission_Claims.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Interfaces.IPermission.Claims%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L18">View Source</a>
-  </span>
-  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_Claims_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.Claims*"></a>
-  <h4 id="Mithril_Security_Abstractions_Interfaces_IPermission_Claims" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.Claims">Claims</h4>
-  <div class="markdown level1 summary"><p>Gets the claims.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IList&lt;IUserClaim&gt; Claims { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a>&gt;</td>
-        <td><p>The claims.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Security_Abstractions_Interfaces_IPermission_Claims_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Interfaces_IPermission_DisplayName.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Interfaces.IPermission.DisplayName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L24">View Source</a>
-  </span>
-  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_DisplayName_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.DisplayName*"></a>
-  <h4 id="Mithril_Security_Abstractions_Interfaces_IPermission_DisplayName" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.DisplayName">DisplayName</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the display name.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Required]
-[MinLength(1)]
-[MaxLength(128)]
-string? DisplayName { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The display name.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Security_Abstractions_Interfaces_IPermission_DisplayName_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Interfaces_IPermission_Operand.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Interfaces.IPermission.Operand%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L33">View Source</a>
-  </span>
-  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_Operand_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.Operand*"></a>
-  <h4 id="Mithril_Security_Abstractions_Interfaces_IPermission_Operand" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.Operand">Operand</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the operand.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">PermissionType Operand { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Security.Abstractions.Enums.PermissionType.html">PermissionType</a></td>
-        <td><p>The operand.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Security_Abstractions_Interfaces_IPermission_Operand_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
-  </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Interfaces_IPermission_AddClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Interfaces.IPermission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L40">View Source</a>
-  </span>
-  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_AddClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.AddClaim*"></a>
-  <h4 id="Mithril_Security_Abstractions_Interfaces_IPermission_AddClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)">AddClaim(IUserClaim?)</h4>
-  <div class="markdown level1 summary"><p>Adds the claim.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IPermission AddClaim(IUserClaim? claim)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a></td>
-        <td><span class="parametername">claim</span></td>
-        <td><p>The claim.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Security.Abstractions.Interfaces.IPermission.html">IPermission</a></td>
-        <td><p>This.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Security_Abstractions_Interfaces_IPermission_AddClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_Mithril_Data_Abstractions_Interfaces_IUser_.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Interfaces.IPermission.HasPermission(Mithril.Data.Abstractions.Interfaces.IUser)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L47">View Source</a>
-  </span>
-  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.HasPermission*"></a>
-  <h4 id="Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_Mithril_Data_Abstractions_Interfaces_IUser_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.HasPermission(Mithril.Data.Abstractions.Interfaces.IUser)">HasPermission(IUser?)</h4>
-  <div class="markdown level1 summary"><p>Determines whether the specified user has permission.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool HasPermission(IUser? user)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></td>
-        <td><span class="parametername">user</span></td>
-        <td><p>The user.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><code>true</code> if the specified user has permission; otherwise, <code>false</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_Mithril_Data_Abstractions_Interfaces_IUser__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Interfaces.IPermission.HasPermission(System.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L54">View Source</a>
-  </span>
-  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.HasPermission*"></a>
-  <h4 id="Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.HasPermission(System.Security.Claims.ClaimsPrincipal)">HasPermission(ClaimsPrincipal?)</h4>
-  <div class="markdown level1 summary"><p>Determines whether the specified user has permission.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool HasPermission(ClaimsPrincipal? user)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
-        <td><span class="parametername">user</span></td>
-        <td><p>The user.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><code>true</code> if the specified user has permission; otherwise, <code>false</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Interfaces_IPermission_RemoveClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L61">View Source</a>
-  </span>
-  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_RemoveClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim*"></a>
-  <h4 id="Mithril_Security_Abstractions_Interfaces_IPermission_RemoveClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)">RemoveClaim(IUserClaim?)</h4>
-  <div class="markdown level1 summary"><p>Removes the claim.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IPermission RemoveClaim(IUserClaim? claim)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a></td>
-        <td><span class="parametername">claim</span></td>
-        <td><p>The claim.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Security.Abstractions.Interfaces.IPermission.html">IPermission</a></td>
-        <td><p>This.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Security_Abstractions_Interfaces_IPermission_RemoveClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Security_Abstractions_Interfaces_IPermission_ReplaceClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_.md&amp;value=---%0Auid%3A%20Mithril.Security.Abstractions.Interfaces.IPermission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim%2CMithril.Data.Abstractions.Interfaces.IUserClaim)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L69">View Source</a>
-  </span>
-  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_ReplaceClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.ReplaceClaim*"></a>
-  <h4 id="Mithril_Security_Abstractions_Interfaces_IPermission_ReplaceClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim,Mithril.Data.Abstractions.Interfaces.IUserClaim)">ReplaceClaim(IUserClaim?, IUserClaim?)</h4>
-  <div class="markdown level1 summary"><p>Replaces the claim.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IPermission ReplaceClaim(IUserClaim? originalClaim, IUserClaim? newClaim)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a></td>
-        <td><span class="parametername">originalClaim</span></td>
-        <td><p>The original claim.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a></td>
-        <td><span class="parametername">newClaim</span></td>
-        <td><p>The new claim.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Security.Abstractions.Interfaces.IPermission.html">IPermission</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Security_Abstractions_Interfaces_IPermission_ReplaceClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
-  </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
   <div>
       <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
   </div>
   <div>
       <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando_System_Object_">ExpandoObjectExtensions.ConvertToExpando(object?)</a>
   </div>
-  <h3 id="seealso">See Also</h3>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_Claims_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.Claims*"></a>
+
+  <h3 id="Mithril_Security_Abstractions_Interfaces_IPermission_Claims" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.Claims">
+  Claims
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the claims.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IList&lt;IUserClaim&gt; Claims { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a>&gt;</dt>
+    <dd><p>The claims.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_DisplayName_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.DisplayName*"></a>
+
+  <h3 id="Mithril_Security_Abstractions_Interfaces_IPermission_DisplayName" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.DisplayName">
+  DisplayName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the display name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+[MinLength(1)]
+[MaxLength(128)]
+string? DisplayName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The display name.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_Operand_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.Operand*"></a>
+
+  <h3 id="Mithril_Security_Abstractions_Interfaces_IPermission_Operand" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.Operand">
+  Operand
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the operand.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">PermissionType Operand { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mithril.Security.Abstractions.Enums.PermissionType.html">PermissionType</a></dt>
+    <dd><p>The operand.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_AddClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.AddClaim*"></a>
+
+  <h3 id="Mithril_Security_Abstractions_Interfaces_IPermission_AddClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.AddClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)">
+  AddClaim(IUserClaim?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds the claim.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IPermission AddClaim(IUserClaim? claim)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>claim</code> <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a></dt>
+    <dd><p>The claim.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mithril.Security.Abstractions.Interfaces.IPermission.html">IPermission</a></dt>
+    <dd><p>This.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.HasPermission*"></a>
+
+  <h3 id="Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_Mithril_Data_Abstractions_Interfaces_IUser_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.HasPermission(Mithril.Data.Abstractions.Interfaces.IUser)">
+  HasPermission(IUser?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified user has permission.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool HasPermission(IUser? user)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>user</code> <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUser.html">IUser</a></dt>
+    <dd><p>The user.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the specified user has permission; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.HasPermission*"></a>
+
+  <h3 id="Mithril_Security_Abstractions_Interfaces_IPermission_HasPermission_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.HasPermission(System.Security.Claims.ClaimsPrincipal)">
+  HasPermission(ClaimsPrincipal?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified user has permission.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool HasPermission(ClaimsPrincipal? user)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
+    <dd><p>The user.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the specified user has permission; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_RemoveClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim*"></a>
+
+  <h3 id="Mithril_Security_Abstractions_Interfaces_IPermission_RemoveClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.RemoveClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim)">
+  RemoveClaim(IUserClaim?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes the claim.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IPermission RemoveClaim(IUserClaim? claim)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>claim</code> <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a></dt>
+    <dd><p>The claim.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mithril.Security.Abstractions.Interfaces.IPermission.html">IPermission</a></dt>
+    <dd><p>This.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Security_Abstractions_Interfaces_IPermission_ReplaceClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.ReplaceClaim*"></a>
+
+  <h3 id="Mithril_Security_Abstractions_Interfaces_IPermission_ReplaceClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_Mithril_Data_Abstractions_Interfaces_IUserClaim_" data-uid="Mithril.Security.Abstractions.Interfaces.IPermission.ReplaceClaim(Mithril.Data.Abstractions.Interfaces.IUserClaim,Mithril.Data.Abstractions.Interfaces.IUserClaim)">
+  ReplaceClaim(IUserClaim?, IUserClaim?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Replaces the claim.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IPermission ReplaceClaim(IUserClaim? originalClaim, IUserClaim? newClaim)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>originalClaim</code> <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a></dt>
+    <dd><p>The original claim.</p>
+</dd>
+    <dt><code>newClaim</code> <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IUserClaim.html">IUserClaim</a></dt>
+    <dd><p>The new claim.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mithril.Security.Abstractions.Interfaces.IPermission.html">IPermission</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="seealso">See Also</h2>
   <div class="seealso">
       <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
   </div>
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Security.Abstractions/Interfaces/IPermission.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

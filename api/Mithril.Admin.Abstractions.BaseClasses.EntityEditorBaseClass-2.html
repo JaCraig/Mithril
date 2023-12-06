@@ -1,135 +1,161 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Class EntityEditorBaseClass&lt;TEntity, TModel&gt;
  | Mithril API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class EntityEditorBaseClass&lt;TEntity, TModel&gt;
  | Mithril API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="Mithril" class="logomark">
-              <span class="brand-title">Mithril</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Mithril">
+            Mithril
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="Mithril" class="logomark">
-                          <span class="brand-title">Mithril</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2">
+        <article data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2">
 
 
 
-  <h1 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2" class="text-break">Class EntityEditorBaseClass&lt;TEntity, TModel&gt;
-</h1>
-  <div class="markdown level0 summary"><p>Entity editor base class</p>
+  <h1 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2" class="text-break">
+    Class EntityEditorBaseClass&lt;TEntity, TModel&gt;
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Admin.html">Admin</a>.<a class="xref" href="Mithril.Admin.Abstractions.html">Abstractions</a>.<a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.html">BaseClasses</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Mithril.Admin.Abstractions.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Entity editor base class</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-    <div class="level2"><span class="xref">EntityEditorBaseClass&lt;TEntity, TModel&gt;</span></div>
-      <div class="level3"><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-2.html">SettingsEditorBaseClass&lt;TEntity, TModel&gt;</a></div>
-      <div class="level3"><a class="xref" href="Mithril.Apm.Default.Admin.RequestTraceEditor.html">RequestTraceEditor</a></div>
-      <div class="level3"><a class="xref" href="Mithril.Communication.Admin.MessageTemplateEditor.html">MessageTemplateEditor</a></div>
-      <div class="level3"><a class="xref" href="Mithril.Data.Admin.LookUpTypeEditor.html">LookUpTypeEditor</a></div>
-      <div class="level3"><a class="xref" href="Mithril.Features.Admin.FeatureEditor.html">FeatureEditor</a></div>
-      <div class="level3"><a class="xref" href="Mithril.Navigation.Admin.MenuEditor.html">MenuEditor</a></div>
-      <div class="level3"><a class="xref" href="Mithril.Routing.Admin.RouteEditor.html">RouteEditor</a></div>
-      <div class="level3"><a class="xref" href="Mithril.Security.Admin.PermissionEditor.html">PermissionEditor</a></div>
-      <div class="level3"><a class="xref" href="Mithril.Security.Admin.TenantEditor.html">TenantEditor</a></div>
-      <div class="level3"><a class="xref" href="Mithril.Security.Admin.UserClaimEditor.html">UserClaimEditor</a></div>
-      <div class="level3"><a class="xref" href="Mithril.Security.Admin.UserEditor.html">UserEditor</a></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class EntityEditorBaseClass&lt;TEntity, TModel&gt; : EntityEditorBaseClass&lt;TEntity&gt;, IEntityEditor, IEditor where TEntity : IEntity&lt;TModel&gt;, new() where TModel : ModelBase&lt;TModel&gt;, new()</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEntityEditor.html">IEntityEditor</a></div>
-    <div><a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEditor.html">IEditor</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity.</p>
+</dd>
+    <dt><code>TModel</code></dt>
+    <dd><p>The type of the model.</p>
+</dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
+      <div><span class="xref">EntityEditorBaseClass&lt;TEntity, TModel&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEntityEditor.html">IEntityEditor</a></div>
+      <div><a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEditor.html">IEditor</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.SettingsEditorBaseClass-2.html">SettingsEditorBaseClass&lt;TEntity, TModel&gt;</a></div>
+      <div><a class="xref" href="Mithril.Apm.Default.Admin.RequestTraceEditor.html">RequestTraceEditor</a></div>
+      <div><a class="xref" href="Mithril.Communication.Admin.MessageTemplateEditor.html">MessageTemplateEditor</a></div>
+      <div><a class="xref" href="Mithril.Data.Admin.LookUpTypeEditor.html">LookUpTypeEditor</a></div>
+      <div><a class="xref" href="Mithril.Features.Admin.FeatureEditor.html">FeatureEditor</a></div>
+      <div><a class="xref" href="Mithril.Navigation.Admin.MenuEditor.html">MenuEditor</a></div>
+      <div><a class="xref" href="Mithril.Routing.Admin.RouteEditor.html">RouteEditor</a></div>
+      <div><a class="xref" href="Mithril.Security.Admin.PermissionEditor.html">PermissionEditor</a></div>
+      <div><a class="xref" href="Mithril.Security.Admin.TenantEditor.html">TenantEditor</a></div>
+      <div><a class="xref" href="Mithril.Security.Admin.UserClaimEditor.html">UserClaimEditor</a></div>
+      <div><a class="xref" href="Mithril.Security.Admin.UserEditor.html">UserEditor</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_Category">EntityEditorBaseClass&lt;TEntity&gt;.Category</a>
     </div>
@@ -175,886 +201,611 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Admin.html">Admin</a>.<a class="xref" href="Mithril.Admin.Abstractions.html">Abstractions</a>.<a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.html">BaseClasses</a></h6>
-  <h6><strong>Assembly</strong>: Mithril.Admin.Abstractions.dll</h6>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class EntityEditorBaseClass&lt;TEntity, TModel&gt; : EntityEditorBaseClass&lt;TEntity&gt;, IEntityEditor, IEditor where TEntity : IEntity&lt;TModel&gt;, new() where TModel : ModelBase&lt;TModel&gt;, new()</code></pre>
-  </div>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TEntity</span></td>
-        <td><p>The type of the entity.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TModel</span></td>
-        <td><p>The type of the model.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.%23ctor(Mithril.Data.Abstractions.Services.IDataService%2CMithril.Admin.Abstractions.Services.IEntityMetadataService%2CSystem.IServiceProvider%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L32">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)">EntityEditorBaseClass(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass&lt;TEntity&gt;</a> class.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected EntityEditorBaseClass(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></td>
-        <td><span class="parametername">dataService</span></td>
-        <td><p>The data service.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Admin.Abstractions.Services.IEntityMetadataService.html">IEntityMetadataService</a></td>
-        <td><span class="parametername">entityMetadataService</span></td>
-        <td><p>The entity metadata service.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a></td>
-        <td><span class="parametername">serviceProvider</span></td>
-        <td><p>The service provider.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">dataType</span></td>
-        <td><p>Type of the data.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_ActivateAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.ActivateAsync(System.Int64%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L45">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_ActivateAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.ActivateAsync*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_ActivateAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.ActivateAsync(System.Int64,System.Security.Claims.ClaimsPrincipal)">ActivateAsync(long, ClaimsPrincipal?)</h4>
-  <div class="markdown level1 summary"><p>Activates the entity specified asynchronously.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Task&lt;bool&gt; ActivateAsync(long id, ClaimsPrincipal? currentUser)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">id</span></td>
-        <td><p>The identifier.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
-        <td><span class="parametername">currentUser</span></td>
-        <td><p>The current user.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
-        <td><p>True if it succeeds, false otherwise.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_ActivateAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_">EntityEditorBaseClass&lt;TEntity&gt;.ActivateAsync(long, ClaimsPrincipal)</a></div>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_ActivateAsync_System_Int64_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_CanView_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.CanView(System.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L68">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_CanView_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.CanView*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_CanView_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.CanView(System.Security.Claims.ClaimsPrincipal)">CanView(ClaimsPrincipal?)</h4>
-  <div class="markdown level1 summary"><p>Determines whether this instance can be viewed by the specified user.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool CanView(ClaimsPrincipal? user)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
-        <td><span class="parametername">user</span></td>
-        <td><p>The user.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><code>true</code> if this instance can be viewed by the specified user; otherwise, <code>false</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_CanView_System_Security_Claims_ClaimsPrincipal_">EntityEditorBaseClass&lt;TEntity&gt;.CanView(ClaimsPrincipal)</a></div>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_CanView_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Convert__1_System_Boolean_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.Convert(%601%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L180">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Convert_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Convert*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Convert__1_System_Boolean_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Convert(`1,System.Boolean)">Convert(TModel, bool)</h4>
-  <div class="markdown level1 summary"><p>Converts the model into the appropriate view model.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract IEntity Convert(TModel model, bool full = true)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TModel</span></td>
-        <td><span class="parametername">model</span></td>
-        <td><p>The model.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">full</span></td>
-        <td><p>if set to <code>true</code> [full].</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEntity.html">IEntity</a></td>
-        <td><p>The view model</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Convert__1_System_Boolean__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_DeleteEntityAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.DeleteEntityAsync(System.Int64%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L79">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_DeleteEntityAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.DeleteEntityAsync*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_DeleteEntityAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.DeleteEntityAsync(System.Int64,System.Security.Claims.ClaimsPrincipal)">DeleteEntityAsync(long, ClaimsPrincipal?)</h4>
-  <div class="markdown level1 summary"><p>Deletes the entity asynchronously.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Task&lt;bool&gt; DeleteEntityAsync(long id, ClaimsPrincipal? currentUser)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">id</span></td>
-        <td><p>The identifier.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
-        <td><span class="parametername">currentUser</span></td>
-        <td><p>The current user.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
-        <td><p>True if it succeeds, false otherwise.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_DeleteEntityAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_">EntityEditorBaseClass&lt;TEntity&gt;.DeleteEntityAsync(long, ClaimsPrincipal)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notimplementedexception">NotImplementedException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_DeleteEntityAsync_System_Int64_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_FilterQueryBySearchQuery_System_Linq_IQueryable__1__System_String_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.FilterQueryBySearchQuery(System.Linq.IQueryable%7B%601%7D%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L188">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_FilterQueryBySearchQuery_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.FilterQueryBySearchQuery*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_FilterQueryBySearchQuery_System_Linq_IQueryable__1__System_String_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.FilterQueryBySearchQuery(System.Linq.IQueryable{`1},System.String)">FilterQueryBySearchQuery(IQueryable&lt;TModel&gt;?, string)</h4>
-  <div class="markdown level1 summary"><p>Filters the query by search term.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual IQueryable&lt;TModel&gt;? FilterQueryBySearchQuery(IQueryable&lt;TModel&gt;? query, string searchQuery)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TModel&gt;</td>
-        <td><span class="parametername">query</span></td>
-        <td><p>The query.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">searchQuery</span></td>
-        <td><p>The search query.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TModel&gt;</td>
-        <td><p>The resulting query.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_FilterQueryBySearchQuery_System_Linq_IQueryable__1__System_String__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Load_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.Load(System.Int64%2CSystem.Dynamic.ExpandoObject%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L103">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Load_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Load*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Load_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Load(System.Int64,System.Dynamic.ExpandoObject,System.Security.Claims.ClaimsPrincipal)">Load(long, ExpandoObject?, ClaimsPrincipal?)</h4>
-  <div class="markdown level1 summary"><p>Loads the specified identifier.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override IEntity? Load(long id, ExpandoObject? model, ClaimsPrincipal? currentUser)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">id</span></td>
-        <td><p>The identifier.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dynamic.expandoobject">ExpandoObject</a></td>
-        <td><span class="parametername">model</span></td>
-        <td><p>The model.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
-        <td><span class="parametername">currentUser</span></td>
-        <td><p>The current user.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEntity.html">IEntity</a></td>
-        <td><p>The entity specified.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_Load_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_">EntityEditorBaseClass&lt;TEntity&gt;.Load(long, ExpandoObject, ClaimsPrincipal)</a></div>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Load_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadModel_System_Int64_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.LoadModel(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L195">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadModel_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadModel*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadModel_System_Int64_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadModel(System.Int64)">LoadModel(long)</h4>
-  <div class="markdown level1 summary"><p>Loads the model.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual TModel LoadModel(long id)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">id</span></td>
-        <td><p>The identifier.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TModel</span></td>
-        <td><p>The model requested</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadModel_System_Int64__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadPageAsync_System_Int32_System_Int32_System_String_System_Boolean_System_String_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.LoadPageAsync(System.Int32%2CSystem.Int32%2CSystem.String%2CSystem.Boolean%2CSystem.String%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L117">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadPageAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadPageAsync*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadPageAsync_System_Int32_System_Int32_System_String_System_Boolean_System_String_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadPageAsync(System.Int32,System.Int32,System.String,System.Boolean,System.String,System.Security.Claims.ClaimsPrincipal)">LoadPageAsync(int, int, string, bool, string, ClaimsPrincipal?)</h4>
-  <div class="markdown level1 summary"><p>Loads the page asynchronously.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Task&lt;IEnumerable&lt;IEntity&gt;&gt; LoadPageAsync(int page, int pageSize, string sortField, bool sortAscending, string searchQuery, ClaimsPrincipal? currentUser)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">page</span></td>
-        <td><p>The page (zero based).</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">pageSize</span></td>
-        <td><p>Size of the page.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">sortField</span></td>
-        <td><p>The sort field.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">sortAscending</span></td>
-        <td><p>if set to <code>true</code> [sort ascending].</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">searchQuery</span></td>
-        <td><p>The search query.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
-        <td><span class="parametername">currentUser</span></td>
-        <td><p>The current user.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEntity.html">IEntity</a>&gt;&gt;</td>
-        <td><p>The entities specified.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_LoadPageAsync_System_Int32_System_Int32_System_String_System_Boolean_System_String_System_Security_Claims_ClaimsPrincipal_">EntityEditorBaseClass&lt;TEntity&gt;.LoadPageAsync(int, int, string, bool, string, ClaimsPrincipal)</a></div>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadPageAsync_System_Int32_System_Int32_System_String_System_Boolean_System_String_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeActiveAsync__1_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.MakeActiveAsync(%601)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L202">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeActiveAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeActiveAsync*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeActiveAsync__1_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeActiveAsync(`1)">MakeActiveAsync(TModel)</h4>
-  <div class="markdown level1 summary"><p>Makes the model active.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual Task MakeActiveAsync(TModel model)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TModel</span></td>
-        <td><span class="parametername">model</span></td>
-        <td><p>The model.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td><p>The async task.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeActiveAsync__1__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeInactiveAsync__1_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.MakeInactiveAsync(%601)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L209">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeInactiveAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeInactiveAsync*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeInactiveAsync__1_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeInactiveAsync(`1)">MakeInactiveAsync(TModel)</h4>
-  <div class="markdown level1 summary"><p>Makes the model inactive.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual Task MakeInactiveAsync(TModel model)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TModel</span></td>
-        <td><span class="parametername">model</span></td>
-        <td><p>The model.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td><p>The async task.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeInactiveAsync__1__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_SaveEntityAsync_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.SaveEntityAsync(System.Int64%2CSystem.Dynamic.ExpandoObject%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L146">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_SaveEntityAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.SaveEntityAsync*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_SaveEntityAsync_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.SaveEntityAsync(System.Int64,System.Dynamic.ExpandoObject,System.Security.Claims.ClaimsPrincipal)">SaveEntityAsync(long, ExpandoObject, ClaimsPrincipal?)</h4>
-  <div class="markdown level1 summary"><p>Saves the changes asynchronously.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Task&lt;bool&gt; SaveEntityAsync(long id, ExpandoObject entity, ClaimsPrincipal? currentUser)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">id</span></td>
-        <td><p>The identifier.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dynamic.expandoobject">ExpandoObject</a></td>
-        <td><span class="parametername">entity</span></td>
-        <td><p>The entity.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
-        <td><span class="parametername">currentUser</span></td>
-        <td><p>The current user.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
-        <td><p>True if it succeeds, false otherwise.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_SaveEntityAsync_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_">EntityEditorBaseClass&lt;TEntity&gt;.SaveEntityAsync(long, ExpandoObject, ClaimsPrincipal)</a></div>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_SaveEntityAsync_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_TotalActiveAsync_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass%602.TotalActiveAsync(System.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L172">View Source</a>
-  </span>
-  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_TotalActiveAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.TotalActiveAsync*"></a>
-  <h4 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_TotalActiveAsync_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.TotalActiveAsync(System.Security.Claims.ClaimsPrincipal)">TotalActiveAsync(ClaimsPrincipal?)</h4>
-  <div class="markdown level1 summary"><p>Gets the total active items.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Task&lt;int&gt; TotalActiveAsync(ClaimsPrincipal? currentUser)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
-        <td><span class="parametername">currentUser</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
-        <td><p>The total.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html#Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_1_TotalActiveAsync_System_Security_Claims_ClaimsPrincipal_">EntityEditorBaseClass&lt;TEntity&gt;.TotalActiveAsync(ClaimsPrincipal)</a></div>
-  <h5 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_TotalActiveAsync_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
-  </div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEntityEditor.html">IEntityEditor</a>
-  </div>
-  <div>
-      <a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEditor.html">IEditor</a>
-  </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
   <div>
       <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
   </div>
   <div>
       <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando_System_Object_">ExpandoObjectExtensions.ConvertToExpando(object?)</a>
   </div>
-  <h3 id="seealso">See Also</h3>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2__ctor_Mithril_Data_Abstractions_Services_IDataService_Mithril_Admin_Abstractions_Services_IEntityMetadataService_System_IServiceProvider_System_String_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.#ctor(Mithril.Data.Abstractions.Services.IDataService,Mithril.Admin.Abstractions.Services.IEntityMetadataService,System.IServiceProvider,System.String)">
+  EntityEditorBaseClass(IDataService?, IEntityMetadataService?, IServiceProvider?, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass&lt;TEntity&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected EntityEditorBaseClass(IDataService? dataService, IEntityMetadataService? entityMetadataService, IServiceProvider? serviceProvider, string? dataType = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataService</code> <a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></dt>
+    <dd><p>The data service.</p>
+</dd>
+    <dt><code>entityMetadataService</code> <a class="xref" href="Mithril.Admin.Abstractions.Services.IEntityMetadataService.html">IEntityMetadataService</a></dt>
+    <dd><p>The entity metadata service.</p>
+</dd>
+    <dt><code>serviceProvider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a></dt>
+    <dd><p>The service provider.</p>
+</dd>
+    <dt><code>dataType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Type of the data.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_ActivateAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.ActivateAsync*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_ActivateAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.ActivateAsync(System.Int64,System.Security.Claims.ClaimsPrincipal)">
+  ActivateAsync(long, ClaimsPrincipal?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Activates the entity specified asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;bool&gt; ActivateAsync(long id, ClaimsPrincipal? currentUser)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The identifier.</p>
+</dd>
+    <dt><code>currentUser</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
+    <dd><p>The current user.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p>True if it succeeds, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_CanView_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.CanView*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_CanView_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.CanView(System.Security.Claims.ClaimsPrincipal)">
+  CanView(ClaimsPrincipal?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether this instance can be viewed by the specified user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanView(ClaimsPrincipal? user)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
+    <dd><p>The user.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if this instance can be viewed by the specified user; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Convert_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Convert*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Convert__1_System_Boolean_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Convert(`1,System.Boolean)">
+  Convert(TModel, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts the model into the appropriate view model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract IEntity Convert(TModel model, bool full = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>model</code> <span class="xref">TModel</span></dt>
+    <dd><p>The model.</p>
+</dd>
+    <dt><code>full</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if set to <code>true</code> [full].</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEntity.html">IEntity</a></dt>
+    <dd><p>The view model</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_DeleteEntityAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.DeleteEntityAsync*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_DeleteEntityAsync_System_Int64_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.DeleteEntityAsync(System.Int64,System.Security.Claims.ClaimsPrincipal)">
+  DeleteEntityAsync(long, ClaimsPrincipal?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deletes the entity asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;bool&gt; DeleteEntityAsync(long id, ClaimsPrincipal? currentUser)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The identifier.</p>
+</dd>
+    <dt><code>currentUser</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
+    <dd><p>The current user.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p>True if it succeeds, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notimplementedexception">NotImplementedException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_FilterQueryBySearchQuery_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.FilterQueryBySearchQuery*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_FilterQueryBySearchQuery_System_Linq_IQueryable__1__System_String_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.FilterQueryBySearchQuery(System.Linq.IQueryable{`1},System.String)">
+  FilterQueryBySearchQuery(IQueryable&lt;TModel&gt;?, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filters the query by search term.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IQueryable&lt;TModel&gt;? FilterQueryBySearchQuery(IQueryable&lt;TModel&gt;? query, string searchQuery)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>query</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TModel&gt;</dt>
+    <dd><p>The query.</p>
+</dd>
+    <dt><code>searchQuery</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The search query.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TModel&gt;</dt>
+    <dd><p>The resulting query.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Load_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Load*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_Load_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.Load(System.Int64,System.Dynamic.ExpandoObject,System.Security.Claims.ClaimsPrincipal)">
+  Load(long, ExpandoObject?, ClaimsPrincipal?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads the specified identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IEntity? Load(long id, ExpandoObject? model, ClaimsPrincipal? currentUser)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The identifier.</p>
+</dd>
+    <dt><code>model</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dynamic.expandoobject">ExpandoObject</a></dt>
+    <dd><p>The model.</p>
+</dd>
+    <dt><code>currentUser</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
+    <dd><p>The current user.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEntity.html">IEntity</a></dt>
+    <dd><p>The entity specified.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadModel_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadModel*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadModel_System_Int64_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadModel(System.Int64)">
+  LoadModel(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads the model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TModel LoadModel(long id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The identifier.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TModel</span></dt>
+    <dd><p>The model requested</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadPageAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadPageAsync*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_LoadPageAsync_System_Int32_System_Int32_System_String_System_Boolean_System_String_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.LoadPageAsync(System.Int32,System.Int32,System.String,System.Boolean,System.String,System.Security.Claims.ClaimsPrincipal)">
+  LoadPageAsync(int, int, string, bool, string, ClaimsPrincipal?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads the page asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;IEnumerable&lt;IEntity&gt;&gt; LoadPageAsync(int page, int pageSize, string sortField, bool sortAscending, string searchQuery, ClaimsPrincipal? currentUser)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>page</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The page (zero based).</p>
+</dd>
+    <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Size of the page.</p>
+</dd>
+    <dt><code>sortField</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The sort field.</p>
+</dd>
+    <dt><code>sortAscending</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if set to <code>true</code> [sort ascending].</p>
+</dd>
+    <dt><code>searchQuery</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The search query.</p>
+</dd>
+    <dt><code>currentUser</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
+    <dd><p>The current user.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Mithril.Admin.Abstractions.Interfaces.IEntity.html">IEntity</a>&gt;&gt;</dt>
+    <dd><p>The entities specified.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeActiveAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeActiveAsync*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeActiveAsync__1_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeActiveAsync(`1)">
+  MakeActiveAsync(TModel)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L202"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Makes the model active.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task MakeActiveAsync(TModel model)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>model</code> <span class="xref">TModel</span></dt>
+    <dd><p>The model.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The async task.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeInactiveAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeInactiveAsync*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_MakeInactiveAsync__1_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.MakeInactiveAsync(`1)">
+  MakeInactiveAsync(TModel)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Makes the model inactive.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task MakeInactiveAsync(TModel model)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>model</code> <span class="xref">TModel</span></dt>
+    <dd><p>The model.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The async task.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_SaveEntityAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.SaveEntityAsync*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_SaveEntityAsync_System_Int64_System_Dynamic_ExpandoObject_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.SaveEntityAsync(System.Int64,System.Dynamic.ExpandoObject,System.Security.Claims.ClaimsPrincipal)">
+  SaveEntityAsync(long, ExpandoObject, ClaimsPrincipal?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Saves the changes asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;bool&gt; SaveEntityAsync(long id, ExpandoObject entity, ClaimsPrincipal? currentUser)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The identifier.</p>
+</dd>
+    <dt><code>entity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dynamic.expandoobject">ExpandoObject</a></dt>
+    <dd><p>The entity.</p>
+</dd>
+    <dt><code>currentUser</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
+    <dd><p>The current user.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p>True if it succeeds, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_TotalActiveAsync_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.TotalActiveAsync*"></a>
+
+  <h3 id="Mithril_Admin_Abstractions_BaseClasses_EntityEditorBaseClass_2_TotalActiveAsync_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass`2.TotalActiveAsync(System.Security.Claims.ClaimsPrincipal)">
+  TotalActiveAsync(ClaimsPrincipal?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the total active items.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;int&gt; TotalActiveAsync(ClaimsPrincipal? currentUser)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>currentUser</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>The total.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="seealso">See Also</h2>
   <div class="seealso">
       <div><a class="xref" href="Mithril.Admin.Abstractions.BaseClasses.EntityEditorBaseClass-1.html">EntityEditorBaseClass</a>&lt;TEntity&gt;</div>
   </div>
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Admin.Abstractions/BaseClasses/EntityEditorBaseClass.cs/#L21" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

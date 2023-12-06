@@ -1,132 +1,144 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Class LookUpType
  | Mithril API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class LookUpType
  | Mithril API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="Mithril" class="logomark">
-              <span class="brand-title">Mithril</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Mithril">
+            Mithril
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="Mithril" class="logomark">
-                          <span class="brand-title">Mithril</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="Mithril.Data.Models.General.LookUpType">
+        <article data-uid="Mithril.Data.Models.General.LookUpType">
 
 
 
-  <h1 id="Mithril_Data_Models_General_LookUpType" data-uid="Mithril.Data.Models.General.LookUpType" class="text-break">Class LookUpType
-</h1>
-  <div class="markdown level0 summary"><p>LookUpType object</p>
+  <h1 id="Mithril_Data_Models_General_LookUpType" data-uid="Mithril.Data.Models.General.LookUpType" class="text-break">
+    Class LookUpType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Data.html">Data</a>.<a class="xref" href="Mithril.Data.Models.html">Models</a>.<a class="xref" href="Mithril.Data.Models.General.html">General</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Mithril.Data.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>LookUpType object</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;</div>
-    <div class="level2"><span class="xref">LookUpType</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class LookUpType : ModelBase&lt;LookUpType&gt;, IModel&lt;LookUpType&gt;, IEquatable&lt;IModel&lt;LookUpType&gt;&gt;, IComparable, IComparable&lt;LookUpType&gt;, IEquatable&lt;ModelBase&lt;LookUpType&gt;&gt;, IEquatable&lt;LookUpType&gt;, ILookUpType, IModel, IEquatable&lt;IModel&gt;, IEquatable&lt;ILookUpType&gt;</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;</div>
-    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.ILookUpType.html">ILookUpType</a></div>
-    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.ILookUpType.html">ILookUpType</a>&gt;</div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;</div>
+      <div><span class="xref">LookUpType</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;</div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.ILookUpType.html">ILookUpType</a></div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.ILookUpType.html">ILookUpType</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Active">ModelBase&lt;LookUpType&gt;.Active</a>
     </div>
@@ -208,1069 +220,806 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Data.html">Data</a>.<a class="xref" href="Mithril.Data.Models.html">Models</a>.<a class="xref" href="Mithril.Data.Models.General.html">General</a></h6>
-  <h6><strong>Assembly</strong>: Mithril.Data.dll</h6>
-  <h5 id="Mithril_Data_Models_General_LookUpType_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class LookUpType : ModelBase&lt;LookUpType&gt;, IModel&lt;LookUpType&gt;, IEquatable&lt;IModel&lt;LookUpType&gt;&gt;, IComparable, IComparable&lt;LookUpType&gt;, IEquatable&lt;ModelBase&lt;LookUpType&gt;&gt;, IEquatable&lt;LookUpType&gt;, ILookUpType, IModel, IEquatable&lt;IModel&gt;, IEquatable&lt;ILookUpType&gt;</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType__ctor.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L19">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType__ctor_" data-uid="Mithril.Data.Models.General.LookUpType.#ctor*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType__ctor" data-uid="Mithril.Data.Models.General.LookUpType.#ctor">LookUpType()</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a> class.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LookUpType()</code></pre>
-  </div>
-  <h5 id="Mithril_Data_Models_General_LookUpType__ctor_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType__ctor_System_String_System_String_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.%23ctor(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L30">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType__ctor_" data-uid="Mithril.Data.Models.General.LookUpType.#ctor*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType__ctor_System_String_System_String_" data-uid="Mithril.Data.Models.General.LookUpType.#ctor(System.String,System.String)">LookUpType(string, string?)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a> class.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LookUpType(string displayName, string? description)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">displayName</span></td>
-        <td><p>The display name.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">description</span></td>
-        <td><p>The description.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
-        <td><p>displayName</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>displayName or description</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType__ctor_System_String_System_String__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_Description.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.Description%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L47">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_Description_" data-uid="Mithril.Data.Models.General.LookUpType.Description*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_Description" data-uid="Mithril.Data.Models.General.LookUpType.Description">Description</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the description.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength(500)]
-public string? Description { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The description.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_Description_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_DisplayName.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.DisplayName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L54">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_DisplayName_" data-uid="Mithril.Data.Models.General.LookUpType.DisplayName*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_DisplayName" data-uid="Mithril.Data.Models.General.LookUpType.DisplayName">DisplayName</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the display name.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength(64)]
-public string? DisplayName { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The display name.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_DisplayName_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_LookUps.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.LookUps%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L61">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_LookUps_" data-uid="Mithril.Data.Models.General.LookUpType.LookUps*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_LookUps" data-uid="Mithril.Data.Models.General.LookUpType.LookUps">LookUps</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the look ups.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual IList&lt;ILookUp&gt; LookUps { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.ILookUp.html">ILookUp</a>&gt;</td>
-        <td><p>The look ups.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_LookUps_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_CompareTo_Mithril_Data_Models_General_LookUpType_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.CompareTo(Mithril.Data.Models.General.LookUpType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L150">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_CompareTo_" data-uid="Mithril.Data.Models.General.LookUpType.CompareTo*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_CompareTo_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.CompareTo(Mithril.Data.Models.General.LookUpType)">CompareTo(LookUpType?)</h4>
-  <div class="markdown level1 summary"><p>Compares the object to another object</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override int CompareTo(LookUpType? other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>Object to compare to</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>0 if they are equal, -1 if this is smaller, 1 if it is larger</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">ModelBase&lt;LookUpType&gt;.CompareTo(LookUpType)</a></div>
-  <h5 id="Mithril_Data_Models_General_LookUpType_CompareTo_Mithril_Data_Models_General_LookUpType__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_Equals_Mithril_Data_Abstractions_Interfaces_ILookUpType_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.Equals(Mithril.Data.Abstractions.Interfaces.ILookUpType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L179">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_Equals_" data-uid="Mithril.Data.Models.General.LookUpType.Equals*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_Equals_Mithril_Data_Abstractions_Interfaces_ILookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.Equals(Mithril.Data.Abstractions.Interfaces.ILookUpType)">Equals(ILookUpType?)</h4>
-  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Equals(ILookUpType? other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Interfaces.ILookUpType.html">ILookUpType</a></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>An object to compare with this object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current object is equal to the <code class="paramref">other</code>
-parameter; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_Equals_Mithril_Data_Abstractions_Interfaces_ILookUpType__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_Equals_Mithril_Data_Models_General_LookUpType_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.Equals(Mithril.Data.Models.General.LookUpType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L160">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_Equals_" data-uid="Mithril.Data.Models.General.LookUpType.Equals*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_Equals_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.Equals(Mithril.Data.Models.General.LookUpType)">Equals(LookUpType?)</h4>
-  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Equals(LookUpType? other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>An object to compare with this object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true if the current object is equal to the <code class="paramref">other</code>
-parameter; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_Equals_Mithril_Data_Models_General_LookUpType__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L169">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_Equals_" data-uid="Mithril.Data.Models.General.LookUpType.Equals*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_Equals_System_Object_" data-uid="Mithril.Data.Models.General.LookUpType.Equals(System.Object)">Equals(object?)</h4>
-  <div class="markdown level1 summary"><p>Determines whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, is equal to this instance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">obj</span></td>
-        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> to compare with this instance.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><code>true</code> if the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> is equal to this instance; otherwise, <code>false</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ModelBase&lt;LookUpType&gt;.Equals(object)</a></div>
-  <h5 id="Mithril_Data_Models_General_LookUpType_Equals_System_Object__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_GetHashCode.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L188">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_GetHashCode_" data-uid="Mithril.Data.Models.General.LookUpType.GetHashCode*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_GetHashCode" data-uid="Mithril.Data.Models.General.LookUpType.GetHashCode">GetHashCode()</h4>
-  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>A hash code for this instance, suitable for use in hashing algorithms and data
-structures like a hash table.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Mithril.Data.Abstractions.BaseClasses.ModelBase&lt;Mithril.Data.Models.General.LookUpType&gt;.GetHashCode()</span></div>
-  <h5 id="Mithril_Data_Models_General_LookUpType_GetHashCode_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_Load_Mithril_Data_Abstractions_Enums_LookUpTypeEnum_Mithril_Data_Abstractions_Services_IDataService_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.Load(Mithril.Data.Abstractions.Enums.LookUpTypeEnum%2CMithril.Data.Abstractions.Services.IDataService)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L69">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_Load_" data-uid="Mithril.Data.Models.General.LookUpType.Load*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_Load_Mithril_Data_Abstractions_Enums_LookUpTypeEnum_Mithril_Data_Abstractions_Services_IDataService_" data-uid="Mithril.Data.Models.General.LookUpType.Load(Mithril.Data.Abstractions.Enums.LookUpTypeEnum,Mithril.Data.Abstractions.Services.IDataService)">Load(LookUpTypeEnum, IDataService?)</h4>
-  <div class="markdown level1 summary"><p>Loads the specified LookUpType based on the display name.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LookUpType? Load(LookUpTypeEnum displayName, IDataService? dataService)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Enums.LookUpTypeEnum.html">LookUpTypeEnum</a></td>
-        <td><span class="parametername">displayName</span></td>
-        <td><p>The display name.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></td>
-        <td><span class="parametername">dataService</span></td>
-        <td><p>The data service.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><p>The LookUpType specified.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_Load_Mithril_Data_Abstractions_Enums_LookUpTypeEnum_Mithril_Data_Abstractions_Services_IDataService__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_LoadOrCreateAsync_Mithril_Data_Abstractions_Enums_LookUpTypeEnum_System_String_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.LoadOrCreateAsync(Mithril.Data.Abstractions.Enums.LookUpTypeEnum%2CSystem.String%2CMithril.Data.Abstractions.Services.IDataService%2CSystem.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L79">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_LoadOrCreateAsync_" data-uid="Mithril.Data.Models.General.LookUpType.LoadOrCreateAsync*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_LoadOrCreateAsync_Mithril_Data_Abstractions_Enums_LookUpTypeEnum_System_String_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Data.Models.General.LookUpType.LoadOrCreateAsync(Mithril.Data.Abstractions.Enums.LookUpTypeEnum,System.String,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)">LoadOrCreateAsync(LookUpTypeEnum, string, IDataService?, ClaimsPrincipal?)</h4>
-  <div class="markdown level1 summary"><p>Loads the or create.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;LookUpType&gt; LoadOrCreateAsync(LookUpTypeEnum displayName, string description, IDataService? dataService, ClaimsPrincipal? user)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Enums.LookUpTypeEnum.html">LookUpTypeEnum</a></td>
-        <td><span class="parametername">displayName</span></td>
-        <td><p>The display name.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">description</span></td>
-        <td><p>The description.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></td>
-        <td><span class="parametername">dataService</span></td>
-        <td><p>The data service.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
-        <td><span class="parametername">user</span></td>
-        <td><p>The user.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;</td>
-        <td><p>The LookUpType</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_LoadOrCreateAsync_Mithril_Data_Abstractions_Enums_LookUpTypeEnum_System_String_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_ToString.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L194">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_ToString_" data-uid="Mithril.Data.Models.General.LookUpType.ToString*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_ToString" data-uid="Mithril.Data.Models.General.LookUpType.ToString">ToString()</h4>
-  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
-  <h5 id="Mithril_Data_Models_General_LookUpType_ToString_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <h3 id="operators">Operators
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_op_Equality_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.op_Equality(Mithril.Data.Models.General.LookUpType%2CMithril.Data.Models.General.LookUpType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L121">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_op_Equality_" data-uid="Mithril.Data.Models.General.LookUpType.op_Equality*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_op_Equality_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_Equality(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">operator ==(LookUpType?, LookUpType?)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator ==.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator ==(LookUpType? first, LookUpType? second)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">first</span></td>
-        <td><p>The first.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">second</span></td>
-        <td><p>The second.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_op_Equality_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_op_GreaterThan_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.op_GreaterThan(Mithril.Data.Models.General.LookUpType%2CMithril.Data.Models.General.LookUpType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L135">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_op_GreaterThan_" data-uid="Mithril.Data.Models.General.LookUpType.op_GreaterThan*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_op_GreaterThan_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_GreaterThan(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">operator &gt;(LookUpType?, LookUpType?)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &gt;.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &gt;(LookUpType? left, LookUpType? right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_op_GreaterThan_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_op_GreaterThanOrEqual_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.op_GreaterThanOrEqual(Mithril.Data.Models.General.LookUpType%2CMithril.Data.Models.General.LookUpType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L143">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_op_GreaterThanOrEqual_" data-uid="Mithril.Data.Models.General.LookUpType.op_GreaterThanOrEqual*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_op_GreaterThanOrEqual_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_GreaterThanOrEqual(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">operator &gt;=(LookUpType?, LookUpType?)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &gt;=.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &gt;=(LookUpType? left, LookUpType? right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_op_GreaterThanOrEqual_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_op_Inequality_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.op_Inequality(Mithril.Data.Models.General.LookUpType%2CMithril.Data.Models.General.LookUpType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L97">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_op_Inequality_" data-uid="Mithril.Data.Models.General.LookUpType.op_Inequality*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_op_Inequality_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_Inequality(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">operator !=(LookUpType?, LookUpType?)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator !=.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator !=(LookUpType? left, LookUpType? right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_op_Inequality_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_op_LessThan_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.op_LessThan(Mithril.Data.Models.General.LookUpType%2CMithril.Data.Models.General.LookUpType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L105">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_op_LessThan_" data-uid="Mithril.Data.Models.General.LookUpType.op_LessThan*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_op_LessThan_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_LessThan(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">operator &lt;(LookUpType?, LookUpType?)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &lt;.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &lt;(LookUpType? left, LookUpType? right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_op_LessThan_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Data_Models_General_LookUpType_op_LessThanOrEqual_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_.md&amp;value=---%0Auid%3A%20Mithril.Data.Models.General.LookUpType.op_LessThanOrEqual(Mithril.Data.Models.General.LookUpType%2CMithril.Data.Models.General.LookUpType)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L113">View Source</a>
-  </span>
-  <a id="Mithril_Data_Models_General_LookUpType_op_LessThanOrEqual_" data-uid="Mithril.Data.Models.General.LookUpType.op_LessThanOrEqual*"></a>
-  <h4 id="Mithril_Data_Models_General_LookUpType_op_LessThanOrEqual_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_LessThanOrEqual(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">operator &lt;=(LookUpType?, LookUpType?)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &lt;=.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &lt;=(LookUpType? left, LookUpType? right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Data_Models_General_LookUpType_op_LessThanOrEqual_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel&lt;TClass&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.ILookUpType.html">ILookUpType</a>
-  </div>
-  <div>
-      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
   <div>
       <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
   </div>
   <div>
       <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando_System_Object_">ExpandoObjectExtensions.ConvertToExpando(object?)</a>
   </div>
-  <h3 id="seealso">See Also</h3>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Mithril_Data_Models_General_LookUpType__ctor_" data-uid="Mithril.Data.Models.General.LookUpType.#ctor*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType__ctor" data-uid="Mithril.Data.Models.General.LookUpType.#ctor">
+  LookUpType()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LookUpType()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType__ctor_" data-uid="Mithril.Data.Models.General.LookUpType.#ctor*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType__ctor_System_String_System_String_" data-uid="Mithril.Data.Models.General.LookUpType.#ctor(System.String,System.String)">
+  LookUpType(string, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LookUpType(string displayName, string? description)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>displayName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The display name.</p>
+</dd>
+    <dt><code>description</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The description.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>displayName</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>displayName or description</p>
+</dd>
+  </dl>
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_Description_" data-uid="Mithril.Data.Models.General.LookUpType.Description*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_Description" data-uid="Mithril.Data.Models.General.LookUpType.Description">
+  Description
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the description.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(500)]
+public string? Description { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The description.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_DisplayName_" data-uid="Mithril.Data.Models.General.LookUpType.DisplayName*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_DisplayName" data-uid="Mithril.Data.Models.General.LookUpType.DisplayName">
+  DisplayName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the display name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(64)]
+public string? DisplayName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The display name.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_LookUps_" data-uid="Mithril.Data.Models.General.LookUpType.LookUps*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_LookUps" data-uid="Mithril.Data.Models.General.LookUpType.LookUps">
+  LookUps
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the look ups.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IList&lt;ILookUp&gt; LookUps { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.ILookUp.html">ILookUp</a>&gt;</dt>
+    <dd><p>The look ups.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_CompareTo_" data-uid="Mithril.Data.Models.General.LookUpType.CompareTo*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_CompareTo_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.CompareTo(Mithril.Data.Models.General.LookUpType)">
+  CompareTo(LookUpType?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Compares the object to another object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int CompareTo(LookUpType? other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>Object to compare to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>0 if they are equal, -1 if this is smaller, 1 if it is larger</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_Equals_" data-uid="Mithril.Data.Models.General.LookUpType.Equals*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_Equals_Mithril_Data_Abstractions_Interfaces_ILookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.Equals(Mithril.Data.Abstractions.Interfaces.ILookUpType)">
+  Equals(ILookUpType?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(ILookUpType? other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="Mithril.Data.Abstractions.Interfaces.ILookUpType.html">ILookUpType</a></dt>
+    <dd><p>An object to compare with this object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current object is equal to the <code class="paramref">other</code>
+parameter; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_Equals_" data-uid="Mithril.Data.Models.General.LookUpType.Equals*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_Equals_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.Equals(Mithril.Data.Models.General.LookUpType)">
+  Equals(LookUpType?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L160"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(LookUpType? other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>An object to compare with this object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the current object is equal to the <code class="paramref">other</code>
+parameter; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_Equals_" data-uid="Mithril.Data.Models.General.LookUpType.Equals*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_Equals_System_Object_" data-uid="Mithril.Data.Models.General.LookUpType.Equals(System.Object)">
+  Equals(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, is equal to this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> to compare with this instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> is equal to this instance; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_GetHashCode_" data-uid="Mithril.Data.Models.General.LookUpType.GetHashCode*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_GetHashCode" data-uid="Mithril.Data.Models.General.LookUpType.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>A hash code for this instance, suitable for use in hashing algorithms and data
+structures like a hash table.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_Load_" data-uid="Mithril.Data.Models.General.LookUpType.Load*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_Load_Mithril_Data_Abstractions_Enums_LookUpTypeEnum_Mithril_Data_Abstractions_Services_IDataService_" data-uid="Mithril.Data.Models.General.LookUpType.Load(Mithril.Data.Abstractions.Enums.LookUpTypeEnum,Mithril.Data.Abstractions.Services.IDataService)">
+  Load(LookUpTypeEnum, IDataService?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads the specified LookUpType based on the display name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LookUpType? Load(LookUpTypeEnum displayName, IDataService? dataService)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>displayName</code> <a class="xref" href="Mithril.Data.Abstractions.Enums.LookUpTypeEnum.html">LookUpTypeEnum</a></dt>
+    <dd><p>The display name.</p>
+</dd>
+    <dt><code>dataService</code> <a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></dt>
+    <dd><p>The data service.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The LookUpType specified.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_LoadOrCreateAsync_" data-uid="Mithril.Data.Models.General.LookUpType.LoadOrCreateAsync*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_LoadOrCreateAsync_Mithril_Data_Abstractions_Enums_LookUpTypeEnum_System_String_Mithril_Data_Abstractions_Services_IDataService_System_Security_Claims_ClaimsPrincipal_" data-uid="Mithril.Data.Models.General.LookUpType.LoadOrCreateAsync(Mithril.Data.Abstractions.Enums.LookUpTypeEnum,System.String,Mithril.Data.Abstractions.Services.IDataService,System.Security.Claims.ClaimsPrincipal)">
+  LoadOrCreateAsync(LookUpTypeEnum, string, IDataService?, ClaimsPrincipal?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads the or create.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;LookUpType&gt; LoadOrCreateAsync(LookUpTypeEnum displayName, string description, IDataService? dataService, ClaimsPrincipal? user)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>displayName</code> <a class="xref" href="Mithril.Data.Abstractions.Enums.LookUpTypeEnum.html">LookUpTypeEnum</a></dt>
+    <dd><p>The display name.</p>
+</dd>
+    <dt><code>description</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The description.</p>
+</dd>
+    <dt><code>dataService</code> <a class="xref" href="Mithril.Data.Abstractions.Services.IDataService.html">IDataService</a></dt>
+    <dd><p>The data service.</p>
+</dd>
+    <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
+    <dd><p>The user.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a>&gt;</dt>
+    <dd><p>The LookUpType</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_ToString_" data-uid="Mithril.Data.Models.General.LookUpType.ToString*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_ToString" data-uid="Mithril.Data.Models.General.LookUpType.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_op_Equality_" data-uid="Mithril.Data.Models.General.LookUpType.op_Equality*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_op_Equality_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_Equality(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">
+  operator ==(LookUpType?, LookUpType?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator ==.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(LookUpType? first, LookUpType? second)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>first</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The first.</p>
+</dd>
+    <dt><code>second</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The second.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_op_GreaterThan_" data-uid="Mithril.Data.Models.General.LookUpType.op_GreaterThan*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_op_GreaterThan_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_GreaterThan(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">
+  operator &gt;(LookUpType?, LookUpType?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &gt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;(LookUpType? left, LookUpType? right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_op_GreaterThanOrEqual_" data-uid="Mithril.Data.Models.General.LookUpType.op_GreaterThanOrEqual*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_op_GreaterThanOrEqual_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_GreaterThanOrEqual(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">
+  operator &gt;=(LookUpType?, LookUpType?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L143"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &gt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;=(LookUpType? left, LookUpType? right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_op_Inequality_" data-uid="Mithril.Data.Models.General.LookUpType.op_Inequality*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_op_Inequality_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_Inequality(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">
+  operator !=(LookUpType?, LookUpType?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator !=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(LookUpType? left, LookUpType? right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_op_LessThan_" data-uid="Mithril.Data.Models.General.LookUpType.op_LessThan*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_op_LessThan_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_LessThan(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">
+  operator &lt;(LookUpType?, LookUpType?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &lt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;(LookUpType? left, LookUpType? right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Data_Models_General_LookUpType_op_LessThanOrEqual_" data-uid="Mithril.Data.Models.General.LookUpType.op_LessThanOrEqual*"></a>
+
+  <h3 id="Mithril_Data_Models_General_LookUpType_op_LessThanOrEqual_Mithril_Data_Models_General_LookUpType_Mithril_Data_Models_General_LookUpType_" data-uid="Mithril.Data.Models.General.LookUpType.op_LessThanOrEqual(Mithril.Data.Models.General.LookUpType,Mithril.Data.Models.General.LookUpType)">
+  operator &lt;=(LookUpType?, LookUpType?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &lt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;=(LookUpType? left, LookUpType? right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Data.Models.General.LookUpType.html">LookUpType</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="seealso">See Also</h2>
   <div class="seealso">
       <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
   </div>
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Data/Models/General/LookUpType.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,130 +1,142 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Class EmailMessage
  | Mithril API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class EmailMessage
  | Mithril API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="Mithril" class="logomark">
-              <span class="brand-title">Mithril</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Mithril">
+            Mithril
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="Mithril" class="logomark">
-                          <span class="brand-title">Mithril</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="Mithril.Communication.Email.Models.EmailMessage">
+        <article data-uid="Mithril.Communication.Email.Models.EmailMessage">
 
 
 
-  <h1 id="Mithril_Communication_Email_Models_EmailMessage" data-uid="Mithril.Communication.Email.Models.EmailMessage" class="text-break">Class EmailMessage
-</h1>
-  <div class="markdown level0 summary"><p>Email message</p>
+  <h1 id="Mithril_Communication_Email_Models_EmailMessage" data-uid="Mithril.Communication.Email.Models.EmailMessage" class="text-break">
+    Class EmailMessage
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Communication.html">Communication</a>.<a class="xref" href="Mithril.Communication.Email.html">Email</a>.<a class="xref" href="Mithril.Communication.Email.Models.html">Models</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Mithril.Communication.Email.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Email message</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a>&gt;</div>
-    <div class="level2"><span class="xref">EmailMessage</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class EmailMessage : ModelBase&lt;EmailMessage&gt;, IModel&lt;EmailMessage&gt;, IEquatable&lt;IModel&lt;EmailMessage&gt;&gt;, IComparable, IComparable&lt;EmailMessage&gt;, IEquatable&lt;ModelBase&lt;EmailMessage&gt;&gt;, IMessage, IModel, IEquatable&lt;IModel&gt;</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a>&gt;&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a>&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a>&gt;&gt;</div>
-    <div><a class="xref" href="Mithril.Communication.Abstractions.Interfaces.IMessage.html">IMessage</a></div>
-    <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>&gt;</div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a>&gt;</div>
+      <div><span class="xref">EmailMessage</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel</a>&lt;<a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a>&gt;&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;<a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a>&gt;&gt;</div>
+      <div><a class="xref" href="Mithril.Communication.Abstractions.Interfaces.IMessage.html">IMessage</a></div>
+      <div><a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html#Mithril_Data_Abstractions_BaseClasses_ModelBase_1_Active">ModelBase&lt;EmailMessage&gt;.Active</a>
     </div>
@@ -206,1090 +218,877 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Communication.html">Communication</a>.<a class="xref" href="Mithril.Communication.Email.html">Email</a>.<a class="xref" href="Mithril.Communication.Email.Models.html">Models</a></h6>
-  <h6><strong>Assembly</strong>: Mithril.Communication.Email.dll</h6>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EmailMessage : ModelBase&lt;EmailMessage&gt;, IModel&lt;EmailMessage&gt;, IEquatable&lt;IModel&lt;EmailMessage&gt;&gt;, IComparable, IComparable&lt;EmailMessage&gt;, IEquatable&lt;ModelBase&lt;EmailMessage&gt;&gt;, IMessage, IModel, IEquatable&lt;IModel&gt;</code></pre>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_Application.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.Application%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L20">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_Application_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Application*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_Application" data-uid="Mithril.Communication.Email.Models.EmailMessage.Application">Application</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the application the message originated from.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength(64)]
-public string? Application { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The application the message originated from.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_Application_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_Attachments.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.Attachments%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L27">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_Attachments_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Attachments*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_Attachments" data-uid="Mithril.Communication.Email.Models.EmailMessage.Attachments">Attachments</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the attachments.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual IList&lt;Attachment?&gt; Attachments { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a>&gt;</td>
-        <td><p>The attachments.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_Attachments_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_BCC.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.BCC%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L33">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_BCC_" data-uid="Mithril.Communication.Email.Models.EmailMessage.BCC*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_BCC" data-uid="Mithril.Communication.Email.Models.EmailMessage.BCC">BCC</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the BCC.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength]
-public string? BCC { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The BCC.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_BCC_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_Body.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.Body%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L40">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_Body_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Body*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_Body" data-uid="Mithril.Communication.Email.Models.EmailMessage.Body">Body</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the body.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength]
-public string? Body { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The body.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_Body_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_CC.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.CC%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L47">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_CC_" data-uid="Mithril.Communication.Email.Models.EmailMessage.CC*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_CC" data-uid="Mithril.Communication.Email.Models.EmailMessage.CC">CC</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the cc.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength]
-public string? CC { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The cc.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_CC_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_From.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.From%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L54">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_From_" data-uid="Mithril.Communication.Email.Models.EmailMessage.From*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_From" data-uid="Mithril.Communication.Email.Models.EmailMessage.From">From</h4>
-  <div class="markdown level1 summary"><p>Gets or sets from.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Required]
-[MinLength(1)]
-[MaxLength(128)]
-public string? From { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>From.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_From_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_Subject.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.Subject%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L63">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_Subject_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Subject*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_Subject" data-uid="Mithril.Communication.Email.Models.EmailMessage.Subject">Subject</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the subject.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Required]
-[MinLength(1)]
-[MaxLength(256)]
-public string? Subject { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The subject.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_Subject_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_Template.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.Template%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L72">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_Template_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Template*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_Template" data-uid="Mithril.Communication.Email.Models.EmailMessage.Template">Template</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the template.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength(128)]
-public string? Template { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The template.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_Template_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_TemplateData.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.TemplateData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L79">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_TemplateData_" data-uid="Mithril.Communication.Email.Models.EmailMessage.TemplateData*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_TemplateData" data-uid="Mithril.Communication.Email.Models.EmailMessage.TemplateData">TemplateData</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the template data (JSON).</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength]
-public string? TemplateData { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The template data in JSON format.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_TemplateData_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_TemplateFields.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.TemplateFields%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L86">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_TemplateFields_" data-uid="Mithril.Communication.Email.Models.EmailMessage.TemplateFields*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_TemplateFields" data-uid="Mithril.Communication.Email.Models.EmailMessage.TemplateFields">TemplateFields</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the template data.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ExpandoObject? TemplateFields { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dynamic.expandoobject">ExpandoObject</a></td>
-        <td><p>The template data.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_TemplateFields_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_To.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.To%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L102">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_To_" data-uid="Mithril.Communication.Email.Models.EmailMessage.To*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_To" data-uid="Mithril.Communication.Email.Models.EmailMessage.To">To</h4>
-  <div class="markdown level1 summary"><p>Gets or sets to.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Required]
-[MinLength(1)]
-[MaxLength]
-public string? To { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>To.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_To_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_CompareTo_Mithril_Communication_Email_Models_EmailMessage_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.CompareTo(Mithril.Communication.Email.Models.EmailMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L160">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_CompareTo_" data-uid="Mithril.Communication.Email.Models.EmailMessage.CompareTo*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_CompareTo_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.CompareTo(Mithril.Communication.Email.Models.EmailMessage)">CompareTo(EmailMessage?)</h4>
-  <div class="markdown level1 summary"><p>Compares the object to another object</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override int CompareTo(EmailMessage? other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>Object to compare to</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>0 if they are equal, -1 if this is smaller, 1 if it is larger</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">ModelBase&lt;EmailMessage&gt;.CompareTo(EmailMessage)</a></div>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_CompareTo_Mithril_Communication_Email_Models_EmailMessage__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_Equals_Mithril_Communication_Email_Models_EmailMessage_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.Equals(Mithril.Communication.Email.Models.EmailMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L179">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_Equals_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Equals*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_Equals_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Equals(Mithril.Communication.Email.Models.EmailMessage)">Equals(EmailMessage)</h4>
-  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Equals(EmailMessage other)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">other</span></td>
-        <td><p>An object to compare with this object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true if the current object is equal to the <code class="paramref">other</code>
-parameter; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_Equals_Mithril_Communication_Email_Models_EmailMessage__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L169">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_Equals_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Equals*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_Equals_System_Object_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Equals(System.Object)">Equals(object?)</h4>
-  <div class="markdown level1 summary"><p>Determines whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, is equal to this instance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">obj</span></td>
-        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> to compare with this instance.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><code>true</code> if the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> is equal to this instance; otherwise, <code>false</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ModelBase&lt;EmailMessage&gt;.Equals(object)</a></div>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_Equals_System_Object__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_GetHashCode.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L188">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_GetHashCode_" data-uid="Mithril.Communication.Email.Models.EmailMessage.GetHashCode*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_GetHashCode" data-uid="Mithril.Communication.Email.Models.EmailMessage.GetHashCode">GetHashCode()</h4>
-  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>A hash code for this instance, suitable for use in hashing algorithms and data
-structures like a hash table.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Mithril.Data.Abstractions.BaseClasses.ModelBase&lt;Mithril.Communication.Email.Models.EmailMessage&gt;.GetHashCode()</span></div>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_GetHashCode_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_ToString.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L194">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_ToString_" data-uid="Mithril.Communication.Email.Models.EmailMessage.ToString*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_ToString" data-uid="Mithril.Communication.Email.Models.EmailMessage.ToString">ToString()</h4>
-  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_ToString_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <h3 id="operators">Operators
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_op_Equality_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.op_Equality(Mithril.Communication.Email.Models.EmailMessage%2CMithril.Communication.Email.Models.EmailMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L137">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_op_Equality_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_Equality*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_op_Equality_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_Equality(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">operator ==(EmailMessage, EmailMessage)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator ==.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator ==(EmailMessage first, EmailMessage second)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">first</span></td>
-        <td><p>The first.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">second</span></td>
-        <td><p>The second.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_op_Equality_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_op_GreaterThan_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.op_GreaterThan(Mithril.Communication.Email.Models.EmailMessage%2CMithril.Communication.Email.Models.EmailMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L145">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_op_GreaterThan_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_GreaterThan*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_op_GreaterThan_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_GreaterThan(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">operator &gt;(EmailMessage, EmailMessage)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &gt;.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &gt;(EmailMessage left, EmailMessage right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_op_GreaterThan_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_op_GreaterThanOrEqual_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.op_GreaterThanOrEqual(Mithril.Communication.Email.Models.EmailMessage%2CMithril.Communication.Email.Models.EmailMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L153">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_op_GreaterThanOrEqual_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_GreaterThanOrEqual*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_op_GreaterThanOrEqual_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_GreaterThanOrEqual(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">operator &gt;=(EmailMessage, EmailMessage)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &gt;=.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &gt;=(EmailMessage left, EmailMessage right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_op_GreaterThanOrEqual_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_op_Inequality_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.op_Inequality(Mithril.Communication.Email.Models.EmailMessage%2CMithril.Communication.Email.Models.EmailMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L113">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_op_Inequality_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_Inequality*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_op_Inequality_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_Inequality(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">operator !=(EmailMessage, EmailMessage)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator !=.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator !=(EmailMessage left, EmailMessage right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_op_Inequality_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_op_LessThan_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.op_LessThan(Mithril.Communication.Email.Models.EmailMessage%2CMithril.Communication.Email.Models.EmailMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L121">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_op_LessThan_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_LessThan*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_op_LessThan_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_LessThan(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">operator &lt;(EmailMessage, EmailMessage)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &lt;.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &lt;(EmailMessage left, EmailMessage right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_op_LessThan_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Email_Models_EmailMessage_op_LessThanOrEqual_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_.md&amp;value=---%0Auid%3A%20Mithril.Communication.Email.Models.EmailMessage.op_LessThanOrEqual(Mithril.Communication.Email.Models.EmailMessage%2CMithril.Communication.Email.Models.EmailMessage)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L129">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Email_Models_EmailMessage_op_LessThanOrEqual_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_LessThanOrEqual*"></a>
-  <h4 id="Mithril_Communication_Email_Models_EmailMessage_op_LessThanOrEqual_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_LessThanOrEqual(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">operator &lt;=(EmailMessage, EmailMessage)</h4>
-  <div class="markdown level1 summary"><p>Implements the operator &lt;=.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator &lt;=(EmailMessage left, EmailMessage right)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">left</span></td>
-        <td><p>The left.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></td>
-        <td><span class="parametername">right</span></td>
-        <td><p>The right.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>The result of the operator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mithril_Communication_Email_Models_EmailMessage_op_LessThanOrEqual_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
-  </div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel-1.html">IModel&lt;TClass&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable">IComparable</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Mithril.Communication.Abstractions.Interfaces.IMessage.html">IMessage</a>
-  </div>
-  <div>
-      <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html">IModel</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
   <div>
       <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
   </div>
   <div>
       <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando_System_Object_">ExpandoObjectExtensions.ConvertToExpando(object?)</a>
   </div>
-  <h3 id="seealso">See Also</h3>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_Application_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Application*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_Application" data-uid="Mithril.Communication.Email.Models.EmailMessage.Application">
+  Application
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the application the message originated from.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(64)]
+public string? Application { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The application the message originated from.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_Attachments_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Attachments*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_Attachments" data-uid="Mithril.Communication.Email.Models.EmailMessage.Attachments">
+  Attachments
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the attachments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IList&lt;Attachment?&gt; Attachments { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a>&gt;</dt>
+    <dd><p>The attachments.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_BCC_" data-uid="Mithril.Communication.Email.Models.EmailMessage.BCC*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_BCC" data-uid="Mithril.Communication.Email.Models.EmailMessage.BCC">
+  BCC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the BCC.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength]
+public string? BCC { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The BCC.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_Body_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Body*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_Body" data-uid="Mithril.Communication.Email.Models.EmailMessage.Body">
+  Body
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the body.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength]
+public string? Body { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The body.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_CC_" data-uid="Mithril.Communication.Email.Models.EmailMessage.CC*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_CC" data-uid="Mithril.Communication.Email.Models.EmailMessage.CC">
+  CC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the cc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength]
+public string? CC { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The cc.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_From_" data-uid="Mithril.Communication.Email.Models.EmailMessage.From*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_From" data-uid="Mithril.Communication.Email.Models.EmailMessage.From">
+  From
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets from.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+[MinLength(1)]
+[MaxLength(128)]
+public string? From { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>From.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_Subject_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Subject*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_Subject" data-uid="Mithril.Communication.Email.Models.EmailMessage.Subject">
+  Subject
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the subject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+[MinLength(1)]
+[MaxLength(256)]
+public string? Subject { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The subject.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_Template_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Template*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_Template" data-uid="Mithril.Communication.Email.Models.EmailMessage.Template">
+  Template
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the template.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(128)]
+public string? Template { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The template.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_TemplateData_" data-uid="Mithril.Communication.Email.Models.EmailMessage.TemplateData*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_TemplateData" data-uid="Mithril.Communication.Email.Models.EmailMessage.TemplateData">
+  TemplateData
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the template data (JSON).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength]
+public string? TemplateData { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The template data in JSON format.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_TemplateFields_" data-uid="Mithril.Communication.Email.Models.EmailMessage.TemplateFields*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_TemplateFields" data-uid="Mithril.Communication.Email.Models.EmailMessage.TemplateFields">
+  TemplateFields
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the template data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExpandoObject? TemplateFields { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dynamic.expandoobject">ExpandoObject</a></dt>
+    <dd><p>The template data.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_To_" data-uid="Mithril.Communication.Email.Models.EmailMessage.To*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_To" data-uid="Mithril.Communication.Email.Models.EmailMessage.To">
+  To
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+[MinLength(1)]
+[MaxLength]
+public string? To { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>To.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_CompareTo_" data-uid="Mithril.Communication.Email.Models.EmailMessage.CompareTo*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_CompareTo_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.CompareTo(Mithril.Communication.Email.Models.EmailMessage)">
+  CompareTo(EmailMessage?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L160"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Compares the object to another object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int CompareTo(EmailMessage? other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>Object to compare to</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>0 if they are equal, -1 if this is smaller, 1 if it is larger</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_Equals_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Equals*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_Equals_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Equals(Mithril.Communication.Email.Models.EmailMessage)">
+  Equals(EmailMessage)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(EmailMessage other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>An object to compare with this object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the current object is equal to the <code class="paramref">other</code>
+parameter; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_Equals_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Equals*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_Equals_System_Object_" data-uid="Mithril.Communication.Email.Models.EmailMessage.Equals(System.Object)">
+  Equals(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, is equal to this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> to compare with this instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a> is equal to this instance; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_GetHashCode_" data-uid="Mithril.Communication.Email.Models.EmailMessage.GetHashCode*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_GetHashCode" data-uid="Mithril.Communication.Email.Models.EmailMessage.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>A hash code for this instance, suitable for use in hashing algorithms and data
+structures like a hash table.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_ToString_" data-uid="Mithril.Communication.Email.Models.EmailMessage.ToString*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_ToString" data-uid="Mithril.Communication.Email.Models.EmailMessage.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> that represents this instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_op_Equality_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_Equality*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_op_Equality_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_Equality(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">
+  operator ==(EmailMessage, EmailMessage)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator ==.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(EmailMessage first, EmailMessage second)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>first</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The first.</p>
+</dd>
+    <dt><code>second</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The second.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_op_GreaterThan_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_GreaterThan*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_op_GreaterThan_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_GreaterThan(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">
+  operator &gt;(EmailMessage, EmailMessage)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &gt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;(EmailMessage left, EmailMessage right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_op_GreaterThanOrEqual_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_GreaterThanOrEqual*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_op_GreaterThanOrEqual_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_GreaterThanOrEqual(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">
+  operator &gt;=(EmailMessage, EmailMessage)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L153"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &gt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;=(EmailMessage left, EmailMessage right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_op_Inequality_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_Inequality*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_op_Inequality_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_Inequality(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">
+  operator !=(EmailMessage, EmailMessage)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator !=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(EmailMessage left, EmailMessage right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_op_LessThan_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_LessThan*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_op_LessThan_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_LessThan(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">
+  operator &lt;(EmailMessage, EmailMessage)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &lt;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;(EmailMessage left, EmailMessage right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Email_Models_EmailMessage_op_LessThanOrEqual_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_LessThanOrEqual*"></a>
+
+  <h3 id="Mithril_Communication_Email_Models_EmailMessage_op_LessThanOrEqual_Mithril_Communication_Email_Models_EmailMessage_Mithril_Communication_Email_Models_EmailMessage_" data-uid="Mithril.Communication.Email.Models.EmailMessage.op_LessThanOrEqual(Mithril.Communication.Email.Models.EmailMessage,Mithril.Communication.Email.Models.EmailMessage)">
+  operator &lt;=(EmailMessage, EmailMessage)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Implements the operator &lt;=.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;=(EmailMessage left, EmailMessage right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The left.</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Mithril.Communication.Email.Models.EmailMessage.html">EmailMessage</a></dt>
+    <dd><p>The right.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The result of the operator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="seealso">See Also</h2>
   <div class="seealso">
       <div><a class="xref" href="Mithril.Data.Abstractions.BaseClasses.ModelBase-1.html">ModelBase</a>&lt;TClass&gt;</div>
   </div>
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Email/Models/EmailMessage.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

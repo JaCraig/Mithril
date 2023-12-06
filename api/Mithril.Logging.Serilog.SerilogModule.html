@@ -1,124 +1,136 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Class SerilogModule
  | Mithril API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class SerilogModule
  | Mithril API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Logging_Serilog_SerilogModule.md&amp;value=---%0Auid%3A%20Mithril.Logging.Serilog.SerilogModule%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="Mithril" class="logomark">
-              <span class="brand-title">Mithril</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Mithril">
+            Mithril
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="Mithril" class="logomark">
-                          <span class="brand-title">Mithril</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Logging_Serilog_SerilogModule.md&amp;value=---%0Auid%3A%20Mithril.Logging.Serilog.SerilogModule%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="Mithril.Logging.Serilog.SerilogModule">
+        <article data-uid="Mithril.Logging.Serilog.SerilogModule">
 
 
 
-  <h1 id="Mithril_Logging_Serilog_SerilogModule" data-uid="Mithril.Logging.Serilog.SerilogModule" class="text-break">Class SerilogModule
-</h1>
-  <div class="markdown level0 summary"><p>Serilog specific logging added to Mithril</p>
+  <h1 id="Mithril_Logging_Serilog_SerilogModule" data-uid="Mithril.Logging.Serilog.SerilogModule" class="text-break">
+    Class SerilogModule
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Logging.html">Logging</a>.<a class="xref" href="Mithril.Logging.Serilog.html">Serilog</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Mithril.Logging.Serilog.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Serilog specific logging added to Mithril</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html">ModuleBaseClass</a>&lt;<a class="xref" href="Mithril.Logging.Serilog.SerilogModule.html">SerilogModule</a>&gt;</div>
-    <div class="level2"><span class="xref">SerilogModule</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SerilogModule : ModuleBaseClass&lt;SerilogModule&gt;, IEquatable&lt;SerilogModule&gt;, IModule</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Logging.Serilog.SerilogModule.html">SerilogModule</a>&gt;</div>
-    <div><a class="xref" href="Mithril.Core.Abstractions.Modules.Interfaces.IModule.html">IModule</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html">ModuleBaseClass</a>&lt;<a class="xref" href="Mithril.Logging.Serilog.SerilogModule.html">SerilogModule</a>&gt;</div>
+      <div><span class="xref">SerilogModule</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Mithril.Logging.Serilog.SerilogModule.html">SerilogModule</a>&gt;</div>
+      <div><a class="xref" href="Mithril.Core.Abstractions.Modules.Interfaces.IModule.html">IModule</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html#Mithril_Core_Abstractions_Modules_BaseClasses_ModuleBaseClass_1_Category">ModuleBaseClass&lt;SerilogModule&gt;.Category</a>
     </div>
@@ -188,365 +200,271 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Logging.html">Logging</a>.<a class="xref" href="Mithril.Logging.Serilog.html">Serilog</a></h6>
-  <h6><strong>Assembly</strong>: Mithril.Logging.Serilog.dll</h6>
-  <h5 id="Mithril_Logging_Serilog_SerilogModule_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SerilogModule : ModuleBaseClass&lt;SerilogModule&gt;, IEquatable&lt;SerilogModule&gt;, IModule</code></pre>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Logging_Serilog_SerilogModule_Features.md&amp;value=---%0Auid%3A%20Mithril.Logging.Serilog.SerilogModule.Features%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L25">View Source</a>
-  </span>
-  <a id="Mithril_Logging_Serilog_SerilogModule_Features_" data-uid="Mithril.Logging.Serilog.SerilogModule.Features*"></a>
-  <h4 id="Mithril_Logging_Serilog_SerilogModule_Features" data-uid="Mithril.Logging.Serilog.SerilogModule.Features">Features</h4>
-  <div class="markdown level1 summary"><p>Gets the features.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override IFeature[] Features { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mithril.Core.Abstractions.Modules.Interfaces.IFeature.html">IFeature</a>[]</td>
-        <td><p>The features.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html#Mithril_Core_Abstractions_Modules_BaseClasses_ModuleBaseClass_1_Features">ModuleBaseClass&lt;SerilogModule&gt;.Features</a></div>
-  <h5 id="Mithril_Logging_Serilog_SerilogModule_Features_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html">ModuleBaseClass</a>&lt;TModule&gt;</div>
-  </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Logging_Serilog_SerilogModule_ConfigureApplication_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_.md&amp;value=---%0Auid%3A%20Mithril.Logging.Serilog.SerilogModule.ConfigureApplication(Microsoft.AspNetCore.Builder.IApplicationBuilder%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Hosting.IHostEnvironment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L34">View Source</a>
-  </span>
-  <a id="Mithril_Logging_Serilog_SerilogModule_ConfigureApplication_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureApplication*"></a>
-  <h4 id="Mithril_Logging_Serilog_SerilogModule_ConfigureApplication_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureApplication(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">ConfigureApplication(IApplicationBuilder?, IConfiguration?, IHostEnvironment?)</h4>
-  <div class="markdown level1 summary"><p>Configures the application.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a></td>
-        <td><span class="parametername">app</span></td>
-        <td><p>The application.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></td>
-        <td><span class="parametername">configuration</span></td>
-        <td><p>The configuration.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></td>
-        <td><span class="parametername">environment</span></td>
-        <td><p>The environment.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a></td>
-        <td><p>Application builder</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html#Mithril_Core_Abstractions_Modules_BaseClasses_ModuleBaseClass_1_ConfigureApplication_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_">ModuleBaseClass&lt;SerilogModule&gt;.ConfigureApplication(IApplicationBuilder, IConfiguration, IHostEnvironment)</a></div>
-  <h5 id="Mithril_Logging_Serilog_SerilogModule_ConfigureApplication_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html">ModuleBaseClass</a>&lt;TModule&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Logging_Serilog_SerilogModule_ConfigureHostSettings_Microsoft_Extensions_Hosting_IHostBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_.md&amp;value=---%0Auid%3A%20Mithril.Logging.Serilog.SerilogModule.ConfigureHostSettings(Microsoft.Extensions.Hosting.IHostBuilder%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Hosting.IHostEnvironment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L43">View Source</a>
-  </span>
-  <a id="Mithril_Logging_Serilog_SerilogModule_ConfigureHostSettings_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureHostSettings*"></a>
-  <h4 id="Mithril_Logging_Serilog_SerilogModule_ConfigureHostSettings_Microsoft_Extensions_Hosting_IHostBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureHostSettings(Microsoft.Extensions.Hosting.IHostBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">ConfigureHostSettings(IHostBuilder?, IConfiguration?, IHostEnvironment?)</h4>
-  <div class="markdown level1 summary"><p>Configures the host settings.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override IHostBuilder? ConfigureHostSettings(IHostBuilder? host, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostbuilder">IHostBuilder</a></td>
-        <td><span class="parametername">host</span></td>
-        <td><p>The host.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></td>
-        <td><span class="parametername">configuration</span></td>
-        <td><p>The configuration.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></td>
-        <td><span class="parametername">environment</span></td>
-        <td><p>The environment.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostbuilder">IHostBuilder</a></td>
-        <td><p>Host builder</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html#Mithril_Core_Abstractions_Modules_BaseClasses_ModuleBaseClass_1_ConfigureHostSettings_Microsoft_Extensions_Hosting_IHostBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_">ModuleBaseClass&lt;SerilogModule&gt;.ConfigureHostSettings(IHostBuilder, IConfiguration, IHostEnvironment)</a></div>
-  <h5 id="Mithril_Logging_Serilog_SerilogModule_ConfigureHostSettings_Microsoft_Extensions_Hosting_IHostBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html">ModuleBaseClass</a>&lt;TModule&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Logging_Serilog_SerilogModule_ConfigureLoggingSettings_Microsoft_Extensions_Logging_ILoggingBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_.md&amp;value=---%0Auid%3A%20Mithril.Logging.Serilog.SerilogModule.ConfigureLoggingSettings(Microsoft.Extensions.Logging.ILoggingBuilder%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Hosting.IHostEnvironment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L52">View Source</a>
-  </span>
-  <a id="Mithril_Logging_Serilog_SerilogModule_ConfigureLoggingSettings_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureLoggingSettings*"></a>
-  <h4 id="Mithril_Logging_Serilog_SerilogModule_ConfigureLoggingSettings_Microsoft_Extensions_Logging_ILoggingBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureLoggingSettings(Microsoft.Extensions.Logging.ILoggingBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">ConfigureLoggingSettings(ILoggingBuilder?, IConfiguration?, IHostEnvironment?)</h4>
-  <div class="markdown level1 summary"><p>Configures the logging settings.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override ILoggingBuilder? ConfigureLoggingSettings(ILoggingBuilder? logging, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggingbuilder">ILoggingBuilder</a></td>
-        <td><span class="parametername">logging</span></td>
-        <td><p>The logging.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></td>
-        <td><span class="parametername">configuration</span></td>
-        <td><p>The configuration.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></td>
-        <td><span class="parametername">environment</span></td>
-        <td><p>The environment.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggingbuilder">ILoggingBuilder</a></td>
-        <td><p>Logging builder</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html#Mithril_Core_Abstractions_Modules_BaseClasses_ModuleBaseClass_1_ConfigureLoggingSettings_Microsoft_Extensions_Logging_ILoggingBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_">ModuleBaseClass&lt;SerilogModule&gt;.ConfigureLoggingSettings(ILoggingBuilder, IConfiguration, IHostEnvironment)</a></div>
-  <h5 id="Mithril_Logging_Serilog_SerilogModule_ConfigureLoggingSettings_Microsoft_Extensions_Logging_ILoggingBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html">ModuleBaseClass</a>&lt;TModule&gt;</div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Logging_Serilog_SerilogModule_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_.md&amp;value=---%0Auid%3A%20Mithril.Logging.Serilog.SerilogModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection%2CMicrosoft.Extensions.Configuration.IConfiguration%2CMicrosoft.Extensions.Hosting.IHostEnvironment)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L61">View Source</a>
-  </span>
-  <a id="Mithril_Logging_Serilog_SerilogModule_ConfigureServices_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureServices*"></a>
-  <h4 id="Mithril_Logging_Serilog_SerilogModule_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">ConfigureServices(IServiceCollection?, IConfiguration?, IHostEnvironment?)</h4>
-  <div class="markdown level1 summary"><p>Configures the services for the module.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></td>
-        <td><span class="parametername">services</span></td>
-        <td><p>The services collection.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></td>
-        <td><span class="parametername">configuration</span></td>
-        <td><p>The configuration.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></td>
-        <td><span class="parametername">environment</span></td>
-        <td><p>The environment.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></td>
-        <td><p>Services</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html#Mithril_Core_Abstractions_Modules_BaseClasses_ModuleBaseClass_1_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_">ModuleBaseClass&lt;SerilogModule&gt;.ConfigureServices(IServiceCollection, IConfiguration, IHostEnvironment)</a></div>
-  <h5 id="Mithril_Logging_Serilog_SerilogModule_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html">ModuleBaseClass</a>&lt;TModule&gt;</div>
-  </div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="Mithril.Core.Abstractions.Modules.Interfaces.IModule.html">IModule</a>
-  </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
   <div>
       <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
   </div>
   <div>
       <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando_System_Object_">ExpandoObjectExtensions.ConvertToExpando(object?)</a>
   </div>
-  <h3 id="seealso">See Also</h3>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Mithril_Logging_Serilog_SerilogModule_Features_" data-uid="Mithril.Logging.Serilog.SerilogModule.Features*"></a>
+
+  <h3 id="Mithril_Logging_Serilog_SerilogModule_Features" data-uid="Mithril.Logging.Serilog.SerilogModule.Features">
+  Features
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the features.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IFeature[] Features { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mithril.Core.Abstractions.Modules.Interfaces.IFeature.html">IFeature</a>[]</dt>
+    <dd><p>The features.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Mithril_Logging_Serilog_SerilogModule_ConfigureApplication_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureApplication*"></a>
+
+  <h3 id="Mithril_Logging_Serilog_SerilogModule_ConfigureApplication_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureApplication(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">
+  ConfigureApplication(IApplicationBuilder?, IConfiguration?, IHostEnvironment?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the application.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IApplicationBuilder? ConfigureApplication(IApplicationBuilder? app, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>app</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a></dt>
+    <dd><p>The application.</p>
+</dd>
+    <dt><code>configuration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></dt>
+    <dd><p>The configuration.</p>
+</dd>
+    <dt><code>environment</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></dt>
+    <dd><p>The environment.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a></dt>
+    <dd><p>Application builder</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Logging_Serilog_SerilogModule_ConfigureHostSettings_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureHostSettings*"></a>
+
+  <h3 id="Mithril_Logging_Serilog_SerilogModule_ConfigureHostSettings_Microsoft_Extensions_Hosting_IHostBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureHostSettings(Microsoft.Extensions.Hosting.IHostBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">
+  ConfigureHostSettings(IHostBuilder?, IConfiguration?, IHostEnvironment?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the host settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IHostBuilder? ConfigureHostSettings(IHostBuilder? host, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>host</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostbuilder">IHostBuilder</a></dt>
+    <dd><p>The host.</p>
+</dd>
+    <dt><code>configuration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></dt>
+    <dd><p>The configuration.</p>
+</dd>
+    <dt><code>environment</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></dt>
+    <dd><p>The environment.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostbuilder">IHostBuilder</a></dt>
+    <dd><p>Host builder</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Logging_Serilog_SerilogModule_ConfigureLoggingSettings_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureLoggingSettings*"></a>
+
+  <h3 id="Mithril_Logging_Serilog_SerilogModule_ConfigureLoggingSettings_Microsoft_Extensions_Logging_ILoggingBuilder_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureLoggingSettings(Microsoft.Extensions.Logging.ILoggingBuilder,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">
+  ConfigureLoggingSettings(ILoggingBuilder?, IConfiguration?, IHostEnvironment?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the logging settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ILoggingBuilder? ConfigureLoggingSettings(ILoggingBuilder? logging, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logging</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggingbuilder">ILoggingBuilder</a></dt>
+    <dd><p>The logging.</p>
+</dd>
+    <dt><code>configuration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></dt>
+    <dd><p>The configuration.</p>
+</dd>
+    <dt><code>environment</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></dt>
+    <dd><p>The environment.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggingbuilder">ILoggingBuilder</a></dt>
+    <dd><p>Logging builder</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mithril_Logging_Serilog_SerilogModule_ConfigureServices_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureServices*"></a>
+
+  <h3 id="Mithril_Logging_Serilog_SerilogModule_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_Hosting_IHostEnvironment_" data-uid="Mithril.Logging.Serilog.SerilogModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Hosting.IHostEnvironment)">
+  ConfigureServices(IServiceCollection?, IConfiguration?, IHostEnvironment?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the services for the module.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IServiceCollection? ConfigureServices(IServiceCollection? services, IConfiguration? configuration, IHostEnvironment? environment)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
+    <dd><p>The services collection.</p>
+</dd>
+    <dt><code>configuration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></dt>
+    <dd><p>The configuration.</p>
+</dd>
+    <dt><code>environment</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostenvironment">IHostEnvironment</a></dt>
+    <dd><p>The environment.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
+    <dd><p>Services</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="seealso">See Also</h2>
   <div class="seealso">
       <div><a class="xref" href="Mithril.Core.Abstractions.Modules.BaseClasses.ModuleBaseClass-1.html">ModuleBaseClass</a>&lt;TModule&gt;</div>
   </div>
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Logging.Serilog/SerilogModule.cs/#L19" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

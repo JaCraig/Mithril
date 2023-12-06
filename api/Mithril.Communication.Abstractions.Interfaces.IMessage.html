@@ -1,113 +1,121 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Interface IMessage
  | Mithril API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IMessage
  | Mithril API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="Mithril" class="logomark">
-              <span class="brand-title">Mithril</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Mithril">
+            Mithril
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="Mithril" class="logomark">
-                          <span class="brand-title">Mithril</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage">
+        <article data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage">
 
 
 
-  <h1 id="Mithril_Communication_Abstractions_Interfaces_IMessage" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage" class="text-break">Interface IMessage
-</h1>
-  <div class="markdown level0 summary"><p>Message interface</p>
+  <h1 id="Mithril_Communication_Abstractions_Interfaces_IMessage" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage" class="text-break">
+    Interface IMessage
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Communication.html">Communication</a>.<a class="xref" href="Mithril.Communication.Abstractions.html">Abstractions</a>.<a class="xref" href="Mithril.Communication.Abstractions.Interfaces.html">Interfaces</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Mithril.Communication.Abstractions.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Message interface</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IMessage : IModel, IEquatable&lt;IModel&gt;</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="Mithril.Data.Abstractions.Interfaces.IModel.html#Mithril_Data_Abstractions_Interfaces_IModel_Active">IModel.Active</a>
     </div>
@@ -150,409 +158,428 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals">IEquatable&lt;IModel&gt;.Equals(IModel)</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Mithril.html">Mithril</a>.<a class="xref" href="Mithril.Communication.html">Communication</a>.<a class="xref" href="Mithril.Communication.Abstractions.html">Abstractions</a>.<a class="xref" href="Mithril.Communication.Abstractions.Interfaces.html">Interfaces</a></h6>
-  <h6><strong>Assembly</strong>: Mithril.Communication.Abstractions.dll</h6>
-  <h5 id="Mithril_Communication_Abstractions_Interfaces_IMessage_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IMessage : IModel, IEquatable&lt;IModel&gt;</code></pre>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage_Application.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage.Application%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L16">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_Application_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Application*"></a>
-  <h4 id="Mithril_Communication_Abstractions_Interfaces_IMessage_Application" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Application">Application</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the application the message originated from.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength(64)]
-string? Application { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The application the message originated from.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage_Attachments.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage.Attachments%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L23">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_Attachments_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Attachments*"></a>
-  <h4 id="Mithril_Communication_Abstractions_Interfaces_IMessage_Attachments" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Attachments">Attachments</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the attachments.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IList&lt;Attachment?&gt; Attachments { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a>&gt;</td>
-        <td><p>The attachments.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage_BCC.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage.BCC%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L29">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_BCC_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.BCC*"></a>
-  <h4 id="Mithril_Communication_Abstractions_Interfaces_IMessage_BCC" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.BCC">BCC</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the BCC.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength]
-string? BCC { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The BCC.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage_Body.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage.Body%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L36">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_Body_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Body*"></a>
-  <h4 id="Mithril_Communication_Abstractions_Interfaces_IMessage_Body" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Body">Body</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the body.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength]
-string? Body { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The body.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage_CC.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage.CC%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L43">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_CC_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.CC*"></a>
-  <h4 id="Mithril_Communication_Abstractions_Interfaces_IMessage_CC" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.CC">CC</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the cc.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength]
-string? CC { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The cc.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage_From.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage.From%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L50">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_From_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.From*"></a>
-  <h4 id="Mithril_Communication_Abstractions_Interfaces_IMessage_From" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.From">From</h4>
-  <div class="markdown level1 summary"><p>Gets or sets from.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Required]
-[MinLength(1)]
-[MaxLength(128)]
-string? From { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>From.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage_Subject.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage.Subject%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L59">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_Subject_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Subject*"></a>
-  <h4 id="Mithril_Communication_Abstractions_Interfaces_IMessage_Subject" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Subject">Subject</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the subject.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Required]
-[MinLength(1)]
-[MaxLength(256)]
-string? Subject { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The subject.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage_Template.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage.Template%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L68">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_Template_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Template*"></a>
-  <h4 id="Mithril_Communication_Abstractions_Interfaces_IMessage_Template" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Template">Template</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the template.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength(128)]
-string? Template { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The template.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage_TemplateData.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage.TemplateData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L75">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_TemplateData_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.TemplateData*"></a>
-  <h4 id="Mithril_Communication_Abstractions_Interfaces_IMessage_TemplateData" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.TemplateData">TemplateData</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the template data (JSON).</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[MaxLength]
-string? TemplateData { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The template data in JSON format.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage_TemplateFields.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage.TemplateFields%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L82">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_TemplateFields_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.TemplateFields*"></a>
-  <h4 id="Mithril_Communication_Abstractions_Interfaces_IMessage_TemplateFields" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.TemplateFields">TemplateFields</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the template data.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ExpandoObject? TemplateFields { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dynamic.expandoobject">ExpandoObject</a></td>
-        <td><p>The template data.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mithril/new/main/apiSpec/new?filename=Mithril_Communication_Abstractions_Interfaces_IMessage_To.md&amp;value=---%0Auid%3A%20Mithril.Communication.Abstractions.Interfaces.IMessage.To%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L88">View Source</a>
-  </span>
-  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_To_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.To*"></a>
-  <h4 id="Mithril_Communication_Abstractions_Interfaces_IMessage_To" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.To">To</h4>
-  <div class="markdown level1 summary"><p>Gets or sets to.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Required]
-[MinLength(1)]
-[MaxLength]
-string? To { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>To.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
   <div>
       <a class="xref" href="Mithril.Core.Extensions.GenericExtensions.html#Mithril_Core_Extensions_GenericExtensions_When__1___0_System_Boolean_System_Func___0___0__">GenericExtensions.When&lt;TObject&gt;(TObject, bool, Func&lt;TObject, TObject&gt;)</a>
   </div>
   <div>
       <a class="xref" href="Mithril.Core.Abstractions.Extensions.ExpandoObjectExtensions.html#Mithril_Core_Abstractions_Extensions_ExpandoObjectExtensions_ConvertToExpando_System_Object_">ExpandoObjectExtensions.ConvertToExpando(object?)</a>
   </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_Application_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Application*"></a>
+
+  <h3 id="Mithril_Communication_Abstractions_Interfaces_IMessage_Application" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Application">
+  Application
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the application the message originated from.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(64)]
+string? Application { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The application the message originated from.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_Attachments_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Attachments*"></a>
+
+  <h3 id="Mithril_Communication_Abstractions_Interfaces_IMessage_Attachments" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Attachments">
+  Attachments
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the attachments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IList&lt;Attachment?&gt; Attachments { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Mithril.Communication.Abstractions.Attachment.html">Attachment</a>&gt;</dt>
+    <dd><p>The attachments.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_BCC_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.BCC*"></a>
+
+  <h3 id="Mithril_Communication_Abstractions_Interfaces_IMessage_BCC" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.BCC">
+  BCC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the BCC.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength]
+string? BCC { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The BCC.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_Body_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Body*"></a>
+
+  <h3 id="Mithril_Communication_Abstractions_Interfaces_IMessage_Body" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Body">
+  Body
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the body.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength]
+string? Body { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The body.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_CC_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.CC*"></a>
+
+  <h3 id="Mithril_Communication_Abstractions_Interfaces_IMessage_CC" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.CC">
+  CC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the cc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength]
+string? CC { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The cc.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_From_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.From*"></a>
+
+  <h3 id="Mithril_Communication_Abstractions_Interfaces_IMessage_From" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.From">
+  From
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets from.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+[MinLength(1)]
+[MaxLength(128)]
+string? From { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>From.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_Subject_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Subject*"></a>
+
+  <h3 id="Mithril_Communication_Abstractions_Interfaces_IMessage_Subject" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Subject">
+  Subject
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the subject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+[MinLength(1)]
+[MaxLength(256)]
+string? Subject { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The subject.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_Template_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Template*"></a>
+
+  <h3 id="Mithril_Communication_Abstractions_Interfaces_IMessage_Template" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.Template">
+  Template
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the template.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength(128)]
+string? Template { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The template.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_TemplateData_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.TemplateData*"></a>
+
+  <h3 id="Mithril_Communication_Abstractions_Interfaces_IMessage_TemplateData" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.TemplateData">
+  TemplateData
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the template data (JSON).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[MaxLength]
+string? TemplateData { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The template data in JSON format.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_TemplateFields_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.TemplateFields*"></a>
+
+  <h3 id="Mithril_Communication_Abstractions_Interfaces_IMessage_TemplateFields" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.TemplateFields">
+  TemplateFields
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the template data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ExpandoObject? TemplateFields { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dynamic.expandoobject">ExpandoObject</a></dt>
+    <dd><p>The template data.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mithril_Communication_Abstractions_Interfaces_IMessage_To_" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.To*"></a>
+
+  <h3 id="Mithril_Communication_Abstractions_Interfaces_IMessage_To" data-uid="Mithril.Communication.Abstractions.Interfaces.IMessage.To">
+  To
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Required]
+[MinLength(1)]
+[MaxLength]
+string? To { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>To.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/Mithril/blob/main/src/Mithril.Communication.Abstractions/Interfaces/IMessage.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/Mithril'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
