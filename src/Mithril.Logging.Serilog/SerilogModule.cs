@@ -8,7 +8,6 @@ using Mithril.Core.Abstractions.Modules.Interfaces;
 using Mithril.Logging.Features;
 using Mithril.Logging.Serilog.Middleware;
 using Serilog;
-using Serilog.Enrichers;
 
 namespace Mithril.Logging.Serilog
 {
@@ -71,8 +70,8 @@ namespace Mithril.Logging.Serilog
                     Log.Logger = new LoggerConfiguration()
                                     .ReadFrom.Configuration(configuration)
                                     .Enrich.FromLogContext()
-                                    .Enrich.With<MachineNameEnricher>()
-                                    .Enrich.With<EnvironmentNameEnricher>()
+                                    .Enrich.WithMachineName()
+                                    .Enrich.WithEnvironmentName()
                                     .Enrich.WithProperty("Application", AssemblyName)
                                     .Enrich.WithProperty("ApplicationVersion", Assembly?.GetName().Version?.ToString() ?? "")
                                     .CreateLogger();
@@ -85,8 +84,8 @@ namespace Mithril.Logging.Serilog
                             .MinimumLevel
                             .Debug()
                             .Enrich.FromLogContext()
-                            .Enrich.With<MachineNameEnricher>()
-                            .Enrich.With<EnvironmentNameEnricher>()
+                            .Enrich.WithMachineName()
+                            .Enrich.WithEnvironmentName()
                             .Enrich.WithProperty("Application", AssemblyName)
                             .Enrich.WithProperty("ApplicationVersion", Assembly?.GetName().Version?.ToString() ?? "")
                             .WriteTo

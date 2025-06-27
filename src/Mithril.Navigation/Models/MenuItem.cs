@@ -2,6 +2,7 @@
 using Mithril.Security.Abstractions.Interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
+using Valkyrie.Enums;
 
 namespace Mithril.Navigation.Models
 {
@@ -39,7 +40,7 @@ namespace Mithril.Navigation.Models
         /// Gets or sets the order.
         /// </summary>
         /// <value>The order.</value>
-        [Valkyrie.Compare(0, Valkyrie.ComparisonType.GreaterThanOrEqual)]
+        [Valkyrie.Compare(0, ComparisonType.GreaterThanOrEqual)]
         public int Order { get; set; }
 
         /// <summary>

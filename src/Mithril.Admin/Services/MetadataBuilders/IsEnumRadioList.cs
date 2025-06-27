@@ -1,4 +1,5 @@
 ﻿using BigBook;
+using BigBook.ExtensionMethods;
 using Mithril.Admin.Abstractions.BaseClasses;
 using Mithril.Admin.Abstractions.DataEditor;
 using Mithril.Admin.Abstractions.Services;
@@ -10,7 +11,7 @@ namespace Mithril.Admin.Services.MetadataBuilders
     /// <summary>
     /// Determines if this should be a radio list
     /// </summary>
-    /// <seealso cref="MetadataBuilderBaseClass" />
+    /// <seealso cref="MetadataBuilderBaseClass"/>
     public class IsEnumRadioList : MetadataBuilderBaseClass
     {
         /// <summary>
@@ -18,9 +19,7 @@ namespace Mithril.Admin.Services.MetadataBuilders
         /// </summary>
         /// <param name="propertyMetadata">The property metadata.</param>
         /// <param name="metadataService">The metadata service.</param>
-        /// <returns>
-        /// The resulting property metadata.
-        /// </returns>
+        /// <returns>The resulting property metadata.</returns>
         public override PropertyMetadata? ExtractMetadata(PropertyMetadata? propertyMetadata, IEntityMetadataService metadataService)
         {
             if (propertyMetadata?.Property?.PropertyType.GetIEnumerableElementType().IsEnum != true)
@@ -59,18 +58,14 @@ namespace Mithril.Admin.Services.MetadataBuilders
             /// <summary>
             /// Gets or sets the key.
             /// </summary>
-            /// <value>
-            /// The key.
-            /// </value>
+            /// <value>The key.</value>
             [JsonPropertyName("key")]
             public int? Key { get; set; }
 
             /// <summary>
             /// Gets or sets the value.
             /// </summary>
-            /// <value>
-            /// The value.
-            /// </value>
+            /// <value>The value.</value>
             [JsonPropertyName("value")]
             public string? Value { get; set; }
         }

@@ -1,4 +1,5 @@
 ﻿using BigBook;
+using BigBook.ExtensionMethods;
 using Mithril.Content.Abstractions.Interfaces;
 using System.Dynamic;
 using System.Globalization;
@@ -53,9 +54,7 @@ namespace Mithril.Content.Abstractions.BaseClasses
         /// <summary>
         /// Gets the schema.
         /// </summary>
-        /// <value>
-        /// The schema.
-        /// </value>
+        /// <value>The schema.</value>
         public ExpandoObject? Schema
         {
             get
@@ -77,17 +76,13 @@ namespace Mithril.Content.Abstractions.BaseClasses
         /// <summary>
         /// Gets the script file.
         /// </summary>
-        /// <value>
-        /// The script file.
-        /// </value>
+        /// <value>The script file.</value>
         public virtual string ScriptFile { get; } = "/Core/js/core.umd.min.js";
 
         /// <summary>
         /// Gets or sets the type of the component.
         /// </summary>
-        /// <value>
-        /// The type of the component.
-        /// </value>
+        /// <value>The type of the component.</value>
         private string ComponentType { get; }
 
         /// <summary>

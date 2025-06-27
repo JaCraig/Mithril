@@ -1,4 +1,5 @@
 ﻿using BigBook;
+using BigBook.ExtensionMethods;
 using System.Dynamic;
 using System.Reflection;
 
@@ -34,9 +35,7 @@ namespace Mithril.Core.Abstractions.Extensions
         /// Converts the object to an expando.
         /// </summary>
         /// <param name="value">The value.</param>
-        /// <returns>
-        /// The resulting object
-        /// </returns>
+        /// <returns>The resulting object</returns>
         public static ExpandoObject? ConvertToExpando(this object? value)
         {
             if (value is null)

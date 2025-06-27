@@ -1,4 +1,5 @@
 ﻿using BigBook;
+using BigBook.ExtensionMethods;
 using FileCurator.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -15,10 +16,8 @@ namespace Mithril.FileSystem.Controllers
     /// <summary>
     /// File browser controller
     /// </summary>
-    /// <seealso cref="Controller" />
-    /// <remarks>
-    /// Initializes a new instance of the <see cref="FileBrowserController"/> class.
-    /// </remarks>
+    /// <seealso cref="Controller"/>
+    /// <remarks>Initializes a new instance of the <see cref="FileBrowserController"/> class.</remarks>
     /// <param name="fileManager">The file manager.</param>
     [Area("Services")]
     [Authorize]

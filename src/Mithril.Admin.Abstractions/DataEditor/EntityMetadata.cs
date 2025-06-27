@@ -1,4 +1,5 @@
 ﻿using BigBook;
+using BigBook.ExtensionMethods;
 using Mithril.Admin.Abstractions.DataEditor.Attributes;
 using System.Reflection;
 using System.Text.Json.Serialization;
@@ -32,17 +33,13 @@ namespace Mithril.Admin.Abstractions.DataEditor
         /// <summary>
         /// Gets or sets the display name.
         /// </summary>
-        /// <value>
-        /// The display name.
-        /// </value>
+        /// <value>The display name.</value>
         public string DisplayName { get; } = "";
 
         /// <summary>
         /// Gets the name.
         /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
+        /// <value>The name.</value>
         public string Name { get; } = "";
 
         /// <summary>

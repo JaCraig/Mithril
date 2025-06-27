@@ -1,5 +1,6 @@
 ﻿using Antlr4.Runtime.Misc;
 using BigBook;
+using BigBook.ExtensionMethods;
 using GraphQL;
 using Mithril.API.Abstractions.Attributes;
 using Mithril.API.Abstractions.ExtensionMethods;

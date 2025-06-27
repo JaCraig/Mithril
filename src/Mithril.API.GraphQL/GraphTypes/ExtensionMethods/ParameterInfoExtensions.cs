@@ -1,4 +1,5 @@
 ﻿using BigBook;
+using BigBook.ExtensionMethods;
 using GraphQL;
 using GraphQL.Types;
 using System.Reflection;

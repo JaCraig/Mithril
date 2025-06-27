@@ -1,4 +1,4 @@
-﻿using BigBook;
+﻿using BigBook.ExtensionMethods;
 using Mithril.API.Abstractions.Commands.Interfaces;
 using Mithril.Data.Abstractions.BaseClasses;
 

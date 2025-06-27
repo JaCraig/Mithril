@@ -1,4 +1,5 @@
 ﻿using BigBook;
+using BigBook.ExtensionMethods;
 using Mithril.Core.Abstractions.Extensions;
 using System.Reflection;
 using System.Text.Json.Serialization;
@@ -8,9 +9,7 @@ namespace Mithril.Admin.Abstractions.DataEditor
     /// <summary>
     /// Property metadata
     /// </summary>
-    /// <remarks>
-    /// Initializes a new instance of the <see cref="PropertyMetadata" /> class.
-    /// </remarks>
+    /// <remarks>Initializes a new instance of the <see cref="PropertyMetadata"/> class.</remarks>
     /// <param name="property">The property.</param>
     public class PropertyMetadata(PropertyInfo? property)
     {

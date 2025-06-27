@@ -7,6 +7,7 @@ using Mithril.Communication.Email.Models;
 using Mithril.Communication.Email.Utils;
 using Mithril.Data.Abstractions.Services;
 using Mithril.Mvc.Abstractions.Services;
+using SimpleMail;
 using System.Text;
 
 namespace Mithril.Communication.Email.Channel
@@ -15,9 +16,7 @@ namespace Mithril.Communication.Email.Channel
     /// Email channel for communication
     /// </summary>
     /// <seealso cref="ChannelBaseClass&lt;EmailChannel, EmailMessage&gt;"/>
-    /// <remarks>
-    /// Initializes a new instance of the <see cref="EmailChannel"/> class.
-    /// </remarks>
+    /// <remarks>Initializes a new instance of the <see cref="EmailChannel"/> class.</remarks>
     /// <param name="logger">The logger.</param>
     /// <param name="featureManager">The feature manager.</param>
     /// <param name="dataService">The data service.</param>
@@ -56,13 +55,13 @@ namespace Mithril.Communication.Email.Channel
             var Body = !string.IsNullOrEmpty(message.Body)
                 ? message.Body
                 : await GetBodyFromTemplate(message, ViewRendererService).ConfigureAwait(false);
-            Sender.To = message.To ?? "";
+            Sender.To = [new MailBox(message.To ?? "")];
             Sender.Subject = message.Subject ?? "";
             Sender.Body = Body;
             if (message.Attachments.Count > 0)
                 Sender.Attachments.AddRange(message.Attachments.Where(x => x is not null).Select(x => new SimpleMail.Attachment(x!.FileName, x.MimeType, x.Content)));
-            Sender.Bcc = message.BCC;
-            Sender.Cc = message.CC;
+            Sender.Bcc = [new MailBox(message.BCC)];
+            Sender.Cc = [new MailBox(message.CC)];
             if (!string.IsNullOrEmpty(message.From))
                 Sender.From = message.From;
             await Sender.SendAsync().ConfigureAwait(false);
