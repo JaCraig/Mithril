@@ -13,7 +13,7 @@ updates:
       prefix: "fix"
     groups:
       dependencies:
-        patterns: 
+        patterns:
           - "*"
     ignore:
       - dependency-name: "coverlet.collector"
@@ -24,7 +24,7 @@ updates:
       - dependency-name: "Microsoft.CodeAnalysis.NetAnalyzers"
       - dependency-name: "husky"
       - dependency-name: "BenchmarkDotNet"
-      
+
 
   - package-ecosystem: "nuget" # See documentation for possible values
     directory: "/test/" # Location of package manifests
@@ -34,7 +34,7 @@ updates:
       prefix: "chore"
     groups:
       dependencies:
-        patterns: 
+        patterns:
           - "*"
     allow:
       - dependency-name: "coverlet.collector"
@@ -51,5 +51,5 @@ updates:
       prefix: "chore"
     groups:
       dependencies:
-        patterns: 
+        patterns:
           - "*"

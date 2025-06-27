@@ -54,7 +54,7 @@
     <ProjectReference Include="..\Mithril.Navigation.Abstractions\Mithril.Navigation.Abstractions.csproj" />
     <ProjectReference Include="..\Mithril.Routing.Abstractions\Mithril.Routing.Abstractions.csproj" />
 	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
-	  <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0">
+	  <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="9.0.0">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
