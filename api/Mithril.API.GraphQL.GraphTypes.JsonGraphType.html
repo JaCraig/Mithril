@@ -103,7 +103,7 @@ the library and will be taken out once merged into main on GraphQL.Net)</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class JsonGraphType : ScalarGraphType, IGraphType, IProvideMetadata, IProvideDescription, IProvideDeprecationReason, INamedType</code></pre>
+    <pre><code class="lang-csharp hljs">public class JsonGraphType : ScalarGraphType, IGraphType, IMetadataReader, IMetadataWriter, IProvideMetadata, IProvideDescription, IProvideDeprecationReason, INamedType</code></pre>
   </div>
 
 
@@ -124,6 +124,8 @@ the library and will be taken out once merged into main on GraphQL.Net)</p>
     <dt>Implements</dt>
     <dd>
       <div><span class="xref">IGraphType</span></div>
+      <div><span class="xref">IMetadataReader</span></div>
+      <div><span class="xref">IMetadataWriter</span></div>
       <div><span class="xref">IProvideMetadata</span></div>
       <div><span class="xref">IProvideDescription</span></div>
       <div><span class="xref">IProvideDeprecationReason</span></div>
@@ -137,6 +139,12 @@ the library and will be taken out once merged into main on GraphQL.Net)</p>
     <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ScalarGraphType.Serialize(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">ScalarGraphType.CanSerializeList(IEnumerable, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">ScalarGraphType.SerializeList(IEnumerable)</a>
     </div>
     <div>
       <span class="xref">ScalarGraphType.ParseDoubleAccordingSpec&lt;TValueNode&gt;(TValueNode)</span>
@@ -184,6 +192,9 @@ the library and will be taken out once merged into main on GraphQL.Net)</p>
       <span class="xref">GraphType.DeprecationReason</span>
     </div>
     <div>
+      <span class="xref">GraphType.IsPrivate</span>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MetadataProvider.GetMetadata&lt;TType&gt;(string, TType)</a>
     </div>
     <div>
@@ -193,7 +204,7 @@ the library and will be taken out once merged into main on GraphQL.Net)</p>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MetadataProvider.HasMetadata(string)</a>
     </div>
     <div>
-      <span class="xref">MetadataProvider.CopyMetadataTo(IProvideMetadata)</span>
+      <span class="xref">MetadataProvider.CopyMetadataTo(IMetadataWriter)</span>
     </div>
     <div>
       <span class="xref">MetadataProvider.Metadata</span>

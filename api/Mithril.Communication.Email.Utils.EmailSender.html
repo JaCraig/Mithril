@@ -102,7 +102,7 @@ Class EmailSender  <a class="header-action link-secondary" title="View source" h
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EmailSender : Email</code></pre>
+    <pre><code class="lang-csharp hljs">public class EmailSender : Email, IDisposable</code></pre>
   </div>
 
 
@@ -112,60 +112,72 @@ Class EmailSender  <a class="header-action link-secondary" title="View source" h
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email</a></div>
+      <div><a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email</a></div>
       <div><span class="xref">EmailSender</span></div>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.Attachments</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.Dispose()</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.Bcc</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.Attachments</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.Body</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.Bcc</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.Cc</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.Body</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.From</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.Cc</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.IgnoreServerCertificateIssues</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.From</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.LocalDomain</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.IgnoreServerCertificateIssues</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.Password</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.LocalDomain</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.Port</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.Password</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.Priority</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.Port</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.Server</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.Priority</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.Subject</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.ReplyTo</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.To</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.Server</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.UserName</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.Subject</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email.UseSSL</a>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.To</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.UserName</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email.UseSSL</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -348,7 +360,7 @@ Class EmailSender  <a class="header-action link-secondary" title="View source" h
 
   <h2 id="seealso">See Also</h2>
   <div class="seealso">
-      <div><a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/src/SimpleMail/Email.cs">Email</a></div>
+      <div><a class="xref" href="https://github.com/JaCraig/SimpleMail/blob/main/SimpleMail/Email.cs">Email</a></div>
   </div>
 
 </article>

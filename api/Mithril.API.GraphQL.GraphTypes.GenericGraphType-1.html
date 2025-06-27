@@ -102,7 +102,7 @@ Class GenericGraphType&lt;TClass&gt;  <a class="header-action link-secondary" ti
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class GenericGraphType&lt;TClass&gt; : ObjectGraphType&lt;TClass&gt;, IObjectGraphType, IComplexGraphType, IGraphType, IProvideMetadata, IProvideDescription, IProvideDeprecationReason, INamedType, IImplementInterfaces</code></pre>
+    <pre><code class="lang-csharp hljs">public class GenericGraphType&lt;TClass&gt; : ObjectGraphType&lt;TClass&gt;, IObjectGraphType, IComplexGraphType, IImplementInterfaces, IGraphType, IMetadataReader, IMetadataWriter, IProvideMetadata, IProvideDescription, IProvideDeprecationReason, INamedType</code></pre>
   </div>
 
 
@@ -131,12 +131,14 @@ Class GenericGraphType&lt;TClass&gt;  <a class="header-action link-secondary" ti
     <dd>
       <div><span class="xref">IObjectGraphType</span></div>
       <div><span class="xref">IComplexGraphType</span></div>
+      <div><span class="xref">IImplementInterfaces</span></div>
       <div><span class="xref">IGraphType</span></div>
+      <div><span class="xref">IMetadataReader</span></div>
+      <div><span class="xref">IMetadataWriter</span></div>
       <div><span class="xref">IProvideMetadata</span></div>
       <div><span class="xref">IProvideDescription</span></div>
       <div><span class="xref">IProvideDeprecationReason</span></div>
       <div><span class="xref">INamedType</span></div>
-      <div><span class="xref">IImplementInterfaces</span></div>
     </dd>
   </dl>
 
@@ -157,6 +159,9 @@ Class GenericGraphType&lt;TClass&gt;  <a class="header-action link-secondary" ti
       <span class="xref">ObjectGraphType&lt;TClass&gt;.IsTypeOf</span>
     </div>
     <div>
+      <span class="xref">ObjectGraphType&lt;TClass&gt;.SkipTypeCheck</span>
+    </div>
+    <div>
       <span class="xref">ObjectGraphType&lt;TClass&gt;.Interfaces</span>
     </div>
     <div>
@@ -175,7 +180,13 @@ Class GenericGraphType&lt;TClass&gt;  <a class="header-action link-secondary" ti
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ComplexGraphType&lt;TClass&gt;.CreateBuilder&lt;TReturnType&gt;(Type)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ComplexGraphType&lt;TClass&gt;.CreateBuilder&lt;TReturnType&gt;(string, Type)</a>
+    </div>
+    <div>
       <span class="xref">ComplexGraphType&lt;TClass&gt;.CreateBuilder&lt;TReturnType&gt;(IGraphType)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ComplexGraphType&lt;TClass&gt;.CreateBuilder&lt;TReturnType&gt;(string, IGraphType)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ComplexGraphType&lt;TClass&gt;.Field(Type, string, string, QueryArguments, Func&lt;IResolveFieldContext&lt;TClass&gt;, object&gt;, string)</a>
@@ -226,16 +237,43 @@ Class GenericGraphType&lt;TClass&gt;  <a class="header-action link-secondary" ti
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ComplexGraphType&lt;TClass&gt;.Field&lt;TProperty&gt;(string, Expression&lt;Func&lt;TClass, TProperty&gt;&gt;, bool, Type)</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ComplexGraphType&lt;TClass&gt;.Field&lt;TProperty&gt;(string, Expression&lt;Func&lt;TClass, TProperty&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ComplexGraphType&lt;TClass&gt;.Field&lt;TProperty&gt;(string, Expression&lt;Func&lt;TClass, TProperty&gt;&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ComplexGraphType&lt;TClass&gt;.Field&lt;TProperty&gt;(string, Expression&lt;Func&lt;TClass, TProperty&gt;&gt;, Type)</a>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">ComplexGraphType&lt;TClass&gt;.Field&lt;TProperty&gt;(Expression&lt;Func&lt;TClass, TProperty&gt;&gt;, bool, Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">ComplexGraphType&lt;TClass&gt;.Field&lt;TProperty&gt;(Expression&lt;Func&lt;TClass, TProperty&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">ComplexGraphType&lt;TClass&gt;.Field&lt;TProperty&gt;(Expression&lt;Func&lt;TClass, TProperty&gt;&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">ComplexGraphType&lt;TClass&gt;.Field&lt;TProperty&gt;(Expression&lt;Func&lt;TClass, TProperty&gt;&gt;, Type)</a>
     </div>
     <div>
       <span class="xref">ComplexGraphType&lt;TClass&gt;.Connection&lt;TNodeType&gt;()</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ComplexGraphType&lt;TClass&gt;.Connection&lt;TNodeType&gt;(string)</a>
+    </div>
+    <div>
       <span class="xref">ComplexGraphType&lt;TClass&gt;.Connection&lt;TNodeType, TEdgeType&gt;()</span>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ComplexGraphType&lt;TClass&gt;.Connection&lt;TNodeType, TEdgeType&gt;(string)</a>
+    </div>
+    <div>
       <span class="xref">ComplexGraphType&lt;TClass&gt;.Connection&lt;TNodeType, TEdgeType, TConnectionType&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ComplexGraphType&lt;TClass&gt;.Connection&lt;TNodeType, TEdgeType, TConnectionType&gt;(string)</a>
     </div>
     <div>
       <span class="xref">ComplexGraphType&lt;TClass&gt;.Fields</span>
@@ -265,6 +303,9 @@ Class GenericGraphType&lt;TClass&gt;  <a class="header-action link-secondary" ti
       <span class="xref">GraphType.DeprecationReason</span>
     </div>
     <div>
+      <span class="xref">GraphType.IsPrivate</span>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MetadataProvider.GetMetadata&lt;TType&gt;(string, TType)</a>
     </div>
     <div>
@@ -274,7 +315,7 @@ Class GenericGraphType&lt;TClass&gt;  <a class="header-action link-secondary" ti
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MetadataProvider.HasMetadata(string)</a>
     </div>
     <div>
-      <span class="xref">MetadataProvider.CopyMetadataTo(IProvideMetadata)</span>
+      <span class="xref">MetadataProvider.CopyMetadataTo(IMetadataWriter)</span>
     </div>
     <div>
       <span class="xref">MetadataProvider.Metadata</span>

@@ -102,7 +102,7 @@ Class CompositeSchema  <a class="header-action link-secondary" title="View sourc
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CompositeSchema : Schema, ISchema, IProvideMetadata, IProvideDescription, IServiceProvider, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class CompositeSchema : Schema, ISchema, IMetadataReader, IMetadataWriter, IProvideMetadata, IProvideDescription, IServiceProvider, IDisposable</code></pre>
   </div>
 
 
@@ -122,6 +122,8 @@ Class CompositeSchema  <a class="header-action link-secondary" title="View sourc
     <dt>Implements</dt>
     <dd>
       <div><span class="xref">ISchema</span></div>
+      <div><span class="xref">IMetadataReader</span></div>
+      <div><span class="xref">IMetadataWriter</span></div>
       <div><span class="xref">IProvideMetadata</span></div>
       <div><span class="xref">IProvideDescription</span></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a></div>
@@ -242,7 +244,7 @@ Class CompositeSchema  <a class="header-action link-secondary" title="View sourc
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MetadataProvider.HasMetadata(string)</a>
     </div>
     <div>
-      <span class="xref">MetadataProvider.CopyMetadataTo(IProvideMetadata)</span>
+      <span class="xref">MetadataProvider.CopyMetadataTo(IMetadataWriter)</span>
     </div>
     <div>
       <span class="xref">MetadataProvider.Metadata</span>
