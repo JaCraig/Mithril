@@ -49,7 +49,7 @@
 	</PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Inflatable" Version="5.0.28" />
+    <PackageReference Include="Inflatable" Version="5.0.49" />
 	  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
 	  <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="9.0.0">
 		  <PrivateAssets>all</PrivateAssets>
