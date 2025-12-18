@@ -32,7 +32,7 @@ jobs:
     - name: Test
       run: dotnet test $SOLUTION /p:Configuration=$BUILD_CONFIG --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
     - name: Upload test results
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: dotnet-results-${{ matrix.dotnet-version }}
         path: TestResults-${{ matrix.dotnet-version }}
