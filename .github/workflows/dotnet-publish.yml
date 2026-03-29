@@ -5,41 +5,41 @@ name: .NET Publish
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     env:
-      BUILD_CONFIG: 'Release'
-      SOLUTION: 'Mithril.sln'
+      BUILD_CONFIG: "Release"
+      SOLUTION: "Mithril.sln"
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet-version: [ '8.0.x' ]
+        dotnet-version: ["8.0.x"]
 
     steps:
-    - uses: actions/checkout@v6
-      with:
-        fetch-depth: 0
-    
-    - name: Setup .NET SDK ${{ matrix.dotnet-version }}
-      uses: actions/setup-dotnet@v5.2.0
-      with:
-        dotnet-version: ${{ matrix.dotnet-version }}
-      
-    - name: Restore dependencies
-      run: dotnet restore 'Mithril.Build.sln'
-      
-    - name: Build
-      run: dotnet build 'Mithril.Build.sln' --no-restore --configuration $BUILD_CONFIG
-      
-    - name: Test
-      run: dotnet test 'Mithril.Build.sln' /p:Configuration=$BUILD_CONFIG --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
-    
-    - name: Upload test results
-      uses: actions/upload-artifact@v7
-      with:
-        name: dotnet-results-${{ matrix.dotnet-version }}
-        path: TestResults-${{ matrix.dotnet-version }}
-      if: ${{ always() }}
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v5.2.0
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+
+      - name: Restore dependencies
+        run: dotnet restore 'Mithril.Build.sln'
+
+      - name: Build
+        run: dotnet build 'Mithril.Build.sln' --no-restore --configuration $BUILD_CONFIG
+
+      - name: Test
+        run: dotnet test 'Mithril.Build.sln' /p:Configuration=$BUILD_CONFIG --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v7
+        with:
+          name: dotnet-results-${{ matrix.dotnet-version }}
+          path: TestResults-${{ matrix.dotnet-version }}
+        if: ${{ always() }}

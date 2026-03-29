@@ -5,35 +5,34 @@ name: .NET Test Pull Requests
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-  
     env:
-      BUILD_CONFIG: 'Debug'
-      SOLUTION: 'Mithril.Build.sln'
+      BUILD_CONFIG: "Debug"
+      SOLUTION: "Mithril.Build.sln"
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet-version: [ '8.0.x' ]
+        dotnet-version: ["8.0.x"]
 
     steps:
-    - uses: actions/checkout@v6
-    - name: Setup .NET SDK ${{ matrix.dotnet-version }}
-      uses: actions/setup-dotnet@v5.2.0
-      with:
-        dotnet-version: ${{ matrix.dotnet-version }}
-    - name: Restore dependencies
-      run: dotnet restore $SOLUTION
-    - name: Build
-      run: dotnet build $SOLUTION --no-restore --configuration $BUILD_CONFIG
-    - name: Test
-      run: dotnet test $SOLUTION /p:Configuration=$BUILD_CONFIG --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
-    - name: Upload test results
-      uses: actions/upload-artifact@v7
-      with:
-        name: dotnet-results-${{ matrix.dotnet-version }}
-        path: TestResults-${{ matrix.dotnet-version }}
-      if: ${{ always() }}
+      - uses: actions/checkout@v6
+      - name: Setup .NET SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v5.2.0
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+      - name: Restore dependencies
+        run: dotnet restore $SOLUTION
+      - name: Build
+        run: dotnet build $SOLUTION --no-restore --configuration $BUILD_CONFIG
+      - name: Test
+        run: dotnet test $SOLUTION /p:Configuration=$BUILD_CONFIG --no-build --verbosity normal --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}"
+      - name: Upload test results
+        uses: actions/upload-artifact@v7
+        with:
+          name: dotnet-results-${{ matrix.dotnet-version }}
+          path: TestResults-${{ matrix.dotnet-version }}
+        if: ${{ always() }}
